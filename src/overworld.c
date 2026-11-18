@@ -1859,9 +1859,11 @@ static void HtQaBoostParty(void)
         u32 exp;
         if (species == SPECIES_NONE || GetMonData(mon, MON_DATA_IS_EGG))
             continue;
-        exp = gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL];
+        exp = gExperienceTables[gSpeciesInfo[species].growthRate][VarGet(VAR_HT_QA_LEVEL) ? VarGet(VAR_HT_QA_LEVEL) : MAX_LEVEL];
         SetMonData(mon, MON_DATA_EXP, &exp);
         CalculateMonStats(mon);
+        if (VarGet(VAR_HT_QA_LEVEL))
+            GiveMonInitialMoveset(mon); // balanceamento: golpes naturais do nivel
     }
     HealPlayerParty();
     FlagClear(FLAG_HT_QA_BOOST_PARTY);

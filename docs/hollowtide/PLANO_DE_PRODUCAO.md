@@ -22,7 +22,7 @@ Status ao lado de cada item: `[ ]` a fazer · `[~]` em andamento · `[x]` conclu
 - [x] Ferramentas: renderizador, folha de metatiles, linter, correção de colisão, runner/driver de emulador
 - [ ] Título/abertura com identidade Hollowtide; créditos "Created by respectlol1"
 - [ ] Pokédex regional (~250 espécies por bioma) e tabelas de encontro por rota
-- [ ] Curva de níveis da campanha (treinadores, selvagens, líderes) considerando Exp. Share
+- [~] Curva de níveis da campanha (Cap. 1 ajustado; demais capítulos ao construir)
 - [ ] Field moves sem HM (itens-chave/habilidades de campo)
 - [ ] Town Map de Lunia (gráfico + seções)
 
@@ -30,7 +30,7 @@ Status ao lado de cada item: `[ ]` a fazer · `[~]` em andamento · `[x]` conclu
 
 | Cap. | Conteúdo | Base atual |
 |---|---|---|
-| 1 | Dawnmere → Route 1 → Harvestvale; Prof. Alex, mãe + Medalhão de Atlas; recruta da Team Palm e irrigação; ginásio de Nevard (comportas) | mapas autorais corrigidos; falas em PT a reescrever; puzzle a testar |
+| 1 `[~]` | Dawnmere → Route 1 → Harvestvale; Prof. Alex, mãe + Medalhão de Atlas; recruta da Team Palm e irrigação; ginásio de Nevard (comportas) | colisão corrigida; texto 100% EN; Medalhão; tela de 3 Poké Balls; comportas persistentes; Team Palm verde-oliva; eventos 10/10 no emulador; **falta**: fechar balanceamento do Nevard, revisão de arte dos interiores |
 | 2 | Route 2 (campo → litoral) → Breezeport (cidade costeira ampla, farol, morro tipo Corcovado, orla); ginásio de Jay (Teatro dos Ecos) | refazer em escala (placeholder 20×20 do Alpha 02) |
 | 3 | Route 3 (praia → costa → serra → planalto, saída oeste/noroeste de Breezeport) → Ferralia (metrópole, ferrovia, viadutos, indústria); Vessel; "Carga Desviada" | refazer |
 | 4 | Route 4 → Tradepost ("Preço da Troca", Mestre Wen, PALM Coin) | novo |
@@ -50,3 +50,10 @@ Ritmo e leitura de mapa de Ruby/Sapphire/Emerald e HGSS (rotas com bifurcações
 fora do caminho, marcos verticais), cidades de Black/White para densidade urbana (Castelia como atmosfera de
 Ferralia), cidades costeiras de HGSS (Olivine) para Breezeport. Narrativa ambiental: placas, NPCs e lugares
 contam a história da água antes de qualquer cena longa.
+
+## Ferramentas de QA disponíveis
+
+- `tools/hollowtide_qa/qa_completo.sh RUNNER WORKDIR`: intro → lab → Rota 1 → Harvestvale → transições → eventos do Cap. 1.
+- `fluxo_cap1_balanco.py` (com `HT_STARTER`): partida realista no nível de chegada, por inicial.
+- Ganchos de QA só em build não-release: `FLAG_HT_QA_BOOST_PARTY` (+ `VAR_HT_QA_LEVEL`), `FLAG_HT_QA_NO_ENCOUNTERS`,
+  `FLAG_HT_QA_NO_TRAINER_SEE`. **Distribuição sempre com `make RELEASE=1`.**

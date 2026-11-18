@@ -39,6 +39,7 @@ SB1 = "%08x" % SYMS["gSaveBlock1Ptr"]
 try:
     _nm = subprocess.check_output(["arm-none-eabi-nm", f"{ROOT}/pokeemerald.elf"]).decode()
     SYMS["BattleMainCB2"] = int(next(l.split()[0] for l in _nm.splitlines() if l.endswith(" BattleMainCB2")), 16)
+    SYMS["CB2_StarterChoose"] = int(next(l.split()[0] for l in _nm.splitlines() if l.endswith(" CB2_StarterChoose")), 16)
 except Exception:
     SYMS["BattleMainCB2"] = None
 
@@ -177,6 +178,12 @@ class QA:
         mm = dict(m); mm["rt"] = grid
         return mm
 
+    def callback2(self):
+        return self.peek32(SYMS["gMain"] + 4) & ~1
+
+    def in_starter_screen(self):
+        return self.callback2() == (SYMS.get("CB2_StarterChoose", 0) & ~1)
+
     def in_battle(self):
         return SYMS.get("BattleMainCB2") is not None and (self.peek32(SYMS["gMain"] + 4) & ~1) == (SYMS["BattleMainCB2"] & ~1)
 
@@ -198,7 +205,11 @@ class QA:
     def strong(self):
         """Somente QA de eventos: liga FLAG_HT_QA_BOOST_PARTY (0x33); o gancho de QA do jogo (build
         nao-release) eleva o time a nivel 100 pela via oficial no proximo frame do overworld."""
-        return self.run(["setflag 1270 33", "wait 5"], "strong")
+        return self.run(["setvar 139C 4083 0", "setflag 1270 33", "wait 5"], "strong")
+
+    def set_level(self, level):
+        """QA de balanceamento: leva o time ao nivel indicado (via o mesmo gancho de QA)."""
+        return self.run([f"setvar 139C 4083 {level}", "setflag 1270 33", "wait 5"], f"nivel {level}")
 
     def step(self, d, n=1, extra=None):
         return self.run([f"walk {d} {n}"] + (extra or []), f"walk {d} {n}")

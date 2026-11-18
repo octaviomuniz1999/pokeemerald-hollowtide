@@ -615,6 +615,7 @@ enum
 #define OBJ_EVENT_PAL_TAG_WHITE                   (OBJ_EVENT_PAL_TAG_NONE - 1)
 #define OBJ_EVENT_PAL_TAG_NEVARD                 0x1134
 #define OBJ_EVENT_PAL_TAG_PALM_JAY               0x11F0
+#define OBJ_EVENT_PAL_TAG_TEAM_PALM              0x11F1 // Hollowtide: uniforme verde-oliva da Team Palm
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 // This + localId is used as the tileTag
