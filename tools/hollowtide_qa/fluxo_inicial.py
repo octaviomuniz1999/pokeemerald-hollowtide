@@ -18,9 +18,11 @@ def main(rom, runner, work, casa):
         if q.where[3] != 5:
             break
     q.run(["shot fluxo_lab.png"]); shutil.copy(q.state, f"{work}/e2e_starter.ss")
+    q.no_wild()  # QA de mapas: sem encontros selvagens (balanceamento tem teste proprio)
     q.goto("MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB", 6, 12); q.run(["walk DOWN 1", "wait 90"])
     q.goto("MAP_LITTLEROOT_TOWN", 33, 21); q.run(["wait 120"])
     assert q.mapname() == "MAP_ROUTE101", q.where
+    q.no_wild()
     q.goto("MAP_ROUTE101", 9, 51); q.run(["walk DOWN 1", "wait 120", "shot fluxo_colheita.png"])
     assert q.mapname() == "MAP_OLDALE_TOWN", q.where
     shutil.copy(q.state, f"{work}/e2e_colheita.ss")

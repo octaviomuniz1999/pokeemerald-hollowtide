@@ -26,11 +26,12 @@ def _load_maps():
 
 
 MAPS, MAPNUM = _load_maps()
-SB1 = None
+SYMS = {}
 for line in open(f"{ROOT}/pokeemerald.map"):
-    if line.strip().endswith(" gSaveBlock1Ptr") and "0x03" in line:
-        SB1 = line.split()[0][2:]
-        break
+    parts = line.split()
+    if len(parts) == 2 and parts[0].startswith("0x0") and parts[1] in ("gSaveBlock1Ptr", "gParties", "gObjectEvents", "gTasks"):
+        SYMS.setdefault(parts[1], int(parts[0], 16))
+SB1 = "%08x" % SYMS["gSaveBlock1Ptr"]
 
 
 def block(m, x, y):
@@ -133,9 +134,10 @@ class QA:
                 stuck = 0
         raise AssertionError(f"nao chegou a {mapid} {(x, y)}; em {self.where}")
 
-    def no_wild(self, flags_vars_off="139C", party_addr=0x02031B60, level_off=0x54):
+    def no_wild(self, flags_vars_off="139C", party_addr=None, level_off=0x54):
         """Somente QA de mapas: Repel ativo + nivel 100 no lider do time => nenhum encontro selvagem.
         O nivel e so o campo em RAM (nao altera exp/estatisticas) e e refeito a cada chamada."""
+        party_addr = party_addr or SYMS["gParties"]
         return self.run([f"poke8 {party_addr + level_off:08x} 100",
                          f"setvar {flags_vars_off} 4021 250"], "no_wild")
 

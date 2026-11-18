@@ -222,6 +222,7 @@ void NewGameInitData(void)
         RunScriptImmediately(EventScript_ResetAllMapFlagsFrlg);
     else
         RunScriptImmediately(EventScript_ResetAllMapFlags);
+    FlagSet(FLAG_HT_EXP_SHARE); // Hollowtide: Exp. Share sempre ativo
 #if IS_FRLG
         StringCopy(gSaveBlock1Ptr->rivalName, rivalName);
 #endif

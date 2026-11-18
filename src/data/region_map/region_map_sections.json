@@ -2,7 +2,7 @@
   "map_sections": [
     {
       "id": "MAPSEC_LITTLEROOT_TOWN",
-      "name": "VILA INICIAL",
+      "name": "DAWNMERE",
       "x": 4,
       "y": 11,
       "width": 1,
@@ -10,7 +10,7 @@
     },
     {
       "id": "MAPSEC_OLDALE_TOWN",
-      "name": "V. COLHEITA",
+      "name": "HARVESTVALE",
       "x": 4,
       "y": 9,
       "width": 1,
@@ -18,7 +18,7 @@
     },
     {
       "id": "MAPSEC_DEWFORD_TOWN",
-      "name": "DEWFORD TOWN",
+      "name": "BREEZEPORT",
       "x": 2,
       "y": 14,
       "width": 1,
@@ -34,7 +34,7 @@
     },
     {
       "id": "MAPSEC_FALLARBOR_TOWN",
-      "name": "FALLARBOR TOWN",
+      "name": "SERENIA",
       "x": 3,
       "y": 0,
       "width": 1,
@@ -42,7 +42,7 @@
     },
     {
       "id": "MAPSEC_VERDANTURF_TOWN",
-      "name": "VERDANTURF TOWN",
+      "name": "PASSWAY",
       "x": 4,
       "y": 6,
       "width": 1,
@@ -66,7 +66,7 @@
     },
     {
       "id": "MAPSEC_SLATEPORT_CITY",
-      "name": "SLATEPORT CITY",
+      "name": "TRADEPOST",
       "x": 8,
       "y": 10,
       "width": 1,
@@ -74,7 +74,7 @@
     },
     {
       "id": "MAPSEC_MAUVILLE_CITY",
-      "name": "MAUVILLE CITY",
+      "name": "PILLARTON",
       "x": 8,
       "y": 6,
       "width": 2,
@@ -82,7 +82,7 @@
     },
     {
       "id": "MAPSEC_RUSTBORO_CITY",
-      "name": "RUSTBORO CITY",
+      "name": "FERRALIA",
       "x": 0,
       "y": 5,
       "width": 1,
@@ -90,7 +90,7 @@
     },
     {
       "id": "MAPSEC_FORTREE_CITY",
-      "name": "FORTREE CITY",
+      "name": "VOLTARA",
       "x": 12,
       "y": 0,
       "width": 1,
@@ -98,7 +98,7 @@
     },
     {
       "id": "MAPSEC_LILYCOVE_CITY",
-      "name": "LILYCOVE CITY",
+      "name": "HORIZON CITY",
       "x": 18,
       "y": 3,
       "width": 2,
@@ -106,7 +106,7 @@
     },
     {
       "id": "MAPSEC_MOSSDEEP_CITY",
-      "name": "MOSSDEEP CITY",
+      "name": "TIDEMOUTH",
       "x": 24,
       "y": 5,
       "width": 2,
@@ -122,7 +122,7 @@
     },
     {
       "id": "MAPSEC_EVER_GRANDE_CITY",
-      "name": "EVER GRANDE CITY",
+      "name": "POKéMON LEAGUE",
       "x": 27,
       "y": 8,
       "width": 1,
@@ -130,7 +130,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_101",
-      "name": "ROTA 01",
+      "name": "ROUTE 1",
       "x": 4,
       "y": 10,
       "width": 1,
@@ -138,7 +138,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_102",
-      "name": "ROUTE 102",
+      "name": "ROUTE 2",
       "x": 2,
       "y": 9,
       "width": 2,
@@ -146,7 +146,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_103",
-      "name": "ROUTE 103",
+      "name": "ROUTE 3",
       "x": 4,
       "y": 8,
       "width": 4,
@@ -154,7 +154,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_104",
-      "name": "ROUTE 104",
+      "name": "ROUTE 4",
       "x": 0,
       "y": 7,
       "width": 1,
@@ -162,7 +162,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_105",
-      "name": "ROUTE 105",
+      "name": "ROUTE 5",
       "x": 0,
       "y": 10,
       "width": 1,
@@ -170,7 +170,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_106",
-      "name": "ROUTE 106",
+      "name": "ROUTE 6",
       "x": 0,
       "y": 13,
       "width": 2,
@@ -178,7 +178,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_107",
-      "name": "ROUTE 107",
+      "name": "ROUTE 7",
       "x": 3,
       "y": 14,
       "width": 3,
@@ -186,7 +186,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_108",
-      "name": "ROUTE 108",
+      "name": "ROUTE 8",
       "x": 6,
       "y": 14,
       "width": 2,
@@ -194,7 +194,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_109",
-      "name": "ROUTE 109",
+      "name": "ROUTE 9",
       "x": 8,
       "y": 12,
       "width": 1,
@@ -202,7 +202,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_110",
-      "name": "ROUTE 110",
+      "name": "ROUTE 10",
       "x": 8,
       "y": 7,
       "width": 1,
@@ -210,7 +210,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_111",
-      "name": "ROUTE 111",
+      "name": "ROUTE 11",
       "x": 8,
       "y": 0,
       "width": 1,
@@ -218,7 +218,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_112",
-      "name": "ROUTE 112",
+      "name": "ROUTE 12",
       "x": 6,
       "y": 3,
       "width": 2,
@@ -226,7 +226,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_113",
-      "name": "ROUTE 113",
+      "name": "ROUTE 13",
       "x": 4,
       "y": 0,
       "width": 4,
@@ -234,7 +234,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_114",
-      "name": "ROUTE 114",
+      "name": "ROUTE 14",
       "x": 1,
       "y": 0,
       "width": 2,
@@ -242,7 +242,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_115",
-      "name": "ROUTE 115",
+      "name": "ROUTE 15",
       "x": 0,
       "y": 2,
       "width": 1,
