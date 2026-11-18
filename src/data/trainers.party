@@ -4796,7 +4796,7 @@ Class: Leader
 Pic: Leader Roxanne
 Gender: Male
 Music: Male
-Items: Potion / Potion
+Items: Potion
 Double Battle: No
 AI: Basic Trainer
 
@@ -16867,11 +16867,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Zigzagoon
-Level: 3
+Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Bidoof
-Level: 4
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_PALM_MIN ===
@@ -16884,16 +16884,16 @@ Double Battle: No
 AI: Check Bad Move
 
 Sewaddle
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Fletchling
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Fletchling
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 === TRAINER_PALM_IRRIGATION_RECRUIT ===
-Name: RECRUTA
-Class: Cooltrainer
+Name: GRUNT
+Class: Team Aqua
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -16901,12 +16901,8 @@ Double Battle: No
 AI: Check Bad Move
 
 Poochyena
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Magnemite
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 8
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_PALM_ROUTE02_LIANG ===
 Name: LIANG

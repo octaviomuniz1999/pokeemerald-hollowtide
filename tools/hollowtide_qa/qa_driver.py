@@ -31,11 +31,23 @@ for line in open(f"{ROOT}/pokeemerald.map"):
     parts = line.split()
     if len(parts) == 2 and parts[0].startswith("0x0") and parts[1] in ("gSaveBlock1Ptr", "gParties", "gObjectEvents", "gTasks"):
         SYMS.setdefault(parts[1], int(parts[0], 16))
+    if len(parts) == 2 and parts[1] == "gBackupMapLayout" and parts[0].startswith("0x03"):
+        SYMS.setdefault("gBackupMapLayout", int(parts[0], 16))
+    if len(parts) == 2 and parts[1] == "gMain" and parts[0].startswith("0x03"):
+        SYMS.setdefault("gMain", int(parts[0], 16))
 SB1 = "%08x" % SYMS["gSaveBlock1Ptr"]
+try:
+    _nm = subprocess.check_output(["arm-none-eabi-nm", f"{ROOT}/pokeemerald.elf"]).decode()
+    SYMS["BattleMainCB2"] = int(next(l.split()[0] for l in _nm.splitlines() if l.endswith(" BattleMainCB2")), 16)
+except Exception:
+    SYMS["BattleMainCB2"] = None
 
 
 def block(m, x, y):
-    v = struct.unpack_from("<H", m["bin"], 2 * (y * m["w"] + x))[0]
+    if "rt" in m:  # grade lida da RAM (inclui setmetatile feitos por scripts)
+        v = m["rt"][y * m["w"] + x]
+    else:
+        v = struct.unpack_from("<H", m["bin"], 2 * (y * m["w"] + x))[0]
     return v & 0x3FF, (v >> 10) & 3, v >> 12
 
 
@@ -110,7 +122,7 @@ class QA:
                 raise AssertionError(f"esperado {mapid}, estou em {m['id']} ({cx},{cy})")
             if (cx, cy) == (x, y):
                 return True
-            path = bfs(m, (cx, cy), (x, y))
+            path = bfs(self.runtime_map(m), (cx, cy), (x, y))
             if path is None:
                 raise AssertionError(f"sem caminho em {mapid} de {(cx, cy)} para {(x, y)}")
             before = self.where
@@ -122,6 +134,12 @@ class QA:
                 stuck += 1
                 self.battles += 1
                 seq = [f"shot stuck_{self.n:03d}.png"]
+                if not self.in_battle():
+                    # fora de batalha: fecha dialogos com B (A falaria com o seguidor/NPC e reabriria conversa)
+                    self.run(seq + ["mash B 25"], "desbloqueio-dialogo")
+                    if stuck > 8:
+                        raise AssertionError(f"travado em {mapid} {self.where[2:]} (ver stuck_*.png)")
+                    continue
                 for _ in range(10):
                     # 1) tenta fugir (Run fica embaixo a direita); em batalha de treinador so mostra aviso
                     seq += ["press B 4 10", "press DOWN 4 6", "press RIGHT 4 6", "press A 4 30", "mash A 3"]
@@ -140,6 +158,28 @@ class QA:
         # Usa as flags de QA da build (FLAG_HT_QA_NO_ENCOUNTERS 0x31 e FLAG_HT_QA_NO_TRAINER_SEE 0x30).
         return self.run(["setflag 1270 31", "setflag 1270 30"], "no_wild")
 
+    def peek32(self, addr):
+        import re as _re
+        out = subprocess.run([self.runner, self.rom, self._peek_script("%08x" % addr, 1), "-", SB1], capture_output=True, text=True, cwd=self.work).stdout
+        return int(_re.findall(r"peek \w+: (\w+)", out)[-1], 16)
+
+    def runtime_map(self, m):
+        """Copia de m com a grade real da RAM (gBackupMapLayout, borda MAP_OFFSET=7)."""
+        import re as _re
+        lay = SYMS["gBackupMapLayout"]
+        w = self.peek32(lay); ptr = self.peek32(lay + 8)
+        words = (w * (m["h"] + 14) + 1) // 2
+        out = subprocess.run([self.runner, self.rom, self._peek_script("%08x" % ptr, words), "-", SB1], capture_output=True, text=True, cwd=self.work).stdout
+        vals = []
+        for x in _re.findall(r"peek \w+: (.*)", out)[-1].split():
+            v = int(x, 16); vals += [v & 0xFFFF, v >> 16]
+        grid = [vals[(y + 7) * w + (x + 7)] for y in range(m["h"]) for x in range(m["w"])]
+        mm = dict(m); mm["rt"] = grid
+        return mm
+
+    def in_battle(self):
+        return SYMS.get("BattleMainCB2") is not None and (self.peek32(SYMS["gMain"] + 4) & ~1) == (SYMS["BattleMainCB2"] & ~1)
+
     def flag(self, n, flags_off=0x1270):
         """Le uma flag do SaveBlock1 no estado atual."""
         import re as _re
@@ -154,6 +194,11 @@ class QA:
         sp = f"{self.work}/peek.txt"
         open(sp, "w").write(f"loadstate {self.state}\nwait 1\npeek {addr} {n}\n")
         return sp
+
+    def strong(self):
+        """Somente QA de eventos: liga FLAG_HT_QA_BOOST_PARTY (0x33); o gancho de QA do jogo (build
+        nao-release) eleva o time a nivel 100 pela via oficial no proximo frame do overworld."""
+        return self.run(["setflag 1270 33", "wait 5"], "strong")
 
     def step(self, d, n=1, extra=None):
         return self.run([f"walk {d} {n}"] + (extra or []), f"walk {d} {n}")

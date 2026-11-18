@@ -182,6 +182,9 @@ int main(int argc, char **argv)
         } else if (!strcmp(cmd, "poke8")) {
             // poke8 ENDERECO_HEX VALOR : escreve um byte (QA)
             core->busWrite8(core, strtoul(a, NULL, 16), strtoul(b, NULL, 0));
+        } else if (!strcmp(cmd, "poke16")) {
+            // poke16 ENDERECO_HEX VALOR : escreve 16 bits (QA)
+            core->busWrite16(core, strtoul(a, NULL, 16), strtoul(b, NULL, 0));
         } else if (!strcmp(cmd, "setvar")) {
             // setvar OFFSET_VARS_HEX VAR_HEX VALOR : escreve uma var de script no SaveBlock1 (QA)
             uint32_t sb1 = core->busRead32(core, sb1ptrAddr);

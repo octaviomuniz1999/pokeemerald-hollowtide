@@ -225,7 +225,6 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 	.string "two POKéMON for a rematch.$"
 
 Palm067_Enter::
-	setvar VAR_TEMP_8, 0
 	end
 
 Palm067_CheckClear::
@@ -241,29 +240,29 @@ Palm067_NotClear::
 Palm065_Load::
 	call Palm067_CheckClear
 	goto_if_eq VAR_RESULT, TRUE, Palm065_LoadSolved
-	goto_if_lt VAR_TEMP_8, 1, Palm067_LoadDone
+	goto_if_lt VAR_HT_HARVEST_GYM_GATES, 1, Palm067_LoadDone
 	call Palm065_Water1
-	goto_if_lt VAR_TEMP_8, 2, Palm067_LoadDone
+	goto_if_lt VAR_HT_HARVEST_GYM_GATES, 2, Palm067_LoadDone
 	goto_if_not_defeated TRAINER_JOSH, Palm067_LoadFirstOnly
 	call Palm065_Water2
-	goto_if_lt VAR_TEMP_8, 3, Palm067_LoadDone
+	goto_if_lt VAR_HT_HARVEST_GYM_GATES, 3, Palm067_LoadDone
 	goto_if_not_defeated TRAINER_TOMMY, Palm067_LoadSecondOnly
 	call Palm065_Water3
 	end
 
 Palm067_LoadFirstOnly::
-	setvar VAR_TEMP_8, 1
+	setvar VAR_HT_HARVEST_GYM_GATES, 1
 	end
 
 Palm067_LoadSecondOnly::
-	setvar VAR_TEMP_8, 2
+	setvar VAR_HT_HARVEST_GYM_GATES, 2
 	end
 
 Palm067_LoadDone::
 	end
 
 Palm065_LoadSolved::
-	setvar VAR_TEMP_8, 3
+	setvar VAR_HT_HARVEST_GYM_GATES, 3
 	call Palm065_Water1
 	call Palm065_Water2
 	call Palm065_Water3
@@ -276,9 +275,9 @@ Palm065_Water1::
 
 Palm065_Gate1::
 	lockall
-	goto_if_ge VAR_TEMP_8, 1, Palm065_AlreadyOpen
-	goto_if_ne VAR_TEMP_8, 0, Palm065_Wait
-	setvar VAR_TEMP_8, 1
+	goto_if_ge VAR_HT_HARVEST_GYM_GATES, 1, Palm065_AlreadyOpen
+	goto_if_ne VAR_HT_HARVEST_GYM_GATES, 0, Palm065_Wait
+	setvar VAR_HT_HARVEST_GYM_GATES, 1
 	call Palm065_Water1
 	special DrawWholeMapView
 	msgbox Palm065_Text1, MSGBOX_DEFAULT
@@ -293,10 +292,10 @@ Palm065_Water2::
 
 Palm065_Gate2::
 	lockall
-	goto_if_ge VAR_TEMP_8, 2, Palm065_AlreadyOpen
-	goto_if_ne VAR_TEMP_8, 1, Palm065_Wait
+	goto_if_ge VAR_HT_HARVEST_GYM_GATES, 2, Palm065_AlreadyOpen
+	goto_if_ne VAR_HT_HARVEST_GYM_GATES, 1, Palm065_Wait
 	goto_if_not_defeated TRAINER_JOSH, Palm066_Battle1
-	setvar VAR_TEMP_8, 2
+	setvar VAR_HT_HARVEST_GYM_GATES, 2
 	call Palm065_Water2
 	special DrawWholeMapView
 	msgbox Palm065_Text2, MSGBOX_DEFAULT
@@ -314,10 +313,10 @@ Palm065_Water3::
 
 Palm065_Gate3::
 	lockall
-	goto_if_ge VAR_TEMP_8, 3, Palm065_AlreadyOpen
-	goto_if_ne VAR_TEMP_8, 2, Palm065_Wait
+	goto_if_ge VAR_HT_HARVEST_GYM_GATES, 3, Palm065_AlreadyOpen
+	goto_if_ne VAR_HT_HARVEST_GYM_GATES, 2, Palm065_Wait
 	goto_if_not_defeated TRAINER_TOMMY, Palm066_Battle2
-	setvar VAR_TEMP_8, 3
+	setvar VAR_HT_HARVEST_GYM_GATES, 3
 	call Palm065_Water3
 	special DrawWholeMapView
 	msgbox Palm065_Text3, MSGBOX_DEFAULT

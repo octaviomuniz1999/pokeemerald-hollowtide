@@ -1846,8 +1846,34 @@ u8 UpdateSpritePaletteWithTime(u8 paletteNum)
     return paletteNum;
 }
 
+#ifndef RELEASE
+// Hollowtide QA: com FLAG_HT_QA_BOOST_PARTY ligada (so pelo harness de teste), eleva o time a nivel 100
+// pela via oficial (XP + recalculo de atributos) e desliga a flag. Nao existe no build de release.
+static void HtQaBoostParty(void)
+{
+    u32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon *mon = &gPlayerParty[i];
+        u32 species = GetMonData(mon, MON_DATA_SPECIES);
+        u32 exp;
+        if (species == SPECIES_NONE || GetMonData(mon, MON_DATA_IS_EGG))
+            continue;
+        exp = gExperienceTables[gSpeciesInfo[species].growthRate][MAX_LEVEL];
+        SetMonData(mon, MON_DATA_EXP, &exp);
+        CalculateMonStats(mon);
+    }
+    HealPlayerParty();
+    FlagClear(FLAG_HT_QA_BOOST_PARTY);
+}
+#endif
+
 static void OverworldBasic(void)
 {
+#ifndef RELEASE
+    if (FlagGet(FLAG_HT_QA_BOOST_PARTY))
+        HtQaBoostParty();
+#endif
     ScriptContext_RunScript();
     RunTasks();
     AnimateSprites();
