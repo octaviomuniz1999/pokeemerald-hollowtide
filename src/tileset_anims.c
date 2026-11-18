@@ -673,11 +673,34 @@ static void QueueAnimTiles_General_Waterfall(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnims_General_Waterfall[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(496)), 6 * TILE_SIZE_4BPP);
 }
 
+static const u16 sColheitaTownWater0[] = INCGFX_U16("data/tilesets/secondary/petalburg/anim/colheita_water/0.png", ".4bpp");
+static const u16 sColheitaTownWater1[] = INCGFX_U16("data/tilesets/secondary/petalburg/anim/colheita_water/1.png", ".4bpp");
+static const u16 sColheitaTownWater2[] = INCGFX_U16("data/tilesets/secondary/petalburg/anim/colheita_water/2.png", ".4bpp");
+static const u16 sColheitaTownWater3[] = INCGFX_U16("data/tilesets/secondary/petalburg/anim/colheita_water/3.png", ".4bpp");
+static const u16 sColheitaTownWater4[] = INCGFX_U16("data/tilesets/secondary/petalburg/anim/colheita_water/4.png", ".4bpp");
+static const u16 sColheitaTownWater5[] = INCGFX_U16("data/tilesets/secondary/petalburg/anim/colheita_water/5.png", ".4bpp");
+static const u16 sColheitaTownWater6[] = INCGFX_U16("data/tilesets/secondary/petalburg/anim/colheita_water/6.png", ".4bpp");
+static const u16 sColheitaTownWater7[] = INCGFX_U16("data/tilesets/secondary/petalburg/anim/colheita_water/7.png", ".4bpp");
+
+static const u16 *const sColheitaTownWaterFrames[] =
+{
+    sColheitaTownWater0, sColheitaTownWater1, sColheitaTownWater2, sColheitaTownWater3,
+    sColheitaTownWater4, sColheitaTownWater5, sColheitaTownWater6, sColheitaTownWater7
+};
+
+static void TilesetAnim_ColheitaTown(u16 timer)
+{
+    if (timer % 10 == 0)
+        AppendTilesetAnimToBuffer(sColheitaTownWaterFrames[timer / 10],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 400)),
+                                  sizeof(sColheitaTownWater0));
+}
+
 void InitTilesetAnim_Petalburg(void)
 {
     sSecondaryTilesetAnimCounter = 0;
-    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
-    sSecondaryTilesetAnimCallback = NULL;
+    sSecondaryTilesetAnimCounterMax = 10 * ARRAY_COUNT(sColheitaTownWaterFrames);
+    sSecondaryTilesetAnimCallback = TilesetAnim_ColheitaTown;
 }
 
 void InitTilesetAnim_Rustboro(void)
@@ -1432,3 +1455,35 @@ void InitTilesetAnim_CeladonGym(void)
     sSecondaryTilesetAnimCallback = TilesetAnim_CeladonGym;
 }
 
+
+static const u16 sColheitaWater0[] = INCGFX_U16("data/tilesets/secondary/rustboro_gym/anim/water/0.png", ".4bpp");
+static const u16 sColheitaWater1[] = INCGFX_U16("data/tilesets/secondary/rustboro_gym/anim/water/1.png", ".4bpp");
+static const u16 sColheitaWater2[] = INCGFX_U16("data/tilesets/secondary/rustboro_gym/anim/water/2.png", ".4bpp");
+static const u16 sColheitaWater3[] = INCGFX_U16("data/tilesets/secondary/rustboro_gym/anim/water/3.png", ".4bpp");
+static const u16 sColheitaWater4[] = INCGFX_U16("data/tilesets/secondary/rustboro_gym/anim/water/4.png", ".4bpp");
+static const u16 sColheitaWater5[] = INCGFX_U16("data/tilesets/secondary/rustboro_gym/anim/water/5.png", ".4bpp");
+static const u16 sColheitaWater6[] = INCGFX_U16("data/tilesets/secondary/rustboro_gym/anim/water/6.png", ".4bpp");
+static const u16 sColheitaWater7[] = INCGFX_U16("data/tilesets/secondary/rustboro_gym/anim/water/7.png", ".4bpp");
+
+static const u16 *const sColheitaWaterFrames[] =
+{
+    sColheitaWater0, sColheitaWater1, sColheitaWater2, sColheitaWater3, sColheitaWater4, sColheitaWater5, sColheitaWater6, sColheitaWater7
+};
+
+static void TilesetAnim_ColheitaGym(u16 timer)
+{
+    if (timer % 8 == 0)
+    {
+        u16 frame = timer / 8;
+        AppendTilesetAnimToBuffer(sColheitaWaterFrames[frame],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 400)),
+                                  sizeof(sColheitaWater0));
+    }
+}
+
+void InitTilesetAnim_ColheitaGym(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 8 * ARRAY_COUNT(sColheitaWaterFrames);
+    sSecondaryTilesetAnimCallback = TilesetAnim_ColheitaGym;
+}

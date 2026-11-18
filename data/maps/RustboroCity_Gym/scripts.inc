@@ -1,7 +1,16 @@
 RustboroCity_Gym_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Palm067_Enter
+	map_script MAP_SCRIPT_ON_LOAD, Palm065_Load
 	.byte 0
 
 RustboroCity_Gym_EventScript_Roxanne::
+	lock
+	faceplayer
+	call Palm067_CheckClear
+	goto_if_eq VAR_RESULT, TRUE, Palm066_LeaderBattle
+	goto_if_not_defeated TRAINER_JOSH, Palm066_Battle1
+	goto_if_not_defeated TRAINER_TOMMY, Palm066_Battle2
+Palm066_LeaderBattle::
 	trainerbattle_single TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneIntro, RustboroCity_Gym_Text_RoxanneDefeat, RustboroCity_Gym_EventScript_RoxanneDefeated, NO_MUSIC
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 	goto_if_eq VAR_RESULT, TRUE, RustboroCity_Gym_EventScript_RoxanneRematch
@@ -26,7 +35,7 @@ RustboroCity_Gym_EventScript_RoxanneDefeated::
 	end
 
 RustboroCity_Gym_EventScript_GiveRockTomb::
-	giveitem ITEM_TM_ROCK_TOMB
+	giveitem ITEM_TM_BULLET_SEED
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM_ROCK_TOMB
 	msgbox RustboroCity_Gym_Text_ExplainRockTomb, MSGBOX_DEFAULT
@@ -104,180 +113,247 @@ RustboroCity_Gym_EventScript_RegisterRoxanne::
 	end
 
 RustboroCity_Gym_Text_GymGuideAdvice:
-	.string "Yo, how's it going?\p"
-	.string "Listen, my friend!\n"
-	.string "Would you like to become the CHAMPION?\p"
-	.string "I'm no TRAINER, not me, but I can\n"
-	.string "sure give you winning advice.\p"
-	.string "That's settled, then! We'll aim for the\n"
-	.string "POKéMON CHAMPIONSHIP together!\p"
-	.string "It's your job as a TRAINER to collect\n"
-	.string "GYM BADGES, am I right?\p"
-	.string "But GYM LEADERS aren't pushovers!\p"
-	.string "And that's where I come in!\n"
-	.string "I'm here to provide expert advice!\p"
-	.string "ROXANNE, the GYM LEADER, is a user\n"
-	.string "of ROCK-type POKéMON.\p"
-	.string "The ROCK type is very durable, but\n"
-	.string "it can't stand WATER-type and\l"
-	.string "GRASS-type moves.\p"
-	.string "Come see me afterwards, if you beat\n"
-	.string "the GYM LEADER.\p"
-	.string "Well, go for it!$"
+	.string "A agua daqui alimenta os\n"
+	.string "cafezais da vila.\p"
+	.string "Abra as comportas numeradas\n"
+	.string "de 1 a 3.\p"
+	.string "Pelo caminho, venca os dois\n"
+	.string "treinadores do cafezal.$"
 
 RustboroCity_Gym_Text_GymGuidePostVictory:
-	.string "Whoa! What a breathtaking victory!\n"
-	.string "My cheering must've worked!\p"
-	.string "Great!\n"
-	.string "Check your TRAINER CARD.\p"
-	.string "The STONE BADGE you got should be\n"
-	.string "properly recorded on it.\p"
-	.string "In other words…\p"
-	.string "You've climbed the first step on\n"
-	.string "the stairs to the CHAMPIONSHIP!\p"
-	.string "That's got to feel awesome!$"
+	.string "Parabens por vencer o NEVARD!\n"
+	.string "A VILA DA COLHEITA agradece!$"
 
 RustboroCity_Gym_Text_JoshIntro:
-	.string "Don't take us GYM TRAINERS lightly!\n"
-	.string "I'll show you why we're better!$"
+	.string "Eu trabalho com o NEVARD!\n"
+	.string "Vamos ver sua equipe!$"
 
 RustboroCity_Gym_Text_JoshDefeat:
-	.string "You were too good for me…$"
+	.string "Preciso cuidar mais das plantas...$"
 
 RustboroCity_Gym_Text_JoshPostBattle:
-	.string "You haven't seen anything of the ROCK\n"
-	.string "type's terrifying power!$"
+	.string "Nevard conhece cada arvore daqui!$"
 
 RustboroCity_Gym_Text_TommyIntro:
-	.string "If you can't beat me, you won't stand\n"
-	.string "a chance against ROXANNE!$"
+	.string "O cafe cresce com paciencia!\n"
+	.string "Minha equipe tambem!$"
 
 RustboroCity_Gym_Text_TommyDefeat:
-	.string "Wow! You've got some potential!$"
+	.string "Esta foi uma boa colheita...$"
 
 RustboroCity_Gym_Text_TommyPostBattle:
-	.string "ROXANNE is stronger than me by\n"
-	.string "several times.\p"
-	.string "You'd better be on your guard!$"
+	.string "O NEVARD e muito mais forte!$"
 
 RustboroCity_Gym_Text_MarcIntro:
-	.string "We might be in the middle of town,\n"
-	.string "but so what?\p"
-	.string "My ROCK POKéMON need room to\n"
-	.string "rampage!$"
+	.string "Na nossa terra, a forca vem\n"
+	.string "das raizes!$"
 
 RustboroCity_Gym_Text_MarcDefeat:
-	.string "Oh, man oh man!\n"
-	.string "Our challenger is one feisty customer!$"
+	.string "Minhas raizes enfraqueceram!$"
 
 RustboroCity_Gym_Text_MarcPostBattle:
-	.string "I have to hand it to our LEADER.\p"
-	.string "It took smarts and sense for her to\n"
-	.string "pick the ROCK type at her young age.$"
+	.string "Treinar no cafezal da resultado.$"
 
 RustboroCity_Gym_Text_RoxanneIntro:
-	.string "Hello, I am ROXANNE, the RUSTBORO\n"
-	.string "POKéMON GYM LEADER.\p"
-	.string "I became a GYM LEADER so that I might\n"
-	.string "apply what I learned at the POKéMON\l"
-	.string "TRAINER'S SCHOOL in battle.\p"
-	.string "Would you kindly demonstrate how you\n"
-	.string "battle, and with which POKéMON?$"
+	.string "NEVARD: Bem-vindo a COLHEITA!\p"
+	.string "Cuido do cafe e dos POKéMON\n"
+	.string "que vivem nestas terras.\p"
+	.string "Mostre se sua equipe tambem\n"
+	.string "pode florescer numa batalha!$"
 
 RustboroCity_Gym_Text_RoxanneDefeat:
-	.string "So…\n"
-	.string "I lost…\p"
-	.string "It seems that I still have much more\n"
-	.string "to learn…\p"
-	.string "I understand.\p"
-	.string "The POKéMON LEAGUE's rules state\n"
-	.string "that TRAINERS are to be given this\l"
-	.string "if they defeat a GYM LEADER.\p"
-	.string "Please accept the official POKéMON\n"
-	.string "LEAGUE STONE BADGE.$"
+	.string "NEVARD: Voce venceu!\p"
+	.string "Assim como uma boa plantacao,\n"
+	.string "um treinador precisa crescer.\p"
+	.string "Receba a INSIGNIA COLHEITA!$"
 
 RustboroCity_Gym_Text_ReceivedStoneBadge:
-	.string "{PLAYER} received the STONE BADGE\n"
-	.string "from ROXANNE.$"
+	.string "{PLAYER} recebeu a INSIGNIA\n"
+	.string "COLHEITA de NEVARD!$"
 
 RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
-	.string "The STONE BADGE heightens the ATTACK\n"
-	.string "power of your POKéMON.\p"
-	.string "It also enables them to use the HM move\n"
-	.string "CUT outside of battle.\p"
-	.string "Please take this with you, too.$"
+	.string "A primeira insignia prova que\n"
+	.string "voce e um grande treinador!\p"
+	.string "Ela permite usar CUT fora de\n"
+	.string "batalha. Pegue esta TM!$"
 
 RustboroCity_Gym_Text_ExplainRockTomb:
-	.string "That TECHNICAL MACHINE, TM39,\n"
-	.string "contains ROCK TOMB.\p"
-	.string "It not only inflicts damage by dropping\n"
-	.string "rocks, it also lowers SPEED.\p"
-	.string "If you use a TM, it instantly teaches\n"
-	.string "the move to a POKéMON.\p"
-	.string "Remember, a TM can be used only once,\n"
-	.string "so think before you use it.$"
+	.string "Esta TM ensina BULLET SEED.\p"
+	.string "Use o poder das sementes\n"
+	.string "para enfrentar novos desafios!$"
 
 RustboroCity_Gym_Text_RoxannePostBattle:
-	.string "Since you are so strong, you should\n"
-	.string "challenge other GYM LEADERS.\p"
-	.string "By battling many TRAINERS, you should\n"
-	.string "learn many things.$"
+	.string "NEVARD: O campo sempre muda.\p"
+	.string "Continue treinando e cuidando\n"
+	.string "dos seus POKéMON!$"
 
 RustboroCity_Gym_Text_GymStatue:
-	.string "RUSTBORO CITY POKéMON GYM$"
+	.string "VILA DA COLHEITA - GINASIO\n"
+	.string "LIDER NEVARD$"
 
 RustboroCity_Gym_Text_GymStatueCertified:
-	.string "RUSTBORO CITY POKéMON GYM\p"
-	.string "ROXANNE'S CERTIFIED TRAINERS:\n"
-	.string "{PLAYER}$"
+	.string "VILA DA COLHEITA - GINASIO\p"
+	.string "NEVARD APROVA: {PLAYER}$"
 
 RustboroCity_Gym_Text_RoxanneRegisterCall:
-	.string "… … … … … …\n"
-	.string "… … … … … Beep!\p"
-	.string "ROXANNE: Oh, hello, {PLAYER}?\n"
-	.string "This is ROXANNE of RUSTBORO CITY.\p"
-	.string "I heard from BRAWLY that you're\n"
-	.string "moving up through the ranks of\l"
-	.string "TRAINERS at an incredible clip.\p"
-	.string "Well, I'd rather not think that\n"
-	.string "I can't beat you.\p"
-	.string "I promise, I will shape up my GYM\n"
-	.string "so that you may challenge us again.\p"
-	.string "I hope you'll be looking forward to\n"
-	.string "that occasion as much as me!\p"
-	.string "… … … … … …\n"
-	.string "… … … … … Click!$"
+	.string "NEVARD: Ate a proxima\n"
+	.string "colheita, {PLAYER}!$"
 
 RustboroCity_Gym_Text_RegisteredRoxanne:
-	.string "Registered GYM LEADER ROXANNE\n"
-	.string "in the POKéNAV.$"
+	.string "Registrado NEVARD no POKéNAV.$"
 
 RustboroCity_Gym_Text_RoxannePreRematch:
-	.string "ROXANNE: I'm so glad to see you again.\n"
-	.string "I'm ROXANNE, the GYM LEADER here.\p"
-	.string "I'm sure we've both experienced many\n"
-	.string "battles since we last met.\p"
-	.string "I would like to see how much better\n"
-	.string "we've become. Let us battle!$"
+	.string "NEVARD: Bem-vindo de volta!\n"
+	.string "Vamos lutar novamente?$"
 
 RustboroCity_Gym_Text_RoxanneRematchDefeat:
-	.string "Grr…\n"
-	.string "Again, I have lost…$"
+	.string "NEVARD: Boa batalha!$"
 
 RustboroCity_Gym_Text_RoxannePostRematch:
-	.string "ROXANNE: I still have much to learn\n"
-	.string "when it comes to battling POKéMON.\p"
-	.string "That awareness makes me love battling\n"
-	.string "all that much more!$"
+	.string "NEVARD: Ate outra vez!$"
 
 RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
-	.string "ROXANNE: I'm so glad to see you again.\n"
-	.string "I'm ROXANNE, the GYM LEADER here.\p"
-	.string "I'm sure we've both experienced many\n"
-	.string "battles since we last met.\p"
-	.string "I would like to see how much better\n"
-	.string "we've become…\p"
-	.string "Oh, no…\n"
-	.string "You only have one POKéMON with you?\p"
-	.string "Please return with at least one more\n"
-	.string "POKéMON.$"
+	.string "NEVARD: Volte com pelo menos\n"
+	.string "dois POKéMON para a revanche.$"
+
+Palm067_Enter::
+	setvar VAR_TEMP_8, 0
+	end
+
+Palm067_CheckClear::
+	goto_if_unset FLAG_DEFEATED_RUSTBORO_GYM, Palm067_NotClear
+	goto_if_not_defeated TRAINER_ROXANNE_1, Palm067_NotClear
+	setvar VAR_RESULT, TRUE
+	return
+
+Palm067_NotClear::
+	setvar VAR_RESULT, FALSE
+	return
+
+Palm065_Load::
+	call Palm067_CheckClear
+	goto_if_eq VAR_RESULT, TRUE, Palm065_LoadSolved
+	goto_if_lt VAR_TEMP_8, 1, Palm067_LoadDone
+	call Palm065_Water1
+	goto_if_lt VAR_TEMP_8, 2, Palm067_LoadDone
+	goto_if_not_defeated TRAINER_JOSH, Palm067_LoadFirstOnly
+	call Palm065_Water2
+	goto_if_lt VAR_TEMP_8, 3, Palm067_LoadDone
+	goto_if_not_defeated TRAINER_TOMMY, Palm067_LoadSecondOnly
+	call Palm065_Water3
+	end
+
+Palm067_LoadFirstOnly::
+	setvar VAR_TEMP_8, 1
+	end
+
+Palm067_LoadSecondOnly::
+	setvar VAR_TEMP_8, 2
+	end
+
+Palm067_LoadDone::
+	end
+
+Palm065_LoadSolved::
+	setvar VAR_TEMP_8, 3
+	call Palm065_Water1
+	call Palm065_Water2
+	call Palm065_Water3
+	end
+
+Palm065_Water1::
+	setmetatile 3, 15, 653, TRUE
+	setmetatile 3, 16, 654, TRUE
+	return
+
+Palm065_Gate1::
+	lockall
+	goto_if_ge VAR_TEMP_8, 1, Palm065_AlreadyOpen
+	goto_if_ne VAR_TEMP_8, 0, Palm065_Wait
+	setvar VAR_TEMP_8, 1
+	call Palm065_Water1
+	special DrawWholeMapView
+	msgbox Palm065_Text1, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Palm065_Water2::
+	setmetatile 7, 11, 655, TRUE
+	setmetatile 7, 12, 656, TRUE
+	setmetatile 7, 13, 657, TRUE
+	return
+
+Palm065_Gate2::
+	lockall
+	goto_if_ge VAR_TEMP_8, 2, Palm065_AlreadyOpen
+	goto_if_ne VAR_TEMP_8, 1, Palm065_Wait
+	goto_if_not_defeated TRAINER_JOSH, Palm066_Battle1
+	setvar VAR_TEMP_8, 2
+	call Palm065_Water2
+	special DrawWholeMapView
+	msgbox Palm065_Text2, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Palm065_Water3::
+	setmetatile 3, 7, 658, TRUE
+	setmetatile 3, 8, 659, TRUE
+	setmetatile 3, 9, 654, TRUE
+	setmetatile 4, 5, 660, FALSE
+	setmetatile 5, 5, 661, FALSE
+	setmetatile 6, 5, 662, FALSE
+	return
+
+Palm065_Gate3::
+	lockall
+	goto_if_ge VAR_TEMP_8, 3, Palm065_AlreadyOpen
+	goto_if_ne VAR_TEMP_8, 2, Palm065_Wait
+	goto_if_not_defeated TRAINER_TOMMY, Palm066_Battle2
+	setvar VAR_TEMP_8, 3
+	call Palm065_Water3
+	special DrawWholeMapView
+	msgbox Palm065_Text3, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Palm066_Battle1::
+	msgbox Palm066_TextBattle1, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Palm066_Battle2::
+	msgbox Palm066_TextBattle2, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Palm066_TextBattle1:
+	.string "Venca o treinador ao lado\n"
+	.string "do canteiro da direita.$"
+Palm066_TextBattle2:
+	.string "Venca o treinador ao lado\n"
+	.string "do canteiro da esquerda.$"
+
+Palm065_AlreadyOpen::
+	msgbox Palm065_TextOpen, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Palm065_Wait::
+	msgbox Palm065_TextWait, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Palm065_Text1:
+	.string "COMPORTA 1\n"
+	.string "A agua chegou as mudas.$"
+Palm065_Text2:
+	.string "COMPORTA 2\n"
+	.string "A agua chegou aos pes adultos.$"
+Palm065_Text3:
+	.string "COMPORTA 3\n"
+	.string "A ponte desceu. Nevard espera!$"
+Palm065_TextOpen:
+	.string "A agua corre por este canal.$"
+Palm065_TextWait:
+	.string "Sem pressao neste canal.\n"
+	.string "Confira a ordem com o guia.$"

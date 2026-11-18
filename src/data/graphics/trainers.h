@@ -583,6 +583,9 @@ const union AnimCmd *const sBackAnims_OldManPokedude[] = {
         .animation = anim,                                                                   \
     }}
 
+const u32 gTrainerFrontPic_PalmJay[] = INCGFX_U32("graphics/trainers/front_pics/palm_jay.png", ".4bpp.smol");
+const u16 gTrainerPalette_PalmJay[] = INCGFX_U16("graphics/trainers/front_pics/palm_jay.png", ".gbapal");
+
 const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
 {
     [TRAINER_PIC_NONE] =
@@ -785,6 +788,10 @@ const struct TrainerPicInfo gTrainerPicInfo[TRAINER_PIC_COUNT] =
     [TRAINER_PIC_ELITE_FOUR_SIDNEY] =
     {
         .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_EliteFourSidney, gTrainerPalette_EliteFourSidney),
+    },
+    [TRAINER_PIC_PALM_JAY] =
+    {
+        .frontPic = TRAINER_FRONT_PIC(gTrainerFrontPic_PalmJay, gTrainerPalette_PalmJay),
     },
     [TRAINER_PIC_ELITE_FOUR_PHOEBE] =
     {

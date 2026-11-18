@@ -1738,3 +1738,11 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
 	.include "data/scripts/wild_encounter.inc"
+
+	.include "data/maps/PalmRoute02/scripts.inc"
+	.include "data/maps/PalmBrisa/scripts.inc"
+
+	.include "data/maps/PalmTeatro/scripts.inc"
+	.include "data/maps/PalmRoute03/scripts.inc"
+
+	.include "data/maps/PalmFerralia/scripts.inc"

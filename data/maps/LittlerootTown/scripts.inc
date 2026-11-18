@@ -1,7 +1,5 @@
 LittlerootTown_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_OnFrame
-	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_OnWarp
+	map_script MAP_SCRIPT_ON_TRANSITION, Palm040_TownTransition
 	.byte 0
 
 	@ State descriptions for VAR_LITTLEROOT_TOWN_STATE
@@ -921,9 +919,9 @@ LittlerootTown_Text_WaitPlayer:
 
 LittlerootTown_Text_WearTheseRunningShoes:
 	.string "MOM: {PLAYER}! {PLAYER}! Did you\n"
-	.string "introduce yourself to PROF. BIRCH?\p"
+	.string "introduce yourself to PROF. ALEX?\p"
 	.string "Oh! What an adorable POKéMON!\n"
-	.string "You got it from PROF. BIRCH. How nice!\p"
+	.string "You got it from PROF. ALEX. How nice!\p"
 	.string "You're your father's child, all right.\n"
 	.string "You look good together with POKéMON!\p"
 	.string "Here, honey! If you're going out on an\n"
@@ -958,11 +956,10 @@ LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "The power of science is staggering!$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "PROF. BIRCH spends days in his LAB\n"
-	.string "studying, then he'll suddenly go out in\l"
-	.string "the wild to do more research…\p"
-	.string "When does PROF. BIRCH spend time\n"
-	.string "at home?$"
+	.string "O PROF. ALEX pesquisa a vida\n"
+	.string "dos POKéMON nesta regiao.\p"
+	.string "Ele gosta de explorar os campos\n"
+	.string "alem da vila.$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Um, um, um!\p"
@@ -983,28 +980,28 @@ LittlerootTown_Text_CanYouGoSeeWhatsHappening:
 	.string "for me?$"
 
 LittlerootTown_Text_YouSavedBirch:
-	.string "You saved PROF. BIRCH!\n"
-	.string "I'm so glad!$"
+	.string "Voce salvou o PROF. ALEX!\n"
+	.string "Ele nunca fica quieto na pesquisa.$"
 
 LittlerootTown_Text_GoodLuckCatchingPokemon:
 	.string "Are you going to catch POKéMON?\n"
 	.string "Good luck!$"
 
 LittlerootTown_Text_TownSign:
-	.string "LITTLEROOT TOWN\n"
-	.string "“A town that can't be shaded any hue.”$"
+	.string "VILA INICIAL\n"
+	.string "O inicio de uma grande jornada.$"
 
 LittlerootTown_Text_ProfBirchsLab:
-	.string "PROF. BIRCH'S POKéMON LAB$"
+	.string "LABORATORIO DO PROF. ALEX$"
 
 LittlerootTown_Text_PlayersHouse:
 	.string "{PLAYER}'s HOUSE$"
 
 LittlerootTown_Text_ProfBirchsHouse:
-	.string "PROF. BIRCH'S HOUSE$"
+	.string "PROF. ALEX'S HOUSE$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
-	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}!\n"
+	.string "PROF. ALEX: Well, well, {PLAYER}{KUN}!\n"
 	.string "That was good work out there!\p"
 	.string "I knew there was something special\n"
 	.string "about you when I first saw you,\l"
@@ -1014,3 +1011,190 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
 
+
+@ PALM v0.4.0: original 32x28 village, stock native tiles.
+Palm040_TownTransition::
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
+	setflag FLAG_VISITED_LITTLEROOT_TOWN
+	end
+
+Palm040_HomeTransition::
+	setflag FLAG_HIDE_LITTLEROOT_TOWN_BIRCH
+	setvar VAR_LITTLEROOT_INTRO_STATE, 8
+	setvar VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 2
+	setvar VAR_LITTLEROOT_HOUSES_STATE_MAY, 2
+	setvar VAR_LITTLEROOT_RIVAL_STATE, 4
+	setflag FLAG_HIDE_ROUTE_101_BIRCH_ZIGZAGOON_BATTLE
+	setflag FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG
+	setflag FLAG_HIDE_ROUTE_101_ZIGZAGOON
+	setflag FLAG_HIDE_ROUTE_101_BIRCH
+	setvar VAR_ROUTE101_STATE, 3
+	setvar VAR_OLDALE_TOWN_STATE, 1
+	end
+
+Palm040_ExitEast::
+	lockall
+	goto_if_set FLAG_SYS_POKEMON_GET, Palm040_EnterRoute
+	msgbox Palm040_TextNeedStarter, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_PLAYER, Palm040_StepWest
+	waitmovement 0
+	releaseall
+	end
+Palm040_EnterRoute::
+	warp MAP_ROUTE101, 2, 4
+	waitstate
+	releaseall
+	end
+Palm040_ReturnVillage::
+	lockall
+	warp MAP_LITTLEROOT_TOWN, 32, 22
+	waitstate
+	releaseall
+	end
+Palm040_StepWest::
+	walk_left
+	step_end
+
+Palm040_Mom::
+	lock
+	faceplayer
+	goto_if_unset FLAG_SYS_POKEMON_GET, Palm040_MomIntro
+	special HealPlayerParty
+	msgbox Palm040_TextMomHeal, MSGBOX_DEFAULT
+	release
+	end
+Palm040_MomIntro::
+	msgbox Palm040_TextMomIntro, MSGBOX_DEFAULT
+	release
+	end
+
+Palm040_Alex::
+	lock
+	faceplayer
+	goto_if_set FLAG_SYS_POKEMON_GET, Palm040_AlexDone
+	msgbox Palm040_TextSnivy, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Palm040_GiveSnivy
+	msgbox Palm040_TextFennekin, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Palm040_GiveFennekin
+	msgbox Palm040_TextMudkip, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Palm040_GiveMudkip
+	release
+	end
+Palm040_GiveSnivy::
+	givemon SPECIES_SNIVY, 5
+	setvar VAR_STARTER_MON, 0
+	goto Palm040_StarterReceived
+Palm040_GiveFennekin::
+	givemon SPECIES_FENNEKIN, 5
+	setvar VAR_STARTER_MON, 1
+	goto Palm040_StarterReceived
+Palm040_GiveMudkip::
+	givemon SPECIES_MUDKIP, 5
+	setvar VAR_STARTER_MON, 2
+Palm040_StarterReceived::
+	setflag FLAG_SYS_POKEMON_GET
+	setflag FLAG_RESCUED_BIRCH
+	setflag FLAG_SYS_POKEDEX_GET
+	special SetUnlockedPokedexFlags
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	setflag FLAG_ADVENTURE_STARTED
+	setflag FLAG_SYS_B_DASH
+	setflag FLAG_RECEIVED_RUNNING_SHOES
+	setvar VAR_LITTLEROOT_TOWN_STATE, 4
+	setvar VAR_BIRCH_LAB_STATE, 5
+	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
+	giveitem ITEM_POKE_BALL, 5
+	giveitem ITEM_POTION, 2
+Palm040_AlexDone::
+	msgbox Palm040_TextMission, MSGBOX_DEFAULT
+	release
+	end
+Palm040_Aide::
+	msgbox Palm040_TextAide, MSGBOX_NPC
+	end
+Palm040_Guide::
+	msgbox Palm040_TextGuide, MSGBOX_NPC
+	end
+Palm040_Neighbor::
+	msgbox Palm040_TextNeighbor, MSGBOX_NPC
+	end
+Palm040_Overlook::
+	msgbox Palm040_TextOverlook, MSGBOX_SIGN
+	end
+Palm040_LabSign::
+	msgbox Palm040_TextLabSign, MSGBOX_SIGN
+	end
+Palm040_HomeSign::
+	msgbox Palm040_TextHomeSign, MSGBOX_SIGN
+	end
+Palm040_NeighborSign::
+	msgbox Palm040_TextNeighborSign, MSGBOX_SIGN
+	end
+Palm040_TownSign::
+	msgbox Palm040_TextTownSign, MSGBOX_SIGN
+	end
+Palm040_TextNeedStarter::
+	.string "Antes de viajar, visite o\n"
+	.string "PROF. ALEX no laboratorio.$"
+Palm040_TextMomIntro::
+	.string "MAE: O PROF. ALEX esta esperando\n"
+	.string "voce no laboratorio ao norte.\p"
+	.string "Pedir ajuda tambem e\n"
+	.string "sinal de coragem!$"
+Palm040_TextMomHeal::
+	.string "MAE: Pronto, sua equipe descansou!\n"
+	.string "Volte sempre que precisar.$"
+Palm040_TextSnivy::
+	.string "PROF. ALEX: Vamos pesquisar os\n"
+	.string "POKéMON que vivem junto dos rios!\p"
+	.string "Quer viajar com SNIVY,\n"
+	.string "o POKéMON do tipo GRAMA?$"
+Palm040_TextFennekin::
+	.string "Prefere FENNEKIN,\n"
+	.string "o POKéMON do tipo FOGO?$"
+Palm040_TextMudkip::
+	.string "Quer escolher MUDKIP,\n"
+	.string "o POKéMON do tipo AGUA?$"
+Palm040_TextMission::
+	.string "PROF. ALEX: Siga pela saida leste\n"
+	.string "ate a ROTA 01.\p"
+	.string "Depois, visite a VILA DA COLHEITA.\n"
+	.string "O NEVARD cuida do ginasio de la!$"
+Palm040_TextAide::
+	.string "Apos receber seu POKéMON,\n"
+	.string "confira as POKé BOLAS na mochila.\p"
+	.string "Use-as para capturar os\n"
+	.string "POKéMON selvagens!$"
+Palm040_TextGuide::
+	.string "O laboratorio fica ao norte.\n"
+	.string "A ROTA 01 comeca a leste da vila.$"
+Palm040_TextNeighbor::
+	.string "Leia as placas pelo caminho.\n"
+	.string "Elas ajudam quem esta comecando!$"
+Palm040_TextOverlook::
+	.string "Ao longe, um pico desaparece\n"
+	.string "entre nuvens e nevoa.\p"
+	.string "Daqui, a vila parece tao pequena.$"
+Palm040_TextLabSign::
+	.string "LABORATORIO DO PROF. ALEX$"
+Palm040_TextHomeSign::
+	.string "CASA DE {PLAYER} ao noroeste.$"
+Palm040_TextNeighborSign::
+	.string "CASA DA VIZINHANCA$"
+Palm040_TextTownSign::
+	.string "VILA INICIAL\n"
+	.string "Saida leste: ROTA 01.$"
+
+Palm051_OverlookNpc::
+	msgbox Palm040_TextOverlook, MSGBOX_NPC
+	end
+
+Palm064_RiverLookout::
+	msgbox Palm064_RiverLookout_Text, MSGBOX_SIGN
+	end
+
+Palm064_RiverLookout_Text:
+	.string "MIRANTE DO RIO\n"
+	.string "Alex anota o nivel da agua\n"
+	.string "quando a nevoa baixa.$"

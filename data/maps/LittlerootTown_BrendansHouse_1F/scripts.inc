@@ -1,7 +1,5 @@
 LittlerootTown_BrendansHouse_1F_MapScripts::
-	map_script MAP_SCRIPT_ON_LOAD, LittlerootTown_BrendansHouse_1F_OnLoad
-	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_1F_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_BrendansHouse_1F_OnFrame
+	map_script MAP_SCRIPT_ON_TRANSITION, Palm040_HomeTransition
 	.byte 0
 
 LittlerootTown_BrendansHouse_1F_OnLoad:
@@ -30,18 +28,18 @@ LittlerootTown_BrendansHouse_1F_OnTransition:
 	end
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToStairs::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 8, 4
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_PALM_BRENDAN_MOM, 8, 4
+	setobjectmovementtype LOCALID_PALM_BRENDAN_MOM, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToTV::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 4, 5
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_PALM_BRENDAN_MOM, 4, 5
+	setobjectmovementtype LOCALID_PALM_BRENDAN_MOM, MOVEMENT_TYPE_FACE_UP
 	return
 
 LittlerootTown_BrendansHouse_1F_EventScript_MoveMomToDoor::
-	setobjectxyperm LOCALID_PLAYERS_HOUSE_1F_MOM, 9, 8
-	setobjectmovementtype LOCALID_PLAYERS_HOUSE_1F_MOM, MOVEMENT_TYPE_FACE_UP
+	setobjectxyperm LOCALID_PALM_BRENDAN_MOM, 9, 8
+	setobjectmovementtype LOCALID_PALM_BRENDAN_MOM, MOVEMENT_TYPE_FACE_UP
 	return
 
 @ Many of the below scripts have no gender check because they assume youre in the correct house
@@ -59,7 +57,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_GoUpstairsToSetClock::
 	msgbox PlayersHouse_1F_Text_GoSetTheClock, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
-	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
+	applymovement LOCALID_PALM_BRENDAN_MOM, LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs
 	waitmovement 0
 	warp MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F, 7, 1
 	waitstate
@@ -72,7 +70,7 @@ LittlerootTown_BrendansHouse_1F_Movement_PushTowardStairs:
 
 LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn::
 	lockall
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
+	setvar VAR_0x8004, LOCALID_PALM_BRENDAN_MOM
 	setvar VAR_0x8005, MALE
 	goto PlayersHouse_1F_EventScript_EnterHouseMovingIn
 	end
@@ -80,7 +78,7 @@ LittlerootTown_BrendansHouse_1F_EventScript_EnterHouseMovingIn::
 LittlerootTown_BrendansHouse_1F_EventScript_PetalburgGymReport::
 	lockall
 	setvar VAR_0x8004, MALE
-	setvar VAR_0x8005, LOCALID_PLAYERS_HOUSE_1F_MOM
+	setvar VAR_0x8005, LOCALID_PALM_BRENDAN_MOM
 	goto PlayersHouse_1F_EventScript_PetalburgGymReportMale
 	end
 
@@ -112,7 +110,7 @@ LittlerootTown_BrendansHouse_1F_Movement_RivalMomApproach:
 
 LittlerootTown_BrendansHouse_1F_EventScript_GoSeeRoom::
 	lockall
-	setvar VAR_0x8004, LOCALID_PLAYERS_HOUSE_1F_MOM
+	setvar VAR_0x8004, LOCALID_PALM_BRENDAN_MOM
 	setvar VAR_0x8005, MALE
 	applymovement VAR_0x8004, Common_Movement_WalkInPlaceFasterLeft
 	waitmovement 0
@@ -322,7 +320,7 @@ PlayersHouse_1F_Text_ItsOverWeMissedHim:
 PlayersHouse_1F_Text_GoIntroduceYourselfNextDoor:
 	.string "Oh, yes.\n"
 	.string "One of DAD's friends lives in town.\p"
-	.string "PROF. BIRCH is his name.\p"
+	.string "PROF. ALEX is his name.\p"
 	.string "He lives right next door, so you should\n"
 	.string "go over and introduce yourself.$"
 
@@ -331,7 +329,7 @@ PlayersHouse_1F_Text_SeeYouHoney:
 
 PlayersHouse_1F_Text_DidYouMeetProfBirch:
 	.string "MOM: Did you introduce yourself to\n"
-	.string "PROF. BIRCH?$"
+	.string "PROF. ALEX?$"
 
 PlayersHouse_1F_Text_YouShouldRestABit:
 	.string "MOM: How are you doing, {PLAYER}?\n"

@@ -495,6 +495,9 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
 #include "data/object_events/object_event_graphics_info.h"
 #include "data/object_events/object_event_graphics_info_followers.h"
 
+static const u16 sObjectEventPal_Nevard[] = INCGFX_U16("graphics/object_events/palettes/nevard.pal", ".gbapal");
+static const u16 sObjectEventPal_PalmJay[] = INCGFX_U16("graphics/object_events/palettes/palm_jay.pal", ".gbapal");
+
 static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Npc1,                  OBJ_EVENT_PAL_TAG_NPC_1},
     {gObjectEventPal_Npc2,                  OBJ_EVENT_PAL_TAG_NPC_2},
@@ -584,6 +587,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPaletteEmotes,             OBJ_EVENT_PAL_TAG_EMOTES},
     {gObjectEventPaletteNeonLight,          OBJ_EVENT_PAL_TAG_NEON_LIGHT},
 #ifdef BUGFIX
+    {sObjectEventPal_Nevard, OBJ_EVENT_PAL_TAG_NEVARD},
+    {sObjectEventPal_PalmJay, OBJ_EVENT_PAL_TAG_PALM_JAY},
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else
     {}, // BUG: FindObjectEventPaletteIndexByTag looks for OBJ_EVENT_PAL_TAG_NONE and not 0x0.

@@ -44,7 +44,7 @@ const u16 gTilesetPalettes_SecretBaseRedCave[][16] =
 
 #if !IS_FRLG
 
-const u32 gTilesetTiles_Petalburg[] = INCGFX_U32("data/tilesets/secondary/petalburg/tiles.png", ".4bpp.fastSmol", "-num_tiles 159 -Wnum_tiles");
+const u32 gTilesetTiles_Petalburg[] = INCGFX_U32("data/tilesets/secondary/petalburg/tiles.png", ".4bpp.fastSmol", "-num_tiles 404 -Wnum_tiles");
 
 const u16 gTilesetPalettes_Petalburg[][16] =
 {
@@ -88,7 +88,7 @@ const u16 gTilesetPalettes_Rustboro[][16] =
     INCGFX_U16("data/tilesets/secondary/rustboro/palettes/15.pal", ".gbapal"),
 };
 
-const u32 gTilesetTiles_Dewford[] = INCGFX_U32("data/tilesets/secondary/dewford/tiles.png", ".4bpp.fastSmol", "-num_tiles 503 -Wnum_tiles");
+const u32 gTilesetTiles_Dewford[] = INCGFX_U32("data/tilesets/secondary/dewford/tiles.png", ".4bpp.fastSmol", "-num_tiles 512 -Wnum_tiles");
 
 const u16 gTilesetPalettes_Dewford[][16] =
 {
@@ -1031,7 +1031,7 @@ const u16 gTilesetPalettes_Unused2[][16] =
     INCGFX_U16("data/tilesets/secondary/unused_2/palettes/15.pal", ".gbapal"),
 };
 
-const u32 gTilesetTiles_RustboroGym[] = INCGFX_U32("data/tilesets/secondary/rustboro_gym/tiles.png", ".4bpp.fastSmol", "-num_tiles 60 -Wnum_tiles");
+const u32 gTilesetTiles_RustboroGym[] = INCGFX_U32("data/tilesets/secondary/rustboro_gym/tiles.png", ".4bpp.fastSmol", "-num_tiles 428 -Wnum_tiles");
 
 const u16 gTilesetPalettes_RustboroGym[][16] =
 {
