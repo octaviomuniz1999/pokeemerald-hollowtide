@@ -1,0 +1,369 @@
+{
+  "project": "Pokémon Hollowtide",
+  "old_project_codename": "Pokémon PALM",
+  "as_of": "2026-11-18",
+  "language_game": "en",
+  "language_developer_prompts": "pt-BR",
+  "platforms": {
+    "gba": "pokeemerald-expansion (Claude)",
+    "ds": "HeartGold hg-engine (Codex)"
+  },
+  "status_warning": "GBA source historic, current DS code absent; route03/Ferralia on DS requested but not proven delivered",
+  "main_theme": "vínculo; expressão poética sem lição/moral fechada",
+  "region": {
+    "definitive_name": null,
+    "shape": "ferradura e mar central",
+    "town_map_coordinates_verified": false
+  },
+  "starters": [
+    {
+      "species": "Snivy",
+      "level": 5
+    },
+    {
+      "species": "Fennekin",
+      "level": 5
+    },
+    {
+      "species": "Mudkip",
+      "level": 5
+    }
+  ],
+  "professor": "Alex",
+  "player_is_tavinho": false,
+  "leaders": [
+    {
+      "order": 1,
+      "name": "Nevard",
+      "type": "Grama",
+      "city": "Vila da Colheita",
+      "team": [
+        {
+          "pokemon": "Shroomish",
+          "level": 12
+        },
+        {
+          "pokemon": "Treecko",
+          "level": 14
+        }
+      ],
+      "ace": "Treecko"
+    },
+    {
+      "order": 2,
+      "name": "Jay",
+      "type": "Fantasma",
+      "city": "Cidade da Brisa",
+      "team": [
+        {
+          "pokemon": "Shuppet",
+          "level": 18
+        },
+        {
+          "pokemon": "Misdreavus",
+          "level": 21
+        }
+      ],
+      "ace": "Misdreavus"
+    },
+    {
+      "order": 3,
+      "name": "Vessel",
+      "type": "Aço",
+      "city": "Ferrália",
+      "team": [
+        {
+          "pokemon": "Magnemite",
+          "level": 22
+        },
+        {
+          "pokemon": "Mawile",
+          "level": 24
+        },
+        {
+          "pokemon": "Aron",
+          "level": 26
+        }
+      ],
+      "ace": "Aron"
+    },
+    {
+      "order": 4,
+      "name": "Tchum",
+      "type": "Terra",
+      "city": "Cidade dos Pilares",
+      "team": [
+        {
+          "pokemon": "Sandshrew",
+          "level": 27
+        },
+        {
+          "pokemon": "Phanpy",
+          "level": 28
+        },
+        {
+          "pokemon": "Marowak de Kanto",
+          "level": 31
+        }
+      ],
+      "ace": "Marowak de Kanto"
+    },
+    {
+      "order": 5,
+      "name": "Jade",
+      "type": "Psíquico",
+      "city": "Vila Serenia",
+      "team": [
+        {
+          "pokemon": "Chimecho",
+          "level": 34
+        },
+        {
+          "pokemon": "Gardevoir",
+          "level": 36
+        },
+        {
+          "pokemon": "Espeon Lau",
+          "level": 38
+        }
+      ],
+      "ace": "Espeon Lau"
+    },
+    {
+      "order": 6,
+      "name": "Chelsia",
+      "type": "Fada",
+      "city": "Cidade do Horizonte",
+      "team": [
+        {
+          "pokemon": "Clefable",
+          "level": 40
+        },
+        {
+          "pokemon": "Azumarill",
+          "level": 41
+        },
+        {
+          "pokemon": "Sylveon",
+          "level": 43
+        }
+      ],
+      "ace": "Sylveon"
+    },
+    {
+      "order": 7,
+      "name": "Hoc",
+      "type": "Elétrico",
+      "city": "Voltara",
+      "team": [
+        {
+          "pokemon": "Jolteon",
+          "level": 44
+        },
+        {
+          "pokemon": "Luxray",
+          "level": 45
+        },
+        {
+          "pokemon": "Ampharos",
+          "level": 46
+        },
+        {
+          "pokemon": "Rotom",
+          "level": 47
+        }
+      ],
+      "ace": "Rotom"
+    },
+    {
+      "order": 8,
+      "name": "Nami",
+      "type": "Água",
+      "city": "Cidade das Marés",
+      "team": [
+        {
+          "pokemon": "Pelipper",
+          "level": 47
+        },
+        {
+          "pokemon": "Ludicolo",
+          "level": 48
+        },
+        {
+          "pokemon": "Wailord",
+          "level": 49
+        },
+        {
+          "pokemon": "Milotic",
+          "level": 50
+        },
+        {
+          "pokemon": "Gyarados",
+          "level": 52
+        }
+      ],
+      "ace": "Gyarados"
+    }
+  ],
+  "elite": [
+    {
+      "order": 1,
+      "name": "Angelic",
+      "specialty": "Gelo",
+      "team": [
+        {
+          "pokemon": "Ninetales Alola",
+          "level": 55
+        },
+        {
+          "pokemon": "Froslass",
+          "level": 56
+        },
+        {
+          "pokemon": "Glaceon",
+          "level": 57
+        },
+        {
+          "pokemon": "Weavile",
+          "level": 58
+        },
+        {
+          "pokemon": "Mamoswine",
+          "level": 59
+        }
+      ],
+      "ace": "Mamoswine"
+    },
+    {
+      "order": 2,
+      "name": "Riven",
+      "specialty": "Normal",
+      "team": [
+        {
+          "pokemon": "Furfrou",
+          "level": 58
+        },
+        {
+          "pokemon": "Stoutland",
+          "level": 59
+        },
+        {
+          "pokemon": "Porygon2",
+          "level": 59
+        },
+        {
+          "pokemon": "Zoroark Hisui",
+          "level": 60
+        },
+        {
+          "pokemon": "Porygon-Z",
+          "level": 62
+        }
+      ],
+      "ace": "Porygon-Z"
+    },
+    {
+      "order": 3,
+      "name": "Du",
+      "specialty": "Lutador",
+      "team": [
+        {
+          "pokemon": "Hawlucha",
+          "level": 61
+        },
+        {
+          "pokemon": "Infernape",
+          "level": 62
+        },
+        {
+          "pokemon": "Lucario",
+          "level": 63
+        },
+        {
+          "pokemon": "Kommo-o",
+          "level": 64
+        },
+        {
+          "pokemon": "Conkeldurr",
+          "level": 66
+        }
+      ],
+      "ace": "Conkeldurr"
+    },
+    {
+      "order": 4,
+      "name": "Pkas",
+      "specialty": "Solar (misto)",
+      "team": [
+        {
+          "pokemon": "Torkoal",
+          "level": 65
+        },
+        {
+          "pokemon": "Venusaur",
+          "level": 66
+        },
+        {
+          "pokemon": "Heliolisk",
+          "level": 67
+        },
+        {
+          "pokemon": "Volcarona",
+          "level": 68
+        },
+        {
+          "pokemon": "Mega Charizard X",
+          "level": 70
+        }
+      ],
+      "ace": "Mega Charizard X"
+    }
+  ],
+  "champion": {
+    "name": "Doge",
+    "team": [
+      "Meowscarada",
+      "Ninetales Kanto",
+      "Vaporeon",
+      "Umbreon",
+      "Lugia",
+      "Mega Latios"
+    ],
+    "last": "Mega Latios"
+  },
+  "postgame": {
+    "guardian": "Cynthia, Mega Garchomp último",
+    "boss": "Tavinho",
+    "team": [
+      "Pelipper",
+      "Swampert",
+      "Scizor",
+      "Garchomp",
+      "Urshifu Rapid Strike",
+      "Primal Kyogre"
+    ],
+    "last": "Primal Kyogre",
+    "blue_orb": true,
+    "resolution": "Doge sela Kyogre em Marine Cave de Hoenn"
+  },
+  "villains": {
+    "group": "Team Palm",
+    "chief": "Abelf",
+    "admins": [
+      "Lela",
+      "Vega"
+    ],
+    "mechanism": "PALM Coin, controle de água/energia/infraestrutura, criptomineração",
+    "football_references_allowed": false
+  },
+  "sprite_policy": "placeholder até usuário fornecer final; Falkner somente placeholder visual DS Nevard",
+  "new_policy": "primeiro mundo e sistemas funcionais; narrativas maiores depois; reservar cenários com intenção",
+  "gaps": [
+    "nome final da região",
+    "offsets Town Map",
+    "DS source sem acesso",
+    "validação atual do GBA source",
+    "assets de personagens finais",
+    "flags/recompensas finais"
+  ]
+}
