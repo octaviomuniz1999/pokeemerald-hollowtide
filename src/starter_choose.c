@@ -110,7 +110,6 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
     {8, 4},
 };
 
-// Hollowtide: iniciais canonicos (Professor Alex) — Snivy / Fennekin / Mudkip
 #define GRASS_STARTER (IS_FRLG ? SPECIES_BULBASAUR  : SPECIES_SNIVY)
 #define FIRE_STARTER  (IS_FRLG ? SPECIES_CHARMANDER : SPECIES_FENNEKIN)
 #define WATER_STARTER (IS_FRLG ? SPECIES_SQUIRTLE   : SPECIES_MUDKIP )

@@ -1,6 +1,5 @@
 Route101_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, Route101_OnTransition
-	map_script MAP_SCRIPT_ON_FRAME_TABLE, Route101_OnFrame
+	map_script MAP_SCRIPT_ON_TRANSITION, Palm050_OnTransition
 	.byte 0
 
 Route101_OnTransition:
@@ -270,29 +269,107 @@ Route101_Text_DontLeaveMe:
 	.string "Don't leave me like this!$"
 
 Route101_Text_YouSavedMe:
-	.string "PROF. BIRCH: Whew…\p"
-	.string "I was in the tall grass studying wild\n"
-	.string "POKéMON when I was jumped.\p"
-	.string "You saved me.\n"
-	.string "Thanks a lot!\p"
-	.string "Oh?\p"
-	.string "Hi, you're {PLAYER}{KUN}!\p"
-	.string "This is not the place to chat, so come\n"
-	.string "by my POKéMON LAB later, okay?$"
+	.string "PROF. ALEX: Ufa! Voce me salvou!\p"
+	.string "Eu observava os POKéMON na\n"
+	.string "mata quando fui surpreendido.\p"
+	.string "{PLAYER}, obrigado de verdade!\p"
+	.string "Vamos conversar no meu\n"
+	.string "LABORATORIO.$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
-	.string "If POKéMON get tired, take them to\n"
-	.string "a POKéMON CENTER.\p"
-	.string "There's a POKéMON CENTER in OLDALE\n"
-	.string "TOWN right close by.$"
+	.string "ROTA 01: o caminho leva ate\n"
+	.string "a VILA DA COLHEITA.\p"
+	.string "La tem um CENTRO POKéMON\n"
+	.string "para recuperar sua equipe.$"
 
 Route101_Text_WildPokemonInTallGrass:
-	.string "Wild POKéMON will jump out at you in\n"
-	.string "tall grass.\p"
-	.string "If you want to catch POKéMON, you have\n"
-	.string "to go into the tall grass and search.$"
+	.string "A terra daqui e muito fertil.\n"
+	.string "POKéMON selvagens aparecem\l"
+	.string "no meio da vegetacao.$"
 
 Route101_Text_RouteSign:
-	.string "ROUTE 101\n"
-	.string "{UP_ARROW} OLDALE TOWN$"
+	.string "ROTA 01\n"
+	.string "{UP_ARROW} VILA DA COLHEITA$"
 
+
+@ PALM v0.5.0
+Palm050_OnTransition::
+	setflag FLAG_UNUSED_0x021
+	call_if_unset FLAG_UNUSED_0x022, Palm050_PlantOran
+	end
+
+Palm050_PlantOran::
+	setberrytree BERRY_TREE_PALM_ROUTE01_ORAN, BERRY_ID_ORAN, BERRY_STAGE_BERRIES
+	setflag FLAG_UNUSED_0x022
+	return
+
+Palm050_ToHarvest::
+	lockall
+	warp MAP_OLDALE_TOWN, 9, 1
+	waitstate
+	releaseall
+	end
+
+Palm050_FromHarvest::
+	lockall
+	warp MAP_ROUTE101, 9, 51
+	waitstate
+	releaseall
+	end
+
+Palm050_Walker::
+	msgbox Palm050_TextWalker, MSGBOX_NPC
+	end
+
+Palm050_Kai::
+	trainerbattle_single TRAINER_PALM_KAI, Palm050_TextKaiBefore, Palm050_TextKaiLose
+	msgbox Palm050_TextKaiAfter, MSGBOX_AUTOCLOSE
+	end
+
+Palm050_Min::
+	trainerbattle_single TRAINER_PALM_MIN, Palm050_TextMinBefore, Palm050_TextMinLose
+	msgbox Palm050_TextMinAfter, MSGBOX_AUTOCLOSE
+	end
+
+Palm050_NorthSign::
+	msgbox Palm050_TextNorthSign, MSGBOX_SIGN
+	end
+
+Palm050_SouthSign::
+	msgbox Palm050_TextSouthSign, MSGBOX_SIGN
+	end
+
+Palm050_TextWalker:
+	.string "Na grama alta vivem POKéMON.\p"
+	.string "Siga a trilha e atravesse a ponte\n"
+	.string "para chegar a VILA DA COLHEITA.$"
+
+Palm050_TextKaiBefore:
+	.string "Primeira viagem? Vamos testar\n"
+	.string "nossos POKéMON!$"
+
+Palm050_TextKaiLose:
+	.string "Essa foi por pouco!$"
+
+Palm050_TextKaiAfter:
+	.string "Ate os menores POKéMON\n"
+	.string "podem surpreender!$"
+
+Palm050_TextMinBefore:
+	.string "A natureza esta cheia de surpresas.\n"
+	.string "Que tal uma batalha?$"
+
+Palm050_TextMinLose:
+	.string "Voce me surpreendeu tambem!$"
+
+Palm050_TextMinAfter:
+	.string "Voce esta pronto para conhecer\n"
+	.string "a VILA DA COLHEITA!$"
+
+Palm050_TextNorthSign:
+	.string "ROTA 01\n"
+	.string "Oeste: VILA INICIAL.$"
+
+Palm050_TextSouthSign:
+	.string "ROTA 01\n"
+	.string "Sul: VILA DA COLHEITA.$"
