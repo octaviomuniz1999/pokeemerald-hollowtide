@@ -20,8 +20,8 @@ Status ao lado de cada item: `[ ]` a fazer · `[~]` em andamento · `[x]` conclu
 - [x] Decisões e tabela de nomes (`DECISOES.md`), região Lunia, seções de mapa em inglês
 - [x] Exp. Share sempre ativo, seguidores, dia/noite (padrão da expansion), flags de QA
 - [x] Ferramentas: renderizador, folha de metatiles, linter, correção de colisão, runner/driver de emulador
-- [ ] Título/abertura com identidade Hollowtide; créditos "Created by respectlol1"
-- [ ] Pokédex regional (~250 espécies por bioma) e tabelas de encontro por rota
+- [x] Título com HOLLOWTIDE e créditos "Created by respectlol1" (fundo do título: Rayquaza placeholder — Kyogre revelaria o pós-jogo)
+- [~] Pokédex regional: design em `POKEDEX_LUNIA.md`; tabelas de encontro aplicadas por capítulo ao construir os mapas
 - [~] Curva de níveis da campanha (Cap. 1 ajustado; demais capítulos ao construir)
 - [ ] Field moves sem HM (itens-chave/habilidades de campo)
 - [ ] Town Map de Lunia (gráfico + seções)
@@ -31,7 +31,7 @@ Status ao lado de cada item: `[ ]` a fazer · `[~]` em andamento · `[x]` conclu
 | Cap. | Conteúdo | Base atual |
 |---|---|---|
 | 1 `[~]` | Dawnmere → Route 1 → Harvestvale; Prof. Alex, mãe + Medalhão de Atlas; recruta da Team Palm e irrigação; ginásio de Nevard (comportas) | colisão corrigida; texto 100% EN; Medalhão; tela de 3 Poké Balls; comportas persistentes; Team Palm verde-oliva; eventos 10/10 no emulador; **falta**: teste de balanceamento com itens/2º Pokémon, revisão de arte dos interiores e do lab |
-| 2 | Route 2 (campo → litoral) → Breezeport (cidade costeira ampla, farol, morro tipo Corcovado, orla); ginásio de Jay (Teatro dos Ecos) | refazer em escala (placeholder 20×20 do Alpha 02) |
+| 2 `[ ]` | Route 2 (campo → litoral) → Breezeport (cidade costeira ampla, farol, morro tipo Corcovado, orla); ginásio de Jay (Teatro dos Ecos) | refazer em escala (placeholder 20×20 do Alpha 02) |
 | 3 | Route 3 (praia → costa → serra → planalto, saída oeste/noroeste de Breezeport) → Ferralia (metrópole, ferrovia, viadutos, indústria); Vessel; "Carga Desviada" | refazer |
 | 4 | Route 4 → Tradepost ("Preço da Troca", Mestre Wen, PALM Coin) | novo |
 | 5 | Route 5 → Pillarton (barragens, Lela); Tchum | novo |
@@ -57,3 +57,9 @@ contam a história da água antes de qualquer cena longa.
 - `fluxo_cap1_balanco.py` (com `HT_STARTER`): partida realista no nível de chegada, por inicial.
 - Ganchos de QA só em build não-release: `FLAG_HT_QA_BOOST_PARTY` (+ `VAR_HT_QA_LEVEL`), `FLAG_HT_QA_NO_ENCOUNTERS`,
   `FLAG_HT_QA_NO_TRAINER_SEE`. **Distribuição sempre com `make RELEASE=1`.**
+
+## Próximo passo técnico
+
+Ferramenta de construção de mapas (`tools/hollowtide/mapgen`): pincéis com autotile aprendido dos mapas oficiais
+(caminhos, água com margem, florestas, ladeiras/penhascos com elevação), carimbos de prédios extraídos dos tilesets
+e validação automática (linter + render). Base para a Route 2 e a Breezeport em escala.
