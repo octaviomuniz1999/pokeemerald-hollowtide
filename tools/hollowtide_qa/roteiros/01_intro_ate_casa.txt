@@ -1,0 +1,73 @@
+# Novo jogo ate o jogador aparecer na casa (Vila Inicial). Gera nome "Aa", menino.
+wait 900
+press START 4 120
+press START 4 120
+press A 4 180
+mash A 10
+mash A 10
+mash A 10
+mash A 6
+mash A 6
+mash A 6
+mash A 6
+mash A 6
+mash A 6
+mash A 6
+mash A 6
+mash A 6
+mash A 6
+mash A 6
+mash A 6
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+press A 4 20
+press A 4 20
+press A 4 20
+press START 4 30
+press A 4 90
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 5
+mash A 4
+wait 60
+mash A 4
+wait 60
+mash A 4
+wait 60
+mash A 4
+wait 60
+mash A 4
+wait 60
+mash A 4
+wait 60
+mash A 4
+wait 60
+mash A 4
+wait 60
+mash A 4
+wait 60
+mash A 4
+wait 60
+mash A 4
+wait 60
+mash A 4
+wait 60

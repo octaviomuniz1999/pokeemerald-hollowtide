@@ -1,67 +1,68 @@
-# Auditoria GBA — Pokémon Hollowtide (corte 18/11/2026)
+# Auditoria GBA — Pokémon Hollowtide (corte 18/11/2026, revisão 2)
 
-Fonte desta auditoria: pacote `HOLLOWTIDE_CLAUDE_INICIO_RAPIDO_2026-11-18.zip` + este repositório.
-Tudo abaixo foi **verificado por comando** salvo quando marcado como "relato".
+Fontes: pacote completo `Pokemon_Hollowtide_Transferencia.part01-09.rar` (74/74 arquivos conferidos
+contra o SHA-256 do `manifesto_arquivos.csv`) + este repositório.
+**Testado** = executado em emulador (libmgba 0.10.2, headless, `tools/hollowtide_qa`). **Inspecionado** = só leitura de código/dados.
 
-## 1. Base real do repositório
+## 1. Base e importação
 
 | Item | Resultado |
 |---|---|
-| Motor | `pokeemerald-expansion` **1.17.3** (`include/constants/expansion.h`) |
-| Commit base | `99044bce` (upstream, 2026-11-18) — repositório limpo, **sem nenhum mapa `Palm*`** |
-| Toolchain | `arm-none-eabi-gcc 13.2.1` (Ubuntu `gcc-arm-none-eabi`), build `modern` |
-| Build | `make -j4` → exit 0, 2m48s, ROM 32 MB (uso 79,72%) |
-| SHA-256 ROM base (vanilla expansion) | `d6a0d08ef664ba16cd36b92dee7b5585b17a90b10a6594e872234ac3fdf0b290` |
-| SHA-256 ROM com iniciais Hollowtide | `b7553e5b51fc4cb2606350ab45d113bf6d2f17cd13b8f423c19bbf397a58dd19` |
+| Snapshot Alpha 02 | `pokeemerald-expansion` 1.17.3 = upstream `c460a866` + 113 arquivos Palm (42 novos, 71 alterados) |
+| Importação | branch `hollowtide/baseline-import-alpha02` (commit `d4d5b55b`, sem edições; só perdas de permissão do zip descartadas) |
+| Merge com upstream atual (`99044bce`) | 1 conflito trivial (`starter_choose.c`, mesma troca nos dois lados) |
+| Build do snapshot original | `make` exit 0 (2m48s) — compila como veio |
+| Build atual do branch | `make` exit 0, **0 avisos** de redefinição |
+| Patch `PATCH_ALPHA02_ROTA02_SEM_ROM` | **Não aplicar**: 3 dos 4 arquivos já estão no snapshot; o 4º (`PalmRoute02/scripts.inc`) é mais antigo que o do snapshot (11:24 vs 19:15 de 06/11). O instalador recusaria (hash de base diverge). |
+| `.rar` autorais | `rota_101` e `oldale_colheita` = mesma geometria do Alpha 02 (40×53 e 39×37), que tem ajustes posteriores (12 e 6 metatiles + elevação/colisão). `LittlerootTown.rar` não tem `map.bin` (só `map.json`/scripts vanilla) — a geometria da Vila está só no Alpha 02. |
 
-ROMs **não** são versionadas (`*.gba` está no `.gitignore`).
+## 2. Correções feitas nesta rodada
 
-## 2. Lacuna crítica: o snapshot Alpha 02 não veio no pacote
+1. **Respawn fora do mundo (bug grave, testado)**: a intro Palm pula o caminhão, que era quem chamava
+   `setrespawn`. Perder uma batalha antes do primeiro Centro Pokémon levava a **Petalburg City** (vanilla,
+   sem ligação com o mundo Hollowtide). Corrigido em `src/new_game.c`; agora o jogador volta para casa
+   e a mãe cura o time (validado em emulador perdendo para o recruta da Team Palm).
+2. **LOCALIDs conflitantes** entre as casas de Littleroot (2/3/4 vs 3/4/5): reordenados os objetos da casa da May; elimina 168 avisos.
 
-O `manifesto_arquivos.csv` lista, mas o ZIP "início rápido" **não contém**:
+## 3. Resultado do QA em emulador
 
-- `03_CODIGO_GBA/Pokemon_Palm_Alpha_02_Fonte_Completa_Colheita.zip` (56,4 MB, sha256 `0eedceae…c1`)
-- `03_CODIGO_GBA/MAPAS_AUTORAIS/LittlerootTown.rar`, `rota_101.rar`, `oldale_colheita.rar`
-- `03_CODIGO_GBA/PATCH_ALPHA02_ROTA02_SEM_ROM/*` (payload.zip, instalador, manifestos)
-- zips de `04_MAPAS_CONCEITOS` estão presentes; `07_` e `99_` não.
+| Verificação | Resultado |
+|---|---|
+| Boot, título, novo jogo, apresentação do PROF. ALEX, nome, gênero | **OK** (sprite ainda é o Birch — placeholder documentado) |
+| Início direto na casa (sem caminhão) | **OK** — o bug histórico "preso no caminhão" não ocorre |
+| Lab: Alex oferece Snivy → Fennekin → Mudkip; Snivy recebido + 5 Poké Balls + 2 Potions | **OK** (Snivy Lv5 confirmado em batalha) |
+| Vila Inicial → Rota 01 → Vila da Colheita (com batalhas selvagens/treinadores) | **OK** |
+| Portas da Colheita (Centro, Mart, Casa 1, Casa 2) | **OK** |
+| Porta do ginásio trancada até a irrigação ser restaurada | **OK** (intencional: `Palm071_LoadDoor`) |
+| Recruta da Team Palm (quiosque) → batalha | **OK** (interage; Poochyena Lv9) |
+| Saída Colheita → Rota 02 bloqueada antes do Nevard | **OK** |
+| Saída leste da Brisa bloqueada antes da Jay | **OK** |
+| Colheita ⇄ Rota 02 ⇄ Brisa ⇄ Rota 03 ⇄ Ferrália, ida e volta, até a Vila Inicial | **OK 13/13** (travas liberadas por injeção de flag) |
+| Entrar no ginásio com irrigação restaurada | **OK** |
+| Puzzle de comportas, Nevard, insígnia, TM Bullet Seed | **não testado** (exige vencer batalhas) |
+| Teatro/Jay, Ferrália (interior/ginásio) | **não testado** |
+| Salvar/carregar pelo menu | **não testado** |
 
-Consequência: não é possível auditar `PalmBrisa`, `PalmFerralia`, `PalmRoute02/03`, etc.,
-nem preservar a geometria autoral do Porymap. Pela regra 6 do pacote, **nenhum mapa foi inventado**.
+Para as passagens além do Nevard o teste **injeta** `FLAG_DEFEATED_RUSTBORO_GYM`, `FLAG_PALM_JAY_WON` e
+`FLAG_PALM_IRRIGATION_RESTORED` e desliga encontros selvagens via Repel em RAM. Isso valida mapas e
+warps, não as batalhas nem os eventos.
 
-## 3. Disponibilidade técnica do cânone (verificado em `include/constants/species.h`)
+## 4. Defeitos e divergências encontrados (abertos)
 
-Todas as espécies/formas dos times de líderes, Elite, Doge, Cynthia, Tavinho e Team Palm existem
-nesta versão, incluindo `SPECIES_CHARIZARD_MEGA_X`, `SPECIES_LATIOS_MEGA`, `SPECIES_GARCHOMP_MEGA`,
-`SPECIES_KYOGRE_PRIMAL`, `SPECIES_NINETALES_ALOLA`, `SPECIES_ZOROARK_HISUI`,
-`SPECIES_URSHIFU_RAPID_STRIKE`, Meowscarada, Kingambit. Mega/Primal em batalha ainda não testados.
-
-## 4. Inventário GBA vs GDD
-
-Legenda: **OK** implementado e testado · **NT** presente, não testado in-game · **—** não presente · **P** planejado
-
-| Localidade / sistema | Estado neste repo | Observação |
+| # | Achado | Tipo |
 |---|---|---|
-| Iniciais Snivy/Fennekin/Mudkip | **NT** | `src/starter_choose.c`; compila; não jogado em emulador |
-| Professor Alex / introdução | — | Emerald vanilla (Birch) |
-| Vila Inicial | — | depende de `LittlerootTown.rar` (ausente) |
-| Rota 01 | — | depende de `rota_101.rar` (ausente) |
-| Vila da Colheita + ginásio Nevard | — | depende de `oldale_colheita.rar` / Alpha 02 |
-| Nevard (Shroomish 12 / Treecko 14) | — | espécies disponíveis |
-| Rota 02 | — | patch Alpha 02 ausente |
-| Cidade da Brisa / Jay | — | P; layout GBA próprio, não a matriz DS |
-| Rota 03 / Ferrália / Vessel | — | P |
-| Team Palm, Elite, Doge, pós-Liga | — | P; espécies disponíveis |
-| Rival | divergente | rival Emerald ainda usa Treecko/Torchic/Mudkip nos times vanilla |
+| 1 | Emenda Rota 03 → Ferrália: corredor da Rota 03 ocupa as linhas 9–13, Ferrália só libera 9–11 (parede nas linhas 12–13) | defeito de mapa |
+| 2 | Popups/menu mostram nomes do Emerald: Brisa = DEWFORD TOWN, Rota 02 = ROUTE 104, Rota 03 = ROUTE 116, Ferrália = RUSTBORO CITY | divergência (nomes finais a decidir) |
+| 3 | Diálogos Palm (Alex, placas, Colheita) estão em **português**; cânone pede inglês no jogo | divergência |
+| 4 | Balanceamento: recruta Lv9 logo após a Rota 01 (Snivy chega Lv6); não venci com o script | balanceamento |
+| 5 | Brisa 20×20 (base Dewford) e Ferrália 26×20 — placeholders muito menores que o cânone (cidade grande / metrópole) | divergência de escopo |
+| 6 | Saída da Brisa para a Rota 03 é a **leste**; cânone atual: oeste/noroeste pela praia | divergência |
+| 7 | Rota 03 é um corredor reto 48×20; cânone pede serra, desníveis e bifurcações | divergência de escopo |
+| 8 | Transições entre áreas são feitas por gatilhos com `warp` (com fade), não por conexões de mapa — funciona, mas não é a travessia contínua do Emerald | observação |
+| 9 | Times de rival continuam os do Emerald | divergência |
 
-## 5. Testes feitos e não feitos
+## 5. Próximas mudanças de maior impacto
 
-- Feitos: build limpo da base; rebuild com iniciais; validação JSON do cânone.
-- Não feitos: execução em mGBA (nenhum emulador de jogo instalado no container), save/load,
-  batalhas Mega/Primal, `.xdelta` (sem ROM-base oficial declarada pelo usuário).
-
-## 6. Próximas mudanças de maior impacto
-
-1. **Receber o Alpha 02 + os três `.rar`** → importar como `baseline-import`, diff contra upstream 1.17.3,
-   compilar e listar o que quebrou na migração de versão.
-2. Trazer Vila Inicial / Rota 01 / Colheita autorais para o Porymap desta base, com warps e colisões.
-3. Professor Alex + times de rival coerentes com os novos iniciais; Nevard (trainer + ginásio placeholder).
+1. Corrigir a emenda Rota 03/Ferrália e dar nomes Hollowtide às seções de mapa (decisão de nomes pendente).
+2. Passagem de balanceamento do início (níveis da Rota 01/recruta/ginásio) e teste do puzzle do Nevard até a insígnia.
+3. Reconstruir a Brisa em escala de cidade costeira, com saída oeste para a Rota 03 (o esqueleto atual vira placeholder).
