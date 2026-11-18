@@ -1007,6 +1007,20 @@ void ChooseStarter(void)
     gMain.savedCallback = CB2_GiveStarter;
 }
 
+// Hollowtide: escolha do inicial no laboratorio, sem a batalha do Zigzagoon; volta ao campo e continua o script.
+static void CB2_HtGiveStarterAndReturn(void)
+{
+    *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
+    ScriptGiveMon(GetStarterPokemon(gSpecialVar_Result), 5, ITEM_NONE);
+    SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
+void HtChooseStarter(void)
+{
+    SetMainCallback2(CB2_ChooseStarter);
+    gMain.savedCallback = CB2_HtGiveStarterAndReturn;
+}
+
 static void CB2_GiveStarter(void)
 {
     u16 starterMon;

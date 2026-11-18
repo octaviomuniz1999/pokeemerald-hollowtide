@@ -43,9 +43,11 @@ def main(rom, runner, work, estado):
     q.run(["press DOWN 18 0", "wait 60", "mash A 6", "mash B 4"])
     check(q, "MAP_OLDALE_TOWN", "Colheita: saida para Rota 02 bloqueada antes do Nevard")
 
-    q.run([f"setflag {FLAGS_OFF} {FLAG_DEFEATED_RUSTBORO_GYM}"])
-    q.goto("MAP_OLDALE_TOWN", 18, 34)
-    q.run(["press DOWN 18 0", "wait 120", "shot qa_rota02.png"])
+    q.run([f"setflag {FLAGS_OFF} {FLAG_DEFEATED_RUSTBORO_GYM}", "walk UP 1", "wait 30"])
+    if q.mapname() == "MAP_OLDALE_TOWN":
+        q.goto("MAP_OLDALE_TOWN", 18, 34)
+        q.run(["press DOWN 18 0", "wait 120"])
+    q.run(["shot qa_rota02.png"])
     check(q, "MAP_PALM_ROUTE02", "Colheita -> Rota 02")
 
     cruzar(q, "MAP_PALM_ROUTE02", 25, 32, "DOWN", "MAP_PALM_BRISA", "Rota 02 -> Brisa", "qa_brisa.png")

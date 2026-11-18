@@ -140,6 +140,21 @@ class QA:
         # Usa as flags de QA da build (FLAG_HT_QA_NO_ENCOUNTERS 0x31 e FLAG_HT_QA_NO_TRAINER_SEE 0x30).
         return self.run(["setflag 1270 31", "setflag 1270 30"], "no_wild")
 
+    def flag(self, n, flags_off=0x1270):
+        """Le uma flag do SaveBlock1 no estado atual."""
+        import re as _re
+        out = subprocess.run([self.runner, self.rom, self._peek_script(SB1, 1), "-", SB1], capture_output=True, text=True, cwd=self.work).stdout
+        sb1 = int(_re.findall(r"peek \w+: (\w+)", out)[-1], 16)
+        addr = sb1 + flags_off + n // 8
+        out = subprocess.run([self.runner, self.rom, self._peek_script("%08x" % (addr & ~3), 1), "-", SB1], capture_output=True, text=True, cwd=self.work).stdout
+        word = int(_re.findall(r"peek \w+: (\w+)", out)[-1], 16)
+        return bool((word >> (8 * (addr & 3) + n % 8)) & 1)
+
+    def _peek_script(self, addr, n):
+        sp = f"{self.work}/peek.txt"
+        open(sp, "w").write(f"loadstate {self.state}\nwait 1\npeek {addr} {n}\n")
+        return sp
+
     def step(self, d, n=1, extra=None):
         return self.run([f"walk {d} {n}"] + (extra or []), f"walk {d} {n}")
 

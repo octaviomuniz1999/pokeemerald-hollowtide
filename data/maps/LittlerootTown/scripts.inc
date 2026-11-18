@@ -956,10 +956,10 @@ LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "The power of science is staggering!$"
 
 LittlerootTown_Text_BirchSpendsDaysInLab:
-	.string "O PROF. ALEX pesquisa a vida\n"
-	.string "dos POKéMON nesta regiao.\p"
-	.string "Ele gosta de explorar os campos\n"
-	.string "alem da vila.$"
+	.string "PROF. ALEX studies how POKéMON\n"
+	.string "live around here.\p"
+	.string "He loves wandering the fields,\n"
+	.string "notebook in hand.$"
 
 LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "Um, um, um!\p"
@@ -980,16 +980,16 @@ LittlerootTown_Text_CanYouGoSeeWhatsHappening:
 	.string "for me?$"
 
 LittlerootTown_Text_YouSavedBirch:
-	.string "Voce salvou o PROF. ALEX!\n"
-	.string "Ele nunca fica quieto na pesquisa.$"
+	.string "You helped PROF. ALEX!\n"
+	.string "He never sits still, that one.$"
 
 LittlerootTown_Text_GoodLuckCatchingPokemon:
 	.string "Are you going to catch POKéMON?\n"
 	.string "Good luck!$"
 
 LittlerootTown_Text_TownSign:
-	.string "VILA INICIAL\n"
-	.string "O inicio de uma grande jornada.$"
+	.string "DAWNMERE VILLAGE\n"
+	.string "Where every journey begins.$"
 
 LittlerootTown_Text_ProfBirchsLab:
 	.string "LABORATORIO DO PROF. ALEX$"
@@ -1059,6 +1059,7 @@ Palm040_StepWest::
 Palm040_Mom::
 	lock
 	faceplayer
+	goto_if_unset FLAG_HT_RECEIVED_ATLAS_MEDALLION, Palm040_MomMedallion
 	goto_if_unset FLAG_SYS_POKEMON_GET, Palm040_MomIntro
 	special HealPlayerParty
 	msgbox Palm040_TextMomHeal, MSGBOX_DEFAULT
@@ -1068,30 +1069,43 @@ Palm040_MomIntro::
 	msgbox Palm040_TextMomIntro, MSGBOX_DEFAULT
 	release
 	end
+Palm040_MomMedallion::
+	call Palm040_GiveMedallion
+	release
+	end
+
+@ Hollowtide: a mae chama o jogador na porta se ele ainda nao recebeu o Medalhao de Atlas.
+Palm040_MedallionTrigger::
+	goto_if_set FLAG_HT_RECEIVED_ATLAS_MEDALLION, Palm040_MedallionTriggerEnd
+	lockall
+	playse SE_PIN
+	turnobject LOCALID_PLAYER, DIR_WEST
+	call Palm040_GiveMedallion
+	releaseall
+Palm040_MedallionTriggerEnd::
+	end
+
+Palm040_GiveMedallion::
+	msgbox Palm040_TextMedallion, MSGBOX_DEFAULT
+	giveitem ITEM_ATLAS_MEDALLION
+	setflag FLAG_HT_RECEIVED_ATLAS_MEDALLION
+	msgbox Palm040_TextMedallion2, MSGBOX_DEFAULT
+	return
 
 Palm040_Alex::
 	lock
 	faceplayer
 	goto_if_set FLAG_SYS_POKEMON_GET, Palm040_AlexDone
-	msgbox Palm040_TextSnivy, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Palm040_GiveSnivy
-	msgbox Palm040_TextFennekin, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Palm040_GiveFennekin
-	msgbox Palm040_TextMudkip, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Palm040_GiveMudkip
-	release
-	end
-Palm040_GiveSnivy::
-	givemon SPECIES_SNIVY, 5
-	setvar VAR_STARTER_MON, 0
+	msgbox Palm040_TextAlexIntro, MSGBOX_DEFAULT
+	closemessage
+	special HtChooseStarter
+	waitstate
+	msgbox Palm040_TextAlexChosen, MSGBOX_DEFAULT
+	playfanfare MUS_OBTAIN_ITEM
+	message Palm040_TextReceivedPokedex
+	waitmessage
+	waitfanfare
 	goto Palm040_StarterReceived
-Palm040_GiveFennekin::
-	givemon SPECIES_FENNEKIN, 5
-	setvar VAR_STARTER_MON, 1
-	goto Palm040_StarterReceived
-Palm040_GiveMudkip::
-	givemon SPECIES_MUDKIP, 5
-	setvar VAR_STARTER_MON, 2
 Palm040_StarterReceived::
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_RESCUED_BIRCH
@@ -1135,56 +1149,58 @@ Palm040_TownSign::
 	msgbox Palm040_TextTownSign, MSGBOX_SIGN
 	end
 Palm040_TextNeedStarter::
-	.string "Antes de viajar, visite o\n"
-	.string "PROF. ALEX no laboratorio.$"
+	.string "It's not safe to cross the tall\n"
+	.string "grass without a POKéMON.\p"
+	.string "PROF. ALEX's lab is up the hill\n"
+	.string "to the north.$"
 Palm040_TextMomIntro::
-	.string "MAE: O PROF. ALEX esta esperando\n"
-	.string "voce no laboratorio ao norte.\p"
-	.string "Pedir ajuda tambem e\n"
-	.string "sinal de coragem!$"
+	.string "MOM: Morning, sleepyhead!\n"
+	.string "PROF. ALEX stopped by earlier.\p"
+	.string "He's waiting for you at the lab,\n"
+	.string "up on the hill to the north.$"
 Palm040_TextMomHeal::
-	.string "MAE: Pronto, sua equipe descansou!\n"
-	.string "Volte sempre que precisar.$"
-Palm040_TextSnivy::
-	.string "PROF. ALEX: Vamos pesquisar os\n"
-	.string "POKéMON que vivem junto dos rios!\p"
-	.string "Quer viajar com SNIVY,\n"
-	.string "o POKéMON do tipo GRAMA?$"
-Palm040_TextFennekin::
-	.string "Prefere FENNEKIN,\n"
-	.string "o POKéMON do tipo FOGO?$"
-Palm040_TextMudkip::
-	.string "Quer escolher MUDKIP,\n"
-	.string "o POKéMON do tipo AGUA?$"
+	.string "MOM: Sit down for a minute.\n"
+	.string "You both look worn out.\p"
+	.string "…There. All better!\n"
+	.string "Come home whenever you need.$"
 Palm040_TextMission::
-	.string "PROF. ALEX: Siga pela saida leste\n"
-	.string "ate a ROTA 01.\p"
-	.string "Depois, visite a VILA DA COLHEITA.\n"
-	.string "O NEVARD cuida do ginasio de la!$"
+	.string "PROF. ALEX: Follow ROUTE 1 east,\n"
+	.string "then head south across the river.\p"
+	.string "You'll reach HARVESTVALE.\n"
+	.string "NEVARD runs the GYM there.\p"
+	.string "The farmers say their canals\n"
+	.string "have been running low.\p"
+	.string "If you hear anything, let me know,\n"
+	.string "all right?\p"
+	.string "Oh, and hold the B BUTTON to run.\n"
+	.string "Take care out there!$"
 Palm040_TextAide::
-	.string "Apos receber seu POKéMON,\n"
-	.string "confira as POKé BOLAS na mochila.\p"
-	.string "Use-as para capturar os\n"
-	.string "POKéMON selvagens!$"
+	.string "Check your BAG for POKé BALLS.\p"
+	.string "Weaken a wild POKéMON first,\n"
+	.string "then throw one to catch it!$"
 Palm040_TextGuide::
-	.string "O laboratorio fica ao norte.\n"
-	.string "A ROTA 01 comeca a leste da vila.$"
+	.string "The lab is up the hill.\n"
+	.string "ROUTE 1 starts at the east edge.$"
 Palm040_TextNeighbor::
-	.string "Leia as placas pelo caminho.\n"
-	.string "Elas ajudam quem esta comecando!$"
+	.string "My grandkids went on journeys,\n"
+	.string "too. They always wrote home.\p"
+	.string "Well… almost always.$"
 Palm040_TextOverlook::
-	.string "Ao longe, um pico desaparece\n"
-	.string "entre nuvens e nevoa.\p"
-	.string "Daqui, a vila parece tao pequena.$"
+	.string "Far away, a peak disappears into\n"
+	.string "the clouds.\p"
+	.string "From up here, DAWNMERE looks\n"
+	.string "so small.$"
 Palm040_TextLabSign::
-	.string "LABORATORIO DO PROF. ALEX$"
+	.string "PROF. ALEX'S LAB\n"
+	.string "POKéMON and Water Ecology$"
 Palm040_TextHomeSign::
-	.string "CASA DE {PLAYER} ao noroeste.$"
+	.string "{PLAYER}'s HOUSE$"
 Palm040_TextNeighborSign::
-	.string "CASA DA VIZINHANCA$"
+	.string "THE NEIGHBORS' HOUSE$"
 Palm040_TextTownSign::
-	.string "VILA INICIAL\n"
-	.string "Saida leste: ROTA 01.$"
+	.string "DAWNMERE VILLAGE\n"
+	.string "East exit: ROUTE 1\p"
+	.string "Where mornings begin in mist.$"
 
 Palm051_OverlookNpc::
 	msgbox Palm040_TextOverlook, MSGBOX_NPC
@@ -1195,6 +1211,44 @@ Palm064_RiverLookout::
 	end
 
 Palm064_RiverLookout_Text:
-	.string "MIRANTE DO RIO\n"
-	.string "Alex anota o nivel da agua\n"
-	.string "quando a nevoa baixa.$"
+	.string "RIVER LOOKOUT\n"
+	.string "PROF. ALEX logs the water level\l"
+	.string "here whenever the fog lifts.$"
+
+
+Palm040_TextAlexIntro:
+	.string "PROF. ALEX: {PLAYER}! Good, you came.\p"
+	.string "I study how water and weather\n"
+	.string "shape the lives of POKéMON.\p"
+	.string "The rivers around here have been\n"
+	.string "acting strange lately.\p"
+	.string "I could use someone out there\n"
+	.string "who keeps their eyes open.\p"
+	.string "These three were raised here at\n"
+	.string "the lab. Go on, pick a partner.$"
+
+Palm040_TextAlexChosen:
+	.string "PROF. ALEX: A fine choice.\n"
+	.string "You two already look like a team.\p"
+	.string "Take this as well. It's a POKéDEX.\n"
+	.string "It records every POKéMON you meet.$"
+
+Palm040_TextReceivedPokedex:
+	.string "{PLAYER} received the POKéDEX!$"
+
+Palm040_TextMedallion:
+	.string "MOM: {PLAYER}, wait a second!\p"
+	.string "Before you go, I want you to\n"
+	.string "have this.$"
+
+Palm040_TextMedallion2:
+	.string "It's been in our family for a\n"
+	.string "long, long time.\p"
+	.string "The dog on it is called ATLAS.\n"
+	.string "Your grandma used to say he\l"
+	.string "walked beside anyone who needed\l"
+	.string "company on the road.\p"
+	.string "I don't know if that's true…\n"
+	.string "but I like the idea that you\l"
+	.string "won't be walking alone.\p"
+	.string "Now go on! PROF. ALEX is waiting.$"

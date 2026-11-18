@@ -341,9 +341,9 @@ OldaleTown_Movement_ReturnToOriginalPosition:
 	step_end
 
 OldaleTown_Text_SavingMyProgress:
-	.string "Todo mundo aqui ajuda nas\n"
-	.string "plantacoes de cafe.\p"
-	.string "O NEVARD e nosso lider de GINASIO!$"
+	.string "Everyone here helps out in the\n"
+	.string "coffee fields.\p"
+	.string "NEVARD is our GYM LEADER!$"
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Hi!\n"
@@ -364,14 +364,14 @@ OldaleTown_Text_PotionExplanation:
 	.string "in certain situations.$"
 
 OldaleTown_Text_WaitDontComeInHere:
-	.string "Espere! Estou procurando\n"
-	.string "POKéMON nos cafezais.\p"
-	.string "Volte mais tarde!$"
+	.string "Wait! I'm looking for POKéMON in\n"
+	.string "the coffee rows.\p"
+	.string "Come back a little later!$"
 
 OldaleTown_Text_DiscoveredFootprints:
-	.string "Estou seguindo rastros de\n"
-	.string "POKéMON nas plantacoes.\p"
-	.string "Nao da para passar daqui agora.$"
+	.string "I'm tracking POKéMON footprints\n"
+	.string "through the fields.\p"
+	.string "You can't get past here just yet.$"
 
 OldaleTown_Text_FinishedSketchingFootprints:
 	.string "I finished sketching the footprints of\n"
@@ -390,8 +390,8 @@ OldaleTown_Text_BrendanLetsGoBack:
 	.string "{PLAYER}, you should hustle back, too.$"
 
 OldaleTown_Text_TownSign:
-	.string "VILA DA COLHEITA\n"
-	.string "Cafe, terra e trabalho.$"
+	.string "HARVESTVALE\n"
+	.string "Coffee, soil, and hard work.$"
 
 
 @ Pokemon PALM: identificacao da porta temporaria do ginasio.
@@ -400,9 +400,9 @@ PokemonPalm_EventScript_ColheitaGymSign::
 	end
 
 PokemonPalm_Text_ColheitaGymSign:
-	.string "GINASIO DA COLHEITA\n"
-	.string "LIDER NEVARD - TIPO GRAMA\p"
-	.string "A entrada fica nesta casa.$"
+	.string "HARVESTVALE POKéMON GYM\n"
+	.string "LEADER: NEVARD - GRASS TYPE\p"
+	.string "The entrance is in this building.$"
 
 @ PALM: exterior da Vila da Colheita
 Palm060_EnterHarvest::
@@ -471,29 +471,33 @@ Palm060_GymSign::
 	end
 
 Palm060_TextGymSign:
-	.string "GINASIO DA COLHEITA\n"
-	.string "LIDER: NEVARD.$"
+	.string "HARVESTVALE POKéMON GYM\n"
+	.string "LEADER: NEVARD\p"
+	.string "The farmer who never stops\n"
+	.string "growing.$"
 
 Palm060_TextFarmer:
-	.string "O canal leva agua aos cafezais.\n"
-	.string "O ginasio do NEVARD fica a leste.$"
+	.string "The canal carries water to every\n"
+	.string "coffee field in the vale.$"
 
 Palm060_TextKiosk:
-	.string "A TEAM PALM anda de olho na agua\n"
-	.string "que passa pelos cafezais.$"
+	.string "TEAM PALM keeps a close eye on\n"
+	.string "the water in these fields.$"
 
 Palm060_TextWelcome:
-	.string "VILA DA COLHEITA\n"
-	.string "Norte: ROTA 01.\n"
-	.string "Sudeste: QUIOSQUE DA TEAM PALM.$"
+	.string "HARVESTVALE\n"
+	.string "North: ROUTE 1\p"
+	.string "Fields of coffee and quiet canals.$"
 
 Palm060_TextClosedRoad:
-	.string "ROTA 02\n"
-	.string "A passagem abre depois de Nevard.$"
+	.string "ROUTE 2\p"
+	.string "The road south is closed while\n"
+	.string "the fields are being repaired.\p"
+	.string "NEVARD will reopen it.$"
 
 Palm060_TextKioskSign:
-	.string "QUIOSQUE DA TEAM PALM\p"
-	.string "Controle de agua e irrigacao.$"
+	.string "TEAM PALM WATER KIOSK\n"
+	.string "Irrigation contracts signed here.$"
 
 
 Palm062_CoffeeSign::
@@ -513,32 +517,32 @@ Palm062_WaterSign::
 	end
 
 Palm062_CoffeeText:
-	.string "CAFEZAIS DA COLHEITA\n"
-	.string "A agua do canal irriga os canteiros.$"
+	.string "HARVESTVALE COFFEE FIELDS\n"
+	.string "Watered by the village canal.$"
 
 Palm062_WaterText:
-	.string "CANAL COMUNITARIO\n"
-	.string "A agua e partilhada entre as rocas.$"
+	.string "COMMUNITY CANAL\n"
+	.string "Shared by every farm in the vale.$"
 
 Palm064_DryingYard::
 	msgbox Palm064_DryingYard_Text, MSGBOX_SIGN
 	end
 
 Palm064_DryingYard_Text:
-	.string "TERREIRO DE SECAGEM\n"
-	.string "Os graos ficam no sol.\p"
-	.string "Quando a chuva chega, a vila\n"
-	.string "corre para recolher as esteiras!$"
+	.string "DRYING YARD\n"
+	.string "Coffee beans dry here in the sun.\p"
+	.string "When the rain comes, everyone\n"
+	.string "runs to roll up the mats!$"
 
 Palm064_WaterBoard::
 	msgbox Palm064_WaterBoard_Text, MSGBOX_SIGN
 	end
 
 Palm064_WaterBoard_Text:
-	.string "QUADRO DA IRRIGACAO\n"
-	.string "Cada canteiro tem a sua vez.\p"
-	.string "Um folheto da TEAM PALM cobre\n"
-	.string "parte da escala: AGUA SOB CONTRATO.$"
+	.string "IRRIGATION SCHEDULE\n"
+	.string "Each field gets its turn.\p"
+	.string "A TEAM PALM flyer covers half of\n"
+	.string "it: WATER UNDER CONTRACT.$"
 
 Palm071_LoadDoor::
 	call_if_set FLAG_DEFEATED_RUSTBORO_GYM, Palm071_Migrate
@@ -578,19 +582,22 @@ Palm071_ValveRestored::
 	end
 
 Palm071_TextFarmer:
-	.string "A PALM fechou a valvula do canal.\p"
-	.string "Quer cobrar pela agua que sempre\n"
-	.string "foi de todos. O recruta esta no\n"
-	.string "quiosque, ao sul.$"
+	.string "TEAM PALM shut the canal valve.\p"
+	.string "They want us to pay for water\n"
+	.string "that's always belonged to all\l"
+	.string "of us.\p"
+	.string "Their recruit hangs around the\n"
+	.string "kiosk down south.$"
 
 Palm071_TextRecruit:
-	.string "A TEAM PALM agora cuida da agua.\p"
-	.string "Quer irrigar sem assinar contrato?\n"
-	.string "Vai ter que passar por mim!$"
+	.string "TEAM PALM manages the water now.\p"
+	.string "Want to irrigate without signing\n"
+	.string "a contract? Get past me first!$"
 
 Palm071_TextRecruitLoss:
-	.string "Tome a chave da valvula!\n"
-	.string "Ela fica junto ao canal, a leste.$"
+	.string "Fine, fine! Take the valve key.\p"
+	.string "The valve's on the west bank of\n"
+	.string "the canal, by the coffee fields.$"
 
 Palm073_GuideNotice:
 	face_left
@@ -598,41 +605,44 @@ Palm073_GuideNotice:
 	step_end
 
 Palm073_TextRecruitRestored:
-	.string "A TEAM PALM vai rever o contrato.$"
+	.string "The bosses won't like this…\n"
+	.string "TEAM PALM always collects.$"
 
 Palm072_TextArrival:
-	.string "MORADORA: Ei, voce!\p"
-	.string "A TEAM PALM fechou a valvula.\n"
-	.string "O ginasio ficou sem agua.\p"
-	.string "O recruta com a chave esta no\n"
-	.string "quiosque azul, ao sudoeste.$"
+	.string "VILLAGER: Hey, you! A trainer?\p"
+	.string "TEAM PALM shut off the canal\n"
+	.string "valve. The GYM's gone dry, too.\p"
+	.string "Their recruit has the key.\n"
+	.string "He's at the blue kiosk to the\l"
+	.string "southwest.$"
 
 Palm072_TextValveHint:
-	.string "Com a chave, abra a valvula.\p"
-	.string "Procure a valvula na margem\n"
-	.string "oeste do canal, perto do cafezal.$"
+	.string "Use the key on the valve.\p"
+	.string "It's on the west bank of the\n"
+	.string "canal, near the coffee fields.$"
 
 Palm071_TextGymLocked:
-	.string "GINASIO DA COLHEITA\p"
-	.string "O ginasio reabre quando a agua\n"
-	.string "voltar aos cafezais.$"
+	.string "HARVESTVALE POKéMON GYM\p"
+	.string "Closed until water returns to the\n"
+	.string "fields. - NEVARD$"
 
 Palm071_TextValveLocked:
-	.string "A valvula esta travada.\p"
-	.string "O recruta do quiosque azul\n"
-	.string "esta com a chave.$"
+	.string "The valve is locked tight.\p"
+	.string "The recruit at the blue kiosk\n"
+	.string "has the key.$"
 
 Palm071_TextRestored:
-	.string "Voce destravou a valvula!\p"
-	.string "A agua voltou aos cafezais.\n"
-	.string "Nevard abriu o ginasio.$"
+	.string "{PLAYER} turned the valve!\p"
+	.string "Water rushes back into the\n"
+	.string "canals. The GYM is open again!$"
 
 Palm071_TextValveRestored:
-	.string "A agua corre para os cafezais.$"
+	.string "Water flows toward the fields.$"
 
 Palm071_TextFarmerRestored:
-	.string "A agua chegou aos canteiros!\n"
-	.string "Nevard espera voce no ginasio.$"
+	.string "The water's back in the fields!\p"
+	.string "NEVARD's waiting for you at\n"
+	.string "the GYM. Thank you. Really.$"
 
 Palm080_LeaveColheita::
 	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, Palm080_ToRoute02
@@ -651,5 +661,5 @@ Palm080_ColheitaRouteOpen::
 	end
 
 Palm080_TextRouteOpen:
-	.string "ROTA 02\n"
-	.string "Sul: CIDADE DA BRISA.$"
+	.string "ROUTE 2\n"
+	.string "South: BREEZEPORT CITY$"

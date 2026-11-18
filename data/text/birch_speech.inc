@@ -44,10 +44,9 @@ gText_Birch_SoItsPlayer::
 
 gText_Birch_YourePlayer::
 	.string "Ah, okay!\p"
-	.string "You're {PLAYER}{KUN} who's moving to my\n"
-	.string "hometown, VILA INICIAL.\l"
-	.string "I get it now!\p"
-	.string "$"
+	.string "You're {PLAYER}{KUN}, from right here\n"
+	.string "in DAWNMERE.\l"
+	.string "I should have known!$"
 
 gText_Birch_AreYouReady::
 	.string "All right, are you ready?\p"

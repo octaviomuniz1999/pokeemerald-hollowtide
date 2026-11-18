@@ -1,0 +1,525 @@
+# Capítulo 1 — Dawnmere, Route 1, Harvestvale. Inglês; aplicar com tools/hollowtide/texts.py
+
+## file: data/text/birch_speech.inc
+== gText_Birch_YourePlayer
+Ah, okay!
+
+You're {PLAYER}{KUN}, from right here
+in DAWNMERE.
+I should have known!
+
+## file: data/maps/LittlerootTown/scripts.inc
+== Palm040_TextNeedStarter
+It's not safe to cross the tall
+grass without a POKéMON.
+
+PROF. ALEX's lab is up the hill
+to the north.
+
+== Palm040_TextMomIntro
+MOM: Morning, sleepyhead!
+PROF. ALEX stopped by earlier.
+
+He's waiting for you at the lab,
+up on the hill to the north.
+
+== Palm040_TextMomHeal
+MOM: Sit down for a minute.
+You both look worn out.
+
+…There. All better!
+Come home whenever you need.
+
+==+ Palm040_TextAlexIntro
+PROF. ALEX: {PLAYER}! Good, you came.
+
+I study how water and weather
+shape the lives of POKéMON.
+
+The rivers around here have been
+acting strange lately.
+
+I could use someone out there
+who keeps their eyes open.
+
+These three were raised here at
+the lab. Go on, pick a partner.
+
+==+ Palm040_TextAlexChosen
+PROF. ALEX: A fine choice.
+You two already look like a team.
+
+Take this as well. It's a POKéDEX.
+It records every POKéMON you meet.
+
+== Palm040_TextMission
+PROF. ALEX: Follow ROUTE 1 east,
+then head south across the river.
+
+You'll reach HARVESTVALE.
+NEVARD runs the GYM there.
+
+The farmers say their canals
+have been running low.
+
+If you hear anything, let me know,
+all right?
+
+Oh, and hold the B BUTTON to run.
+Take care out there!
+
+==+ Palm040_TextReceivedPokedex
+{PLAYER} received the POKéDEX!
+
+== Palm040_TextAide
+Check your BAG for POKé BALLS.
+
+Weaken a wild POKéMON first,
+then throw one to catch it!
+
+== Palm040_TextGuide
+The lab is up the hill.
+ROUTE 1 starts at the east edge.
+
+== Palm040_TextNeighbor
+My grandkids went on journeys,
+too. They always wrote home.
+
+Well… almost always.
+
+== Palm040_TextOverlook
+Far away, a peak disappears into
+the clouds.
+
+From up here, DAWNMERE looks
+so small.
+
+== Palm040_TextLabSign
+PROF. ALEX'S LAB
+POKéMON and Water Ecology
+
+== Palm040_TextHomeSign
+{PLAYER}'s HOUSE
+
+== Palm040_TextNeighborSign
+THE NEIGHBORS' HOUSE
+
+== Palm040_TextTownSign
+DAWNMERE VILLAGE
+East exit: ROUTE 1
+
+Where mornings begin in mist.
+
+== Palm064_RiverLookout_Text
+RIVER LOOKOUT
+PROF. ALEX logs the water level
+here whenever the fog lifts.
+
+==+ Palm040_TextMedallion
+MOM: {PLAYER}, wait a second!
+
+Before you go, I want you to
+have this.
+
+==+ Palm040_TextMedallion2
+It's been in our family for a
+long, long time.
+
+The dog on it is called ATLAS.
+Your grandma used to say he
+walked beside anyone who needed
+company on the road.
+
+I don't know if that's true…
+but I like the idea that you
+won't be walking alone.
+
+Now go on! PROF. ALEX is waiting.
+
+## file: data/maps/LittlerootTown_ProfessorBirchsLab/scripts.inc
+== PokemonPalm_Text_AlexMission
+PROF. ALEX: Well done!
+
+Follow ROUTE 1 to HARVESTVALE.
+
+NEVARD keeps a GYM right beside
+the coffee fields!
+
+## file: data/maps/Route101/scripts.inc
+== Route101_Text_YouSavedMe
+PROF. ALEX: Whew! You saved me!
+
+== Route101_Text_TakeTiredPokemonToPokeCenter
+ROUTE 1 leads to HARVESTVALE.
+
+There's a POKéMON CENTER there
+to rest your team.
+
+== Route101_Text_WildPokemonInTallGrass
+The soil here is so rich.
+Wild POKéMON hide in every
+patch of green.
+
+== Route101_Text_RouteSign
+ROUTE 1
+{DOWN_ARROW} HARVESTVALE
+
+== Palm050_TextWalker
+POKéMON live in the tall grass.
+
+Follow the trail and cross the
+bridge to reach HARVESTVALE.
+
+== Palm050_TextKaiBefore
+First journey? Mine too!
+Let's see what our POKéMON can do!
+
+== Palm050_TextKaiLose
+Whoa… that was close!
+
+== Palm050_TextKaiAfter
+Even small POKéMON can pull off
+big surprises!
+
+== Palm050_TextMinBefore
+Nature's full of surprises.
+How about a battle?
+
+== Palm050_TextMinLose
+You surprised me, too!
+
+== Palm050_TextMinAfter
+Looks like you're ready for
+HARVESTVALE!
+
+== Palm050_TextNorthSign
+ROUTE 1
+West: DAWNMERE
+
+== Palm050_TextSouthSign
+ROUTE 1
+South: HARVESTVALE
+
+## file: data/maps/OldaleTown/scripts.inc
+== Palm060_TextGymSign
+HARVESTVALE POKéMON GYM
+LEADER: NEVARD
+
+The farmer who never stops
+growing.
+
+== Palm060_TextFarmer
+The canal carries water to every
+coffee field in the vale.
+
+== Palm060_TextKiosk
+TEAM PALM keeps a close eye on
+the water in these fields.
+
+== Palm060_TextWelcome
+HARVESTVALE
+North: ROUTE 1
+
+Fields of coffee and quiet canals.
+
+== Palm060_TextClosedRoad
+ROUTE 2
+
+The road south is closed while
+the fields are being repaired.
+
+NEVARD will reopen it.
+
+== Palm060_TextKioskSign
+TEAM PALM WATER KIOSK
+Irrigation contracts signed here.
+
+== Palm062_CoffeeText
+HARVESTVALE COFFEE FIELDS
+Watered by the village canal.
+
+== Palm062_WaterText
+COMMUNITY CANAL
+Shared by every farm in the vale.
+
+== Palm064_DryingYard_Text
+DRYING YARD
+Coffee beans dry here in the sun.
+
+When the rain comes, everyone
+runs to roll up the mats!
+
+== Palm064_WaterBoard_Text
+IRRIGATION SCHEDULE
+Each field gets its turn.
+
+A TEAM PALM flyer covers half of
+it: WATER UNDER CONTRACT.
+
+== Palm071_TextFarmer
+TEAM PALM shut the canal valve.
+
+They want us to pay for water
+that's always belonged to all
+of us.
+
+Their recruit hangs around the
+kiosk down south.
+
+== Palm071_TextRecruit
+TEAM PALM manages the water now.
+
+Want to irrigate without signing
+a contract? Get past me first!
+
+== Palm071_TextRecruitLoss
+Fine, fine! Take the valve key.
+
+The valve's on the west bank of
+the canal, by the coffee fields.
+
+== Palm073_TextRecruitRestored
+The bosses won't like this…
+TEAM PALM always collects.
+
+== Palm072_TextArrival
+VILLAGER: Hey, you! A trainer?
+
+TEAM PALM shut off the canal
+valve. The GYM's gone dry, too.
+
+Their recruit has the key.
+He's at the blue kiosk to the
+southwest.
+
+== Palm072_TextValveHint
+Use the key on the valve.
+
+It's on the west bank of the
+canal, near the coffee fields.
+
+== Palm071_TextGymLocked
+HARVESTVALE POKéMON GYM
+
+Closed until water returns to the
+fields. - NEVARD
+
+== Palm071_TextValveLocked
+The valve is locked tight.
+
+The recruit at the blue kiosk
+has the key.
+
+== Palm071_TextRestored
+{PLAYER} turned the valve!
+
+Water rushes back into the
+canals. The GYM is open again!
+
+== Palm071_TextValveRestored
+Water flows toward the fields.
+
+== Palm071_TextFarmerRestored
+The water's back in the fields!
+
+NEVARD's waiting for you at
+the GYM. Thank you. Really.
+
+== Palm080_TextRouteOpen
+ROUTE 2
+South: BREEZEPORT CITY
+
+## file: data/maps/RustboroCity_Gym/scripts.inc
+== RustboroCity_Gym_Text_GymGuideAdvice
+Hey there, future champ!
+
+This GYM runs on the same water
+as the coffee fields.
+
+Open the floodgates in order,
+1 to 3, and beat the two
+growers along the way.
+
+== RustboroCity_Gym_Text_GymGuidePostVictory
+You beat NEVARD!
+HARVESTVALE won't forget this.
+
+== RustboroCity_Gym_Text_JoshIntro
+I work the fields with NEVARD!
+Let's see your team!
+
+== RustboroCity_Gym_Text_JoshDefeat
+Guess I need to tend my POKéMON
+a little better…
+
+== RustboroCity_Gym_Text_JoshPostBattle
+NEVARD knows every tree in this
+valley by name.
+
+== RustboroCity_Gym_Text_TommyIntro
+Coffee grows with patience.
+So does my team!
+
+== RustboroCity_Gym_Text_TommyDefeat
+A good harvest… for you.
+
+== RustboroCity_Gym_Text_TommyPostBattle
+NEVARD's way stronger than me!
+
+== RustboroCity_Gym_Text_MarcIntro
+Out here, strength comes from
+the roots!
+
+== RustboroCity_Gym_Text_MarcDefeat
+My roots gave way!
+
+== RustboroCity_Gym_Text_MarcPostBattle
+Training in the fields really
+pays off.
+
+== RustboroCity_Gym_Text_RoxanneIntro
+NEVARD: Welcome to HARVESTVALE!
+
+I look after the coffee, and the
+POKéMON who live on this land.
+
+Thanks for bringing the water
+back. Now let's see if your team
+can bloom in battle, too!
+
+== RustboroCity_Gym_Text_RoxanneDefeat
+NEVARD: Ha! You won, fair and
+square.
+
+Like any good crop, a trainer
+needs time to grow.
+Looks like you've had plenty.
+
+Take the HARVEST BADGE!
+
+== RustboroCity_Gym_Text_ReceivedStoneBadge
+{PLAYER} received the HARVEST
+BADGE from NEVARD!
+
+== RustboroCity_Gym_Text_StoneBadgeInfoTakeThis
+NEVARD: Your first BADGE. Hold on
+to that feeling.
+
+And take this, too!
+
+== RustboroCity_Gym_Text_ExplainRockTomb
+NEVARD: That TM teaches BULLET
+SEED.
+
+It fires a burst of seeds, two to
+five times in a row!
+
+== RustboroCity_Gym_Text_RoxannePostBattle
+NEVARD: The fields change every
+season, and so will you.
+
+Keep looking after your POKéMON.
+They'll look after you.
+
+== RustboroCity_Gym_Text_GymStatue
+HARVESTVALE POKéMON GYM
+LEADER: NEVARD
+
+== RustboroCity_Gym_Text_GymStatueCertified
+HARVESTVALE POKéMON GYM
+
+NEVARD'S CERTIFIED TRAINERS:
+{PLAYER}
+
+== RustboroCity_Gym_Text_RoxanneRegisterCall
+NEVARD: See you next harvest,
+{PLAYER}!
+
+== RustboroCity_Gym_Text_RegisteredRoxanne
+Registered NEVARD in the POKéNAV.
+
+== RustboroCity_Gym_Text_RoxannePreRematch
+NEVARD: Welcome back!
+Ready for another round?
+
+== RustboroCity_Gym_Text_RoxanneRematchDefeat
+NEVARD: Great battle!
+
+== RustboroCity_Gym_Text_RoxannePostRematch
+NEVARD: Come back anytime!
+
+== RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons
+NEVARD: Come back with at least
+two POKéMON for a rematch.
+
+== Palm066_TextBattle1
+Beat the grower beside the
+field on the right.
+
+== Palm066_TextBattle2
+Beat the grower beside the
+field on the left.
+
+== Palm065_Text1
+FLOODGATE 1
+Water reaches the seedlings.
+
+== Palm065_Text2
+FLOODGATE 2
+Water reaches the grown trees.
+
+== Palm065_Text3
+FLOODGATE 3
+The bridge lowers. NEVARD awaits!
+
+== Palm065_TextOpen
+Water flows through this channel.
+
+== Palm065_TextWait
+No pressure in this channel yet.
+Ask the guide about the order.
+
+## file: data/maps/LittlerootTown/scripts.inc
+== LittlerootTown_Text_BirchSpendsDaysInLab
+PROF. ALEX studies how POKéMON
+live around here.
+
+He loves wandering the fields,
+notebook in hand.
+
+== LittlerootTown_Text_YouSavedBirch
+You helped PROF. ALEX!
+He never sits still, that one.
+
+== LittlerootTown_Text_TownSign
+DAWNMERE VILLAGE
+Where every journey begins.
+
+## file: data/maps/OldaleTown/scripts.inc
+== OldaleTown_Text_SavingMyProgress
+Everyone here helps out in the
+coffee fields.
+
+NEVARD is our GYM LEADER!
+
+== OldaleTown_Text_WaitDontComeInHere
+Wait! I'm looking for POKéMON in
+the coffee rows.
+
+Come back a little later!
+
+== OldaleTown_Text_DiscoveredFootprints
+I'm tracking POKéMON footprints
+through the fields.
+
+You can't get past here just yet.
+
+== OldaleTown_Text_TownSign
+HARVESTVALE
+Coffee, soil, and hard work.
+
+== PokemonPalm_Text_ColheitaGymSign
+HARVESTVALE POKéMON GYM
+LEADER: NEVARD - GRASS TYPE
+
+The entrance is in this building.

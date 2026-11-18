@@ -16099,6 +16099,23 @@ const struct ItemInfo gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    // Hollowtide: heranca de familia entregue pela mae no prologo; item-chave sem efeito em batalha.
+    [ITEM_ATLAS_MEDALLION] =
+    {
+        .name = ITEM_NAME("Atlas Medallion"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "An old family keepsake.\n"
+            "A black dog with a\n"
+            "white circle on its chest."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_RelicCoin,
+        .iconPalette = gItemIconPalette_RelicGold,
+    },
 };
 
 #undef ITEM_NAME

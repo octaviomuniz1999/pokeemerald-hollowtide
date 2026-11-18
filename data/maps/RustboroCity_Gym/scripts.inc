@@ -113,108 +113,116 @@ RustboroCity_Gym_EventScript_RegisterRoxanne::
 	end
 
 RustboroCity_Gym_Text_GymGuideAdvice:
-	.string "A agua daqui alimenta os\n"
-	.string "cafezais da vila.\p"
-	.string "Abra as comportas numeradas\n"
-	.string "de 1 a 3.\p"
-	.string "Pelo caminho, venca os dois\n"
-	.string "treinadores do cafezal.$"
+	.string "Hey there, future champ!\p"
+	.string "This GYM runs on the same water\n"
+	.string "as the coffee fields.\p"
+	.string "Open the floodgates in order,\n"
+	.string "1 to 3, and beat the two\l"
+	.string "growers along the way.$"
 
 RustboroCity_Gym_Text_GymGuidePostVictory:
-	.string "Parabens por vencer o NEVARD!\n"
-	.string "A VILA DA COLHEITA agradece!$"
+	.string "You beat NEVARD!\n"
+	.string "HARVESTVALE won't forget this.$"
 
 RustboroCity_Gym_Text_JoshIntro:
-	.string "Eu trabalho com o NEVARD!\n"
-	.string "Vamos ver sua equipe!$"
+	.string "I work the fields with NEVARD!\n"
+	.string "Let's see your team!$"
 
 RustboroCity_Gym_Text_JoshDefeat:
-	.string "Preciso cuidar mais das plantas...$"
+	.string "Guess I need to tend my POKéMON\n"
+	.string "a little better…$"
 
 RustboroCity_Gym_Text_JoshPostBattle:
-	.string "Nevard conhece cada arvore daqui!$"
+	.string "NEVARD knows every tree in this\n"
+	.string "valley by name.$"
 
 RustboroCity_Gym_Text_TommyIntro:
-	.string "O cafe cresce com paciencia!\n"
-	.string "Minha equipe tambem!$"
+	.string "Coffee grows with patience.\n"
+	.string "So does my team!$"
 
 RustboroCity_Gym_Text_TommyDefeat:
-	.string "Esta foi uma boa colheita...$"
+	.string "A good harvest… for you.$"
 
 RustboroCity_Gym_Text_TommyPostBattle:
-	.string "O NEVARD e muito mais forte!$"
+	.string "NEVARD's way stronger than me!$"
 
 RustboroCity_Gym_Text_MarcIntro:
-	.string "Na nossa terra, a forca vem\n"
-	.string "das raizes!$"
+	.string "Out here, strength comes from\n"
+	.string "the roots!$"
 
 RustboroCity_Gym_Text_MarcDefeat:
-	.string "Minhas raizes enfraqueceram!$"
+	.string "My roots gave way!$"
 
 RustboroCity_Gym_Text_MarcPostBattle:
-	.string "Treinar no cafezal da resultado.$"
+	.string "Training in the fields really\n"
+	.string "pays off.$"
 
 RustboroCity_Gym_Text_RoxanneIntro:
-	.string "NEVARD: Bem-vindo a COLHEITA!\p"
-	.string "Cuido do cafe e dos POKéMON\n"
-	.string "que vivem nestas terras.\p"
-	.string "Mostre se sua equipe tambem\n"
-	.string "pode florescer numa batalha!$"
+	.string "NEVARD: Welcome to HARVESTVALE!\p"
+	.string "I look after the coffee, and the\n"
+	.string "POKéMON who live on this land.\p"
+	.string "Thanks for bringing the water\n"
+	.string "back. Now let's see if your team\l"
+	.string "can bloom in battle, too!$"
 
 RustboroCity_Gym_Text_RoxanneDefeat:
-	.string "NEVARD: Voce venceu!\p"
-	.string "Assim como uma boa plantacao,\n"
-	.string "um treinador precisa crescer.\p"
-	.string "Receba a INSIGNIA COLHEITA!$"
+	.string "NEVARD: Ha! You won, fair and\n"
+	.string "square.\p"
+	.string "Like any good crop, a trainer\n"
+	.string "needs time to grow.\l"
+	.string "Looks like you've had plenty.\p"
+	.string "Take the HARVEST BADGE!$"
 
 RustboroCity_Gym_Text_ReceivedStoneBadge:
-	.string "{PLAYER} recebeu a INSIGNIA\n"
-	.string "COLHEITA de NEVARD!$"
+	.string "{PLAYER} received the HARVEST\n"
+	.string "BADGE from NEVARD!$"
 
 RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
-	.string "A primeira insignia prova que\n"
-	.string "voce e um grande treinador!\p"
-	.string "Ela permite usar CUT fora de\n"
-	.string "batalha. Pegue esta TM!$"
+	.string "NEVARD: Your first BADGE. Hold on\n"
+	.string "to that feeling.\p"
+	.string "And take this, too!$"
 
 RustboroCity_Gym_Text_ExplainRockTomb:
-	.string "Esta TM ensina BULLET SEED.\p"
-	.string "Use o poder das sementes\n"
-	.string "para enfrentar novos desafios!$"
+	.string "NEVARD: That TM teaches BULLET\n"
+	.string "SEED.\p"
+	.string "It fires a burst of seeds, two to\n"
+	.string "five times in a row!$"
 
 RustboroCity_Gym_Text_RoxannePostBattle:
-	.string "NEVARD: O campo sempre muda.\p"
-	.string "Continue treinando e cuidando\n"
-	.string "dos seus POKéMON!$"
+	.string "NEVARD: The fields change every\n"
+	.string "season, and so will you.\p"
+	.string "Keep looking after your POKéMON.\n"
+	.string "They'll look after you.$"
 
 RustboroCity_Gym_Text_GymStatue:
-	.string "VILA DA COLHEITA - GINASIO\n"
-	.string "LIDER NEVARD$"
+	.string "HARVESTVALE POKéMON GYM\n"
+	.string "LEADER: NEVARD$"
 
 RustboroCity_Gym_Text_GymStatueCertified:
-	.string "VILA DA COLHEITA - GINASIO\p"
-	.string "NEVARD APROVA: {PLAYER}$"
+	.string "HARVESTVALE POKéMON GYM\p"
+	.string "NEVARD'S CERTIFIED TRAINERS:\n"
+	.string "{PLAYER}$"
 
 RustboroCity_Gym_Text_RoxanneRegisterCall:
-	.string "NEVARD: Ate a proxima\n"
-	.string "colheita, {PLAYER}!$"
+	.string "NEVARD: See you next harvest,\n"
+	.string "{PLAYER}!$"
 
 RustboroCity_Gym_Text_RegisteredRoxanne:
-	.string "Registrado NEVARD no POKéNAV.$"
+	.string "Registered NEVARD in the POKéNAV.$"
 
 RustboroCity_Gym_Text_RoxannePreRematch:
-	.string "NEVARD: Bem-vindo de volta!\n"
-	.string "Vamos lutar novamente?$"
+	.string "NEVARD: Welcome back!\n"
+	.string "Ready for another round?$"
 
 RustboroCity_Gym_Text_RoxanneRematchDefeat:
-	.string "NEVARD: Boa batalha!$"
+	.string "NEVARD: Great battle!$"
 
 RustboroCity_Gym_Text_RoxannePostRematch:
-	.string "NEVARD: Ate outra vez!$"
+	.string "NEVARD: Come back anytime!$"
 
 RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
-	.string "NEVARD: Volte com pelo menos\n"
-	.string "dois POKéMON para a revanche.$"
+	.string "NEVARD: Come back with at least\n"
+	.string "two POKéMON for a rematch.$"
 
 Palm067_Enter::
 	setvar VAR_TEMP_8, 0
@@ -327,11 +335,11 @@ Palm066_Battle2::
 	end
 
 Palm066_TextBattle1:
-	.string "Venca o treinador ao lado\n"
-	.string "do canteiro da direita.$"
+	.string "Beat the grower beside the\n"
+	.string "field on the right.$"
 Palm066_TextBattle2:
-	.string "Venca o treinador ao lado\n"
-	.string "do canteiro da esquerda.$"
+	.string "Beat the grower beside the\n"
+	.string "field on the left.$"
 
 Palm065_AlreadyOpen::
 	msgbox Palm065_TextOpen, MSGBOX_DEFAULT
@@ -344,16 +352,16 @@ Palm065_Wait::
 	end
 
 Palm065_Text1:
-	.string "COMPORTA 1\n"
-	.string "A agua chegou as mudas.$"
+	.string "FLOODGATE 1\n"
+	.string "Water reaches the seedlings.$"
 Palm065_Text2:
-	.string "COMPORTA 2\n"
-	.string "A agua chegou aos pes adultos.$"
+	.string "FLOODGATE 2\n"
+	.string "Water reaches the grown trees.$"
 Palm065_Text3:
-	.string "COMPORTA 3\n"
-	.string "A ponte desceu. Nevard espera!$"
+	.string "FLOODGATE 3\n"
+	.string "The bridge lowers. NEVARD awaits!$"
 Palm065_TextOpen:
-	.string "A agua corre por este canal.$"
+	.string "Water flows through this channel.$"
 Palm065_TextWait:
-	.string "Sem pressao neste canal.\n"
-	.string "Confira a ordem com o guia.$"
+	.string "No pressure in this channel yet.\n"
+	.string "Ask the guide about the order.$"

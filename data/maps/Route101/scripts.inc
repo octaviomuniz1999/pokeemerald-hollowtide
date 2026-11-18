@@ -269,27 +269,21 @@ Route101_Text_DontLeaveMe:
 	.string "Don't leave me like this!$"
 
 Route101_Text_YouSavedMe:
-	.string "PROF. ALEX: Ufa! Voce me salvou!\p"
-	.string "Eu observava os POKéMON na\n"
-	.string "mata quando fui surpreendido.\p"
-	.string "{PLAYER}, obrigado de verdade!\p"
-	.string "Vamos conversar no meu\n"
-	.string "LABORATORIO.$"
+	.string "PROF. ALEX: Whew! You saved me!$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
-	.string "ROTA 01: o caminho leva ate\n"
-	.string "a VILA DA COLHEITA.\p"
-	.string "La tem um CENTRO POKéMON\n"
-	.string "para recuperar sua equipe.$"
+	.string "ROUTE 1 leads to HARVESTVALE.\p"
+	.string "There's a POKéMON CENTER there\n"
+	.string "to rest your team.$"
 
 Route101_Text_WildPokemonInTallGrass:
-	.string "A terra daqui e muito fertil.\n"
-	.string "POKéMON selvagens aparecem\l"
-	.string "no meio da vegetacao.$"
+	.string "The soil here is so rich.\n"
+	.string "Wild POKéMON hide in every\l"
+	.string "patch of green.$"
 
 Route101_Text_RouteSign:
-	.string "ROTA 01\n"
-	.string "{UP_ARROW} VILA DA COLHEITA$"
+	.string "ROUTE 1\n"
+	.string "{DOWN_ARROW} HARVESTVALE$"
 
 
 @ PALM v0.5.0
@@ -340,36 +334,36 @@ Palm050_SouthSign::
 	end
 
 Palm050_TextWalker:
-	.string "Na grama alta vivem POKéMON.\p"
-	.string "Siga a trilha e atravesse a ponte\n"
-	.string "para chegar a VILA DA COLHEITA.$"
+	.string "POKéMON live in the tall grass.\p"
+	.string "Follow the trail and cross the\n"
+	.string "bridge to reach HARVESTVALE.$"
 
 Palm050_TextKaiBefore:
-	.string "Primeira viagem? Vamos testar\n"
-	.string "nossos POKéMON!$"
+	.string "First journey? Mine too!\n"
+	.string "Let's see what our POKéMON can do!$"
 
 Palm050_TextKaiLose:
-	.string "Essa foi por pouco!$"
+	.string "Whoa… that was close!$"
 
 Palm050_TextKaiAfter:
-	.string "Ate os menores POKéMON\n"
-	.string "podem surpreender!$"
+	.string "Even small POKéMON can pull off\n"
+	.string "big surprises!$"
 
 Palm050_TextMinBefore:
-	.string "A natureza esta cheia de surpresas.\n"
-	.string "Que tal uma batalha?$"
+	.string "Nature's full of surprises.\n"
+	.string "How about a battle?$"
 
 Palm050_TextMinLose:
-	.string "Voce me surpreendeu tambem!$"
+	.string "You surprised me, too!$"
 
 Palm050_TextMinAfter:
-	.string "Voce esta pronto para conhecer\n"
-	.string "a VILA DA COLHEITA!$"
+	.string "Looks like you're ready for\n"
+	.string "HARVESTVALE!$"
 
 Palm050_TextNorthSign:
-	.string "ROTA 01\n"
-	.string "Oeste: VILA INICIAL.$"
+	.string "ROUTE 1\n"
+	.string "West: DAWNMERE$"
 
 Palm050_TextSouthSign:
-	.string "ROTA 01\n"
-	.string "Sul: VILA DA COLHEITA.$"
+	.string "ROUTE 1\n"
+	.string "South: HARVESTVALE$"

@@ -7,17 +7,28 @@ from qa_driver import QA
 def main(rom, runner, work, casa):
     q = QA(rom, runner, work)
     q.load(casa); q.run([])
-    q.goto("MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F", 8, 8); q.run(["walk DOWN 1", "wait 90"])
+    # Saida de casa: a mae entrega o Medalhao de Atlas (gatilho na frente da porta)
+    q.goto("MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F", 8, 7)
+    for _ in range(6):
+        q.run(["mash A 12", "mash B 4", "shot fluxo_medalhao.png"])
+        if q.flag(0x32):
+            break
+    assert q.flag(0x32), "Medalhao de Atlas nao entregue"
+    print("OK   Mae entregou o Medalhao de Atlas", flush=True)
+    q.goto("MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F", 8, 8); q.run(["press DOWN 18 0", "wait 90"])
     assert q.mapname() == "MAP_LITTLEROOT_TOWN", q.where
-    q.goto("MAP_LITTLEROOT_TOWN", 14, 9); q.run(["press UP 10 0", "wait 90"])
+    q.goto("MAP_LITTLEROOT_TOWN", 14, 9); q.run(["press UP 18 0", "wait 90"])
     assert q.mapname() == "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB", q.where
     q.goto("MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB", 6, 5)
-    q.run(["press UP 10 10", "press A 4 60", "mash A 3", "press A 4 40"])  # SIM para Snivy
-    for _ in range(12):  # dialogos ate liberar (A de frente para o Alex reabre a conversa)
-        q.run(["mash A 15", "walk DOWN 1"])
+    q.run(["press UP 10 10", "press A 4 60"])
+    for i in range(16):  # dialogo -> tela das 3 Poke Balls (A escolhe e confirma) -> Pokedex
+        key = "B" if q.flag(0x860) else "A"  # depois da escolha, B avanca o texto sem reabrir a conversa
+        q.run([f"mash {key} 10", f"shot fluxo_lab_{i:02d}.png", "walk DOWN 1"])
         if q.where[3] != 5:
             break
+    assert q.flag(0x860), "FLAG_SYS_POKEMON_GET nao ligada"
     q.run(["shot fluxo_lab.png"]); shutil.copy(q.state, f"{work}/e2e_starter.ss")
+    print("OK   Inicial recebido no laboratorio", flush=True)
     q.no_wild()  # QA de mapas: sem encontros selvagens (balanceamento tem teste proprio)
     q.goto("MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB", 6, 12); q.run(["walk DOWN 1", "wait 90"])
     q.goto("MAP_LITTLEROOT_TOWN", 33, 21); q.run(["wait 120"])

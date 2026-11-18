@@ -993,8 +993,7 @@ LittlerootTown_ProfessorBirchsLab_Text_ScottAboardSSTidalCall:
 
 @ Pokemon PALM: primeira chamada de aventura apos escolher o inicial.
 PokemonPalm_Text_AlexMission:
-	.string "PROF. ALEX: Muito bem!\p"
-	.string "Siga pela ROTA 01 ate a\n"
-	.string "VILA DA COLHEITA.\p"
-	.string "O NEVARD cuida de um ginasio\n"
-	.string "junto das plantacoes!$"
+	.string "PROF. ALEX: Well done!\p"
+	.string "Follow ROUTE 1 to HARVESTVALE.\p"
+	.string "NEVARD keeps a GYM right beside\n"
+	.string "the coffee fields!$"
