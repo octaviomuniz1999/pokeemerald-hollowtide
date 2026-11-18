@@ -67,8 +67,8 @@
 #define FLAG_PALM_JAY_TM    0x2D // Unused Flag
 #define FLAG_HT_EXP_SHARE    0x2E // Hollowtide: Exp. Share sempre ativo (ligada no novo jogo)
 #define FLAG_HT_FOLLOWERS_DISABLED    0x2F // Hollowtide: esconde o seguidor em cenas
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
-#define FLAG_UNUSED_0x031    0x31 // Unused Flag
+#define FLAG_HT_QA_NO_TRAINER_SEE    0x30 // Hollowtide QA: treinadores nao avistam (nunca ligada no jogo)
+#define FLAG_HT_QA_NO_ENCOUNTERS    0x31 // Hollowtide QA: sem encontros selvagens (nunca ligada no jogo)
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag

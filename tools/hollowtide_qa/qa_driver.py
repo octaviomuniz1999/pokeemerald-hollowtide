@@ -137,9 +137,8 @@ class QA:
     def no_wild(self, flags_vars_off="139C", party_addr=None, level_off=0x54):
         """Somente QA de mapas: Repel ativo + nivel 100 no lider do time => nenhum encontro selvagem.
         O nivel e so o campo em RAM (nao altera exp/estatisticas) e e refeito a cada chamada."""
-        party_addr = party_addr or SYMS["gParties"]
-        return self.run([f"poke8 {party_addr + level_off:08x} 100",
-                         f"setvar {flags_vars_off} 4021 250"], "no_wild")
+        # Usa as flags de QA da build (FLAG_HT_QA_NO_ENCOUNTERS 0x31 e FLAG_HT_QA_NO_TRAINER_SEE 0x30).
+        return self.run(["setflag 1270 31", "setflag 1270 30"], "no_wild")
 
     def step(self, d, n=1, extra=None):
         return self.run([f"walk {d} {n}"] + (extra or []), f"walk {d} {n}")
