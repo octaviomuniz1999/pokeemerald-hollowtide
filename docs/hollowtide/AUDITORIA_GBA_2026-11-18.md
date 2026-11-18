@@ -66,3 +66,17 @@ warps, não as batalhas nem os eventos.
 1. Corrigir a emenda Rota 03/Ferrália e dar nomes Hollowtide às seções de mapa (decisão de nomes pendente).
 2. Passagem de balanceamento do início (níveis da Rota 01/recruta/ginásio) e teste do puzzle do Nevard até a insígnia.
 3. Reconstruir a Brisa em escala de cidade costeira, com saída oeste para a Rota 03 (o esqueleto atual vira placeholder).
+
+## 6. Capítulo 1 — estado em 18/11/2026 (noite)
+
+| Item | Estado |
+|---|---|
+| Colisão de Dawnmere, Route 1, Harvestvale | corrigida (linter 0/0) |
+| Texto do capítulo | 100% inglês, validado por largura de glifo (`tools/hollowtide/texts.py`) |
+| Medalhão de Atlas | item-chave novo; a mãe entrega na porta de casa — **testado** |
+| Escolha do inicial | tela das 3 Poké Balls (sem batalha do Zigzagoon) — **testado** |
+| Recruta → válvula → ginásio → comportas → Josh → Tommy → Nevard → insígnia → Route 2 | **10/10 testado no emulador** (time de QA nível 100) |
+| Comportas do ginásio | progresso persistente (antes zerava ao sair do mapa) |
+| Team Palm | classe "TEAM PALM"; Grunts com paleta verde-oliva dedicada; retratos recoloridos sem o símbolo da Aqua |
+| Nevard | níveis do cânone (12/14); moveset sem Stun Spore/Mega Drain; sem Potion; sprite **placeholder oficial (Camper)** — o sprite gerado do Alpha 02 fica no repositório, fora de uso |
+| Balanceamento | inicial solo, sem itens: vence recruta, Josh e Tommy; contra o Nevard a luta é apertada (Treecko termina com ~1/3 de HP). Pendente: teste com Potions e um 2º Pokémon |

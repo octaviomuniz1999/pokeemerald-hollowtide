@@ -4793,10 +4793,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 === TRAINER_ROXANNE_1 ===
 Name: NEVARD
 Class: Leader
-Pic: Leader Roxanne
+Pic: Camper
 Gender: Male
 Music: Male
-Items: Potion
 Double Battle: No
 AI: Basic Trainer
 
