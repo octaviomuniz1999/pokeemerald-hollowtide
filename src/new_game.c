@@ -49,6 +49,7 @@
 #include "mystery_gift.h"
 #include "union_room_chat.h"
 #include "constants/map_groups.h"
+#include "constants/heal_locations.h"
 #include "constants/items.h"
 #include "difficulty.h"
 #include "follower_npc.h"
@@ -138,7 +139,12 @@ static void WarpToTruck(void)
     if (IS_FRLG)
         SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), WARP_ID_NONE, 6, 6);
     else
+    {
         SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F), MAP_NUM(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F), WARP_ID_NONE, 6, 6);
+        // Hollowtide: a intro pula o caminhao, que era quem chamava setrespawn.
+        // Sem isso, perder uma batalha antes do primeiro Centro Pokemon levava a Petalburg (fora do mundo).
+        SetLastHealLocationWarp(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F);
+    }
     WarpIntoMap();
 }
 
