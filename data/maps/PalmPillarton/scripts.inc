@@ -6,8 +6,17 @@ Palm131_Load::
 	call_if_set FLAG_HT_PILLARTON_VALVE_1, Palm131_DrawValve1
 	call_if_set FLAG_HT_PILLARTON_VALVE_2, Palm131_DrawValve2
 	call_if_set FLAG_HT_PILLARTON_VALVE_3, Palm131_DrawValve3
-	setmetatile 43, 18, 722, TRUE
+	call_if_unset FLAG_HT_PILLARTON_WATER, Palm131_LockGym
 	end
+
+Palm131_LockGym::
+	setmetatile 43, 18, 722, TRUE
+	return
+
+Palm131_UnlockGym::
+	setmetatile 43, 18, 461, TRUE
+	special DrawWholeMapView
+	return
 
 Palm131_DrawValve1::
 	setmetatile 16, 6, 866, TRUE
@@ -90,6 +99,8 @@ Palm131_LelaDefeated::
 	fadescreen FADE_TO_BLACK
 	setflag FLAG_HT_PILLARTON_WATER
 	removeobject 2
+	removeobject 1
+	call Palm131_UnlockGym
 	fadescreen FADE_FROM_BLACK
 	msgbox Palm131_TextWaterBack, MSGBOX_DEFAULT
 	release
@@ -245,7 +256,8 @@ Palm131_TextLelaAfter:
 
 Palm131_TextWaterBack:
 	.string "LELA and her crew left the dam.\n"
-	.string "Water flows freely to the city!$"
+	.string "Water flows freely to the city!\p"
+	.string "TCHUM headed back to his GYM.$"
 
 Palm131_TextDamGrunt1Intro:
 	.string "The dam is closed to the public!\n"

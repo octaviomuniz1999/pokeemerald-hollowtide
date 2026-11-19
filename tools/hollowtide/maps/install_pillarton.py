@@ -21,9 +21,14 @@ DOOR_OFF = {"rb_house_grey": (2, 4), "rb_office_long": (4, 5), "rb_office_small"
             "rb_mart": (1, 3), "rb_apartment": (2, 8), "rb_gym": (3, 4)}
 INTERIORS = [("pc", "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F", "LavaridgeTown_PokemonCenter_1F", "MAP_LAVARIDGE_TOWN"),
              ("mart", "MAP_LAVARIDGE_TOWN_MART", "LavaridgeTown_Mart", "MAP_LAVARIDGE_TOWN"),
-             ("house_w", "MAP_LAVARIDGE_TOWN_HOUSE", "LavaridgeTown_House", "MAP_LAVARIDGE_TOWN")]
+             ("house_w", "MAP_LAVARIDGE_TOWN_HOUSE", "LavaridgeTown_House", "MAP_LAVARIDGE_TOWN"),
+             ("gym", "MAP_FORTREE_CITY_GYM", "FortreeCity_Gym", "MAP_FORTREE_CITY")]       # ginasio do Tchum
+GYM_GFX = {"FortreeCity_Gym_EventScript_Winona": "BRAWLY", "FortreeCity_Gym_EventScript_Jared": "HIKER",
+           "FortreeCity_Gym_EventScript_Edwardo": "HIKER", "FortreeCity_Gym_EventScript_Flint": "CAMPER",
+           "FortreeCity_Gym_EventScript_Ashley": "PICNICKER", "FortreeCity_Gym_EventScript_Humberto": "HIKER",
+           "FortreeCity_Gym_EventScript_Darius": "HIKER"}
 NPCS = [  # (x, y, grafico, movimento, script, flag de sumir)
-    (23, 36, "BRAWLY", "MOVEMENT_TYPE_FACE_DOWN", "Palm130_Tchum", "0"),
+    (23, 36, "BRAWLY", "MOVEMENT_TYPE_FACE_DOWN", "Palm130_Tchum", "FLAG_HT_PILLARTON_WATER"),   # vai para o ginasio
     (48, 8, "AQUA_MEMBER_F", "MOVEMENT_TYPE_FACE_LEFT", "Palm131_Lela", "FLAG_HT_PILLARTON_WATER"),
     (18, 21, "OLD_MAN", "MOVEMENT_TYPE_FACE_RIGHT", "Palm130_OldCanal", "0"),
     (34, 26, "WOMAN_2", "MOVEMENT_TYPE_FACE_UP", "Palm130_GardenLady", "0"),
@@ -82,6 +87,12 @@ def main():
             if wv["dest_map"] in (old, "MAP_PALM_PILLARTON"):
                 wv["dest_map"], wv["dest_warp_id"] = "MAP_PALM_PILLARTON", str(idx)
         jsave(q, k)
+    gp = f"{ROOT}/data/maps/FortreeCity_Gym/map.json"
+    g = jload(gp)
+    for o in g["object_events"]:
+        if o["script"] in GYM_GFX:
+            o["graphics_id"] = f"OBJ_EVENT_GFX_{GYM_GFX[o['script']]}"
+    jsave(gp, g)
     hp = f"{ROOT}/src/data/heal_locations.json"
     h = jload(hp)
     for e in h["heal_locations"]:
@@ -94,7 +105,9 @@ def main():
     lela = local["Palm131_Lela"]
     sc = ["PalmPillarton_MapScripts::\n\tmap_script MAP_SCRIPT_ON_LOAD, Palm131_Load\n\t.byte 0\n",
           "Palm131_Load::\n" + "".join(f"\tcall_if_set {fl}, Palm131_DrawValve{i + 1}\n" for i, fl in enumerate(VALVE_FLAGS))
-          + f"\tsetmetatile {gx}, {gy}, {wall_mt}, TRUE\n\tend\n"]   # ginasio fechado nesta etapa
+          + "\tcall_if_unset FLAG_HT_PILLARTON_WATER, Palm131_LockGym\n\tend\n",
+          f"Palm131_LockGym::\n\tsetmetatile {gx}, {gy}, {wall_mt}, TRUE\n\treturn\n",
+          f"Palm131_UnlockGym::\n\tsetmetatile {gx}, {gy}, {door_mt}, TRUE\n\tspecial DrawWholeMapView\n\treturn\n"]
     for i, ((vx, vy), fl) in enumerate(zip(PL.VALVES, VALVE_FLAGS), 1):
         sc.append(f"Palm131_DrawValve{i}::\n\tsetmetatile {vx}, {vy}, {ids['valve_open']}, TRUE\n\treturn\n")
         sc.append(f"Palm131_Valve{i}::\n\tlockall\n\tgoto_if_set {fl}, Palm131_ValveIsOpen\n"
@@ -109,7 +122,8 @@ def main():
               "\trelease\n\tend\n")
     sc.append("Palm131_LelaTaunt::\n\tmsgbox Palm131_TextLelaTaunt, MSGBOX_DEFAULT\n\trelease\n\tend\n")
     sc.append(f"Palm131_LelaDefeated::\n\tmsgbox Palm131_TextLelaAfter, MSGBOX_DEFAULT\n\tclosemessage\n\tfadescreen FADE_TO_BLACK\n"
-              f"\tsetflag FLAG_HT_PILLARTON_WATER\n\tremoveobject {lela}\n\tfadescreen FADE_FROM_BLACK\n"
+              f"\tsetflag FLAG_HT_PILLARTON_WATER\n\tremoveobject {lela}\n\tremoveobject {local['Palm130_Tchum']}\n"
+              "\tcall Palm131_UnlockGym\n\tfadescreen FADE_FROM_BLACK\n"
               "\tmsgbox Palm131_TextWaterBack, MSGBOX_DEFAULT\n\trelease\n\tend\n")
     for (_, _, _, _, _, script, tid) in GRUNTS:
         k = script.replace("Palm131_", "")

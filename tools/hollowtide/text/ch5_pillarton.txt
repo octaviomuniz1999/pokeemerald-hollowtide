@@ -111,6 +111,8 @@ faced. Nor will it be the last.
 LELA and her crew left the dam.
 Water flows freely to the city!
 
+TCHUM headed back to his GYM.
+
 ==+ Palm131_TextDamGrunt1Intro
 The dam is closed to the public!
 Especially to nosy kids!
@@ -132,3 +134,129 @@ I regret it. Happy?
 ==+ Palm131_TextDamGrunt2After
 Admin LELA is at the plant. She'll
 put you in your place!
+
+## file: data/maps/FortreeCity_Gym/scripts.inc
+== FortreeCity_Gym_Text_GymGuideAdvice
+Hey, future CHAMPION {PLAYER}!
+
+TCHUM, the LEADER of PILLARTON GYM,
+uses GROUND-type POKéMON.
+
+WATER and GRASS moves soak right
+into them. Electric moves? Useless!
+
+The turning gates here work like
+floodgates. Push them to open a path!
+
+== FortreeCity_Gym_Text_GymGuidePostVictory
+You beat TCHUM! Now that's what I
+call breaking new ground!
+
+== FortreeCity_Gym_Text_WinonaIntro
+So the hero of the dam made it
+through my floodgates!
+
+It's time for some TERapy.
+
+Promise me one thing: whatever
+happens, don't lose your footing!
+
+...Okay, that one was awful.
+I know. Let's battle!
+
+== FortreeCity_Gym_Text_WinonaDefeat
+You kept your feet on the ground
+the whole time. Impressive!
+
+Take the PILLAR BADGE!
+
+== FortreeCity_Gym_Text_WinonaPostBattle
+NEVARD was right about you.
+
+A city stands on its pillars, and
+people stand on each other. Remember
+that out there.
+
+== FortreeCity_Gym_Text_ReceivedFeatherBadge
+{PLAYER} received the PILLAR BADGE
+from TCHUM.
+
+== FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis
+The PILLAR BADGE shows you can
+stand firm when the ground shakes.
+
+Wear it well, and stay grounded!
+
+== FortreeCity_Gym_Text_GymStatue
+PILLARTON CITY POKéMON GYM
+
+== FortreeCity_Gym_Text_GymStatueCertified
+PILLARTON CITY POKéMON GYM
+
+TCHUM'S CERTIFIED TRAINERS:
+{PLAYER}
+
+== FortreeCity_Gym_Text_JaredIntro
+The gates are heavy, but my
+POKéMON are heavier!
+
+== FortreeCity_Gym_Text_JaredDefeat
+Buried...
+
+== FortreeCity_Gym_Text_JaredPostBattle
+Push a gate from the side of its
+arm, and it swings out of the way.
+
+== FortreeCity_Gym_Text_EdwardoIntro
+Bones, rocks and sand: the history
+of the earth is in my team!
+
+== FortreeCity_Gym_Text_EdwardoDefeat
+Ancient history now...
+
+== FortreeCity_Gym_Text_EdwardoPostBattle
+TCHUM's MAROWAK hits hard with its
+bone. Don't underestimate it!
+
+== FortreeCity_Gym_Text_FlintIntro
+I've been digging tunnels since I
+was a kid!
+
+== FortreeCity_Gym_Text_FlintDefeat
+Dead end...
+
+== FortreeCity_Gym_Text_FlintPostBattle
+If you get stuck in the gates, just
+walk out and come back. They reset!
+
+== FortreeCity_Gym_Text_AshleyIntro
+Mud pies are my specialty! Ready
+to get messy?
+
+== FortreeCity_Gym_Text_AshleyDefeat
+Splat!
+
+== FortreeCity_Gym_Text_AshleyPostBattle
+TCHUM laughs at all his own jokes.
+It's kind of sweet, honestly.
+
+== FortreeCity_Gym_Text_HumbertoIntro
+Solid rock, solid strategy!
+
+== FortreeCity_Gym_Text_HumbertoDefeat
+Cracked!
+
+== FortreeCity_Gym_Text_HumbertoPostBattle
+The dam held for a hundred years.
+Our GYM will hold too!
+
+== FortreeCity_Gym_Text_DariusIntro
+These ruins hold secrets... and
+so does my team!
+
+== FortreeCity_Gym_Text_DariusDefeat
+Secret revealed...
+
+== FortreeCity_Gym_Text_DariusPostBattle
+LARVITAR eats soil to grow. One day
+it'll be a mountain!

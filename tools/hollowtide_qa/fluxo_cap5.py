@@ -13,6 +13,9 @@ from fluxo_cap2_eventos import battle
 TF = 0x500
 T, R5, P = "MAP_PALM_TRADEPOST", "MAP_PALM_ROUTE05", "MAP_PALM_PILLARTON"
 G1, G2, LELA = 17, 26, 32   # TRAINER_GRUNT_WEATHER_INST_1/_4, TRAINER_SHELLY_WEATHER_INSTITUTE
+TCHUM = 270                 # TRAINER_WINONA_1 (Tchum)
+FORTREE_DEFEATED = 0x4F5
+GYM = "MAP_FORTREE_CITY_GYM"
 res = []
 
 
@@ -88,6 +91,43 @@ def main(rom, runner, work, estado):
     q.run(["mash B 20", "shot cap5_agua.png"])
     ok(q.flag(0x3B), "Agua de volta: Lela deixou a barragem")
     shutil.copy(q.state, f"{work}/cap5_pos_lela.ss")
+    # ginasio do Tchum: portoes giratorios (BFS sobre posicao + orientacao, porta de rotating_gate.c)
+    q.run(["setflag 1270 30"])            # treinadores do ginasio nao interrompem a travessia dos portoes
+    q.goto(P, 43, 19); q.run(["press UP 30 0", "wait 120", "shot cap5_ginasio.png"])
+    ok(q.mapname() == GYM, "Ginasio do Tchum aberto depois da Lela")
+    import qa_driver as D
+    m = D.MAPS[GYM]
+    path = D.gate_bfs(m, tuple(q.where[2:]), (15, 3), D.FORTREE_GATES)
+    ok(path is not None, f"Portoes: solucao encontrada ({len(path or [])} passos)")
+    pos, oris = tuple(q.where[2:]), tuple(g[3] for g in D.FORTREE_GATES)
+    DXY = {"UP": (0, -1), "DOWN": (0, 1), "LEFT": (-1, 0), "RIGHT": (1, 0)}
+    for i in range(0, len(path), 6):
+        chunk = path[i:i + 6]
+        for d in chunk:
+            nx, ny = pos[0] + DXY[d][0], pos[1] + DXY[d][1]
+            _, oris = D._gate_move(m, D.FORTREE_GATES, oris, nx, ny, d)
+            pos = (nx, ny)
+        q.run(sum([[f"walk {d} 1", "wait 6"] for d in chunk], []))
+        if tuple(q.where[2:]) != pos:
+            q.run(["shot cap5_portoes_falha.png"])
+            ok(False, f"Portoes: posicao divergiu no passo {i} (jogo {q.where[2:]}, simulado {pos})")
+    ok(tuple(q.where[2:]) == (15, 3), "Portoes: chegou diante do Tchum")
+    q.run(["press UP 10 10", "press A 4 40"])
+    ok(battle(q, TF + TCHUM, tries=140), "Venceu TCHUM")
+    for _ in range(10):
+        q.run(["mash A 8", "mash B 6"])
+        if q.flag(0x860 + 10):
+            break
+    q.run(["mash B 20", "shot cap5_insignia.png"])
+    ok(q.flag(0x860 + 10) and q.flag(FORTREE_DEFEATED), "Insignia dos Pilares recebida")
+    shutil.copy(q.state, f"{work}/cap5_pos_tchum.ss")
+    back = D.gate_bfs(m, (15, 3), (15, 23), [(gx, gy, sh, o) for (gx, gy, sh, _), o in zip(D.FORTREE_GATES, oris)])
+    ok(back is not None, "Portoes: caminho de volta a partir do estado atual")
+    for i in range(0, len(back), 6):
+        q.run(sum([[f"walk {d} 1", "wait 6"] for d in back[i:i + 6]], []))
+    q.run(["press DOWN 30 0", "wait 120"])
+    ok(q.mapname() == P and tuple(q.where[2:]) in ((43, 19), (43, 20)), "Saiu do ginasio na porta certa")
+    q.run(["clearflag 1270 30"])
     q.goto(P, 10, 17); q.run(["press UP 30 0", "wait 120"])
     ok(q.mapname() == "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F", "Pillarton -> Centro Pokemon")
     q.goto("MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F", 7, 8); q.run(["press DOWN 30 0", "wait 120"])

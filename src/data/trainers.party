@@ -4933,54 +4933,38 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Feint Attack
 
 === TRAINER_WINONA_1 ===
-Name: WINONA
+Name: TCHUM
 Class: Leader
-Pic: Leader Winona
-Gender: Female
-Music: Female
-Items: Hyper Potion / Hyper Potion
+Pic: Leader Brawly
+Gender: Male
+Music: Male
+Items: Super Potion / Super Potion
 Double Battle: No
-AI: Basic Trainer / Risky
+AI: Basic Trainer
 
-Swablu
-Level: 29
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Perish Song
-- Mirror Move
-- Safeguard
-- Aerial Ace
-
-Tropius
-Level: 29
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Sunny Day
-- Aerial Ace
-- Solar Beam
-- Synthesis
-
-Pelipper
-Level: 30
-IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Water Gun
-- Supersonic
-- Protect
-- Aerial Ace
-
-Skarmory
-Level: 31
-IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+Sandshrew
+Level: 27
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Rollout
+- Magnitude
+- Rapid Spin
 - Sand Attack
-- Fury Attack
-- Steel Wing
-- Aerial Ace
 
-Altaria @ Oran Berry
-Level: 33
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Dragon Breath
-- Dragon Dance
-- Aerial Ace
+Phanpy
+Level: 28
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Bulldoze
+- Rollout
+- Defense Curl
+- Take Down
+
+Marowak
+Level: 31
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Bonemerang
+- Headbutt
+- Rock Slide
+- Focus Energy
 
 === TRAINER_TATE_AND_LIZA_1 ===
 Name: TATE&LIZA
@@ -7279,37 +7263,37 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JARED ===
 Name: JARED
-Class: Bird Keeper
-Pic: Bird Keeper
+Class: Hiker
+Pic: Hiker
 Gender: Male
-Music: Cool
+Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
-Level: 27
+Geodude
+Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Skarmory
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Tropius
-Level: 27
+Diglett
+Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_HUMBERTO ===
 Name: HUMBERTO
-Class: Bird Keeper
-Pic: Bird Keeper
+Class: Hiker
+Pic: Hiker
 Gender: Male
-Music: Cool
+Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Skarmory
-Level: 30
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Nosepass
+Level: 27
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Drilbur
+Level: 27
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_PRESLEY ===
 Name: PRESLEY
@@ -7330,20 +7314,16 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_EDWARDO ===
 Name: EDWARDO
-Class: Bird Keeper
-Pic: Bird Keeper
+Class: Ruin Maniac
+Pic: Ruin Maniac
 Gender: Male
-Music: Cool
+Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Doduo
-Level: 29
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-
-Pelipper
-Level: 29
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Cubone
+Level: 27
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_COLIN ===
 Name: COLIN
@@ -11929,13 +11909,13 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Swellow
-Level: 29
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Sandshrew
+Level: 26
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Xatu
-Level: 29
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+Trapinch
+Level: 26
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_ASHLEY ===
 Name: ASHLEY
@@ -11946,15 +11926,11 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Swablu
-Level: 27
+Wooper
+Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Swablu
-Level: 27
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Swablu
+Phanpy
 Level: 27
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -15763,16 +15739,20 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_DARIUS ===
 Name: DARIUS
-Class: Bird Keeper
-Pic: Bird Keeper
+Class: Ruin Maniac
+Pic: Ruin Maniac
 Gender: Male
-Music: Cool
+Music: Hiker
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move
 
-Tropius
-Level: 30
-IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Baltoy
+Level: 27
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Larvitar
+Level: 27
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_STEVEN ===
 Name: STEVEN

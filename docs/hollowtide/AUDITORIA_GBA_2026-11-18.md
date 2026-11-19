@@ -186,3 +186,12 @@ warps, não as batalhas nem os eventos.
 | Evento | Tchum recebe o jogador (piadas de "base sólida"); 2 recrutas na crista (visão ligada); 3 **válvulas desenhadas** (volante marrom fechado / bege aberto, sobre o piso da praça); Lela só luta depois das três (Persian 28, Roselia 29, Lanturn 30 — cânone; placeholder oficial de admin), fala do cânone ("escassez com oportunidade… água em energia, energia em moedas…"), vai embora; água de volta (FLAG_HT_PILLARTON_WATER) |
 | Pendente | ginásio do Tchum (interior de Fortree: portões giratórios como comportas; o BFS do QA ainda não modela os portões), rio visualmente mais cheio depois do evento |
 | QA | `fluxo_cap5.py` estendido: 28/28 (Route 5 + Pillarton + Centro Pokémon + volta); regressão completa sem falhas (~130 verificações) |
+
+## 16. Capítulo 5 — ginásio do Tchum — 19/11/2026 (noite)
+
+| Item | Estado |
+|---|---|
+| Ginásio | interior do ginásio de Fortree: os portões giratórios fazem o papel das comportas; abre na hora em que a Lela é derrotada (o Tchum sai da rua e vai ao ginásio); 6 treinadores de Terra (Geodude, Diglett, Cubone, Sandshrew, Trapinch, Wooper, Phanpy, Nosepass, Drilbur, Baltoy, Larvitar; Lv 26–27); Tchum Sandshrew 27 / Phanpy 28 / Marowak 31 (cânone; Marowak por último), placeholder oficial (Brawly) → **Insígnia dos Pilares** (FLAG_BADGE04_GET); efeitos de Hoenn removidos (TM Aerial Ace, Match Call, Scott) |
+| Textos | 100% EN, com o "TERrapia" do cânone ("It's time for some TERapy") |
+| QA | **resolvedor de portões giratórios**: porta em Python de `rotating_gate.c` (tabelas de rotação, braços, colisão com BUGFIX) + BFS sobre (posição, orientação dos 8 portões); no jogo, 97 passos com a posição conferida a cada 6 passos contra a simulação; volta pelo estado atual dos portões; `fluxo_cap5.py` 34/34; regressão completa sem falhas (~137 verificações) |
+| Pendente | arte própria do ginásio (hoje: casa na árvore de Fortree), TM Bulldoze/Flash Cannon/Hex/Bullet Seed na passada de TMs |

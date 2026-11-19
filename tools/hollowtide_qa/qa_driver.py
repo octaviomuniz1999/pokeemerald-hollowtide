@@ -218,3 +218,86 @@ class QA:
 
     def shot(self, name):
         return self.run([f"shot {name}"], f"shot {name}")
+
+
+# ---------------------------------------------------------------- portoes giratorios (porta de rotating_gate.c)
+_NONE = 255
+def _rot(d, arm, long_):        # d: 1 anti-horario, 2 horario
+    return (d << 4) | (arm << 1) | long_
+_N, _E, _S, _W = 0, 1, 2, 3
+_ACW, _CW = 1, 2
+_ROT_INFO = {
+    "UP":    [_NONE] * 4 + [_rot(_CW, _W, 1), _rot(_CW, _W, 0), _rot(_ACW, _E, 0), _rot(_ACW, _E, 1)] + [_NONE] * 8,
+    "DOWN":  [_NONE] * 8 + [_rot(_ACW, _W, 1), _rot(_ACW, _W, 0), _rot(_CW, _E, 0), _rot(_CW, _E, 1)] + [_NONE] * 4,
+    "LEFT":  [_NONE, _rot(_ACW, _N, 1), _NONE, _NONE, _NONE, _rot(_ACW, _N, 0), _NONE, _NONE,
+              _NONE, _rot(_CW, _S, 0), _NONE, _NONE, _NONE, _rot(_CW, _S, 1), _NONE, _NONE],
+    "RIGHT": [_NONE, _NONE, _rot(_CW, _N, 1), _NONE, _NONE, _NONE, _rot(_CW, _N, 0), _NONE,
+              _NONE, _NONE, _rot(_ACW, _S, 0), _NONE, _NONE, _NONE, _rot(_ACW, _S, 1), _NONE],
+}
+_ARMS_CW = [(0, -1), (1, -2), (0, 0), (1, 0), (-1, 0), (-1, 1), (-1, -1), (-2, -1)]
+_ARMS_ACW = [(-1, -1), (-1, -2), (0, -1), (1, -1), (0, 0), (0, 1), (-1, 0), (-2, 0)]
+_ARM_LAYOUT = {  # N, E, S, W (curto, longo)
+    "L1": [1, 0, 1, 0, 0, 0, 0, 0], "L2": [1, 1, 1, 0, 0, 0, 0, 0], "L3": [1, 0, 1, 1, 0, 0, 0, 0], "L4": [1, 1, 1, 1, 0, 0, 0, 0],
+    "T1": [1, 0, 1, 0, 1, 0, 0, 0], "T2": [1, 1, 1, 0, 1, 0, 0, 0], "T3": [1, 0, 1, 1, 1, 0, 0, 0], "T4": [1, 0, 1, 0, 1, 1, 0, 0],
+}
+FORTREE_GATES = [(6, 7, "T2", 1), (9, 15, "T2", 2), (3, 19, "T2", 1), (2, 6, "T1", 1), (9, 12, "T1", 0),
+                 (6, 23, "T1", 0), (12, 22, "T1", 0), (6, 3, "L4", 2)]
+
+
+def _gate_move(m, gates, oris, nx, ny, d):
+    """Devolve (pode_andar, novas_orientacoes) como CheckForRotatingGatePuzzleCollision."""
+    for i, (gx, gy, shape, _) in enumerate(gates):
+        if gx - 2 <= nx <= gx + 1 and gy - 2 <= ny <= gy + 1:
+            info = _ROT_INFO[d][(ny - gy + 2) * 4 + (nx - gx + 2)]
+            if info == _NONE:
+                continue
+            rdir, arm, long_ = info >> 4, (info & 0xF) >> 1, info & 1
+            ori = oris[i]
+            if not _ARM_LAYOUT[shape][((arm - ori + 4) % 4) * 2 + long_]:
+                continue
+            pos = _ARMS_ACW if rdir == _ACW else _ARMS_CW
+            for a in range(4):
+                for j in range(2):
+                    if _ARM_LAYOUT[shape][2 * a + j]:
+                        ax, ay = pos[2 * ((ori + a) % 4) + j]
+                        if 0 <= gx + ax < m["w"] and 0 <= gy + ay < m["h"] and block(m, gx + ax, gy + ay)[1] != 0:   # BUGFIX ligado nesta build
+                            return False, oris
+            new = list(oris)
+            new[i] = (ori - 1) % 4 if rdir == _ACW else (ori + 1) % 4
+            return True, tuple(new)
+    return True, oris
+
+
+def gate_bfs(m, start, goal, gates, avoid=()):
+    """BFS sobre (posicao, orientacao dos portoes). Devolve a lista de direcoes ate goal."""
+    blocked = {(o["x"], o["y"]) for o in m["json"].get("object_events", [])} | set(avoid)
+    blocked.discard(goal)
+    s0 = (start, tuple(g[3] for g in gates))
+    prev = {s0: None}
+    dq = collections.deque([s0])
+    D = (("UP", (0, -1)), ("DOWN", (0, 1)), ("LEFT", (-1, 0)), ("RIGHT", (1, 0)))
+    while dq:
+        st = dq.popleft()
+        (cx, cy), oris = st
+        if (cx, cy) == goal:
+            path = []
+            while prev[st]:
+                st, d = prev[st]
+                path.append(d)
+            return path[::-1]
+        _, _, ec = block(m, cx, cy)
+        for d, (dx, dy) in D:
+            nx, ny = cx + dx, cy + dy
+            if not (0 <= nx < m["w"] and 0 <= ny < m["h"]) or (nx, ny) in blocked:
+                continue
+            _, col, en = block(m, nx, ny)
+            if col or (ec not in (0, 15) and en not in (0, 15) and ec != en):
+                continue
+            okm, no = _gate_move(m, gates, oris, nx, ny, d)
+            if not okm:
+                continue
+            ns = ((nx, ny), no)
+            if ns not in prev:
+                prev[ns] = (st, d)
+                dq.append(ns)
+    return None
