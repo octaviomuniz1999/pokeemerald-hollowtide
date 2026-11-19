@@ -38,6 +38,12 @@ STAMPS = {
     "rb_pokecenter": ("LAYOUT_RUSTBORO_CITY", 15, 35, 4, 4),
     "rb_mart": ("LAYOUT_RUSTBORO_CITY", 15, 42, 4, 4),
     "rb_lamp": ("LAYOUT_RUSTBORO_CITY", 19, 15, 1, 2),
+    "lav_spring": ("LAYOUT_LAVARIDGE_TOWN", 2, 2, 6, 5),
+    "lav_pokecenter": ("LAYOUT_LAVARIDGE_TOWN", 8, 3, 4, 4),
+    "lav_mart": ("LAYOUT_LAVARIDGE_TOWN", 14, 2, 4, 4),
+    "lav_gym": ("LAYOUT_LAVARIDGE_TOWN", 2, 11, 6, 5),
+    "lav_house": ("LAYOUT_LAVARIDGE_TOWN", 11, 12, 4, 4),
+    "lav_house2": ("LAYOUT_LAVARIDGE_TOWN", 15, 12, 4, 4),
     "gen_mart": ("LAYOUT_PETALBURG_CITY", 24, 10, 4, 3),
     "gen_pokecenter": ("LAYOUT_PETALBURG_CITY", 19, 13, 4, 4),
 }

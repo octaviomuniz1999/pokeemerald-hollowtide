@@ -17,6 +17,8 @@ RIVER = (26, 29)              # = rio da Route 5 (x 22-25)
 SOUTH_PATH = (20, 21)         # = trilha norte da Route 5 (x 16-17)
 VALVES = [(16, 6), (26, 6), (36, 6)]
 PARK_TOP = 38
+EAST_ROAD = (20, 21)          # avenida leste -> Route 6 (linhas pares: a mata 2x2 da moldura fica inteira)
+EAST_PARK = 47                # da coluna 47 ao fim: parque (a Route 6 enxerga ~8 colunas daqui)
 HBOARD = (836, 844, 845)
 BUILDINGS = [
     ("rb_office_long", 43, 2, "plant"),          # usina da Team Palm (na crista, a leste)
@@ -50,12 +52,15 @@ def compose():
     # canal antigo seco (rocha nua) para oeste
     c.rect(6, 24, RIVER[0] - 1, 26, "sand")
     # ruas
-    c.rect(2, 16, RIVER[0] - 1, 17, "road"); c.rect(RIVER[1] + 1, 19, W - 3, 20, "road")
+    c.rect(2, 16, RIVER[0] - 1, 17, "road"); c.rect(RIVER[1] + 1, EAST_ROAD[0], EAST_PARK - 1, EAST_ROAD[1], "road")
     c.rect(8, 10, 9, 23, "road"); c.rect(SOUTH_PATH[0], 18, SOUTH_PATH[1], PARK_TOP - 1, "road")
     c.rect(2, 28, RIVER[0] - 1, 29, "road"); c.rect(RIVER[1] + 1, 27, W - 3, 28, "road")
     c.rect(36, 10, 37, 18, "road")
     # jardins "de contrato" da Palm (flores em canteiros cercados de grama)
-    c.rect(46, 22, 52, 25, "grass"); c.rect(47, 23, 51, 24, "flower")
+    # parque leste (emenda com a Route 6): so primario nas colunas que a rota enxerga
+    c.rect(EAST_PARK, 10, W - 1, PARK_TOP - 1, "grass")
+    c.rect(EAST_PARK, EAST_ROAD[0], W - 1, EAST_ROAD[1], "sand")
+    c.rect(EAST_PARK + 1, 23, EAST_PARK + 5, 24, "flower"); c.rect(EAST_PARK + 2, 14, EAST_PARK + 5, 14, "flower")
     c.rect(32, 22, 36, 25, "grass"); c.rect(33, 23, 35, 24, "flower")
     for (name, x, y, _) in BUILDINGS:
         c.stamp(name, x, y)
@@ -68,6 +73,10 @@ def compose():
              paths, margin=0)
     c.forest(lambda x, y: ((x - 8) / 5) ** 2 + ((y - 40) / 2) ** 2 <= 1, paths)
     c.forest(lambda x, y: ((x - 44) / 6) ** 2 + ((y - 40) / 2) ** 2 <= 1, paths)
+    epath = {(x, y) for x in range(EAST_PARK, W) for y in EAST_ROAD}
+    c.forest(lambda x, y: x >= EAST_PARK + 1 and 10 <= y < PARK_TOP and not (EAST_ROAD[0] - 3 <= y <= EAST_ROAD[1] + 3)
+             and not (22 <= y <= 25), epath)
+    c.forest(lambda x, y: x >= W - 2 and 10 <= y < PARK_TOP and not (EAST_ROAD[0] <= y <= EAST_ROAD[1]), epath, margin=0)
     c.rect(34, 38, 38, 38, "flower"); c.rect(12, 38, 15, 38, "flower")
     # valvulas na crista (fechadas), pontes sobre o rio, pedras no canal seco
     for (x, y) in VALVES:

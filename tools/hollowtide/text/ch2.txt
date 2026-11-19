@@ -82,8 +82,10 @@ BREEZEPORT has to get past me!
 The stage is lit.
 
 == Palm090_TextBlocked
-JAY: The spotlights are still off.
-Read the sign by the stage.
+JAY: My stage is still dark!
+
+Light the spotlights on the panels
+below: LEFT, then RIGHT, then LEFT.
 
 == Palm090_TextJayIntro
 JAY: Now that the lights are back,
@@ -226,3 +228,30 @@ hosts the festival.
 
 It's the heart of this city.
 Tonight, it beats again.
+
+## file: data/maps/PalmTeatro/scripts.inc
+== Palm090_TextStageLamp
+The LEFT spotlight flickers on!
+Next: the RIGHT spotlight.
+
+== Palm090_TextStageLampTwo
+The RIGHT spotlight flickers on!
+Now the LEFT one again.
+
+== Palm090_TextReset
+The lights went out...
+
+Light them in order: LEFT, then
+RIGHT, then LEFT again.
+
+== Palm090_TextCenterPanel
+A note is taped to the panel:
+“LEFT, RIGHT, LEFT.”
+
+== Palm090_TextHint
+SPOTLIGHTS
+Left, right, left.
+
+== Palm090_TextPuzzleDone
+The stage is lit!
+JAY is ready for you.

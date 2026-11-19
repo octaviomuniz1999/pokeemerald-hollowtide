@@ -79,12 +79,12 @@
 #define FLAG_HT_PILLARTON_VALVE_2    0x39 // valvula 2
 #define FLAG_HT_PILLARTON_VALVE_3    0x3A // valvula 3
 #define FLAG_HT_PILLARTON_WATER      0x3B // Lela derrotada: agua de volta, ginasio do Tchum abre
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
-#define FLAG_UNUSED_0x03D    0x3D // Unused Flag
-#define FLAG_UNUSED_0x03E    0x3E // Unused Flag
-#define FLAG_UNUSED_0x03F    0x3F // Unused Flag
-#define FLAG_UNUSED_0x040    0x40 // Unused Flag
-#define FLAG_UNUSED_0x041    0x41 // Unused Flag
+#define FLAG_HT_SERENIA_JADE_MET    0x3C // Jade e Lau receberam o jogador
+#define FLAG_HT_SERENIA_ILLUSION_1  0x3D // ilusao 1 desfeita
+#define FLAG_HT_SERENIA_ILLUSION_2  0x3E // ilusao 2 desfeita
+#define FLAG_HT_SERENIA_ILLUSION_3  0x3F // ilusao 3 desfeita
+#define FLAG_HT_SERENIA_FRAGMENT    0x40 // fragmento do santuario recuperado
+#define FLAG_HT_SERENIA_DONE        0x41 // fragmento devolvido ao altar: ginasio da Jade abre
 #define FLAG_UNUSED_0x042    0x42 // Unused Flag
 #define FLAG_UNUSED_0x043    0x43 // Unused Flag
 #define FLAG_UNUSED_0x044    0x44 // Unused Flag

@@ -67,6 +67,10 @@ def main(rom, runner, work, estado):
     q.goto(B, 47, 28); q.run(["press UP 30 0", "wait 120", "shot cap2_teatro.png"])
     ok(q.mapname() == "MAP_PALM_TEATRO", "Entrou no Teatro dos Ecos")
     T = "MAP_PALM_TEATRO"
+    # jogador confuso: painel do meio (mostra a ordem, nao reseta) e ordem errada (reseta com a dica)
+    talk(q, T, 5, 9, "UP"); talk(q, T, 7, 9, "UP")
+    q.goto(T, 5, 3); q.run(["press UP 10 10", "press A 4 40", "mash B 20"])
+    ok(not q.in_battle() and not q.flag(JAY), "Jay explica a ordem enquanto o palco esta escuro")
     for (x, d) in [(3, "L"), (7, "R"), (3, "L")]:   # holofotes: esquerda, direita, esquerda
         talk(q, T, x, 9, "UP")
     q.strong()   # cura antes da lider

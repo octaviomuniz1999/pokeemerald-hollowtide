@@ -18,7 +18,10 @@ Palm090_Right::
 Palm090_Reset::
 	lockall
 	goto_if_set FLAG_PALM_JAY_WON, Palm090_PuzzleDone
-	goto Palm090_Wrong
+	goto_if_eq VAR_TEMP_8, 3, Palm090_PuzzleDone
+	msgbox Palm090_TextCenterPanel, MSGBOX_DEFAULT
+	releaseall
+	end
 
 Palm090_StepOne::
 	setvar VAR_TEMP_8, 1
@@ -37,7 +40,13 @@ Palm090_Lit::
 	call Palm090_StageDraw
 	special DrawWholeMapView
 	goto_if_eq VAR_TEMP_8, 3, Palm090_PuzzleDone
+	goto_if_eq VAR_TEMP_8, 2, Palm090_LitTwo
 	msgbox Palm090_TextStageLamp, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Palm090_LitTwo::
+	msgbox Palm090_TextStageLampTwo, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -50,6 +59,7 @@ Palm090_Wrong::
 	end
 
 Palm090_PuzzleDone::
+	playse SE_SUCCESS
 	msgbox Palm090_TextPuzzleDone, MSGBOX_DEFAULT
 	releaseall
 	end
@@ -109,18 +119,21 @@ Palm090_Yumi::
 
 Palm090_TextHint:
 	.string "SPOTLIGHTS\n"
-	.string "Left, right, left.\p"
-	.string "The middle panel turns them all off.$"
+	.string "Left, right, left.$"
 Palm090_TextStageLamp:
-	.string "A spotlight flickers on.$"
+	.string "The LEFT spotlight flickers on!\n"
+	.string "Next: the RIGHT spotlight.$"
 Palm090_TextReset:
-	.string "The lights went out.\n"
-	.string "Try the sequence again.$"
+	.string "The lights went out...\p"
+	.string "Light them in order: LEFT, then\n"
+	.string "RIGHT, then LEFT again.$"
 Palm090_TextPuzzleDone:
-	.string "The stage is lit.$"
+	.string "The stage is lit!\n"
+	.string "JAY is ready for you.$"
 Palm090_TextBlocked:
-	.string "JAY: The spotlights are still off.\n"
-	.string "Read the sign by the stage.$"
+	.string "JAY: My stage is still dark!\p"
+	.string "Light the spotlights on the panels\n"
+	.string "below: LEFT, then RIGHT, then LEFT.$"
 Palm090_TextJayIntro:
 	.string "JAY: Now that the lights are back,\n"
 	.string "even the shadows want to dance!\p"
@@ -175,3 +188,11 @@ Palm090_LightRight::
 Palm090_LightCenter::
 	setmetatile 5, 8, 664, TRUE
 	return
+
+Palm090_TextCenterPanel:
+	.string "A note is taped to the panel:\n"
+	.string "“LEFT, RIGHT, LEFT.”$"
+
+Palm090_TextStageLampTwo:
+	.string "The RIGHT spotlight flickers on!\n"
+	.string "Now the LEFT one again.$"

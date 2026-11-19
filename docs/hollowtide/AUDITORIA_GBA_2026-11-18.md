@@ -202,3 +202,13 @@ warps, não as batalhas nem os eventos.
 |---|---|
 | TMs | lista de TMs ganhou **Flash Cannon (TM52)** e **Bulldoze (TM53)** depois do Hex (TM51); quem aprende é regenerado no build a partir de `all_learnables.json` (Magnemite → Flash Cannon e Phanpy → Bulldoze conferidos); Vessel e Tchum entregam os TMs depois da insígnia; descrição do TM Hex traduzida (estava em português) |
 | QA | o modo forte (só em build não-release) agora também dá golpes de ataque variados (Surf, Ice Beam, Thunderbolt, Body Slam) e é reaplicado (cura) antes de cada líder/admin — o inicial nível 100 com golpes de status perdia para o Marowak do Tchum de vez em quando; regressão completa sem falhas |
+
+## 18. Correção: ginásio da Jay (relato do diretor) — 19/11/2026 (noite)
+
+| Item | Estado |
+|---|---|
+| Relato | "não dá para ativar a sequência de lâmpadas, não é possível passar do ginásio" |
+| Diagnóstico | a mecânica funcionava (VAR_TEMP_8 0→1→2→3 conferido no emulador), mas a ordem só existia numa placa **invisível** (piso comum em (8,11)) que a Jay mandava ler; o painel do meio e qualquer erro apagavam tudo sem dizer por quê — para o jogador, o puzzle parecia não responder |
+| Correção | a Jay diz a ordem (ESQUERDA, DIREITA, ESQUERDA); cada holofote diz qual é o próximo; o painel do meio mostra a ordem em vez de apagar; erro apaga com a dica; som de sucesso ao acender o palco |
+| QA | `fluxo_cap2_eventos.py` agora simula o jogador confuso (painel do meio e ordem errada antes da ordem certa) e confirma que o ginásio continua vencível; regressão completa sem falhas |
+| Builds | a partir da 19l as builds de teste saem **sem RELEASE**, com o menu de debug da expansion (R + START), a pedido do diretor, até o fim do jogo |
