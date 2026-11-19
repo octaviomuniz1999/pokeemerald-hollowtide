@@ -20,14 +20,14 @@ Palm080_RouteSignSouth::
 	end
 
 Palm080_TextRouteNorth:
-	.string "ROTA 02\n"
-	.string "Norte: VILA DA COLHEITA.\p"
-	.string "Para BRISA, siga a trilha ao sul.$"
+	.string "ROUTE 2\n"
+	.string "North: HARVESTVALE\p"
+	.string "For BREEZEPORT, follow the trail\n"
+	.string "south toward the sea.$"
 
 Palm080_TextRouteSouth:
-	.string "ROTA 02\n"
-	.string "CIDADE DA BRISA logo ao sul.\n"
-	.string "Siga pelo caminho de terra.$"
+	.string "ROUTE 2\n"
+	.string "BREEZEPORT CITY just ahead.$"
 
 Palm080_RouteLIANG::
 	trainerbattle_single TRAINER_PALM_ROUTE02_LIANG, Palm080_TextLIANGIntro, Palm080_TextLIANGLoss
@@ -35,7 +35,8 @@ Palm080_RouteLIANG::
 	end
 
 Palm080_TextLIANGIntro:
-	.string "Vamos batalhar na ROTA 02!$"
+	.string "Smell that? Salt air!\n"
+	.string "Let's battle before the beach!$"
 
 Palm080_TextLIANGLoss:
 	.string "Boa batalha!$"
@@ -46,7 +47,8 @@ Palm080_RouteMEI_LAN::
 	end
 
 Palm080_TextMEI_LANIntro:
-	.string "Vamos batalhar na ROTA 02!$"
+	.string "My POKéMON love the sea breeze.\n"
+	.string "Want to see why?$"
 
 Palm080_TextMEI_LANLoss:
 	.string "Boa batalha!$"
@@ -57,7 +59,8 @@ Palm080_RouteQIN::
 	end
 
 Palm080_TextQINIntro:
-	.string "Vamos batalhar na ROTA 02!$"
+	.string "Every trainer heading to\n"
+	.string "BREEZEPORT has to get past me!$"
 
 Palm080_TextQINLoss:
 	.string "Boa batalha!$"

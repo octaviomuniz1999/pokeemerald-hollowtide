@@ -18,14 +18,18 @@ Palm080_BrisaSign::
 	end
 
 Palm080_TextBrisaHost:
-	.string "Sou artista do Teatro dos Ecos.\n"
-	.string "Tres faroletes apagaram.\p"
-	.string "Acenda os tres no calcadao.\n"
-	.string "A Jay espera no teatro.$"
+	.string "I perform at the THEATER OF ECHOES.\p"
+	.string "Tonight is the festival, but three\n"
+	.string "street lamps went dark!\p"
+	.string "One by the west houses, one in\n"
+	.string "the plaza, one on the boardwalk.\p"
+	.string "Could you switch them back on?\n"
+	.string "The show can't start in the dark.$"
 
 Palm080_TextBrisaSign:
-	.string "CIDADE DA BRISA\n"
-	.string "Norte: ROTA 02.$"
+	.string "BREEZEPORT CITY\n"
+	.string "Where the sea breeze never sleeps.\p"
+	.string "North: ROUTE 2$"
 
 Palm090_ArtistDone::
 	msgbox Palm090_TextArtistDone, MSGBOX_NPC
@@ -62,17 +66,21 @@ Palm090_WarpRoute03::
 	end
 
 Palm090_TextArtistDone:
-	.string "O palco voltou a ter luz.\n"
-	.string "Jay espera no Teatro dos Ecos.$"
+	.string "The stage has its lights back!\n"
+	.string "JAY is waiting at the THEATER.$"
 Palm090_TextLocked:
-	.string "TEATRO DOS ECOS\p"
-	.string "Fale com a artista do calcadao.$"
+	.string "THEATER OF ECHOES\p"
+	.string "Closed until the festival lamps\n"
+	.string "are lit. Ask the artist out front.$"
 Palm090_TextPoster:
 	.string "TEAM PALM\n"
-	.string "Energia para um litoral melhor.$"
+	.string "Clean energy for a better coast!\p"
+	.string "Someone has scribbled underneath:\n"
+	.string "“Better for whom?”$"
 Palm090_TextEast:
-	.string "LESTE: ROTA 03.\n"
-	.string "A saida abre apos vencer Jay.$"
+	.string "WEST BEACH TRAIL - ROUTE 3\p"
+	.string "The trail is closed during the\n"
+	.string "festival. Ask GYM LEADER JAY.$"
 
 Palm090_CityNeedArtist::
 	msgbox Palm090_TextLocked, MSGBOX_DEFAULT
@@ -96,10 +104,10 @@ Palm090_CityMore::
 	end
 
 Palm090_TextLamp:
-	.string "O farolete esta aceso.$"
+	.string "The lamp is glowing.$"
 Palm090_TextAllLit:
-	.string "Os tres faroletes estao acesos.\n"
-	.string "O Teatro dos Ecos abriu!$"
+	.string "All three lamps are glowing!\n"
+	.string "The THEATER OF ECHOES is open!$"
 
 Palm090_BrisaLoad::
 	call_if_set FLAG_PALM_BRISA_LAMP1, Palm090_DrawLamp1
@@ -160,8 +168,8 @@ Palm091_EastOpen::
 	end
 
 Palm091_TextEastOpen:
-	.string "LESTE: ROTA 03.\n"
-	.string "Siga ate FERRALIA.$"
+	.string "WEST BEACH TRAIL - ROUTE 3\n"
+	.string "Up the coast to FERRALIA CITY.$"
 
 Palm090_LockTheater::
 	setmetatile 47, 27, 738, TRUE

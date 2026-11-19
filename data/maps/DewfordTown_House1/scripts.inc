@@ -25,11 +25,11 @@ DewfordTown_House1_Text_LotToBeSaidForLivingOnIsland:
 	.string "POKéMON and the family.$"
 
 DewfordTown_House1_Text_LifeGoesSlowlyOnIsland:
-	.string "I left the major port of SLATEPORT\n"
-	.string "CITY when I married my husband here.\p"
-	.string "Life goes by slowly on this little\n"
-	.string "island. But being surrounded by the\l"
-	.string "beautiful sea--that's happiness, too.$"
+	.string "I grew up inland, in the city.\n"
+	.string "I moved here when I married.\p"
+	.string "Life by the beach goes slowly.\n"
+	.string "But waking up to the sea every\l"
+	.string "morning--that's happiness, too.$"
 
 DewfordTown_House1_Text_Zigzagoon:
 	.string "ZIGZAGOON: Guguuh!$"

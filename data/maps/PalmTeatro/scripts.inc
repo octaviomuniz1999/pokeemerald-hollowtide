@@ -108,37 +108,43 @@ Palm090_Yumi::
 	end
 
 Palm090_TextHint:
-	.string "HOLOFOTES\n"
-	.string "Esquerda, direita, esquerda.\p"
-	.string "O painel do meio apaga tudo.$"
+	.string "SPOTLIGHTS\n"
+	.string "Left, right, left.\p"
+	.string "The middle panel turns them all off.$"
 Palm090_TextStageLamp:
-	.string "Um holofote se acendeu.$"
+	.string "A spotlight flickers on.$"
 Palm090_TextReset:
-	.string "As luzes apagaram.\n"
-	.string "Tente a sequencia de novo.$"
+	.string "The lights went out.\n"
+	.string "Try the sequence again.$"
 Palm090_TextPuzzleDone:
-	.string "O palco esta iluminado.$"
+	.string "The stage is lit.$"
 Palm090_TextBlocked:
-	.string "JAY: Os holofotes ainda estao\n"
-	.string "apagados. Leia a placa do palco.$"
+	.string "JAY: The spotlights are still off.\n"
+	.string "Read the sign by the stage.$"
 Palm090_TextJayIntro:
-	.string "JAY: Agora que a luz voltou,\n"
-	.string "ate as sombras querem dancar!$"
+	.string "JAY: Now that the lights are back,\n"
+	.string "even the shadows want to dance!\p"
+	.string "Let's give this crowd a show\n"
+	.string "they'll remember!$"
 Palm090_TextJayLoss:
-	.string "Essa batalha merecia um bis!$"
+	.string "JAY: That deserved an encore!$"
 Palm090_TextBadge:
-	.string "JAY: A Insignia Eco e sua.\n"
-	.string "A Rota 03 ja esta liberada.$"
+	.string "JAY: The ECHO BADGE is yours.\p"
+	.string "The west beach trail is open.\n"
+	.string "ROUTE 3 leads up to FERRALIA.$"
 Palm090_TextReceivedHex:
 	.string "{PLAYER} recebeu a TM51: Hex!$"
 Palm090_TextJayAfter:
-	.string "Siga pela saida leste da Brisa.$"
+	.string "JAY: Head out along the west\n"
+	.string "beach. Mind the cliffs up the coast!$"
 Palm090_TextLinh:
-	.string "LINH: Vamos testar o som!$"
+	.string "LINH: Mic check! Let's test the\n"
+	.string "sound with a battle!$"
 Palm090_TextLinhLoss:
 	.string "Que ritmo!$"
 Palm090_TextYumi:
-	.string "YUMI: Conheca meu parceiro!$"
+	.string "YUMI: Meet my partner!\n"
+	.string "Isn't it a star?$"
 Palm090_TextYumiLoss:
 	.string "Fim da apresentacao!$"
 

@@ -80,3 +80,16 @@ warps, não as batalhas nem os eventos.
 | Team Palm | classe "TEAM PALM"; Grunts com paleta verde-oliva dedicada; retratos recoloridos sem o símbolo da Aqua |
 | Nevard | níveis do cânone (12/14); moveset sem Stun Spore/Mega Drain; sem Potion; sprite **placeholder oficial (Camper)** — o sprite gerado do Alpha 02 fica no repositório, fora de uso |
 | Balanceamento | inicial solo, sem itens: vence recruta, Josh e Tommy; contra o Nevard a luta é apertada (Treecko termina com ~1/3 de HP). Pendente: teste com Potions e um 2º Pokémon |
+
+## 7. Capítulo 2 — 19/11/2026 (madrugada)
+
+| Item | Estado |
+|---|---|
+| Breezeport | layout novo 72×56 (General + Lilycove) gerado pelo `mapgen` e instalado por script; linter 0/0 |
+| Saídas | norte → Route 2; **oeste pela praia → Route 3** (cânone; antes era leste) |
+| Interiores | Centro Pokémon, Mart, loja de departamentos, 7 casas e o Teatro religados; ponto de cura atualizado |
+| Festival | anfitriã → 3 postes apagados em bairros diferentes → Teatro abre — **testado** |
+| Teatro / Jay | holofotes E-D-E → Jay (Shuppet 18 / Misdreavus 21) → Insígnia Eco → Route 3 — **testado** (time de QA) |
+| Texto | 100% inglês; interiores reaproveitados sem citações a Hoenn |
+| Jay | placeholder oficial (Phoebe) no campo e na batalha; sprite gerado do Alpha 02 preservado fora de uso |
+| Pendente | farol, polimento artístico, Route 2 (revisão), NPCs urbanos, balanceamento da Jay |

@@ -1,0 +1,160 @@
+# Capítulo 2 — Route 2, Breezeport, Theater of Echoes. Inglês.
+
+## file: data/maps/PalmBrisa/scripts.inc
+== Palm080_TextBrisaHost
+I perform at the THEATER OF ECHOES.
+
+Tonight is the festival, but three
+street lamps went dark!
+
+One by the west houses, one in
+the plaza, one on the boardwalk.
+
+Could you switch them back on?
+The show can't start in the dark.
+
+== Palm080_TextBrisaSign
+BREEZEPORT CITY
+Where the sea breeze never sleeps.
+
+North: ROUTE 2
+
+== Palm090_TextArtistDone
+The stage has its lights back!
+JAY is waiting at the THEATER.
+
+== Palm090_TextLocked
+THEATER OF ECHOES
+
+Closed until the festival lamps
+are lit. Ask the artist out front.
+
+== Palm090_TextPoster
+TEAM PALM
+Clean energy for a better coast!
+
+Someone has scribbled underneath:
+“Better for whom?”
+
+== Palm090_TextEast
+WEST BEACH TRAIL - ROUTE 3
+
+The trail is closed during the
+festival. Ask GYM LEADER JAY.
+
+== Palm090_TextLamp
+The lamp is glowing.
+
+== Palm090_TextAllLit
+All three lamps are glowing!
+The THEATER OF ECHOES is open!
+
+== Palm091_TextEastOpen
+WEST BEACH TRAIL - ROUTE 3
+Up the coast to FERRALIA CITY.
+
+## file: data/maps/PalmRoute02/scripts.inc
+== Palm080_TextRouteNorth
+ROUTE 2
+North: HARVESTVALE
+
+For BREEZEPORT, follow the trail
+south toward the sea.
+
+== Palm080_TextRouteSouth
+ROUTE 2
+BREEZEPORT CITY just ahead.
+
+== Palm080_TextLIANGIntro
+Smell that? Salt air!
+Let's battle before the beach!
+
+== Palm080_TextMEI_LANIntro
+My POKéMON love the sea breeze.
+Want to see why?
+
+== Palm080_TextQINIntro
+Every trainer heading to
+BREEZEPORT has to get past me!
+
+## file: data/maps/PalmTeatro/scripts.inc
+== Palm090_TextPuzzleDone
+The stage is lit.
+
+== Palm090_TextBlocked
+JAY: The spotlights are still off.
+Read the sign by the stage.
+
+== Palm090_TextJayIntro
+JAY: Now that the lights are back,
+even the shadows want to dance!
+
+Let's give this crowd a show
+they'll remember!
+
+== Palm090_TextJayLoss
+JAY: That deserved an encore!
+
+== Palm090_TextBadge
+JAY: The ECHO BADGE is yours.
+
+The west beach trail is open.
+ROUTE 3 leads up to FERRALIA.
+
+== Palm090_TextJayAfter
+JAY: Head out along the west
+beach. Mind the cliffs up the coast!
+
+== Palm090_TextLinh
+LINH: Mic check! Let's test the
+sound with a battle!
+
+== Palm090_TextYumi
+YUMI: Meet my partner!
+Isn't it a star?
+
+## file: data/maps/DewfordTown_House1/scripts.inc
+== DewfordTown_House1_Text_LifeGoesSlowlyOnIsland
+I grew up inland, in the city.
+I moved here when I married.
+
+Life by the beach goes slowly.
+But waking up to the sea every
+morning--that's happiness, too.
+
+## file: data/maps/DewfordTown_House2/scripts.inc
+== DewfordTown_House2_Text_BrawlySoCool
+Oh, a visitor! Are you here for
+the festival?
+
+Have you seen JAY on stage?
+
+She's amazing...
+The whole city adores her.
+
+## file: data/maps/LilycoveCity_House4/scripts.inc
+== LilycoveCity_House4_Text_UnderwaterTrenchMossdeepSootopolis
+They say the sea past the
+lighthouse hides a deep trench.
+
+Fishermen won't go near it
+when the tide turns. Spooky!
+
+## file: data/maps/LilycoveCity_DepartmentStore_1F/scripts.inc
+== LilycoveCity_DepartmentStore_1F_Text_WelcomeToDeptStore
+Welcome to the BREEZEPORT
+DEPARTMENT STORE.
+
+## file: data/maps/PalmTeatro/scripts.inc
+== Palm090_TextHint
+SPOTLIGHTS
+Left, right, left.
+
+The middle panel turns them all off.
+
+== Palm090_TextStageLamp
+A spotlight flickers on.
+
+== Palm090_TextReset
+The lights went out.
+Try the sequence again.

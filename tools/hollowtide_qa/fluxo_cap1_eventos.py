@@ -30,7 +30,10 @@ def battle(q, flag, tries=25):
             q.run(["mash B 20"])
             return True
         if q.in_battle():
-            q.run(["press B 4 8", "press UP 4 6", "press LEFT 4 6", "press A 4 20", "press A 4 20", "mash A 4"])
+            # alterna os 4 golpes (o 1o pode nao afetar o alvo, ex.: Normal contra Fantasma)
+            nav = [[], ["press RIGHT 4 6"], ["press DOWN 4 6"], ["press DOWN 4 6", "press RIGHT 4 6"]][_ % 4]
+            q.run(["press B 4 8", "press UP 4 6", "press LEFT 4 6", "press A 4 20", "press UP 4 6", "press LEFT 4 6"]
+                  + nav + ["press A 4 20", "wait 150", "mash B 4"])
         else:
             q.run(["mash B 6", "press A 4 30"])  # dialogo pre-batalha (falando de frente para o treinador)
     return q.flag(flag)

@@ -16966,11 +16966,11 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 === TRAINER_PALM_JAY ===
 Name: JAY
 Class: Leader
-Pic: Palm Jay
+Pic: Elite Four Phoebe
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Basic Trainer
 
 Shuppet
 Level: 18

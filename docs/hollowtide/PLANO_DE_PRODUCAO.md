@@ -31,7 +31,7 @@ Status ao lado de cada item: `[ ]` a fazer · `[~]` em andamento · `[x]` conclu
 | Cap. | Conteúdo | Base atual |
 |---|---|---|
 | 1 `[~]` | Dawnmere → Route 1 → Harvestvale; Prof. Alex, mãe + Medalhão de Atlas; recruta da Team Palm e irrigação; ginásio de Nevard (comportas) | colisão corrigida; texto 100% EN; Medalhão; tela de 3 Poké Balls; comportas persistentes; Team Palm verde-oliva; eventos 10/10 no emulador; **falta**: teste de balanceamento com itens/2º Pokémon, revisão de arte dos interiores e do lab |
-| 2 `[~]` | Route 2 (campo → litoral) → Breezeport (cidade costeira ampla, farol, morro tipo Corcovado, orla); ginásio de Jay (Teatro dos Ecos) | refazer em escala (placeholder 20×20 do Alpha 02) |
+| 2 `[~]` | Route 2 (campo → litoral) → Breezeport (cidade costeira ampla, farol, morro tipo Corcovado, orla); ginásio de Jay (Teatro dos Ecos) | **Breezeport 72×56 no jogo** (morro em patamares, centro, Teatro, bairros, orla, praia, saída oeste); texto EN; Jay com placeholder oficial (Phoebe); eventos 12/12 no emulador; **falta**: farol, polimento artístico (contorno do morro, praia), revisão da Route 2, NPCs da cidade, balanceamento da Jay |
 | 3 | Route 3 (praia → costa → serra → planalto, saída oeste/noroeste de Breezeport) → Ferralia (metrópole, ferrovia, viadutos, indústria); Vessel; "Carga Desviada" | refazer |
 | 4 | Route 4 → Tradepost ("Preço da Troca", Mestre Wen, PALM Coin) | novo |
 | 5 | Route 5 → Pillarton (barragens, Lela); Tchum | novo |
@@ -66,7 +66,7 @@ contam a história da água antes de qualquer cena longa.
 - `[x]` relevo: platôs (elev. 5) com face de rocha aprendida do corpus, parede sul dupla, escadas (175, elev. 0), terreno sobre o platô herdando a altura; árvores 2×2 determinísticas.
 - `[ ]` margem inferior de lagos (família 'pond').
 - `[ ]` metatiles compostos (farol) nos slots livres do secundário.
-- `[~]` Breezeport: esboço em `tools/hollowtide/maps/breezeport.py` (fora do jogo até passar no portão de qualidade).
+- `[x]` Breezeport instalada por `tools/hollowtide/maps/install_breezeport.py` (reproduzível).
 
 ## Próximo passo técnico (histórico)
 

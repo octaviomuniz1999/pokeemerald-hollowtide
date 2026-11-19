@@ -15,7 +15,8 @@ LilycoveCity_House4_Text_MysteriesAtBottomOfSea:
 	.string "Somebody said that, but I don't know…$"
 
 LilycoveCity_House4_Text_UnderwaterTrenchMossdeepSootopolis:
-	.string "There's a deep underwater trench\n"
-	.string "between MOSSDEEP and SOOTOPOLIS.\p"
-	.string "That's what someone told me, anyway.$"
+	.string "They say the sea past the\n"
+	.string "lighthouse hides a deep trench.\p"
+	.string "Fishermen won't go near it\n"
+	.string "when the tide turns. Spooky!$"
 
