@@ -704,21 +704,21 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Earthquake
 
 === TRAINER_VIOLET ===
-Name: VIOLET
-Class: Aroma Lady
-Pic: Aroma Lady
+Name: YUE
+Class: Lass
+Pic: Lass
 Gender: Female
-Music: Female
+Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Roselia
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Meowth
+Level: 22
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 
-Gloom
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Koffing
+Level: 23
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 
 === TRAINER_ROSE_2 ===
 Name: ROSE
@@ -818,37 +818,21 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Poison Sting
 
 === TRAINER_CHIP ===
-Name: CHIP
-Class: Ruin Maniac
-Pic: Ruin Maniac
+Name: QIAO
+Class: Black Belt
+Pic: Black Belt
 Gender: Male
-Music: Hiker
+Music: Intense
 Double Battle: No
 AI: Check Bad Move
 
-Baltoy
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Psybeam
-- Self Destruct
-- Sandstorm
-- Ancient Power
+Timburr
+Level: 23
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 
-Sandshrew
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
-
-Sandslash
-Level: 27
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Dig
-- Slash
-- Sand Attack
-- Poison Sting
+Electrike
+Level: 24
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 
 === TRAINER_FOSTER ===
 Name: FOSTER
@@ -1347,54 +1331,21 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Slash
 
 === TRAINER_BRAXTON ===
-Name: BRAXTON
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
-Items: Hyper Potion
+Name: MARA
+Class: Pokefan
+Pic: Pokefan F
+Gender: Female
+Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move
 
-Swellow
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Focus Energy
-- Quick Attack
-- Wing Attack
-- Endeavor
+Nincada
+Level: 22
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 
-Trapinch
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bite
-- Dig
-- Feint Attack
-- Sand Tomb
-
-Wailmer
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Rollout
-- Whirlpool
-- Astonish
-- Water Pulse
-
-Magneton
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Thunderbolt
-- Supersonic
-- Thunder Wave
-- Sonic Boom
-
-Shiftry
-Level: 28
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Giga Drain
-- Feint Attack
-- Double Team
-- Swagger
+Dwebble
+Level: 24
+IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 
 === TRAINER_VINCENT ===
 Name: VINCENT

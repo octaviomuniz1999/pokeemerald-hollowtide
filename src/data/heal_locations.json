@@ -146,9 +146,9 @@
     },
     {
       "id": "HEAL_LOCATION_VERDANTURF_TOWN",
-      "map": "MAP_VERDANTURF_TOWN",
-      "x": 16,
-      "y": 4,
+      "map": "MAP_PALM_TRADEPOST",
+      "x": 13,
+      "y": 15,
       "respawn_map": "MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_VERDANTURF_NURSE"
     },

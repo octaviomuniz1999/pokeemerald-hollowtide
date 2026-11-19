@@ -1,0 +1,196 @@
+## file: data/maps/PalmRoute04/scripts.inc
+==+ Palm110_SignWest_Text
+ROUTE 4 - CARAVAN ROAD
+West: FERRALIA CITY
+East: TRADEPOST
+
+==+ Palm110_SignEast_Text
+TRADEPOST just ahead.
+“Two banks, one market.”
+
+==+ Palm110_Trader_Text
+This old shed used to be full of
+grain and coffee from HARVESTVALE.
+
+Since the trains stopped, we carry
+everything by cart. Slow, but honest.
+
+==+ Palm110_TextYUEIntro
+Special delivery! One battle,
+signed and sealed!
+
+==+ Palm110_TextYUELoss
+Return to sender...
+
+==+ Palm110_TextYUEAfter
+TEAM PALM wants us to pay for every
+road in PALM COIN. Can you believe it?
+
+==+ Palm110_TextQIAOIntro
+I used to lay track on this line.
+Now I lay out challengers!
+
+==+ Palm110_TextQIAOLoss
+Hah! Strong as a steel rail.
+
+==+ Palm110_TextQIAOAfter
+The line won't reopen until someone
+fixes the power down the coast.
+
+==+ Palm110_TextMARAIntro
+I collect rare POKéMON and rare
+views. This lookout has both!
+
+==+ Palm110_TextMARALoss
+A fine addition to my memories.
+
+==+ Palm110_TextMARAAfter
+From here you can see both banks of
+TRADEPOST. Pretty, isn't it?
+
+## file: data/maps/PalmTradepost/scripts.inc
+==+ Palm111_TextWenAsk
+Ah, a traveler. I'm WEN, head of
+the MERCHANTS' ASSOCIATION.
+
+That TEAM PALM messenger says the
+road and the docks are theirs now.
+
+“Pay in PALM COIN or your cargo
+waits forever,” she says.
+
+But this market has an old charter.
+The original CARGO PERMIT proves
+
+anyone may trade here freely.
+The station keeps it in its archive.
+
+Would you ask the operator for it?
+These old knees can't climb stairs.
+
+==+ Palm111_TextWenResolve
+The original CARGO PERMIT! Signed
+by every family on both banks.
+
+Messenger! Read this. No company
+owns these roads. Not now, not ever.
+
+==+ Palm111_TextWenReward
+Hah! Did you see her face?
+
+Goods only exist because people from
+everywhere can trade and trust.
+
+Nobody should own every road.
+Please, take this as thanks.
+
+==+ Palm111_TextWenDone
+The market is open again, thanks
+to you.
+
+The road north to PILLARTON is
+still flooded, I'm afraid.
+
+==+ Palm111_TextOperatorIdle
+Passenger service is suspended.
+No trains until the power is back.
+
+==+ Palm111_TextOperatorGive
+WEN sent you? For the CARGO PERMIT?
+Of course. Here it is.
+
+==+ Palm111_TextGotPermit
+{PLAYER} received the CARGO PERMIT!
+
+==+ Palm111_TextOperatorAfter
+Take good care of that permit.
+It's older than the railway!
+
+==+ Palm111_PalmMessenger_Text
+With PALM COIN, all your cargo moves
+through our network!
+
+You just accept our terms... and
+all our future price changes.
+
+==+ Palm111_FruitSeller_Text
+My oranges are rotting in a crate
+at the dock. TEAM PALM won't release
+
+it unless I pay in their coin!
+
+==+ Palm111_FruitSellerHappy_Text
+My crates are back! Fresh fruit for
+everyone, paid any way you like!
+
+==+ Palm111_Porter_Text
+Both banks of the canal trade every
+day. That's why they call this town
+
+TRADEPOST. Well, that and the sign.
+
+==+ Palm111_DockSailor_Text
+The canal runs all the way to the
+sea. Boats used to come every day.
+
+==+ Palm111_NorthWorker_Text
+Sorry, the road north is closed.
+The river flooded the lowlands.
+
+They say PILLARTON's dams are
+acting strange...
+
+==+ Palm111_TownSign_Text
+TRADEPOST
+“Two banks, one market.”
+
+==+ Palm111_AssociationSign_Text
+MERCHANTS' ASSOCIATION
+Free trade since the first caravan.
+
+==+ Palm111_StationSign_Text
+TRADEPOST STATION
+Passenger service suspended.
+
+==+ Palm111_NorthSign_Text
+NORTH: ROUTE 5 - PILLARTON
+Closed due to flooding.
+
+==+ Palm111_KioskSign_Text
+TEAM PALM LOGISTICS
+“One coin. One network. One future.”
+
+## file: data/maps/PalmFerralia/scripts.inc
+==+ Palm103_TextEastGate
+EAST LINE - ROUTE 4
+
+The road is closed for a cargo
+inspection. Talk to the GYM LEADER.
+
+## file: data/maps/VerdanturfTown_PokemonCenter_1F/scripts.inc
+== VerdanturfTown_PokemonCenter_1F_Text_VisitForBattleTent
+Traders from every town stop here
+before crossing the canal.
+
+You hear all kinds of stories in
+this POKéMON CENTER!
+
+## file: data/maps/VerdanturfTown_Mart/scripts.inc
+== VerdanturfTown_Mart_Text_NestBallOnWeakenedPokemon
+The NEST BALL works better on
+weakened POKéMON.
+
+Merchants from the coast sell them
+here sometimes.
+
+== VerdanturfTown_Mart_Text_NoStrategyGuidesForBattleTent
+I came to sell my crafts, but TEAM
+PALM wants a fee in their coin first.
+
+## file: data/maps/VerdanturfTown_House/scripts.inc
+== VerdanturfTown_House_Text_TrainersGatherAtPokemonLeague
+Far away, past all the GYMS, is the
+POKéMON LEAGUE.
+
+The TRAINERS who gather there are
+all frighteningly well skilled.

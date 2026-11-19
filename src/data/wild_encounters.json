@@ -36784,6 +36784,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_PALM_ROUTE04",
+          "base_label": "gPalmRoute04",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_MEOWTH"
+              },
+              {
+                "min_level": 19,
+                "max_level": 22,
+                "species": "SPECIES_ELECTRIKE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_TIMBURR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_TIMBURR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_KOFFING"
+              },
+              {
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_NINCADA"
+              },
+              {
+                "min_level": 20,
+                "max_level": 23,
+                "species": "SPECIES_DWEBBLE"
+              },
+              {
+                "min_level": 20,
+                "max_level": 23,
+                "species": "SPECIES_DWEBBLE"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_TRUBBISH"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_TRUBBISH"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_TRUBBISH"
+              },
+              {
+                "min_level": 21,
+                "max_level": 23,
+                "species": "SPECIES_TRUBBISH"
+              }
+            ]
+          }
         }
       ]
     },

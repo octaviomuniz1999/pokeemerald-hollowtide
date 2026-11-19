@@ -57,7 +57,7 @@ def compose():
     # --- moldura ---
     c.rect(0, 0, W - 1, 1, "tree"); c.rect(0, 0, 1, H - 1, "tree"); c.rect(W - 2, 0, W - 1, H - 1, "tree")
     # --- avenidas ---
-    c.rect(2, 18, W - 3, 19, "road"); c.rect(2, 40, W - 3, 41, "road")
+    c.rect(2, 18, W - 3, 19, "road"); c.rect(2, 40, W - 1, 41, "road")   # Paulista sai a leste: Route 4
     for x in (16, 40, 58):
         c.rect(x, 2, x + 1, 47, "road")
     # --- praca da fonte (jardim com canteiros) ---
@@ -91,7 +91,7 @@ def compose():
         c.put(62, ry, ids["rail_end"], collision=0)
         for x in range(63, W):
             c.put(x, ry, ids["rail_h"], collision=0)
-        c.rect(W - 2, ry + 1, W - 1, ry + 1, "sand")
+        c.rect(W - 2, ry + 1, W - 1, ry + 1, "dense")   # sem passagem pelo leito: a ferrovia esta fechada
     # --- parque: cerca separando a cidade, entrada pela avenida central ---
     fence_h(c, 2, 38, PARK_TOP - 1); fence_h(c, 45, W - 3, PARK_TOP - 1)
     c.rect(38, 48, 45, PARK_TOP - 1, "plaza")

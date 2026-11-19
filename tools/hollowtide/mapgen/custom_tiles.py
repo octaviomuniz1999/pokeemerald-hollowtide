@@ -29,6 +29,7 @@ CUSTOM = {
     "rustboro": [
         ("rail_h", ("draw", "rail", 9), None, 699),          # ferrovia do patio de carga de Ferralia
         ("rail_end", ("draw", "rail_end", 9), None, 699),
+        ("rail_end_e", ("draw", "rail_end_e", 9), None, 699),   # para-choque do lado leste (fim de linha)
     ],
     "lilycove": [
         # nome, camada de baixo, camada de cima, atributos copiados de
@@ -101,7 +102,9 @@ def build(tsname):
                 entries += [0, 0, 0, 0]
                 continue
             if src[0] == "draw":
-                g = _rail(end=src[1] == "rail_end")
+                g = _rail(end=src[1] in ("rail_end", "rail_end_e"))
+                if src[1] == "rail_end_e":
+                    g = [row[::-1] for row in g]
                 for (ox, oy) in ((0, 0), (8, 0), (0, 8), (8, 8)):
                     ti = add_tile([[g[oy + y][ox + x] for x in range(8)] for y in range(8)])
                     entries.append((512 + ti) | (src[2] << 12))

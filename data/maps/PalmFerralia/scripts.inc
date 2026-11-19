@@ -218,3 +218,25 @@ Palm101_YardSign_Text:
 Palm101_Route4Sign_Text:
 	.string "EAST LINE - ROUTE 4\n"
 	.string "Closed for cargo inspection.$"
+
+Palm103_EastGate::
+	goto_if_set FLAG_BADGE03_GET, Palm103_EastGateOk
+	lockall
+	msgbox Palm103_TextEastGate, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Palm103_StepBackWest
+	waitmovement 0
+	releaseall
+	end
+
+Palm103_EastGateOk::
+	end
+
+Palm103_StepBackWest:
+	walk_left
+	step_end
+
+
+Palm103_TextEastGate:
+	.string "EAST LINE - ROUTE 4\p"
+	.string "The road is closed for a cargo\n"
+	.string "inspection. Talk to the GYM LEADER.$"

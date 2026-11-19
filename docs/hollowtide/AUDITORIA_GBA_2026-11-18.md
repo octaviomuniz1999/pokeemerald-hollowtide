@@ -153,3 +153,17 @@ warps, não as batalhas nem os eventos.
 | Textos | 100% EN; guia, estátuas e treinadores reescritos; insígnia "RESONANCE BADGE" |
 | Pendente | TM Flash Cannon (exige trocar a lista de TMs — fazer junto com Bullet Seed/Hex dos ginásios 1–2); interior do ginásio com arte própria |
 | QA | `fluxo_cap3_eventos.py` (13/13); `goto` aceita células a evitar (chaves do quebra-cabeça); regressão completa: 80 verificações, 0 falhas |
+
+## 13. Capítulo 4 — Route 4 e Tradepost — 19/11/2026 (tarde)
+
+| Item | Estado |
+|---|---|
+| Base | pacote conceitual `etapa9_entreposto` (dimensões 52×32 e 40×32, pontos de interesse, treinadores, encontros, evento) |
+| Route 4 | mapa novo (General + Rustboro): ferrovia ao norte continuando o pátio de Ferralia (leito fechado: trilhos com colisão, cerca viva; a linha só abre no capítulo do Hoc), estrada das caravanas, antigo abrigo de carga, canal com a única ponte (tabuado da Route 104), desvio norte (Super Potion), desvio sul (2 Oran Berries), mirante NE; Yue (Meowth 22/Koffing 23), Qiao (Timburr 23/Electrike 24), Mara opcional (Nincada 22/Dwebble 24); encontros do pacote |
+| Tradepost | mapa novo: estação no fim da linha (para-choque leste desenhado), Centro Pokémon e Mart (interiores de Verdanturf), casa e casa do Relembrador de Golpes (Fallarbor), praça do mercado com fonte e canteiros, Associação de Mercadores, canal com ponte para o cais leste e o quiosque da Team Palm; ponto de cura |
+| Emendas | os três mapas usam General + Rustboro: Ferralia ⇄ Route 4 (offset 24) ⇄ Tradepost (offset 0) contínuas e corretas dos dois lados; Ferralia: leito ferroviário vedado na emenda para não haver atalho |
+| Travas | borda leste da Ferralia fecha até a Insígnia da Ressonância (recua um passo); saída norte do Tradepost (Route 5) fechada pela enchente até o Cap. 5 |
+| Evento | "O Preço da Troca" (sem batalha): Mestre Wen pede a autorização original de carga → operador da estação entrega → Wen desmonta a cobrança em PALM Coin, a mensageira da Palm vai embora, a vendedora recupera as caixas, Amulet Coin. Kyogre/Orbe/Tavinho não são citados |
+| Textos | 100% EN; interiores de Verdanturf sem Hoenn |
+| QA | `fluxo_cap4.py` 20/20 (trava antes/depois, 3 treinadores com visão, 4 itens, evento completo, Centro Pokémon, conexões ida e volta); regressão completa sem falhas (100 verificações) |
+| Pendente | bancas de feira desenhadas (hoje: canteiros e moradores), interior da Associação, Route 5 |

@@ -72,9 +72,9 @@
 #define FLAG_HT_RECEIVED_ATLAS_MEDALLION    0x32 // Hollowtide: mae entregou o Medalhao de Atlas
 #define FLAG_HT_QA_BOOST_PARTY    0x33 // Hollowtide QA: eleva o time a nivel 100 (so em build nao-release; nunca ligada no jogo)
 #define FLAG_HT_FERRALIA_CARGO_DONE  0x34 // Carga Desviada resolvida: Vessel volta ao ginasio
-#define FLAG_UNUSED_0x035    0x35 // Unused Flag
-#define FLAG_UNUSED_0x036    0x36 // Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
+#define FLAG_HT_TRADEPOST_WEN_ASKED  0x35 // O Preco da Troca: Mestre Wen pediu a autorizacao de carga
+#define FLAG_HT_TRADEPOST_PERMIT     0x36 // autorizacao original recuperada na estacao
+#define FLAG_HT_TRADEPOST_DONE       0x37 // feira reaberta; mensageira da Palm vai embora
 #define FLAG_UNUSED_0x038    0x38 // Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag

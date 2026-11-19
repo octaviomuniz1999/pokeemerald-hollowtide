@@ -12,3 +12,4 @@ python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap2_eventos.py" "$ROOT/pokeemerald.
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_rota2.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/cap1_pos_nevard.ss" | tail -11
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_rota3.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/cap2_pos_jay.ss" | tail -16
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap3_eventos.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/cap3_ferralia.ss" | tail -16
+python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap4.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/cap3_ferralia.ss" "$W/cap3_pos_vessel.ss" | sed -n "/^RESUMO/,$ p"

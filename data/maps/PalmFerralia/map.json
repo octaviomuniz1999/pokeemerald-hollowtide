@@ -18,6 +18,11 @@
       "map": "MAP_PALM_ROUTE03",
       "offset": 16,
       "direction": "down"
+    },
+    {
+      "map": "MAP_PALM_ROUTE04",
+      "offset": 24,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -223,7 +228,26 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 70,
+      "y": 40,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Palm103_EastGate"
+    },
+    {
+      "type": "trigger",
+      "x": 70,
+      "y": 41,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Palm103_EastGate"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
