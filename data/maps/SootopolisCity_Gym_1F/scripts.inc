@@ -317,3 +317,125 @@ SootopolisCity_Gym_1F_Text_JuanRematchNeedTwoMons:
 	.string "I wish that you would return with\n"
 	.string "two, perhaps more, POKéMON, please.$"
 
+@ ---- Hollowtide: ginasio da Chelsia
+Palm173_Chelsia::
+	trainerbattle_single TRAINER_PALM_CHELSIA, Palm173_TextChelsiaIntro, Palm173_TextChelsiaDefeat, Palm173_ChelsiaDefeated, NO_MUSIC
+	msgbox Palm173_TextChelsiaAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Palm173_ChelsiaDefeated::
+	message Palm173_TextBadge
+	waitmessage
+	call Common_EventScript_PlayGymBadgeFanfare
+	msgbox Palm173_TextBadgeExplain, MSGBOX_DEFAULT
+	setflag FLAG_BADGE06_GET
+	setflag FLAG_DEFEATED_SOOTOPOLIS_GYM
+	giveitem ITEM_TM_DAZZLING_GLEAM
+	msgbox Palm173_TextTM, MSGBOX_DEFAULT
+	release
+	end
+
+Palm173_Piplup::
+	lock
+	faceplayer
+	playmoncry SPECIES_PIPLUP, CRY_MODE_NORMAL
+	msgbox Palm173_TextPiplup, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Palm173_Guide::
+	lock
+	faceplayer
+	goto_if_set FLAG_BADGE06_GET, Palm173_GuideAfter
+	msgbox Palm173_TextGuide, MSGBOX_DEFAULT
+	release
+	end
+
+Palm173_GuideAfter::
+	msgbox Palm173_TextGuideAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Palm173_Statue::
+	lockall
+	goto_if_set FLAG_BADGE06_GET, Palm173_StatueWon
+	msgbox Palm173_TextStatue, MSGBOX_DEFAULT
+	releaseall
+	end
+
+Palm173_StatueWon::
+	msgbox Palm173_TextStatueWon, MSGBOX_DEFAULT
+	releaseall
+	end
+
+
+
+Palm173_TextGuide:
+	.string "Hey, future CHAMPION {PLAYER}!\p"
+	.string "This is the LAKE OF STARS. CHELSIA\n"
+	.string "uses FAIRY-type POKéMON.\p"
+	.string "Each ice tile is a star. Step on it\n"
+	.string "once and it lights up. Light every\l"
+	.string "star in a field and stairs appear!\p"
+	.string "But step on a lit star again and the\n"
+	.string "ice breaks. Splash! Down you go!\p"
+	.string "Plan your path before you walk.\n"
+	.string "STEEL and POISON moves work well!$"
+
+Palm173_TextGuideAfter:
+	.string "You lit up every constellation!\n"
+	.string "Now that's what I call a bright future!$"
+
+Palm173_TextStatue:
+	.string "HORIZON CITY POKéMON GYM\p"
+	.string "CHELSIA's CERTIFIED TRAINERS:\n"
+	.string "{PLAYER}?$"
+
+Palm173_TextStatueWon:
+	.string "HORIZON CITY POKéMON GYM\p"
+	.string "CHELSIA's CERTIFIED TRAINERS:\n"
+	.string "{PLAYER}$"
+
+Palm173_TextPiplup:
+	.string "PIPLUP: Piplup! Pip-pip!\p"
+	.string "PIPLUP is cheering for CHELSIA!$"
+
+Palm173_TextChelsiaIntro:
+	.string "CHELSIA: You came! And the lake is\n"
+	.string "calm again, thanks to you.\p"
+	.string "Every night, the stars shine on this\n"
+	.string "lake. Even when the water trembles,\l"
+	.string "they're still up there, waiting.\p"
+	.string "I'd like to show you the light my\n"
+	.string "POKéMON carry. Ready?$"
+
+Palm173_TextChelsiaDefeat:
+	.string "What a bright battle…\n"
+	.string "You shine brighter than I thought!$"
+
+Palm173_TextBadge:
+	.string "{PLAYER} received the HORIZON BADGE\n"
+	.string "from CHELSIA.$"
+
+Palm173_TextBadgeExplain:
+	.string "The HORIZON BADGE shows you can find\n"
+	.string "your way, even in the dark.\p"
+	.string "Please take this too.$"
+
+Palm173_TextTM:
+	.string "That TM is DAZZLING GLEAM. It hits\n"
+	.string "every foe with a powerful flash.\p"
+	.string "That signal TEAM PALM recorded…\n"
+	.string "“external, north”. I keep thinking\l"
+	.string "about it.\p"
+	.string "Take care out there, {PLAYER}. Even\n"
+	.string "when everything seems confusing, a\l"
+	.string "little light helps you find the way.$"
+
+Palm173_TextChelsiaAfter:
+	.string "CHELSIA: PIPLUP and I watch the stars\n"
+	.string "over the lake every night.\p"
+	.string "Lately they look a little clearer.\n"
+	.string "I think that's thanks to you.$"

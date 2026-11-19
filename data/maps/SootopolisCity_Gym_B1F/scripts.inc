@@ -181,3 +181,56 @@ SootopolisCity_Gym_B1F_Text_BriannaPostBattle:
 	.string "You couldn't lay a finger on JUAN,\n"
 	.string "I'm sure. Giggle…$"
 
+@ ---- Hollowtide: ginasio da Chelsia
+Palm173_TrainerA::
+	trainerbattle_single TRAINER_PALM_CHELSIA_GYM_A, Palm173_TextAIntro, Palm173_TextADefeat
+	msgbox Palm173_TextAAfter, MSGBOX_AUTOCLOSE
+	end
+
+Palm173_TrainerB::
+	trainerbattle_single TRAINER_PALM_CHELSIA_GYM_B, Palm173_TextBIntro, Palm173_TextBDefeat
+	msgbox Palm173_TextBAfter, MSGBOX_AUTOCLOSE
+	end
+
+Palm173_TrainerC::
+	trainerbattle_single TRAINER_PALM_CHELSIA_GYM_C, Palm173_TextCIntro, Palm173_TextCDefeat
+	msgbox Palm173_TextCAfter, MSGBOX_AUTOCLOSE
+	end
+
+
+
+Palm173_TextAIntro:
+	.string "Oops! Did you break the ice too?\n"
+	.string "Welcome to the bottom of the lake!$"
+
+Palm173_TextADefeat:
+	.string "Sunk again…$"
+
+Palm173_TextAAfter:
+	.string "The ladder back to the entrance is\n"
+	.string "at the far end of this floor.$"
+
+Palm173_TextBIntro:
+	.string "Down here we see the stars from\n"
+	.string "below. Aren't they pretty?$"
+
+Palm173_TextBDefeat:
+	.string "They just twinkled out…$"
+
+Palm173_TextBAfter:
+	.string "Count the stars in each field before\n"
+	.string "you step on the first one!$"
+
+Palm173_TextCIntro:
+	.string "CHELSIA taught me that every star\n"
+	.string "has its own place in the sky.\p"
+	.string "And my place is right here, blocking\n"
+	.string "your way!$"
+
+Palm173_TextCDefeat:
+	.string "You found your own path. Well done!$"
+
+Palm173_TextCAfter:
+	.string "The third field is the biggest\n"
+	.string "constellation. Never cross your own\l"
+	.string "trail, and finish by the stairs!$"

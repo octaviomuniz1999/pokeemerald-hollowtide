@@ -54,7 +54,8 @@
     F(OVERHEAT) \
     F(HEX) \
     F(FLASH_CANNON) \
-    F(BULLDOZE)
+    F(BULLDOZE) \
+    F(DAZZLING_GLEAM)
 
 #define FOREACH_HM(F) \
     F(CUT) \

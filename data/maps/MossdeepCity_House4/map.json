@@ -25,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_House4_EventScript_Woman",
+      "script": "Palm171_House3Woman",
       "flag": "0"
     },
     {
@@ -38,7 +38,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_House4_EventScript_NinjaBoy",
+      "script": "Palm171_House3Boy",
       "flag": "0"
     },
     {
@@ -51,7 +51,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_House4_EventScript_Skitty",
+      "script": "Palm171_House3Skitty",
       "flag": "0"
     }
   ],
@@ -60,15 +60,15 @@
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_MOSSDEEP_CITY",
-      "dest_warp_id": "7"
+      "dest_map": "MAP_PALM_HORIZON",
+      "dest_warp_id": "4"
     },
     {
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_MOSSDEEP_CITY",
-      "dest_warp_id": "7"
+      "dest_map": "MAP_PALM_HORIZON",
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],

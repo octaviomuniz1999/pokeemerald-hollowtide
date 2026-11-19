@@ -9466,6 +9466,28 @@
       "border_filepath": "data/layouts/PalmJadeGym/border.bin",
       "blockdata_filepath": "data/layouts/PalmJadeGym/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_ROUTE07",
+      "name": "PalmRoute07_Layout",
+      "width": 36,
+      "height": 56,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/PalmRoute07/border.bin",
+      "blockdata_filepath": "data/layouts/PalmRoute07/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_HORIZON",
+      "name": "PalmHorizon_Layout",
+      "width": 56,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/PalmHorizon/border.bin",
+      "blockdata_filepath": "data/layouts/PalmHorizon/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

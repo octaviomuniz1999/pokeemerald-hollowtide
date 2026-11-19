@@ -25,7 +25,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_House1_EventScript_BlackBelt",
+      "script": "Palm171_House1Man",
       "flag": "0"
     },
     {
@@ -38,7 +38,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MossdeepCity_House1_EventScript_Woman",
+      "script": "Palm171_House1Woman",
       "flag": "0"
     }
   ],
@@ -47,15 +47,15 @@
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_MOSSDEEP_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_PALM_HORIZON",
+      "dest_warp_id": "2"
     },
     {
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_MOSSDEEP_CITY",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_PALM_HORIZON",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

@@ -233,3 +233,25 @@ Palm141_TextGymOpens:
 	.string "Somewhere in the village, a door\n"
 	.string "clicks open.\p"
 	.string "JADE must be waiting at her GYM.$"
+
+Palm141_NorthGate::
+	goto_if_set FLAG_BADGE05_GET, Palm141_NorthGateOk
+	lockall
+	msgbox Palm141_TextNorthGate, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Palm141_StepBackSouth
+	waitmovement 0
+	releaseall
+	end
+
+Palm141_NorthGateOk::
+	end
+
+Palm141_StepBackSouth:
+	walk_down
+	step_end
+
+
+Palm141_TextNorthGate:
+	.string "The path north climbs toward ROUTE 7.\p"
+	.string "Something tells you to settle things\n"
+	.string "with JADE in Serenia first.$"

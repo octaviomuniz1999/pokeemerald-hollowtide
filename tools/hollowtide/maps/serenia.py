@@ -3,7 +3,7 @@
 
 Vila de santuario: a fonte sagrada ao norte (o altar dos fragmentos), trilha de pedras ate ela (onde ficam as
 tres ilusoes), Centro Pokemon e Mart a oeste, ginasio da Jade a leste, casas ao sul, bosques fechados e
-jardins de pedra. Entrada oeste pela Route 6 (linhas 20-21, offset 0).
+jardins de pedra. Entrada oeste pela Route 6 (linhas 20-21, offset 0); saida norte (colunas 38-39) para a Route 7.
 """
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "mapgen"))
@@ -11,6 +11,7 @@ from canvas import Canvas
 
 W, H = 44, 40
 ROAD = (20, 21)
+NORTH = (38, 39)              # saida norte para a Route 7 (Route 7 x = Serenia x - 18)
 SHRINE_PATH = (20, 21)        # colunas da trilha ate a fonte
 ILLUSIONS = [(20, 16), (20, 13), (20, 10)]   # cada ilusao ocupa (x, y) e (x + 1, y)
 BUILDINGS = [
@@ -37,6 +38,7 @@ def compose():
     path(6, 18, 7, ROAD[0]); path(12, 18, 13, ROAD[0]); path(33, 19, 34, ROAD[0])   # portas
     path(7, 31, 32, 32)                                                 # rua sul (portas das casas)
     path(24, ROAD[1], 25, 31)                                           # liga a rua sul a principal
+    path(NORTH[0], 0, NORTH[1], ROAD[0])                                # saida norte -> Route 7
     c.rect(26, 26, 28, 29, "pond")                                      # pequeno lago do jardim
     water = {(x, y) for y in range(H) for x in range(W) if c.terrain[y][x] == "pond"}
     blocks = set()

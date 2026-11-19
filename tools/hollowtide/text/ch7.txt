@@ -1,0 +1,288 @@
+## file: data/maps/PalmSerenia/scripts.inc
+==+ Palm141_TextNorthGate
+The path north climbs toward ROUTE 7.
+
+Something tells you to settle things
+with JADE in Serenia first.
+
+## file: data/maps/PalmRoute07/scripts.inc
+==+ Palm160_TextHENRYIntro
+Shh! The lake is so still today
+you can see the clouds in it.
+
+Let's battle quietly, all right?
+==+ Palm160_TextHENRYLoss
+My line's all tangled now…
+==+ Palm160_TextHENRYAfter
+The water's higher than last week.
+And it hasn't rained a single drop.
+==+ Palm160_TextCONNIEIntro
+This route is called the PATH OF
+MIRRORS. Can you guess why?
+==+ Palm160_TextCONNIELoss
+My reflection looks so sad now!
+==+ Palm160_TextCONNIEAfter
+On a calm day, the lake copies
+the whole sky. Even the stars!
+==+ Palm160_TextCELIAIntro
+I packed sweets for a picnic by the
+flowers. Battle first, snack later!
+==+ Palm160_TextCELIALoss
+Oof… I need a sugar break.
+==+ Palm160_TextCELIAAfter
+FLABÉBÉ pick one flower and keep it
+for their whole lives. How sweet!
+==+ Palm160_TextCOLINIntro
+From up here I watch the birds
+fly over the lake. And you!
+==+ Palm160_TextCOLINLoss
+Grounded, like a fledgling…
+==+ Palm160_TextCOLINAfter
+At night, CLEFAIRY gather inside
+this ring of stones to dance.
+
+People say they come from the moon.
+==+ Palm160_SignSouth_Text
+ROUTE 7 · PATH OF MIRRORS
+South: SERENIA
+==+ Palm160_SignNorth_Text
+ROUTE 7
+North: HORIZON CITY
+==+ Palm160_SignCircle_Text
+MOON CIRCLE
+
+Please leave the stones as they are.
+The CLEFAIRY like them that way.
+
+## file: data/maps/PalmHorizon/scripts.inc
+==+ Palm170_TextChelsia1
+…Oh! Sorry, I didn't see you there.
+
+I'm CHELSIA, the GYM LEADER here.
+And this is PIPLUP, my partner.
+
+I don't understand it… Yesterday
+the lake was below the garden steps.
+
+Now the water has covered the whole
+garden. And it hasn't rained at all!
+==+ Palm170_TextPiplupPoints
+PIPLUP: Pip! Piplup!
+
+PIPLUP is pointing at the LAKE
+CONTROL STATION.
+==+ Palm170_TextChelsia2
+CHELSIA: The station? It controls the
+floodgates… and it goes under the lake.
+
+You want us to go that way, PIPLUP?
+Very well! Let's go together!
+
+{PLAYER}, would you come with us?
+I'll open the station door for you.
+==+ Palm170_TextPiplup
+PIPLUP: Piplup! Pip!
+==+ Palm170_TextStationLocked
+The door is locked.
+
+HORIZON LAKE CONTROL STATION
+Staff only.
+==+ Palm170_TextNorthGate
+The mountain road north is closed.
+
+A sign reads: “ROUTE 8 · Closed
+until the lake is safe again.”
+==+ Palm170_OldMan_Text
+Seventy years I've lived by this lake.
+
+It rises in the rainy season, sure.
+But not like this. Not in clear skies.
+==+ Palm170_OldMan_TextDone
+The water went back down overnight!
+
+The lake breathes slow and calm again.
+Thank you, young one.
+==+ Palm170_Fisher_Text
+The fish are swimming in circles,
+all facing the same way.
+
+As if something under the water was
+calling them.
+==+ Palm170_Astronomer_Text
+I study the stars at the STAR
+PAVILION.
+
+On still nights, the lake reflects
+every constellation. This town was
+named for that horizon.
+
+Lately the water trembles, and the
+reflection breaks apart.
+==+ Palm170_Girl_Text
+CHELSIA's PIPLUP walks behind her
+everywhere she goes!
+
+I want a partner just like that.
+==+ Palm170_Worker_Text
+I work at the lake station, but my
+key card stopped working yesterday.
+
+Some people in green uniforms said
+they were doing “maintenance”…
+==+ Palm170_Woman_Text
+My garden was by the lake.
+Now the fish live in it.
+==+ Palm170_GymGuard_Text
+CHELSIA's GYM is closed today.
+
+She's worried about the lake. She
+won't battle until it's settled.
+==+ Palm170_GymGuard_TextDone
+The lake is calm again, and CHELSIA's
+GYM is open!
+
+She's waiting for you inside.
+==+ Palm170_TownSign_Text
+HORIZON CITY
+“Where the sky rests on the water.”
+==+ Palm170_StationSign_Text
+HORIZON LAKE CONTROL STATION
+Floodgates · Underwater lab
+==+ Palm170_PavilionSign_Text
+STAR PAVILION
+Closed while the lake is rising.
+==+ Palm170_GymSign_Text
+HORIZON CITY POKéMON GYM
+LEADER: CHELSIA
+“A little light to find the way.”
+==+ Palm171_PcWoman_Text
+Travelers from SERENIA always stop
+here to watch the sunset on the lake.
+==+ Palm171_PcGirl_Text
+My MARILL won't go near the water.
+It keeps hiding under my bed!
+==+ Palm171_MartWoman_Text
+Everyone's buying REPELS and ROPES.
+They say the lake might flood the town.
+==+ Palm171_MartBoy_Text
+I'm saving up for a fishing rod.
+FEEBAS live in this lake, you know!
+==+ Palm171_MartSailor_Text
+I sail the lake ferry. Well… I did,
+until the water got this strange.
+==+ Palm171_House1Man_Text
+The lake has ups and downs, like the
+moon has phases. That's normal.
+
+But now it rises without the moon,
+without the rain. That's not normal.
+==+ Palm171_House1Woman_Text
+We moved our things upstairs, just
+in case. I hope we never need to.
+==+ Palm171_House3Woman_Text
+My brother says the lake is angry.
+I think it's just… scared.
+==+ Palm171_House3Boy_Text
+I saw lights under the water at night!
+Blue blinking lights. Like machines!
+==+ Palm171_House3Skitty_Text
+SKITTY: Mew?
+
+## file: data/maps/PalmLakeStation/scripts.inc
+==+ Palm172_TextChelsia
+CHELSIA: The hum is coming from those
+big tanks. Amplifiers? Here?
+
+And there are POKéMON caught in nets
+over there!
+
+Please shut down the machines and
+free the POKéMON. I'll watch the exit.
+==+ Palm172_TextChelsiaDone
+CHELSIA: The lake is breathing again.
+Thank you, {PLAYER}.
+
+Even when everything seems confusing,
+a little light helps you find the way.
+
+I'll be waiting at my GYM.
+Come and see me there!
+==+ Palm172_TextGrunt1Intro
+Hey! This station is under TEAM PALM
+“maintenance”! Beat it!
+==+ Palm172_TextGrunt1Loss
+Maintenance… failed.
+==+ Palm172_TextGrunt1After
+We only turned them up a little!
+The readings were so interesting…
+==+ Palm172_TextGrunt2Intro
+The amplifiers make the water dance!
+You're not touching them!
+==+ Palm172_TextGrunt2Loss
+The data! My beautiful data!
+==+ Palm172_TextGrunt2After
+Each tank pushes a wave through the
+lake. Three tanks, three waves.
+==+ Palm172_TextGrunt3Intro
+Those POKéMON swam into our nets
+on their own! Finders keepers!
+==+ Palm172_TextGrunt3Loss
+Fine, fine, let them go…
+==+ Palm172_TextGrunt3After
+We were going to let them go anyway.
+Probably.
+==+ Palm172_TextAmp
+A machine is humming loudly.
+A label reads “AMPLIFIER · PALM”.
+
+Shut it down?
+==+ Palm172_TextAmpDown
+The amplifier powered down.
+The humming fades away…
+==+ Palm172_TextAmpIsOff
+The amplifier is silent.
+==+ Palm172_TextNetMARILL
+A MARILL is tangled in a TEAM PALM
+net!
+==+ Palm172_TextFreedMARILL
+You untangled the net.
+MARILL dove happily into the pool!
+==+ Palm172_TextNetPSYDUCK
+A PSYDUCK is stuck in a net, holding
+its head in pain.
+==+ Palm172_TextFreedPSYDUCK
+You freed PSYDUCK!
+It waddled off toward the water.
+==+ Palm172_TextNetLOTAD
+A LOTAD is wrapped up in a net!
+==+ Palm172_TextFreedLOTAD
+You cut the net open.
+LOTAD floated away, relieved!
+==+ Palm172_TextTerminalBusy
+The terminal shows three wave graphs
+and three warning lights.
+
+Something here is still running, and
+POKéMON are still trapped.
+==+ Palm172_TextTerminal
+All the warning lights are off.
+One file was left on the screen.
+==+ Palm172_TextRecord
+UNIDENTIFIED RECORD
+SOURCE: EXTERNAL
+DIRECTION: NORTH
+SIGNAL: IRREGULAR
+
+There is nothing else in the file.
+==+ Palm172_TextChelsiaRecord
+CHELSIA: “External… north…”
+What does that mean?
+
+Whatever TEAM PALM was measuring,
+the lake was only an echo of it.
+
+Look, the water is already going
+down! Thank you, {PLAYER}!
+
+I'll open my GYM right away.
+Come and challenge me there!

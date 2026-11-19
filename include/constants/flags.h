@@ -85,14 +85,14 @@
 #define FLAG_HT_SERENIA_ILLUSION_3  0x3F // ilusao 3 desfeita
 #define FLAG_HT_SERENIA_FRAGMENT    0x40 // fragmento do santuario recuperado
 #define FLAG_HT_SERENIA_DONE        0x41 // fragmento devolvido ao altar: ginasio da Jade abre
-#define FLAG_UNUSED_0x042    0x42 // Unused Flag
-#define FLAG_UNUSED_0x043    0x43 // Unused Flag
-#define FLAG_UNUSED_0x044    0x44 // Unused Flag
-#define FLAG_UNUSED_0x045    0x45 // Unused Flag
-#define FLAG_UNUSED_0x046    0x46 // Unused Flag
-#define FLAG_UNUSED_0x047    0x47 // Unused Flag
-#define FLAG_UNUSED_0x048    0x48 // Unused Flag
-#define FLAG_UNUSED_0x049    0x49 // Unused Flag
+#define FLAG_HT_HORIZON_CHELSIA_MET 0x42 // Chelsia e o Piplup mostraram a estacao do lago
+#define FLAG_HT_HORIZON_AMP_1       0x43 // amplificador 1 desligado
+#define FLAG_HT_HORIZON_AMP_2       0x44 // amplificador 2 desligado
+#define FLAG_HT_HORIZON_AMP_3       0x45 // amplificador 3 desligado
+#define FLAG_HT_HORIZON_PKMN_1      0x46 // Marill solto
+#define FLAG_HT_HORIZON_PKMN_2      0x47 // Psyduck solto
+#define FLAG_HT_HORIZON_PKMN_3      0x48 // Lotad solto
+#define FLAG_HT_HORIZON_DONE        0x49 // registro recuperado: o lago baixa
 #define FLAG_UNUSED_0x04A    0x4A // Unused Flag
 #define FLAG_UNUSED_0x04B    0x4B // Unused Flag
 #define FLAG_UNUSED_0x04C    0x4C // Unused Flag

@@ -1,0 +1,101 @@
+## file: data/maps/SootopolisCity_Gym_1F/scripts.inc
+==+ Palm173_TextGuide
+Hey, future CHAMPION {PLAYER}!
+
+This is the LAKE OF STARS. CHELSIA
+uses FAIRY-type POKéMON.
+
+Each ice tile is a star. Step on it
+once and it lights up. Light every
+star in a field and stairs appear!
+
+But step on a lit star again and the
+ice breaks. Splash! Down you go!
+
+Plan your path before you walk.
+STEEL and POISON moves work well!
+==+ Palm173_TextGuideAfter
+You lit up every constellation!
+Now that's what I call a bright future!
+==+ Palm173_TextStatue
+HORIZON CITY POKéMON GYM
+
+CHELSIA's CERTIFIED TRAINERS:
+{PLAYER}?
+==+ Palm173_TextStatueWon
+HORIZON CITY POKéMON GYM
+
+CHELSIA's CERTIFIED TRAINERS:
+{PLAYER}
+==+ Palm173_TextPiplup
+PIPLUP: Piplup! Pip-pip!
+
+PIPLUP is cheering for CHELSIA!
+==+ Palm173_TextChelsiaIntro
+CHELSIA: You came! And the lake is
+calm again, thanks to you.
+
+Every night, the stars shine on this
+lake. Even when the water trembles,
+they're still up there, waiting.
+
+I'd like to show you the light my
+POKéMON carry. Ready?
+==+ Palm173_TextChelsiaDefeat
+What a bright battle…
+You shine brighter than I thought!
+==+ Palm173_TextBadge
+{PLAYER} received the HORIZON BADGE
+from CHELSIA.
+==+ Palm173_TextBadgeExplain
+The HORIZON BADGE shows you can find
+your way, even in the dark.
+
+Please take this too.
+==+ Palm173_TextTM
+That TM is DAZZLING GLEAM. It hits
+every foe with a powerful flash.
+
+That signal TEAM PALM recorded…
+“external, north”. I keep thinking
+about it.
+
+Take care out there, {PLAYER}. Even
+when everything seems confusing, a
+little light helps you find the way.
+==+ Palm173_TextChelsiaAfter
+CHELSIA: PIPLUP and I watch the stars
+over the lake every night.
+
+Lately they look a little clearer.
+I think that's thanks to you.
+
+## file: data/maps/SootopolisCity_Gym_B1F/scripts.inc
+==+ Palm173_TextAIntro
+Oops! Did you break the ice too?
+Welcome to the bottom of the lake!
+==+ Palm173_TextADefeat
+Sunk again…
+==+ Palm173_TextAAfter
+The ladder back to the entrance is
+at the far end of this floor.
+==+ Palm173_TextBIntro
+Down here we see the stars from
+below. Aren't they pretty?
+==+ Palm173_TextBDefeat
+They just twinkled out…
+==+ Palm173_TextBAfter
+Count the stars in each field before
+you step on the first one!
+==+ Palm173_TextCIntro
+CHELSIA taught me that every star
+has its own place in the sky.
+
+And my place is right here, blocking
+your way!
+==+ Palm173_TextCDefeat
+You found your own path. Well done!
+==+ Palm173_TextCAfter
+The third field is the biggest
+constellation. Never cross your own
+trail, and finish by the stairs!

@@ -34,15 +34,15 @@
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_MOSSDEEP_CITY",
-      "dest_warp_id": "5"
+      "dest_map": "MAP_PALM_HORIZON",
+      "dest_warp_id": "3"
     },
     {
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_MOSSDEEP_CITY",
-      "dest_warp_id": "5"
+      "dest_map": "MAP_PALM_HORIZON",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [],
