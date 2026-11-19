@@ -35,9 +35,8 @@ Palm120_SignSouth_Text:
 	.string "South: TRADEPOST$"
 
 Palm120_SignNorth_Text:
-	.string "NORTH: PILLARTON CITY\p"
-	.string "The dam road is closed for repairs.\n"
-	.string "Sorry for the inconvenience!$"
+	.string "NORTH: PILLARTON CITY\n"
+	.string "“The city of pillars and dams.”$"
 
 Palm120_TextTIAGOIntro:
 	.string "The river's lower than I've ever\n"

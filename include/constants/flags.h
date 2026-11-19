@@ -75,10 +75,10 @@
 #define FLAG_HT_TRADEPOST_WEN_ASKED  0x35 // O Preco da Troca: Mestre Wen pediu a autorizacao de carga
 #define FLAG_HT_TRADEPOST_PERMIT     0x36 // autorizacao original recuperada na estacao
 #define FLAG_HT_TRADEPOST_DONE       0x37 // feira reaberta; mensageira da Palm vai embora
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
+#define FLAG_HT_PILLARTON_VALVE_1    0x38 // valvula 1 da barragem aberta
+#define FLAG_HT_PILLARTON_VALVE_2    0x39 // valvula 2
+#define FLAG_HT_PILLARTON_VALVE_3    0x3A // valvula 3
+#define FLAG_HT_PILLARTON_WATER      0x3B // Lela derrotada: agua de volta, ginasio do Tchum abre
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag

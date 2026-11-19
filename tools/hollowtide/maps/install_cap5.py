@@ -28,8 +28,8 @@ WILD = [("SPECIES_SANDSHREW", 24, 26), ("SPECIES_PHANPY", 24, 26), ("SPECIES_CUB
         ("SPECIES_CUBONE", 25, 27), ("SPECIES_WOOPER", 25, 27), ("SPECIES_LARVITAR", 25, 27), ("SPECIES_LARVITAR", 25, 27)]
 
 
-def main():
-    c = R5.compose(north_open=False)
+def main(north_open=False):
+    c = R5.compose(north_open=north_open)
     for (x, y, _) in SIGNS:
         c.put(x, y, 3, collision=1)
     bl = c.build()

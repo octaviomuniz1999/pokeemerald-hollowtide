@@ -12,9 +12,7 @@ South: TRADEPOST
 
 ==+ Palm120_SignNorth_Text
 NORTH: PILLARTON CITY
-
-The dam road is closed for repairs.
-Sorry for the inconvenience!
+“The city of pillars and dams.”
 
 ==+ Palm120_TextTIAGOIntro
 The river's lower than I've ever

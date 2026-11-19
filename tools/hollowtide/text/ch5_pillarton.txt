@@ -1,0 +1,134 @@
+## file: data/maps/PalmPillarton/scripts.inc
+==+ Palm130_Tchum_Text
+Welcome to PILLARTON! Everyone here
+stands on a solid foundation.
+
+Get it? FOUNDATION? Ground? Ha!
+...Nobody laughs anymore.
+
+Seriously, though: the water is
+vanishing. Half the city is stalled.
+
+NEVARD told me about a trainer who
+helped his fields. Was that you?
+
+TEAM PALM built a power plant on
+the dam. Go see for yourself.
+
+==+ Palm130_TchumAfter_Text
+You opened the valves and beat
+LELA? You really rock!
+
+...Rock. Ground. Never mind.
+My GYM opens soon. Be ready!
+
+==+ Palm130_OldCanal_Text
+That dry ditch was a canal once.
+Boats used to sail right here.
+
+Now you can see the bare rock.
+
+==+ Palm130_GardenLady_Text
+TEAM PALM planted these “contract
+gardens.” Lovely flowers...
+
+...watered with OUR water, while
+the city goes dry.
+
+==+ Palm130_Kid_Text
+The fountain at school stopped
+working. Can you fix the river?
+
+==+ Palm130_GymFan_Text
+TCHUM is a therapist and a GYM
+LEADER. He says GROUND-types teach
+
+you to stay grounded. Then he
+laughs at his own joke.
+
+==+ Palm130_CitySign_Text
+PILLARTON CITY
+“The city of pillars and dams.”
+
+==+ Palm130_GymSign_Text
+PILLARTON CITY POKéMON GYM
+LEADER: TCHUM
+
+“Keep your feet on the ground!”
+
+==+ Palm130_PlantSign_Text
+TEAM PALM POWER PLANT
+“Water into energy, energy into
+coins, coins into prosperity.”
+
+==+ Palm130_DamSign_Text
+PILLARTON DAM
+Service walkway. Watch your step.
+
+==+ Palm131_TextValveTurn
+It's a big valve wheel.
+{PLAYER} turned it with all their might!
+
+==+ Palm131_TextValveOpen
+The valve is already open. You can
+hear water rushing below.
+
+==+ Palm131_TextValveMore
+Water trickles through the dam.
+There must be more valves.
+
+==+ Palm131_TextValvesAll
+All three valves are open!
+The river roars back to life!
+
+==+ Palm131_TextLelaTaunt
+I'm LELA, TEAM PALM ADMIN.
+Contracts and operations.
+
+Those valves are company property,
+child. Run along.
+
+==+ Palm131_TextLelaIntro
+You're confusing scarcity with
+opportunity.
+
+Our technology turns water into
+energy, energy into coins, and
+coins into prosperity!
+
+==+ Palm131_TextLelaDefeat
+...You forgot to turn prosperity
+into drinking water, I suppose.
+
+==+ Palm131_TextLelaAfter
+You think you won because you
+opened three valves?
+
+This isn't the first obstacle we've
+faced. Nor will it be the last.
+
+==+ Palm131_TextWaterBack
+LELA and her crew left the dam.
+Water flows freely to the city!
+
+==+ Palm131_TextDamGrunt1Intro
+The dam is closed to the public!
+Especially to nosy kids!
+
+==+ Palm131_TextDamGrunt1Defeat
+Ugh, the admin's gonna yell at me.
+
+==+ Palm131_TextDamGrunt1After
+The plant needs every drop for the
+machines. People can wait!
+
+==+ Palm131_TextDamGrunt2Intro
+One step closer to those valves and
+you'll regret it!
+
+==+ Palm131_TextDamGrunt2Defeat
+I regret it. Happy?
+
+==+ Palm131_TextDamGrunt2After
+Admin LELA is at the plant. She'll
+put you in your place!

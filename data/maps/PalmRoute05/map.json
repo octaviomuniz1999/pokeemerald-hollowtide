@@ -18,6 +18,11 @@
       "map": "MAP_PALM_TRADEPOST",
       "offset": -6,
       "direction": "down"
+    },
+    {
+      "map": "MAP_PALM_PILLARTON",
+      "offset": -4,
+      "direction": "up"
     }
   ],
   "object_events": [

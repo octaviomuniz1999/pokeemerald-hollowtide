@@ -9422,6 +9422,17 @@
       "border_filepath": "data/layouts/PalmRoute05/border.bin",
       "blockdata_filepath": "data/layouts/PalmRoute05/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_PILLARTON",
+      "name": "PalmPillarton_Layout",
+      "width": 56,
+      "height": 44,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/PalmPillarton/border.bin",
+      "blockdata_filepath": "data/layouts/PalmPillarton/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

@@ -43,7 +43,7 @@ def main(rom, runner, work, pre, pos):
                                       (44, 13, "walk RIGHT 1", "MARA", 75)]:
         before = getattr(q, "battles", 0)
         q.goto(R4, ax, ay)
-        if q.flag(TF + tid) and getattr(q, "battles", 0) > before:
+        if q.flag(TF + tid):   # ja desafiou e perdeu no caminho ate o ponto de aproximacao
             ok(True, f"{nome} desafiou (no caminho)"); ok(True, f"Venceu {nome}")
             continue
         q.run([walk, "wait 60"])

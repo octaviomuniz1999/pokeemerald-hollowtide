@@ -177,3 +177,12 @@ warps, não as batalhas nem os eventos.
 | Norte | Pillarton ainda não existe: a trilha termina na mata com placa de obras na barragem |
 | Gerador | **margem sul de lagos** aprendida (metatile 2/45/211/212 como grama com margem) — os mapas existentes não mudaram; **água funda (pond/sea) com elevação 1** como nos oficiais (surf e colisão por altura) |
 | QA | `fluxo_cap5.py` 14/14; **`qa_completo.sh` corrigido**: antes, um fluxo que falhava antes do resumo podia sumir do log (o filtro só mostrava a partir de "RESUMO"); agora mostra toda linha OK/FALHA/erro e para na primeira falha (`pipefail`). Regressão completa sem falhas (~118 verificações) |
+
+## 15. Capítulo 5 — Pillarton e "A Cidade das Águas Presas" — 19/11/2026 (noite)
+
+| Item | Estado |
+|---|---|
+| Pillarton | mapa novo (56×44, General + Rustboro — o tileset de Mauville não tem pontes): barragem ao norte (patamar com o reservatório e a crista de serviço, escada), usina da Team Palm no pátio leste da crista, rio que sai do pé da barragem e cruza a cidade sob duas pontes até a Route 5 (offset 4), canal antigo seco com pedras, Centro Pokémon, Mart e casa (interiores de Lavaridge, sem Hoenn), ginásio, jardins "de contrato" da Palm, parque ao sul (emenda só com primário, conferida) |
+| Evento | Tchum recebe o jogador (piadas de "base sólida"); 2 recrutas na crista (visão ligada); 3 **válvulas desenhadas** (volante marrom fechado / bege aberto, sobre o piso da praça); Lela só luta depois das três (Persian 28, Roselia 29, Lanturn 30 — cânone; placeholder oficial de admin), fala do cânone ("escassez com oportunidade… água em energia, energia em moedas…"), vai embora; água de volta (FLAG_HT_PILLARTON_WATER) |
+| Pendente | ginásio do Tchum (interior de Fortree: portões giratórios como comportas; o BFS do QA ainda não modela os portões), rio visualmente mais cheio depois do evento |
+| QA | `fluxo_cap5.py` estendido: 28/28 (Route 5 + Pillarton + Centro Pokémon + volta); regressão completa sem falhas (~130 verificações) |

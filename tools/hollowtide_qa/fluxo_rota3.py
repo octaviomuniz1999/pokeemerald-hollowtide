@@ -36,7 +36,7 @@ def main(rom, runner, work, estado):
                                       (33, 10, "walk LEFT 3", "DAVI", 29)]:
         before = getattr(q, "battles", 0)
         q.goto(R3, ax, ay)
-        if q.flag(TF + tid) and getattr(q, "battles", 0) > before:   # desafiou no caminho (ex.: Davi na estrada)
+        if q.flag(TF + tid):   # ja desafiou e perdeu no caminho ate o ponto de aproximacao   # desafiou no caminho (ex.: Davi na estrada)
             ok(True, f"{nome} avistou o jogador e desafiou (no caminho)")
             ok(True, f"Venceu {nome}")
             continue

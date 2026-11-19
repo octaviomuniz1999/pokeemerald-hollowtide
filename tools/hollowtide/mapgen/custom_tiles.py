@@ -30,6 +30,8 @@ CUSTOM = {
         ("rail_h", ("draw", "rail", 9), None, 699),          # ferrovia do patio de carga de Ferralia
         ("rail_end", ("draw", "rail_end", 9), None, 699),
         ("rail_end_e", ("draw", "rail_end_e", 9), None, 699),   # para-choque do lado leste (fim de linha)
+        ("valve_closed", ("mt", 699, "bottom"), ("draw", "valve_closed", 9), 699),   # valvulas da usina (Pillarton)
+        ("valve_open", ("mt", 699, "bottom"), ("draw", "valve_open", 9), 699),
     ],
     "lilycove": [
         # nome, camada de baixo, camada de cima, atributos copiados de
@@ -69,6 +71,41 @@ def _rail(end=False):
     return g
 
 
+def _valve(opened):
+    """Valvula (camada de cima, fundo transparente; paleta 9 da Rustboro): cano cinza, haste e volante.
+    Fechada: volante marrom com raios em +; aberta: volante bege com raios em x."""
+    g = [[0] * 16 for _ in range(16)]
+    for x in range(1, 15):                      # cano
+        g[10][x], g[11][x], g[12][x] = 5, 6, 7
+    g[10][0] = g[11][0] = g[12][0] = 7; g[10][15] = g[11][15] = g[12][15] = 7
+    for y in range(6, 10):                      # haste
+        g[y][7], g[y][8] = 6, 7
+    ring = 2 if opened else 4
+    for y in range(0, 9):
+        for x in range(3, 13):
+            d = ((x - 7.5) ** 2 + (y - 4.0) ** 2) ** 0.5
+            if 3.2 <= d <= 4.4:
+                g[y][x] = ring
+            elif d > 4.4 and d <= 4.9:
+                g[y][x] = 8
+    if opened:
+        for k in range(-3, 4):
+            for (x, y) in ((int(7.5 + k), int(4 + k)), (int(7.5 + k), int(4 - k))):
+                if 0 <= y < 9:
+                    g[y][x] = ring
+    else:
+        for k in range(-3, 4):
+            g[4][int(7.5 + k)] = ring
+            g[int(4 + k)][7] = ring
+    g[4][7] = g[4][8] = 8
+    return g
+
+
+DRAW = {"rail": lambda: _rail(), "rail_end": lambda: _rail(end=True),
+        "rail_end_e": lambda: [r[::-1] for r in _rail(end=True)],
+        "valve_closed": lambda: _valve(False), "valve_open": lambda: _valve(True)}
+
+
 def build(tsname):
     d = f"data/tilesets/secondary/{tsname}"
     mts = bytearray(_git_bytes(f"{d}/metatiles.bin"))
@@ -102,9 +139,7 @@ def build(tsname):
                 entries += [0, 0, 0, 0]
                 continue
             if src[0] == "draw":
-                g = _rail(end=src[1] in ("rail_end", "rail_end_e"))
-                if src[1] == "rail_end_e":
-                    g = [row[::-1] for row in g]
+                g = DRAW[src[1]]()
                 for (ox, oy) in ((0, 0), (8, 0), (0, 8), (8, 8)):
                     ti = add_tile([[g[oy + y][ox + x] for x in range(8)] for y in range(8)])
                     entries.append((512 + ti) | (src[2] << 12))

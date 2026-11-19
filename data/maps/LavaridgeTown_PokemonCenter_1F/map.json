@@ -74,15 +74,15 @@
       "x": 7,
       "y": 8,
       "elevation": 3,
-      "dest_map": "MAP_LAVARIDGE_TOWN",
-      "dest_warp_id": "3"
+      "dest_map": "MAP_PALM_PILLARTON",
+      "dest_warp_id": "0"
     },
     {
       "x": 6,
       "y": 8,
       "elevation": 3,
-      "dest_map": "MAP_LAVARIDGE_TOWN",
-      "dest_warp_id": "3"
+      "dest_map": "MAP_PALM_PILLARTON",
+      "dest_warp_id": "0"
     },
     {
       "x": 1,
@@ -95,8 +95,8 @@
       "x": 2,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_LAVARIDGE_TOWN",
-      "dest_warp_id": "5"
+      "dest_map": "MAP_PALM_PILLARTON",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
