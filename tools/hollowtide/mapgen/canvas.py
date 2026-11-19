@@ -62,6 +62,7 @@ class Canvas:
         self.level = [[3] * w for _ in range(h)]  # 3 = chao, 5 = plato (independente do tipo de terreno)
         self.fixed = {}  # (x,y) -> valor de bloco completo (carimbos, pecas manuais)
         self.stair_cols = []  # (x, y_borda_sul_do_plato)
+        self.under = {}  # (x,y) -> terreno que havia sob o carimbo/peca (usado na vizinhanca do autotile)
 
     def fill(self, cls):
         self.rect(0, 0, self.w - 1, self.h - 1, cls)
@@ -101,6 +102,8 @@ class Canvas:
         for dy, row in enumerate(blocks):
             for dx, v in enumerate(row):
                 self.fixed[(x0 + dx, y0 + dy)] = v
+                if self.terrain[y0 + dy][x0 + dx] != "other":
+                    self.under[(x0 + dx, y0 + dy)] = self.terrain[y0 + dy][x0 + dx]
                 self.terrain[y0 + dy][x0 + dx] = "other"
         return (x0, y0, len(blocks[0]), len(blocks))
 
@@ -152,13 +155,17 @@ class Canvas:
 
     def put(self, x, y, metatile, collision=None, elevation=3):
         self.fixed[(x, y)] = metatile | ((collision or 0) << 10) | (elevation << 12)
+        if self.terrain[y][x] != "other":
+            self.under[(x, y)] = self.terrain[y][x]
         self.terrain[y][x] = "other"
 
     def build(self):
         at = _autotiler(self.primary, self.secondary)
         col_ref, elev_ref = _reference()
         import fix_collision as FC
-        grid = [[c if c != "other" else "grass" for c in row] for row in self.terrain]
+        # carimbos contam como o terreno que havia sob eles (predio na areia -> vizinho "areia")
+        grid = [[c if c != "other" else self.under.get((x, y), "grass") for x, c in enumerate(row)]
+                for y, row in enumerate(self.terrain)]
         # patamares: grama acima do chao vira "high"; a borda de um patamar (vizinha de nivel menor) vira rocha
         lv = self.level
         for y in range(self.h):
@@ -188,6 +195,9 @@ class Canvas:
                     continue
                 if (x, y) in stair_cells:
                     out.append(175 | (0 << 10) | (0 << 12))  # escada: elevacao 0 liga os niveis 3 e 5
+                    continue
+                if grid[y][x] == "sand" and y > 0 and grid[y - 1][x] == "cobble":
+                    out.append(292 | (3 << 12))  # emenda calcamento/areia: areia lisa, sem franja de grama
                     continue
                 if grid[y][x] == "tree":  # arvore 2x2 alinhada a grade par (padrao das rotas classicas)
                     m = ((468, 469), (476, 477))[y & 1][x & 1]

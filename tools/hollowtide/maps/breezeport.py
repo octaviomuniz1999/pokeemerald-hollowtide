@@ -95,9 +95,12 @@ def compose():
     for x in range(4, W - 3, 8):
         if x != 60:
             c.lamp(x, 34, "cobble")
-    c.rect(0, 38, W - 1, 46, "sand")
-    c.rect(0, 47, W - 1, H - 1, "sea")
-    c.rect(0, 45, 55, 46, "shallow")      # faixa de agua rasa na arrebentacao (para antes do pontal)
+    # praia com linha de costa organica (areia avanca e recua); oeste garante a faixa de saida (linhas 38-44)
+    import math
+    for x in range(W):
+        shore = 46 + round(1.4 * math.sin(x / 9.0 + 0.6))  # ondas longas: degraus de 1 tile espacados
+        c.rect(x, 38, x, shore, "sand")
+        c.rect(x, shore + 1, x, H - 1, "sea")
     c.rect(58, 44, 69, 50, "sand")         # pontal leste
     c.rect(61, 51, 67, 52, "sand")
     c.stamp("lily_harbor", 60, 38)         # casa do faroleiro (provisoria)

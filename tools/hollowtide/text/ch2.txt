@@ -158,3 +158,65 @@ A spotlight flickers on.
 == Palm090_TextReset
 The lights went out.
 Try the sequence again.
+
+## file: data/maps/PalmBrisa/scripts.inc
+==+ Palm093_Greeter_Text
+Welcome to BREEZEPORT!
+
+Follow the avenue down and you'll
+smell the sea before you see it.
+
+==+ Palm093_PlazaGirl_Text
+At night the festival lamps make
+the whole plaza sparkle!
+
+==+ Palm093_LookoutHiker_Text
+On clear days you can see a peak
+far to the north, lost in clouds.
+
+People say nobody climbs it
+anymore. I wonder why...
+
+==+ Palm093_BeachWoman_Text
+The water's warmer this year.
+
+And the tide comes in so fast now.
+It never used to.
+
+==+ Palm093_Fisherman_Text
+The fish bite less since those
+new pipes went in up the coast.
+
+TEAM PALM says it's progress.
+My nets say otherwise.
+
+==+ Palm093_JayFan_Text
+Have you seen JAY perform?
+
+Her ghosts dance with the stage
+lights. It gives me chills!
+
+==+ Palm093_KeeperOldMan_Text
+The lighthouse fell in last
+winter's storm.
+
+We're rebuilding it, stone by
+stone. Storms used to be gentler.
+
+==+ Palm093_PumpWife_Text
+My husband works at the pump
+station by the harbor.
+
+He says TEAM PALM bought half the
+pumps on this coast. Strange, no?
+
+==+ Palm093_StoreKid_Text
+The DEPARTMENT STORE by the beach
+sells everything. Even POKé BALLS!
+
+==+ Palm093_FestivalBeauty_Text
+Every summer the THEATER OF ECHOES
+hosts the festival.
+
+It's the heart of this city.
+Tonight, it beats again.

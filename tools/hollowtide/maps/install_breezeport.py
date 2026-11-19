@@ -29,6 +29,19 @@ DOORS = [
 ]
 LAMPS = [(12, 20, "grass"), (33, 21, "cobble"), (60, 34, "cobble")]   # topo dos 3 postes do festival + piso
 THEATER_DOOR = (47, 27)
+# moradores: (x, y, grafico, movimento, rotulo). Falas em tools/hollowtide/text/ch2.txt (rotulo + "_Text").
+NPCS = [
+    (21, 8, "MAN_1", "MOVEMENT_TYPE_FACE_LEFT", "Palm093_Greeter"),
+    (30, 25, "LITTLE_GIRL", "MOVEMENT_TYPE_WANDER_AROUND", "Palm093_PlazaGirl"),
+    (47, 7, "HIKER", "MOVEMENT_TYPE_FACE_LEFT", "Palm093_LookoutHiker"),
+    (20, 41, "WOMAN_5", "MOVEMENT_TYPE_WANDER_AROUND", "Palm093_BeachWoman"),
+    (36, 44, "FISHERMAN", "MOVEMENT_TYPE_FACE_DOWN", "Palm093_Fisherman"),
+    (50, 36, "BOY_1", "MOVEMENT_TYPE_WANDER_AROUND", "Palm093_JayFan"),
+    (64, 46, "OLD_MAN", "MOVEMENT_TYPE_FACE_DOWN", "Palm093_KeeperOldMan"),
+    (12, 31, "WOMAN_2", "MOVEMENT_TYPE_WANDER_AROUND", "Palm093_PumpWife"),
+    (36, 19, "SCHOOL_KID_M", "MOVEMENT_TYPE_WANDER_AROUND", "Palm093_StoreKid"),
+    (49, 30, "BEAUTY", "MOVEMENT_TYPE_FACE_DOWN", "Palm093_FestivalBeauty"),
+]
 
 
 def coord(x, y, script):
@@ -66,6 +79,14 @@ def main():
                               ("movement_type", "MOVEMENT_TYPE_FACE_DOWN"), ("movement_range_x", 0), ("movement_range_y", 0),
                               ("trainer_type", "TRAINER_TYPE_NONE"), ("trainer_sight_or_berry_tree_id", "0"),
                               ("script", "Palm080_BrisaHost"), ("flag", "0")])]
+    for (x, y, gfx, mv, label) in NPCS:
+        rng = 1 if "WANDER" in mv else 0
+        v = bl[y * w + x]
+        assert (v >> 10) & 3 == 0, f"morador {label} em tile bloqueado {(x, y)}"
+        j["object_events"].append(OD([("graphics_id", f"OBJ_EVENT_GFX_{gfx}"), ("x", x), ("y", y), ("elevation", v >> 12),
+                                      ("movement_type", mv), ("movement_range_x", rng), ("movement_range_y", rng),
+                                      ("trainer_type", "TRAINER_TYPE_NONE"), ("trainer_sight_or_berry_tree_id", "0"),
+                                      ("script", label), ("flag", "0")]))
     j["warp_events"] = [OD([("x", x), ("y", y), ("elevation", 0), ("dest_map", dm), ("dest_warp_id", "0")]) for (x, y), dm, _ in DOORS]
     j["coord_events"] = [coord(x, 0, "Palm080_ReturnRoute") for x in range(18, 22)] + \
                         [coord(0, y, "Palm090_ToRoute03") for y in range(38, 45)]
@@ -103,6 +124,9 @@ def main():
         s = s.replace("\tcall_if_set FLAG_PALM_BRISA_LIGHTS, Palm090_OpenTheater\n",
                       "\tcall_if_set FLAG_PALM_BRISA_LIGHTS, Palm090_OpenTheater\n\tcall_if_unset FLAG_PALM_BRISA_LIGHTS, Palm090_LockTheater\n")
         s += f"\nPalm090_LockTheater::\n\tsetmetatile {THEATER_DOOR[0]}, {THEATER_DOOR[1]}, {wall_mt}, TRUE\n\treturn\n"
+    for (_, _, _, _, label) in NPCS:
+        if f"{label}::" not in s:
+            s += f"\n{label}::\n\tmsgbox {label}_Text, MSGBOX_NPC\n\tend\n"
     if "Palm092_KeeperHouse::" not in s:
         s += "\nPalm092_KeeperHouse::\n\tmsgbox Palm092_TextKeeperHouse, MSGBOX_SIGN\n\tend\n\nPalm092_TextKeeperHouse:\n\t.string \"LIGHTHOUSE KEEPER'S HOUSE$\"\n"
     open(sp, "w").write(s)

@@ -181,3 +181,97 @@ Palm092_KeeperHouse::
 
 Palm092_TextKeeperHouse:
 	.string "LIGHTHOUSE KEEPER'S HOUSE$"
+
+Palm093_Greeter::
+	msgbox Palm093_Greeter_Text, MSGBOX_NPC
+	end
+
+Palm093_PlazaGirl::
+	msgbox Palm093_PlazaGirl_Text, MSGBOX_NPC
+	end
+
+Palm093_LookoutHiker::
+	msgbox Palm093_LookoutHiker_Text, MSGBOX_NPC
+	end
+
+Palm093_BeachWoman::
+	msgbox Palm093_BeachWoman_Text, MSGBOX_NPC
+	end
+
+Palm093_Fisherman::
+	msgbox Palm093_Fisherman_Text, MSGBOX_NPC
+	end
+
+Palm093_JayFan::
+	msgbox Palm093_JayFan_Text, MSGBOX_NPC
+	end
+
+Palm093_KeeperOldMan::
+	msgbox Palm093_KeeperOldMan_Text, MSGBOX_NPC
+	end
+
+Palm093_PumpWife::
+	msgbox Palm093_PumpWife_Text, MSGBOX_NPC
+	end
+
+Palm093_StoreKid::
+	msgbox Palm093_StoreKid_Text, MSGBOX_NPC
+	end
+
+Palm093_FestivalBeauty::
+	msgbox Palm093_FestivalBeauty_Text, MSGBOX_NPC
+	end
+
+
+Palm093_Greeter_Text:
+	.string "Welcome to BREEZEPORT!\p"
+	.string "Follow the avenue down and you'll\n"
+	.string "smell the sea before you see it.$"
+
+Palm093_PlazaGirl_Text:
+	.string "At night the festival lamps make\n"
+	.string "the whole plaza sparkle!$"
+
+Palm093_LookoutHiker_Text:
+	.string "On clear days you can see a peak\n"
+	.string "far to the north, lost in clouds.\p"
+	.string "People say nobody climbs it\n"
+	.string "anymore. I wonder why...$"
+
+Palm093_BeachWoman_Text:
+	.string "The water's warmer this year.\p"
+	.string "And the tide comes in so fast now.\n"
+	.string "It never used to.$"
+
+Palm093_Fisherman_Text:
+	.string "The fish bite less since those\n"
+	.string "new pipes went in up the coast.\p"
+	.string "TEAM PALM says it's progress.\n"
+	.string "My nets say otherwise.$"
+
+Palm093_JayFan_Text:
+	.string "Have you seen JAY perform?\p"
+	.string "Her ghosts dance with the stage\n"
+	.string "lights. It gives me chills!$"
+
+Palm093_KeeperOldMan_Text:
+	.string "The lighthouse fell in last\n"
+	.string "winter's storm.\p"
+	.string "We're rebuilding it, stone by\n"
+	.string "stone. Storms used to be gentler.$"
+
+Palm093_PumpWife_Text:
+	.string "My husband works at the pump\n"
+	.string "station by the harbor.\p"
+	.string "He says TEAM PALM bought half the\n"
+	.string "pumps on this coast. Strange, no?$"
+
+Palm093_StoreKid_Text:
+	.string "The DEPARTMENT STORE by the beach\n"
+	.string "sells everything. Even POKé BALLS!$"
+
+Palm093_FestivalBeauty_Text:
+	.string "Every summer the THEATER OF ECHOES\n"
+	.string "hosts the festival.\p"
+	.string "It's the heart of this city.\n"
+	.string "Tonight, it beats again.$"

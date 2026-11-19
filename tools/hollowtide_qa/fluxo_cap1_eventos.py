@@ -23,7 +23,7 @@ def ok(cond, label):
         raise SystemExit(1)
 
 
-def battle(q, flag, tries=40):
+def battle(q, flag, tries=80):
     """Avanca dialogo e batalha (FIGHT -> 1o golpe) ate a flag do treinador ligar."""
     for _ in range(tries):
         if q.flag(flag) and not q.in_battle():
@@ -31,7 +31,7 @@ def battle(q, flag, tries=40):
             return True
         if q.in_battle():
             # alterna os 4 golpes (o 1o pode nao afetar o alvo, ex.: Normal contra Fantasma)
-            nav = [[], ["press RIGHT 4 6"], ["press DOWN 4 6"], ["press DOWN 4 6", "press RIGHT 4 6"]][_ % 4]
+            nav = [[], ["press DOWN 4 6"], [], ["press DOWN 4 6"], ["press RIGHT 4 6"], ["press DOWN 4 6", "press RIGHT 4 6"]][_ % 6]  # prioriza slots 0 e 2
             q.run(["press B 4 8", "press UP 4 6", "press LEFT 4 6", "press A 4 20", "press UP 4 6", "press LEFT 4 6"]
                   + nav + ["press A 4 20", "wait 150", "mash B 4"])
         else:
