@@ -13055,29 +13055,29 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("TM51"),
         .price = 3000,
-        .description = COMPOUND_STRING("Mais forte se o\nalvo tem problema\nde status."),
+        .description = COMPOUND_STRING("Hits harder if the\ntarget has a status\ncondition."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM52] =
+    [ITEM_TM_FLASH_CANNON] =
     {
         .name = ITEM_NAME("TM52"),
         .price = 3000,
-        .description = COMPOUND_STRING("?????"), // Todo
+        .description = COMPOUND_STRING("A beam of steel\nlight. May lower\nthe foe's Sp. Def."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM53] =
+    [ITEM_TM_BULLDOZE] =
     {
         .name = ITEM_NAME("TM53"),
         .price = 3000,
-        .description = COMPOUND_STRING("?????"), // Todo
+        .description = COMPOUND_STRING("Stomps the ground.\nLowers the Speed\nof all hit."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

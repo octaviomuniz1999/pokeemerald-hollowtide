@@ -86,6 +86,8 @@ MauvilleCity_Gym_EventScript_WattsonDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis, MSGBOX_DEFAULT
+	giveitem ITEM_TM_FLASH_CANNON
+	msgbox MauvilleCity_Gym_Text_ExplainShockWave, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_MAUVILLE_GYM
 	setflag FLAG_BADGE03_GET
 	setvar VAR_0x8008, 3
@@ -338,10 +340,10 @@ MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis:
 	.string "ears open on the road ahead.$"
 
 MauvilleCity_Gym_Text_ExplainShockWave:
-	.string "That TM34 there contains SHOCK WAVE.\p"
-	.string "It's a trustworthy move that never\n"
-	.string "misses! You can count on it!\p"
-	.string "… … … … … …$"
+	.string "That TM is FLASH CANNON, a beam\n"
+	.string "of pure steel light.\p"
+	.string "It may lower the target's SP. DEF.\n"
+	.string "Make it sing!$"
 
 MauvilleCity_Gym_Text_RegisteredWattson:
 	.string "Registered GYM LEADER WATTSON\n"

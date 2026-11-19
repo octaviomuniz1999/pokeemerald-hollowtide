@@ -30,6 +30,8 @@ FortreeCity_Gym_EventScript_WinonaDefeated::
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
 	msgbox FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis, MSGBOX_DEFAULT
+	giveitem ITEM_TM_BULLDOZE
+	msgbox FortreeCity_Gym_Text_ExplainAerialAce, MSGBOX_DEFAULT
 	setflag FLAG_DEFEATED_FORTREE_GYM
 	setflag FLAG_BADGE04_GET
 	setvar VAR_0x8008, 6
@@ -224,10 +226,10 @@ FortreeCity_Gym_Text_ExplainFeatherBadgeTakeThis:
 	.string "Wear it well, and stay grounded!$"
 
 FortreeCity_Gym_Text_ExplainAerialAce:
-	.string "TM40 contains AERIAL ACE.\p"
-	.string "Its speed…\n"
-	.string "No POKéMON should be able to avoid it.\p"
-	.string "… … … … … …$"
+	.string "That's BULLDOZE! Stomp the ground\n"
+	.string "and slow down everyone you hit.\p"
+	.string "Solid, simple, effective. Like a\n"
+	.string "good foundation!$"
 
 FortreeCity_Gym_Text_RegisteredWinona:
 	.string "Registered GYM LEADER WINONA\n"

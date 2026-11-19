@@ -375,3 +375,10 @@ Out of tune...
 == MauvilleCity_Gym_Text_AngeloPostBattle
 The steel gates sing when they
 open. Follow the music.
+
+== MauvilleCity_Gym_Text_ExplainShockWave
+That TM is FLASH CANNON, a beam
+of pure steel light.
+
+It may lower the target's SP. DEF.
+Make it sing!

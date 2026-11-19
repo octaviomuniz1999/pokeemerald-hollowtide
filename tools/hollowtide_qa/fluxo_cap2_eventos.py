@@ -69,6 +69,7 @@ def main(rom, runner, work, estado):
     T = "MAP_PALM_TEATRO"
     for (x, d) in [(3, "L"), (7, "R"), (3, "L")]:   # holofotes: esquerda, direita, esquerda
         talk(q, T, x, 9, "UP")
+    q.strong()   # cura antes da lider
     q.goto(T, 5, 3); q.run(["press UP 10 10", "press A 4 40"])
     ok(battle(q, JAY), "Venceu JAY")
     for _ in range(10):

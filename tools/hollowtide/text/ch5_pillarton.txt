@@ -260,3 +260,10 @@ Secret revealed...
 == FortreeCity_Gym_Text_DariusPostBattle
 LARVITAR eats soil to grow. One day
 it'll be a mountain!
+
+== FortreeCity_Gym_Text_ExplainAerialAce
+That's BULLDOZE! Stomp the ground
+and slow down everyone you hit.
+
+Solid, simple, effective. Like a
+good foundation!

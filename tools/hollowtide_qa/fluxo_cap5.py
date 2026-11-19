@@ -82,6 +82,7 @@ def main(rom, runner, work, estado):
         q.goto(P, x, 7); q.run(["press UP 10 10", "press A 4 40", "mash B 20"])
         ok(q.flag(fl), f"Valvula {n} aberta")
     q.run(["shot cap5_valvulas.png"])
+    q.strong()   # cura antes da admin
     q.goto(P, 47, 8); q.run(["press RIGHT 10 10", "press A 4 40"])
     ok(battle(q, TF + LELA, tries=140), "Venceu a admin LELA")
     for _ in range(10):
@@ -112,6 +113,7 @@ def main(rom, runner, work, estado):
             q.run(["shot cap5_portoes_falha.png"])
             ok(False, f"Portoes: posicao divergiu no passo {i} (jogo {q.where[2:]}, simulado {pos})")
     ok(tuple(q.where[2:]) == (15, 3), "Portoes: chegou diante do Tchum")
+    q.strong()   # cura antes do lider
     q.run(["press UP 10 10", "press A 4 40"])
     ok(battle(q, TF + TCHUM, tries=140), "Venceu TCHUM")
     for _ in range(10):

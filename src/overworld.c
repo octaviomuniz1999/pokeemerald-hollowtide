@@ -1863,7 +1863,21 @@ static void HtQaBoostParty(void)
         SetMonData(mon, MON_DATA_EXP, &exp);
         CalculateMonStats(mon);
         if (VarGet(VAR_HT_QA_LEVEL))
+        {
             GiveMonInitialMoveset(mon); // balanceamento: golpes naturais do nivel
+        }
+        else
+        {
+            // QA de eventos: golpes de ataque variados (nenhum de status), para batalhas nao travarem
+            static const u16 sQaMoves[MAX_MON_MOVES] = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_THUNDERBOLT, MOVE_BODY_SLAM};
+            u32 m;
+            for (m = 0; m < MAX_MON_MOVES; m++)
+            {
+                u32 move = sQaMoves[m], pp = GetMovePP(move);
+                SetMonData(mon, MON_DATA_MOVE1 + m, &move);
+                SetMonData(mon, MON_DATA_PP1 + m, &pp);
+            }
+        }
     }
     HealPlayerParty();
     FlagClear(FLAG_HT_QA_BOOST_PARTY);

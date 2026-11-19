@@ -84,6 +84,7 @@ def main(rom, runner, work, estado):
                 except AssertionError:
                     continue
     ok(tuple(q.where[2:]) == (5, 3), "Chaves das barreiras: caminho ate o lider aberto")
+    q.strong()   # cura antes do lider
     q.run(["press UP 10 10", "press A 4 40"])
     ok(battle(q, ve, tries=140), "Venceu VESSEL")
     for _ in range(10):

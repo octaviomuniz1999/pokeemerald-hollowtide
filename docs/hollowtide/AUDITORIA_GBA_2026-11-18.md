@@ -195,3 +195,10 @@ warps, não as batalhas nem os eventos.
 | Textos | 100% EN, com o "TERrapia" do cânone ("It's time for some TERapy") |
 | QA | **resolvedor de portões giratórios**: porta em Python de `rotating_gate.c` (tabelas de rotação, braços, colisão com BUGFIX) + BFS sobre (posição, orientação dos 8 portões); no jogo, 97 passos com a posição conferida a cada 6 passos contra a simulação; volta pelo estado atual dos portões; `fluxo_cap5.py` 34/34; regressão completa sem falhas (~137 verificações) |
 | Pendente | arte própria do ginásio (hoje: casa na árvore de Fortree), TM Bulldoze/Flash Cannon/Hex/Bullet Seed na passada de TMs |
+
+## 17. Passada de TMs e robustez do QA — 19/11/2026 (noite)
+
+| Item | Estado |
+|---|---|
+| TMs | lista de TMs ganhou **Flash Cannon (TM52)** e **Bulldoze (TM53)** depois do Hex (TM51); quem aprende é regenerado no build a partir de `all_learnables.json` (Magnemite → Flash Cannon e Phanpy → Bulldoze conferidos); Vessel e Tchum entregam os TMs depois da insígnia; descrição do TM Hex traduzida (estava em português) |
+| QA | o modo forte (só em build não-release) agora também dá golpes de ataque variados (Surf, Ice Beam, Thunderbolt, Body Slam) e é reaplicado (cura) antes de cada líder/admin — o inicial nível 100 com golpes de status perdia para o Marowak do Tchum de vez em quando; regressão completa sem falhas |
