@@ -52,9 +52,9 @@ def block(m, x, y):
     return v & 0x3FF, (v >> 10) & 3, v >> 12
 
 
-def bfs(m, start, goal, avoid=()):
+def bfs(m, start, goal, avoid=(), ignore=()):
     """Caminho em tiles respeitando colisao e elevacao (0 e 15 conectam com qualquer elevacao)."""
-    blocked = {(o["x"], o["y"]) for o in m["json"].get("object_events", [])} | set(avoid)
+    blocked = ({(o["x"], o["y"]) for o in m["json"].get("object_events", [])} - set(ignore)) | set(avoid)
     blocked.discard(goal)
     prev = {start: None}
     dq = collections.deque([start])
@@ -113,7 +113,7 @@ class QA:
     def mapname(self):
         return MAPNUM[self.where[:2]]["id"]
 
-    def goto(self, mapid, x, y, tries=40, avoid=()):
+    def goto(self, mapid, x, y, tries=40, avoid=(), ignore=()):
         stuck = 0
         self.battles = getattr(self, "battles", 0)
         for _ in range(tries):
@@ -123,7 +123,7 @@ class QA:
                 raise AssertionError(f"esperado {mapid}, estou em {m['id']} ({cx},{cy})")
             if (cx, cy) == (x, y):
                 return True
-            path = bfs(self.runtime_map(m), (cx, cy), (x, y), avoid)
+            path = bfs(self.runtime_map(m), (cx, cy), (x, y), avoid, ignore)
             if path is None:
                 raise AssertionError(f"sem caminho em {mapid} de {(cx, cy)} para {(x, y)}")
             before = self.where

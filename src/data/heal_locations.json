@@ -54,9 +54,9 @@
     },
     {
       "id": "HEAL_LOCATION_FORTREE_CITY",
-      "map": "MAP_FORTREE_CITY",
-      "x": 5,
-      "y": 7,
+      "map": "MAP_PALM_SERENIA",
+      "x": 6,
+      "y": 18,
       "respawn_map": "MAP_FORTREE_CITY_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_FORTREE_NURSE"
     },

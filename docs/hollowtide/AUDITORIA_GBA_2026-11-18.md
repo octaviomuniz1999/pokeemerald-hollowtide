@@ -212,3 +212,14 @@ warps, não as batalhas nem os eventos.
 | Correção | a Jay diz a ordem (ESQUERDA, DIREITA, ESQUERDA); cada holofote diz qual é o próximo; o painel do meio mostra a ordem em vez de apagar; erro apaga com a dica; som de sucesso ao acender o palco |
 | QA | `fluxo_cap2_eventos.py` agora simula o jogador confuso (painel do meio e ordem errada antes da ordem certa) e confirma que o ginásio continua vencível; regressão completa sem falhas |
 | Builds | a partir da 19l as builds de teste saem **sem RELEASE**, com o menu de debug da expansion (R + START), a pedido do diretor, até o fim do jogo |
+
+## 19. Capítulo 6 — Route 6, Serenia e "O Jardim das Lembranças" — 19/11/2026 (noite)
+
+| Item | Estado |
+|---|---|
+| Pillarton | borda leste virou parque (só primário nas colunas que a Route 6 enxerga — conferido) com a avenida saindo para leste; trava até a Insígnia dos Pilares |
+| Route 6 | mapa novo (54×36, General + Lavaridge): jardim de pedra (areia lisa com pedras dispostas), bosques fechados no lugar do bambu, canal tranquilo com margem completa, santuários de beira de estrada; Ren (Natu/Espurr), Mika (Snubbull/Cottonee), Sayo (Chingling/Ralts), Hana (Petilil/Cottonee), Lv 30–32; Twisted Spoon, PP Up, Revive; encontros da Pokédex do Cap. 6 |
+| Serenia | mapa novo (44×40, Lavaridge): fonte sagrada como santuário/altar, trilha de pedras entre moitas até a fonte, Centro Pokémon, Mart e 3 casas (interiores de Fortree, sem Hoenn), ginásio, jardins; ponto de cura |
+| Evento | Jade e o **Espeon Lau** (sprite de Pokémon de mapa) com as falas do cânone; 3 ilusões (pedras que fecham as duas faixas e somem depois do encontro); fragmento deixado pela Team Palm; altar revela a inscrição ("a sleeping power may call the tide over the mountains") — Tavinho e Kyogre não são citados |
+| Pendente | ginásio da Jade (Jardim dos Espelhos, sequência de 3 símbolos) |
+| QA | `fluxo_cap6.py` 25/25; driver: `goto(ignore=...)` para objetos já removidos; regressão completa sem falhas (~160 verificações) |

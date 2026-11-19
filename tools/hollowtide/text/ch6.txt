@@ -1,0 +1,193 @@
+## file: data/maps/PalmRoute06/scripts.inc
+==+ Palm140_SignWest_Text
+ROUTE 6 - GARDEN PATH
+West: PILLARTON CITY
+East: SERENIA
+
+==+ Palm140_SignEast_Text
+SERENIA just ahead.
+Please walk quietly.
+
+==+ Palm140_Shrine_Text
+A small wayside shrine.
+Someone left fresh flowers here.
+
+==+ Palm140_TextRENIntro
+I sensed you coming three bends
+ago. My POKéMON did too!
+
+==+ Palm140_TextRENLoss
+I didn't see that coming...
+
+==+ Palm140_TextRENAfter
+Lately the wind blows the wrong
+way near SERENIA. Strange, no?
+
+==+ Palm140_TextMIKAIntro
+Pink, fluffy and fierce!
+That's my team!
+
+==+ Palm140_TextMIKALoss
+Not so fierce after all...
+
+==+ Palm140_TextMIKAAfter
+COTTONEE love the breeze from the
+stone garden.
+
+==+ Palm140_TextSAYOIntro
+The garden whispers about you...
+Let's see if it's right.
+
+==+ Palm140_TextSAYOLoss
+The whispers were right.
+
+==+ Palm140_TextSAYOAfter
+People in SERENIA keep seeing old
+things in new places. Illusions...
+
+==+ Palm140_TextHANAIntro
+Breathe in the flowers... and
+then breathe in defeat!
+
+==+ Palm140_TextHANALoss
+I'm the one out of breath...
+
+==+ Palm140_TextHANAAfter
+JADE, SERENIA's GYM LEADER, walks
+here with her ESPEON every dawn.
+
+## file: data/maps/PalmSerenia/scripts.inc
+==+ Palm141_TextJadeMeet
+JADE: Lau, sweetheart, come here.
+You're sensing it again, aren't you?
+
+Oh! A traveler. I'm JADE, the GYM
+LEADER of SERENIA. This is LAU.
+
+It doesn't feel hostile. It feels...
+like someone's memory, very strong.
+
+When we're frightened, we can't
+always ask for help in a way that
+
+others understand.
+
+TEAM PALM took fragments from our
+shrine to “measure” something.
+
+Since then, illusions block the path
+to the spring. Would you help us?
+
+LAU trusts you. The illusions should
+part for you now.
+
+==+ Palm141_TextJadeAgain
+JADE: The path to the spring is
+just north. LAU will guide you.
+
+==+ Palm141_TextJadeDone
+JADE: LAU trusts you. So do I.
+
+But there's something we must
+understand before it's too late.
+
+My GYM opens soon. Rest first.
+
+==+ Palm141_TextLau
+LAU: Eee-fuu!
+LAU's eyes glow softly.
+
+==+ Palm141_TextIllusionSolid
+A heavy boulder blocks the path.
+It won't budge.
+
+==+ Palm141_TextIllusion
+The boulder shimmers and fades...
+It was only an illusion!
+
+==+ Palm141_TextFragment
+{PLAYER} found a glowing SHRINE
+FRAGMENT! TEAM PALM must have
+
+dropped it while fleeing.
+
+==+ Palm141_TextAltarEmpty
+An empty niche in the stone by
+the spring. Something is missing.
+
+==+ Palm141_TextAltarPlace
+{PLAYER} placed the SHRINE FRAGMENT
+in the niche. It fits perfectly!
+
+A soft light spreads over the
+spring...
+
+==+ Palm141_TextInscription
+Words appear on the old stone:
+
+“When the sky forgets its rain,
+a sleeping power may call the tide
+
+over the mountains.”
+
+==+ Palm141_Elder_Text
+In my youth, the wind always blew
+from the sea. Now it can't decide.
+
+==+ Palm141_Girl_Text
+I saw my grandma's old teapot on
+the bridge! Then it was gone...
+
+==+ Palm141_GymGuard_Text
+JADE's GYM is closed while she
+looks after the shrine.
+
+==+ Palm141_Gardener_Text
+A stone garden teaches patience.
+Every rock has its own place.
+
+==+ Palm141_TownSign_Text
+SERENIA
+“A quiet place to remember.”
+
+==+ Palm141_GymSign_Text
+SERENIA POKéMON GYM
+LEADER: JADE
+
+“The mind is a mirror.”
+
+==+ Palm141_SpringSign_Text
+SACRED SPRING
+Please return what you borrow.
+
+## file: data/maps/PalmPillarton/scripts.inc
+==+ Palm142_TextEastGate
+EAST: ROUTE 6 - SERENIA
+
+The garden path is closed until the
+city's GYM LEADER gives the word.
+
+## file: data/maps/FortreeCity_PokemonCenter_1F/scripts.inc
+== FortreeCity_PokemonCenter_1F_Text_DoYouKnowAboutPokenav
+Pilgrims come to SERENIA to sit by
+the spring and remember.
+
+Lately they say the spring shows
+them things they never lived...
+
+## file: data/maps/FortreeCity_House3/scripts.inc
+== FortreeCity_House3_Text_MetStevenHadAmazingPokemon
+While speaking about POKéDEXES,
+I remembered something.
+
+I met a TRAINER once who collected
+rare stones from the mountains.
+
+Hoo, boy, he had some amazing
+POKéMON with him.
+
+They weren't just rare, they were
+trained to terrifying extremes!
+
+He might even be stronger than the
+GYM LEADER in this town...

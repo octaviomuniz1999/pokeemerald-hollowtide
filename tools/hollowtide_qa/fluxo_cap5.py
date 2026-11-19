@@ -129,6 +129,7 @@ def main(rom, runner, work, estado):
         q.run(sum([[f"walk {d} 1", "wait 6"] for d in back[i:i + 6]], []))
     q.run(["press DOWN 30 0", "wait 120"])
     ok(q.mapname() == P and tuple(q.where[2:]) in ((43, 19), (43, 20)), "Saiu do ginasio na porta certa")
+    shutil.copy(q.state, f"{work}/c5rua.ss")
     q.run(["clearflag 1270 30"])
     q.goto(P, 10, 17); q.run(["press UP 30 0", "wait 120"])
     ok(q.mapname() == "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F", "Pillarton -> Centro Pokemon")

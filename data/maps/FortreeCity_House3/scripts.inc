@@ -12,14 +12,14 @@ FortreeCity_House3_EventScript_SchoolKidM::
 FortreeCity_House3_Text_MetStevenHadAmazingPokemon:
 	.string "While speaking about POKéDEXES,\n"
 	.string "I remembered something.\p"
-	.string "I met this TRAINER, STEVEN, when\n"
-	.string "I was searching for rare stones.\p"
-	.string "Hoo, boy, he had some amazing POKéMON\n"
-	.string "with him.\p"
+	.string "I met a TRAINER once who collected\n"
+	.string "rare stones from the mountains.\p"
+	.string "Hoo, boy, he had some amazing\n"
+	.string "POKéMON with him.\p"
 	.string "They weren't just rare, they were\n"
 	.string "trained to terrifying extremes!\p"
 	.string "He might even be stronger than the\n"
-	.string "GYM LEADER in this town…$"
+	.string "GYM LEADER in this town...$"
 
 FortreeCity_House3_Text_OhYouHavePokedex:
 	.string "What's that thing you have there?\p"

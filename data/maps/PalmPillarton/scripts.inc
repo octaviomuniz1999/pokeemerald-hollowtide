@@ -280,3 +280,25 @@ Palm131_TextDamGrunt2Defeat:
 Palm131_TextDamGrunt2After:
 	.string "Admin LELA is at the plant. She'll\n"
 	.string "put you in your place!$"
+
+Palm142_EastGate::
+	goto_if_set FLAG_BADGE04_GET, Palm142_EastGateOk
+	lockall
+	msgbox Palm142_TextEastGate, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Palm142_StepBackWest
+	waitmovement 0
+	releaseall
+	end
+
+Palm142_EastGateOk::
+	end
+
+Palm142_StepBackWest:
+	walk_left
+	step_end
+
+
+Palm142_TextEastGate:
+	.string "EAST: ROUTE 6 - SERENIA\p"
+	.string "The garden path is closed until the\n"
+	.string "city's GYM LEADER gives the word.$"

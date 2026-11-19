@@ -25,7 +25,7 @@ R6_TRAINERS = [(24, 13, "PSYCHIC_M", "DOWN", 1, "Palm140_RouteREN", "TRAINER_PAL
                (45, 19, "WOMAN_5", "DOWN", 1, "Palm140_RouteHANA", "TRAINER_PALM_ROUTE06_HANA")]
 R6_ITEMS = [(22, 7, "ITEM_TWISTED_SPOON", "FLAG_ITEM_ROUTE_127_ZINC"),
             (50, 4, "ITEM_PP_UP", "FLAG_ITEM_ROUTE_127_CARBOS"),
-            (3, 32, "ITEM_REVIVE", "FLAG_ITEM_ROUTE_132_RARE_CANDY")]
+            (6, 31, "ITEM_REVIVE", "FLAG_ITEM_ROUTE_132_RARE_CANDY")]
 R6_SIGNS = [(3, 19, "Palm140_SignWest"), (50, 19, "Palm140_SignEast"), (12, 18, "Palm140_Shrine")]
 R6_WILD = [("SPECIES_RALTS", 30, 32), ("SPECIES_CHINGLING", 30, 32), ("SPECIES_NATU", 30, 32), ("SPECIES_ESPURR", 30, 32),
            ("SPECIES_SNUBBULL", 30, 32), ("SPECIES_PETILIL", 30, 32), ("SPECIES_COTTONEE", 31, 33), ("SPECIES_NATU", 31, 33),
@@ -38,8 +38,8 @@ SE_INTERIORS = [("pc", "MAP_FORTREE_CITY_POKEMON_CENTER_1F", "FortreeCity_Pokemo
                 ("house_2", "MAP_FORTREE_CITY_HOUSE2", "FortreeCity_House2", "MAP_FORTREE_CITY"),
                 ("house_3", "MAP_FORTREE_CITY_HOUSE3", "FortreeCity_House3", "MAP_FORTREE_CITY")]
 SE_NPCS = [  # (x, y, grafico, movimento, script, flag de sumir)
-    (22, 19, "LIZA", "MOVEMENT_TYPE_FACE_LEFT", "Palm141_Jade", "0"),
-    (23, 19, "OBJ_EVENT_GFX_SPECIES(ESPEON)", "MOVEMENT_TYPE_FACE_LEFT", "Palm141_Lau", "0"),
+    (24, 19, "LIZA", "MOVEMENT_TYPE_FACE_LEFT", "Palm141_Jade", "0"),
+    (25, 19, "OBJ_EVENT_GFX_SPECIES(ESPEON)", "MOVEMENT_TYPE_FACE_LEFT", "Palm141_Lau", "0"),
     (21, 8, "ITEM_BALL", "MOVEMENT_TYPE_FACE_DOWN", "Palm141_Fragment", "FLAG_HT_SERENIA_FRAGMENT"),
     (10, 24, "OLD_WOMAN", "MOVEMENT_TYPE_FACE_DOWN", "Palm141_Elder", "0"),
     (28, 22, "LITTLE_GIRL", "MOVEMENT_TYPE_WANDER_AROUND", "Palm141_Girl", "0"),
