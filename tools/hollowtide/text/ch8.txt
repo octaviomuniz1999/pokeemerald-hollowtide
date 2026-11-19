@@ -1,0 +1,165 @@
+## file: data/maps/PalmRoute08/scripts.inc
+==+ Palm180_TextALANIntro
+These slopes are older than any map.
+Let's see if your legs are as tough!
+==+ Palm180_TextALANLoss
+Whew! I'm out of breath…
+==+ Palm180_TextALANAfter
+Up top it gets cold fast, even in
+summer. The mountain keeps its winter.
+==+ Palm180_TextKIYOIntro
+I train against the mountain wind!
+You'll make a fine sparring partner!
+==+ Palm180_TextKIYOLoss
+My stance was too stiff…
+==+ Palm180_TextKIYOAfter
+A good fighter bends like grass in
+the wind. I still have a lot to learn.
+==+ Palm180_TextCORAIntro
+Each step up this slope is training!
+Ready for a real workout?
+==+ Palm180_TextCORALoss
+Okay, okay! You win this round!
+==+ Palm180_TextCORAAfter
+PASSWAY VILLAGE is just ahead.
+The hot spring there is the best!
+==+ Palm180_TextAURONIntro
+From here you can see the whole lake,
+and the clouds gathering up north.
+
+Show me what you've learned so far.
+==+ Palm180_TextAURONLoss
+You've walked a long road. It shows.
+==+ Palm180_TextAURONAfter
+Those clouds over the summit haven't
+moved in weeks. Strange weather…
+==+ Palm180_SignSouth_Text
+ROUTE 8 · OLD SLOPES
+South: HORIZON CITY
+==+ Palm180_SignView_Text
+LAKE VIEWPOINT
+
+On clear nights, the lake below
+holds every star in the sky.
+==+ Palm180_SignNorth_Text
+ROUTE 8
+North: PASSWAY VILLAGE
+
+## file: data/maps/PalmPassway/scripts.inc
+==+ Palm181_TextStairGate
+GUARDIAN: Hold it right there!
+
+This trail is not a tourist route.
+The winds up there are too strong,
+and the LEAGUE has closed the way.
+==+ Palm181_TextEastGate
+A rockslide is blocking the road east.
+
+Workers are clearing it. The road to
+VOLTARA should open soon.
+==+ Palm181_TextSpring
+Steam rises from the hot spring.
+Would you like to rest a while?
+==+ Palm181_TextSpringDone
+You and your POKéMON feel completely
+refreshed!
+==+ Palm181_Guardian_Text
+GUARDIAN: I've guarded these stairs
+for twenty years.
+
+I've never seen the sky above the
+summit this dark. Nobody goes up.
+==+ Palm181_Watcher_Text
+Look up there, past the stairs.
+
+The clouds over the summit turn
+darker every evening.
+
+Old travelers say the mountain is
+waiting for something.
+==+ Palm181_Traveler_Text
+I came all the way from FERRALIA.
+Every traveler rests in PASSWAY
+before crossing to the other side.
+==+ Palm181_Kid_Text
+Grandma says a black dog once
+guarded our village!
+
+I've never seen it, though.
+==+ Palm181_Worker_Text
+We're clearing the rockslide on the
+road to VOLTARA. Give us a little time!
+==+ Palm181_Bather_Text
+Aaah… This spring has warmed tired
+travelers for hundreds of years.
+==+ Palm181_TownSign_Text
+PASSWAY VILLAGE
+“Rest here before the mountain.”
+==+ Palm181_StairSign_Text
+SUMMIT TRAIL
+Closed by order of the POKéMON LEAGUE.
+==+ Palm181_Mural_Text
+An old mural is carved into the rock.
+
+It shows travelers climbing a
+mountain under a dark sky.
+
+At the center, someone holds up a
+round emblem…
+
+It looks a lot like your ATLAS
+MEDALLION.
+==+ Palm182_PcGirl_Text
+The nurse here makes tea with herbs
+from the mountain. It smells so good!
+==+ Palm182_PcExpert_Text
+I came to climb the summit, but the
+trail is closed. I'll wait. Mountains
+are patient, and so am I.
+==+ Palm182_PcWoman_Text
+In PASSWAY, everyone helps travelers.
+That's our oldest tradition.
+==+ Palm182_MartWoman_Text
+Buy warm clothes before going north!
+Oh, you don't need them? Lucky you.
+==+ Palm182_MartMan_Text
+FULL HEALS sell out every winter.
+The mountain wind is no joke.
+==+ Palm182_MartSkitty_Text
+SKITTY: Mew!
+==+ Palm182_Innkeeper_Text
+Welcome to the PASSWAY INN!
+
+Travelers have slept under this roof
+since before the roads were paved.
+==+ Palm182_InnGuest_Text
+I'm waiting for the road to VOLTARA
+to open. I hope it's soon!
+==+ Palm182_Elder_Text
+ELDER: Ah, a young traveler.
+Sit, sit.
+
+They say that, long ago, someone left
+here the sign of a faithful guardian.
+
+A circle as pale as the moon, on the
+chest of a black dog.
+
+Some people believe that carrying the
+world means not letting anyone help.
+
+But even guardians need to rest.
+==+ Palm182_ElderGrandkid_Text
+Grandma tells that story to everyone
+who passes through the village.
+
+I think she's waiting for someone.
+==+ Palm182_HouseWoman_Text
+My husband works on the rockslide.
+He comes home covered in dust!
+==+ Palm182_HouseGirl_Text
+When the clouds get dark, we stay
+inside and play cards.
+==+ Palm182_HouseBoy_Text
+I want to climb the summit someday.
+The GUARDIAN never lets anyone pass!

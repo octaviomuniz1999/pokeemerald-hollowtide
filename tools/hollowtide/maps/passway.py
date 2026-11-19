@@ -13,7 +13,7 @@ from canvas import Canvas
 W, H = 36, 32
 SOUTH = (16, 17)
 EAST = (18, 19)
-OFFSET_ROUTE8 = -2        # conexao da Route 8 (up): Passway comeca 2 colunas a esquerda da Route 8... ver instalador
+OFFSET_ROUTE8 = 2         # Route 8 x = Passway x + 2 (trilha norte da Route 8 nas colunas 18-19)
 STAIRWAY = (17, 18)       # escadaria interditada para o cume
 SEAM = 25                 # da linha 25 ao fim so primario (a Route 8 enxerga 7 linhas)
 BUILDINGS = [
@@ -44,7 +44,7 @@ def compose():
     c.fill("grass")
     # patamar da escadaria (norte) — a montanha comeca aqui
     for y in range(0, 8):
-        for x in range(10, 26):
+        for x in range(10, 24):
             c.level[y][x] = 5
     paths = []
     def path(x0, y0, x1, y1, cls="sand"):
@@ -52,7 +52,7 @@ def compose():
         paths.extend((x, y) for x in range(x0, x1 + 1) for y in range(y0, y1 + 1))
     path(SOUTH[0], EAST[1], SOUTH[1], H - 1)                 # da Route 8 ate a praca
     path(2, EAST[0], W - 1, EAST[1])                         # rua principal (leste -> Route 9)
-    path(STAIRWAY[0], 10, STAIRWAY[1], EAST[0])              # ate o pe da escadaria
+    path(STAIRWAY[0], 9, STAIRWAY[1], EAST[0])               # ate o pe da escadaria
     c.stairs(STAIRWAY[0], 7, 2)
     path(STAIRWAY[0], 0, STAIRWAY[1], 6)                     # escadaria continua para o cume (interditada)
     for (name, x, y, label) in BUILDINGS:
@@ -61,7 +61,7 @@ def compose():
         x, y = door(label); path(x, y + 1, x, EAST[0] - 1)
     x, y = door("house"); path(x, y + 1, x, 25); path(x, 25, SOUTH[0] - 1, 25)
     sx, sy = door("spring"); path(sx, sy + 1, sx + 1, 11); path(STAIRWAY[1] + 1, 10, sx + 1, 11)
-    path(2, 9, 7, 10)                                        # mirante oeste
+    path(2, 9, 8, 10); path(8, 11, 8, EAST[0] - 1)            # mirante oeste (liga a rua entre o Centro e o Mart)
     c.rect(20, 22, 27, 23, "flower"); c.rect(9, 9, 9, 10, "flower")
     stair = set()
     for (x, y) in c.stair_cols:

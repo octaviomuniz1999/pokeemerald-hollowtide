@@ -39,7 +39,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FallarborTown_Mart_EventScript_Woman",
+      "script": "Palm182_MartWoman",
       "flag": "0"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FallarborTown_Mart_EventScript_PokefanM",
+      "script": "Palm182_MartMan",
       "flag": "0"
     },
     {
@@ -65,7 +65,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FallarborTown_Mart_EventScript_Skitty",
+      "script": "Palm182_MartSkitty",
       "flag": "0"
     },
     {
@@ -87,15 +87,15 @@
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_FALLARBOR_TOWN",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_PALM_PASSWAY",
+      "dest_warp_id": "1"
     },
     {
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_FALLARBOR_TOWN",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_PALM_PASSWAY",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [],

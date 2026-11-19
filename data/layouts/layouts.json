@@ -9488,6 +9488,28 @@
       "border_filepath": "data/layouts/PalmHorizon/border.bin",
       "blockdata_filepath": "data/layouts/PalmHorizon/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_ROUTE08",
+      "name": "PalmRoute08_Layout",
+      "width": 34,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/PalmRoute08/border.bin",
+      "blockdata_filepath": "data/layouts/PalmRoute08/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_PASSWAY",
+      "name": "PalmPassway_Layout",
+      "width": 36,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/PalmPassway/border.bin",
+      "blockdata_filepath": "data/layouts/PalmPassway/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

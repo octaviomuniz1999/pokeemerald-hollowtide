@@ -247,3 +247,12 @@ warps, não as batalhas nem os eventos.
 | Cuidado técnico | `setmetatile` não muda a elevação do bloco: água colocada por script sobre chão (elevação 3) ficaria andável — os metatiles de água do alagamento entram como bloqueados; o QA confere que não se anda na água da orla antes do evento |
 | QA | `fluxo_cap7.py` 48/48 (trava norte, 4 treinadores com visão, 3 itens, conexões nos dois sentidos, estação fechada antes da Chelsia, água da orla bloqueada, recrutas, amplificadores, Pokémon soltos, registro, jardim andável depois, trava norte, Centro Pokémon, ginásio: 3 constelações, vitória, insígnia, queda no B1F e volta); o fluxo resolve cada campo de gelo com um caminho que pisa cada estrela uma única vez (busca em profundidade sobre o layout); suíte completa sem falhas (~355 verificações nos Cap. 1–6 + 48 no Cap. 7, mesma build) |
 | Pendente | interior do Pavilhão das Estrelas; arte própria do ginásio |
+
+## 22. Capítulo 8 — Route 8 e Passway Village — 20/11/2026
+
+| Item | Estado |
+|---|---|
+| Route 8 | mapa novo (34×48, General + Lilycove — a emenda sul enxerga o Pavilhão das Estrelas da Horizon): encosta em 3 patamares de contorno orgânico com bordas retas em volta de cada escada, trilha em zigue-zague, pinheiros (mata 2×2), pedras, mato alto, mirante oeste sobre o lago; Alan (Swinub/Graveler/Ursaring), Kiyo (Machoke/Riolu), Cora (Meditite/Sneasel), Auron (Glalie/Abomasnow), Lv 40–43; Never-Melt Ice, Hyper Potion, Ice Stone; encontros do Cap. 8 (Lv 40–43) |
+| Passway Village | mapa novo (36×32, Lavaridge): patamar da montanha com a escadaria do cume (interditada pelo guardião; abre só com FLAG_SYS_GAME_CLEAR — na história, depois dos créditos e da convocação do Doge), mural na rocha (a figura do Medalhão de Atlas, detalhe opcional), fonte termal que cura o time, estalagem, Centro Pokémon, Mart (o tutor de Metronome ficou), casa da anciã ("um círculo claro como a lua sobre o peito de um cão negro… até os guardiões precisam descansar"), mirante; estrada leste para Voltara fechada por um deslizamento nesta etapa; ponto de cura |
+| Emendas | Horizon ⇄ Route 8 (offset 36) e Route 8 ⇄ Passway (offset 2): faixas conferidas no instalador (só primário onde o vizinho enxerga) |
+| Cânone | Tavinho e Kyogre não aparecem; o protagonista só observa o céu escurecendo sobre o cume |

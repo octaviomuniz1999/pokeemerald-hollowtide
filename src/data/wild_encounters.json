@@ -37145,6 +37145,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_PALM_ROUTE08",
+          "base_label": "gPalmRoute08",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_SNORUNT"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_TEDDIURSA"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_STANTLER"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_SNOVER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_SNORUNT"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_SWINUB"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_TEDDIURSA"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_STANTLER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_SNOVER"
+              },
+              {
+                "min_level": 41,
+                "max_level": 43,
+                "species": "SPECIES_SNEASEL"
+              },
+              {
+                "min_level": 40,
+                "max_level": 42,
+                "species": "SPECIES_RIOLU"
+              }
+            ]
+          }
         }
       ]
     },

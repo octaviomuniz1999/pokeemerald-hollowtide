@@ -16,7 +16,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
       "x": 5,
       "y": 3,
       "elevation": 3,
@@ -25,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SootopolisCity_House7_EventScript_OldMan",
+      "script": "Palm182_Elder",
       "flag": "0"
     },
     {
@@ -38,7 +38,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SootopolisCity_House7_EventScript_PokefanF",
+      "script": "Palm182_ElderGrandkid",
       "flag": "0"
     }
   ],
@@ -47,15 +47,15 @@
       "x": 3,
       "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_SOOTOPOLIS_CITY",
-      "dest_warp_id": "10"
+      "dest_map": "MAP_PALM_PASSWAY",
+      "dest_warp_id": "3"
     },
     {
       "x": 4,
       "y": 6,
       "elevation": 0,
-      "dest_map": "MAP_SOOTOPOLIS_CITY",
-      "dest_warp_id": "10"
+      "dest_map": "MAP_PALM_PASSWAY",
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [],
