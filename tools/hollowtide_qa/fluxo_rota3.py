@@ -56,6 +56,8 @@ def main(rom, runner, work, estado):
         ok(q.flag(flag), f"{nome} coletado")
     q.goto(R3, 25, 1); q.run(["shot r3_planalto.png", "press UP 30 0", "wait 120"])
     ok(q.mapname() == "MAP_PALM_FERRALIA", "Route 3 -> Ferralia pelo planalto")
+    import shutil
+    shutil.copy(q.state, f"{work}/cap3_ferralia.ss")
     print("\nRESUMO ROUTE 3")
     for r in res:
         print(" ", r[0], r[1])

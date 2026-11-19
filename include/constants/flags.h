@@ -71,7 +71,7 @@
 #define FLAG_HT_QA_NO_ENCOUNTERS    0x31 // Hollowtide QA: sem encontros selvagens (nunca ligada no jogo)
 #define FLAG_HT_RECEIVED_ATLAS_MEDALLION    0x32 // Hollowtide: mae entregou o Medalhao de Atlas
 #define FLAG_HT_QA_BOOST_PARTY    0x33 // Hollowtide QA: eleva o time a nivel 100 (so em build nao-release; nunca ligada no jogo)
-#define FLAG_UNUSED_0x034    0x34 // Unused Flag
+#define FLAG_HT_FERRALIA_CARGO_DONE  0x34 // Carga Desviada resolvida: Vessel volta ao ginasio
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
 #define FLAG_UNUSED_0x037    0x37 // Unused Flag

@@ -143,3 +143,13 @@ warps, não as batalhas nem os eventos.
 | Narrativa | ginásio fechado: o líder foi ao pátio de carga por um carregamento que não chegou; operário: a Team Palm só descarrega à noite; linha leste (Route 4) fechada "para inspeção" — ganchos de "Carga Desviada" |
 | Encontros | parque: Pidove, Trubbish, Rattata, Lillipup, Grimer, Magnemite, Klink (R), Aron (R), Lv 20–23 |
 | QA | transições 21/21 (Route 3 ⇄ Ferralia, Centro Pokémon); regressão completa 67/67; `qa_completo.sh` agora mostra o resumo inteiro das transições |
+
+## 12. Capítulo 3 — "Carga Desviada" e ginásio do Vessel — 19/11/2026 (tarde)
+
+| Item | Estado |
+|---|---|
+| Evento | ginásio trancado ao chegar; Vessel no pátio de carga pede ajuda; 2 recrutas da Team Palm (visão ligada) desviando os canos de aço para secar as nascentes da costa e revender a água; Vessel agradece, some do pátio e o ginásio destranca na hora — **testado** |
+| Ginásio | interior do ginásio de Mauville (chaves que alternam barreiras = "passarelas ressonantes"); 5 treinadores de Aço (Klink, Magnemite, Aron, Ferroseed, Pawniard, Mawile, Bronzor; Lv 21–22); Vessel Magnemite 22 / Mawile 24 / Aron 26 (cânone), placeholder oficial (Wattson); efeitos colaterais de Hoenn removidos (museu de Slateport, Scott, Petalburg, Match Call, TM Shock Wave) — **testado** até a insígnia |
+| Textos | 100% EN; guia, estátuas e treinadores reescritos; insígnia "RESONANCE BADGE" |
+| Pendente | TM Flash Cannon (exige trocar a lista de TMs — fazer junto com Bullet Seed/Hex dos ginásios 1–2); interior do ginásio com arte própria |
+| QA | `fluxo_cap3_eventos.py` (13/13); `goto` aceita células a evitar (chaves do quebra-cabeça); regressão completa: 80 verificações, 0 falhas |

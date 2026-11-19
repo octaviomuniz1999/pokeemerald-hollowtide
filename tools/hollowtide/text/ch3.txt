@@ -108,6 +108,62 @@ fields, though.
 FERRALIA RAIL & STEEL headquarters.
 Staff only, I'm afraid.
 
+==+ Palm101_GymFanOpen_Text
+VESSEL is back! Word is a young
+trainer helped him at the yard.
+
+Was that you? Go get that BADGE!
+
+==+ Palm102_TextVesselAsk
+You there! I'm VESSEL, this city's
+GYM LEADER.
+
+A whole shipment of steel pipe
+vanished from my yard last night.
+
+Those TEAM PALM goons are loading
+it onto their own cars right now!
+
+I can't leave the gates. Can you
+stop them for me?
+
+==+ Palm102_TextVesselThanks
+You did it! The pipes are safe.
+
+They were going to lay them along
+the coast to pump the springs dry
+and sell the water back to us...
+
+That's TEAM PALM for you.
+Thank you, really.
+
+Come to the GYM. I'll give you the
+toughest battle this city has!
+
+==+ Palm102_TextVesselLeft
+VESSEL headed back to the GYM.
+
+==+ Palm102_TextGrunt1Intro
+Hey! This cargo's been reassigned
+to TEAM PALM. Beat it, kid!
+
+==+ Palm102_TextGrunt1Defeat
+The boss is gonna flip...
+
+==+ Palm102_TextGrunt1After
+Fine! Keep your rusty pipes!
+
+==+ Palm102_TextGrunt2Intro
+Water belongs to whoever owns the
+pipes. And we'll own them all!
+
+==+ Palm102_TextGrunt2Defeat
+Our schedule is ruined!
+
+==+ Palm102_TextGrunt2After
+Mark my words: the tide is turning
+TEAM PALM's way.
+
 ==+ Palm101_ParkLady_Text
 This park is the city's lung.
 I walk here every morning.
@@ -197,3 +253,125 @@ wallpaper patterns.
 == RustboroCity_Flat2_3F_Text_PresidentCollectsRareStones
 The company PRESIDENT collects old
 rail spikes. Weird hobby, right?
+
+## file: data/maps/MauvilleCity_Gym/scripts.inc
+== MauvilleCity_Gym_Text_GymGuideAdvice
+Hey, how's it going, future
+CHAMPION {PLAYER}?
+
+VESSEL, the LEADER of FERRALIA
+GYM, uses STEEL-type POKéMON.
+
+Steel shrugs off a lot of attacks,
+but FIRE and FIGHTING moves melt
+right through it!
+
+He wired the whole GYM with
+switches that move the steel gates.
+Listen for the hum!
+
+Go for it!
+
+== MauvilleCity_Gym_Text_GymGuidePostVictory
+Whoa! You made VESSEL's steel
+sing a whole new song!
+
+== MauvilleCity_Gym_Text_WattsonIntro
+So you found the cargo they stole
+from my yard. I owe you one.
+
+But a debt doesn't buy a BADGE.
+Steel is honest: it bends only
+
+under real pressure.
+I'm VESSEL, LEADER of FERRALIA GYM.
+
+Let's hear how your team rings!
+
+== MauvilleCity_Gym_Text_WattsonDefeat
+Ha! That rang true from start
+to finish.
+
+You've earned this BADGE!
+
+== MauvilleCity_Gym_Text_WattsonPostBattle
+The rails carry more than cargo.
+They carry the city's heartbeat.
+
+TEAM PALM wants to bend them to
+its will. Don't let them.
+
+== MauvilleCity_Gym_Text_ReceivedDynamoBadge
+{PLAYER} received the RESONANCE
+BADGE from VESSEL.
+
+== MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis
+The RESONANCE BADGE proves you
+can hear what steel is saying.
+
+Wear it with pride, and keep your
+ears open on the road ahead.
+
+== MauvilleCity_Gym_Text_GymStatue
+FERRALIA CITY POKéMON GYM
+
+== MauvilleCity_Gym_Text_GymStatueCertified
+FERRALIA CITY POKéMON GYM
+
+VESSEL'S CERTIFIED TRAINERS:
+{PLAYER}
+
+== MauvilleCity_Gym_Text_KirkIntro
+My amp is cranked to eleven!
+Can your team keep up?
+
+== MauvilleCity_Gym_Text_KirkDefeat
+My strings snapped...
+
+== MauvilleCity_Gym_Text_KirkPostBattle
+VESSEL tunes his gates like a
+guitar. Every switch is a chord.
+
+== MauvilleCity_Gym_Text_ShawnIntro
+Steel and sound! That's the
+FERRALIA GYM style!
+
+== MauvilleCity_Gym_Text_ShawnDefeat
+Feedback! Pure feedback!
+
+== MauvilleCity_Gym_Text_ShawnPostBattle
+ARON never backs down. Neither
+does VESSEL. Be ready.
+
+== MauvilleCity_Gym_Text_BenIntro
+I've been training next to the
+rails since I was little!
+
+== MauvilleCity_Gym_Text_BenDefeat
+Derailed...
+
+== MauvilleCity_Gym_Text_BenPostBattle
+Try every switch. The gates move
+in pairs!
+
+== MauvilleCity_Gym_Text_VivianIntro
+MAWILE looks cute, but those jaws
+are made of steel!
+
+== MauvilleCity_Gym_Text_VivianDefeat
+Bitten back!
+
+== MauvilleCity_Gym_Text_VivianPostBattle
+VESSEL's MAWILE loves to lower
+your guard with fake tears.
+
+== MauvilleCity_Gym_Text_AngeloIntro
+Hear that hum? That's the sound
+of your defeat!
+
+== MauvilleCity_Gym_Text_AngeloDefeat
+Out of tune...
+
+== MauvilleCity_Gym_Text_AngeloPostBattle
+The steel gates sing when they
+open. Follow the music.

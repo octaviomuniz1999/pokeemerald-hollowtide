@@ -25,11 +25,16 @@ INTERIORS = [("pc", "MAP_RUSTBORO_CITY_POKEMON_CENTER_1F", "RustboroCity_Pokemon
              ("house_n", "MAP_RUSTBORO_CITY_HOUSE2", "RustboroCity_House2"),
              ("house_s", "MAP_RUSTBORO_CITY_HOUSE3", "RustboroCity_House3"),
              ("flat_nw", "MAP_RUSTBORO_CITY_FLAT2_1F", "RustboroCity_Flat2_1F"),
-             ("school", "MAP_RUSTBORO_CITY_FLAT1_1F", "RustboroCity_Flat1_1F")]
+             ("school", "MAP_RUSTBORO_CITY_FLAT1_1F", "RustboroCity_Flat1_1F"),
+             ("gym", "MAP_MAUVILLE_CITY_GYM", "MauvilleCity_Gym")]          # ginasio do Vessel
+# "Carga Desviada": Vessel e dois recrutas da Team Palm no patio (somem quando o evento termina)
+YARD = [(63, 29, "WATTSON", "MOVEMENT_TYPE_FACE_LEFT", "TRAINER_TYPE_NONE", 0, "Palm102_VesselYard"),
+        (67, 28, "AQUA_MEMBER_M", "MOVEMENT_TYPE_FACE_LEFT", "TRAINER_TYPE_NORMAL", 2, "Palm102_YardGrunt1"),
+        (66, 35, "AQUA_MEMBER_M", "MOVEMENT_TYPE_FACE_UP", "TRAINER_TYPE_NORMAL", 2, "Palm102_YardGrunt2")]
 # moradores (x, y, grafico, movimento, rotulo); falas em tools/hollowtide/text/ch3.txt (rotulo + "_Text")
 NPCS = [
     (41, 47, "MAN_3", "MOVEMENT_TYPE_FACE_DOWN", "Palm101_Greeter"),
-    (64, 29, "WORKER_M", "MOVEMENT_TYPE_FACE_LEFT", "Palm101_YardWorker"),
+    (62, 35, "WORKER_M", "MOVEMENT_TYPE_FACE_UP", "Palm101_YardWorker"),
     (50, 15, "GENTLEMAN", "MOVEMENT_TYPE_FACE_DOWN", "Palm101_GymFan"),
     (28, 36, "LITTLE_BOY", "MOVEMENT_TYPE_WANDER_AROUND", "Palm101_FountainKid"),
     (45, 39, "MAN_1", "MOVEMENT_TYPE_WANDER_AROUND", "Palm101_Commuter"),
@@ -93,6 +98,14 @@ def main():
                                       ("movement_type", mv), ("movement_range_x", rng), ("movement_range_y", rng),
                                       ("trainer_type", "TRAINER_TYPE_NONE"), ("trainer_sight_or_berry_tree_id", "0"),
                                       ("script", label), ("flag", "0")]))
+    for (x, y, gfx, mv, tt, sight, label) in YARD:
+        v = bl[y * w + x]
+        assert (v >> 10) & 3 == 0, f"{label} em tile bloqueado {(x, y)}"
+        j["object_events"].append(OD([("graphics_id", f"OBJ_EVENT_GFX_{gfx}"), ("x", x), ("y", y), ("elevation", 3),
+                                      ("movement_type", mv), ("movement_range_x", 0), ("movement_range_y", 0),
+                                      ("trainer_type", tt), ("trainer_sight_or_berry_tree_id", str(sight)),
+                                      ("script", label), ("flag", "FLAG_HT_FERRALIA_CARGO_DONE")]))
+    local = {e["script"]: i + 1 for i, e in enumerate(j["object_events"])}
     j["warp_events"] = []
     for (label, dm, _) in INTERIORS:
         x, y = door(label)
@@ -109,7 +122,7 @@ def main():
         q = f"{ROOT}/data/maps/{folder}/map.json"
         k = jload(q)
         for wv in k["warp_events"]:
-            if wv["dest_map"] in ("MAP_RUSTBORO_CITY", "MAP_PALM_FERRALIA"):
+            if wv["dest_map"] in ("MAP_RUSTBORO_CITY", "MAP_MAUVILLE_CITY", "MAP_PALM_FERRALIA"):
                 wv["dest_map"], wv["dest_warp_id"] = "MAP_PALM_FERRALIA", str(idx)
         jsave(q, k)
 
@@ -130,9 +143,29 @@ def main():
     jsave(rp, r)
 
     # scripts da Ferralia (codigo aqui; textos em ch3.txt)
-    sc = ["PalmFerralia_MapScripts::\n\t.byte 0\n"]
+    gx, gy = door("gym")
+    door_mt, wall_mt = bl[gy * w + gx] & 0x3FF, bl[gy * w + gx - 1] & 0x3FF
+    sc = ["PalmFerralia_MapScripts::\n\tmap_script MAP_SCRIPT_ON_LOAD, Palm102_FerraliaLoad\n\t.byte 0\n",
+          "Palm102_FerraliaLoad::\n\tcall_if_unset FLAG_HT_FERRALIA_CARGO_DONE, Palm102_LockGym\n\tend\n",
+          f"Palm102_LockGym::\n\tsetmetatile {gx}, {gy}, {wall_mt}, TRUE\n\treturn\n",
+          f"Palm102_UnlockGym::\n\tsetmetatile {gx}, {gy}, {door_mt}, TRUE\n\tspecial DrawWholeMapView\n\treturn\n",
+          "Palm102_VesselYard::\n\tlock\n\tfaceplayer\n"
+          "\tgoto_if_not_defeated TRAINER_PALM_YARD_GRUNT_1, Palm102_VesselAsk\n"
+          "\tgoto_if_not_defeated TRAINER_PALM_YARD_GRUNT_2, Palm102_VesselAsk\n"
+          "\tmsgbox Palm102_TextVesselThanks, MSGBOX_DEFAULT\n\tclosemessage\n\tfadescreen FADE_TO_BLACK\n"
+          "\tsetflag FLAG_HT_FERRALIA_CARGO_DONE\n"
+          + "".join(f"\tremoveobject {local[l]}\n" for l in ("Palm102_VesselYard", "Palm102_YardGrunt1", "Palm102_YardGrunt2")) +
+          "\tcall Palm102_UnlockGym\n\tfadescreen FADE_FROM_BLACK\n\tmsgbox Palm102_TextVesselLeft, MSGBOX_DEFAULT\n\trelease\n\tend\n",
+          "Palm102_VesselAsk::\n\tmsgbox Palm102_TextVesselAsk, MSGBOX_DEFAULT\n\trelease\n\tend\n",
+          "Palm102_YardGrunt1::\n\ttrainerbattle_single TRAINER_PALM_YARD_GRUNT_1, Palm102_TextGrunt1Intro, Palm102_TextGrunt1Defeat\n"
+          "\tmsgbox Palm102_TextGrunt1After, MSGBOX_AUTOCLOSE\n\tend\n",
+          "Palm102_YardGrunt2::\n\ttrainerbattle_single TRAINER_PALM_YARD_GRUNT_2, Palm102_TextGrunt2Intro, Palm102_TextGrunt2Defeat\n"
+          "\tmsgbox Palm102_TextGrunt2After, MSGBOX_AUTOCLOSE\n\tend\n",
+          "Palm101_GymFan::\n\tgoto_if_set FLAG_HT_FERRALIA_CARGO_DONE, Palm101_GymFanOpen\n\tmsgbox Palm101_GymFan_Text, MSGBOX_NPC\n\tend\n",
+          "Palm101_GymFanOpen::\n\tmsgbox Palm101_GymFanOpen_Text, MSGBOX_NPC\n\tend\n"]
     for (_, _, _, _, label) in NPCS:
-        sc.append(f"{label}::\n\tmsgbox {label}_Text, MSGBOX_NPC\n\tend\n")
+        if label != "Palm101_GymFan":
+            sc.append(f"{label}::\n\tmsgbox {label}_Text, MSGBOX_NPC\n\tend\n")
     for (_, _, s) in SIGNS_EXTRA:
         sc.append(f"{s}::\n\tmsgbox {s}_Text, MSGBOX_SIGN\n\tend\n")
     open(f"{ROOT}/data/maps/PalmFerralia/scripts.inc", "w").write("\n".join(sc))

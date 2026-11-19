@@ -1,5 +1,61 @@
 PalmFerralia_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, Palm102_FerraliaLoad
 	.byte 0
+
+Palm102_FerraliaLoad::
+	call_if_unset FLAG_HT_FERRALIA_CARGO_DONE, Palm102_LockGym
+	end
+
+Palm102_LockGym::
+	setmetatile 49, 12, 722, TRUE
+	return
+
+Palm102_UnlockGym::
+	setmetatile 49, 12, 461, TRUE
+	special DrawWholeMapView
+	return
+
+Palm102_VesselYard::
+	lock
+	faceplayer
+	goto_if_not_defeated TRAINER_PALM_YARD_GRUNT_1, Palm102_VesselAsk
+	goto_if_not_defeated TRAINER_PALM_YARD_GRUNT_2, Palm102_VesselAsk
+	msgbox Palm102_TextVesselThanks, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	setflag FLAG_HT_FERRALIA_CARGO_DONE
+	removeobject 9
+	removeobject 10
+	removeobject 11
+	call Palm102_UnlockGym
+	fadescreen FADE_FROM_BLACK
+	msgbox Palm102_TextVesselLeft, MSGBOX_DEFAULT
+	release
+	end
+
+Palm102_VesselAsk::
+	msgbox Palm102_TextVesselAsk, MSGBOX_DEFAULT
+	release
+	end
+
+Palm102_YardGrunt1::
+	trainerbattle_single TRAINER_PALM_YARD_GRUNT_1, Palm102_TextGrunt1Intro, Palm102_TextGrunt1Defeat
+	msgbox Palm102_TextGrunt1After, MSGBOX_AUTOCLOSE
+	end
+
+Palm102_YardGrunt2::
+	trainerbattle_single TRAINER_PALM_YARD_GRUNT_2, Palm102_TextGrunt2Intro, Palm102_TextGrunt2Defeat
+	msgbox Palm102_TextGrunt2After, MSGBOX_AUTOCLOSE
+	end
+
+Palm101_GymFan::
+	goto_if_set FLAG_HT_FERRALIA_CARGO_DONE, Palm101_GymFanOpen
+	msgbox Palm101_GymFan_Text, MSGBOX_NPC
+	end
+
+Palm101_GymFanOpen::
+	msgbox Palm101_GymFanOpen_Text, MSGBOX_NPC
+	end
 
 Palm101_Greeter::
 	msgbox Palm101_Greeter_Text, MSGBOX_NPC
@@ -7,10 +63,6 @@ Palm101_Greeter::
 
 Palm101_YardWorker::
 	msgbox Palm101_YardWorker_Text, MSGBOX_NPC
-	end
-
-Palm101_GymFan::
-	msgbox Palm101_GymFan_Text, MSGBOX_NPC
 	end
 
 Palm101_FountainKid::
@@ -90,6 +142,55 @@ Palm101_Resident_Text:
 Palm101_HQGuard_Text:
 	.string "FERRALIA RAIL & STEEL headquarters.\n"
 	.string "Staff only, I'm afraid.$"
+
+Palm101_GymFanOpen_Text:
+	.string "VESSEL is back! Word is a young\n"
+	.string "trainer helped him at the yard.\p"
+	.string "Was that you? Go get that BADGE!$"
+
+Palm102_TextVesselAsk:
+	.string "You there! I'm VESSEL, this city's\n"
+	.string "GYM LEADER.\p"
+	.string "A whole shipment of steel pipe\n"
+	.string "vanished from my yard last night.\p"
+	.string "Those TEAM PALM goons are loading\n"
+	.string "it onto their own cars right now!\p"
+	.string "I can't leave the gates. Can you\n"
+	.string "stop them for me?$"
+
+Palm102_TextVesselThanks:
+	.string "You did it! The pipes are safe.\p"
+	.string "They were going to lay them along\n"
+	.string "the coast to pump the springs dry\l"
+	.string "and sell the water back to us...\p"
+	.string "That's TEAM PALM for you.\n"
+	.string "Thank you, really.\p"
+	.string "Come to the GYM. I'll give you the\n"
+	.string "toughest battle this city has!$"
+
+Palm102_TextVesselLeft:
+	.string "VESSEL headed back to the GYM.$"
+
+Palm102_TextGrunt1Intro:
+	.string "Hey! This cargo's been reassigned\n"
+	.string "to TEAM PALM. Beat it, kid!$"
+
+Palm102_TextGrunt1Defeat:
+	.string "The boss is gonna flip...$"
+
+Palm102_TextGrunt1After:
+	.string "Fine! Keep your rusty pipes!$"
+
+Palm102_TextGrunt2Intro:
+	.string "Water belongs to whoever owns the\n"
+	.string "pipes. And we'll own them all!$"
+
+Palm102_TextGrunt2Defeat:
+	.string "Our schedule is ruined!$"
+
+Palm102_TextGrunt2After:
+	.string "Mark my words: the tide is turning\n"
+	.string "TEAM PALM's way.$"
 
 Palm101_ParkLady_Text:
 	.string "This park is the city's lung.\n"

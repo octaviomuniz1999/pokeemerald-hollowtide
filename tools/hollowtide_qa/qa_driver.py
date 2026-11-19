@@ -113,7 +113,7 @@ class QA:
     def mapname(self):
         return MAPNUM[self.where[:2]]["id"]
 
-    def goto(self, mapid, x, y, tries=40):
+    def goto(self, mapid, x, y, tries=40, avoid=()):
         stuck = 0
         self.battles = getattr(self, "battles", 0)
         for _ in range(tries):
@@ -123,7 +123,7 @@ class QA:
                 raise AssertionError(f"esperado {mapid}, estou em {m['id']} ({cx},{cy})")
             if (cx, cy) == (x, y):
                 return True
-            path = bfs(self.runtime_map(m), (cx, cy), (x, y))
+            path = bfs(self.runtime_map(m), (cx, cy), (x, y), avoid)
             if path is None:
                 raise AssertionError(f"sem caminho em {mapid} de {(cx, cy)} para {(x, y)}")
             before = self.where

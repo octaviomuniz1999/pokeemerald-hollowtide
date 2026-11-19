@@ -1,5 +1,5 @@
 #!/bin/bash
-# QA completo: intro -> lab -> Rota 1 -> Harvestvale -> transicoes -> Cap. 1 -> Cap. 2 -> Route 2 (treinadores). Uso: qa_completo.sh RUNNER WORKDIR
+# QA completo: intro -> lab -> Rota 1 -> Harvestvale -> transicoes -> Cap. 1 -> Cap. 2 -> Route 2 -> Route 3 -> Cap. 3 (Ferralia). Uso: qa_completo.sh RUNNER WORKDIR
 set -e
 ROOT=$(cd "$(dirname "$0")/../.." && pwd); R=$1; W=$2; mkdir -p "$W"
 SB1=$(awk '$2=="gSaveBlock1Ptr" && $1 ~ /^0x03/ {print substr($1,3); exit}' "$ROOT/pokeemerald.map")
@@ -11,3 +11,4 @@ python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap1_eventos.py" "$ROOT/pokeemerald.
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap2_eventos.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/cap1_pos_nevard.ss" | tail -16
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_rota2.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/cap1_pos_nevard.ss" | tail -11
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_rota3.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/cap2_pos_jay.ss" | tail -16
+python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap3_eventos.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/cap3_ferralia.ss" | tail -16
