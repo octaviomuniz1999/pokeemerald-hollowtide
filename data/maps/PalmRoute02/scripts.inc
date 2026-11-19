@@ -7,7 +7,7 @@ Palm080_ReturnColheita::
 	end
 
 Palm080_EnterBrisa::
-	warp MAP_PALM_BRISA, 8, 10
+	warp MAP_PALM_BRISA, 19, 2
 	waitstate
 	end
 

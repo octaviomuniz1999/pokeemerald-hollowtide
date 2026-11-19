@@ -9378,6 +9378,17 @@
       "border_filepath": "data/layouts/PalmFerralia/border.bin",
       "blockdata_filepath": "data/layouts/PalmFerralia/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_BREEZEPORT",
+      "name": "PalmBreezeport_Layout",
+      "width": 72,
+      "height": 56,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/PalmBreezeport/border.bin",
+      "blockdata_filepath": "data/layouts/PalmBreezeport/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

@@ -106,14 +106,15 @@ Palm090_BrisaLoad::
 	call_if_set FLAG_PALM_BRISA_LAMP2, Palm090_DrawLamp2
 	call_if_set FLAG_PALM_BRISA_LAMP3, Palm090_DrawLamp3
 	call_if_set FLAG_PALM_BRISA_LIGHTS, Palm090_OpenTheater
+	call_if_unset FLAG_PALM_BRISA_LIGHTS, Palm090_LockTheater
 	end
 
 Palm090_OpenTheater::
-	setmetatile 8, 17, 461, TRUE
+	setmetatile 47, 27, 475, TRUE
 	return
 
 Palm090_DrawLamp1::
-	setmetatile 4, 12, 892, TRUE
+	setmetatile 12, 20, 576, FALSE
 	return
 
 Palm090_CityLamp1::
@@ -127,7 +128,7 @@ Palm090_CityLamp1::
 	goto Palm090_CityCheck
 
 Palm090_DrawLamp2::
-	setmetatile 12, 12, 892, TRUE
+	setmetatile 33, 21, 576, FALSE
 	return
 
 Palm090_CityLamp2::
@@ -141,7 +142,7 @@ Palm090_CityLamp2::
 	goto Palm090_CityCheck
 
 Palm090_DrawLamp3::
-	setmetatile 14, 15, 892, TRUE
+	setmetatile 60, 34, 576, FALSE
 	return
 
 Palm090_CityLamp3::
@@ -161,3 +162,14 @@ Palm091_EastOpen::
 Palm091_TextEastOpen:
 	.string "LESTE: ROTA 03.\n"
 	.string "Siga ate FERRALIA.$"
+
+Palm090_LockTheater::
+	setmetatile 47, 27, 738, TRUE
+	return
+
+Palm092_KeeperHouse::
+	msgbox Palm092_TextKeeperHouse, MSGBOX_SIGN
+	end
+
+Palm092_TextKeeperHouse:
+	.string "LIGHTHOUSE KEEPER'S HOUSE$"

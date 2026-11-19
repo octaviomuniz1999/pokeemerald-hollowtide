@@ -47,15 +47,15 @@
       "x": 3,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_LILYCOVE_CITY",
-      "dest_warp_id": "8"
+      "dest_map": "MAP_PALM_BRISA",
+      "dest_warp_id": "4"
     },
     {
       "x": 4,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_LILYCOVE_CITY",
-      "dest_warp_id": "8"
+      "dest_map": "MAP_PALM_BRISA",
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [],

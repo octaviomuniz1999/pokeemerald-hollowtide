@@ -28,7 +28,7 @@ def check(q, esperado, rotulo):
 def cruzar(q, mapa, x, y, direcao, destino, rotulo, shot=None):
     q.no_wild()
     q.goto(mapa, x, y)
-    q.run([f"press {direcao} 18 0", "wait 120"] + ([f"shot {shot}"] if shot else []))
+    q.run([f"press {direcao} 30 0", "wait 120"] + ([f"shot {shot}"] if shot else []))
     check(q, destino, rotulo)
 
 
@@ -50,15 +50,22 @@ def main(rom, runner, work, estado):
     q.run(["shot qa_rota02.png"])
     check(q, "MAP_PALM_ROUTE02", "Colheita -> Rota 02")
 
-    cruzar(q, "MAP_PALM_ROUTE02", 25, 32, "DOWN", "MAP_PALM_BRISA", "Rota 02 -> Brisa", "qa_brisa.png")
+    cruzar(q, "MAP_PALM_ROUTE02", 25, 32, "DOWN", "MAP_PALM_BRISA", "Rota 02 -> Breezeport", "qa_brisa.png")
 
-    # Trava 2: leste da Brisa fechado antes da Jay.
-    q.goto("MAP_PALM_BRISA", 17, 17)
-    q.run(["press RIGHT 18 0", "wait 60", "mash A 6", "mash B 4"])
-    check(q, "MAP_PALM_BRISA", "Brisa: saida para Rota 03 bloqueada antes da Jay")
+    # Servicos da Breezeport: Centro Pokemon e volta
+    cruzar(q, "MAP_PALM_BRISA", 23, 17, "UP", "MAP_DEWFORD_TOWN_POKEMON_CENTER_1F", "Breezeport -> Centro Pokemon")
+    cruzar(q, "MAP_DEWFORD_TOWN_POKEMON_CENTER_1F", 7, 8, "DOWN", "MAP_PALM_BRISA", "Centro Pokemon -> Breezeport")
+    # Teatro trancado ate religar os postes do festival
+    q.goto("MAP_PALM_BRISA", 47, 28); q.run(["press UP 30 0", "wait 90"])
+    check(q, "MAP_PALM_BRISA", "Breezeport: Teatro trancado antes dos postes")
+
+    # Trava 2: saida oeste (praia -> Rota 3) fechada antes da Jay.
+    q.goto("MAP_PALM_BRISA", 1, 40)
+    q.run(["press LEFT 18 0", "wait 60", "mash A 6", "mash B 4"])
+    check(q, "MAP_PALM_BRISA", "Breezeport: saida para Rota 03 bloqueada antes da Jay")
 
     q.run([f"setflag {FLAGS_OFF} {FLAG_PALM_JAY_WON}"])
-    cruzar(q, "MAP_PALM_BRISA", 17, 17, "RIGHT", "MAP_PALM_ROUTE03", "Brisa -> Rota 03", "qa_rota03.png")
+    cruzar(q, "MAP_PALM_BRISA", 1, 40, "LEFT", "MAP_PALM_ROUTE03", "Breezeport -> Rota 03", "qa_rota03.png")
 
     r3 = MAPS["MAP_PALM_ROUTE03"]
     # Emenda: na Rota 03 o corredor ocupa as linhas 9-13, mas na Ferralia so 9-11 sao passaveis.
@@ -71,8 +78,8 @@ def main(rom, runner, work, estado):
 
     # Volta
     cruzar(q, "MAP_PALM_FERRALIA", 0, 10, "LEFT", "MAP_PALM_ROUTE03", "Ferralia -> Rota 03 (conexao)")
-    cruzar(q, "MAP_PALM_ROUTE03", 2, 10, "LEFT", "MAP_PALM_BRISA", "Rota 03 -> Brisa")
-    cruzar(q, "MAP_PALM_BRISA", 8, 10, "UP", "MAP_PALM_ROUTE02", "Brisa -> Rota 02")
+    cruzar(q, "MAP_PALM_ROUTE03", 2, 10, "LEFT", "MAP_PALM_BRISA", "Rota 03 -> Breezeport")
+    cruzar(q, "MAP_PALM_BRISA", 19, 1, "UP", "MAP_PALM_ROUTE02", "Breezeport -> Rota 02")
     cruzar(q, "MAP_PALM_ROUTE02", 11, 2, "UP", "MAP_OLDALE_TOWN", "Rota 02 -> Colheita")
     cruzar(q, "MAP_OLDALE_TOWN", 9, 1, "UP", "MAP_ROUTE101", "Colheita -> Rota 01")
     cruzar(q, "MAP_ROUTE101", 2, 4, "LEFT", "MAP_LITTLEROOT_TOWN", "Rota 01 -> Vila Inicial")

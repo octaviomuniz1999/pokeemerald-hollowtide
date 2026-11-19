@@ -25,6 +25,8 @@ STAMPS = {
     "lily_motel": ("LAYOUT_LILYCOVE_CITY", 36, 20, 6, 5),
     "lily_harbor": ("LAYOUT_LILYCOVE_CITY", 9, 27, 7, 6),
     "lily_lamp": ("LAYOUT_LILYCOVE_CITY", 61, 33, 1, 2),
+    "gen_mart": ("LAYOUT_PETALBURG_CITY", 24, 10, 4, 3),
+    "gen_pokecenter": ("LAYOUT_PETALBURG_CITY", 19, 13, 4, 4),
 }
 
 _AT = {}
@@ -64,11 +66,12 @@ class Canvas:
     def fill(self, cls):
         self.rect(0, 0, self.w - 1, self.h - 1, cls)
 
-    def rect(self, x0, y0, x1, y1, cls):
+    def rect(self, x0, y0, x1, y1, cls, level=None):
+        """cls "high" sobe um patamar (ou vai ao nivel indicado); demais classes so mudam o terreno."""
         for y in range(max(0, y0), min(self.h, y1 + 1)):
             for x in range(max(0, x0), min(self.w, x1 + 1)):
-                if cls == "high":  # plato: sobe o nivel e poe grama alta
-                    self.level[y][x] = 5
+                if cls == "high":
+                    self.level[y][x] = level or 5
                     self.terrain[y][x] = "grass"
                 else:
                     self.terrain[y][x] = cls
@@ -82,6 +85,15 @@ class Canvas:
                         self.terrain[y0 + dy][x0 + dx] = "grass"
                     else:
                         self.terrain[y0 + dy][x0 + dx] = LEGEND[ch]
+
+    def levels(self, x0, y0, rows):
+        """Desenho de alturas: digitos 5/7/9 sobem o patamar (grama); ' ' ou '.' mantem."""
+        for dy, r in enumerate(rows):
+            for dx, ch in enumerate(r):
+                if ch.isdigit() and 0 <= x0 + dx < self.w and 0 <= y0 + dy < self.h:
+                    self.level[y0 + dy][x0 + dx] = int(ch)
+                    if self.terrain[y0 + dy][x0 + dx] in ("grass", "dense", "tree"):
+                        pass
 
     def stamp(self, name, x0, y0):
         blocks, sec = extract(name)
@@ -97,6 +109,17 @@ class Canvas:
         for dx in range(width):
             self.stair_cols.append((x + dx, y_edge))
 
+    def fence_h(self, x0, x1, y):
+        """Cerca horizontal do secundario Lilycove (592 ponta esq., 593 meio, 594 ponta dir.)."""
+        for x in range(x0, x1 + 1):
+            self.put(x, y, 592 if x == x0 else 594 if x == x1 else 593, collision=1)
+
+    def small_tree(self, x, y):
+        """Arvore de rua: arvore 2x2 padrao (468 469 / 476 477), solida."""
+        for dy, row in enumerate(((468, 469), (476, 477))):
+            for dx, m in enumerate(row):
+                self.put(x + dx, y + dy, m, collision=1, elevation=0)
+
     def put(self, x, y, metatile, collision=None, elevation=3):
         self.fixed[(x, y)] = metatile | ((collision or 0) << 10) | (elevation << 12)
         self.terrain[y][x] = "other"
@@ -106,21 +129,21 @@ class Canvas:
         col_ref, elev_ref = _reference()
         import fix_collision as FC
         grid = [[c if c != "other" else "grass" for c in row] for row in self.terrain]
-        # plato: grama no nivel 5 vira "high"; a borda do nivel 5 (vizinha de nivel 3) vira face de rocha
+        # patamares: grama acima do chao vira "high"; a borda de um patamar (vizinha de nivel menor) vira rocha
         lv = self.level
         for y in range(self.h):
             for x in range(self.w):
-                if lv[y][x] == 5 and grid[y][x] == "grass":
+                if lv[y][x] > 3 and grid[y][x] == "grass":
                     grid[y][x] = "high"
-        def low(x, y):
-            return 0 <= x < self.w and 0 <= y < self.h and lv[y][x] == 3
-        edge = [(x, y) for y in range(self.h) for x in range(self.w) if lv[y][x] == 5 and (x, y) not in self.fixed
-                and any(low(x + dx, y + dy) for dx in (-1, 0, 1) for dy in (-1, 0, 1))]
+        def lower(x, y, ref):
+            return 0 <= x < self.w and 0 <= y < self.h and lv[y][x] < ref
+        edge = [(x, y) for y in range(self.h) for x in range(self.w) if lv[y][x] > 3 and (x, y) not in self.fixed
+                and any(lower(x + dx, y + dy, lv[y][x]) for dx in (-1, 0, 1) for dy in (-1, 0, 1))]
         for x, y in edge:
             grid[y][x] = "cliff"
         # parede sul com 2 fileiras (leitura de altura do Emerald)
         for x, y in edge:
-            if low(x, y + 1) and (x, y + 1) not in self.fixed:
+            if lower(x, y + 1, lv[y][x]) and (x, y + 1) not in self.fixed:
                 grid[y + 1][x] = "cliff"
         stair_cells = set()
         for x, y in self.stair_cols:
@@ -144,9 +167,9 @@ class Canvas:
                 c = FC.dominant(col_ref[(ts, m)])
                 e = FC.dominant(elev_ref[(ts, m)])
                 if grid[y][x] == "high":
-                    c, e = 0, 5
-                elif lv[y][x] == 5 and grid[y][x] not in ("cliff",) and e is not None and e == 3:
-                    e = 5  # terreno sobre o plato herda a elevacao
+                    c, e = 0, lv[y][x]
+                elif lv[y][x] > 3 and grid[y][x] != "cliff" and e is not None and e == 3:
+                    e = lv[y][x]  # terreno sobre o patamar herda a elevacao
                 out.append(m | ((c or 0) << 10) | ((e if e is not None else 3) << 12))
         return out
 

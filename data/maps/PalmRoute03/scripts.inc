@@ -2,7 +2,7 @@ PalmRoute03_MapScripts::
 	.byte 0
 
 Palm090_BackBrisa::
-	warp MAP_PALM_BRISA, 14, 17
+	warp MAP_PALM_BRISA, 2, 41
 	waitstate
 	end
 

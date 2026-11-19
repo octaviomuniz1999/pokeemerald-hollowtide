@@ -47,15 +47,15 @@
       "x": 3,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_DEWFORD_TOWN",
-      "dest_warp_id": "4"
+      "dest_map": "MAP_PALM_BRISA",
+      "dest_warp_id": "9"
     },
     {
       "x": 4,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_DEWFORD_TOWN",
-      "dest_warp_id": "4"
+      "dest_map": "MAP_PALM_BRISA",
+      "dest_warp_id": "9"
     }
   ],
   "coord_events": [],

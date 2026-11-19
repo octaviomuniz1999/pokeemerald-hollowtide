@@ -1,81 +1,114 @@
 #!/usr/bin/env python3
-"""Breezeport City (Cidade da Brisa) — cidade costeira ampla inspirada no Rio de Janeiro.
+"""Breezeport City (Cidade da Brisa) — v2. Cidade costeira ampla inspirada no Rio de Janeiro (referencia, nao copia).
 
-Leitura de cima para baixo: entrada da Route 2 (norte) -> morro florestado com mirante (Corcovado como
-referencia, nao copia) -> bairros e centro (Centro Pokemon, Mart, praca, Teatro da Jay) -> avenida da orla com
-predios altos e postes -> calcadao -> praia longa -> mar. Ponta rochosa a leste reservada ao farol.
-Saida para a Route 3 a oeste, pela faixa de praia.
+Norte: entrada da Route 2 (x 18-21) e o Morro (plato florestado com mirante). Centro: avenida principal,
+Centro Pokemon junto a entrada, Mart, praca com canteiros, Teatro dos Ecos (ginasio da Jay).
+Oeste e leste: bairros com quintais cercados. Orla: avenida, predios altos, calcadao com postes, praia longa.
+Leste: pontal de areia (farol virá em etapa propria). Oeste: praia segue ate a borda -> Route 3.
 """
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "mapgen"))
 from canvas import Canvas
 
 W, H = 72, 56
+ENTRADA_ROUTE2 = (18, 21)   # colunas da rua que chega do norte
+SAIDA_ROUTE3 = (37, 45)     # linhas da faixa de praia na borda oeste
+
+
+def house_yard(c, x, y, flowers_left=True):
+    """Casa 4x4 com quintal: canteiro de flores na frente e cerca no fundo."""
+    c.stamp("lily_house_blue", x, y)
+    c.fence_h(x - 1, x + 4, y + 4 + 1) if False else None
+    fx = x - 2 if flowers_left else x + 4
+    c.rect(fx, y + 2, fx + 1, y + 3, "flower")
 
 
 def compose():
     c = Canvas(W, H, "gTileset_General", "gTileset_Lilycove")
     c.fill("grass")
-    # moldura de mata nas bordas norte/leste (cidade encaixada entre morro e mar)
+    # moldura de mata (norte e laterais ate a orla)
     c.rect(0, 0, W - 1, 1, "tree")
-    c.rect(0, 0, 1, 33, "tree")
-    c.rect(W - 2, 0, W - 1, 27, "tree")
-    # entrada da Route 2 no norte (x 18-21)
-    c.rect(18, 0, 21, 1, "cobble")
-    # Morro (centro-norte): mata densa com trilha em zigue-zague ate o mirante
-    c.rect(28, 2, 55, 15, "dense")
-    c.rect(32, 2, 51, 3, "tree")
-    c.ascii(30, 4, [
-        "TT..........................",
-        "TT.cccccccccccccccccccccc..TT",
+    c.rect(0, 0, 1, 31, "tree")
+    c.rect(W - 2, 0, W - 1, 31, "tree")
+    # --- Morro (patamares 5/7/9 de contorno irregular; mata nas encostas; mirante no cume) ---
+    c.rect(24, 2, 63, 16, "dense")             # base de mata da encosta
+    c.levels(26, 2, [
+        "   55555555555555555555555555555555  ",
+        "  5555555555555555555555555555555555 ",
+        " 555555577777777777777777777755555555",
+        " 555555777777777777777777777775555555",
+        " 555557777777799999999997777777555555",
+        "  55557777777999999999999777777555555",
+        "  55557777777999999999999777777555555",
+        "   5557777777799999999997777777555555",
+        "   555577777777777777777777777555555 ",
+        "    55557777777777777777777777555555 ",
+        "     555555555777777777555555555555  ",
+        "      555555555555555555555555555    ",
+        "        55555555555555555555555      ",
     ])
-    c.rect(38, 6, 45, 9, "grass")          # plato do mirante
-    c.rect(41, 9, 42, 15, "cobble")         # escadaria/trilha descendo
-    # rua principal leste-oeste (avenida do centro)
-    c.rect(2, 17, W - 3, 18, "cobble")
-    c.rect(18, 2, 21, 16, "cobble")         # rua vinda da Route 2
-    # bairro oeste (residencial): ruas transversais
-    c.rect(6, 19, 7, 33, "cobble")
-    c.rect(16, 19, 17, 33, "cobble")
-    # praca central com flores
-    c.rect(30, 20, 41, 27, "cobble")
-    c.rect(33, 22, 38, 25, "flower")
-    # avenida da orla
-    c.rect(2, 34, W - 3, 35, "cobble")
-    # calcadao (faixa larga de pedra) + praia + mar
+    c.rect(41, 6, 48, 9, "grass")              # mirante no cume (nivel 9)
+    c.rect(42, 6, 47, 6, "flower")
+    c.rect(44, 10, 45, 13, "cobble")            # trilha descendo pelos patamares
+    c.stairs(44, 9, 2); c.stairs(44, 12, 2); c.stairs(44, 14, 2)
+    # --- ruas ---
+    c.rect(ENTRADA_ROUTE2[0], 0, ENTRADA_ROUTE2[1], 17, "cobble")
+    c.rect(2, 18, W - 3, 19, "cobble")    # avenida principal
+    c.rect(44, 16, 45, 17, "cobble")      # pe da escadaria do morro
+    c.rect(10, 20, 11, 33, "cobble")      # rua do bairro oeste
+    c.rect(60, 20, 61, 33, "cobble")      # rua do bairro leste
+    c.rect(2, 34, W - 3, 35, "cobble")    # avenida da orla
+    # --- praca central e teatro ---
+    c.rect(26, 21, 41, 30, "cobble")
+    c.rect(29, 23, 31, 24, "flower"); c.rect(36, 23, 38, 24, "flower")
+    c.rect(29, 27, 31, 28, "flower"); c.rect(36, 27, 38, 28, "flower")
+    c.small_tree(33, 25)
+    c.stamp("lily_contest_hall", 44, 21)   # Teatro dos Ecos
+    c.rect(44, 28, 50, 29, "cobble")       # adro do teatro
+    # --- parque noroeste (bosque com clareira florida) ---
+    c.rect(2, 2, 15, 11, "tree")
+    c.rect(4, 6, 11, 9, "grass"); c.rect(5, 7, 10, 8, "flower")
+    c.rect(2, 12, 11, 13, "tall")
+    # --- servicos junto a entrada ---
+    c.stamp("gen_pokecenter", 22, 13)
+    c.rect(22, 17, 25, 17, "cobble")
+    c.stamp("gen_mart", 13, 14)
+    c.rect(13, 17, 16, 17, "cobble")
+    # --- bairro oeste ---
+    for (x, y, fl) in [(3, 21, False), (3, 27, False), (14, 21, True), (14, 27, True)]:
+        house_yard(c, x, y, fl)
+    c.small_tree(20, 22); c.small_tree(20, 28)
+    # --- bairro leste ---
+    for (x, y, fl) in [(54, 21, True), (63, 21, False), (63, 27, False)]:
+        house_yard(c, x, y, fl)
+    # --- orla: predios altos ---
+    c.stamp("lily_dept_store", 52, 27)     # edificio comercial na orla
+    c.small_tree(6, 32); c.small_tree(24, 32); c.small_tree(44, 32)
+    # --- calcadao + praia + mar ---
     c.rect(0, 36, W - 1, 37, "cobble")
+    for x in range(4, W - 3, 8):
+        c.stamp("lily_lamp", x, 34)
     c.rect(0, 38, W - 1, 46, "sand")
     c.rect(0, 47, W - 1, H - 1, "sea")
-    # saida oeste para a Route 3: faixa de praia continua ate a borda (x=0, y 38-46)
-    # ponta rochosa leste (farol): areia avancando no mar
-    c.rect(60, 40, 69, 50, "sand")
-    c.rect(62, 51, 67, 53, "sand")
-
-    # predios
-    c.stamp("lily_pokecenter", 22, 12)
-    c.stamp("lily_contest_hall", 44, 19)     # Teatro dos Ecos (ginasio da Jay)
-    c.stamp("lily_dept_store", 24, 27)       # edificio da orla 1
-    c.stamp("lily_motel", 52, 28)            # edificio da orla 2 (hotel)
-    for i, (x, y) in enumerate([(2, 20), (9, 20), (2, 27), (9, 27), (19, 20)]):
-        c.stamp("lily_house_blue", x, y)
-    c.stamp("lily_harbor", 60, 33)
-    # postes ao longo do calcadao
-    for x in range(4, W - 4, 8):
-        c.stamp("lily_lamp", x, 35)
+    c.rect(0, 45, 57, 46, "shallow")      # faixa de agua rasa na arrebentacao
+    c.rect(58, 44, 69, 50, "sand")         # pontal leste
+    c.rect(61, 51, 67, 52, "sand")
+    c.stamp("lily_harbor", 60, 38)         # casa do faroleiro (provisoria)
     return c
 
 
+def render(c, out):
+    bl = c.build()
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "hollowtide_qa"))
+    import render_map as R
+    from PIL import Image
+    ts = R.TilesetPair(c.primary, c.secondary)
+    im = Image.new("RGB", (c.w * 16, c.h * 16))
+    for i, v in enumerate(bl):
+        im.paste(ts.metatile(v & 0x3FF), ((i % c.w) * 16, (i // c.w) * 16))
+    im.save(out)
+    return out
+
+
 if __name__ == "__main__":
-    c = compose()
-    out = sys.argv[1] if len(sys.argv) > 1 else None
-    if out:
-        bl = c.build()
-        sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "hollowtide_qa"))
-        import render_map as R
-        from PIL import Image
-        ts = R.TilesetPair(c.primary, c.secondary)
-        im = Image.new("RGB", (W * 16, H * 16))
-        for i, v in enumerate(bl):
-            im.paste(ts.metatile(v & 0x3FF), ((i % W) * 16, (i // W) * 16))
-        im.save(out)
-        print("render:", out)
+    print(render(compose(), sys.argv[1]))
