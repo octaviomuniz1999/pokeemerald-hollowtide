@@ -23,7 +23,7 @@ def ok(cond, label):
         raise SystemExit(1)
 
 
-def battle(q, flag, tries=25):
+def battle(q, flag, tries=40):
     """Avanca dialogo e batalha (FIGHT -> 1o golpe) ate a flag do treinador ligar."""
     for _ in range(tries):
         if q.flag(flag) and not q.in_battle():

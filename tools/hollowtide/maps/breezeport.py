@@ -60,14 +60,19 @@ def compose():
     c.rect(2, 34, W - 3, 35, "cobble")    # avenida da orla
     # --- praca central e teatro ---
     c.rect(26, 21, 41, 30, "cobble")
-    c.rect(29, 23, 31, 24, "flower"); c.rect(36, 23, 38, 24, "flower")
-    c.rect(29, 27, 31, 28, "flower"); c.rect(36, 27, 38, 28, "flower")
+    c.rect(28, 23, 30, 24, "flower"); c.rect(37, 23, 39, 24, "flower")
+    c.rect(28, 27, 30, 28, "flower"); c.rect(37, 27, 39, 28, "flower")
+    c.rect(32, 24, 35, 27, "grass")              # canteiro de grama com arvore no centro
     c.small_tree(33, 25)
-    c.stamp("lily_contest_hall", 44, 21)   # Teatro dos Ecos
-    c.rect(44, 28, 50, 29, "cobble")       # adro do teatro
-    # --- parque noroeste (bosque com clareira florida) ---
+    for (x, y) in [(27, 22), (40, 22), (27, 28), (40, 28)]:
+        c.lamp(x, y, "cobble")
+    c.stamp("lily_contest_hall", 44, 21)          # Teatro dos Ecos
+    c.rect(43, 28, 51, 29, "cobble")              # adro do teatro
+    c.lamp(43, 26, "grass"); c.lamp(51, 26, "grass")
+    # --- parque noroeste (bosque com clareira florida e poste) ---
     c.rect(2, 2, 15, 11, "tree")
     c.rect(4, 6, 11, 9, "grass"); c.rect(5, 7, 10, 8, "flower")
+    c.lamp(8, 5, "grass") if False else None
     c.rect(2, 12, 11, 13, "tall")
     # --- servicos junto a entrada ---
     c.stamp("gen_pokecenter", 22, 13)
@@ -77,20 +82,22 @@ def compose():
     # --- bairro oeste ---
     for (x, y, fl) in [(3, 21, False), (3, 27, False), (14, 21, True), (14, 27, True)]:
         house_yard(c, x, y, fl)
-    c.small_tree(20, 22); c.small_tree(20, 28)
-    # --- bairro leste ---
-    for (x, y, fl) in [(54, 21, True), (63, 21, False), (63, 27, False)]:
+    c.small_tree(20, 23)
+    # --- bairro leste: loja de departamentos (com cobertura) e casas ---
+    c.dept_store(52, 25)
+    c.rect(53, 21, 57, 22, "flower")
+    for (x, y, fl) in [(63, 21, False), (63, 27, False)]:
         house_yard(c, x, y, fl)
-    # --- orla: predios altos ---
-    c.stamp("lily_dept_store", 52, 27)     # edificio comercial na orla
-    c.small_tree(6, 32); c.small_tree(24, 32); c.small_tree(44, 32)
+    # --- arvores de rua (sobre grama, com uma linha de respiro ate a avenida) ---
+    c.small_tree(6, 31); c.small_tree(22, 31); c.small_tree(46, 31)
     # --- calcadao + praia + mar ---
     c.rect(0, 36, W - 1, 37, "cobble")
     for x in range(4, W - 3, 8):
-        c.stamp("lily_lamp", x, 34)
+        if x != 60:
+            c.lamp(x, 34, "cobble")
     c.rect(0, 38, W - 1, 46, "sand")
     c.rect(0, 47, W - 1, H - 1, "sea")
-    c.rect(0, 45, 57, 46, "shallow")      # faixa de agua rasa na arrebentacao
+    c.rect(0, 45, 55, 46, "shallow")      # faixa de agua rasa na arrebentacao (para antes do pontal)
     c.rect(58, 44, 69, 50, "sand")         # pontal leste
     c.rect(61, 51, 67, 52, "sand")
     c.stamp("lily_harbor", 60, 38)         # casa do faroleiro (provisoria)

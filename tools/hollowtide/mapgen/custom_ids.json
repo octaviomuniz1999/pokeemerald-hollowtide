@@ -1,0 +1,10 @@
+{
+  "lilycove": {
+    "lamp_top_cobble_lit": 863,
+    "lamp_top_cobble_unlit": 864,
+    "lamp_base_cobble": 865,
+    "lamp_top_grass_lit": 866,
+    "lamp_top_grass_unlit": 867,
+    "lamp_base_grass": 868
+  }
+}

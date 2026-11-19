@@ -114,6 +114,36 @@ class Canvas:
         for x in range(x0, x1 + 1):
             self.put(x, y, 592 if x == x0 else 594 if x == x1 else 593, collision=1)
 
+    def lamp(self, x, y, floor="cobble", lit=True):
+        """Poste composto (globo em cima, base embaixo) sobre o piso do lugar: cobble ou grass."""
+        ids = json.load(open(os.path.join(os.path.dirname(__file__), "custom_ids.json")))["lilycove"]
+        self.put(x, y, ids[f"lamp_top_{floor}_{'lit' if lit else 'unlit'}"], collision=0)
+        self.put(x, y + 1, ids[f"lamp_base_{floor}"], collision=1, elevation=0)
+        self.terrain[y][x] = self.terrain[y + 1][x] = floor  # vizinhos enxergam o piso, nao "outro"
+        return ids
+
+    def dept_store(self, x, y):
+        """Loja de departamentos com cobertura (na Lilycove o telhado fica fora do mapa e nao existe no tileset):
+        platibanda montada com o beiral do salao de concursos (mesma paleta)."""
+        for dx, m in enumerate([704, 705, 705, 705, 705, 706]):
+            self.put(x + dx, y, m, collision=1, elevation=0)
+        for dx, m in enumerate([712, 713, 713, 713, 713, 714]):
+            self.put(x + dx, y + 1, m, collision=1, elevation=0)
+        return self.stamp("lily_dept_store", x, y + 2)
+
+    def check_cohesion(self):
+        """Arvores (desenhadas sobre grama) nao podem encostar em piso que nao seja vegetacao."""
+        ok_nb = {"grass", "tree", "tall", "flower", "dense", "high", "cliff"}
+        tree_mt = {468, 469, 476, 477}
+        bad = []
+        for (x, y), v in self.fixed.items():
+            if v & 0x3FF in tree_mt:
+                for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    nx, ny = x + dx, y + dy
+                    if 0 <= nx < self.w and 0 <= ny < self.h and (nx, ny) not in self.fixed and self.terrain[ny][nx] not in ok_nb:
+                        bad.append((x, y, self.terrain[ny][nx]))
+        return bad
+
     def small_tree(self, x, y):
         """Arvore de rua: arvore 2x2 padrao (468 469 / 476 477), solida."""
         for dy, row in enumerate(((468, 469), (476, 477))):

@@ -12,6 +12,14 @@ Status ao lado de cada item: `[ ]` a fazer · `[~]` em andamento · `[x]` conclu
    NPCs interagíveis, eventos do capítulo executados até o fim, salvar/carregar.
 4. Batalha principal do capítulo vencível com time de nível esperado (curva com Exp. Share sempre ativo).
 5. Texto 100% em inglês, revisado (ortografia, quebras de linha, tom do personagem).
+5b. **Coesão visual (feedback do diretor, 19/11):**
+   - todo objeto (poste, placa, árvore, banco) tem que combinar com o piso onde está: usar peças compostas
+     (`mapgen/custom_tiles.py`: piso embaixo + objeto em cima) ou colocar só sobre o piso nativo dele;
+     árvores só sobre grama, com respiro de 1 tile até caminhos (`Canvas.check_cohesion`);
+   - caminhos coesos: junções, cantos e pontas conferidos em zoom; nada de recortes ou peças de outra família;
+   - toda edificação conferida com uma linha acima do carimbo: telhado completo (ex.: a loja de departamentos
+     da Lilycove não tem telhado no tileset — recebe cobertura composta);
+   - enriquecimento visual: canteiros, postes, árvores em canteiro, detalhes de bairro; evitar áreas vazias.
 6. Build limpo, commit + push, auditoria atualizada.
 
 ## Fundação

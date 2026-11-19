@@ -122,7 +122,7 @@ Palm090_OpenTheater::
 	return
 
 Palm090_DrawLamp1::
-	setmetatile 12, 20, 576, FALSE
+	setmetatile 12, 20, 866, FALSE
 	return
 
 Palm090_CityLamp1::
@@ -136,7 +136,7 @@ Palm090_CityLamp1::
 	goto Palm090_CityCheck
 
 Palm090_DrawLamp2::
-	setmetatile 33, 21, 576, FALSE
+	setmetatile 33, 21, 863, FALSE
 	return
 
 Palm090_CityLamp2::
@@ -150,7 +150,7 @@ Palm090_CityLamp2::
 	goto Palm090_CityCheck
 
 Palm090_DrawLamp3::
-	setmetatile 60, 34, 576, FALSE
+	setmetatile 60, 34, 863, FALSE
 	return
 
 Palm090_CityLamp3::

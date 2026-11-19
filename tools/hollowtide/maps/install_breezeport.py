@@ -24,11 +24,10 @@ DOORS = [
     ((15, 24), "MAP_LILYCOVE_CITY_HOUSE2", "LilycoveCity_House2"),
     ((4, 30), "MAP_LILYCOVE_CITY_HOUSE3", "LilycoveCity_House3"),
     ((15, 30), "MAP_LILYCOVE_CITY_HOUSE4", "LilycoveCity_House4"),
-    ((55, 24), "MAP_DEWFORD_TOWN_HOUSE1", "DewfordTown_House1"),
     ((64, 24), "MAP_DEWFORD_TOWN_HOUSE2", "DewfordTown_House2"),
     ((64, 30), "MAP_LILYCOVE_CITY_MOVE_DELETERS_HOUSE", "LilycoveCity_MoveDeletersHouse"),
 ]
-LAMPS = [(12, 20), (33, 21), (60, 34)]   # topo dos 3 postes do festival (base logo abaixo)
+LAMPS = [(12, 20, "grass"), (33, 21, "cobble"), (60, 34, "cobble")]   # topo dos 3 postes do festival + piso
 THEATER_DOOR = (47, 27)
 
 
@@ -42,10 +41,9 @@ def sign(x, y, script):
 
 def main():
     c = BZ.compose()
-    # postes do festival: comecam apagados (584); a base (674) e solida
-    for (x, y) in LAMPS:
-        c.put(x, y, 584, collision=0)
-        c.put(x, y + 1, 674, collision=1, elevation=0)
+    # postes do festival: comecam apagados (pecas compostas sobre o piso do lugar)
+    for (x, y, floor) in LAMPS:
+        ids = c.lamp(x, y, floor, lit=False)
     bl = c.save("PalmBreezeport")
     w = c.w
     lay = json.load(open(f"{ROOT}/data/layouts/layouts.json"), object_pairs_hook=OD)
@@ -73,7 +71,7 @@ def main():
                         [coord(0, y, "Palm090_ToRoute03") for y in range(38, 45)]
     j["bg_events"] = [sign(22, 3, "Palm080_BrisaSign"), sign(50, 28, "Palm090_TheaterSign"), sign(27, 21, "Palm090_PalmPoster"),
                       sign(2, 37, "Palm090_EastSign"), sign(62, 43, "Palm092_KeeperHouse")] + \
-                     [sign(x, y + 1, f"Palm090_CityLamp{i + 1}") for i, (x, y) in enumerate(LAMPS)]
+                     [sign(x, y + 1, f"Palm090_CityLamp{i + 1}") for i, (x, y, _) in enumerate(LAMPS)]
     open(p, "w").write(json.dumps(j, indent=2, ensure_ascii=False) + "\n")
 
     # interiores: saidas apontam para a Breezeport
@@ -97,8 +95,9 @@ def main():
     # scripts: coordenadas novas de postes, Teatro e chegadas
     sp = f"{ROOT}/data/maps/PalmBrisa/scripts.inc"
     s = open(sp).read()
-    for i, (x, y) in enumerate(LAMPS, 1):
-        s = re.sub(rf"(Palm090_DrawLamp{i}::\n\tsetmetatile )\d+, \d+, \d+, (TRUE|FALSE)", rf"\g<1>{x}, {y}, 576, FALSE", s)
+    for i, (x, y, floor) in enumerate(LAMPS, 1):
+        lit = ids[f"lamp_top_{floor}_lit"]
+        s = re.sub(rf"(Palm090_DrawLamp{i}::\n\tsetmetatile )\d+, \d+, \d+, (TRUE|FALSE)", rf"\g<1>{x}, {y}, {lit}, FALSE", s)
     s = re.sub(r"(Palm090_OpenTheater::\n\tsetmetatile )\d+, \d+, \d+, TRUE", rf"\g<1>{THEATER_DOOR[0]}, {THEATER_DOOR[1]}, {door_mt}, TRUE", s)
     if "Palm090_LockTheater::" not in s:
         s = s.replace("\tcall_if_set FLAG_PALM_BRISA_LIGHTS, Palm090_OpenTheater\n",
