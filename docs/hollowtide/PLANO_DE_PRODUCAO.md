@@ -31,7 +31,7 @@ Status ao lado de cada item: `[ ]` a fazer · `[~]` em andamento · `[x]` conclu
 | Cap. | Conteúdo | Base atual |
 |---|---|---|
 | 1 `[~]` | Dawnmere → Route 1 → Harvestvale; Prof. Alex, mãe + Medalhão de Atlas; recruta da Team Palm e irrigação; ginásio de Nevard (comportas) | colisão corrigida; texto 100% EN; Medalhão; tela de 3 Poké Balls; comportas persistentes; Team Palm verde-oliva; eventos 10/10 no emulador; **falta**: teste de balanceamento com itens/2º Pokémon, revisão de arte dos interiores e do lab |
-| 2 `[ ]` | Route 2 (campo → litoral) → Breezeport (cidade costeira ampla, farol, morro tipo Corcovado, orla); ginásio de Jay (Teatro dos Ecos) | refazer em escala (placeholder 20×20 do Alpha 02) |
+| 2 `[~]` | Route 2 (campo → litoral) → Breezeport (cidade costeira ampla, farol, morro tipo Corcovado, orla); ginásio de Jay (Teatro dos Ecos) | refazer em escala (placeholder 20×20 do Alpha 02) |
 | 3 | Route 3 (praia → costa → serra → planalto, saída oeste/noroeste de Breezeport) → Ferralia (metrópole, ferrovia, viadutos, indústria); Vessel; "Carga Desviada" | refazer |
 | 4 | Route 4 → Tradepost ("Preço da Troca", Mestre Wen, PALM Coin) | novo |
 | 5 | Route 5 → Pillarton (barragens, Lela); Tchum | novo |
@@ -58,7 +58,16 @@ contam a história da água antes de qualquer cena longa.
 - Ganchos de QA só em build não-release: `FLAG_HT_QA_BOOST_PARTY` (+ `VAR_HT_QA_LEVEL`), `FLAG_HT_QA_NO_ENCOUNTERS`,
   `FLAG_HT_QA_NO_TRAINER_SEE`. **Distribuição sempre com `make RELEASE=1`.**
 
-## Próximo passo técnico
+## Ferramenta de mapas (estado)
+
+- `[x]` `tools/hollowtide/mapgen`: corpus dos mapas oficiais, autotile aprendido (grama, mato, árvores, mata, areia,
+  poça, lago, mar, água rasa, ladeiras S/L/O, flores; calçamento do secundário Lilycove), Canvas com carimbos de
+  prédios e colisão de referência.
+- `[ ]` classe de rocha/penhasco com elevação (morro tipo Corcovado); margem inferior de lagos.
+- `[ ]` metatiles compostos (farol) nos slots livres do secundário.
+- `[~]` Breezeport: esboço em `tools/hollowtide/maps/breezeport.py` (fora do jogo até passar no portão de qualidade).
+
+## Próximo passo técnico (histórico)
 
 Ferramenta de construção de mapas (`tools/hollowtide/mapgen`): pincéis com autotile aprendido dos mapas oficiais
 (caminhos, água com margem, florestas, ladeiras/penhascos com elevação), carimbos de prédios extraídos dos tilesets
