@@ -93,3 +93,16 @@ warps, não as batalhas nem os eventos.
 | Texto | 100% inglês; interiores reaproveitados sem citações a Hoenn |
 | Jay | placeholder oficial (Phoebe) no campo e na batalha; sprite gerado do Alpha 02 preservado fora de uso |
 | Pendente | farol, polimento artístico, Route 2 (revisão), NPCs urbanos, balanceamento da Jay |
+
+## 8. Route 2 e travessia contínua — 19/11/2026 (manhã)
+
+| Item | Estado |
+|---|---|
+| Route 2 | refeita pelo `mapgen` (40×48, General + Lilycove): campo com trilha sinuosa e manchas de mato de contorno irregular, bosques escalonados, ladeiras de mão única, mirante em platô com escada, enseada com casa do pescador, calçamento e poste na chegada à cidade; linter 0/0. Instalada por `tools/hollowtide/maps/install_route2.py` |
+| Conexões | Harvestvale ⇄ Route 2 ⇄ Breezeport agora são **conexões de mapa** (sem fade, como no Emerald); defeito nº 8 da seção 4 resolvido nesse trecho (Route 3 ainda usa warp, será refeita no Cap. 3) |
+| Trava antes do Nevard | gatilho na calçada sul da Harvestvale: mensagem + jogador recua um passo — **testado** nos dois estados |
+| Emenda de tilesets | o GBA desenha o mapa vizinho com o tileset do mapa atual; as 4 linhas finais da Harvestvale visíveis da Route 2 viraram estrada de terra do primário (o calçamento Slateport aparecia preto). Regra nova: **toda emenda de conexão só pode mostrar metatiles do primário ou do secundário comum aos dois mapas** |
+| Treinadores | Liang, Mei-Lan e Qin com linha de visão (desafiam ao avistar), posicionados ao lado da trilha; falas de derrota em inglês — **testado** (`fluxo_rota2.py`) |
+| Recompensa | Super Potion no mirante (flag de item de Hoenn sem uso em Lunia) — **testado** |
+| Gerador | correção: terreno sem elevação de referência (flores) sobre platô herda a altura do platô — o mirante era inalcançável; na Breezeport corrigiu a trilha do morro |
+| QA | regressão completa 48/48 (`qa_completo.sh`: intro, Cap. 1, transições 17, Cap. 2, Route 2) |

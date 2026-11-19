@@ -9328,9 +9328,9 @@
       "id": "LAYOUT_PALM_ROUTE02",
       "name": "PalmRoute02_Layout",
       "width": 40,
-      "height": 39,
+      "height": 48,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Rustboro",
+      "secondary_tileset": "gTileset_Lilycove",
       "border_filepath": "data/layouts/PalmRoute02/border.bin",
       "blockdata_filepath": "data/layouts/PalmRoute02/map.bin",
       "layout_version": "emerald"

@@ -50,8 +50,8 @@ def main(rom, runner, work, estado):
     G = "MAP_RUSTBORO_CITY_GYM"
     if q.mapname() == G:
         q.goto(G, 5, 19); q.run(["press DOWN 30 0", "wait 120"])
-    q.goto("MAP_OLDALE_TOWN", 18, 34); q.run(["press DOWN 30 0", "wait 120"])
-    q.goto("MAP_PALM_ROUTE02", 25, 32); q.run(["press DOWN 30 0", "wait 150"])
+    q.goto("MAP_OLDALE_TOWN", 18, 36); q.run(["press DOWN 30 0", "wait 120"])
+    q.goto("MAP_PALM_ROUTE02", 19, 47); q.run(["press DOWN 30 0", "wait 150"])
     ok(q.mapname() == "MAP_PALM_BRISA", "Chegou a Breezeport pela Route 2")
     B = "MAP_PALM_BRISA"
     # Postes antes da anfitria: nao acendem

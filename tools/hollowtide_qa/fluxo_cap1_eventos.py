@@ -88,7 +88,7 @@ def main(rom, runner, work, estado):
     q.goto(G, 5, 18); q.goto(G, 5, 19)
     q.run(["press DOWN 20 0", "wait 120"])
     ok(q.mapname() == "MAP_OLDALE_TOWN", "Saiu do ginasio")
-    q.goto("MAP_OLDALE_TOWN", 18, 34); q.run(["press DOWN 20 0", "wait 120", "shot cap1_rota2.png"])
+    q.goto("MAP_OLDALE_TOWN", 18, 36); q.run(["press DOWN 20 0", "wait 120", "shot cap1_rota2.png"])
     ok(q.mapname() == "MAP_PALM_ROUTE02", "Rota 2 liberada apos o Nevard")
     print("\nRESUMO CAPITULO 1 (eventos)")
     for r in res:

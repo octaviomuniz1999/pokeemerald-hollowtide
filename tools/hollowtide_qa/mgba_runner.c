@@ -179,6 +179,13 @@ int main(int argc, char **argv)
             uint32_t addr = sb1 + off + flag / 8;
             core->busWrite8(core, addr, core->busRead8(core, addr) | (1 << (flag % 8)));
             printf("[%lu] setflag 0x%x\n", frameCount, flag);
+        } else if (!strcmp(cmd, "clearflag")) {
+            // clearflag OFFSET_FLAGS_HEX FLAG_HEX : desliga uma flag no SaveBlock1 (QA)
+            uint32_t sb1 = core->busRead32(core, sb1ptrAddr);
+            uint32_t off = strtoul(a, NULL, 16), flag = strtoul(b, NULL, 16);
+            uint32_t addr = sb1 + off + flag / 8;
+            core->busWrite8(core, addr, core->busRead8(core, addr) & ~(1 << (flag % 8)));
+            printf("[%lu] clearflag 0x%x\n", frameCount, flag);
         } else if (!strcmp(cmd, "poke8")) {
             // poke8 ENDERECO_HEX VALOR : escreve um byte (QA)
             core->busWrite8(core, strtoul(a, NULL, 16), strtoul(b, NULL, 0));

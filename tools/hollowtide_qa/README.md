@@ -18,7 +18,7 @@ python3 tools/hollowtide_qa/fluxo_transicoes.py pokeemerald.gba ./mgba_runner $W
 ```
 
 - `mgba_runner.c`: comandos `wait`, `press`, `walk`, `mash`, `shot`, `pos`, `expect_map`, `expect_pos`,
-  `peek`, `setflag`, `setvar`, `poke8`, `savestate`, `loadstate` (ver cabeçalho do arquivo).
+  `peek`, `setflag`, `clearflag`, `setvar`, `poke8`, `savestate`, `loadstate` (ver cabeçalho do arquivo).
 - `qa_driver.py`: rotas por BFS sobre a colisão/elevação reais dos `map.bin`, replanejando a cada trecho;
   trata diálogos e batalhas (tenta fugir, senão usa o 1º golpe). Endereços vêm do `pokeemerald.map`.
 - Offsets usados (`SaveBlock1.flags` = 0x1270, `vars` = 0x139C, `struct Pokemon.level` = 0x54) valem

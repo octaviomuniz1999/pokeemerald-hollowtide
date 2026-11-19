@@ -645,16 +645,20 @@ Palm071_TextFarmerRestored:
 	.string "the GYM. Thank you. Really.$"
 
 Palm080_LeaveColheita::
-	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, Palm080_ToRoute02
+	goto_if_set FLAG_DEFEATED_RUSTBORO_GYM, Palm080_LeaveColheitaOk
 	lockall
 	msgbox Palm060_TextClosedRoad, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Palm080_StepBack
+	waitmovement 0
 	releaseall
 	end
 
-Palm080_ToRoute02::
-	warp MAP_PALM_ROUTE02, 12, 2
-	waitstate
+Palm080_LeaveColheitaOk::
 	end
+
+Palm080_StepBack:
+	walk_up
+	step_end
 
 Palm080_ColheitaRouteOpen::
 	msgbox Palm080_TextRouteOpen, MSGBOX_SIGN

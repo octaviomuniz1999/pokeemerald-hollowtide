@@ -2,11 +2,6 @@ PalmBrisa_MapScripts::
 	map_script MAP_SCRIPT_ON_LOAD, Palm090_BrisaLoad
 	.byte 0
 
-Palm080_ReturnRoute::
-	warp MAP_PALM_ROUTE02, 25, 31
-	waitstate
-	end
-
 Palm080_BrisaHost::
 	goto_if_set FLAG_PALM_BRISA_LIGHTS, Palm090_ArtistDone
 	setflag FLAG_PALM_BRISA_STARTED

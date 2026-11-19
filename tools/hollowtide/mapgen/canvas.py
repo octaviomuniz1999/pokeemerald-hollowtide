@@ -208,7 +208,7 @@ class Canvas:
                 e = FC.dominant(elev_ref[(ts, m)])
                 if grid[y][x] == "high":
                     c, e = 0, lv[y][x]
-                elif lv[y][x] > 3 and grid[y][x] != "cliff" and e is not None and e == 3:
+                elif lv[y][x] > 3 and grid[y][x] != "cliff" and (e is None or e == 3):
                     e = lv[y][x]  # terreno sobre o patamar herda a elevacao
                 out.append(m | ((c or 0) << 10) | ((e if e is not None else 3) << 12))
         return out

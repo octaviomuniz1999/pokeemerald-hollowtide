@@ -20,6 +20,9 @@ Status ao lado de cada item: `[ ]` a fazer · `[~]` em andamento · `[x]` conclu
    - toda edificação conferida com uma linha acima do carimbo: telhado completo (ex.: a loja de departamentos
      da Lilycove não tem telhado no tileset — recebe cobertura composta);
    - enriquecimento visual: canteiros, postes, árvores em canteiro, detalhes de bairro; evitar áreas vazias.
+5c. **Conexões de mapa** (travessia sem fade) entre áreas externas vizinhas. O GBA desenha o vizinho com o tileset
+   do mapa atual: a faixa visível do outro lado da emenda (~4 linhas, ±7 colunas do caminho) só pode usar metatiles do
+   primário ou do secundário comum aos dois mapas.
 6. Build limpo, commit + push, auditoria atualizada.
 
 ## Fundação
@@ -39,7 +42,7 @@ Status ao lado de cada item: `[ ]` a fazer · `[~]` em andamento · `[x]` conclu
 | Cap. | Conteúdo | Base atual |
 |---|---|---|
 | 1 `[~]` | Dawnmere → Route 1 → Harvestvale; Prof. Alex, mãe + Medalhão de Atlas; recruta da Team Palm e irrigação; ginásio de Nevard (comportas) | colisão corrigida; texto 100% EN; Medalhão; tela de 3 Poké Balls; comportas persistentes; Team Palm verde-oliva; eventos 10/10 no emulador; **falta**: teste de balanceamento com itens/2º Pokémon, revisão de arte dos interiores e do lab |
-| 2 `[~]` | Route 2 (campo → litoral) → Breezeport (cidade costeira ampla, farol, morro tipo Corcovado, orla); ginásio de Jay (Teatro dos Ecos) | **Breezeport 72×56 no jogo** (morro em patamares, centro, Teatro, bairros, orla, praia, saída oeste); texto EN; Jay com placeholder oficial (Phoebe); eventos 12/12 no emulador; 10 moradores com falas de ambiente; costa orgânica; **falta**: farol (justificado na história como 'em reconstrução após a tempestade'), enriquecimento da praia, contorno do morro, revisão da Route 2, balanceamento da Jay |
+| 2 `[~]` | Route 2 (campo → litoral) → Breezeport (cidade costeira ampla, farol, morro tipo Corcovado, orla); ginásio de Jay (Teatro dos Ecos) | **Breezeport 72×56 no jogo** (morro em patamares, centro, Teatro, bairros, orla, praia, saída oeste); texto EN; Jay com placeholder oficial (Phoebe); eventos 12/12 no emulador; 10 moradores com falas de ambiente; costa orgânica; **Route 2 refeita** (campo → enseada, mirante, 3 treinadores com visão) com **conexões contínuas** Harvestvale ⇄ Route 2 ⇄ Breezeport; **falta**: farol (justificado na história como 'em reconstrução após a tempestade'), enriquecimento da praia, contorno do morro, balanceamento da Jay |
 | 3 | Route 3 (praia → costa → serra → planalto, saída oeste/noroeste de Breezeport) → Ferralia (metrópole, ferrovia, viadutos, indústria); Vessel; "Carga Desviada" | refazer |
 | 4 | Route 4 → Tradepost ("Preço da Troca", Mestre Wen, PALM Coin) | novo |
 | 5 | Route 5 → Pillarton (barragens, Lela); Tchum | novo |
@@ -61,7 +64,7 @@ contam a história da água antes de qualquer cena longa.
 
 ## Ferramentas de QA disponíveis
 
-- `tools/hollowtide_qa/qa_completo.sh RUNNER WORKDIR`: intro → lab → Rota 1 → Harvestvale → transições → eventos do Cap. 1.
+- `tools/hollowtide_qa/qa_completo.sh RUNNER WORKDIR`: intro → lab → Rota 1 → Harvestvale → transições → eventos do Cap. 1 → Cap. 2 → Route 2 (treinadores com visão).
 - `fluxo_cap1_balanco.py` (com `HT_STARTER`): partida realista no nível de chegada, por inicial.
 - Ganchos de QA só em build não-release: `FLAG_HT_QA_BOOST_PARTY` (+ `VAR_HT_QA_LEVEL`), `FLAG_HT_QA_NO_ENCOUNTERS`,
   `FLAG_HT_QA_NO_TRAINER_SEE`. **Distribuição sempre com `make RELEASE=1`.**
@@ -75,6 +78,7 @@ contam a história da água antes de qualquer cena longa.
 - `[ ]` margem inferior de lagos (família 'pond').
 - `[ ]` metatiles compostos (farol) nos slots livres do secundário.
 - `[x]` Breezeport instalada por `tools/hollowtide/maps/install_breezeport.py` (reproduzível).
+- `[x]` Route 2 instalada por `tools/hollowtide/maps/install_route2.py` (rodar depois da Breezeport), com conexões e emenda da Harvestvale.
 
 ## Próximo passo técnico (histórico)
 

@@ -39,18 +39,19 @@ def main(rom, runner, work, estado):
     q.no_wild()
 
     # Trava 1: sem vitoria sobre o Nevard a saida sudeste deve continuar fechada.
+    # (conexao continua: a trava e um gatilho na calcada que faz o jogador recuar um passo)
     q.goto("MAP_OLDALE_TOWN", 18, 34)
-    q.run(["press DOWN 18 0", "wait 60", "mash A 6", "mash B 4"])
+    q.run(["press DOWN 18 0", "wait 60", "mash A 24", "mash B 6", "wait 60"])
     check(q, "MAP_OLDALE_TOWN", "Colheita: saida para Rota 02 bloqueada antes do Nevard")
+    ok = tuple(q.where[2:]) == (18, 34)
+    resultados.append(("Colheita: jogador recua um passo na trava", "OK" if ok else "FALHA", q.mapname(), q.where[2:]))
+    print("OK   " if ok else "FALHA", "Colheita: jogador recua um passo na trava", q.where[2:], flush=True)
+    if not ok:
+        raise SystemExit(1)
 
-    q.run([f"setflag {FLAGS_OFF} {FLAG_DEFEATED_RUSTBORO_GYM}", "walk UP 1", "wait 30"])
-    if q.mapname() == "MAP_OLDALE_TOWN":
-        q.goto("MAP_OLDALE_TOWN", 18, 34)
-        q.run(["press DOWN 18 0", "wait 120"])
-    q.run(["shot qa_rota02.png"])
-    check(q, "MAP_PALM_ROUTE02", "Colheita -> Rota 02")
-
-    cruzar(q, "MAP_PALM_ROUTE02", 25, 32, "DOWN", "MAP_PALM_BRISA", "Rota 02 -> Breezeport", "qa_brisa.png")
+    q.run([f"setflag {FLAGS_OFF} {FLAG_DEFEATED_RUSTBORO_GYM}"])
+    cruzar(q, "MAP_OLDALE_TOWN", 18, 36, "DOWN", "MAP_PALM_ROUTE02", "Colheita -> Rota 02 (conexao)", "qa_rota02.png")
+    cruzar(q, "MAP_PALM_ROUTE02", 19, 47, "DOWN", "MAP_PALM_BRISA", "Rota 02 -> Breezeport (conexao)", "qa_brisa.png")
 
     # Servicos da Breezeport: Centro Pokemon e volta
     cruzar(q, "MAP_PALM_BRISA", 23, 17, "UP", "MAP_DEWFORD_TOWN_POKEMON_CENTER_1F", "Breezeport -> Centro Pokemon")
@@ -79,8 +80,8 @@ def main(rom, runner, work, estado):
     # Volta
     cruzar(q, "MAP_PALM_FERRALIA", 0, 10, "LEFT", "MAP_PALM_ROUTE03", "Ferralia -> Rota 03 (conexao)")
     cruzar(q, "MAP_PALM_ROUTE03", 2, 10, "LEFT", "MAP_PALM_BRISA", "Rota 03 -> Breezeport")
-    cruzar(q, "MAP_PALM_BRISA", 19, 1, "UP", "MAP_PALM_ROUTE02", "Breezeport -> Rota 02")
-    cruzar(q, "MAP_PALM_ROUTE02", 11, 2, "UP", "MAP_OLDALE_TOWN", "Rota 02 -> Colheita")
+    cruzar(q, "MAP_PALM_BRISA", 19, 0, "UP", "MAP_PALM_ROUTE02", "Breezeport -> Rota 02 (conexao)")
+    cruzar(q, "MAP_PALM_ROUTE02", 18, 0, "UP", "MAP_OLDALE_TOWN", "Rota 02 -> Colheita (conexao)")
     cruzar(q, "MAP_OLDALE_TOWN", 9, 1, "UP", "MAP_ROUTE101", "Colheita -> Rota 01")
     cruzar(q, "MAP_ROUTE101", 2, 4, "LEFT", "MAP_LITTLEROOT_TOWN", "Rota 01 -> Vila Inicial")
 
