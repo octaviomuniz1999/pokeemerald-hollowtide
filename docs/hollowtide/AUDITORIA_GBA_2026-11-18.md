@@ -106,3 +106,14 @@ warps, não as batalhas nem os eventos.
 | Recompensa | Super Potion no mirante (flag de item de Hoenn sem uso em Lunia) — **testado** |
 | Gerador | correção: terreno sem elevação de referência (flores) sobre platô herda a altura do platô — o mirante era inalcançável; na Breezeport corrigiu a trilha do morro |
 | QA | regressão completa 48/48 (`qa_completo.sh`: intro, Cap. 1, transições 17, Cap. 2, Route 2) |
+
+## 9. Breezeport: morro e orla — 19/11/2026 (manhã)
+
+| Item | Estado |
+|---|---|
+| Morro | refeito: mata de árvores 2×2 em contorno orgânico (grade par), patamar (elev. 5) com árvores e flores, cume-mirante (elev. 7); escadaria da avenida ao cume; acabou a leitura de "zigurate" dos anéis concêntricos |
+| Orla | faixa de água rasa entre areia e mar, com laguna mais larga e banco de areia; pedras na areia e na água rasa; rochedo no mar; **rochedo do antigo farol** (3×4) e **farol provisório** (poste composto sobre areia) na ponta do pontal |
+| Narrativa | faroleiro aponta o rochedo onde ficava o farol e o poste que guia os barcos até a reconstrução; montanhista do cume descreve a baía |
+| Route 2 | a enseada que sumia na borda oeste virou poça de maré rasa cercada de areia (bordas completas) |
+| Ferramenta | `install_route2.py` idempotente (a emenda de terra da Harvestvale não muda ao reinstalar); peças compostas de poste sobre areia |
+| QA | caminhada no emulador até o cume, patamar, pontal e laguna; regressão 48/48 |

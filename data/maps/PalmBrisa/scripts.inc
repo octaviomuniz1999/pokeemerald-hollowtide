@@ -228,6 +228,8 @@ Palm093_PlazaGirl_Text:
 	.string "the whole plaza sparkle!$"
 
 Palm093_LookoutHiker_Text:
+	.string "From up here the whole bay is\n"
+	.string "yours: the beach, the lagoon...\p"
 	.string "On clear days you can see a peak\n"
 	.string "far to the north, lost in clouds.\p"
 	.string "People say nobody climbs it\n"
@@ -250,10 +252,12 @@ Palm093_JayFan_Text:
 	.string "lights. It gives me chills!$"
 
 Palm093_KeeperOldMan_Text:
-	.string "The lighthouse fell in last\n"
-	.string "winter's storm.\p"
-	.string "We're rebuilding it, stone by\n"
-	.string "stone. Storms used to be gentler.$"
+	.string "See that rock out in the bay?\n"
+	.string "The lighthouse stood there.\p"
+	.string "Last winter's storm took it.\n"
+	.string "Storms used to be gentler...\p"
+	.string "Until we rebuild, that lamp on\n"
+	.string "the point guides the boats home.$"
 
 Palm093_PumpWife_Text:
 	.string "My husband works at the pump\n"

@@ -78,14 +78,13 @@ def compose():
     c.stairs(8, 30, width=2)
     # --- enseada e praia ---
     c.rect(0, 32, 16, 43, "sand")
-    c.ascii(0, 34, [                                          # baia aberta para o oeste (some alem da borda)
-        "~~~~~~~      ",
-        "~~~~~~~~~    ",
-        "~~~~~~~~~~   ",
-        "~~~~~~~~~~   ",
-        "~~~~~~~~~    ",
-        "~~~~~~~~     ",
-        "~~~~~~       ",
+    c.ascii(2, 34, [                                          # poca de mare rasa cercada de areia (bordas completas)
+        "  ====      ",
+        " =======    ",
+        "=========   ",
+        "=========   ",
+        " =======    ",
+        "  =====     ",
     ])
     c.rect(13, 33, 21, 39, "sand")
     c.stamp("lily_house_blue", 13, 33)                       # casa do pescador, de frente para a enseada

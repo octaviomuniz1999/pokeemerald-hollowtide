@@ -37,11 +37,13 @@ VIEW_ROWS = 4                         # linhas da Harvestvale visiveis do topo d
 def harvestvale_dirt_edge(v, ow, oh):
     from canvas import _autotiler
     at = _autotiler("gTileset_General", None)
-    grid = [["sand" if (v[y * ow + x] & 0x3FF) in STONE else "grass" for x in range(ow)] for y in range(oh)]
+    from autotile import GENERAL_CLASSES
+    path = STONE | GENERAL_CLASSES["sand"]          # idempotente: terra ja aplicada conta como caminho
+    grid = [["sand" if (v[y * ow + x] & 0x3FF) in path else "grass" for x in range(ow)] for y in range(oh)]
     out = list(v)
     for y in range(oh - VIEW_ROWS, oh):
         for x in range(VIEW_X[0], VIEW_X[1] + 1):
-            if grid[y][x] == "sand":
+            if grid[y][x] == "sand" and (v[y * ow + x] & 0x3FF) in STONE | {529}:
                 m, _ = at.tile(grid, x, y)
                 assert m < 512, (x, y, m)
                 out[y * ow + x] = m | (3 << 12)

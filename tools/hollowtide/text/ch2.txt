@@ -171,6 +171,9 @@ At night the festival lamps make
 the whole plaza sparkle!
 
 ==+ Palm093_LookoutHiker_Text
+From up here the whole bay is
+yours: the beach, the lagoon...
+
 On clear days you can see a peak
 far to the north, lost in clouds.
 
@@ -197,11 +200,14 @@ Her ghosts dance with the stage
 lights. It gives me chills!
 
 ==+ Palm093_KeeperOldMan_Text
-The lighthouse fell in last
-winter's storm.
+See that rock out in the bay?
+The lighthouse stood there.
 
-We're rebuilding it, stone by
-stone. Storms used to be gentler.
+Last winter's storm took it.
+Storms used to be gentler...
+
+Until we rebuild, that lamp on
+the point guides the boats home.
 
 ==+ Palm093_PumpWife_Text
 My husband works at the pump

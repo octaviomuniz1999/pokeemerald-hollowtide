@@ -5,6 +5,9 @@
     "lamp_base_cobble": 865,
     "lamp_top_grass_lit": 866,
     "lamp_top_grass_unlit": 867,
-    "lamp_base_grass": 868
+    "lamp_base_grass": 868,
+    "lamp_top_sand_lit": 869,
+    "lamp_top_sand_unlit": 870,
+    "lamp_base_sand": 871
   }
 }

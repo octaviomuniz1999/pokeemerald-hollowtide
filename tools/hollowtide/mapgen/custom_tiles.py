@@ -34,6 +34,9 @@ CUSTOM = {
         ("lamp_top_grass_lit", ("mt", 1, "bottom"), ("mt", 576, "top"), 576),
         ("lamp_top_grass_unlit", ("mt", 1, "bottom"), ("recolor", 576, {9: 3, 10: 6}), 576),
         ("lamp_base_grass", ("mt", 1, "bottom"), ("mt", 674, "top"), 674),
+        ("lamp_top_sand_lit", ("mt", 292, "bottom"), ("mt", 576, "top"), 576),      # farol provisorio no pontal
+        ("lamp_top_sand_unlit", ("mt", 292, "bottom"), ("recolor", 576, {9: 3, 10: 6}), 576),
+        ("lamp_base_sand", ("mt", 292, "bottom"), ("mt", 674, "top"), 674),
     ],
 }
 
