@@ -3,6 +3,7 @@ PalmSerenia_MapScripts::
 	.byte 0
 
 Palm141_Load::
+	goto_if_set FLAG_HT_SERENIA_DONE, Palm141_LoadOpen
 	setmetatile 33, 18, 458, TRUE
 	end
 
@@ -57,6 +58,10 @@ Palm141_AltarPlace::
 	waitse
 	msgbox Palm141_TextInscription, MSGBOX_DEFAULT
 	setflag FLAG_HT_SERENIA_DONE
+	setmetatile 33, 18, 461, TRUE
+	special DrawWholeMapView
+	playse SE_UNLOCK
+	msgbox Palm141_TextGymOpens, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -220,3 +225,11 @@ Palm141_GymSign_Text:
 Palm141_SpringSign_Text:
 	.string "SACRED SPRING\n"
 	.string "Please return what you borrow.$"
+Palm141_LoadOpen::
+	end
+
+
+Palm141_TextGymOpens:
+	.string "Somewhere in the village, a door\n"
+	.string "clicks open.\p"
+	.string "JADE must be waiting at her GYM.$"

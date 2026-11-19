@@ -1285,21 +1285,21 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Surf
 
 === TRAINER_RANDALL ===
-Name: RANDALL
-Class: Cooltrainer
-Pic: Cooltrainer M
+Name: SORA
+Class: Psychic
+Pic: Psychic M
 Gender: Male
-Music: Cool
-Items: Hyper Potion
+Music: Intense
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move
 
-Swellow
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Quick Attack
-- Agility
-- Wing Attack
+Kirlia
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Natu
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_PARKER ===
 Name: PARKER
@@ -1642,37 +1642,38 @@ Level: 25
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 
 === TRAINER_MARY ===
-Name: MARY
-Class: Cooltrainer
-Pic: Cooltrainer F
+Name: YUKI
+Class: Hex Maniac
+Pic: Hex Maniac
 Gender: Female
-Music: Cool
-Items: Hyper Potion
+Music: Suspicious
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move
 
-Delcatty
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Feint Attack
-- Shock Wave
+Espurr
+Level: 33
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Chimecho
+Level: 34
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_ALEXIA ===
-Name: ALEXIA
-Class: Cooltrainer
-Pic: Cooltrainer F
-Gender: Female
-Music: Cool
-Items: Hyper Potion
+Name: KENJI
+Class: Psychic
+Pic: Psychic M
+Gender: Male
+Music: Intense
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move
 
-Wigglytuff
-Level: 26
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Defense Curl
-- Double Edge
-- Shadow Ball
+Xatu
+Level: 34
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Meowstic
+Level: 34
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_JODY ===
 Name: JODY
@@ -4895,46 +4896,38 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Attract
 
 === TRAINER_NORMAN_1 ===
-Name: NORMAN
+Name: JADE
 Class: Leader
-Pic: Leader Norman
-Gender: Male
-Music: Male
-Items: Hyper Potion / Hyper Potion
+Pic: Leader Winona
+Gender: Female
+Music: Female
+Items: Super Potion / Super Potion
 Double Battle: No
 AI: Basic Trainer
 
-Spinda
-Level: 27
+Chimecho
+Level: 34
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Teeter Dance
 - Psybeam
-- Facade
-- Encore
+- Synchronoise
+- Heal Bell
+- Astonish
 
-Vigoroth
-Level: 27
+Gardevoir
+Level: 36
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
-- Facade
-- Encore
-- Feint Attack
+- Psychic
+- Draining Kiss
+- Calm Mind
+- Double Team
 
-Linoone
-Level: 29
+Espeon
+Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Slash
-- Belly Drum
-- Facade
-- Headbutt
-
-Slaking @ Sitrus Berry
-Level: 31
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Counter
-- Yawn
-- Facade
-- Feint Attack
+- Psychic
+- Dazzling Gleam
+- Morning Sun
+- Quick Attack
 
 === TRAINER_WINONA_1 ===
 Name: TCHUM

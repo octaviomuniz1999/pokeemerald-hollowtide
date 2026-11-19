@@ -9455,6 +9455,17 @@
       "border_filepath": "data/layouts/PalmSerenia/border.bin",
       "blockdata_filepath": "data/layouts/PalmSerenia/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_JADE_GYM",
+      "name": "PalmJadeGym_Layout",
+      "width": 9,
+      "height": 48,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PetalburgGym",
+      "border_filepath": "data/layouts/PalmJadeGym/border.bin",
+      "blockdata_filepath": "data/layouts/PalmJadeGym/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

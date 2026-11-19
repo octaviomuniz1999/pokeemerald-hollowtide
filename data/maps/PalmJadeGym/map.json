@@ -1,0 +1,316 @@
+{
+  "id": "MAP_PALM_JADE_GYM",
+  "name": "PalmJadeGym",
+  "layout": "LAYOUT_PALM_JADE_GYM",
+  "music": "MUS_GYM",
+  "region": "REGION_HOENN",
+  "region_map_section": "MAPSEC_FALLARBOR_TOWN",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": false,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_GYM",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LIZA",
+      "x": 4,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Palm150_Jade",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(ESPEON)",
+      "x": 5,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Palm150_Lau",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "x": 4,
+      "y": 34,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "Palm150_TrainerA",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
+      "x": 4,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "Palm150_TrainerB",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_PSYCHIC_M",
+      "x": 4,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "Palm150_TrainerC",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "x": 6,
+      "y": 45,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Palm150_GymGuide",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_SERENIA",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 5,
+      "y": 47,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_SERENIA",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 1,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 2,
+      "y": 37,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 1,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 2,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 1,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 2,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 1,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 2,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 1,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 7,
+      "y": 41,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 1,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 7,
+      "y": 31,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 1,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 7,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 1,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    },
+    {
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_JADE_GYM",
+      "dest_warp_id": "10"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 41,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Palm150_Mirror1"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 41,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Palm150_Mirror2"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 41,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Palm150_Mirror3"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 41,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Palm150_DoorEntranceL"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 41,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Palm150_DoorEntranceR"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Palm150_DoorAL"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 31,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Palm150_DoorAR"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Palm150_DoorBL"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Palm150_DoorBR"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Palm150_DoorCL"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Palm150_DoorCR"
+    }
+  ]
+}

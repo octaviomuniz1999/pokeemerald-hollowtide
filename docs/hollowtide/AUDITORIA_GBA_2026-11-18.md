@@ -221,5 +221,16 @@ warps, não as batalhas nem os eventos.
 | Route 6 | mapa novo (54×36, General + Lavaridge): jardim de pedra (areia lisa com pedras dispostas), bosques fechados no lugar do bambu, canal tranquilo com margem completa, santuários de beira de estrada; Ren (Natu/Espurr), Mika (Snubbull/Cottonee), Sayo (Chingling/Ralts), Hana (Petilil/Cottonee), Lv 30–32; Twisted Spoon, PP Up, Revive; encontros da Pokédex do Cap. 6 |
 | Serenia | mapa novo (44×40, Lavaridge): fonte sagrada como santuário/altar, trilha de pedras entre moitas até a fonte, Centro Pokémon, Mart e 3 casas (interiores de Fortree, sem Hoenn), ginásio, jardins; ponto de cura |
 | Evento | Jade e o **Espeon Lau** (sprite de Pokémon de mapa) com as falas do cânone; 3 ilusões (pedras que fecham as duas faixas e somem depois do encontro); fragmento deixado pela Team Palm; altar revela a inscrição ("a sleeping power may call the tide over the mountains") — Tavinho e Kyogre não são citados |
-| Pendente | ginásio da Jade (Jardim dos Espelhos, sequência de 3 símbolos) |
+| Pendente | ginásio da Jade → feito na seção 20 |
 | QA | `fluxo_cap6.py` 25/25; driver: `goto(ignore=...)` para objetos já removidos; regressão completa sem falhas (~160 verificações) |
+
+## 20. Capítulo 6 — ginásio da Jade ("Jardim dos Espelhos") — 20/11/2026
+
+| Item | Estado |
+|---|---|
+| Mapa | `MAP_PALM_JADE_GYM` novo, 9×48, montado com as salas do ginásio de Petalburg (entrada, salas A/B/C, sala da líder); borda com o vazio do próprio tileset (a borda de árvores padrão virava lixo magenta) |
+| Puzzle | os 3 espelhos da entrada mostram LUA, ESTRELA, SOL; cada sala tem duas portas com símbolo gravado; a porta certa leva à próxima sala, a errada devolve à entrada; descer pelo piso de baixo de qualquer sala também volta à entrada |
+| Portas | as portas de Petalburg não são portas de warp (comportamento `MB_PETALBURG_GYM_DOOR`): viraram sinais como no original — mostram o símbolo, perguntam "Step through the door?" e usam `warpdoor`; metatile da porta já aberta |
+| Batalhas | 3 treinadores com visão (Psychic/Hex Maniac) e Jade: Chimecho 34, Gardevoir 36, Espeon (Lau) 38 → Insígnia da Serenidade (5ª) + TM Psychic |
+| Serenia | a porta do ginásio abre na hora em que o altar revela a inscrição (som + mensagem); Jade e Lau saem da vila e vão para o ginásio |
+| QA | `fluxo_cap6.py` com o ginásio: espelhos, porta certa/errada, vitória, insígnia e saída na porta certa de Serenia |

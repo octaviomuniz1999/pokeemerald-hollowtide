@@ -1,0 +1,114 @@
+## file: data/maps/PalmJadeGym/scripts.inc
+==+ Palm150_TextGuide
+Hey, future CHAMPION {PLAYER}!
+
+This is the MIRROR GARDEN. JADE uses
+PSYCHIC-type POKéMON.
+
+Read the three mirrors here and
+remember their symbols in order.
+
+In each room, take the door that
+shows the next symbol. A wrong door
+brings you back here!
+
+==+ Palm150_TextMirror1
+The first mirror shows a MOON.
+
+==+ Palm150_TextMirror2
+The second mirror shows a STAR.
+
+==+ Palm150_TextMirror3
+The third mirror shows a SUN.
+
+==+ Palm150_TextSymbolMOON
+A MOON is carved above the door.
+
+==+ Palm150_TextSymbolSTAR
+A STAR is carved above the door.
+
+==+ Palm150_TextSymbolSUN
+A SUN is carved above the door.
+
+==+ Palm150_TextEnterDoor
+Step through the door?
+
+==+ Palm150_TextJadeIntro
+JADE: You remembered the mirrors.
+LAU knew you would.
+
+LAU trusts you. So do I.
+But there's something we must
+understand before it's too late.
+
+First, show me how clear your mind
+can be!
+
+==+ Palm150_TextJadeDefeat
+JADE: Your heart didn't waver once.
+
+Please, take the SERENITY BADGE.
+
+==+ Palm150_TextJadeAfter
+JADE: That presence LAU senses...
+it's sad, not angry.
+
+Whoever it is, they are still trying
+to protect something. Keep going.
+
+==+ Palm150_TextBadge
+{PLAYER} received the SERENITY BADGE
+from JADE.
+
+==+ Palm150_TextBadgeExplain
+The SERENITY BADGE helps you stay
+calm when the world is not.
+
+Take this as well.
+
+==+ Palm150_TextTM
+That TM is PSYCHIC. A strong mind
+is the sharpest weapon.
+
+==+ Palm150_TextLau
+LAU: Fuu...
+LAU looks at you calmly.
+
+==+ Palm150_TextAIntro
+The mirrors told you the way...
+but can you see through me?
+
+==+ Palm150_TextADefeat
+I didn't foresee that.
+
+==+ Palm150_TextAAfter
+Remember the order. MOON first,
+then the rest!
+
+==+ Palm150_TextBIntro
+Every reflection hides a secret.
+Mine hides a battle!
+
+==+ Palm150_TextBDefeat
+My reflection cracked...
+
+==+ Palm150_TextBAfter
+Doubt is the only wrong door.
+
+==+ Palm150_TextCIntro
+One more symbol stands between you
+and JADE. Do you remember it?
+
+==+ Palm150_TextCDefeat
+Your memory is sharp!
+
+==+ Palm150_TextCAfter
+JADE and LAU are waiting.
+Go on.
+
+## file: data/maps/PalmSerenia/scripts.inc
+==+ Palm141_TextGymOpens
+Somewhere in the village, a door
+clicks open.
+
+JADE must be waiting at her GYM.

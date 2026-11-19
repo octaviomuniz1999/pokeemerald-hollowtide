@@ -4,7 +4,7 @@ Route 6 (Ren, Mika, Sayo, Hana com visao; 3 itens) -> Serenia (conexao): ilusao 
 Lau -> 3 ilusoes desfeitas -> fragmento -> altar (inscricao) -> Centro Pokemon -> volta pela Route 6.
 Uso: fluxo_cap6.py ROM RUNNER WORKDIR ESTADO_POS_LELA ESTADO_POS_TCHUM_RUA
 """
-import os, sys
+import shutil, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from qa_driver import QA
 from fluxo_cap2_eventos import battle
@@ -72,6 +72,41 @@ def main(rom, runner, work, pre, pos):
     GONE.add((21, 8))
     talk(q, S, 20, 7, "UP", ("mash B 40", "wait 30", "mash B 20", "shot cap6_altar.png"))
     ok(q.flag(0x41), "Fragmento devolvido ao altar: inscricao revelada")
+    # ginasio da Jade: espelhos (LUA, ESTRELA, SOL), portas com simbolos, porta errada volta a entrada
+    J = "MAP_PALM_JADE_GYM"
+    q.run(["setflag 1270 30"])
+    q.goto(S, 33, 19, ignore=GONE); q.run(["press UP 30 0", "wait 120", "shot cap6_ginasio.png"])
+    ok(q.mapname() == J, "Ginasio da Jade aberto depois do altar")
+    def door(x, y):
+        q.goto(J, x, y + 1)
+        q.run(["press UP 4 10"] + ["press A 4 50"] * 4 + ["wait 160"])
+        if q.mapname() == J and tuple(q.where[2:]) == (x, y + 1):      # texto ainda aberto: mais um A
+            q.run(["press A 4 50", "wait 160"])
+        return tuple(q.where[2:])
+    door(1, 41)                                        # entrada -> sala A
+    ok(q.where[3] == 37, "Entrada -> sala A")
+    door(1, 31)                                        # A: LUA (certa) -> sala B
+    ok(q.where[3] == 27, "Sala A: porta da LUA leva a sala B")
+    door(1, 21)                                        # B: SOL (errada) -> volta a entrada
+    ok(q.mapname() == J and q.where[3] in (41, 42), "Sala B: porta errada devolve a entrada")
+    door(1, 41); door(1, 31); door(7, 21)              # B: ESTRELA (certa) -> sala C
+    ok(q.where[3] == 17, "Sala B: porta da ESTRELA leva a sala C")
+    door(1, 11)                                        # C: SOL (certa) -> sala da lider
+    ok(q.where[3] == 7, "Sala C: porta do SOL leva a sala da Jade")
+    q.strong()
+    q.goto(J, 4, 3); q.run(["press UP 10 10", "press A 4 40"])
+    ok(battle(q, TF + 269, tries=140), "Venceu JADE")
+    for _ in range(10):
+        q.run(["mash A 8", "mash B 6"])
+        if q.flag(0x860 + 11):
+            break
+    q.run(["mash B 20", "shot cap6_insignia.png"])
+    ok(q.flag(0x860 + 11), "Insignia da Serenidade recebida")
+    q.goto(J, 2, 6); q.run(["press DOWN 50 0", "wait 120"])     # piso de baixo da sala volta a entrada
+    q.goto(J, 4, 46); q.run(["press DOWN 30 0", "wait 120"])
+    ok(q.mapname() == S and tuple(q.where[2:]) in ((33, 19), (33, 20)), "Saiu do ginasio na porta certa")
+    shutil.copy(q.state, f"{work}/c6jade.ss")          # ponto de partida do Cap. 7 (5 insignias, em Serenia)
+    q.run(["clearflag 1270 30"])
     q.goto(S, 6, 18, ignore=GONE); q.run(["press UP 30 0", "wait 120"])
     ok(q.mapname() == "MAP_FORTREE_CITY_POKEMON_CENTER_1F", "Serenia -> Centro Pokemon")
     q.goto("MAP_FORTREE_CITY_POKEMON_CENTER_1F", 7, 8); q.run(["press DOWN 30 0", "wait 120"])
