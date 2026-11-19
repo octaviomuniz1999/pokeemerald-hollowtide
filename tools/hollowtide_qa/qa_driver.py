@@ -141,11 +141,13 @@ class QA:
                     if stuck > 8:
                         raise AssertionError(f"travado em {mapid} {self.where[2:]} (ver stuck_*.png)")
                     continue
-                for _ in range(10):
+                for i in range(10):
                     # 1) tenta fugir (Run fica embaixo a direita); em batalha de treinador so mostra aviso
                     seq += ["press B 4 10", "press DOWN 4 6", "press RIGHT 4 6", "press A 4 30", "mash A 3"]
-                    # 2) poe o cursor em FIGHT/Battle e usa o 1o golpe
-                    seq += ["press B 4 10", "press UP 4 6", "press LEFT 4 6", "press A 4 20", "press A 4 20", "mash A 3"]
+                    # 2) FIGHT e alterna os golpes (o 1o pode ser de status ou nao afetar o alvo)
+                    nav = [[], ["press DOWN 4 6"], ["press RIGHT 4 6"], ["press DOWN 4 6", "press RIGHT 4 6"]][(i + stuck) % 4]
+                    seq += ["press B 4 10", "press UP 4 6", "press LEFT 4 6", "press A 4 20",
+                            "press UP 4 6", "press LEFT 4 6"] + nav + ["press A 4 20", "wait 120", "mash A 3"]
                 self.run(seq, "desbloqueio")
                 if stuck > 8:
                     raise AssertionError(f"travado em {mapid} {self.where[2:]} (ver stuck_*.png)")

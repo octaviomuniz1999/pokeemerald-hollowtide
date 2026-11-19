@@ -10,3 +10,4 @@ python3 -I "$ROOT/tools/hollowtide_qa/fluxo_transicoes.py" "$ROOT/pokeemerald.gb
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap1_eventos.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/e2e_colheita.ss" | tail -12
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap2_eventos.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/cap1_pos_nevard.ss" | tail -16
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_rota2.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/cap1_pos_nevard.ss" | tail -11
+python3 -I "$ROOT/tools/hollowtide_qa/fluxo_rota3.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/cap2_pos_jay.ss" | tail -16

@@ -88,8 +88,10 @@ def main():
                                       ("trainer_type", "TRAINER_TYPE_NONE"), ("trainer_sight_or_berry_tree_id", "0"),
                                       ("script", label), ("flag", "0")]))
     j["warp_events"] = [OD([("x", x), ("y", y), ("elevation", 0), ("dest_map", dm), ("dest_warp_id", "0")]) for (x, y), dm, _ in DOORS]
-    j["connections"] = [OD([("map", "MAP_PALM_ROUTE02"), ("offset", 0), ("direction", "up")])]  # continua, sem fade
-    j["coord_events"] = [coord(0, y, "Palm090_ToRoute03") for y in range(38, 45)]
+    j["connections"] = [OD([("map", "MAP_PALM_ROUTE02"), ("offset", 0), ("direction", "up")]),   # continuas, sem fade
+                        OD([("map", "MAP_PALM_ROUTE03"), ("offset", -20), ("direction", "left")])]
+    # trava antes da Jay: toda celula andavel da borda oeste (calcadao, areia e agua rasa) faz recuar um passo
+    j["coord_events"] = [coord(0, y, "Palm090_ToRoute03") for y in range(c.h) if (bl[y * w] >> 10) & 3 == 0]
     j["bg_events"] = [sign(22, 3, "Palm080_BrisaSign"), sign(50, 28, "Palm090_TheaterSign"), sign(27, 21, "Palm090_PalmPoster"),
                       sign(2, 37, "Palm090_EastSign"), sign(62, 43, "Palm092_KeeperHouse")] + \
                      [sign(x, y + 1, f"Palm090_CityLamp{i + 1}") for i, (x, y, _) in enumerate(LAMPS)]
@@ -125,6 +127,11 @@ def main():
                       "\tcall_if_set FLAG_PALM_BRISA_LIGHTS, Palm090_OpenTheater\n\tcall_if_unset FLAG_PALM_BRISA_LIGHTS, Palm090_LockTheater\n")
         s += f"\nPalm090_LockTheater::\n\tsetmetatile {THEATER_DOOR[0]}, {THEATER_DOOR[1]}, {wall_mt}, TRUE\n\treturn\n"
     s = re.sub(r"Palm080_ReturnRoute::\n(\t.*\n)+\n", "", s)   # entrada norte agora e conexao
+    s = re.sub(r"Palm090_ToRoute03::\n(?:.*\n)*?\n(?=Palm090_TextArtistDone:)",
+               "Palm090_ToRoute03::\n\tgoto_if_set FLAG_PALM_JAY_WON, Palm090_ToRoute03Ok\n\tlockall\n"
+               "\tmsgbox Palm090_TextEast, MSGBOX_DEFAULT\n\tapplymovement OBJ_EVENT_ID_PLAYER, Palm090_StepBackEast\n"
+               "\twaitmovement 0\n\treleaseall\n\tend\n\nPalm090_ToRoute03Ok::\n\tend\n\n"
+               "Palm090_StepBackEast:\n\twalk_right\n\tstep_end\n\n", s)
     for (_, _, _, _, label) in NPCS:
         if f"{label}::" not in s:
             s += f"\n{label}::\n\tmsgbox {label}_Text, MSGBOX_NPC\n\tend\n"

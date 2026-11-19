@@ -117,3 +117,17 @@ warps, não as batalhas nem os eventos.
 | Route 2 | a enseada que sumia na borda oeste virou poça de maré rasa cercada de areia (bordas completas) |
 | Ferramenta | `install_route2.py` idempotente (a emenda de terra da Harvestvale não muda ao reinstalar); peças compostas de poste sobre areia |
 | QA | caminhada no emulador até o cume, patamar, pontal e laguna; regressão 48/48 |
+
+## 10. Capítulo 3 — Route 3 — 19/11/2026 (tarde)
+
+| Item | Estado |
+|---|---|
+| Route 3 | refeita pelo `mapgen` (56×80, General + Lilycove), seguindo a progressão do cânone: calçadão da Breezeport → praia natural (casa de praia, pedras, ponta de areia escondida) → restinga → encosta (patamar 5) → serra/mata atlântica (7) → planalto (9) → saída norte. Duas trilhas (escadas principais e trilha da mata) que se reencontram na serra |
+| Conexão | Breezeport ⇄ Route 3 contínua (offset 20); trava antes da Jay em toda a borda oeste da Breezeport (calçadão, areia e água rasa), recuando um passo — **testada** |
+| Emendas | patamares só visuais: piso andável achatado para elevação 3 (rocha bloqueia, escadas em 0), deixando as emendas no mesmo nível; borda reta em volta das escadas (degrau diagonal virava quina de rocha e trancava a subida — corrigido) |
+| Bordas | Breezeport 72×60 e Route 3 76→80 linhas: 4+ linhas de mar fundo depois da última água rasa (antes dava para ver além da borda a partir da água rasa); moldura sem frestas (mata fechada onde a 2×2 não cabe) |
+| Treinadores | Rui (Fisherman), Tomás (Bug Catcher), Bento (Hiker), Iara (Picnicker), Davi (Camper), Lv 19–22, em slots de Hoenn sem acesso em Lunia (`TRAINER_PALM_ROUTE03_*`) — **todos testados com visão ligada** |
+| Itens | Big Pearl (ponta de areia), Great Ball (clareira), Revive (planalto) — **testados** |
+| Encontros | Wingull, Pikipek, Aipom, Combee, Venipede, Hoppip, Mareep, Lillipup, Sandygast, Skiddo, Nincada, Pansage (Lv 17–21) |
+| Ferralia | ainda é o mapa provisório do Alpha 02; ligação temporária por warp nos dois sentidos (conexão desalinhada removida). Próximo passo: metrópole |
+| QA | `fluxo_rota3.py`; `goto` do driver alterna golpes em batalhas encontradas no caminho; regressão completa **63/63** |

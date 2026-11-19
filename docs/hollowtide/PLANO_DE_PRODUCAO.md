@@ -43,7 +43,7 @@ Status ao lado de cada item: `[ ]` a fazer · `[~]` em andamento · `[x]` conclu
 |---|---|---|
 | 1 `[~]` | Dawnmere → Route 1 → Harvestvale; Prof. Alex, mãe + Medalhão de Atlas; recruta da Team Palm e irrigação; ginásio de Nevard (comportas) | colisão corrigida; texto 100% EN; Medalhão; tela de 3 Poké Balls; comportas persistentes; Team Palm verde-oliva; eventos 10/10 no emulador; **falta**: teste de balanceamento com itens/2º Pokémon, revisão de arte dos interiores e do lab |
 | 2 `[~]` | Route 2 (campo → litoral) → Breezeport (cidade costeira ampla, farol, morro tipo Corcovado, orla); ginásio de Jay (Teatro dos Ecos) | **Breezeport 72×56 no jogo** (morro em patamares, centro, Teatro, bairros, orla, praia, saída oeste); texto EN; Jay com placeholder oficial (Phoebe); eventos 12/12 no emulador; 10 moradores com falas de ambiente; costa orgânica; **Route 2 refeita** (campo → enseada, mirante, 3 treinadores com visão) com **conexões contínuas** Harvestvale ⇄ Route 2 ⇄ Breezeport; **morro refeito** (mata 2×2, patamar e cume de contorno orgânico); **orla enriquecida** (água rasa com laguna e banco de areia, pedras, rochedo do antigo farol, farol provisório no pontal); **falta**: balanceamento da Jay, farol reconstruído (pós-história, se houver arte) |
-| 3 | Route 3 (praia → costa → serra → planalto, saída oeste/noroeste de Breezeport) → Ferralia (metrópole, ferrovia, viadutos, indústria); Vessel; "Carga Desviada" | refazer |
+| 3 `[~]` | Route 3 (praia → costa → serra → planalto, saída oeste/noroeste de Breezeport) → Ferralia (metrópole, ferrovia, viadutos, indústria); Vessel; "Carga Desviada" | **Route 3 refeita** (56×80: praia urbanizada → costa natural com casa de praia e ponta de areia escondida → restinga → encosta → serra com duas trilhas que se juntam → planalto; 5 treinadores com visão, 3 itens, encontros do Cap. 3) com **conexão contínua** com a Breezeport; texto EN; QA 15/15; **falta**: Ferralia metrópole (ligação provisória por warp com o mapa do Alpha), Vessel, "Carga Desviada" |
 | 4 | Route 4 → Tradepost ("Preço da Troca", Mestre Wen, PALM Coin) | novo |
 | 5 | Route 5 → Pillarton (barragens, Lela); Tchum | novo |
 | 6 | Route 6 → Serenia (jardins, espelhos, Lau); Jade | novo |
@@ -64,7 +64,7 @@ contam a história da água antes de qualquer cena longa.
 
 ## Ferramentas de QA disponíveis
 
-- `tools/hollowtide_qa/qa_completo.sh RUNNER WORKDIR`: intro → lab → Rota 1 → Harvestvale → transições → eventos do Cap. 1 → Cap. 2 → Route 2 (treinadores com visão).
+- `tools/hollowtide_qa/qa_completo.sh RUNNER WORKDIR`: intro → lab → Rota 1 → Harvestvale → transições → eventos do Cap. 1 → Cap. 2 → Route 2 → Route 3 (treinadores com visão e itens).
 - `fluxo_cap1_balanco.py` (com `HT_STARTER`): partida realista no nível de chegada, por inicial.
 - Ganchos de QA só em build não-release: `FLAG_HT_QA_BOOST_PARTY` (+ `VAR_HT_QA_LEVEL`), `FLAG_HT_QA_NO_ENCOUNTERS`,
   `FLAG_HT_QA_NO_TRAINER_SEE`. **Distribuição sempre com `make RELEASE=1`.**
@@ -78,6 +78,7 @@ contam a história da água antes de qualquer cena longa.
 - `[ ]` margem inferior de lagos (família 'pond'); **contorno**: água fechada usa 'shallow' (bordas completas nos 4 lados); bancos de areia só com 1 tile de água rasa em volta.
 - `[ ]` metatiles compostos (farol) nos slots livres do secundário.
 - `[x]` Breezeport instalada por `tools/hollowtide/maps/install_breezeport.py` (reproduzível).
+- `[x]` Route 3 instalada por `tools/hollowtide/maps/install_route3.py` (rodar depois da Breezeport); patamares visuais achatados para elevação 3 nas emendas; borda reta em volta das escadas.
 - `[x]` Route 2 instalada por `tools/hollowtide/maps/install_route2.py` (rodar depois da Breezeport), com conexões e emenda da Harvestvale.
 
 ## Próximo passo técnico (histórico)

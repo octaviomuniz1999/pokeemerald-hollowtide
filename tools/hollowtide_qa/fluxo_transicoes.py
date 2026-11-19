@@ -60,26 +60,30 @@ def main(rom, runner, work, estado):
     q.goto("MAP_PALM_BRISA", 47, 28); q.run(["press UP 30 0", "wait 90"])
     check(q, "MAP_PALM_BRISA", "Breezeport: Teatro trancado antes dos postes")
 
-    # Trava 2: saida oeste (praia -> Rota 3) fechada antes da Jay.
+    # Trava 2: saida oeste (praia -> Rota 3, conexao continua) fechada antes da Jay: recua um passo.
     q.goto("MAP_PALM_BRISA", 1, 40)
-    q.run(["press LEFT 18 0", "wait 60", "mash A 6", "mash B 4"])
+    q.run(["press LEFT 18 0", "wait 60", "mash A 24", "mash B 6", "wait 60"])
     check(q, "MAP_PALM_BRISA", "Breezeport: saida para Rota 03 bloqueada antes da Jay")
+    ok = tuple(q.where[2:]) == (1, 40)
+    resultados.append(("Breezeport: jogador recua um passo na trava", "OK" if ok else "FALHA", q.mapname(), q.where[2:]))
+    print("OK   " if ok else "FALHA", "Breezeport: jogador recua um passo na trava", q.where[2:], flush=True)
+    if not ok:
+        raise SystemExit(1)
 
     q.run([f"setflag {FLAGS_OFF} {FLAG_PALM_JAY_WON}"])
-    cruzar(q, "MAP_PALM_BRISA", 1, 40, "LEFT", "MAP_PALM_ROUTE03", "Breezeport -> Rota 03", "qa_rota03.png")
-
-    r3 = MAPS["MAP_PALM_ROUTE03"]
-    # Emenda: na Rota 03 o corredor ocupa as linhas 9-13, mas na Ferralia so 9-11 sao passaveis.
-    q.goto("MAP_PALM_ROUTE03", r3["w"] - 1, 13)
-    q.run(["press RIGHT 18 0", "wait 60"])
-    check(q, "MAP_PALM_ROUTE03", "Rota 03 linha 13: emenda bloqueada (defeito conhecido)")
-    cruzar(q, "MAP_PALM_ROUTE03", r3["w"] - 1, 10, "RIGHT", "MAP_PALM_FERRALIA",
-           "Rota 03 -> Ferralia (conexao, linha 10)", "qa_ferralia.png")
+    cruzar(q, "MAP_PALM_BRISA", 0, 40, "LEFT", "MAP_PALM_ROUTE03", "Breezeport -> Rota 03 (conexao)", "qa_rota03.png")
+    ok = q.where[3] == 60 and q.where[2] in (54, 55)   # mesma linha da praia (pode dar 1 passo a mais)
+    resultados.append(("Rota 03: chegada alinhada a praia (55,60)", "OK" if ok else "FALHA", q.mapname(), q.where[2:]))
+    print("OK   " if ok else "FALHA", "Rota 03: chegada alinhada a praia", q.where[2:], flush=True)
+    if not ok:
+        raise SystemExit(1)
+    # subida da serra ate o planalto e a saida norte (Ferralia provisoria, por warp)
+    cruzar(q, "MAP_PALM_ROUTE03", 25, 1, "UP", "MAP_PALM_FERRALIA", "Rota 03 (serra) -> Ferralia", "qa_ferralia.png")
     shutil.copy(q.state, f"{work}/qa_ferralia.ss")
 
     # Volta
-    cruzar(q, "MAP_PALM_FERRALIA", 0, 10, "LEFT", "MAP_PALM_ROUTE03", "Ferralia -> Rota 03 (conexao)")
-    cruzar(q, "MAP_PALM_ROUTE03", 2, 10, "LEFT", "MAP_PALM_BRISA", "Rota 03 -> Breezeport")
+    cruzar(q, "MAP_PALM_FERRALIA", 1, 10, "LEFT", "MAP_PALM_ROUTE03", "Ferralia -> Rota 03")
+    cruzar(q, "MAP_PALM_ROUTE03", 55, 60, "RIGHT", "MAP_PALM_BRISA", "Rota 03 -> Breezeport (conexao)")
     cruzar(q, "MAP_PALM_BRISA", 19, 0, "UP", "MAP_PALM_ROUTE02", "Breezeport -> Rota 02 (conexao)")
     cruzar(q, "MAP_PALM_ROUTE02", 18, 0, "UP", "MAP_OLDALE_TOWN", "Rota 02 -> Colheita (conexao)")
     cruzar(q, "MAP_OLDALE_TOWN", 9, 1, "UP", "MAP_ROUTE101", "Colheita -> Rota 01")

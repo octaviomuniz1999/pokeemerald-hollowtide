@@ -10,7 +10,7 @@ import math, os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "mapgen"))
 from canvas import Canvas
 
-W, H = 72, 56
+W, H = 72, 60  # 4 linhas extras de mar: quem anda na agua rasa nao enxerga alem da borda
 ENTRADA_ROUTE2 = (18, 21)   # colunas da rua que chega do norte
 SAIDA_ROUTE3 = (37, 45)     # linhas da faixa de praia na borda oeste
 

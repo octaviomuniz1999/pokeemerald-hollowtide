@@ -147,6 +147,28 @@ class Canvas:
                         bad.append((x, y, self.terrain[ny][nx]))
         return bad
 
+    def cliff_cells(self):
+        """Celulas que viram rocha no build (borda do patamar + parede sul de 2 fileiras). Use antes de plantar
+        mata 2x2 perto de desniveis, para nao cortar arvores ao meio."""
+        lv = self.level
+        def lower(x, y, ref):
+            return 0 <= x < self.w and 0 <= y < self.h and lv[y][x] < ref
+        edge = {(x, y) for y in range(self.h) for x in range(self.w) if lv[y][x] > 3
+                and any(lower(x + dx, y + dy, lv[y][x]) for dx in (-1, 0, 1) for dy in (-1, 0, 1))}
+        return edge | {(x, y + 1) for (x, y) in edge if lower(x, y + 1, lv[y][x])}
+
+    def forest(self, inside, avoid=(), margin=1):
+        """Mata de arvores 2x2 na grade par onde inside(x, y) e verdadeiro, sem encostar (margem) em celulas de
+        avoid nem em rocha de desnivel."""
+        bad = set(avoid) | self.cliff_cells()
+        for by in range(0, self.h - 1, 2):
+            for bx in range(0, self.w - 1, 2):
+                if not inside(bx + 0.5, by + 0.5):
+                    continue
+                if any((bx + dx, by + dy) in bad for dx in range(-margin, 2 + margin) for dy in range(-margin, 2 + margin)):
+                    continue
+                self.rect(bx, by, bx + 1, by + 1, "tree")
+
     def small_tree(self, x, y):
         """Arvore de rua: arvore 2x2 padrao (468 469 / 476 477), solida."""
         for dy, row in enumerate(((468, 469), (476, 477))):

@@ -49,16 +49,20 @@ Palm090_EastSign::
 	end
 
 Palm090_ToRoute03::
-	goto_if_set FLAG_PALM_JAY_WON, Palm090_WarpRoute03
+	goto_if_set FLAG_PALM_JAY_WON, Palm090_ToRoute03Ok
 	lockall
 	msgbox Palm090_TextEast, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Palm090_StepBackEast
+	waitmovement 0
 	releaseall
 	end
 
-Palm090_WarpRoute03::
-	warp MAP_PALM_ROUTE03, 3, 13
-	waitstate
+Palm090_ToRoute03Ok::
 	end
+
+Palm090_StepBackEast:
+	walk_right
+	step_end
 
 Palm090_TextArtistDone:
 	.string "The stage has its lights back!\n"

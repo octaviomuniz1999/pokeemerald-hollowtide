@@ -25,3 +25,8 @@ Palm091_TextWorker:
 	.string "o trilho cantar.\p"
 	.string "De uns dias pra ca, a Palm so\n"
 	.string "descarrega depois do anoitecer.$"
+
+Palm100_FerraliaToRoute03::
+	warp MAP_PALM_ROUTE03, 25, 2
+	waitstate
+	end

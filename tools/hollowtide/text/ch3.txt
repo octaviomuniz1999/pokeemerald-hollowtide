@@ -1,0 +1,66 @@
+## file: data/maps/PalmRoute03/scripts.inc
+==+ Palm100_TextSignBeach
+ROUTE 3
+East: BREEZEPORT CITY
+
+North: up the SERRA trail to
+the plateau and FERRALIA CITY.
+
+==+ Palm100_TextSignPlateau
+ROUTE 3 - PLATEAU
+North: FERRALIA CITY
+
+==+ Palm100_TextRUIIntro
+Shh! You'll scare the fish!
+...Fine, a battle it is!
+
+==+ Palm100_TextRUILoss
+Hooked, reeled in and released!
+
+==+ Palm100_TextRUIAfter
+The fish moved out past the rock
+since the water got warmer.
+
+==+ Palm100_TextTOMASIntro
+The forest on this slope is full
+of bugs! Want to see my best?
+
+==+ Palm100_TextTOMASLoss
+Bzzt... squashed.
+
+==+ Palm100_TextTOMASAfter
+COMBEE build their hives near the
+waterfalls up the SERRA.
+
+==+ Palm100_TextBENTOIntro
+This old trail is steep, but it
+keeps legs and POKéMON strong!
+
+==+ Palm100_TextBENTOLoss
+I need to catch my breath...
+
+==+ Palm100_TextBENTOAfter
+Few people take this path since
+the main stairs were built.
+
+==+ Palm100_TextIARAIntro
+I came up for a picnic, but a
+battle sounds even better!
+
+==+ Palm100_TextIARALoss
+My sandwiches are safe, at least.
+
+==+ Palm100_TextIARAAfter
+From the plateau you can see the
+smoke over FERRALIA's factories.
+
+==+ Palm100_TextDAVIIntro
+Made it to the plateau? Then
+you're ready for a real battle!
+
+==+ Palm100_TextDAVILoss
+Okay, you're the real deal.
+
+==+ Palm100_TextDAVIAfter
+FERRALIA never sleeps. Trains run
+day and night with heavy cargo.
