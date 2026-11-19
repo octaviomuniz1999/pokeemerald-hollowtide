@@ -65,9 +65,23 @@ def ok(cond, label):
 GONE = {(20, 16), (21, 16), (20, 13), (21, 13), (20, 10), (21, 10), (21, 8), (24, 19), (25, 19)}   # Serenia: ja removidos
 
 
+MOVED = {(28, 14), (30, 14), (29, 14)}   # Colin para ao lado do jogador depois de avistar (perto de (28, 14))
+
+
 def talk(q, mapa, x, y, face, extra=("mash B 20",)):
-    q.goto(mapa, x, y, ignore=GONE)
+    q.goto(mapa, x, y, ignore=GONE, avoid=MOVED if mapa == R7 else ())
     q.run([f"press {face} 10 10", "press A 4 40"] + list(extra))
+
+
+def interact_until(q, mapa, x, y, face, flag, presses=16):
+    """Fala/examina e vai apertando A ate a flag ligar (textos longos e SIM/NAO com SIM marcado)."""
+    q.goto(mapa, x, y, ignore=GONE, avoid=MOVED if mapa == R7 else ())
+    q.run([f"press {face} 10 10"])
+    for _ in range(presses):
+        q.run(["press A 4 45"])
+        if q.flag(flag):
+            break
+    q.run(["press A 4 45", "press A 4 45", "mash B 10"])
 
 
 def sighted(q, mapa, ax, ay, walk, nome, tid):
@@ -119,12 +133,12 @@ def main(rom, runner, work, pre):
     sighted(q, LS, 21, 6, "walk RIGHT 1", "Recruta 2", 3)
     sighted(q, LS, 18, 12, "walk LEFT 1", "Recruta 3", 4)
     for (x, y, fl, n) in [(21, 6, 0x43, 1), (27, 6, 0x44, 2), (17, 9, 0x45, 3)]:
-        talk(q, LS, x, y, "UP", ("mash A 10", "mash B 10"))
+        interact_until(q, LS, x, y, "UP", fl)
         ok(q.flag(fl), f"Amplificador {n} desligado")
     for (x, y, face, fl, nome) in [(15, 13, "RIGHT", 0x46, "Marill"), (19, 11, "DOWN", 0x47, "Psyduck"), (21, 13, "LEFT", 0x48, "Lotad")]:
-        talk(q, LS, x, y, face, ("mash A 8", "mash B 10"))
+        interact_until(q, LS, x, y, face, fl)
         ok(q.flag(fl), f"{nome} solto da rede")
-    talk(q, LS, 20, 9, "UP", ("mash A 30", "mash B 20", "shot cap7_registro.png"))
+    interact_until(q, LS, 20, 9, "UP", 0x49, presses=24); q.run(["mash A 20", "shot cap7_registro.png", "mash B 20"])
     ok(q.flag(0x49), "Terminal: registro FONTE EXTERNA / NORTE / SINAL IRREGULAR")
     q.goto(LS, 18, 2, ignore={(16, 13), (19, 12), (20, 13)}); q.run(["press UP 30 0", "wait 120"])
     ok(q.mapname() == HZ and tuple(q.where[2:]) in ((5, 15), (5, 16)), "Estacao -> Horizon (porta certa)")
@@ -155,7 +169,7 @@ def main(rom, runner, work, pre):
         q.run(["mash A 8", "mash B 6"])
         if q.flag(0x860 + 12):
             break
-    q.run(["mash B 20", "shot cap7_insignia.png"])
+    q.run(["mash B 90", "wait 30", "mash B 30", "shot cap7_insignia.png"])
     ok(q.flag(0x860 + 12), "Insignia do Horizonte recebida")
     q.run(["walk DOWN 1", "walk DOWN 1", "walk DOWN 1", "walk DOWN 1", "wait 200"])
     ok(q.mapname() == GB, "Gelo aceso quebra: caiu no andar de baixo")
