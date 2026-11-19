@@ -137,8 +137,9 @@ Palm111_TextWenReward:
 Palm111_TextWenDone:
 	.string "The market is open again, thanks\n"
 	.string "to you.\p"
-	.string "The road north to PILLARTON is\n"
-	.string "still flooded, I'm afraid.$"
+	.string "The road north to PILLARTON is open\n"
+	.string "too. Mind the river: the dams up\l"
+	.string "there have been acting strange.$"
 
 Palm111_TextOperatorIdle:
 	.string "Passenger service is suspended.\n"
@@ -180,10 +181,10 @@ Palm111_DockSailor_Text:
 	.string "sea. Boats used to come every day.$"
 
 Palm111_NorthWorker_Text:
-	.string "Sorry, the road north is closed.\n"
-	.string "The river flooded the lowlands.\p"
-	.string "They say PILLARTON's dams are\n"
-	.string "acting strange...$"
+	.string "Sorry, the road north is closed\n"
+	.string "while TEAM PALM holds the cargo.\p"
+	.string "The ASSOCIATION needs the carts for\n"
+	.string "the flood repairs. Talk to WEN.$"
 
 Palm111_TownSign_Text:
 	.string "TRADEPOST\n"
@@ -199,8 +200,30 @@ Palm111_StationSign_Text:
 
 Palm111_NorthSign_Text:
 	.string "NORTH: ROUTE 5 - PILLARTON\n"
-	.string "Closed due to flooding.$"
+	.string "Mind the river delta.$"
 
 Palm111_KioskSign_Text:
 	.string "TEAM PALM LOGISTICS\n"
 	.string "“One coin. One network. One future.”$"
+
+Palm121_NorthGate::
+	goto_if_set FLAG_HT_TRADEPOST_DONE, Palm121_NorthGateOk
+	lockall
+	msgbox Palm121_TextNorthGate, MSGBOX_DEFAULT
+	applymovement OBJ_EVENT_ID_PLAYER, Palm121_StepBackSouth
+	waitmovement 0
+	releaseall
+	end
+
+Palm121_NorthGateOk::
+	end
+
+Palm121_StepBackSouth:
+	walk_down
+	step_end
+
+
+Palm121_TextNorthGate:
+	.string "The road north is blocked by carts\n"
+	.string "waiting for TEAM PALM's “fees.”\p"
+	.string "Maybe MASTER WEN can sort it out.$"

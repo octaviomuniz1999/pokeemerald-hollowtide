@@ -88,8 +88,9 @@ Please, take this as thanks.
 The market is open again, thanks
 to you.
 
-The road north to PILLARTON is
-still flooded, I'm afraid.
+The road north to PILLARTON is open
+too. Mind the river: the dams up
+there have been acting strange.
 
 ==+ Palm111_TextOperatorIdle
 Passenger service is suspended.
@@ -134,11 +135,11 @@ The canal runs all the way to the
 sea. Boats used to come every day.
 
 ==+ Palm111_NorthWorker_Text
-Sorry, the road north is closed.
-The river flooded the lowlands.
+Sorry, the road north is closed
+while TEAM PALM holds the cargo.
 
-They say PILLARTON's dams are
-acting strange...
+The ASSOCIATION needs the carts for
+the flood repairs. Talk to WEN.
 
 ==+ Palm111_TownSign_Text
 TRADEPOST
@@ -154,7 +155,7 @@ Passenger service suspended.
 
 ==+ Palm111_NorthSign_Text
 NORTH: ROUTE 5 - PILLARTON
-Closed due to flooding.
+Mind the river delta.
 
 ==+ Palm111_KioskSign_Text
 TEAM PALM LOGISTICS

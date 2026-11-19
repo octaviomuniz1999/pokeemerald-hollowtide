@@ -13,7 +13,7 @@ from canvas import Canvas, extract
 W, H = 40, 32
 ROAD = (16, 17)
 RAILS = (2, 8)
-CANAL = (29, 32)
+CANAL = (28, 31)        # grade par: as arvores 2x2 da moldura ficam inteiras; segue como o rio da Route 5
 BRIDGE = (836, 844, 845)
 NORTH_EXIT = (26, 27)
 BUILDINGS = [
@@ -25,7 +25,7 @@ BUILDINGS = [
     ("rb_house_grey", 24, 24, "house_s"),
     ("rb_office_small", 33, 3, "palm_kiosk"),
 ]
-LAMPS = [(11, 15), (24, 15), (28, 18), (20, 22), (28, 22), (9, 21)]
+LAMPS = [(11, 15), (24, 15), (18, 18), (18, 22), (9, 21)]
 
 
 def compose():
@@ -34,16 +34,16 @@ def compose():
     ids = json.load(open(os.path.join(os.path.dirname(__file__), "..", "mapgen", "custom_ids.json")))["rustboro"]
     # moldura
     c.rect(0, 0, W - 1, 1, "tree"); c.rect(0, H - 2, W - 1, H - 1, "tree"); c.rect(W - 2, 0, W - 1, H - 1, "tree")
-    c.rect(NORTH_EXIT[0], 0, NORTH_EXIT[1], 1, "tree")          # saida norte (Route 5) fechada por ora
+
     # corredor ferroviario (inacessivel): grama entre as linhas, cerca viva e mata fechada embaixo
     c.rect(0, 3, 9, 7, "grass"); c.rect(0, 9, 9, 9, "dense"); c.rect(0, 10, 9, 11, "tree")
     c.rect(0, 12, 1, 15, "tree"); c.rect(0, 18, 1, 29, "tree")
     # entrada oeste: estrada vira avenida
     c.rect(0, ROAD[0], 1, ROAD[1], "sand")
     c.rect(2, ROAD[0], 29, ROAD[1], "road")
-    c.rect(NORTH_EXIT[0], 2, NORTH_EXIT[1], 15, "road")
+    c.rect(NORTH_EXIT[0], 0, NORTH_EXIT[1], 15, "road")          # saida norte: Route 5 (trava ate o evento)
     # canal e cais leste
-    c.rect(CANAL[0], 2, CANAL[1], H - 1, "pond")
+    c.rect(CANAL[0], 0, CANAL[1], H - 1, "pond")                # o canal vem do rio da Route 5
     c.rect(CANAL[1] + 1, 2, W - 3, H - 3, "plaza")
     # praca do mercado: jardins em volta da fonte e canteiros das bancas
     c.rect(19, 18, 27, 23, "grass"); c.rect(20, 18, 26, 18, "flower"); c.rect(20, 23, 26, 23, "flower")

@@ -62,7 +62,9 @@ def main(rom, runner, work, pre, pos):
         ok(q.flag(flag), f"Route 4: {nome} coletado")
     q.goto(R4, 51, 16); q.run(["press RIGHT 30 0", "wait 90", "shot cap4_tradepost.png"])
     ok(q.mapname() == T, "Route 4 -> Tradepost (conexao)")
-    # O Preco da Troca
+    # O Preco da Troca (antes: a saida norte para a Route 5 esta trancada)
+    q.goto(T, 26, 2); q.run(["press UP 18 0", "wait 60", "mash A 24", "mash B 6", "wait 60"])
+    ok(q.mapname() == T and tuple(q.where[2:]) == (26, 2), "Tradepost: saida norte fechada antes do evento (recua)")
     talk(q, T, 21, 26, "UP"); q.run(["mash B 50", "wait 30", "mash B 10"])
     ok(q.flag(WEN_ASKED) and not q.flag(PERMIT), "Mestre Wen pediu a autorizacao de carga")
     talk(q, T, 14, 10, "UP"); q.run(["mash B 30", "wait 60", "mash B 20"])
@@ -74,6 +76,8 @@ def main(rom, runner, work, pre, pos):
             break
     q.run(["mash B 30", "shot cap4_troca.png"])
     ok(q.flag(DONE), "O Preco da Troca resolvido: feira reaberta")
+    import shutil
+    shutil.copy(q.state, f"{work}/cap4_pos_troca.ss")
     talk(q, T, 36, 24, "RIGHT"); q.run(["mash B 12"])
     ok(q.flag(0x453), "Tradepost: Great Ball do cais coletada (ponte do canal)")
     q.goto(T, 13, 15); q.run(["press UP 30 0", "wait 120"])

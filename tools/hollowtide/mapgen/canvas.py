@@ -246,7 +246,9 @@ class Canvas:
                 ts = self.primary if m < 512 else self.secondary
                 c = FC.dominant(col_ref[(ts, m)])
                 e = FC.dominant(elev_ref[(ts, m)])
-                if grid[y][x] == "high":
+                if grid[y][x] in ("pond", "sea"):
+                    e = 1                      # agua funda: elevacao 1 como nos mapas oficiais (surf, colisao por altura)
+                elif grid[y][x] == "high":
                     c, e = 0, lv[y][x]
                 elif lv[y][x] > 3 and grid[y][x] != "cliff" and (e is None or e == 3):
                     e = lv[y][x]  # terreno sobre o patamar herda a elevacao

@@ -18,6 +18,11 @@
       "map": "MAP_PALM_ROUTE04",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_PALM_ROUTE05",
+      "offset": 6,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -110,7 +115,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Palm111_NorthWorker",
-      "flag": "0"
+      "flag": "FLAG_HT_TRADEPOST_DONE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -156,7 +161,26 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 26,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Palm121_NorthGate"
+    },
+    {
+      "type": "trigger",
+      "x": 27,
+      "y": 1,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Palm121_NorthGate"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

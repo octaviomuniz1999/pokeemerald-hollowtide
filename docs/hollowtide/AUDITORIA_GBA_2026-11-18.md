@@ -167,3 +167,13 @@ warps, não as batalhas nem os eventos.
 | Textos | 100% EN; interiores de Verdanturf sem Hoenn |
 | QA | `fluxo_cap4.py` 20/20 (trava antes/depois, 3 treinadores com visão, 4 itens, evento completo, Centro Pokémon, conexões ida e volta); regressão completa sem falhas (100 verificações) |
 | Pendente | bancas de feira desenhadas (hoje: canteiros e moradores), interior da Associação, Route 5 |
+
+## 14. Capítulo 5 — Route 5 — 19/11/2026 (fim da tarde)
+
+| Item | Estado |
+|---|---|
+| Route 5 | mapa novo (42×52, General + Rustboro): o canal do Tradepost continua como rio (offset 6, grade par alinhada), braço oeste em volta da ilha do meio (mato alto, item) com dois tabuados, tabuado horizontal para a margem leste, leito antigo **seco** (a barragem de Pillarton segura a água) com pedras e poças na várzea; Tiago (Barboach/Wooper), Odair (Sandshrew/Phanpy), Lia (Marill/Lotad), Dudu opcional (Cubone/Larvitar), Lv 25–26; 3 itens (Super Potion, Soft Sand, Ether); encontros Lv 24–27 |
+| Tradepost | saída norte aberta após "O Preço da Troca" (trava recua um passo antes); operário da enchente sai; textos do Wen e da placa atualizados |
+| Norte | Pillarton ainda não existe: a trilha termina na mata com placa de obras na barragem |
+| Gerador | **margem sul de lagos** aprendida (metatile 2/45/211/212 como grama com margem) — os mapas existentes não mudaram; **água funda (pond/sea) com elevação 1** como nos oficiais (surf e colisão por altura) |
+| QA | `fluxo_cap5.py` 14/14; **`qa_completo.sh` corrigido**: antes, um fluxo que falhava antes do resumo podia sumir do log (o filtro só mostrava a partir de "RESUMO"); agora mostra toda linha OK/FALHA/erro e para na primeira falha (`pipefail`). Regressão completa sem falhas (~118 verificações) |

@@ -1,0 +1,61 @@
+## file: data/maps/PalmTradepost/scripts.inc
+==+ Palm121_TextNorthGate
+The road north is blocked by carts
+waiting for TEAM PALM's “fees.”
+
+Maybe MASTER WEN can sort it out.
+
+## file: data/maps/PalmRoute05/scripts.inc
+==+ Palm120_SignSouth_Text
+ROUTE 5 - RIVER DELTA
+South: TRADEPOST
+
+==+ Palm120_SignNorth_Text
+NORTH: PILLARTON CITY
+
+The dam road is closed for repairs.
+Sorry for the inconvenience!
+
+==+ Palm120_TextTIAGOIntro
+The river's lower than I've ever
+seen it. The fish are restless!
+
+==+ Palm120_TextTIAGOLoss
+Snapped my line...
+
+==+ Palm120_TextTIAGOAfter
+Someone upstream is holding back
+the water. It isn't the rain.
+
+==+ Palm120_TextODAIRIntro
+This island used to be a sandbar.
+Now it's my training ground!
+
+==+ Palm120_TextODAIRLoss
+Washed away!
+
+==+ Palm120_TextODAIRAfter
+GROUND-types love the dry riverbed
+on the east bank.
+
+==+ Palm120_TextLIAIntro
+I came to see the delta bloom, but
+a battle will do!
+
+==+ Palm120_TextLIALoss
+Wilted...
+
+==+ Palm120_TextLIAAfter
+PILLARTON's dams are huge. You can
+see them from the hills up north.
+
+==+ Palm120_TextDUDUIntro
+Old bones and old riverbeds! This
+dry channel is full of history!
+
+==+ Palm120_TextDUDULoss
+My finds, my pride... crushed.
+
+==+ Palm120_TextDUDUAfter
+When the river ran here, the delta
+had three arms. Now it has two.

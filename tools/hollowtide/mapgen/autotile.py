@@ -20,7 +20,7 @@ SECONDARY_CLASSES = {
 }
 
 GENERAL_CLASSES = {
-    "grass": {1},
+    "grass": {1, 2, 45, 211, 212},   # 2/45/211/212: grama com a margem sul de lagos (desenhada no tile de terra)
     "tall": {13},
     "tree": {468, 469, 476, 477, 484, 485, 486, 487, 492, 493, 500, 501, 508, 509},
     "dense": {198, 199, 206},
