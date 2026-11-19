@@ -23,7 +23,7 @@ OD = collections.OrderedDict
 R7_TRAINERS = [(15, 22, "FISHERMAN", "RIGHT", 1, "Palm160_RouteHENRY", "TRAINER_PALM_ROUTE07_HENRY"),
                (19, 30, "BEAUTY", "LEFT", 2, "Palm160_RouteCONNIE", "TRAINER_PALM_ROUTE07_CONNIE"),
                (26, 45, "PICNICKER", "LEFT", 5, "Palm160_RouteCELIA", "TRAINER_PALM_ROUTE07_CELIA"),
-               (30, 15, "MAN_5", "LEFT", 3, "Palm160_RouteCOLIN", "TRAINER_PALM_ROUTE07_COLIN")]
+               (31, 14, "MAN_5", "LEFT", 4, "Palm160_RouteCOLIN", "TRAINER_PALM_ROUTE07_COLIN")]
 R7_ITEMS = [(29, 11, "ITEM_MOON_STONE", "FLAG_ITEM_ROUTE_119_ZINC"),            # no meio do Circulo da Lua
             (4, 47, "ITEM_MYSTIC_WATER", "FLAG_ITEM_ROUTE_119_ELIXIR_1"),       # margem sul do lago
             (32, 30, "ITEM_PIXIE_PLATE", "FLAG_ITEM_ROUTE_119_LEAF_STONE")]     # mato alto leste

@@ -89,7 +89,7 @@ def sighted(q, mapa, ax, ay, walk, nome, tid):
 
 def main(rom, runner, work, pre):
     q = QA(rom, runner, work)
-    q.load(pre); q.run(["mash B 10", "setflag 1270 31", "clearflag 1270 30", f"clearflag 1270 {BADGE5:X}"]); q.no_wild()
+    q.load(pre); q.no_wild(); q.run(["mash B 10", "setflag 1270 31", "clearflag 1270 30", f"clearflag 1270 {BADGE5:X}"])
     q.goto(S, 38, 2, ignore=GONE); q.run(["press UP 18 0", "wait 60", "mash A 24", "mash B 6", "wait 60"])
     ok(q.mapname() == S and tuple(q.where[2:]) == (38, 2), "Serenia: saida norte fechada antes da insignia (recua)")
     q.run([f"setflag 1270 {BADGE5:X}"]); q.strong()
@@ -98,7 +98,7 @@ def main(rom, runner, work, pre):
     sighted(q, R7, 21, 47, "walk UP 2", "CELIA", 743)
     sighted(q, R7, 17, 32, "walk UP 2", "CONNIE", 128)
     sighted(q, R7, 16, 24, "walk UP 2", "HENRY", 668)
-    sighted(q, R7, 27, 18, "walk UP 3", "COLIN", 405)
+    sighted(q, R7, 27, 18, "walk UP 4", "COLIN", 405)
     for (x, y, face, flag, nome) in [(29, 12, "UP", 0x401, "Moon Stone do Circulo da Lua"), (5, 47, "LEFT", 0x402, "Mystic Water"),
                                      (32, 31, "UP", 0x403, "Pixie Plate")]:
         talk(q, R7, x, y, face, ("mash B 12",))
