@@ -33,6 +33,9 @@ GENERAL_CLASSES = {
     "ledge_w": {133, 149, 165, 254, 262, 270, 278, 286, 294},
     "ledge_e": {134, 150, 166, 255, 263, 271, 279, 287, 295},
     "flower": {4},
+    # faces de rocha entre grama baixa (elev. 3) e plato (elev. 5), descobertas no corpus
+    "cliff": {104, 106, 110, 111, 112, 114, 115, 116, 117, 120, 121, 122, 123, 124, 125, 136, 137, 145},
+    "high": set(),  # grama de plato: metatile 1 com elevacao 5 (rotulada pelo valor completo)
 }
 
 
@@ -51,6 +54,8 @@ class Autotiler:
             self._learn(L)
 
     def _cls(self, m, sec=None):
+        if (m & 0x3FF) == 1 and (m >> 12) == 5:
+            return "high"
         m &= 0x3FF
         if m >= 512 and (self.secondary is None or sec != self.secondary):
             return "other"
@@ -88,7 +93,8 @@ class Autotiler:
         for lvl, (t, k) in enumerate(zip(self.tables, self._keys(get, x, y))):
             if k in t:
                 return t[k].most_common(1)[0][0], lvl
-        return min(self.classes[grid[y][x]]), 9
+        c = grid[y][x]
+        return (1 if c == "high" else min(self.classes[c])), 9
 
 
 if __name__ == "__main__":

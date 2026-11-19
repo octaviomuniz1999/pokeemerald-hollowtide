@@ -63,7 +63,8 @@ contam a história da água antes de qualquer cena longa.
 - `[x]` `tools/hollowtide/mapgen`: corpus dos mapas oficiais, autotile aprendido (grama, mato, árvores, mata, areia,
   poça, lago, mar, água rasa, ladeiras S/L/O, flores; calçamento do secundário Lilycove), Canvas com carimbos de
   prédios e colisão de referência.
-- `[ ]` classe de rocha/penhasco com elevação (morro tipo Corcovado); margem inferior de lagos.
+- `[x]` relevo: platôs (elev. 5) com face de rocha aprendida do corpus, parede sul dupla, escadas (175, elev. 0), terreno sobre o platô herdando a altura; árvores 2×2 determinísticas.
+- `[ ]` margem inferior de lagos (família 'pond').
 - `[ ]` metatiles compostos (farol) nos slots livres do secundário.
 - `[~]` Breezeport: esboço em `tools/hollowtide/maps/breezeport.py` (fora do jogo até passar no portão de qualidade).
 
