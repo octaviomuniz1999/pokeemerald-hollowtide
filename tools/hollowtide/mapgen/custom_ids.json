@@ -1,4 +1,8 @@
 {
+  "rustboro": {
+    "rail_h": 862,
+    "rail_end": 863
+  },
   "lilycove": {
     "lamp_top_cobble_lit": 863,
     "lamp_top_cobble_unlit": 864,

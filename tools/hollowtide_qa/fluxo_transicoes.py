@@ -78,11 +78,18 @@ def main(rom, runner, work, estado):
     if not ok:
         raise SystemExit(1)
     # subida da serra ate o planalto e a saida norte (Ferralia provisoria, por warp)
-    cruzar(q, "MAP_PALM_ROUTE03", 25, 1, "UP", "MAP_PALM_FERRALIA", "Rota 03 (serra) -> Ferralia", "qa_ferralia.png")
+    cruzar(q, "MAP_PALM_ROUTE03", 25, 0, "UP", "MAP_PALM_FERRALIA", "Rota 03 (planalto) -> Ferralia (conexao)", "qa_ferralia.png")
+    cruzar(q, "MAP_PALM_FERRALIA", 20, 25, "UP", "MAP_RUSTBORO_CITY_POKEMON_CENTER_1F", "Ferralia -> Centro Pokemon")
+    cruzar(q, "MAP_RUSTBORO_CITY_POKEMON_CENTER_1F", 7, 8, "DOWN", "MAP_PALM_FERRALIA", "Centro Pokemon -> Ferralia")
+    ok = tuple(q.where[2:]) in ((20, 25), (20, 26))
+    resultados.append(("Ferralia: saida do Centro Pokemon na porta certa", "OK" if ok else "FALHA", q.mapname(), q.where[2:]))
+    print("OK   " if ok else "FALHA", "Ferralia: saida do Centro Pokemon na porta certa", q.where[2:], flush=True)
+    if not ok:
+        raise SystemExit(1)
     shutil.copy(q.state, f"{work}/qa_ferralia.ss")
 
     # Volta
-    cruzar(q, "MAP_PALM_FERRALIA", 1, 10, "LEFT", "MAP_PALM_ROUTE03", "Ferralia -> Rota 03")
+    cruzar(q, "MAP_PALM_FERRALIA", 41, 63, "DOWN", "MAP_PALM_ROUTE03", "Ferralia -> Rota 03 (conexao)")
     cruzar(q, "MAP_PALM_ROUTE03", 55, 60, "RIGHT", "MAP_PALM_BRISA", "Rota 03 -> Breezeport (conexao)")
     cruzar(q, "MAP_PALM_BRISA", 19, 0, "UP", "MAP_PALM_ROUTE02", "Breezeport -> Rota 02 (conexao)")
     cruzar(q, "MAP_PALM_ROUTE02", 18, 0, "UP", "MAP_OLDALE_TOWN", "Rota 02 -> Colheita (conexao)")

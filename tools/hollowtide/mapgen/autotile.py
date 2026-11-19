@@ -15,6 +15,8 @@ N4 = [(0, -1), (-1, 0), (1, 0), (0, 1)]
 # Classes do tileset General (primario). Conjuntos levantados por comportamento + folha de metatiles.
 SECONDARY_CLASSES = {
     "gTileset_Lilycove": {"cobble": {554, 555, 556, 562, 563, 564, 570, 571, 572}},
+    # Rustboro: piso de praca bege e avenidas de 2 tiles (bordas superior/inferior, laterais, cruzamento 94)
+    "gTileset_Rustboro": {"plaza": {699}, "road": {760, 761, 762, 776, 777, 778, 768, 770, 94}},
 }
 
 GENERAL_CLASSES = {

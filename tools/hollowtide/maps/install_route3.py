@@ -4,8 +4,7 @@
 - layout LAYOUT_PALM_ROUTE03 (56x80, General + Lilycove), patamares achatados para elevacao 3 (ver route3.py);
 - conexao: Route 3 (direita, offset 20) <-> Breezeport (esquerda, offset -20). A trava antes da Jay continua na
   borda oeste da Breezeport (gatilho que faz o jogador recuar um passo) — gravada por install_breezeport.py;
-- norte: Ferralia ainda e o mapa provisorio do Alpha 02 (sera refeita no Cap. 3): ligacao temporaria por warp
-  nos dois sentidos, sem emenda de tileset;
+- norte: conexao continua com a Ferralia (offset -16; a emenda do lado da cidade e o parque, so primario);
 - 5 treinadores com visao (slots de Hoenn sem acesso em Lunia), 3 itens, 2 placas, encontros do Cap. 3.
 Rodar depois de install_breezeport.py.
 """
@@ -81,7 +80,8 @@ def main():
     j = jload(p)
     j["music"] = "MUS_ROUTE110"
     j["region_map_section"] = "MAPSEC_ROUTE_103"
-    j["connections"] = [OD([("map", "MAP_PALM_BRISA"), ("offset", R3.OFFSET_BREEZEPORT), ("direction", "right")])]
+    j["connections"] = [OD([("map", "MAP_PALM_BRISA"), ("offset", R3.OFFSET_BREEZEPORT), ("direction", "right")]),
+                        OD([("map", "MAP_PALM_FERRALIA"), ("offset", -16), ("direction", "up")])]   # ver ferralia.py
     j["object_events"] = []
     for (x, y, gfx, dr, sight, script) in TRAINERS:
         assert walkable(x, y), f"treinador {script} em tile bloqueado {(x, y)}"
@@ -91,34 +91,19 @@ def main():
         j["object_events"].append(obj("OBJ_EVENT_GFX_ITEM_BALL", x, y, "MOVEMENT_TYPE_FACE_DOWN", "TRAINER_TYPE_NONE", item,
                                       "Common_EventScript_FindItem", flag))
     j["warp_events"] = []
-    j["coord_events"] = [coord(x, 0, "Palm100_ToFerralia") for x in range(R3.NORTH_ROAD[0], R3.NORTH_ROAD[1] + 1)]
+    j["coord_events"] = []
     j["bg_events"] = [OD([("type", "sign"), ("x", x), ("y", y), ("elevation", 0),
                           ("player_facing_dir", "BG_EVENT_PLAYER_FACING_ANY"), ("script", s)]) for (x, y, s) in SIGNS]
     jsave(p, j)
 
     # scripts (texto em tools/hollowtide/text/ch3.txt, aplicado por texts.py)
     sc = ["PalmRoute03_MapScripts::\n\t.byte 0\n",
-          f"Palm100_ToFerralia::\n\twarp MAP_PALM_FERRALIA, {FERRALIA_ARRIVAL[0]}, {FERRALIA_ARRIVAL[1]}\n\twaitstate\n\tend\n",
           "Palm100_SignBeach::\n\tmsgbox Palm100_TextSignBeach, MSGBOX_SIGN\n\tend\n",
           "Palm100_SignPlateau::\n\tmsgbox Palm100_TextSignPlateau, MSGBOX_SIGN\n\tend\n"]
     for k, tid in TRAINER_IDS.items():
         sc.append(f"Palm100_Route{k}::\n\ttrainerbattle_single {tid}, Palm100_Text{k}Intro, Palm100_Text{k}Loss\n"
                   f"\tmsgbox Palm100_Text{k}After, MSGBOX_AUTOCLOSE\n\tend\n")
     open(f"{ROOT}/data/maps/PalmRoute03/scripts.inc", "w").write("\n".join(sc))
-
-    # Ferralia provisoria: borda oeste volta para a Route 3 por gatilho (sem conexao desalinhada)
-    fp = f"{ROOT}/data/maps/PalmFerralia/map.json"
-    f = jload(fp)
-    f["connections"] = None
-    f["coord_events"] = [e for e in f.get("coord_events", []) if e.get("script") != "Palm100_FerraliaToRoute03"] + \
-                        [coord(0, y, "Palm100_FerraliaToRoute03") for y in (9, 10, 11)]
-    jsave(fp, f)
-    fs = f"{ROOT}/data/maps/PalmFerralia/scripts.inc"
-    t = open(fs).read()
-    if "Palm100_FerraliaToRoute03::" not in t:
-        t = t.rstrip("\n") + (f"\n\nPalm100_FerraliaToRoute03::\n\twarp MAP_PALM_ROUTE03, {ROUTE3_FROM_FERRALIA[0]}, "
-                              f"{ROUTE3_FROM_FERRALIA[1]}\n\twaitstate\n\tend\n")
-        open(fs, "w").write(t)
 
     # encontros
     wp = f"{ROOT}/src/data/wild_encounters.json"

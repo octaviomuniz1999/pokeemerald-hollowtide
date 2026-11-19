@@ -18,6 +18,11 @@
       "map": "MAP_PALM_BRISA",
       "offset": 20,
       "direction": "right"
+    },
+    {
+      "map": "MAP_PALM_FERRALIA",
+      "offset": -16,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -127,44 +132,7 @@
     }
   ],
   "warp_events": [],
-  "coord_events": [
-    {
-      "type": "trigger",
-      "x": 24,
-      "y": 0,
-      "elevation": 3,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Palm100_ToFerralia"
-    },
-    {
-      "type": "trigger",
-      "x": 25,
-      "y": 0,
-      "elevation": 3,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Palm100_ToFerralia"
-    },
-    {
-      "type": "trigger",
-      "x": 26,
-      "y": 0,
-      "elevation": 3,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Palm100_ToFerralia"
-    },
-    {
-      "type": "trigger",
-      "x": 27,
-      "y": 0,
-      "elevation": 3,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Palm100_ToFerralia"
-    }
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

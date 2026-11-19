@@ -26,6 +26,10 @@ def _mt(bin_, i):
 # definicoes por tileset secundario. Fontes: ("mt", id) usa as 4 entradas de baixo ou de cima de um metatile;
 # ("recolor", id, {idx_origem: idx_destino}) copia a camada de cima recolorindo indices (gera tiles novos).
 CUSTOM = {
+    "rustboro": [
+        ("rail_h", ("draw", "rail", 9), None, 699),          # ferrovia do patio de carga de Ferralia
+        ("rail_end", ("draw", "rail_end", 9), None, 699),
+    ],
     "lilycove": [
         # nome, camada de baixo, camada de cima, atributos copiados de
         ("lamp_top_cobble_lit", ("mt", 571, "bottom"), ("mt", 576, "top"), 576),
@@ -39,6 +43,29 @@ CUSTOM = {
         ("lamp_base_sand", ("mt", 292, "bottom"), ("mt", 674, "top"), 674),
     ],
 }
+
+
+def _rail(end=False):
+    """Trilho horizontal 16x16 (paleta 9 da Rustboro): lastro bege, dormentes marrons, trilhos de aco.
+    end=True: para-choque (fim de linha) do lado esquerdo."""
+    g = [[2 if (x * 7 + y * 3) % 5 else 3 for x in range(16)] for y in range(16)]
+    for y in (0, 15):
+        for x in range(16):
+            g[y][x] = 1 if (x + y) % 3 else 2
+    for sx in (1, 6, 11):
+        for y in range(2, 14):
+            g[y][sx] = g[y][sx + 1] = 4
+        g[13][sx] = g[13][sx + 1] = 7
+    for ry in (4, 10):
+        for x in range(16):
+            if end and x < 4:
+                continue
+            g[ry][x], g[ry + 1][x] = 5, 7
+    if end:
+        for y in range(3, 13):
+            for x in range(1, 5):
+                g[y][x] = 4 if 1 < x < 4 and 3 < y < 12 else 8
+    return g
 
 
 def build(tsname):
@@ -56,9 +83,29 @@ def build(tsname):
     prim = _git_bytes("data/tilesets/primary/general/metatiles.bin")
     n_base_mt = len(mts) // 16
     ids = {}
+    # slots de tile livres: em branco e sem uso em nenhum metatile (a Rustboro ja ocupa os 512 do PNG)
+    used = {struct.unpack_from("<H", mts, i * 2)[0] & 0x3FF for i in range(len(mts) // 2)}
+    free = [i for i, t in enumerate(tile_list) if i > 0 and not any(any(r) for r in t) and 512 + i not in used]
+
+    def add_tile(t):
+        if free:
+            i = free.pop(0)
+            tile_list[i] = t
+            return i
+        tile_list.append(t)
+        return len(tile_list) - 1
     for name, bot, top, attr_from in CUSTOM[tsname]:
         entries = []
         for layer, src in (("bottom", bot), ("top", top)):
+            if src is None:
+                entries += [0, 0, 0, 0]
+                continue
+            if src[0] == "draw":
+                g = _rail(end=src[1] == "rail_end")
+                for (ox, oy) in ((0, 0), (8, 0), (0, 8), (8, 8)):
+                    ti = add_tile([[g[oy + y][ox + x] for x in range(8)] for y in range(8)])
+                    entries.append((512 + ti) | (src[2] << 12))
+                continue
             if src[0] == "mt":
                 m = _mt(mts, src[1] - 512) if src[1] >= 512 else _mt(prim, src[1])
                 part = m[:4] if src[2] == "bottom" else m[4:]
@@ -70,8 +117,7 @@ def build(tsname):
                     if ti >= 512:
                         t = [[src[2].get(v, v) for v in row] for row in tile_list[ti - 512]]
                         if t != tile_list[ti - 512]:
-                            tile_list.append(t)
-                            e = (e & ~0x3FF) | (512 + len(tile_list) - 1)
+                            e = (e & ~0x3FF) | (512 + add_tile(t))
                     part.append(e)
             entries += part
         mts += struct.pack("<8H", *entries)

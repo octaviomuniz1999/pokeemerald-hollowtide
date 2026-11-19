@@ -64,3 +64,136 @@ Okay, you're the real deal.
 ==+ Palm100_TextDAVIAfter
 FERRALIA never sleeps. Trains run
 day and night with heavy cargo.
+
+## file: data/maps/PalmFerralia/scripts.inc
+==+ Palm101_Greeter_Text
+Welcome to FERRALIA! Steel, trains
+and a million hurried footsteps.
+
+Stay on the sidewalks. Nobody here
+stops walking, not even for you!
+
+==+ Palm101_YardWorker_Text
+Before the whistle, you can hear
+the rails sing.
+
+Lately TEAM PALM only unloads its
+cargo after dark. Funny, huh?
+
+==+ Palm101_GymFan_Text
+The GYM is locked today. VESSEL went
+to the rail yard at dawn.
+
+Something about a shipment that
+never arrived...
+
+==+ Palm101_FountainKid_Text
+My dad says the fountain water
+comes all the way from the coast.
+
+Is that why it tastes salty?
+
+==+ Palm101_Commuter_Text
+Late again! The east line was
+closed for “inspection” all week.
+
+==+ Palm101_Resident_Text
+I moved here from HARVESTVALE.
+The city is loud, but the jobs
+
+are here. I miss the coffee
+fields, though.
+
+==+ Palm101_HQGuard_Text
+FERRALIA RAIL & STEEL headquarters.
+Staff only, I'm afraid.
+
+==+ Palm101_ParkLady_Text
+This park is the city's lung.
+I walk here every morning.
+
+The grass is full of POKéMON that
+moved in from the SERRA.
+
+==+ Palm101_CitySign_Text
+FERRALIA CITY
+The heart of steel and rail.
+
+==+ Palm101_GymSign_Text
+FERRALIA CITY POKéMON GYM
+LEADER: VESSEL
+
+“The steel that sings!”
+
+==+ Palm101_HQSign_Text
+FERRALIA RAIL & STEEL
+Headquarters
+
+==+ Palm101_YardSign_Text
+FERRALIA CARGO YARD
+Authorized personnel only.
+
+==+ Palm101_Route4Sign_Text
+EAST LINE - ROUTE 4
+Closed for cargo inspection.
+
+## file: data/maps/RustboroCity_Mart/scripts.inc
+== RustboroCity_Mart_Text_BuyingHealsInCaseOfShroomish
+I'm buying some PARLYZ HEALS and
+ANTIDOTES.
+
+The bugs up on the SERRA trail
+really sting, you know.
+
+## file: data/maps/RustboroCity_House2/scripts.inc
+== RustboroCity_House2_Text_RoxanneKnowsALot
+VESSEL, the GYM LEADER, builds his
+own machines out of scrap steel.
+
+They say his POKéMON can hear
+metal sing!
+
+## file: data/maps/RustboroCity_Flat2_1F/scripts.inc
+== RustboroCity_Flat2_1F_Text_DevonWorkersLiveHere
+The rail and steel workers live in
+this building.
+
+## file: data/maps/RustboroCity_Flat2_2F/scripts.inc
+== RustboroCity_Flat2_2F_Text_DevonWasTinyInOldDays
+Way back in the old days, FERRALIA
+was just one little rail stop.
+
+== RustboroCity_Flat2_2F_Text_GoingToWorkAtDevonToo
+My daddy works at the rail yard.
+
+When I grow up, I'm going to drive
+the big cargo trains!
+
+## file: data/maps/RustboroCity_Flat1_2F/scripts.inc
+== RustboroCity_Flat1_2F_Text_ThankYouIllGiveYouWallpaper
+Thank you!
+
+Thanks to you, my darling WALDA
+laughed for me!
+
+Actually, I may not look all that
+special, but I'm one of the top
+engineers at FERRALIA RAIL & STEEL.
+
+So, how about I do something in return
+for you?
+
+I know, I'll add some new wallpaper
+patterns for the BOXES in the PC
+POKéMON Storage System.
+
+In the wallpaper pattern menu,
+select “FRIENDS.”
+
+That will give you access to the new
+wallpaper patterns.
+
+## file: data/maps/RustboroCity_Flat2_3F/scripts.inc
+== RustboroCity_Flat2_3F_Text_PresidentCollectsRareStones
+The company PRESIDENT collects old
+rail spikes. Weird hobby, right?

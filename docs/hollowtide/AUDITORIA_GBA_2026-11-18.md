@@ -131,3 +131,15 @@ warps, não as batalhas nem os eventos.
 | Encontros | Wingull, Pikipek, Aipom, Combee, Venipede, Hoppip, Mareep, Lillipup, Sandygast, Skiddo, Nincada, Pansage (Lv 17–21) |
 | Ferralia | ainda é o mapa provisório do Alpha 02; ligação temporária por warp nos dois sentidos (conexão desalinhada removida). Próximo passo: metrópole |
 | QA | `fluxo_rota3.py`; `goto` do driver alterna golpes em batalhas encontradas no caminho; regressão completa **63/63** |
+
+## 11. Capítulo 3 — Ferralia — 19/11/2026 (tarde)
+
+| Item | Estado |
+|---|---|
+| Ferralia | refeita pelo `mapgen` (72×64, General + **Rustboro**): avenidas de 2 tiles (norte, "Paulista", três N-S), bairro residencial, sede FERRALIA RAIL & STEEL (prédio Devon), ginásio do Vessel com torres, praça da fonte com jardim, Centro Pokémon e Mart, torres de escritório na Paulista, escritórios ao sul, **pátio de carga cercado com duas linhas de trem** e parque ao sul; 23 prédios conferidos contra sobreposição; linter 0/0 |
+| Ferrovia | trilho e para-choque **desenhados** (lastro, dormentes, trilhos; paleta 9 da Rustboro) em slots de tile livres do secundário, fora dos slots animados (água 128–159, fonte 448–451) |
+| Emenda | Route 3 ⇄ Ferralia contínua (offset 16); as 6 linhas do parque visíveis da rota e as linhas do planalto visíveis da cidade usam só o primário — conferido por script |
+| Interiores | Centro Pokémon, Mart, 3 casas e 2 prédios residenciais da Rustboro religados; textos sem Hoenn (Roxanne→Vessel, Devon→Ferralia Rail & Steel) |
+| Narrativa | ginásio fechado: o líder foi ao pátio de carga por um carregamento que não chegou; operário: a Team Palm só descarrega à noite; linha leste (Route 4) fechada "para inspeção" — ganchos de "Carga Desviada" |
+| Encontros | parque: Pidove, Trubbish, Rattata, Lillipup, Grimer, Magnemite, Klink (R), Aron (R), Lv 20–23 |
+| QA | transições 21/21 (Route 3 ⇄ Ferralia, Centro Pokémon); regressão completa 67/67; `qa_completo.sh` agora mostra o resumo inteiro das transições |

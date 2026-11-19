@@ -1,11 +1,6 @@
 PalmRoute03_MapScripts::
 	.byte 0
 
-Palm100_ToFerralia::
-	warp MAP_PALM_FERRALIA, 1, 10
-	waitstate
-	end
-
 Palm100_SignBeach::
 	msgbox Palm100_TextSignBeach, MSGBOX_SIGN
 	end

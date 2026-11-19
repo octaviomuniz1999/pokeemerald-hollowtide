@@ -9371,8 +9371,8 @@
     {
       "id": "LAYOUT_PALM_FERRALIA",
       "name": "PalmFerralia_Layout",
-      "width": 26,
-      "height": 20,
+      "width": 72,
+      "height": 64,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/PalmFerralia/border.bin",

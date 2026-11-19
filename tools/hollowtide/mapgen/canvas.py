@@ -12,7 +12,7 @@ from autotile import Autotiler, SECONDARY_CLASSES
 import corpus as C
 
 ROOT = C.ROOT
-LEGEND = {"^": "high", ".": "grass", ",": "tall", "T": "tree", "D": "dense", "s": "sand", "x": "puddle", "p": "pond",
+LEGEND = {"_": "plaza", "=r": "road", "^": "high", ".": "grass", ",": "tall", "T": "tree", "D": "dense", "s": "sand", "x": "puddle", "p": "pond",
           "~": "sea", "=": "shallow", "v": "ledge_s", "<": "ledge_w", ">": "ledge_e", "f": "flower", "c": "cobble"}
 
 # Carimbos: (layout de origem, x, y, largura, altura). Coordenadas levantadas com render_map --grid.
@@ -25,6 +25,19 @@ STAMPS = {
     "lily_motel": ("LAYOUT_LILYCOVE_CITY", 36, 20, 6, 5),
     "lily_harbor": ("LAYOUT_LILYCOVE_CITY", 9, 27, 7, 6),
     "lily_lamp": ("LAYOUT_LILYCOVE_CITY", 61, 33, 1, 2),
+    "rb_devon": ("LAYOUT_RUSTBORO_CITY", 7, 7, 10, 9),
+    "rb_gym": ("LAYOUT_RUSTBORO_CITY", 24, 15, 6, 5),
+    "rb_house_grey": ("LAYOUT_RUSTBORO_CITY", 31, 15, 5, 5),
+    "rb_office_long": ("LAYOUT_RUSTBORO_CITY", 9, 25, 9, 6),
+    "rb_office_small": ("LAYOUT_RUSTBORO_CITY", 7, 34, 5, 5),
+    "rb_office_mid": ("LAYOUT_RUSTBORO_CITY", 24, 30, 7, 5),
+    "rb_office_six": ("LAYOUT_RUSTBORO_CITY", 24, 42, 6, 5),
+    "rb_tower": ("LAYOUT_RUSTBORO_CITY", 31, 39, 4, 8),
+    "rb_apartment": ("LAYOUT_RUSTBORO_CITY", 3, 43, 7, 9),
+    "rb_fountain": ("LAYOUT_RUSTBORO_CITY", 27, 38, 3, 3),
+    "rb_pokecenter": ("LAYOUT_RUSTBORO_CITY", 15, 35, 4, 4),
+    "rb_mart": ("LAYOUT_RUSTBORO_CITY", 15, 42, 4, 4),
+    "rb_lamp": ("LAYOUT_RUSTBORO_CITY", 19, 15, 1, 2),
     "gen_mart": ("LAYOUT_PETALBURG_CITY", 24, 10, 4, 3),
     "gen_pokecenter": ("LAYOUT_PETALBURG_CITY", 19, 13, 4, 4),
 }
@@ -217,6 +230,11 @@ class Canvas:
                     continue
                 if (x, y) in stair_cells:
                     out.append(175 | (0 << 10) | (0 << 12))  # escada: elevacao 0 liga os niveis 3 e 5
+                    continue
+                if grid[y][x] == "sand" and any(0 <= x + dx < self.w and 0 <= y + dy < self.h and
+                                                grid[y + dy][x + dx] in ("plaza", "road")
+                                                for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+                    out.append(292 | (3 << 12))  # areia junto ao piso urbano da Rustboro: lisa, sem franja de grama
                     continue
                 if grid[y][x] == "sand" and y > 0 and grid[y - 1][x] == "cobble":
                     out.append(292 | (3 << 12))  # emenda calcamento/areia: areia lisa, sem franja de grama
