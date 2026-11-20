@@ -75,6 +75,7 @@ def main(rom, runner, work, pre):
     q = QA(rom, runner, work)
     q.load(pre); q.no_wild(); q.run(["mash B 10", "setflag 1270 31", "clearflag 1270 30"]); q.strong()
     ok(q.mapname() == L1, "Saguao da Liga")
+    q.run(["setflag 1270 1DF"])          # FLAG_HT_QA_GODMODE (so build nao-release): a QA confere os scripts da Liga, nao o balanceamento
     q.goto(L1, 9, 3); q.run(["press UP 10 10", "press A 4 40"])      # os guardas ficam na frente da porta (9,2)/(10,2)
     for _ in range(12):
         q.run(["wait 120", "press A 4 30"])
