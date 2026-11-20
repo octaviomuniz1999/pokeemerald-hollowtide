@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PacifidlogTown_PokemonCenter_1F_EventScript_OldMan",
+      "script": "Palm202_PcOldMan",
       "flag": "0"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PacifidlogTown_PokemonCenter_1F_EventScript_Girl",
+      "script": "Palm202_PcGirl",
       "flag": "0"
     },
     {
@@ -65,7 +65,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PacifidlogTown_PokemonCenter_1F_EventScript_Woman",
+      "script": "Palm202_PcWoman",
       "flag": "0"
     },
     {
@@ -87,14 +87,14 @@
       "x": 7,
       "y": 8,
       "elevation": 3,
-      "dest_map": "MAP_PACIFIDLOG_TOWN",
+      "dest_map": "MAP_PALM_TIDEMOUTH",
       "dest_warp_id": "0"
     },
     {
       "x": 6,
       "y": 8,
       "elevation": 3,
-      "dest_map": "MAP_PACIFIDLOG_TOWN",
+      "dest_map": "MAP_PALM_TIDEMOUTH",
       "dest_warp_id": "0"
     },
     {

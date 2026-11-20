@@ -39,7 +39,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SootopolisCity_Mart_EventScript_FatMan",
+      "script": "Palm202_MartMan",
       "flag": "0"
     },
     {
@@ -52,7 +52,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SootopolisCity_Mart_EventScript_Gentleman",
+      "script": "Palm202_MartGent",
       "flag": "0"
     }
   ],
@@ -61,14 +61,14 @@
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_SOOTOPOLIS_CITY",
+      "dest_map": "MAP_PALM_TIDEMOUTH",
       "dest_warp_id": "1"
     },
     {
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_SOOTOPOLIS_CITY",
+      "dest_map": "MAP_PALM_TIDEMOUTH",
       "dest_warp_id": "1"
     }
   ],

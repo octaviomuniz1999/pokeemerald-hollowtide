@@ -37283,6 +37283,105 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_PALM_ROUTE10",
+          "base_label": "gPalmRoute10",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_LOMBRE"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_LOMBRE"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 48,
+                "max_level": 50,
+                "species": "SPECIES_KINGLER"
+              },
+              {
+                "min_level": 46,
+                "max_level": 48,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 48,
+                "max_level": 50,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 47,
+                "max_level": 49,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 49,
+                "max_level": 50,
+                "species": "SPECIES_LUDICOLO"
+              },
+              {
+                "min_level": 49,
+                "max_level": 50,
+                "species": "SPECIES_CRAWDAUNT"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 46,
+                "max_level": 50,
+                "species": "SPECIES_TENTACRUEL"
+              },
+              {
+                "min_level": 46,
+                "max_level": 50,
+                "species": "SPECIES_WAILMER"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_MANTINE"
+              },
+              {
+                "min_level": 47,
+                "max_level": 50,
+                "species": "SPECIES_PELIPPER"
+              },
+              {
+                "min_level": 48,
+                "max_level": 50,
+                "species": "SPECIES_LAPRAS"
+              }
+            ]
+          }
         }
       ]
     },

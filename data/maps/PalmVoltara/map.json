@@ -18,6 +18,11 @@
       "map": "MAP_PALM_ROUTE09",
       "offset": 0,
       "direction": "left"
+    },
+    {
+      "map": "MAP_PALM_ROUTE10",
+      "offset": 12,
+      "direction": "down"
     }
   ],
   "object_events": [

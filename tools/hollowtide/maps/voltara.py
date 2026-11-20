@@ -13,6 +13,8 @@ from canvas import Canvas
 W, H = 60, 44
 WEST = (18, 19)
 SOUTH = (30, 31)
+SEAM = 37                        # da linha 37 ao fim so primario (a Route 10 enxerga ~7 linhas)
+OFFSET_ROUTE10 = 12              # Route 10 x = Voltara x - 12
 RAILS = (8, 10)
 RAIL_END = 30                    # para-choque leste dos trilhos (dentro da estacao)
 AVENUE = (18, 19)
@@ -60,6 +62,9 @@ def compose():
     c.rect(SOUTH[0], AVENUE[1], SOUTH[1], H - 1, "road")
     c.rect(2, 28, 43, 29, "road")
     c.rect(0, WEST[0], 1, WEST[1], "road")
+    # faixa sul (linhas 37-43, colunas 12-49) que a Route 10 (Lilycove) enxerga: so primario
+    c.rect(2, SEAM, 43, H - 3, "grass")
+    c.rect(SOUTH[0], SEAM - 1, SOUTH[1], H - 1, "sand")
     c.rect(0, 7, 1, 11, "plaza")                                   # os trilhos da Route 9 entram pela moldura
     # canteiros (grama com flores) na praca
     for (x0, y0, x1, y1) in [(22, 21, 27, 25), (42, 21, 47, 24), (4, 11, 9, 14), (34, 32, 39, 36)]:
@@ -75,6 +80,8 @@ def compose():
         c.put(RAIL_END, ry, ids["rail_end_e"], collision=1)
     # parque: arvores e flores; mata da moldura
     c.forest(lambda x, y: x >= 46 and y >= 34 and not (48 <= x <= 53 and 36 <= y <= 39), set())
+    seam_paths = {(x, y) for x in SOUTH for y in range(SEAM - 1, H)}
+    c.forest(lambda x, y: y >= SEAM + 1 and 10 <= x <= 43 and not (26 <= x <= 35), seam_paths)
     c.rect(48, 36, 53, 39, "flower")
     c.forest(lambda x, y: x < 20 and 2 <= y <= 6 and not (x < 8), set())
     c.rect(38, 8, 42, 12, "grass"); c.small_tree(39, 9); c.rect(41, 11, 41, 11, "flower")   # arvore em canteiro

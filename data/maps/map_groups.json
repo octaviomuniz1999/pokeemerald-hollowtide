@@ -155,7 +155,9 @@
     "PalmVoltara",
     "PalmDataCenter1F",
     "PalmDataCenter2F",
-    "PalmHocGym"
+    "PalmHocGym",
+    "PalmRoute10",
+    "PalmTidemouth"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

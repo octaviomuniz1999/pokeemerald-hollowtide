@@ -1,0 +1,150 @@
+## file: data/maps/PalmRoute10/scripts.inc
+==+ Palm200_TextTOMASIntro
+Ahoy! The sea's been restless all week.
+Let's see if you can keep your footing!
+==+ Palm200_TextTOMASLoss
+Capsized!
+==+ Palm200_TextTOMASAfter
+The waves come in higher every day.
+And there's no storm in sight.
+==+ Palm200_TextRITAIntro
+I'm not scared of the big waves!
+My POKéMON float just fine!
+==+ Palm200_TextRITALoss
+Glub glub…
+==+ Palm200_TextRITAAfter
+Mom says we can't swim near TIDEMOUTH
+anymore. The tide is too weird.
+==+ Palm200_TextJONASIntro
+The fish here swim against the
+current. Want to see one up close?
+==+ Palm200_TextJONASLoss
+They got away. Again.
+==+ Palm200_TextJONASAfter
+The lighthouses blink, but the boats
+stay in the harbor. Nobody sails now.
+==+ Palm200_TextLUANAIntro
+I swim this coast every morning!
+Race you to the next lighthouse!
+==+ Palm200_TextLUANALoss
+You're faster than the current!
+==+ Palm200_TextLUANAAfter
+There's something out at sea, past the
+harbor. A big metal thing. It hums.
+==+ Palm200_SignNorth_Text
+ROUTE 10 · LIGHTHOUSE COAST
+North: VOLTARA
+==+ Palm200_SignSouth_Text
+ROUTE 10
+South: TIDEMOUTH
+==+ Palm200_SignBeacon_Text
+GUIDE BEACON
+Keep your boat to the right of the
+light. The rocks bite!
+
+## file: data/maps/PalmTidemouth/scripts.inc
+==+ Palm201_TextNami
+NAMI: Okay, nobody goes in the water
+for now! Let's get everyone organized!
+
+…Oh! You're {PLAYER}, right? NEVARD
+told me about you.
+
+I'm NAMI, the GYM LEADER here. Sorry,
+the GYM is closed. The tide keeps
+rising, and people need help.
+
+I love traveling, but this is no
+sightseeing trip.
+
+The water started rising when that
+TEAM PALM “complex” showed up at sea.
+
+Those guys put an entire city at risk.
+==+ Palm201_TextNamiAgain
+NAMI: Help me keep people away from
+the water, okay?
+
+The ferry to the complex is suspended.
+I'm working on a way to get out there.
+==+ Palm201_TextPortLock
+SAILOR: Sorry! All ferries are
+suspended until the tide calms down.
+==+ Palm201_TextGymLock
+The GYM's door is locked.
+
+A note reads: “Out helping with the
+evacuation. Back soon! - NAMI”
+==+ Palm201_Sailor_Text
+I've sailed these waters for thirty
+years. The sea's never felt like this.
+
+It's like something far away is
+pulling on it.
+==+ Palm201_Tourist_Text
+I came here for a beach vacation!
+Now they say the beach might vanish!
+==+ Palm201_HotelClerk_Text
+The GRAND HOTEL is closed. We moved
+all our guests to higher ground.
+==+ Palm201_PortGuard_Text
+That metal platform out at sea? TEAM
+PALM calls it an “Oceanic Complex.”
+
+Turbines, tanks, computers… They say
+it makes money. I say it makes waves.
+==+ Palm201_GymGuard_Text
+NAMI's GYM has locks, pools and three
+water levels. Wait until you see it!
+
+…If the tide ever lets her open it.
+==+ Palm201_Kid_Text
+The pools at the water park keep
+overflowing by themselves!
+==+ Palm201_OldWoman_Text
+In my day, the tide went in and out
+like breathing. Now it only comes in.
+==+ Palm201_TownSign_Text
+TIDEMOUTH
+“Where every journey meets the sea.”
+==+ Palm201_HotelSign_Text
+TIDEMOUTH GRAND HOTEL
+Temporarily closed.
+==+ Palm201_PortSign_Text
+TIDEMOUTH HARBOR
+Ferries suspended until further notice.
+==+ Palm201_GymSign_Text
+TIDEMOUTH POKéMON GYM
+LEADER: NAMI
+“Ride the wave, don't fight it.”
+==+ Palm202_PcOldMan_Text
+I watched the water climb the pier
+steps from this window. One by one.
+==+ Palm202_PcGirl_Text
+NAMI carried my grandma to the
+POKéMON CENTER herself. She's amazing!
+==+ Palm202_PcWoman_Text
+NAMI and NEVARD from HARVESTVALE are
+engaged. Did you know?
+==+ Palm202_MartMan_Text
+Everyone's buying rain gear and
+POTIONS. Business is booming… sadly.
+==+ Palm202_MartGent_Text
+I sold my boat last month. Best
+decision I ever made, it turns out.
+==+ Palm202_MotelOwner_Text
+Welcome to the SEASHELL MOTEL!
+We're full of evacuees right now.
+
+But you can rest here anytime.
+==+ Palm202_House1Woman_Text
+I keep my WAILMER in the bathtub
+until the sea calms down.
+==+ Palm202_House2Man_Text
+The tide charts make no sense anymore.
+The moon isn't doing this.
+==+ Palm202_House2Woman_Text
+We put sandbags at the door. My
+AZUMARILL thinks it's a game.
+==+ Palm202_House2Azumarill_Text
+AZUMARILL: Rurill!

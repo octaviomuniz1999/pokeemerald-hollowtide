@@ -9543,6 +9543,28 @@
       "border_filepath": "data/layouts/PalmHocGym/border.bin",
       "blockdata_filepath": "data/layouts/PalmHocGym/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_ROUTE10",
+      "name": "PalmRoute10_Layout",
+      "width": 38,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/PalmRoute10/border.bin",
+      "blockdata_filepath": "data/layouts/PalmRoute10/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_TIDEMOUTH",
+      "name": "PalmTidemouth_Layout",
+      "width": 64,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/PalmTidemouth/border.bin",
+      "blockdata_filepath": "data/layouts/PalmTidemouth/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
