@@ -1,0 +1,28 @@
+## file: data/maps/PalmPassway/scripts.inc
+==+ Palm182_InnRest_Text
+Would you like to rest for the night?
+It's on the house for young trainers.
+==+ Palm182_InnMorning_Text
+Good morning! You and your POKéMON
+look well rested.
+
+Safe travels!
+==+ Palm182_InnNo_Text
+The door is always open. Come back
+whenever you're tired.
+== Palm182_InnGuest_Text
+The road to VOLTARA is open again,
+but I hear the whole city is dark.
+
+I'll wait here until the power comes
+back.
+==+ Palm182_InnGuestTrains_Text
+VOLTARA has power again, and the
+trains are running!
+
+I'll ride all the way to FERRALIA.
+==+ Palm182_InnGuestStorm_Text
+They opened the trail to the summit.
+
+Look at those clouds… I'll stay right
+here by the fire, thank you.

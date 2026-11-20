@@ -113,11 +113,38 @@ Palm182_MartSkitty::
 	end
 
 Palm182_Innkeeper::
-	msgbox Palm182_Innkeeper_Text, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox Palm182_Innkeeper_Text, MSGBOX_DEFAULT
+	msgbox Palm182_InnRest_Text, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Palm182_InnNo
+	closemessage
+	fadescreen FADE_TO_BLACK
+	playfanfare MUS_HEAL
+	special HealPlayerParty
+	waitfanfare
+	fadescreen FADE_FROM_BLACK
+	msgbox Palm182_InnMorning_Text, MSGBOX_DEFAULT
+	release
+	end
+
+Palm182_InnNo::
+	msgbox Palm182_InnNo_Text, MSGBOX_DEFAULT
+	release
 	end
 
 Palm182_InnGuest::
+	goto_if_set FLAG_HT_POSTGAME_DATA, Palm182_InnGuestStorm
+	goto_if_set FLAG_HT_VOLTARA_DONE, Palm182_InnGuestTrains
 	msgbox Palm182_InnGuest_Text, MSGBOX_NPC
+	end
+
+Palm182_InnGuestTrains::
+	msgbox Palm182_InnGuestTrains_Text, MSGBOX_NPC
+	end
+
+Palm182_InnGuestStorm::
+	msgbox Palm182_InnGuestStorm_Text, MSGBOX_NPC
 	end
 
 Palm182_Elder::
@@ -240,8 +267,10 @@ Palm182_Innkeeper_Text:
 	.string "since before the roads were paved.$"
 
 Palm182_InnGuest_Text:
-	.string "The road east is open at last!\n"
-	.string "I'm leaving for VOLTARA tomorrow.$"
+	.string "The road to VOLTARA is open again,\n"
+	.string "but I hear the whole city is dark.\p"
+	.string "I'll wait here until the power comes\n"
+	.string "back.$"
 
 Palm182_Elder_Text:
 	.string "ELDER: Ah, a young traveler.\n"
@@ -270,3 +299,26 @@ Palm182_HouseGirl_Text:
 Palm182_HouseBoy_Text:
 	.string "I want to climb the summit someday.\n"
 	.string "The GUARDIAN never lets anyone pass!$"
+
+Palm182_InnRest_Text:
+	.string "Would you like to rest for the night?\n"
+	.string "It's on the house for young trainers.$"
+
+Palm182_InnMorning_Text:
+	.string "Good morning! You and your POKéMON\n"
+	.string "look well rested.\p"
+	.string "Safe travels!$"
+
+Palm182_InnNo_Text:
+	.string "The door is always open. Come back\n"
+	.string "whenever you're tired.$"
+
+Palm182_InnGuestTrains_Text:
+	.string "VOLTARA has power again, and the\n"
+	.string "trains are running!\p"
+	.string "I'll ride all the way to FERRALIA.$"
+
+Palm182_InnGuestStorm_Text:
+	.string "They opened the trail to the summit.\p"
+	.string "Look at those clouds… I'll stay right\n"
+	.string "here by the fire, thank you.$"
