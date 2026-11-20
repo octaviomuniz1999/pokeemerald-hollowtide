@@ -9620,6 +9620,17 @@
       "border_filepath": "data/layouts/PalmStormSummit/border.bin",
       "blockdata_filepath": "data/layouts/PalmStormSummit/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_ROUTE12",
+      "name": "PalmRoute12_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/PalmRoute12/border.bin",
+      "blockdata_filepath": "data/layouts/PalmRoute12/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

@@ -36924,6 +36924,160 @@
           }
         },
         {
+          "map": "MAP_PALM_ROUTE12",
+          "base_label": "gPalmRoute12",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 26,
+                "max_level": 28,
+                "species": "SPECIES_TYMPOLE"
+              },
+              {
+                "min_level": 26,
+                "max_level": 28,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_TYMPOLE"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 26,
+                "max_level": 28,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 28,
+                "max_level": 29,
+                "species": "SPECIES_TYMPOLE"
+              },
+              {
+                "min_level": 28,
+                "max_level": 29,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 28,
+                "max_level": 29,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 28,
+                "max_level": 29,
+                "species": "SPECIES_TYMPOLE"
+              },
+              {
+                "min_level": 26,
+                "max_level": 28,
+                "species": "SPECIES_FROAKIE"
+              },
+              {
+                "min_level": 27,
+                "max_level": 29,
+                "species": "SPECIES_FROAKIE"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_BASCULIN"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_DUCKLETT"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 28,
+                "max_level": 32,
+                "species": "SPECIES_BASCULIN"
+              },
+              {
+                "min_level": 30,
+                "max_level": 33,
+                "species": "SPECIES_BASCULIN"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 10,
+                "max_level": 15,
+                "species": "SPECIES_BASCULIN"
+              },
+              {
+                "min_level": 10,
+                "max_level": 15,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_BASCULIN"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_BASCULIN"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_BASCULIN"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 30,
+                "max_level": 35,
+                "species": "SPECIES_BASCULIN"
+              },
+              {
+                "min_level": 32,
+                "max_level": 36,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 35,
+                "max_level": 38,
+                "species": "SPECIES_BASCULIN"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_PALM_ROUTE06",
           "base_label": "gPalmRoute06",
           "land_mons": {

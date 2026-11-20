@@ -1,0 +1,41 @@
+## file: data/maps/PalmRoute12/scripts.inc
+==+ Palm250_SignEast_Text
+ROUTE 12 - RIVER BEND
+East: ROUTE 5
+
+==+ Palm250_TextARTURIntro
+Shh! The BASCULIN gather right at
+the bend. You'll scare them off!
+
+==+ Palm250_TextARTURLoss
+Fine, fine… They were gone anyway.
+
+==+ Palm250_TextARTURAfter
+When the dam held the water back, the
+river nearly forgot this bend.
+
+Now it's full again, and so is my net.
+
+==+ Palm250_TextBIAIntro
+I came for a quiet picnic by the
+water. A battle works too!
+
+==+ Palm250_TextBIALoss
+My sandwiches are safe, at least.
+
+==+ Palm250_TextBIAAfter
+There's a little beach on the inside
+of the bend. Kids leave treasures
+in the sand there.
+
+==+ Palm250_TextNICOIntro
+Hear that? The TYMPOLE are singing.
+Let's make some noise too!
+
+==+ Palm250_TextNICOLoss
+Okay, okay! I'll keep it down.
+
+==+ Palm250_TextNICOAfter
+Some people say a frog POKéMON with
+foam around its neck hides in the
+tall grass here. I've never seen it.

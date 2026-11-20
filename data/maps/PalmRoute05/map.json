@@ -23,6 +23,11 @@
       "map": "MAP_PALM_PILLARTON",
       "offset": -4,
       "direction": "up"
+    },
+    {
+      "map": "MAP_PALM_ROUTE12",
+      "offset": 15,
+      "direction": "left"
     }
   ],
   "object_events": [

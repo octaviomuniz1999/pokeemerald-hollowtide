@@ -15,6 +15,7 @@ OFFSET_TRADEPOST = 6          # Route 5 x = Tradepost x - 6
 RIVER = (22, 25)           # = canal do Tradepost (x 28-31)
 SOUTH_PATH = (20, 21)         # = avenida norte do Tradepost (x 26-27)
 NORTH_PATH = (16, 17)
+WEST_ROWS = (29, 30)           # saida oeste para a Route 12 (River Bend), por um tabuado sobre o braco oeste
 VBOARD = (846, 847)           # tabuado vertical (Route 104)
 HBOARD = (836, 844, 845)      # tabuado horizontal (topo, meio andaveis; sombra bloqueada)
 
@@ -42,6 +43,8 @@ def compose(north_open=False):
     path(16, 14, 17, 21); path(16, 14, 19, 15)
     path(NORTH_PATH[0], 0, NORTH_PATH[1], 9)               # para Pillarton
     path(RIVER[1] + 1, 26, 30, 27)                        # do tabuado leste ao leito seco
+    path(0, WEST_ROWS[0], 7, WEST_ROWS[1])                # para a Route 12 (oeste)
+    path(12, WEST_ROWS[0], 13, WEST_ROWS[1])              # da ilha ao tabuado oeste
     water = {(x, y) for y in range(H) for x in range(W) if c.terrain[y][x] == "pond"}
     # mata (moldura e bosques), sem encostar em trilha nem agua
     c.forest(lambda x, y: x < 2 or x >= W - 2 or (y < 2 and not NORTH_PATH[0] - 1 <= x <= NORTH_PATH[1] + 1
@@ -64,7 +67,7 @@ def compose(north_open=False):
     tall(2, 40, [" ,,,,,", ",,,,,,", ",,,,,", " ,,,"])
     tall(28, 9, ["  ,,,,,", ",,,,,,,", ",,,,,,", "  ,,,"])
     tall(30, 34, [",,,,,", " ,,,,"])
-    c.rect(12, 30, 13, 31, "flower"); c.rect(29, 15, 31, 15, "flower")
+    c.rect(16, 30, 17, 31, "flower"); c.rect(29, 15, 31, 15, "flower")
     if not north_open:                                     # Pillarton ainda nao existe: trilha termina na mata
         c.rect(NORTH_PATH[0], 0, NORTH_PATH[1], 1, "tree")
     # tabuados por cima da agua
@@ -75,6 +78,9 @@ def compose(north_open=False):
     for x in range(RIVER[0], RIVER[1] + 1):
         c.put(x, 26, HBOARD[0], collision=0); c.put(x, 27, HBOARD[1], collision=0); c.put(x, 28, HBOARD[2], collision=1)
     c.rect(20, 26, 21, 27, "sand")                         # da ilha ao tabuado leste
+    for x in range(8, 12):                                 # tabuado sobre o braco oeste (Route 12)
+        c.put(x, WEST_ROWS[0], HBOARD[0], collision=0); c.put(x, WEST_ROWS[1], HBOARD[1], collision=0)
+        c.put(x, WEST_ROWS[1] + 1, HBOARD[2], collision=1)
     # pedras no leito seco
     for (x, y) in [(29, 20), (33, 22), (36, 20)]:
         c.put(x, y, 226, collision=1)
