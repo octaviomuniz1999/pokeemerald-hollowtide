@@ -1861,6 +1861,12 @@ static void HtQaBoostParty(void)
         CreateMonWithIVs(&gPlayerParty[0], SPECIES_MEWTWO, MAX_LEVEL, personality, OTID_STRUCT_PLAYER_ID, MAX_PER_STAT_IVS);
         SetMonData(&gPlayerParty[0], MON_DATA_SPATK_EV, &ev);
         SetMonData(&gPlayerParty[0], MON_DATA_SPEED_EV, &ev);
+        // obediencia (regra Gen 8+): Pokemon do proprio jogador obedecem pelo nivel em que foram encontrados;
+        // o Mewtwo de QA conta como encontrado no Lv 5 para obedecer desde o comeco do jogo
+        {
+            u8 metLevel = 5;
+            SetMonData(&gPlayerParty[0], MON_DATA_MET_LEVEL, &metLevel);
+        }
         CalculateMonStats(&gPlayerParty[0]);
         CalculatePlayerPartyCount();
     }
