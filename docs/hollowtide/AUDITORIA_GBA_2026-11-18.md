@@ -368,3 +368,4 @@ warps, não as batalhas nem os eventos.
 **Para o diretor decidir** (não mudei sem aprovação): (1) Exp. Share ligado desde cedo e/ou um Lucky Egg; (2) uma área de treino pós-Liga com selvagens 80+; (3) manter como está (desafio alto, como pede o cânone).
 
 | QA | **r58: 427 conferências, 0 falhas** (níveis selvagens novos e 3 textos; a QA da Liga usa o godmode em todas as salas — o Pkas venceu o Mewtwo de QA por sorte; os 75 últimos refeitos a partir do saguão, mesma ROM) — **build 20ab** |
+| map_lint | **0 erros, 0 avisos em todos os mapas** (os avisos de colisão por metatile valem só para layouts gerados — os vanilla reaproveitados, como a Marine Cave End do epílogo, são a própria referência; a placa fora do mapa da loja, dado morto do vanilla, saiu) — **r59: 427 conferências, 0 falhas** de primeira, já com a QA da Liga no godmode |
