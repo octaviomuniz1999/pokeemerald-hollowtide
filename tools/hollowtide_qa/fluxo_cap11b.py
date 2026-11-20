@@ -101,6 +101,7 @@ def main(rom, runner, work, pre):
         ok(q.mapname() == hall, f"Porta aberta: {nome} -> corredor")
         hall_up(q, hall, ROOMS[ROOMS.index((room, nome, flag, hall)) + 1][0] if hall != H[4] else CHAMP)
     q.strong()
+    q.run(["setflag 1270 1DF"])          # FLAG_HT_QA_GODMODE (so build nao-release): o QA confere o script do campeao, nao o balanceamento
     seen = False
     for _ in range(60):
         if q.in_battle():
@@ -120,6 +121,7 @@ def main(rom, runner, work, pre):
         if q.flag(GAME_CLEAR):
             break
     ok(q.flag(GAME_CLEAR), "Hall da Fama registrado (FLAG_SYS_GAME_CLEAR)")
+    q.run(["clearflag 1270 1DF"])
     q.run(["wait 600", "shot cap11b_creditos.png"])
     shutil.copy(q.state, f"{work}/c11fim.ss")
     print("\nRESUMO CAPITULO 11 (parte 2)")
