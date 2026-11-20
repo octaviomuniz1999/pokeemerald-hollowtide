@@ -60,7 +60,8 @@ def main(rom, runner, work, estado):
     ok(q.mapname() == P, "Tchum recebe o jogador")
     q.goto(P, 47, 8); q.run(["press RIGHT 10 10", "press A 4 40", "mash B 30", "wait 30"])
     ok(not q.in_battle() and not q.flag(TF + LELA), "Lela nao luta antes das valvulas")
-    q.goto(P, 16, 7); q.run(["press UP 10 10", "press A 4 40", "mash B 20"])
+    q.run(["setflag 1270 30"])            # os recrutas da crista sao enfrentados de proposito logo abaixo
+    q.goto(P, 16, 7); q.run(["press UP 10 10", "press A 4 40", "mash B 20", "clearflag 1270 30"])
     ok(q.flag(0x38), "Valvula 1 aberta")
     for (ax, ay, walk, nome, tid) in [(18, 7, "walk RIGHT 1", "Recruta da barragem 1", G1), (29, 8, "walk RIGHT 1", "Recruta da barragem 2", G2)]:
         before = getattr(q, "battles", 0)
@@ -78,12 +79,13 @@ def main(rom, runner, work, estado):
         ok(seen, f"{nome} avistou o jogador")
         ok(battle(q, TF + tid), f"Venceu {nome}")
         q.run(["mash B 16"])
+    DAM = {(20, 7), (31, 8)}             # onde os recrutas da crista param depois de avistar o jogador
     for (x, fl, n) in [(26, 0x39, 2), (36, 0x3A, 3)]:
-        q.goto(P, x, 7); q.run(["press UP 10 10", "press A 4 40", "mash B 20"])
+        q.goto(P, x, 7, avoid=DAM); q.run(["press UP 10 10", "press A 4 40", "mash B 20"])
         ok(q.flag(fl), f"Valvula {n} aberta")
     q.run(["shot cap5_valvulas.png"])
     q.strong()   # cura antes da admin
-    q.goto(P, 47, 8); q.run(["press RIGHT 10 10", "press A 4 40"])
+    q.goto(P, 47, 8, avoid=DAM); q.run(["press RIGHT 10 10", "press A 4 40"])
     ok(battle(q, TF + LELA, tries=140), "Venceu a admin LELA")
     for _ in range(10):
         q.run(["mash A 8", "mash B 6"])
@@ -94,7 +96,7 @@ def main(rom, runner, work, estado):
     shutil.copy(q.state, f"{work}/cap5_pos_lela.ss")
     # ginasio do Tchum: portoes giratorios (BFS sobre posicao + orientacao, porta de rotating_gate.c)
     q.run(["setflag 1270 30"])            # treinadores do ginasio nao interrompem a travessia dos portoes
-    q.goto(P, 43, 19); q.run(["press UP 30 0", "wait 120", "shot cap5_ginasio.png"])
+    q.goto(P, 43, 19, avoid=DAM); q.run(["press UP 30 0", "wait 120", "shot cap5_ginasio.png"])
     ok(q.mapname() == GYM, "Ginasio do Tchum aberto depois da Lela")
     import qa_driver as D
     m = D.MAPS[GYM]
