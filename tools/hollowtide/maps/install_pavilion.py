@@ -36,6 +36,12 @@ def flatten_steps():
             v = struct.unpack_from("<H", d, i)[0]
             if (v >> 12) == 5 and (v >> 10) & 3 == 0:
                 struct.pack_into("<H", d, i, (v & 0x0FFF) | (3 << 12))
+    for y in range(4, 6):                       # telhado de cima do carimbo: estava andavel (elevacao 5); vira solido
+        for x in range(42, 52):
+            i = 2 * (y * W + x)
+            v = struct.unpack_from("<H", d, i)[0]
+            if (v >> 12) == 5 and (v >> 10) & 3 == 0:
+                struct.pack_into("<H", d, i, v | (1 << 10))
     open(lp, "wb").write(bytes(d))
 
 
