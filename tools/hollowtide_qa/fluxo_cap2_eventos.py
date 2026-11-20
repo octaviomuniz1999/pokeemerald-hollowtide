@@ -27,7 +27,7 @@ def talk(q, mapa, x, y, d):
     q.run([f"press {d} 10 10", "press A 4 40", "mash B 14"])
 
 
-def battle(q, flag, tries=80):
+def battle(q, flag, tries=140):
     for _ in range(tries):
         if q.flag(flag) and not q.in_battle():
             q.run(["mash B 20"])

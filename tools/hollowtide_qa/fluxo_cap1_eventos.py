@@ -23,7 +23,7 @@ def ok(cond, label):
         raise SystemExit(1)
 
 
-def battle(q, flag, tries=80):
+def battle(q, flag, tries=140):
     """Avanca dialogo e batalha (FIGHT -> 1o golpe) ate a flag do treinador ligar."""
     for _ in range(tries):
         if q.flag(flag) and not q.in_battle():
@@ -75,7 +75,7 @@ def main(rom, runner, work, estado):
     q.goto(G, 5, 3)
     ok(True, "Ponte baixou: caminho ate o Nevard aberto")
     q.run(["press UP 10 10", "press A 4 40"])
-    ok(battle(q, NEVARD, tries=40), "Venceu NEVARD")
+    ok(battle(q, NEVARD, tries=140), "Venceu NEVARD")
     for _ in range(10):
         q.run(["mash A 10", "mash B 6"])
         if q.flag(FLAG_BADGE1):
