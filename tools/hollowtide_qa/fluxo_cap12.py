@@ -34,7 +34,7 @@ def main(rom, runner, work, pre):
         q.run(["press A 4 40", "wait 30"])
     q.run(["wait 200", "mash A 6", "mash B 6", "shot cap12_estalagem.png"])
     ok(q.mapname() == "MAP_PACIFIDLOG_TOWN_HOUSE1" and tuple(q.where[2:]) == (3, 6), "Estalagem: pernoite aceito, cena termina e o jogador fica livre")
-    q.goto("MAP_PACIFIDLOG_TOWN_HOUSE1", 4, 7); q.run(["press DOWN 20 0", "wait 120"])
+    q.goto("MAP_PACIFIDLOG_TOWN_HOUSE1", 4, 7); q.run(["press DOWN 40 0", "wait 120"])
     ok(q.mapname() == PW and tuple(q.where[2:]) == (23, 16), "Estalagem -> Passway (porta certa)")
     q.goto(PW, 17, 10); q.run(["press UP 16 0", "wait 30"])
     for _ in range(15):                      # o guardiao fala e o jogador recua um passo
