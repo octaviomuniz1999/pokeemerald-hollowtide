@@ -1,6 +1,8 @@
 enum
 {
     PAGE_TITLE,
+    PAGE_HT_BASE,
+    PAGE_HT_FAN,
     PAGE_DIRECTOR,
     PAGE_ART_DIRECTOR,
     PAGE_WORLD_DIRECTOR,
@@ -65,6 +67,13 @@ enum
 static const u8 sCreditsText_EmptyString[]                    = _("");
 static const u8 sCreditsText_PkmnEmeraldVersion[]             = _("POKéMON HOLLOWTIDE");
 static const u8 sCreditsText_Credits[]                        = _("Created by respectlol1");
+static const u8 sCreditsText_HtBuiltOn[] = _("Built on");
+static const u8 sCreditsText_HtPret[] = _("pret / pokeemerald");
+static const u8 sCreditsText_HtRhh[] = _("RHH / pokeemerald-expansion");
+static const u8 sCreditsText_HtFan[] = _("A fan project");
+static const u8 sCreditsText_HtOwn1[] = _("POKéMON belongs to");
+static const u8 sCreditsText_HtOwn2[] = _("Nintendo, Creatures");
+static const u8 sCreditsText_HtOwn3[] = _("and GAME FREAK");
 static const u8 sCreditsText_ExecutiveDirector[]              = _("Executive Director");
 static const u8 sCreditsText_Director[]                       = _("Director");
 static const u8 sCreditsText_ArtDirector[]                    = _("Art Director");
@@ -224,6 +233,13 @@ static const u8 sCreditsText_ErikJohnson[]                    = _("Erik Johnson"
 static const struct CreditsEntry sCreditsEntry_EmptyString                      = { 0, FALSE, sCreditsText_EmptyString};
 static const struct CreditsEntry sCreditsEntry_PkmnEmeraldVersion               = { 9,  TRUE, sCreditsText_PkmnEmeraldVersion};
 static const struct CreditsEntry sCreditsEntry_Credits                          = { 7,  TRUE, sCreditsText_Credits};
+static const struct CreditsEntry sCreditsEntry_HtBuiltOn = {12, TRUE, sCreditsText_HtBuiltOn};
+static const struct CreditsEntry sCreditsEntry_HtPret = {7, FALSE, sCreditsText_HtPret};
+static const struct CreditsEntry sCreditsEntry_HtRhh = {2, FALSE, sCreditsText_HtRhh};
+static const struct CreditsEntry sCreditsEntry_HtFan = {9, TRUE, sCreditsText_HtFan};
+static const struct CreditsEntry sCreditsEntry_HtOwn1 = {7, FALSE, sCreditsText_HtOwn1};
+static const struct CreditsEntry sCreditsEntry_HtOwn2 = {6, FALSE, sCreditsText_HtOwn2};
+static const struct CreditsEntry sCreditsEntry_HtOwn3 = {9, FALSE, sCreditsText_HtOwn3};
 static const struct CreditsEntry sCreditsEntry_ExecutiveDirector                = { 8,  TRUE, sCreditsText_ExecutiveDirector};
 static const struct CreditsEntry sCreditsEntry_Director                         = {12,  TRUE, sCreditsText_Director};
 static const struct CreditsEntry sCreditsEntry_ArtDirector                      = {10,  TRUE, sCreditsText_ArtDirector};
@@ -390,6 +406,20 @@ static const struct CreditsEntry *const sCreditsEntryPointerTable[PAGE_COUNT][EN
         &sCreditsEntry_Credits,
         _,
         _
+    },
+    [PAGE_HT_BASE] = {
+        _,
+        &sCreditsEntry_HtBuiltOn,
+        &sCreditsEntry_HtPret,
+        &sCreditsEntry_HtRhh,
+        _
+    },
+    [PAGE_HT_FAN] = {
+        _,
+        &sCreditsEntry_HtFan,
+        &sCreditsEntry_HtOwn1,
+        &sCreditsEntry_HtOwn2,
+        &sCreditsEntry_HtOwn3
     },
     [PAGE_DIRECTOR] = {
         _,

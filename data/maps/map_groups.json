@@ -166,7 +166,10 @@
     "PalmStormRidge",
     "PalmStormCabin",
     "PalmStormSummit",
-    "PalmMarineEpilogue"
+    "PalmMarineEpilogue",
+    "PalmStationVoltara",
+    "PalmStationFerralia",
+    "PalmStationTradepost"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

@@ -167,6 +167,13 @@
       "elevation": 0,
       "dest_map": "MAP_PALM_HOC_GYM",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 26,
+      "y": 17,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_STATION_VOLTARA",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

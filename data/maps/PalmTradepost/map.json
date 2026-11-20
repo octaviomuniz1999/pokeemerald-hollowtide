@@ -159,6 +159,13 @@
       "elevation": 0,
       "dest_map": "MAP_FALLARBOR_TOWN_MOVE_RELEARNERS_HOUSE",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 14,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_STATION_TRADEPOST",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

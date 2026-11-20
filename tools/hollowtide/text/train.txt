@@ -1,0 +1,44 @@
+## file: data/maps/PalmStationVoltara/scripts.inc
+==+ Palm250_TextSuspended
+Welcome to the LUNIA RAILWAY.
+
+I'm sorry, all trains are suspended.
+The whole line lost power when
+VOLTARA went dark.
+==+ Palm250_TextWelcome
+Welcome to the LUNIA RAILWAY!
+The line is running again.
+==+ Palm250_TextAskVolt
+Would you like to take the train
+to VOLTARA?
+==+ Palm250_TextAskFerr
+Would you like to take the train
+to FERRALIA?
+==+ Palm250_TextAskTrad
+Would you like to take the train
+to TRADEPOST?
+==+ Palm250_TextComeAgain
+Please come again!
+==+ Palm250_TextBoard
+All aboard! Please mind the gap.
+==+ Palm250_TextStaff
+Sorry, the platforms are for staff
+and passengers with tickets only.
+==+ Palm250_TextVoltTraveler
+I came to VOLTARA for the GYM, but
+I'm staying for the trains. Fast!
+==+ Palm250_TextVoltTraveler2
+The station clock stopped during the
+blackout. Nobody has fixed it yet.
+==+ Palm250_TextFerrTraveler
+This used to be the railway company's
+head office. Now it's the station too.
+==+ Palm250_TextFerrTraveler2
+FERRALIA, TRADEPOST, VOLTARA…
+I commute between all three!
+==+ Palm250_TextTradTraveler
+Merchants ship everything by train.
+When the line stopped, prices went up.
+==+ Palm250_TextTradTraveler2
+I'm taking the train to FERRALIA to
+see the towers on the big avenue.
