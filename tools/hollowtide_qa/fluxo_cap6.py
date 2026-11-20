@@ -32,10 +32,10 @@ def talk(q, mapa, x, y, face, extra=("mash B 20",)):
 def main(rom, runner, work, pre, pos):
     q = QA(rom, runner, work)
     q.load(pre); q.run(["mash B 10"]); q.no_wild()
-    q.goto(P, 53, 20); q.run(["press RIGHT 18 0", "wait 60", "mash A 24", "mash B 6", "wait 60"])
+    q.goto(P, 53, 20, avoid={(20, 7), (31, 8)}); q.run(["press RIGHT 18 0", "wait 60", "mash A 24", "mash B 6", "wait 60"])
     ok(q.mapname() == P and tuple(q.where[2:]) == (53, 20), "Pillarton: saida leste fechada antes da insignia (recua)")
     q.load(pos); q.run(["mash B 10", "setflag 1270 31", "clearflag 1270 30"]); q.strong()
-    q.goto(P, 54, 20); q.run(["press RIGHT 30 0", "wait 90", "shot cap6_rota6.png"])
+    q.goto(P, 54, 20, avoid={(20, 7), (31, 8)}); q.run(["press RIGHT 30 0", "wait 90", "shot cap6_rota6.png"])
     ok(q.mapname() == R6, "Pillarton -> Route 6 (conexao, apos a insignia)")
     for (ax, ay, walk, nome, tid) in [(6, 20, "walk RIGHT 2", "MIKA", 137), (22, 14, "walk RIGHT 2", "REN", 107),
                                       (31, 16, "walk DOWN 2", "SAYO", 159), (43, 20, "walk RIGHT 2", "HANA", 160)]:
