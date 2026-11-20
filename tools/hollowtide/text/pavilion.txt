@@ -1,0 +1,62 @@
+## file: data/maps/PalmHorizon/scripts.inc
+==+ Palm260_TextClosed
+The doors are locked. A note says:
+“Closed while the lake is rising.”
+==+ Palm260_TextSignOpen
+STAR PAVILION
+“The constellations of LUNIA.”
+
+## file: data/maps/PalmStarPavilion/scripts.inc
+==+ Palm261_TextAttendant
+The observation deck upstairs only
+opens at night, when the sky is clear.
+==+ Palm261_TextGuide
+Welcome to the STAR PAVILION!
+
+On still nights, the lake reflects
+every constellation in this hall.
+==+ Palm261_TextStargazer
+CHELSIA comes here a lot. She says
+the stars help her think.
+==+ Palm261_TextKid
+I found the PIPLUP constellation!
+It's tiny, but it's my favorite!
+==+ Palm261_TextVisitor
+When the lake flooded, the staff
+carried every star chart upstairs.
+==+ Palm261_TextExLantern
+THE LANTERN
+Four stars around a bright one.
+Sailors on the lake steered by it.
+==+ Palm261_TextExCrown
+THE CROWN
+A ring of seven stars that rises in
+spring, over the eastern hills.
+==+ Palm261_TextExPiplup
+THE PIPLUP
+A small, faint group of blue stars.
+Easy to miss, hard to forget.
+==+ Palm261_TextExMirror
+THE LAKE MIRROR
+A painting of HORIZON's lake at night,
+holding every star of the sky.
+==+ Palm261_TextExWayfarer
+THE WAYFARER
+Travelers followed its brightest star
+north, toward the mountains.
+==+ Palm261_TextExTelescope
+A model of the pavilion's old
+telescope, made of brass and glass.
+==+ Palm261_TextExTablet
+A stone tablet carved by HORIZON's
+first settlers: a map of the sky as
+they saw it, long ago.
+==+ Palm261_TextExMoonStone
+A replica of a MOON STONE.
+
+“Found at the MOON CIRCLE on ROUTE 7,
+where the stars seem closest.”
+==+ Palm261_TextExTwins
+THE TWIN LIGHTS
+Two bright stars that cross the
+summer sky together, side by side.

@@ -377,3 +377,37 @@ Palm171_House3Boy_Text:
 
 Palm171_House3Skitty_Text:
 	.string "SKITTY: Mew?$"
+Palm260_PavilionClosed::
+	goto_if_set FLAG_HT_HORIZON_DONE, Palm260_End
+	lockall
+	msgbox Palm260_TextClosed, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Palm260_StepBack
+	waitmovement 0
+	releaseall
+	end
+
+Palm260_StepBack:
+	walk_down
+	step_end
+
+Palm260_PavilionSign::
+	goto_if_set FLAG_HT_HORIZON_DONE, Palm260_PavilionSignOpen
+	msgbox Palm170_PavilionSign_Text, MSGBOX_SIGN
+	end
+
+Palm260_PavilionSignOpen::
+	msgbox Palm260_TextSignOpen, MSGBOX_SIGN
+	end
+
+Palm260_End::
+	end
+
+
+Palm260_TextClosed:
+	.string "The doors are locked. A note says:\n"
+	.string "“Closed while the lake is rising.”$"
+
+Palm260_TextSignOpen:
+	.string "STAR PAVILION\n"
+	.string "“The constellations of LUNIA.”$"
