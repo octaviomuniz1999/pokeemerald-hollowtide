@@ -13,7 +13,7 @@ from fluxo_cap11b import enemy_species, NAV
 TF = 0x500
 ST, SR, CB, SM, MC = ("MAP_PALM_STORM_TRAIL", "MAP_PALM_STORM_RIDGE", "MAP_PALM_STORM_CABIN", "MAP_PALM_STORM_SUMMIT",
                       "MAP_PALM_MARINE_EPILOGUE")
-CYNTHIA_DONE, SUMMIT_DONE, GODMODE = 0x1AB, 0x1DA, 0x1DF
+CYNTHIA_DONE, SUMMIT_DONE, GODMODE, KEYSTONE = 0x1AB, 0x1DA, 0x1DF, 0x1E0
 VAR_EPILOGUE = 0x409B
 IDS = {m.group(1): int(m.group(2)) for m in re.finditer(r"#define (TRAINER_\w+)\s+(\d+)",
        open(os.path.join(os.path.dirname(__file__), "..", "..", "include", "constants", "opponents.h")).read())}
@@ -110,6 +110,12 @@ def main(rom, runner, work, pre):
     ok(seen_hoenn, "Epilogo: Doge sela o Kyogre na Caverna Marinha")
     q.run(["mash A 20", "wait 120", "shot cap12b_fim.png"])
     ok(q.mapname() == SM and var(q, VAR_EPILOGUE) == 3, "De volta ao cume, tempestade passou, tela final")
+    for _ in range(30):
+        if q.flag(KEYSTONE):
+            break
+        q.run(["mash A 6", "wait 40"])
+    q.run(["mash B 10"])
+    ok(q.flag(KEYSTONE), "Doge entrega a Key Stone (Mega Ring)")
     q.run([f"clearflag 1270 {GODMODE:X}"])
     shutil.copy(q.state, f"{work}/c12fim.ss")
     q.goto(SM, 11, 21); q.run(["press DOWN 30 0", "wait 60"])

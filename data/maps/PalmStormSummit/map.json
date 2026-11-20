@@ -50,7 +50,15 @@
       "flag": "FLAG_HT_HIDE_SUMMIT_DOGE"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_STORM_HOLLOW",
+      "dest_warp_id": "0"
+    }
+  ],
   "coord_events": [
     {
       "type": "trigger",
@@ -69,6 +77,15 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "Palm240_Scene"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 14,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Palm242_HollowWind"
     }
   ],
   "bg_events": []

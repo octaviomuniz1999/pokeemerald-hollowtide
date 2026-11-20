@@ -80,8 +80,22 @@ Palm240_Ending::
 	msgbox Palm240_TextFinal, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_FROM_BLACK
+	delay 30
+	call Palm240_GiveKeyStone
 	releaseall
 	end
+
+Palm240_GiveKeyStone::
+	goto_if_set FLAG_HT_RECEIVED_KEY_STONE, Palm240_Ret
+	msgbox Palm240_TextKeyStone, MSGBOX_DEFAULT
+	giveitem ITEM_MEGA_RING
+	setflag FLAG_HT_RECEIVED_KEY_STONE
+	msgbox Palm240_TextKeyStoneHint, MSGBOX_DEFAULT
+	closemessage
+	return
+
+Palm240_Ret::
+	return
 
 Palm240_Tavinho::
 	lock
@@ -98,7 +112,13 @@ Palm240_TavinhoAfter::
 Palm240_Doge::
 	lock
 	faceplayer
+	goto_if_unset FLAG_HT_RECEIVED_KEY_STONE, Palm240_DogeKeyStone
 	msgbox Palm240_TextDogeAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Palm240_DogeKeyStone::
+	call Palm240_GiveKeyStone
 	release
 	end
 
@@ -170,3 +190,36 @@ Palm240_TextDogeAfter:
 	.string "DOGE: A friendly rematch someday?\n"
 	.string "You, me and TAVINHO.\p"
 	.string "Just not in a storm. HAHAHA!$"
+Palm240_TextKeyStone:
+	.string "DOGE: Oh, one more thing, {PLAYER}.\p"
+	.string "Take this. It's a MEGA RING, with a\n"
+	.string "KEY STONE set in it.\p"
+	.string "You saw what PKAS's CHARIZARD and my\n"
+	.string "LATIOS can do. A CHAMPION should have\l"
+	.string "one too.$"
+Palm240_TextKeyStoneHint:
+	.string "DOGE: A KEY STONE needs a MEGA STONE\n"
+	.string "held by the right POKéMON.\p"
+	.string "The strongest POKéMON of this mountain\n"
+	.string "live in the cave beside the summit.\l"
+	.string "They say a few stones are hidden in\l"
+	.string "there… if you can handle the climb.$"
+
+Palm242_HollowWind::
+	goto_if_set FLAG_HT_SUMMIT_DONE, Palm240_End
+	lockall
+	msgbox Palm242_TextWind, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Palm242_StepBack
+	waitmovement 0
+	releaseall
+	end
+
+Palm242_StepBack:
+	walk_down
+	step_end
+
+Palm242_TextWind:
+	.string "A fierce wind howls out of the cave.\p"
+	.string "It's impossible to go in while the\n"
+	.string "storm is raging.$"

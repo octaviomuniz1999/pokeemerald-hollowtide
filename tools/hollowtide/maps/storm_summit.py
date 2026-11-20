@@ -14,6 +14,7 @@ SOUTH = (11, 12)
 OFFSET_RIDGE = 6              # cume x = crista x - 6
 TAVINHO = (11, 6)
 DOGE_IN = (12, 15)            # por onde o Doge chega depois da luta (sobe a escadinha)
+HOLLOW_MOUTH = (7, 13)        # boca da caverna do pico (area de treino pos-Liga), na parede sul do patamar
 
 
 def compose():
@@ -49,6 +50,7 @@ def compose():
                    (22, 8), (14, 17), (5, 20), (19, 12), (4, 8)]:
         if c.terrain[y][x] == "grass" and (x, y) not in stair and (x, y) not in paths:
             c.put(x, y, 226, collision=1, elevation=c.level[y][x] if c.level[y][x] > 3 else 3)
+    c.put(HOLLOW_MOUTH[0], HOLLOW_MOUTH[1], 0xA7, collision=0)        # boca da caverna (metatile do General, como na Route 11)
     return c
 
 

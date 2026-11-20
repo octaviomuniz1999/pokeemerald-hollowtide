@@ -180,8 +180,22 @@ Palm240_Ending::
 	msgbox Palm240_TextFinal, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_FROM_BLACK
+	delay 30
+	call Palm240_GiveKeyStone
 	releaseall
 	end
+
+Palm240_GiveKeyStone::
+	goto_if_set FLAG_HT_RECEIVED_KEY_STONE, Palm240_Ret
+	msgbox Palm240_TextKeyStone, MSGBOX_DEFAULT
+	giveitem ITEM_MEGA_RING
+	setflag FLAG_HT_RECEIVED_KEY_STONE
+	msgbox Palm240_TextKeyStoneHint, MSGBOX_DEFAULT
+	closemessage
+	return
+
+Palm240_Ret::
+	return
 
 Palm240_Tavinho::
 	lock
@@ -198,7 +212,13 @@ Palm240_TavinhoAfter::
 Palm240_Doge::
 	lock
 	faceplayer
+	goto_if_unset FLAG_HT_RECEIVED_KEY_STONE, Palm240_DogeKeyStone
 	msgbox Palm240_TextDogeAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Palm240_DogeKeyStone::
+	call Palm240_GiveKeyStone
 	release
 	end
 
@@ -230,6 +250,10 @@ Palm240_TextFinal:
 Palm240_TextTavinhoAfter:
 	.string "x$"
 Palm240_TextDogeAfter:
+	.string "x$"
+Palm240_TextKeyStone:
+	.string "x$"
+Palm240_TextKeyStoneHint:
 	.string "x$"
 """
     open(f"{ROOT}/data/maps/PalmStormSummit/scripts.inc", "w").write(sc)

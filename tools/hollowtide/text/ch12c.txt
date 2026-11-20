@@ -82,6 +82,24 @@ You, me and TAVINHO.
 
 Just not in a storm. HAHAHA!
 
+== Palm240_TextKeyStone
+DOGE: Oh, one more thing, {PLAYER}.
+
+Take this. It's a MEGA RING, with a
+KEY STONE set in it.
+
+You saw what PKAS's CHARIZARD and my
+LATIOS can do. A CHAMPION should have
+one too.
+== Palm240_TextKeyStoneHint
+DOGE: A KEY STONE needs a MEGA STONE
+held by the right POKéMON.
+
+The strongest POKéMON of this mountain
+live in the cave beside the summit.
+They say a few stones are hidden in
+there… if you can handle the climb.
+
 ## file: data/maps/PalmMarineEpilogue/scripts.inc
 == Palm241_TextHoenn
 MARINE CAVE, HOENN.

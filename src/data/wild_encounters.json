@@ -37589,6 +37589,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_PALM_STORM_HOLLOW",
+          "base_label": "gPalmStormHollow",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 80,
+                "max_level": 82,
+                "species": "SPECIES_SHELGON"
+              },
+              {
+                "min_level": 80,
+                "max_level": 82,
+                "species": "SPECIES_GABITE"
+              },
+              {
+                "min_level": 80,
+                "max_level": 83,
+                "species": "SPECIES_DRUDDIGON"
+              },
+              {
+                "min_level": 80,
+                "max_level": 83,
+                "species": "SPECIES_GLALIE"
+              },
+              {
+                "min_level": 81,
+                "max_level": 83,
+                "species": "SPECIES_SHELGON"
+              },
+              {
+                "min_level": 81,
+                "max_level": 83,
+                "species": "SPECIES_GABITE"
+              },
+              {
+                "min_level": 81,
+                "max_level": 84,
+                "species": "SPECIES_FROSLASS"
+              },
+              {
+                "min_level": 81,
+                "max_level": 84,
+                "species": "SPECIES_SCYTHER"
+              },
+              {
+                "min_level": 82,
+                "max_level": 85,
+                "species": "SPECIES_DRUDDIGON"
+              },
+              {
+                "min_level": 82,
+                "max_level": 85,
+                "species": "SPECIES_GLALIE"
+              },
+              {
+                "min_level": 83,
+                "max_level": 86,
+                "species": "SPECIES_SALAMENCE"
+              },
+              {
+                "min_level": 83,
+                "max_level": 86,
+                "species": "SPECIES_GARCHOMP"
+              }
+            ]
+          }
         }
       ]
     },

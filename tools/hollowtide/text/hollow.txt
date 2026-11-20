@@ -1,0 +1,18 @@
+## file: data/maps/PalmStormSummit/scripts.inc
+== Palm242_TextWind
+A fierce wind howls out of the cave.
+
+It's impossible to go in while the
+storm is raging.
+
+## file: data/maps/PalmStormHollow/scripts.inc
+== Palm243_TextHiker
+HIKER: Whew! The storm's gone, and the
+mountain's POKéMON came back.
+
+The ones in this cave are the toughest
+I've ever seen. SALAMENCE, GARCHOMP…
+
+If you want to get stronger, this is
+the place. Just don't push too far
+from the exit!

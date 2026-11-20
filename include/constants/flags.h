@@ -526,10 +526,10 @@
 
 #define FLAG_HT_HIDE_SUMMIT_DOGE             0x1DE // esconde o Doge no cume ate ele chegar
 #define FLAG_HT_QA_GODMODE                   0x1DF // Hollowtide QA: dano no time do jogador limitado a 1 (so build nao-release; nunca ligada no jogo)
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_HT_RECEIVED_KEY_STONE           0x1E0 // Doge entregou a Key Stone (Mega Ring) no fim do epilogo
+#define FLAG_HT_HOLLOW_ITEM_1                0x1E1 // caverna do pico: Salamencite
+#define FLAG_HT_HOLLOW_ITEM_2                0x1E2 // caverna do pico: Garchompite
+#define FLAG_HT_HOLLOW_ITEM_3                0x1E3 // caverna do pico: Full Restore
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
