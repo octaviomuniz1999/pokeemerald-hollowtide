@@ -21,7 +21,7 @@ from install_cap7 import seam_check
 OD = collections.OrderedDict
 R8_TRAINERS = [(25, 41, "HIKER", "LEFT", 2, "Palm180_RouteALAN", "TRAINER_PALM_ROUTE08_ALAN"),
                (16, 29, "BLACK_BELT", "DOWN", 2, "Palm180_RouteKIYO", "TRAINER_PALM_ROUTE08_KIYO"),
-               (18, 17, "CRUSH_GIRL", "DOWN", 2, "Palm180_RouteCORA", "TRAINER_PALM_ROUTE08_CORA"),
+               (18, 17, "EXPERT_F", "DOWN", 2, "Palm180_RouteCORA", "TRAINER_PALM_ROUTE08_CORA"),
                (22, 5, "EXPERT_M", "DOWN", 2, "Palm180_RouteAURON", "TRAINER_PALM_ROUTE08_AURON")]
 R8_ITEMS = [(3, 20, "ITEM_NEVER_MELT_ICE", "FLAG_ITEM_ROUTE_119_RARE_CANDY"),          # mirante
             (29, 15, "ITEM_HYPER_POTION", "FLAG_ITEM_ROUTE_119_HYPER_POTION_1"),

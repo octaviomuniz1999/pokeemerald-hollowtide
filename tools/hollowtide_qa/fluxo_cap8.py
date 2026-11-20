@@ -7,7 +7,22 @@ Uso: fluxo_cap8.py ROM RUNNER WORKDIR ESTADO_POS_CHELSIA
 import shutil, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from qa_driver import QA
-from fluxo_cap2_eventos import battle
+
+
+def battle(q, flag, tries=140):
+    """Como o battle() comum, mas so com Surf (slot 0) e Ice Beam (slot 1): Trovao e Body Slam nao servem contra
+    os Pokemon de Terra/Pedra/Gelo da montanha, e o time de QA tem um Pokemon so."""
+    for i in range(tries):
+        if q.flag(flag) and not q.in_battle():
+            q.run(["mash B 20"])
+            return True
+        if q.in_battle():
+            nav = [] if i % 3 else ["press RIGHT 4 6"]
+            q.run(["press B 4 8", "press UP 4 6", "press LEFT 4 6", "press A 4 20", "press UP 4 6", "press LEFT 4 6"]
+                  + nav + ["press A 4 20", "wait 150", "mash B 4"])
+        else:
+            q.run(["mash B 6", "press A 4 30"])
+    return q.flag(flag)
 
 TF = 0x500
 HZ, R8, PW = "MAP_PALM_HORIZON", "MAP_PALM_ROUTE08", "MAP_PALM_PASSWAY"
@@ -33,11 +48,13 @@ def talk(q, mapa, x, y, face, extra=("mash B 20",)):
 
 
 def sighted(q, mapa, ax, ay, walk, nome, tid):
+    q.strong()                                   # cura e nivel de QA antes de cada treinador
     q.goto(mapa, ax, ay, avoid=avoid(mapa) - {(ax, ay)})
     if q.flag(TF + tid):
         ok(True, f"{nome} desafiou (no caminho)"); ok(True, f"Venceu {nome}")
         return
-    q.run([walk, "wait 60"])
+    q.run([walk, "wait 60", f"shot dbg8_{nome}.png"])
+    print("   ", nome, "jogador em", q.where[2:], "flag 0x30", q.flag(0x30), flush=True)
     seen = False
     for _ in range(25):
         if q.in_battle():
