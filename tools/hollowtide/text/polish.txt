@@ -62,3 +62,24 @@ The gates won't open for just one.
 It appears to be for use at a
 harbor. Why not give it a try and
 see what it is about?
+
+## file: data/maps/FortreeCity_PokemonCenter_1F/scripts.inc
+== FortreeCity_PokemonCenter_1F_Text_GoToSafariZone
+Listen, kid, are you working on a
+POKéDEX?
+
+Hmm… Try every patch of tall grass,
+and fish in every lake you find.
+That's my suggestion.
+
+## file: data/maps/LilycoveCity_DepartmentStore_1F/scripts.inc
+== LilycoveCity_DepartmentStore_1F_Text_BuyingSomethingForAzumarill
+I'm buying something for my AZUMARILL.
+It helped hang the lamps for the
+festival!
+
+## file: data/maps/LilycoveCity_House3/scripts.inc
+== LilycoveCity_House3_Text_GoingToEnterContest
+I want to show everyone how tough my
+POKéMON is, so we're going to visit
+every GYM in LUNIA together!

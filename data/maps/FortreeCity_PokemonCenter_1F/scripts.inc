@@ -28,9 +28,10 @@ FortreeCity_PokemonCenter_1F_EventScript_Boy::
 	end
 
 FortreeCity_PokemonCenter_1F_Text_GoToSafariZone:
-	.string "Listen, kid, are you working\n"
-	.string "on a POKéDEX?\p"
-	.string "Hmm… Go to the SAFARI ZONE.\n"
+	.string "Listen, kid, are you working on a\n"
+	.string "POKéDEX?\p"
+	.string "Hmm… Try every patch of tall grass,\n"
+	.string "and fish in every lake you find.\l"
 	.string "That's my suggestion.$"
 
 FortreeCity_PokemonCenter_1F_Text_RecordCornerIsNeat:
