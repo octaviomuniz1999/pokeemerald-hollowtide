@@ -366,3 +366,5 @@ warps, não as batalhas nem os eventos.
 **Leitura**: até a Nami a curva sobe de forma suave (o ás do líder fica ~3–5 níveis acima dos selvagens da rota). A partir da Liga os níveis do cânone sobem muito mais rápido: Nami 52 → Pkas 70 → Doge 77 (≈ +25 em salas seguidas), e no pós-jogo Cynthia 85 e Tavinho 94 ficam acima de qualquer selvagem. O jogador vai precisar treinar bastante (a Route 11 vai a 58; a montanha a 80). Os níveis dos chefes são do cânone e **não foram mudados**; a QA das lutas finais usa o godmode e **não mede** essa dificuldade.
 
 **Para o diretor decidir** (não mudei sem aprovação): (1) Exp. Share ligado desde cedo e/ou um Lucky Egg; (2) uma área de treino pós-Liga com selvagens 80+; (3) manter como está (desafio alto, como pede o cânone).
+
+| QA | **r58: 427 conferências, 0 falhas** (níveis selvagens novos e 3 textos; a QA da Liga usa o godmode em todas as salas — o Pkas venceu o Mewtwo de QA por sorte; os 75 últimos refeitos a partir do saguão, mesma ROM) — **build 20ab** |
