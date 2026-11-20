@@ -258,3 +258,11 @@ warps, não as batalhas nem os eventos.
 | Cânone | Tavinho e Kyogre não aparecem; o protagonista só observa o céu escurecendo sobre o cume |
 | Correções | sprite CRUSH_GIRL é só do modo FRLG (não aparece no Emerald): Cora usa EXPERT_F; o sinal do deslocamento da conexão Route 8 ⇄ Passway estava invertido (o QA pegou na travessia) |
 | QA | `fluxo_cap8.py` (trava/conexões nos dois sentidos, 4 treinadores com visão, 3 itens, escadaria e estrada leste recuam, fonte termal, casa da anciã, Centro Pokémon); o combate de QA da montanha usa só Surf/Ice Beam e cura antes de cada treinador; **suíte completa 484/484 (Cap. 1–8) na mesma build** — build 20p |
+
+## 23. Capítulo 9 (parte 1) — Route 9 — 20/11/2026
+
+| Item | Estado |
+|---|---|
+| Passway | estrada leste aberta (deslizamento limpo); a casa da anciã mudou para o sul da vila: a Route 9 usa o secundário Rustboro e enxerga as colunas 28-35 da Passway, que agora só têm primário (o instalador confere linhas 10-27) |
+| Route 9 | mapa novo (48×36, General + Rustboro): estrada ao lado da ferrovia que vem de Voltara (os trilhos terminam num para-choque na coluna 12, depois da faixa que a Passway enxerga), calçada de serviço, subestação com placa de alta tensão, mato alto, bosques; Joseph (Electrike/Voltorb/Manectric), Drew (Shinx/Blitzle), Heidi (Helioptile/Pachirisu), Fabian (Magneton/Galvantula), Lv 42–44; Magnet, Thunder Stone, Electric Seed; encontros (Electrike, Blitzle, Shinx, Joltik, Helioptile, Elekid, Luxio raro); portão de Voltara fechado por falta de energia até a cidade existir |
+| QA | `fluxo_cap9.py` (conexão nos dois sentidos, 4 treinadores com visão, 3 itens, portão fechado); a verificação da estrada leste saiu do QA do Cap. 8; **suíte completa 510/510 (Cap. 1–9 parte 1)** — build 20q |
