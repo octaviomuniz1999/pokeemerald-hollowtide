@@ -123,13 +123,13 @@ def main():
           "\twaitmoncry\n\trelease\n\tend\n"]
     open(f"{ROOT}/data/maps/PalmStormCabin/scripts.inc", "w").write("\n".join(kc).replace("closeMessage", "closemessage"))
 
-    # ---------------- encontros (os mesmos da trilha, um pouco mais altos)
+    # ---------------- encontros (os mesmos da trilha, 4 niveis acima)
     wp = f"{ROOT}/src/data/wild_encounters.json"
     wj = jload(wp)
     grp = wj["wild_encounter_groups"][0]
     grp["encounters"] = [x for x in grp["encounters"] if x.get("map") != "MAP_PALM_STORM_RIDGE"]
     base = next(x for x in grp["encounters"] if x.get("map") == "MAP_PALM_STORM_TRAIL")
-    mons = [OD([("min_level", m["min_level"] + 3), ("max_level", m["max_level"] + 3), ("species", m["species"])]) for m in base["land_mons"]["mons"]]
+    mons = [OD([("min_level", m["min_level"] + 4), ("max_level", m["max_level"] + 4), ("species", m["species"])]) for m in base["land_mons"]["mons"]]
     entry = OD([("map", "MAP_PALM_STORM_RIDGE"), ("base_label", "gPalmStormRidge"),
                 ("land_mons", OD([("encounter_rate", 20), ("mons", mons)]))])
     idx = next(i for i, x in enumerate(grp["encounters"]) if x.get("map") == "MAP_PALM_STORM_TRAIL") + 1

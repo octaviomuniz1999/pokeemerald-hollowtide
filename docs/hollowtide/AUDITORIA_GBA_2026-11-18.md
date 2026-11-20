@@ -348,3 +348,21 @@ warps, não as batalhas nem os eventos.
 | Varreduras | `map_lint` ganhou o ERRO "degrau impossível" nos mapas gerados (achou o telhado do pavilhão, corrigido); `live_text.py` lista os textos alcançáveis a partir das entradas reais de cada mapa — os rematches dos ginásios reaproveitados (Wattson/Winona) viraram Vessel/Tchum e o Mystery Gift deixou de citar a Lilycove (na fonte; entram no próximo build) |
 | QA | **r56: 427 conferências, 0 falhas** (Cap. 1–12, ferrovia, estalagem, pavilhão, Grand Hotel) — **build 20z** |
 | QA | **r57: 427 conferências, 0 falhas** (ROM com os textos de rematch Vessel/Tchum e do Mystery Gift) — **build 20aa** |
+
+## 31. Curva de níveis (relatório de balanceamento) — 20/11/2026
+
+| Trecho | Selvagens | Treinadores | Líder/chefe (ás) |
+|---|---|---|---|
+| Cap. 1–2 (Route 2) | 9–13 | — | Nevard, Jay |
+| Cap. 3 (Route 3, Ferrália) | 17–23 | 20–22 | Vessel 26 |
+| Cap. 4–5 (Route 4–5) | 19–27 | 23–27 | Lela 30, Tchum 31 |
+| Cap. 6 (Route 6) | 30–33 | 31–34 | Jade 38 |
+| Cap. 7 (Route 7) | 36–39 | 37–40 | Chelsia 43 |
+| Cap. 8–9 (Route 8–9) | 40–45 | 41–44 | Vega 45, Hoc 47 |
+| Cap. 10 (Route 10) | 46–50 | 47–49 | Abelf 52, Nami 52 |
+| Cap. 11 (Route 11) | **52–58** (antes 52–56; o cânone da Pokédex diz 52–58) | 54–55 | Angelic 59, Riven 62, Du 66, Pkas 70, **Doge 77** |
+| Pós-Liga (Storm Mountain) | trilha **70–76**, crista **74–80** (antes 68–74 / 71–77; o cânone não fixa) | — | **Cynthia 85**, **Tavinho 94** |
+
+**Leitura**: até a Nami a curva sobe de forma suave (o ás do líder fica ~3–5 níveis acima dos selvagens da rota). A partir da Liga os níveis do cânone sobem muito mais rápido: Nami 52 → Pkas 70 → Doge 77 (≈ +25 em salas seguidas), e no pós-jogo Cynthia 85 e Tavinho 94 ficam acima de qualquer selvagem. O jogador vai precisar treinar bastante (a Route 11 vai a 58; a montanha a 80). Os níveis dos chefes são do cânone e **não foram mudados**; a QA das lutas finais usa o godmode e **não mede** essa dificuldade.
+
+**Para o diretor decidir** (não mudei sem aprovação): (1) Exp. Share ligado desde cedo e/ou um Lucky Egg; (2) uma área de treino pós-Liga com selvagens 80+; (3) manter como está (desafio alto, como pede o cânone).
