@@ -1,0 +1,40 @@
+## file: data/maps/PalmRoute13/scripts.inc
+==+ Palm251_SignWest_Text
+ROUTE 13 - MIRROR GROVE
+West: ROUTE 7
+
+==+ Palm251_TextLUNAIntro
+Look into the water… Is that your
+reflection? Or is it looking back?
+
+==+ Palm251_TextLUNALoss
+Hehehe… The grove liked that battle.
+
+==+ Palm251_TextLUNAAfter
+The ponds here never ripple. People
+say they show you as you really are.
+
+==+ Palm251_TextKAIOIntro
+I've been copying your steps since
+you came in. Didn't you notice?
+
+==+ Palm251_TextKAIOLoss
+I can copy moves, but not your
+strength.
+
+==+ Palm251_TextKAIOAfter
+A fox with a white mane plays tricks
+on travelers here. One moment it's a
+stone, the next it's gone.
+
+==+ Palm251_TextRAULIntro
+These stones were set in a circle
+long ago. I'm here to find out why!
+
+==+ Palm251_TextRAULLoss
+Ow… Back to my notes, then.
+
+==+ Palm251_TextRAULAfter
+Four stones, four ponds, and a path
+that always brings you back to the
+start. Somebody planned this place.

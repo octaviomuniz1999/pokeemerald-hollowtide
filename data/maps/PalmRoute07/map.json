@@ -23,6 +23,11 @@
       "map": "MAP_PALM_HORIZON",
       "offset": -10,
       "direction": "up"
+    },
+    {
+      "map": "MAP_PALM_ROUTE13",
+      "offset": 8,
+      "direction": "right"
     }
   ],
   "object_events": [

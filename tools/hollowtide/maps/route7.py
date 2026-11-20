@@ -15,6 +15,7 @@ SOUTH = (20, 21)          # trilha que vem da Serenia
 NORTH = (16, 17)          # trilha que segue para a Horizon City
 OFFSET_SERENIA = 18       # Serenia x = Route 7 x + 18 (porta norte da Serenia nas colunas 38-39)
 HILL_STAIRS = 26          # escada do Circulo da Lua (2 colunas)
+EAST_ROWS = (24, 25)      # saida leste para a Route 13 (Mirror Grove)
 # lago e patamar em retangulos com degraus de 2 tiles (degrau de 1 tile nao tem quina no autotile)
 LAKE = [(6, 8, 11, 11), (4, 12, 13, 15), (3, 16, 14, 39), (4, 40, 12, 43), (6, 44, 10, 45)]
 HILL = [(24, 5, 31, 6), (22, 7, 33, 16)]
@@ -49,6 +50,7 @@ def compose():
     path(NORTH[0], 0, NORTH[1], 45)
     # ramal para a escada do Circulo da Lua
     path(NORTH[1], 24, HILL_STAIRS + 1, 25)
+    path(HILL_STAIRS + 2, EAST_ROWS[0], W - 1, EAST_ROWS[1])   # para a Route 13 (Mirror Grove, leste)
     path(HILL_STAIRS, S(HILL_STAIRS) + 2, HILL_STAIRS + 1, 25)
     c.stairs(HILL_STAIRS, S(HILL_STAIRS), 2)
     path(HILL_STAIRS, 12, HILL_STAIRS + 1, S(HILL_STAIRS) - 1)

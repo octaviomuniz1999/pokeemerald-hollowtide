@@ -667,9 +667,9 @@
 #define FLAG_HT_R12_ITEM_1                   0x264 // Route 12: Mystic Water
 #define FLAG_HT_R12_ITEM_2                   0x265 // Route 12: Water Stone
 #define FLAG_HT_R12_ITEM_3                   0x266 // Route 12: Big Pearl
-#define FLAG_UNUSED_0x267  0x267 // Unused Flag
-#define FLAG_UNUSED_0x268  0x268 // Unused Flag
-#define FLAG_UNUSED_0x269  0x269 // Unused Flag
+#define FLAG_HT_R13_ITEM_1                   0x267 // Route 13: Spell Tag
+#define FLAG_HT_R13_ITEM_2                   0x268 // Route 13: Dusk Stone
+#define FLAG_HT_R13_ITEM_3                   0x269 // Route 13: Big Mushroom
 #define FLAG_UNUSED_0x26A  0x26A // Unused Flag
 #define FLAG_UNUSED_0x26B  0x26B // Unused Flag
 #define FLAG_UNUSED_0x26C  0x26C // Unused Flag
