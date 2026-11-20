@@ -3,25 +3,42 @@
 Du (tatame) -> Pkas (sala laranja, Mega Charizard X) -> Doge (Mega Latios) -> Hall da Fama -> fim de jogo.
 Uso: fluxo_cap11b.py ROM RUNNER WORKDIR ESTADO_SAGUAO (c11liga.ss)
 """
-import os, shutil, sys
+import os, shutil, subprocess, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from qa_driver import QA
+from qa_driver import QA, SB1
 from fluxo_cap2_eventos import battle as battle_all
 
 NAV = {0: [], 1: ["press RIGHT 4 6"], 2: ["press DOWN 4 6"], 3: ["press DOWN 4 6", "press RIGHT 4 6"]}
 
 
-def battle_seq(q, flag, seq, tries=260):
-    """Como battle_all, mas numa sequencia fixa de golpes do Mewtwo de QA (0 Surf, 1 Aura Sphere, 2 Thunderbolt,
-    3 Psystrike): contra o Doge, Aura Sphere (Meowscarada/Umbreon), Psystrike (Ninetales/Vaporeon) e Thunderbolt
-    (Lugia/Latios) em rodizio, no lugar do rodizio cego que gastava turnos com Surf."""
+def enemy_species(q):
+    """Especie do Pokemon adversario em campo: gBattleMons[1].species (struct BattlePokemon de 140 bytes;
+    o endereco de gBattleMons vem do pokeemerald.map)."""
+    import re as _re
+    if not hasattr(enemy_species, "addr"):
+        mp = open(os.path.join(os.path.dirname(__file__), "..", "..", "pokeemerald.map")).read()
+        enemy_species.addr = int(_re.search(r"0x([0-9a-f]{8})\s+gBattleMons\n", mp).group(1), 16) + 140
+    out = subprocess.run([q.runner, q.rom, q._peek_script("%08x" % enemy_species.addr, 1), "-", SB1],
+                         capture_output=True, text=True, cwd=q.work).stdout
+    return int(_re.findall(r"peek \w+: (\w+)", out)[-1], 16) & 0xFFFF
+
+
+# golpes do Mewtwo de QA: 0 Surf, 1 Aura Sphere, 2 Thunderbolt, 3 Psystrike
+BEST = {1291: 1, 197: 1,            # Meowscarada, Umbreon: Aura Sphere
+        38: 3, 134: 2,              # Ninetales: Psystrike; Vaporeon: Thunderbolt
+        249: 2, 381: 2, 945: 2}     # Lugia, Latios, Mega Latios: Thunderbolt
+
+
+def battle_smart(q, flag, tries=260):
+    """Como battle_all, mas escolhe o golpe pelo Pokemon adversario em campo (a IA do Doge troca de Pokemon)."""
     for i in range(tries):
         if q.flag(flag) and not q.in_battle():
             q.run(["mash B 20"])
             return True
         if q.in_battle():
+            slot = BEST.get(enemy_species(q), 1)
             q.run(["press B 4 8", "press UP 4 6", "press LEFT 4 6", "press A 4 20", "press UP 4 6", "press LEFT 4 6"]
-                  + NAV[seq[i % len(seq)]] + ["press A 4 20", "wait 150", "mash B 4"])
+                  + NAV[slot] + ["press A 4 20", "wait 150", "mash B 4"])
         else:
             q.run(["mash B 6", "press A 4 30"])
     return q.flag(flag)
@@ -91,7 +108,7 @@ def main(rom, runner, work, pre):
             break
         q.run(["press A 4 30"])
     ok(seen, "DOGE desafia o jogador")
-    ok(battle_seq(q, TF + WALLACE, [1, 3, 2]), "Venceu DOGE (campeao)")
+    ok(battle_smart(q, TF + WALLACE), "Venceu DOGE (campeao)")
     for _ in range(40):
         q.run(["mash A 10", "wait 60"])
         if q.mapname() == HOF:
