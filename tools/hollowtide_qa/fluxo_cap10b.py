@@ -98,7 +98,7 @@ def main(rom, runner, work, pre):
     q.goto(C1, 10, 26, avoid={(4, 21), (13, 10), (23, 7)}); ride(q, TD, ["press LEFT 10 10", "press A 4 40"])
     ok(q.mapname() == TD, "Barco de volta a Tidemouth")
     q.strong()
-    q.goto(TD, 39, 22); q.run(["press RIGHT 8 10", "press A 4 40", "mash A 6", "wait 120", "mash B 6",
+    q.goto(TD, 39, 22, avoid={(33, 37), (44, 17), (18, 25)}); q.run(["press RIGHT 8 10", "press A 4 40", "mash A 6", "wait 120", "mash B 6",
                                "press RIGHT 16 0", "wait 30", "shot cap10_surf.png"])
     ok(q.mapname() == TD and q.where[2] >= 40, "Surf no canal de Tidemouth (uso de campo)")
     q.run(["press LEFT 30 0", "wait 30", "mash B 6"])
