@@ -77,8 +77,7 @@ def compose():
     c.forest(lambda x, y: x >= 46 and y >= 34 and not (48 <= x <= 53 and 36 <= y <= 39), set())
     c.rect(48, 36, 53, 39, "flower")
     c.forest(lambda x, y: x < 20 and 2 <= y <= 6 and not (x < 8), set())
-    for (x, y) in [(4, 20), (12, 26), (44, 26), (28, 33), (40, 10)]:
-        c.small_tree(x, y)
+    c.rect(38, 8, 42, 12, "grass"); c.small_tree(39, 9); c.rect(41, 11, 41, 11, "flower")   # arvore em canteiro
     return c
 
 
