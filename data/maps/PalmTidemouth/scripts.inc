@@ -257,7 +257,9 @@ Palm201_TransEnd::
 	end
 
 Palm201_Boat::
+	goto_if_set FLAG_HT_TIDEMOUTH_COMPLEX_DONE, Palm201_BoatCalm
 	msgbox Palm201_TextBoat, MSGBOX_YESNO
+Palm201_BoatGo::
 	goto_if_eq VAR_RESULT, NO, Palm201_BoatNo
 	warp MAP_PALM_OCEAN_COMPLEX_1F, 10, 26
 	waitstate
@@ -304,3 +306,14 @@ Palm270_End::
 Palm270_TextSignOpen:
 	.string "TIDEMOUTH GRAND HOTEL\n"
 	.string "“Rest where the tide sings.”$"
+
+Palm201_BoatCalm::
+	msgbox Palm201_TextBoatCalm, MSGBOX_YESNO
+	goto Palm201_BoatGo
+
+
+Palm201_TextBoatCalm:
+	.string "SAILOR: The sea's calm again, thanks\n"
+	.string "to you and NAMI.\p"
+	.string "Want a ride out to the old complex?\n"
+	.string "NAMI is still there, checking things.$"

@@ -24,6 +24,10 @@ def main(rom, runner, work, pre):
     q.load(pre); q.no_wild(); q.run(["mash B 10", "setflag 1270 31", "setflag 1270 30"])
     if q.mapname() != TD:
         raise AssertionError(f"estado fora de Tidemouth: {q.mapname()}")
+    # porto depois da crise: o marinheiro fala do mar calmo e ainda leva ao complexo (Nami la, com o Surf)
+    q.goto(TD, 33, 38, avoid={(33, 37)}); q.run(["press UP 8 0", "wait 40", "press A 4 60", "wait 60", "shot porto_calmo.png",
+                                                "press B 4 30", "wait 60", "mash B 4"])
+    ok(q.mapname() == TD and tuple(q.where[2:]) == (33, 38), "Porto depois da crise: barco oferecido (mar calmo); NAO recua")
     q.goto(TD, 44, 18, avoid={(46, 18)})
     q.run([f"clearflag 1270 {DONE:X}", "press UP 20 0", "wait 30"])
     for _ in range(10):

@@ -41,6 +41,18 @@ def main():
                               "\tgoto_if_eq VAR_RESULT, FALSE, Palm204_GiveSurfEnd\n\tsetflag FLAG_HT_RECEIVED_SURF\n"
                               "\tmsgbox Palm204_TextNamiSurfHint, MSGBOX_DEFAULT\nPalm204_GiveSurfEnd::\n\treturn\n")
         open(sp, "w").write(s)
+    # o marinheiro do porto: depois da crise o mar esta calmo (e a Nami continua na sala de controle)
+    tp = f"{ROOT}/data/maps/PalmTidemouth/scripts.inc"
+    s = open(tp).read()
+    if "Palm201_BoatCalm" not in s:
+        a = "Palm201_Boat::\n\tmsgbox Palm201_TextBoat, MSGBOX_YESNO\n"
+        assert a in s
+        s = s.replace(a, "Palm201_Boat::\n\tgoto_if_set FLAG_HT_TIDEMOUTH_COMPLEX_DONE, Palm201_BoatCalm\n\tmsgbox Palm201_TextBoat, MSGBOX_YESNO\n"
+                         "Palm201_BoatGo::\n")
+        s = s.replace("Palm201_BoatGo::\n\tgoto_if_eq VAR_RESULT, NO, Palm201_BoatNo\n",
+                      "Palm201_BoatGo::\n\tgoto_if_eq VAR_RESULT, NO, Palm201_BoatNo\n")
+        s = s.rstrip("\n") + "\n\nPalm201_BoatCalm::\n\tmsgbox Palm201_TextBoatCalm, MSGBOX_YESNO\n\tgoto Palm201_BoatGo\n"
+        open(tp, "w").write(s)
     subprocess.run([sys.executable, f"{ROOT}/tools/hollowtide/texts.py", f"{ROOT}/tools/hollowtide/text/surf.txt"], check=True)
     print("Surf da Nami instalado; HMs esqueciveis")
 

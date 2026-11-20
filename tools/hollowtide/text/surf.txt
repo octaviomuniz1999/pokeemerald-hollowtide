@@ -15,3 +15,11 @@ are yours to explore.
 
 Rivers, coves, the lake at HORIZON…
 There's a lot out there to see!
+
+## file: data/maps/PalmTidemouth/scripts.inc
+==+ Palm201_TextBoatCalm
+SAILOR: The sea's calm again, thanks
+to you and NAMI.
+
+Want a ride out to the old complex?
+NAMI is still there, checking things.
