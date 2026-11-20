@@ -670,9 +670,9 @@
 #define FLAG_HT_R13_ITEM_1                   0x267 // Route 13: Spell Tag
 #define FLAG_HT_R13_ITEM_2                   0x268 // Route 13: Dusk Stone
 #define FLAG_HT_R13_ITEM_3                   0x269 // Route 13: Big Mushroom
-#define FLAG_UNUSED_0x26A  0x26A // Unused Flag
-#define FLAG_UNUSED_0x26B  0x26B // Unused Flag
-#define FLAG_UNUSED_0x26C  0x26C // Unused Flag
+#define FLAG_HT_R14_ITEM_1                   0x26A // Route 14: Scope Lens
+#define FLAG_HT_R14_ITEM_2                   0x26B // Route 14: Razor Claw
+#define FLAG_HT_R14_ITEM_3                   0x26C // Route 14: HP Up
 #define FLAG_UNUSED_0x26D  0x26D // Unused Flag
 #define FLAG_UNUSED_0x26E  0x26E // Unused Flag
 #define FLAG_UNUSED_0x26F  0x26F // Unused Flag

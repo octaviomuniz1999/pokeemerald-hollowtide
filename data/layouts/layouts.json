@@ -9642,6 +9642,17 @@
       "border_filepath": "data/layouts/PalmRoute13/border.bin",
       "blockdata_filepath": "data/layouts/PalmRoute13/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_ROUTE14",
+      "name": "PalmRoute14_Layout",
+      "width": 40,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/PalmRoute14/border.bin",
+      "blockdata_filepath": "data/layouts/PalmRoute14/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

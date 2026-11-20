@@ -1,0 +1,46 @@
+## file: data/maps/PalmRoute14/scripts.inc
+==+ Palm252_SignEast_Text
+ROUTE 14 - ATLAS LOOKOUT
+East: PASSWAY VILLAGE
+
+==+ Palm252_SignLookout_Text
+ATLAS LOOKOUT
+From here you can watch the road for
+miles in every direction.
+
+In PASSWAY, they say a faithful
+guardian once kept watch on this spot.
+
+==+ Palm252_TextBETOIntro
+I patrol this road every day.
+Let's see if you're up to the climb!
+
+==+ Palm252_TextBETOLoss
+You've got a good pace. Keep it up.
+
+==+ Palm252_TextBETOAfter
+The dog POKéMON here are loyal to
+whoever shares the road with them.
+
+==+ Palm252_TextCLARAIntro
+My babies need practice. Would you
+mind battling them?
+
+==+ Palm252_TextCLARALoss
+Oh, good job, everyone! Even so.
+
+==+ Palm252_TextCLARAAfter
+HERDIER never forget a friend's
+scent. Not even after many years.
+
+==+ Palm252_TextOTTOIntro
+Up here, you can see where you came
+from. Can you see where you're going?
+
+==+ Palm252_TextOTTOLoss
+Ha! You clearly can.
+
+==+ Palm252_TextOTTOAfter
+On clear mornings, an ABSOL sits at
+the edge of the lookout. Folks say it
+only shows up before a storm.

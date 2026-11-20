@@ -52,7 +52,7 @@ def compose():
         c.rect(x0, y0, x1, y1, cls)
         paths.extend((x, y) for x in range(x0, x1 + 1) for y in range(y0, y1 + 1))
     path(SOUTH[0], EAST[1], SOUTH[1], H - 1)                 # da Route 8 ate a praca
-    path(2, EAST[0], W - 1, EAST[1])                         # rua principal (leste -> Route 9)
+    path(0, EAST[0], W - 1, EAST[1])                         # rua principal (oeste -> Route 14, leste -> Route 9)
     path(STAIRWAY[0], 9, STAIRWAY[1], EAST[0])               # ate o pe da escadaria
     c.stairs(STAIRWAY[0], 7, 2)
     path(STAIRWAY[0], 0, STAIRWAY[1], 6)                     # escadaria continua para o cume (interditada)
@@ -69,7 +69,7 @@ def compose():
     for (x, y) in c.stair_cols:
         stair |= {(x, y), (x, y + 1)}
     avoid = set(paths) | stair | {(x, y) for y in range(H) for x in range(W) if c.terrain[y][x] == "other"}
-    c.forest(lambda x, y: x < 2 or y < 2 or y >= H - 2 or (x >= W - 2 and not EAST[0] - 1 <= y <= EAST[1] + 1), avoid, margin=0)
+    c.forest(lambda x, y: (x < 2 and not EAST[0] - 1 <= y <= EAST[1] + 1) or y < 2 or y >= H - 2 or (x >= W - 2 and not EAST[0] - 1 <= y <= EAST[1] + 1), avoid, margin=0)
     for bl in [blob(5, 4, 4, 3), blob(31, 25, 4, 3), blob(10, 28, 4, 2), blob(24, 28, 4, 2), blob(32, 12, 2, 3)]:
         c.forest(bl, avoid | c.cliff_cells())
     for (x, y) in [(12, 4), (22, 3), (14, 2)]:
