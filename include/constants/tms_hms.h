@@ -55,7 +55,8 @@
     F(HEX) \
     F(FLASH_CANNON) \
     F(BULLDOZE) \
-    F(DAZZLING_GLEAM)
+    F(DAZZLING_GLEAM) \
+    F(VOLT_SWITCH)
 
 #define FOREACH_HM(F) \
     F(CUT) \

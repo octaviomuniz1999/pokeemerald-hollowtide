@@ -1,0 +1,104 @@
+## file: data/maps/PalmHocGym/scripts.inc
+==+ Palm194_TextGuide
+Hey, future CHAMPION {PLAYER}!
+
+This is THE CIRCUIT. HOC uses
+ELECTRIC-type POKéMON.
+
+Every beam in here is live. The four
+floor switches are power consoles.
+
+Each console cuts the beam that guards
+the next one. Find them in order, and
+the current leads you to HOC!
+
+GROUND-type POKéMON are a great help.
+==+ Palm194_TextGuideAfter
+You closed the whole circuit!
+HOC hasn't lost like that in years.
+==+ Palm194_TextDiagram
+A wiring diagram is taped to the wall:
+
+“CONSOLE 1 - LOW BEAM
+CONSOLE 2 - EAST BEAM
+CONSOLE 3 - CENTER BEAM
+CONSOLE 4 - LEADER”
+==+ Palm194_TextConsole1
+Click! The console powers down the
+low beam. The current moves on…
+==+ Palm194_TextConsole2
+Click! The east beam goes dark.
+==+ Palm194_TextConsole3
+Click! The center beam goes dark.
+==+ Palm194_TextConsole4
+Click! The last beam goes dark.
+The way to HOC is open!
+==+ Palm194_TextStatue
+VOLTARA CITY POKéMON GYM
+
+HOC's CERTIFIED TRAINERS:
+{PLAYER}?
+==+ Palm194_TextStatueWon
+VOLTARA CITY POKéMON GYM
+
+HOC's CERTIFIED TRAINERS:
+{PLAYER}
+==+ Palm194_TextRotom
+ROTOM: Bzzt! Bzzzt!
+
+ROTOM is spinning around the gym's
+cables, sparking happily.
+==+ Palm194_TextHocIntro
+HOC: Thanks for bringing the power
+back, {PLAYER}. The whole city owes you.
+
+But in here, I'm the GYM LEADER.
+And my circuit never breaks!
+==+ Palm194_TextHocDefeat
+Short circuit! You really are strong.
+==+ Palm194_TextBadge
+{PLAYER} received the CIRCUIT BADGE
+from HOC.
+==+ Palm194_TextBadgeExplain
+The CIRCUIT BADGE proves you can keep
+the current flowing, no matter what.
+
+Here, take this too.
+==+ Palm194_TextTM
+That's VOLT SWITCH. Attack, then swap
+out. Smart battling, like good code.
+==+ Palm194_TextRiven
+…Oh, a message from RIVEN.
+
+“HOC, tell the kid to keep the data
+safe. Don't ask why. Not yet.”
+
+Huh. You heard him. Keep it safe.
+==+ Palm194_TextHocAfter
+HOC: The road south leads to the sea.
+JAY says the tides are acting weird.
+
+Be careful out there, {PLAYER}.
+==+ Palm194_TextAIntro
+My guitar runs on pure voltage!
+Let's rock this circuit!
+==+ Palm194_TextADefeat
+Blew a fuse…
+==+ Palm194_TextAAfter
+Console 2 is in the east wing. Step on
+it and the east beam goes down.
+==+ Palm194_TextBIntro
+Only true experts reach this room.
+Prove you belong here!
+==+ Palm194_TextBDefeat
+Impressive wiring.
+==+ Palm194_TextBAfter
+The center beam opens the west room.
+That's where the last console is.
+==+ Palm194_TextCIntro
+One console left. And one expert
+standing in your way!
+==+ Palm194_TextCDefeat
+The current flows through you.
+==+ Palm194_TextCAfter
+Go on. HOC is waiting.

@@ -9532,6 +9532,17 @@
       "border_filepath": "data/layouts/PalmVoltara/border.bin",
       "blockdata_filepath": "data/layouts/PalmVoltara/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_HOC_GYM",
+      "name": "PalmHocGym_Layout",
+      "width": 10,
+      "height": 21,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_MauvilleGym",
+      "border_filepath": "data/layouts/PalmHocGym/border.bin",
+      "blockdata_filepath": "data/layouts/PalmHocGym/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

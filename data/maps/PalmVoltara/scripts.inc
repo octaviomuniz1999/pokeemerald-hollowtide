@@ -3,6 +3,7 @@ PalmVoltara_MapScripts::
 	.byte 0
 
 Palm191_Load::
+	goto_if_set FLAG_HT_VOLTARA_DONE, Palm191_Ok
 	setmetatile 41, 30, 722, TRUE
 	end
 
