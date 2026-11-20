@@ -54,7 +54,7 @@ def battle(q, flag, tries=500):
     return q.flag(flag)
 
 
-def until_battle(q, keys, n=60):
+def until_battle(q, keys, n=160):
     for _ in range(n):
         if q.in_battle():
             return True
@@ -74,11 +74,16 @@ def main(rom, runner, work, pre):
     q.goto(CB, 3, 6); q.run(["press DOWN 30 0", "wait 120"])
     ok(q.mapname() == SR and tuple(q.where[2:]) == (13, 38), "Cabana -> crista (porta certa)")
     # Cynthia: aceitar voltar (A no SIM) -> recua
-    q.goto(SR, 17, 15); q.run(["press UP 8 0", "wait 30", "mash A 40", "wait 60"])
+    q.goto(SR, 17, 15); q.run(["press UP 8 0", "wait 30"])
+    for _ in range(30):
+        q.run(["press A 4 30", "wait 10"])
+        if q.where[3] >= 15:
+            break
+    q.run(["wait 60"])
     ok(not q.flag(CYNTHIA_DONE) and q.where[3] >= 15, "Cynthia: aceitar voltar faz o jogador recuar")
     # insistir (B = NAO nas duas perguntas) -> luta
     q.strong(); q.run([f"setflag 1270 {GODMODE:X}"])
-    q.goto(SR, 17, 15); q.run(["press UP 8 0", "wait 30"])
+    q.goto(SR, 17, 15); q.run(["press UP 20 0", "wait 30"])       # depois de recuar ele olha para baixo: vira e anda
     ok(until_battle(q, ["press B 4 30"]), "Cynthia: insistir duas vezes -> luta")
     ok(battle(q, TF + IDS["TRAINER_STEVEN"]), "Venceu CYNTHIA (Mega Garchomp por ultimo)")
     for _ in range(40):
