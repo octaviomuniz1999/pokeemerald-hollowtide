@@ -38,7 +38,12 @@ def main(rom, runner, work, pre):
     q = QA(rom, runner, work)
     q.load(pre); q.no_wild(); q.run(["mash B 10", "setflag 1270 31", "clearflag 1270 30"]); q.strong()
     ok(q.mapname() == L1, "Saguao da Liga")
-    q.goto(L1, 8, 3); q.run(["press UP 10 10", "press A 4 40", "wait 200", "mash A 12", "mash B 10", "wait 60"])
+    q.goto(L1, 9, 3); q.run(["press UP 10 10", "press A 4 40"])      # os guardas ficam na frente da porta (9,2)/(10,2)
+    for _ in range(12):
+        q.run(["wait 120", "press A 4 30"])
+        if q.flag(0x107):
+            break
+    q.run(["mash B 6", "wait 60"])
     ok(q.flag(0x107), "Guardas conferem as 8 insignias e abrem a porta")
     q.goto(L1, 9, 2); q.run(["press UP 30 0", "wait 150"])
     ok(q.mapname() == H[5], "Saguao -> corredor da Elite")
