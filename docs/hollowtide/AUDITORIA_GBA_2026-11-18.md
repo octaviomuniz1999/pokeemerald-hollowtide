@@ -266,3 +266,13 @@ warps, não as batalhas nem os eventos.
 | Passway | estrada leste aberta (deslizamento limpo); a casa da anciã mudou para o sul da vila: a Route 9 usa o secundário Rustboro e enxerga as colunas 28-35 da Passway, que agora só têm primário (o instalador confere linhas 10-27) |
 | Route 9 | mapa novo (48×36, General + Rustboro): estrada ao lado da ferrovia que vem de Voltara (os trilhos terminam num para-choque na coluna 12, depois da faixa que a Passway enxerga), calçada de serviço, subestação com placa de alta tensão, mato alto, bosques; Joseph (Electrike/Voltorb/Manectric), Drew (Shinx/Blitzle), Heidi (Helioptile/Pachirisu), Fabian (Magneton/Galvantula), Lv 42–44; Magnet, Thunder Stone, Electric Seed; encontros (Electrike, Blitzle, Shinx, Joltik, Helioptile, Elekid, Luxio raro); portão de Voltara fechado por falta de energia até a cidade existir |
 | QA | `fluxo_cap9.py` (conexão nos dois sentidos, 4 treinadores com visão, 3 itens, portão fechado); a verificação da estrada leste saiu do QA do Cap. 8; **suíte completa 510/510 (Cap. 1–9 parte 1)** — build 20q |
+
+## 24. Capítulo 9 (parte 2) — Voltara e o Centro de Dados — 20/11/2026
+
+| Item | Estado |
+|---|---|
+| Route 9 | portão leste aberto; conexão contínua com Voltara (offset 0, mesmos tilesets) |
+| Voltara | mapa novo (60×44, General + Rustboro): os trilhos da Route 9 entram pela moldura e terminam no para-choque da estação; Centro de Dados da Team Palm (prédio grande), ginásio (fechado até a parte 3), Centro Pokémon, Mart, apartamentos, casas, torre, escritórios, canteiros, árvore só em canteiro (regra de coesão), parque com flores; céu encoberto (cidade sem energia); ponto de cura; interiores de Mauville com moradores novos (o velho de Mauville saiu) |
+| Evento | Hoc recebe o jogador na frente da estação (falas do cânone: a rede caiu, o "Du", Riven e "alguma coisa está respondendo de muito longe"); um recruta guarda a porta do Centro de Dados até lá; saguão (layout do Space Center 1F) com 2 recrutas; sala dos servidores (2F) com o **Vega** (Magneton 43, Porygon2 44, Eelektrik 45) e 3 retransmissores — só dá para desligar depois de vencê-lo; com os 3 desligados a energia volta; a fala do Vega sobre "a fonte" e um log "SENSOR FEED: NORTH…" |
+| Build | um nome de música inválido (MUS_MAUVILLE) passou pelo filtro de erros do make (erro de link, não de compilação): agora a saída completa do make é conferida |
+| QA | `fluxo_cap9b.py` (conexão, porta fechada antes do Hoc, Hoc, recrutas e Vega com visão, 3 retransmissores, energia, saída sul fechada, Centro Pokémon, volta); **suíte completa 552/552** — build 20r |
