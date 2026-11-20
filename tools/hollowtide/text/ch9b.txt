@@ -1,0 +1,166 @@
+## file: data/maps/PalmVoltara/scripts.inc
+==+ Palm191_TextHoc
+HOC: Hey, you made it through the
+dark! Welcome to VOLTARA.
+
+The network went down again. And this
+system is older than I am…
+
+If DU were here, he'd have called me
+“grandpa” three times by now.
+
+…Sorry. I'm HOC, the GYM LEADER.
+Jay told me all about you.
+
+RIVEN found a pattern in the logs.
+The problem isn't just the plant.
+
+It's like something is answering
+from very far away.
+
+TEAM PALM has a DATA CENTER in town.
+Their relays are draining the grid.
+
+Go shut them down, {PLAYER}. I'll keep
+the station running on backup power.
+==+ Palm191_TextHocAgain
+HOC: The DATA CENTER is the big
+building to the east.
+
+Shut down their relays and the city
+gets its power back!
+==+ Palm191_TextDataLock
+A TEAM PALM GRUNT blocks the door.
+
+GRUNT: Private property! Nobody gets
+in without clearance.
+==+ Palm191_TextSouthGate
+The road south is closed.
+
+GUARD: Sorry, kid. Only trainers with
+VOLTARA's GYM BADGE may pass.
+==+ Palm191_Worker_Text
+The trains stopped when the power
+went out. The whole line is frozen.
+==+ Palm191_Worker_TextDone
+Power's back! The trains to FERRALIA
+and TRADEPOST can run again!
+==+ Palm191_Scientist_Text
+Every terminal in town shows the same
+error: “UPLINK BUSY.”
+
+Busy with what? We aren't sending
+anything…
+==+ Palm191_Girl_Text
+The streetlights blink at night,
+like they're trying to talk!
+==+ Palm191_DoorGrunt_Text
+GRUNT: Move along! This is a TEAM
+PALM facility.
+==+ Palm191_SouthGuard_Text
+The road south leads to the sea and
+the CITY OF TIDES.
+
+Only trainers with VOLTARA's BADGE
+may pass.
+==+ Palm191_OldMan_Text
+I helped build the first power line
+here, fifty years ago.
+
+It never hummed like it does now.
+==+ Palm191_TownSign_Text
+VOLTARA
+“The city that never sleeps.”
+==+ Palm191_StationSign_Text
+VOLTARA STATION
+Lines to FERRALIA and TRADEPOST.
+==+ Palm191_DataSign_Text
+TEAM PALM DATA CENTER
+Authorized personnel only.
+==+ Palm191_GymSign_Text
+VOLTARA POKéMON GYM
+LEADER: HOC
+“The circuit that never breaks.”
+==+ Palm192_PcWoman1_Text
+The POKéMON CENTER has its own
+generator. Thank goodness!
+==+ Palm192_PcWoman2_Text
+I came by train from FERRALIA. Now
+I'm stuck here until the power's back.
+==+ Palm192_PcBoy_Text
+My ROTOM keeps escaping into the
+outlets! It loves this city.
+==+ Palm192_MartExpert_Text
+Batteries? Sold out. Flashlights?
+Sold out. Everyone's buying them.
+==+ Palm192_MartMan_Text
+They say TEAM PALM's building never
+loses power. Funny, isn't it?
+==+ Palm192_House1Man_Text
+I fix old computers for a living.
+HOC is the best programmer I know.
+
+He's getting married to JAY from
+BREEZEPORT, you know!
+==+ Palm192_House2Woman_Text
+My fridge has been off for two days.
+I hope this ends soon…
+
+## file: data/maps/PalmDataCenter1F/scripts.inc
+==+ Palm193_TextScreen
+The screen scrolls endless lines of
+numbers. “RELAY LOAD: 100%”.
+==+ Palm193_TextGrunt1Intro
+How did you get in here?
+The relays are classified!
+==+ Palm193_TextGrunt1Loss
+Short-circuited…
+==+ Palm193_TextGrunt1After
+VEGA is upstairs with the relays.
+He won't be as easy as me!
+==+ Palm193_TextGrunt2Intro
+These machines mine data and coins
+all day. And you won't stop them!
+==+ Palm193_TextGrunt2Loss
+Error… Error…
+==+ Palm193_TextGrunt2After
+Fine. Go upstairs. VEGA will deal
+with you.
+
+## file: data/maps/PalmDataCenter2F/scripts.inc
+==+ Palm193_TextVegaIntro
+VEGA: So you're the kid who keeps
+switching off our machines.
+
+These relays feed every sensor TEAM
+PALM owns. You won't touch them.
+==+ Palm193_TextVegaLoss
+…Fine. The data is already backed up.
+==+ Palm193_TextVegaAfter
+VEGA: You shut down the terminals,
+but you didn't turn off the source.
+
+The signal comes from a place nobody
+should be looking at.
+==+ Palm193_TextRelay
+A RELAY hums loudly, blinking red.
+Shut it down?
+==+ Palm193_TextRelayDown
+The relay went dark.
+==+ Palm193_TextRelayIsOff
+This relay is already off.
+==+ Palm193_TextRelayGuarded
+VEGA is watching the relays.
+You can't get close!
+==+ Palm193_TextLog
+A log file is open on the screen:
+
+“SENSOR FEED: NORTH…”
+The rest of the file is encrypted.
+==+ Palm193_TextPowerBack
+All three relays are dark!
+
+You hear the city hum back to life
+outside. The power is back!
+
+HOC will be waiting at his GYM.

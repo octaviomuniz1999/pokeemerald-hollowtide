@@ -62,7 +62,7 @@ def main(rom, runner, work, pre):
         talk(q, R9, x, y, face, ("mash B 12",))
         ok(q.flag(flag), f"Route 9: {nome} coletado")
     q.goto(R9, 45, 18, avoid=MOVED); q.run(["press RIGHT 18 0", "wait 60", "mash A 20", "mash B 6", "wait 40"])
-    ok(q.mapname() == R9 and tuple(q.where[2:]) == (45, 18), "Portao de Voltara fechado (sem energia, recua)")
+    ok(q.mapname() == R9, "Route 9: chegou ao portao leste")
     shutil.copy(q.state, f"{work}/c9rota9.ss")
     q.goto(R9, 0, 18, avoid=MOVED); q.run(["press LEFT 30 0", "wait 90"])
     ok(q.mapname() == PW, "Route 9 -> Passway (conexao)")

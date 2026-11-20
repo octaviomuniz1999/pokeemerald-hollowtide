@@ -94,11 +94,11 @@
 #define FLAG_HT_HORIZON_PKMN_3      0x48 // Lotad solto
 #define FLAG_HT_HORIZON_DONE        0x49 // registro recuperado: o lago baixa
 #define FLAG_HT_PASSWAY_EAST_OPEN   0x4A // estrada leste da Passway liberada (Route 9)
-#define FLAG_UNUSED_0x04B    0x4B // Unused Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
-#define FLAG_UNUSED_0x04D    0x4D // Unused Flag
-#define FLAG_UNUSED_0x04E    0x4E // Unused Flag
-#define FLAG_UNUSED_0x04F    0x4F // Unused Flag
+#define FLAG_HT_VOLTARA_HOC_MET     0x4B // Hoc recebeu o jogador na estacao
+#define FLAG_HT_VOLTARA_RELAY_1     0x4C // retransmissor 1 desligado
+#define FLAG_HT_VOLTARA_RELAY_2     0x4D // retransmissor 2 desligado
+#define FLAG_HT_VOLTARA_RELAY_3     0x4E // retransmissor 3 desligado
+#define FLAG_HT_VOLTARA_DONE        0x4F // Vega derrotado e retransmissores desligados: energia de volta
 
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50

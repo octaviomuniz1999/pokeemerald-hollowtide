@@ -25,7 +25,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "MauvilleCity_House1_EventScript_RockSmashDude",
+      "script": "Palm192_House1Man",
       "flag": "0"
     }
   ],
@@ -34,15 +34,15 @@
       "x": 3,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_MAUVILLE_CITY",
-      "dest_warp_id": "4"
+      "dest_map": "MAP_PALM_VOLTARA",
+      "dest_warp_id": "2"
     },
     {
       "x": 4,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_MAUVILLE_CITY",
-      "dest_warp_id": "4"
+      "dest_map": "MAP_PALM_VOLTARA",
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

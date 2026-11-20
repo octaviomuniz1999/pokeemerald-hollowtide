@@ -151,7 +151,10 @@
     "PalmLakeStation",
     "PalmRoute08",
     "PalmPassway",
-    "PalmRoute09"
+    "PalmRoute09",
+    "PalmVoltara",
+    "PalmDataCenter1F",
+    "PalmDataCenter2F"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
