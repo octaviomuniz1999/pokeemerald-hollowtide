@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from qa_driver import QA
 from fluxo_cap8 import battle
 from fluxo_cap7 import interact_until
+from fluxo_cap2_eventos import battle as battle_all      # alterna os 4 golpes (Thunderbolt contra os aquaticos)
 
 TF = 0x500
 TD, C1, CC = "MAP_PALM_TIDEMOUTH", "MAP_PALM_OCEAN_COMPLEX_1F", "MAP_PALM_OCEAN_COMPLEX_CORE"
@@ -50,6 +51,27 @@ def sighted(q, mapa, ax, ay, walk, nome, tid, avoid=()):
     q.run(["mash B 16"])
 
 
+MOVED_G = set()
+
+
+def sighted_g(q, mapa, ax, ay, walk, nome, tid):
+    q.strong()
+    q.goto(mapa, ax, ay, avoid=MOVED_G)
+    if q.flag(TF + tid):
+        ok(True, f"{nome} desafiou (no caminho)"); ok(True, f"Venceu {nome}")
+        return
+    q.run([walk, "wait 60"])
+    seen = False
+    for _ in range(40):
+        if q.in_battle():
+            seen = True
+            break
+        q.run(["press A 4 30"])
+    ok(seen, f"{nome} avistou o jogador e desafiou")
+    ok(battle_all(q, TF + tid), f"Venceu {nome}")
+    q.run(["mash B 16"])
+
+
 def main(rom, runner, work, pre):
     q = QA(rom, runner, work)
     q.load(pre); q.no_wild(); q.run(["mash B 10", "setflag 1270 31", "clearflag 1270 30"]); q.strong()
@@ -71,8 +93,44 @@ def main(rom, runner, work, pre):
     q.goto(C1, 10, 26, avoid={(4, 21), (13, 10), (23, 7)}); ride(q, TD, ["press LEFT 10 10", "press A 4 40"])
     ok(q.mapname() == TD, "Barco de volta a Tidemouth")
     q.goto(TD, 18, 26, avoid={(16, 28)}); q.run(["press UP 18 0", "wait 60", "mash B 10"])
-    ok(q.mapname() == TD and q.where[3] <= 25, "Ginasio da Nami destrancado depois do complexo")
+    ok(q.mapname() != TD or q.where[3] <= 25, "Ginasio da Nami destrancado depois do complexo")
     shutil.copy(q.state, f"{work}/c10complexo.ss")
+    # ginasio da Nami: 3 eclusas em ordem, 3 nadadores, Nami
+    G = "MAP_PALM_NAMI_GYM"
+    q.run(["press UP 30 0", "wait 120", "shot cap10_ginasio.png"])
+    ok(q.mapname() == G, "Porta do pavilhao -> arena das eclusas")
+    q.strong()
+    def lever(x, y, face):
+        q.goto(G, x, y, avoid=MOVED_G); q.run([f"press {face} 10 10"] + ["press A 4 45"] * 6 + ["mash B 20"])
+    global MOVED_G
+    lever(4, 34, "UP")
+    sighted_g(q, G, 12, 27, "walk UP 2", "Nadadora das eclusas 1", 455)
+    ok(tuple(q.where[2:]) in ((12, 25), (12, 26), (12, 27)), "Eclusa 1 drenou a primeira piscina")
+    MOVED_G |= {(13, 25)}
+    lever(19, 24, "UP")
+    sighted_g(q, G, 12, 17, "walk UP 2", "Nadador das eclusas", 453)
+    ok(q.where[3] <= 17, "Eclusa 2 drenou a segunda piscina")
+    MOVED_G |= {(11, 15)}
+    lever(4, 13, "DOWN")
+    sighted_g(q, G, 12, 9, "walk UP 2", "Nadadora das eclusas 2", 595)
+    ok(q.where[3] <= 9, "Eclusa 3 drenou a terceira piscina")
+    MOVED_G |= {(13, 7)}
+    q.strong()
+    q.goto(G, 11, 4, avoid=MOVED_G); q.run(["press UP 10 10", "press A 4 40"])
+    for _ in range(60):
+        if q.in_battle():
+            break
+        q.run(["press A 4 30"])
+    ok(battle_all(q, TF + 271), "Venceu NAMI")
+    for _ in range(12):
+        q.run(["mash A 8", "mash B 6"])
+        if q.flag(0x860 + 14):
+            break
+    q.run(["mash B 90", "wait 30", "mash B 30", "shot cap10_insignia.png"])
+    ok(q.flag(0x860 + 14), "Insignia Mare recebida (8 insignias)")
+    q.goto(G, 11, 39, avoid=MOVED_G); q.run(["wait 120"])
+    ok(q.mapname() == TD, "Saiu da arena para Tidemouth")
+    shutil.copy(q.state, f"{work}/c10nami.ss")
     print("\nRESUMO CAPITULO 10 (parte 2)")
     for r in res:
         print(" ", r[0], r[1])

@@ -1,0 +1,104 @@
+## file: data/maps/PalmNamiGym/scripts.inc
+==+ Palm205_TextGuide
+Hey, future CHAMPION {PLAYER}!
+
+This is THE LOCKS. NAMI uses
+WATER-type POKéMON.
+
+Three pools block the way. The lever
+beside each pool drains a channel
+through it.
+
+Drain them one by one, and the water
+will lead you to NAMI!
+
+GRASS and ELECTRIC moves help a lot.
+==+ Palm205_TextGuideAfter
+All three locks open and NAMI beaten!
+You really ride the wave!
+==+ Palm205_TextBoard
+TIDEMOUTH GYM · THE LOCKS
+
+“Each lever drains one pool.
+Mind the order. Mind your step.”
+==+ Palm205_TextLever
+A big lever controls the lock gates.
+Pull it?
+==+ Palm205_TextDrained1
+Whoosh! The first pool drains into
+the canal. A path opens!
+==+ Palm205_TextDrained2
+Whoosh! The second pool drains.
+The way north is clear!
+==+ Palm205_TextDrained3
+Whoosh! The last pool drains.
+NAMI's stage is open!
+==+ Palm205_TextLeverDone
+The lock is already open.
+==+ Palm205_TextWailmer
+WAILMER: Wooo!
+
+WAILMER splashes happily.
+==+ Palm205_TextNamiIntro
+NAMI: You did it, {PLAYER}! The tide
+is back to normal, thanks to you.
+
+I love traveling. Every port has its
+own sea, its own rhythm.
+
+But a GYM LEADER has to stand firm,
+even when the waves get wild.
+
+Ride the wave with me. Let's go!
+==+ Palm205_TextNamiDefeat
+What a swell battle!
+You rode every wave I sent!
+==+ Palm205_TextBadge
+{PLAYER} received the TIDE BADGE
+from NAMI.
+==+ Palm205_TextBadgeExplain
+That's the TIDE BADGE. With eight
+badges, every POKéMON will obey you.
+
+And the POKéMON LEAGUE will open
+its gates for you!
+
+Here, take this too.
+==+ Palm205_TextTM
+That's WATERFALL. Your POKéMON can
+climb waterfalls with it.
+
+NEVARD will be so proud when I tell
+him you beat me.
+
+The LEAGUE is past ROUTE 11, across
+the sea. Good luck, {PLAYER}!
+==+ Palm205_TextNamiAfter
+NAMI: That mountain on the monitor…
+I can't stop thinking about it.
+
+But first, the LEAGUE! Show them what
+TIDEMOUTH taught you!
+==+ Palm205_TextAIntro
+The pools are my home turf!
+Splash attack!
+==+ Palm205_TextADefeat
+I sank…
+==+ Palm205_TextAAfter
+The next lever is on the east side.
+Watch your step on the wet tiles!
+==+ Palm205_TextBIntro
+NAMI trains us every morning at
+sunrise. We're tough!
+==+ Palm205_TextBDefeat
+Out of breath…
+==+ Palm205_TextBAfter
+The last lever is on the west side,
+right after this pool.
+==+ Palm205_TextCIntro
+Only one pool left between you and
+NAMI. And me!
+==+ Palm205_TextCDefeat
+You're a natural swimmer!
+==+ Palm205_TextCAfter
+Go on. NAMI is waiting on the stage.

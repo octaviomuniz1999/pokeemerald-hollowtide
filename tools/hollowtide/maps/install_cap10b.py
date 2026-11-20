@@ -70,7 +70,7 @@ def main():
     j["warp_events"] = [OD([("x", 13), ("y", 1), ("elevation", 0), ("dest_map", "MAP_PALM_OCEAN_COMPLEX_1F"), ("dest_warp_id", "0")])]
     j["object_events"] = [obj("ARCHIE", ABELF[0], ABELF[1], "MOVEMENT_TYPE_FACE_UP", "Palm204_Abelf",
                               "TRAINER_TYPE_NORMAL", 2, flag="FLAG_HT_TIDEMOUTH_COMPLEX_DONE"),
-                          obj("WOMAN_5", 15, 18, "MOVEMENT_TYPE_FACE_DOWN", "Palm204_Nami")]
+                          obj("BEAUTY", 15, 18, "MOVEMENT_TYPE_FACE_DOWN", "Palm204_Nami")]
     j["bg_events"] = [sign(CORE_CONSOLE[0], CORE_CONSOLE[1], "Palm204_Console"), sign(16, 22, "Palm204_Monitor")]
     jsave(f"{ROOT}/data/maps/{CC}/map.json", j)
     sc = [f"{CC}_MapScripts::\n\t.byte 0\n",

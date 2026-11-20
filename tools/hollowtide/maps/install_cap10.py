@@ -52,7 +52,7 @@ INTERIOR_NPCS = {
     "SootopolisCity_House4_EventScript_Azumarill": "Palm202_House2Azumarill",
 }
 TD_NPCS = [  # (x, y, grafico, movimento, script, flag de sumir)
-    (31, 18, "WOMAN_5", "MOVEMENT_TYPE_FACE_UP", "Palm201_Nami", "0"),
+    (31, 18, "BEAUTY", "MOVEMENT_TYPE_FACE_UP", "Palm201_Nami", "0"),
     (24, 19, "SAILOR", "MOVEMENT_TYPE_FACE_DOWN", "Palm201_Sailor", "0"),
     (10, 18, "WOMAN_2", "MOVEMENT_TYPE_WANDER_AROUND", "Palm201_Tourist", "0"),
     (46, 18, "MAN_3", "MOVEMENT_TYPE_FACE_DOWN", "Palm201_HotelClerk", "0"),
