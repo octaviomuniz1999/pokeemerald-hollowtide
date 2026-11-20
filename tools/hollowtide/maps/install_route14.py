@@ -97,7 +97,7 @@ def main():
     register("PalmRoute14", "LAYOUT_PALM_ROUTE14", c, bl)
     for y in R14.EAST:                                  # a estrada chega andavel nas duas bordas
         assert walkable(bl, c.w, c.w - 1, y) and walkable(bl5, c5.w, 0, y + R14.OFFSET_PASSWAY), y
-    j = map_json("MAP_PALM_ROUTE14", "PalmRoute14", "LAYOUT_PALM_ROUTE14", "MUS_ROUTE111", "MAPSEC_ROUTE_114", "MAP_TYPE_ROUTE",
+    j = map_json("MAP_PALM_ROUTE14", "PalmRoute14", "LAYOUT_PALM_ROUTE14", "MUS_ROUTE118", "MAPSEC_ROUTE_114", "MAP_TYPE_ROUTE",
                  [OD([("map", "MAP_PALM_PASSWAY"), ("offset", -R14.OFFSET_PASSWAY), ("direction", "right")])])
     for (x, y, gfx, d, sight, script, _) in TRAINERS:
         assert walkable(bl, c.w, x, y), (script, x, y)
