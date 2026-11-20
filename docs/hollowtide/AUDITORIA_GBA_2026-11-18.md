@@ -406,3 +406,11 @@ warps, não as batalhas nem os eventos.
 | Surf | o jogo não entrega Surf (nenhuma HM03 nos mapas Palm; "field moves sem HM" segue pendente no plano): áreas só de surf ficam fora das rotas opcionais; a Route 15 usa pesca (a Super Rod sai na Horizon) em vez de surf |
 | Route 15 Coastal Grotto (`install_route15.py`) | a oeste da Route 11: a praia (areia 25–28, água rasa 29, mar 30+) já chegava andável na borda oeste, então só a conexão muda (offset 0) e a Route 15 repete as mesmas faixas na emenda. Falésias (patamar só visual) com mata no alto e, numa reentrância, a gruta (recanto de areia com poça de maré); enseada e dunas com mato alto. Oscar (Sailor), Pedro (Fisherman, na gruta), Nina (Beauty) nas vagas de Luis, Dominik e Melissa; itens com flags 0x26D–0x26F; Pokémon do cânone Lv 50–54 nas dunas e na pesca (Relicanth raro). map_lint 0/0 |
 | QA | `fluxo_rota15` (13 conferências); **r66: 491 conferências, 0 falhas** — **build 20ai**. As quatro rotas opcionais do cânone estão no jogo |
+
+## 35. Field moves sem HM — levantamento — 20/11/2026
+
+| Item | Estado |
+|---|---|
+| Obstáculos de campo nos mapas Palm | **nenhum**: sem árvores de Cut, pedras de Rock Smash, pedras de Strength, passagens só de Surf ou cachoeiras no caminho. Os "pedregulhos" de Serenia são as 3 ilusões do evento da Jade (scripts com flag, não Strength). O jogo inteiro (Cap. 1–12 e rotas 12–15) se joga sem nenhuma HM — a decisão "sem HMs obrigatórias" já vale |
+| HMs entregues | só a **HM07 Waterfall** (Nami, junto com a Insígnia Maré). O cânone (notas do Cap. 10) diz **TM** Waterfall. Trocar por TM exige mover Waterfall da lista de HMs para a de TMs; isso renumera os itens de HM, e num save já existente a HM07 da mochila passaria a aparecer como outra HM — **pergunta ao diretor** |
+| Surf | o jogo não entrega Surf: os lagos e o mar ficam só como cenário/pesca (os encontros de surf das Routes 7, 12 e 15 existem nos dados, mas sem acesso). Dar Surf como habilidade de campo/item-chave (DECISOES) abriria esses encontros — **pergunta ao diretor**: quer um Surf opcional (por exemplo, depois da Nami) ou mantém só a pesca? |

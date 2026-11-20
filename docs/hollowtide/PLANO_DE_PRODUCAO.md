@@ -35,7 +35,7 @@ Status ao lado de cada item: `[ ]` a fazer · `[~]` em andamento · `[x]` conclu
 - [~] Pokédex regional: design em `POKEDEX_LUNIA.md`; tabelas de encontro aplicadas por capítulo ao construir os mapas
 - [~] Curva de níveis da campanha (Cap. 1 ajustado; demais capítulos ao construir)
 - [x] TMs dos líderes: Bullet Seed (Nevard, TM09), Hex (Jay, TM51), Flash Cannon (Vessel, TM52), Bulldoze (Tchum, TM53); aprendizados regenerados no build
-- [ ] Field moves sem HM (itens-chave/habilidades de campo)
+- [~] Field moves sem HM (itens-chave/habilidades de campo) — levantamento feito (AUDITORIA sec. 35): nenhum obstáculo de HM no jogo, nada obrigatório; **pendente do diretor**: Waterfall como TM (cânone) em vez de HM07, e se haverá Surf opcional
 - [ ] Town Map de Lunia (gráfico + seções)
 
 ## Capítulos
