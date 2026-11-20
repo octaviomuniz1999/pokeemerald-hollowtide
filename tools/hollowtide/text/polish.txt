@@ -26,3 +26,39 @@ They opened the trail to the summit.
 
 Look at those clouds… I'll stay right
 here by the fire, thank you.
+
+## file: data/maps/MauvilleCity_Gym/scripts.inc
+== MauvilleCity_Gym_Text_WattsonPreRematch
+VESSEL: The CHAMPION, back at my
+switches! I've retuned every one.
+
+Let's see if you still resonate!
+== MauvilleCity_Gym_Text_WattsonPostRematch
+VESSEL: Steel bends, but it doesn't
+break. Come back anytime!
+== MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons
+VESSEL: A rematch? Gladly!
+
+But bring at least two POKéMON.
+One alone won't stand a chance.
+
+## file: data/maps/FortreeCity_Gym/scripts.inc
+== FortreeCity_Gym_Text_WinonaPreRematch
+TCHUM: The CHAMPION came back to the
+gates! The pillars remember you.
+
+Show me how much you've grown!
+== FortreeCity_Gym_Text_WinonaPostRematch
+TCHUM: The ground still shakes when you
+battle. Come back anytime!
+== FortreeCity_Gym_Text_WinonaRematchNeedTwoMons
+TCHUM: A rematch? Of course!
+
+But bring at least two POKéMON.
+The gates won't open for just one.
+
+## file: data/text/questionnaire.inc
+== MysteryGift_Text_TryUsingItAtLilycovePort
+It appears to be for use at a
+harbor. Why not give it a try and
+see what it is about?
