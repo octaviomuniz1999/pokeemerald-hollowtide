@@ -1,0 +1,45 @@
+## file: data/maps/PalmTidemouth/scripts.inc
+==+ Palm270_TextSignOpen
+TIDEMOUTH GRAND HOTEL
+“Rest where the tide sings.”
+
+## file: data/maps/PalmGrandHotel/scripts.inc
+==+ Palm271_TextReception
+Welcome to the TIDEMOUTH GRAND HOTEL!
+
+Oh! You're the trainer who stopped the
+tide. NAMI told us everything.
+==+ Palm271_TextRest
+Please, rest with us tonight. It's on
+the house, of course.
+==+ Palm271_TextMorning
+Good morning! The sea is calm today.
+
+We hope you enjoyed your stay.
+==+ Palm271_TextNoRest
+Our doors are always open to you.
+==+ Palm271_TextConcierge
+The water park reopened yesterday,
+and the ferries run on time again.
+
+TIDEMOUTH is back to normal!
+==+ Palm271_TextStaff
+The upper floors are still drying out
+after the flood. Guests only, please.
+==+ Palm271_TextElevator
+The elevator is under maintenance.
+The salt water got into everything.
+==+ Palm271_TextGuest1
+We stayed on the hill during the
+storm. The view of the sea was scary.
+==+ Palm271_TextGuest2
+Mommy said AZUMARILL is the hotel's
+mascot! It's so round!
+==+ Palm271_TextGuest3
+I came for a quiet vacation and got a
+flood instead. Still a good story!
+==+ Palm271_TextWailmer
+AZUMARILL: Ma-rill!
+
+The hotel's mascot greets every guest
+with a little bounce.

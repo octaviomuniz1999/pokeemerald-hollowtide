@@ -274,3 +274,33 @@ Palm201_TextBoat:
 	.string "SAILOR: NAMI asked me to take you out\n"
 	.string "to that TEAM PALM complex.\p"
 	.string "The sea is rough. Ready to go?$"
+Palm270_HotelClosed::
+	goto_if_set FLAG_HT_TIDEMOUTH_COMPLEX_DONE, Palm270_End
+	lockall
+	msgbox Palm201_HotelClerk_Text, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Palm270_StepBack
+	waitmovement 0
+	releaseall
+	end
+
+Palm270_StepBack:
+	walk_down
+	step_end
+
+Palm270_HotelSign::
+	goto_if_set FLAG_HT_TIDEMOUTH_COMPLEX_DONE, Palm270_HotelSignOpen
+	msgbox Palm201_HotelSign_Text, MSGBOX_SIGN
+	end
+
+Palm270_HotelSignOpen::
+	msgbox Palm270_TextSignOpen, MSGBOX_SIGN
+	end
+
+Palm270_End::
+	end
+
+
+Palm270_TextSignOpen:
+	.string "TIDEMOUTH GRAND HOTEL\n"
+	.string "“Rest where the tide sings.”$"
