@@ -18,6 +18,11 @@
       "map": "MAP_PALM_ROUTE08",
       "offset": -2,
       "direction": "down"
+    },
+    {
+      "map": "MAP_PALM_ROUTE09",
+      "offset": 0,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -123,8 +128,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 29,
-      "y": 15,
+      "x": 23,
+      "y": 24,
       "elevation": 0,
       "dest_map": "MAP_SOOTOPOLIS_CITY_HOUSE7",
       "dest_warp_id": "0"
@@ -155,24 +160,6 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "Palm181_StairGate"
-    },
-    {
-      "type": "trigger",
-      "x": 34,
-      "y": 18,
-      "elevation": 3,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Palm181_EastGate"
-    },
-    {
-      "type": "trigger",
-      "x": 34,
-      "y": 19,
-      "elevation": 3,
-      "var": "VAR_TEMP_0",
-      "var_value": "0",
-      "script": "Palm181_EastGate"
     }
   ],
   "bg_events": [

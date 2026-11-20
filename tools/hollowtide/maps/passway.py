@@ -4,7 +4,8 @@
 Vila de pouso de viajantes ao pe da montanha: fonte termal (posto de descanso), estalagens, Centro Pokemon,
 Mart, a casa da anciã e o mural. Ao norte, a escadaria de pedra para o cume sobe um patamar e esta
 interditada (so abre no pos-jogo). Mirante a oeste. Entrada sul pela Route 8 (colunas 16-17;
-Route 8 x = Passway x + 2) e saida leste (linhas 18-19) para a Route 9, fechada por enquanto.
+Route 8 x = Passway x + 2) e saida leste (linhas 18-19) para a Route 9. A faixa leste (colunas 28-35)
+que a Route 9 (Rustboro) enxerga so tem primario.
 """
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "mapgen"))
@@ -21,7 +22,7 @@ BUILDINGS = [
     ("lav_pokecenter", 4, 13, "pc"),
     ("lav_mart", 10, 13, "mart"),
     ("lav_house", 22, 12, "inn"),
-    ("lav_house2", 28, 12, "elder"),
+    ("lav_house2", 22, 21, "elder"),          # fora da faixa que a Route 9 enxerga (colunas 28-35)
     ("lav_house", 4, 20, "house"),
 ]
 DOOR_OFF = {"lav_pokecenter": (1, 3), "lav_mart": (1, 3), "lav_house": (1, 3), "lav_house2": (1, 3), "lav_spring": (2, 4)}
@@ -57,12 +58,13 @@ def compose():
     path(STAIRWAY[0], 0, STAIRWAY[1], 6)                     # escadaria continua para o cume (interditada)
     for (name, x, y, label) in BUILDINGS:
         c.stamp(name, x, y)
-    for label in ("pc", "mart", "inn", "elder"):
+    for label in ("pc", "mart", "inn"):
         x, y = door(label); path(x, y + 1, x, EAST[0] - 1)
+    x, y = door("elder"); path(SOUTH[1] + 1, y + 1, x, y + 1)          # casa da ancia: sai na estrada sul
     x, y = door("house"); path(x, y + 1, x, 25); path(x, 25, SOUTH[0] - 1, 25)
     sx, sy = door("spring"); path(sx, sy + 1, sx + 1, 11); path(STAIRWAY[1] + 1, 10, sx + 1, 11)
     path(2, 9, 8, 10); path(8, 11, 8, EAST[0] - 1)            # mirante oeste (liga a rua entre o Centro e o Mart)
-    c.rect(20, 22, 27, 23, "flower"); c.rect(9, 9, 9, 10, "flower")
+    c.rect(27, 22, 32, 23, "flower"); c.rect(9, 9, 9, 10, "flower"); c.rect(27, 12, 31, 13, "flower")
     stair = set()
     for (x, y) in c.stair_cols:
         stair |= {(x, y), (x, y + 1)}

@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """QA do Capitulo 8 jogado de verdade: Horizon -> Route 8 (conexao, aberta pela Insignia do Horizonte; Alan,
-Kiyo, Cora, Auron com visao; 3 itens) -> Passway Village: escadaria do cume interditada (recua), estrada leste
-fechada (recua), fonte termal cura, casa da ancia, Centro Pokemon -> volta pela Route 8 ate a Horizon.
+Kiyo, Cora, Auron com visao; 3 itens) -> Passway Village: escadaria do cume interditada (recua), fonte termal cura, casa da ancia, Centro Pokemon -> volta pela Route 8 ate a Horizon.
 Uso: fluxo_cap8.py ROM RUNNER WORKDIR ESTADO_POS_CHELSIA
 """
 import shutil, os, sys
@@ -83,15 +82,13 @@ def main(rom, runner, work, pre):
     ok(q.mapname() == PW, "Route 8 -> Passway Village (conexao)")
     q.goto(PW, 17, 10); q.run(["press UP 18 0", "wait 60", "mash A 20", "mash B 6", "wait 40"])
     ok(q.mapname() == PW and tuple(q.where[2:]) == (17, 10), "Escadaria do cume interditada pelo guardiao (recua)")
-    q.goto(PW, 33, 18); q.run(["press RIGHT 18 0", "wait 60", "mash A 20", "mash B 6", "wait 40"])
-    ok(q.mapname() == PW and tuple(q.where[2:]) == (33, 18), "Estrada leste fechada pelo deslizamento (recua)")
     talk(q, PW, 27, 9, "UP", ("press A 4 40", "press A 4 40", "press A 4 40", "wait 200", "mash A 10", "mash B 10", "shot cap8_fonte.png"))
     ok(q.mapname() == PW, "Fonte termal (descanso)")
-    q.goto(PW, 29, 16); q.run(["press UP 30 0", "wait 120"])
+    q.goto(PW, 23, 25); q.run(["press UP 30 0", "wait 120"])
     ok(q.mapname() == ELDER, "Passway -> casa da ancia")
     talk(q, ELDER, 5, 4, "UP", ("mash B 60", "shot cap8_ancia.png", "mash B 20"))
     q.goto(ELDER, 3, 5); q.run(["press DOWN 30 0", "wait 120"])
-    ok(q.mapname() == PW and tuple(q.where[2:]) in ((29, 15), (29, 16)), "Casa da ancia -> Passway (porta certa)")
+    ok(q.mapname() == PW and tuple(q.where[2:]) in ((23, 24), (23, 25)), "Casa da ancia -> Passway (porta certa)")
     q.goto(PW, 5, 17); q.run(["press UP 30 0", "wait 120"])
     ok(q.mapname() == PC, "Passway -> Centro Pokemon")
     q.goto(PC, 7, 8); q.run(["press DOWN 30 0", "wait 120"])

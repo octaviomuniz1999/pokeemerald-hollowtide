@@ -1,0 +1,62 @@
+## file: data/maps/PalmPassway/scripts.inc
+== Palm181_Worker_Text
+We cleared the rockslide! The road to
+VOLTARA is open again.
+
+Watch out, though. They say the city
+keeps losing power.
+== Palm182_InnGuest_Text
+The road east is open at last!
+I'm leaving for VOLTARA tomorrow.
+
+## file: data/maps/PalmRoute09/scripts.inc
+==+ Palm190_TextEastGate
+The city gate of VOLTARA is shut.
+The lights on the panel are dead.
+
+A note reads: “POWER OUTAGE.
+The gate will reopen soon.”
+==+ Palm190_TextJOSEPHIntro
+My amp runs on ELECTRIC POKéMON!
+Let me play you a shocking solo!
+==+ Palm190_TextJOSEPHLoss
+That was a broken string…
+==+ Palm190_TextJOSEPHAfter
+The power lines buzz louder near
+VOLTARA. Like the whole city hums.
+==+ Palm190_TextDREWIntro
+I'm camping by the tracks to watch
+the trains. But none have come by!
+==+ Palm190_TextDREWLoss
+No trains, and now no wins either…
+==+ Palm190_TextDREWAfter
+The trains stopped running when the
+network in VOLTARA went down.
+==+ Palm190_TextHEIDIIntro
+My POKéMON love the static in the
+air here! Want a little zap?
+==+ Palm190_TextHEIDILoss
+My hair is standing straight up!
+==+ Palm190_TextHEIDIAfter
+HELIOPTILE soak up sunlight to make
+electricity. Isn't that clever?
+==+ Palm190_TextFABIANIntro
+The station staff ran off when the
+power died. I'm still here, though!
+==+ Palm190_TextFABIANLoss
+Power down. Total blackout.
+==+ Palm190_TextFABIANAfter
+Some guys in green uniforms keep
+going in and out of VOLTARA.
+
+Funny. Everyone else got stuck
+outside because of the outage.
+==+ Palm190_SignWest_Text
+ROUTE 9 · IRON CORRIDOR
+West: PASSWAY VILLAGE
+==+ Palm190_SignEast_Text
+ROUTE 9
+East: VOLTARA
+==+ Palm190_SignStation_Text
+ROUTE 9 POWER SUBSTATION
+Danger! High voltage!

@@ -184,8 +184,10 @@ Palm181_Kid_Text:
 	.string "I've never seen it, though.$"
 
 Palm181_Worker_Text:
-	.string "We're clearing the rockslide on the\n"
-	.string "road to VOLTARA. Give us a little time!$"
+	.string "We cleared the rockslide! The road to\n"
+	.string "VOLTARA is open again.\p"
+	.string "Watch out, though. They say the city\n"
+	.string "keeps losing power.$"
 
 Palm181_Bather_Text:
 	.string "Aaah… This spring has warmed tired\n"
@@ -238,8 +240,8 @@ Palm182_Innkeeper_Text:
 	.string "since before the roads were paved.$"
 
 Palm182_InnGuest_Text:
-	.string "I'm waiting for the road to VOLTARA\n"
-	.string "to open. I hope it's soon!$"
+	.string "The road east is open at last!\n"
+	.string "I'm leaving for VOLTARA tomorrow.$"
 
 Palm182_Elder_Text:
 	.string "ELDER: Ah, a young traveler.\n"
