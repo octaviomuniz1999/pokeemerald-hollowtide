@@ -1,4 +1,5 @@
 #include "global.h"
+#include "event_data.h"
 #include "battle.h"
 #include "battle_arena.h"
 #include "battle_environment.h"
@@ -3021,6 +3022,11 @@ static bool32 TryMoveDamageUpdate(struct BattleCalcValues *cv)
             gBideTarget[cv->battlerDef] = cv->battlerAtk;
 
             // Deal damage to the battler
+#ifndef RELEASE
+            // Hollowtide QA: com FLAG_HT_QA_GODMODE (so o harness de teste liga) o time do jogador perde no maximo 1 HP
+            if (FlagGet(FLAG_HT_QA_GODMODE) && IsOnPlayerSide(cv->battlerDef) && gBattleStruct->moveDamage[cv->battlerDef] > 1)
+                gBattleStruct->moveDamage[cv->battlerDef] = 1;
+#endif
             hpBefore = gBattleMons[cv->battlerDef].hp;
             if (gBattleMons[cv->battlerDef].hp > gBattleStruct->moveDamage[cv->battlerDef])
             {

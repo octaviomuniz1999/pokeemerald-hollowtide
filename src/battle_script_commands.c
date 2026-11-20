@@ -1230,6 +1230,10 @@ static void Cmd_datahpupdate(void)
     }
     else
     {
+#ifndef RELEASE
+        if (FlagGet(FLAG_HT_QA_GODMODE) && IsOnPlayerSide(battler) && gBattleStruct->passiveHpUpdate[battler] > 1)
+            gBattleStruct->passiveHpUpdate[battler] = 1;   // Hollowtide QA (so build nao-release)
+#endif
         if (gBattleMons[battler].hp > gBattleStruct->passiveHpUpdate[battler])
             gBattleMons[battler].hp -= gBattleStruct->passiveHpUpdate[battler];
         else

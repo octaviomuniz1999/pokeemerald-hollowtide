@@ -1,0 +1,75 @@
+{
+  "id": "MAP_PALM_STORM_SUMMIT",
+  "name": "PalmStormSummit",
+  "layout": "LAYOUT_PALM_STORM_SUMMIT",
+  "music": "MUS_ROUTE120",
+  "region": "REGION_HOENN",
+  "region_map_section": "MAPSEC_MT_CHIMNEY",
+  "requires_flash": false,
+  "weather": "WEATHER_RAIN_THUNDERSTORM",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_PALM_STORM_RIDGE",
+      "offset": -6,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_SUMMIT_TAVINHO",
+      "graphics_id": "OBJ_EVENT_GFX_RED",
+      "x": 11,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Palm240_Tavinho",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_SUMMIT_DOGE",
+      "graphics_id": "OBJ_EVENT_GFX_WALLACE",
+      "x": 12,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Palm240_Doge",
+      "flag": "FLAG_HT_HIDE_SUMMIT_DOGE"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Palm240_Scene"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 9,
+      "elevation": 3,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "Palm240_Scene"
+    }
+  ],
+  "bg_events": []
+}

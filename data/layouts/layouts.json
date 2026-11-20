@@ -9598,6 +9598,28 @@
       "border_filepath": "data/layouts/PalmStormTrail/border.bin",
       "blockdata_filepath": "data/layouts/PalmStormTrail/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_STORM_RIDGE",
+      "name": "PalmStormRidge_Layout",
+      "width": 36,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/PalmStormRidge/border.bin",
+      "blockdata_filepath": "data/layouts/PalmStormRidge/map.bin",
+      "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_STORM_SUMMIT",
+      "name": "PalmStormSummit_Layout",
+      "width": 24,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/PalmStormSummit/border.bin",
+      "blockdata_filepath": "data/layouts/PalmStormSummit/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

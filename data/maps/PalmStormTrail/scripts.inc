@@ -1,4 +1,5 @@
 PalmStormTrail_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, PalmStormTrail_OnTransition
 	.byte 0
 
 Palm220_StevenScene::
@@ -101,3 +102,8 @@ Palm220_TextCharizard:
 	.string "CHARIZARD: Grooar…\p"
 	.string "Its tail flame is small, but it\n"
 	.string "still burns steadily.$"
+PalmStormTrail_OnTransition:
+	call_if_ge VAR_HT_EPILOGUE, 2, Palm24x_Sunny
+	end
+
+@ Palm24x_Sunny (definido no cume)

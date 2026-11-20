@@ -1,0 +1,91 @@
+## file: data/maps/PalmStormRidge/scripts.inc
+==+ Palm230_SignPost_Text
+POKéMON LEAGUE FIELD POST
+Medical care for trainers and POKéMON.
+==+ Palm230_TextCynthiaWarn1
+CYNTHIA: Stop right there.
+
+I'm CYNTHIA. I climbed this staircase
+yesterday… and I came back down in
+a hurry.
+
+I almost lost my whole team to the
+power of that orb.
+
+This mountain is not safe. Not for
+you, not for anyone.
+==+ Palm230_TextCynthiaAsk
+Will you turn back?
+==+ Palm230_TextCynthiaWarn2
+CYNTHIA: Please, listen to me.
+
+I'm not trying to prove I'm better
+than you.
+
+I'm trying to stop anyone else from
+getting hurt.
+==+ Palm230_TextCynthiaThanks
+CYNTHIA: Thank you. Go back to the
+post and rest.
+
+The storm will still be here.
+==+ Palm230_TextCynthiaIntro
+CYNTHIA: …I see.
+
+If you can't understand the risk,
+then you leave me no choice.
+
+GARCHOMP, let's stop them!
+==+ Palm230_TextCynthiaDefeat
+…You did it.
+==+ Palm230_TextCynthiaPost
+CYNTHIA: I saw a determination I
+didn't know how to recognize.
+
+When I faced him, he asked his
+POKéMON to fall back for a moment.
+
+Maybe there's still someone in
+there.
+==+ Palm230_TextJoyHeal
+NURSE JOY hurried up from the post
+and healed your POKéMON!
+
+JOY: There, all better. Rest a moment
+before you go up.
+==+ Palm230_TextCynthiaGo
+CYNTHIA: The summit is at the top of
+this staircase.
+
+There's no one else on the way.
+Whatever you find up there…
+don't face it alone in your heart.
+
+## file: data/maps/PalmStormCabin/scripts.inc
+==+ Palm231_TextJoy
+JOY: Oh! You came all the way up here?
+
+The LEAGUE sent me to look after the
+CHAMPIONS' teams.
+
+The CHAMPION CYNTHIA arrived in very
+bad shape. But now her team is fully
+recovered.
+
+She's on the last staircase, and she
+asked that no one try to get past her.
+
+Let me take care of your POKéMON.
+==+ Palm231_TextJoyAfter
+JOY: You got past CYNTHIA…
+
+Then let me make sure your team is
+ready for what's up there.
+==+ Palm231_TextHealed
+JOY: Your POKéMON are fully healed.
+Please be careful up there.
+==+ Palm231_TextChansey
+CHANSEY: Chaaan-sey!
+
+It's carrying a basket of clean
+bandages.

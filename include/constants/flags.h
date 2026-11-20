@@ -469,7 +469,7 @@
 #define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE)
 
 #define FLAG_HT_LEON_MET                     0x1AA // Leon conversou com o jogador no desfiladeiro
-#define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
+#define FLAG_HT_CYNTHIA_DONE                 0x1AB // Cynthia vencida na ultima escadaria da Storm Mountain
 
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
 #define FLAG_BATTLED_DEOXYS                  0x1AD
@@ -518,14 +518,14 @@
 #define FLAG_ENABLE_TATE_AND_LIZA_MATCH_CALL 0x1D8
 #define FLAG_ENABLE_JUAN_MATCH_CALL          0x1D9
 
-#define FLAG_UNUSED_0x1DA                    0x1DA // Unused Flag
+#define FLAG_HT_SUMMIT_DONE                  0x1DA // Tavinho vencido no cume da Storm Mountain
 
 #define FLAG_SHOWN_MYSTIC_TICKET             0x1DB
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
+#define FLAG_HT_HIDE_SUMMIT_DOGE             0x1DE // esconde o Doge no cume ate ele chegar
+#define FLAG_HT_QA_GODMODE                   0x1DF // Hollowtide QA: dano no time do jogador limitado a 1 (so build nao-release; nunca ligada no jogo)
 #define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
 #define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
 #define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag

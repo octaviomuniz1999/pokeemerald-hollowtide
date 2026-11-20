@@ -1,0 +1,94 @@
+## file: data/maps/PalmStormSummit/scripts.inc
+== Palm240_TextIntro
+???: …So the LEAGUE sent someone else.
+
+TAVINHO: I'm TAVINHO. I used to be
+the CHAMPION.
+
+I caught KYOGRE. I stopped those
+people from using it.
+
+I thought I could master the orb.
+
+There was always something that
+needed protecting. I just had to be
+stronger.
+== Palm240_TextBattle
+TAVINHO: If I can't protect everyone…
+who will?
+
+Turn back… or show me you can carry
+this weight better than I can!
+== Palm240_TextDefeat
+…The rain is stopping.
+== Palm240_TextMedallion
+{PLAYER}'s ATLAS MEDALLION slipped out
+and caught the last light of the storm.
+
+TAVINHO: That dog… ATLAS.
+
+The one who walks beside anyone who
+needs company on the road.
+
+Your mom gave you that, didn't she?
+So you'd never walk alone.
+== Palm240_TextTavinho1
+TAVINHO: I spent so long trying to be
+strong for everyone…
+
+that I forgot I could need someone
+too.
+== Palm240_TextDoge1
+DOGE: TAVINHO!
+
+You were always there when we needed
+you. Now it's our turn.
+== Palm240_TextTavinho2
+TAVINHO: DOGE…
+
+No one has to carry the world
+alone… I used to say that myself.
+== Palm240_TextHandOver
+TAVINHO handed KYOGRE's POKé BALL and
+the BLUE ORB to DOGE.
+
+DOGE climbed onto his MEGA LATIOS
+and flew south, toward HOENN…
+== Palm240_TextReturn
+Hours later, DOGE came back to the
+summit.
+
+The storm was gone.
+== Palm240_TextDoge2
+DOGE: KYOGRE is resting in the MARINE
+CAVE, sealed with the orb.
+
+And you, TAVINHO… next time, try
+talking to us before catching a
+legendary that can destroy the world.
+
+HAHAHA!
+== Palm240_TextFinal
+No one has to carry the world alone.
+== Palm240_TextTavinhoAfter
+TAVINHO: Thank you, {PLAYER}.
+
+I'll come down from the mountain
+soon. I have a lot of people to
+apologize to.
+== Palm240_TextDogeAfter
+DOGE: A friendly rematch someday?
+You, me and TAVINHO.
+
+Just not in a storm. HAHAHA!
+
+## file: data/maps/PalmMarineEpilogue/scripts.inc
+== Palm241_TextHoenn
+MARINE CAVE, HOENN.
+== Palm241_TextDoge
+DOGE: Rest, big guy.
+
+We'll take care of the rest.
+== Palm241_TextSealed
+KYOGRE returned to the depths of the
+MARINE CAVE, sealed with the BLUE ORB.

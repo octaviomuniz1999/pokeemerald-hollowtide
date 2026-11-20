@@ -162,7 +162,11 @@
     "PalmOceanComplexCore",
     "PalmNamiGym",
     "PalmRoute11",
-    "PalmStormTrail"
+    "PalmStormTrail",
+    "PalmStormRidge",
+    "PalmStormCabin",
+    "PalmStormSummit",
+    "PalmMarineEpilogue"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

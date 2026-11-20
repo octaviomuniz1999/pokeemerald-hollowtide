@@ -37520,6 +37520,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_PALM_STORM_RIDGE",
+          "base_label": "gPalmStormRidge",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 71,
+                "max_level": 73,
+                "species": "SPECIES_BAGON"
+              },
+              {
+                "min_level": 71,
+                "max_level": 73,
+                "species": "SPECIES_DRUDDIGON"
+              },
+              {
+                "min_level": 71,
+                "max_level": 73,
+                "species": "SPECIES_SNORUNT"
+              },
+              {
+                "min_level": 72,
+                "max_level": 74,
+                "species": "SPECIES_BAGON"
+              },
+              {
+                "min_level": 72,
+                "max_level": 74,
+                "species": "SPECIES_DRUDDIGON"
+              },
+              {
+                "min_level": 72,
+                "max_level": 74,
+                "species": "SPECIES_SNORUNT"
+              },
+              {
+                "min_level": 73,
+                "max_level": 75,
+                "species": "SPECIES_SHELGON"
+              },
+              {
+                "min_level": 73,
+                "max_level": 75,
+                "species": "SPECIES_SCYTHER"
+              },
+              {
+                "min_level": 74,
+                "max_level": 76,
+                "species": "SPECIES_DRUDDIGON"
+              },
+              {
+                "min_level": 74,
+                "max_level": 76,
+                "species": "SPECIES_SNORUNT"
+              },
+              {
+                "min_level": 73,
+                "max_level": 75,
+                "species": "SPECIES_GIBLE"
+              },
+              {
+                "min_level": 75,
+                "max_level": 77,
+                "species": "SPECIES_GIBLE"
+              }
+            ]
+          }
         }
       ]
     },
