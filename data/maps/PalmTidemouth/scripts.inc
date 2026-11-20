@@ -18,7 +18,7 @@ Palm201_NamiAgain::
 Palm201_PortLock::
 	lockall
 	msgbox Palm201_TextPortLock, MSGBOX_DEFAULT
-	applymovement OBJ_EVENT_ID_PLAYER, Palm201_StepBackNorth
+	applymovement OBJ_EVENT_ID_PLAYER, Palm201_StepBackSouth
 	waitmovement 0
 	releaseall
 	end

@@ -13,6 +13,7 @@ TF = 0x500
 VT, R10, TD = "MAP_PALM_VOLTARA", "MAP_PALM_ROUTE10", "MAP_PALM_TIDEMOUTH"
 PC = "MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F"
 res = []
+MOVED = {(20, 18), (15, 26), (19, 36), (21, 48)}   # onde Tomas, Rita, Jonas e Luana param depois de avistar
 
 
 def ok(cond, label):
@@ -23,13 +24,13 @@ def ok(cond, label):
 
 
 def talk(q, mapa, x, y, face, extra=("mash B 20",)):
-    q.goto(mapa, x, y)
+    q.goto(mapa, x, y, avoid=MOVED if mapa == R10 else ())
     q.run([f"press {face} 10 10", "press A 4 40"] + list(extra))
 
 
 def sighted(q, mapa, ax, ay, walk, nome, tid):
     q.strong()
-    q.goto(mapa, ax, ay)
+    q.goto(mapa, ax, ay, avoid=(MOVED - {(ax, ay)}) if mapa == R10 else ())
     if q.flag(TF + tid):
         ok(True, f"{nome} desafiou (no caminho)"); ok(True, f"Venceu {nome}")
         return
@@ -63,7 +64,7 @@ def main(rom, runner, work, pre):
     for (x, y, face, fname, nome) in items:
         talk(q, R10, x, y, face, ("mash B 12",))
         ok(q.flag(flags[fname]), f"Route 10: {nome} coletado")
-    q.goto(R10, 18, 59); q.run(["press DOWN 30 0", "wait 90", "shot cap10_tidemouth.png"])
+    q.goto(R10, 18, 59, avoid=MOVED); q.run(["press DOWN 30 0", "wait 90", "shot cap10_tidemouth.png"])
     ok(q.mapname() == TD, "Route 10 -> Tidemouth (conexao)")
     talk(q, TD, 31, 19, "UP", ("mash B 80", "wait 30", "mash B 30", "shot cap10_nami.png"))
     ok(q.flag(0x54), "Nami recebeu o jogador na evacuacao")
@@ -78,7 +79,7 @@ def main(rom, runner, work, pre):
     shutil.copy(q.state, f"{work}/c10tide.ss")
     q.goto(TD, 30, 0); q.run(["press UP 30 0", "wait 90"])
     ok(q.mapname() == R10, "Tidemouth -> Route 10 (conexao)")
-    q.goto(R10, 18, 0); q.run(["press UP 30 0", "wait 90"])
+    q.goto(R10, 18, 0, avoid=MOVED); q.run(["press UP 30 0", "wait 90"])
     ok(q.mapname() == VT, "Route 10 -> Voltara (conexao)")
     print("\nRESUMO CAPITULO 10 (parte 1)")
     for r in res:

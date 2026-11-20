@@ -146,7 +146,7 @@ def main():
           "\tmsgbox Palm201_TextNami, MSGBOX_DEFAULT\n\tsetflag FLAG_HT_TIDEMOUTH_NAMI_MET\n\trelease\n\tend\n",
           "Palm201_NamiAgain::\n\tmsgbox Palm201_TextNamiAgain, MSGBOX_DEFAULT\n\trelease\n\tend\n",
           "Palm201_PortLock::\n\tlockall\n\tmsgbox Palm201_TextPortLock, MSGBOX_DEFAULT\n"
-          "\tapplymovement OBJ_EVENT_ID_PLAYER, Palm201_StepBackNorth\n\twaitmovement 0\n\treleaseall\n\tend\n",
+          "\tapplymovement OBJ_EVENT_ID_PLAYER, Palm201_StepBackSouth\n\twaitmovement 0\n\treleaseall\n\tend\n",
           "Palm201_GymLock::\n\tlockall\n\tmsgbox Palm201_TextGymLock, MSGBOX_DEFAULT\n"
           "\tapplymovement OBJ_EVENT_ID_PLAYER, Palm201_StepBackSouth\n\twaitmovement 0\n\treleaseall\n\tend\n",
           "Palm201_StepBackNorth:\n\twalk_up\n\tstep_end\n", "Palm201_StepBackSouth:\n\twalk_down\n\tstep_end\n"]
