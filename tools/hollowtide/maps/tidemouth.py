@@ -64,7 +64,7 @@ def compose():
     path(NORTH[0], 0, NORTH[1], SEAM - 1, "sand")              # estrada de terra (a Route 10 enxerga)
     path(NORTH[0], SEAM, NORTH[1], AVENUE[1])
     path(2, AVENUE[0], 53, AVENUE[1])
-    path(2, 28, 53, 29)
+    path(0, 28, 53, 29)                                          # rua sul: segue para oeste (Route 11)
     for (name, x, y, label) in BUILDINGS:
         if name == "lily_dept_store":
             c.dept_store(x, y)

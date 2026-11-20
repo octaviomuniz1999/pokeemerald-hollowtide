@@ -13,13 +13,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [
-    {
-      "map": "MAP_ROUTE128",
-      "offset": 40,
-      "direction": "left"
-    }
-  ],
+  "connections": [],
   "object_events": [],
   "warp_events": [
     {
@@ -47,8 +41,8 @@
       "x": 18,
       "y": 27,
       "elevation": 0,
-      "dest_map": "MAP_VICTORY_ROAD_1F",
-      "dest_warp_id": "1"
+      "dest_map": "MAP_PALM_ROUTE11",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

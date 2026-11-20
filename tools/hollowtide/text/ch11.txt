@@ -1,0 +1,48 @@
+## file: data/maps/PalmRoute11/scripts.inc
+==+ Palm210_TextBadgeGate
+GUARD: Halt! This road leads to the
+POKéMON LEAGUE.
+
+Only trainers with all eight GYM
+BADGES of LUNIA may pass.
+==+ Palm210_TextVINCENTIntro
+Every trainer on this road has eight
+badges. Let's see what yours are worth!
+==+ Palm210_TextVINCENTLoss
+Worth a lot, apparently.
+==+ Palm210_TextVINCENTAfter
+The tunnel through the mountain leads
+to the LEAGUE island. Good luck.
+==+ Palm210_TextFELIXIntro
+I lost to the ELITE FOUR last year.
+This time I'm training on this road!
+==+ Palm210_TextFELIXLoss
+I still have a lot to learn…
+==+ Palm210_TextFELIXAfter
+They say the first ELITE member
+freezes challengers solid. Stay warm!
+==+ Palm210_TextLEROYIntro
+The last trainer before the tunnel!
+Show me you deserve the LEAGUE!
+==+ Palm210_TextLEROYLoss
+You deserve it. No doubt.
+==+ Palm210_TextLEROYAfter
+DOGE is the CHAMPION. Nobody has
+beaten him since he won the title.
+==+ Palm210_SignEast_Text
+ROUTE 11 · LEAGUE ROAD
+East: TIDEMOUTH
+==+ Palm210_SignCave_Text
+LEAGUE TUNNEL
+To the POKéMON LEAGUE.
+
+## file: data/maps/EverGrandeCity/scripts.inc
+== EverGrandeCity_Text_EnteringVictoryRoad
+LEAGUE TUNNEL
+Back to ROUTE 11.
+== EverGrandeCity_Text_CitySign
+LEAGUE ISLAND
+“Where every journey is tested.”
+== EverGrandeCity_Text_EnteringPokemonLeague
+LUNIA POKéMON LEAGUE
+Only the strongest may enter.

@@ -9576,6 +9576,17 @@
       "border_filepath": "data/layouts/PalmNamiGym/border.bin",
       "blockdata_filepath": "data/layouts/PalmNamiGym/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_ROUTE11",
+      "name": "PalmRoute11_Layout",
+      "width": 48,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/PalmRoute11/border.bin",
+      "blockdata_filepath": "data/layouts/PalmRoute11/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
