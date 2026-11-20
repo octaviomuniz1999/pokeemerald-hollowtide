@@ -276,3 +276,12 @@ warps, não as batalhas nem os eventos.
 | Evento | Hoc recebe o jogador na frente da estação (falas do cânone: a rede caiu, o "Du", Riven e "alguma coisa está respondendo de muito longe"); um recruta guarda a porta do Centro de Dados até lá; saguão (layout do Space Center 1F) com 2 recrutas; sala dos servidores (2F) com o **Vega** (Magneton 43, Porygon2 44, Eelektrik 45) e 3 retransmissores — só dá para desligar depois de vencê-lo; com os 3 desligados a energia volta; a fala do Vega sobre "a fonte" e um log "SENSOR FEED: NORTH…" |
 | Build | um nome de música inválido (MUS_MAUVILLE) passou pelo filtro de erros do make (erro de link, não de compilação): agora a saída completa do make é conferida |
 | QA | `fluxo_cap9b.py` (conexão, porta fechada antes do Hoc, Hoc, recrutas e Vega com visão, 3 retransmissores, energia, saída sul fechada, Centro Pokémon, volta); **suíte completa 552/552** — build 20r |
+
+## 25. Capítulo 9 (parte 3) — ginásio do Hoc e o time de QA — 20/11/2026
+
+| Item | Estado |
+|---|---|
+| Ginásio | `MAP_PALM_HOC_GYM`, cópia do layout do ginásio de Mauville com todos os feixes ligados no começo; os 4 botões são consoles: (0,15) corta o feixe baixo → (4,12) o leste → (8,9) o central → (3,9) o do palco; o feixe esquerdo e os verticais ficam ligados; a ordem é imposta pelo próprio salão (conferido por BFS etapa a etapa); progresso em VAR_HT_HOC_GYM, refeito no ON_LOAD; 3 treinadores (Marcos, Conor, Paxton); Hoc (sprite/retrato provisórios: Norman) com o Rotom: Jolteon 44, Luxray 45, Ampharos 46, Rotom 47 → **Insígnia Circuito**, **TM55 Volt Switch** (novo) e a mensagem do Riven ("guarde os dados, não pergunte por quê"); a Insígnia abre a saída sul de Voltara |
+| Voltara | as duas folhas da porta do Centro de Dados entram; a porta do ginásio abre com a energia de volta |
+| Vega | sem Recover/Thunder Wave (paralisia + cura deixavam a luta empatada): Mirror Shot no Magneton, Ice Beam no Porygon2 |
+| QA | pedido do diretor: o líder do time de QA vira um **Mewtwo Lv 100 Modest** (IVs 31, 252 EVs em Sp. Atk e Speed; Surf, Psystrike, Thunderbolt, Ice Beam), só no gancho de QA de builds não-release; ele conta como encontrado no Lv 5 (a obediência Gen 8+ usa o nível de encontro — sem isso ele cochilava, "began to nap"); limite de turnos 140 em todos os fluxos; **suíte completa 582/582 (Cap. 1–9)** — build 20s |
