@@ -104,6 +104,8 @@ def main():
         x, y = VT.door(label)
         j["warp_events"].append(OD([("x", x), ("y", y), ("elevation", 0), ("dest_map", dm), ("dest_warp_id", "0")]))
     dx, dy = VT.door("datacenter")
+    # a porta do Centro de Dados tem duas folhas: a da direita tambem entra
+    j["warp_events"].append(OD([("x", dx + 1), ("y", dy), ("elevation", 0), ("dest_map", "MAP_PALM_DATA_CENTER_1F"), ("dest_warp_id", "1")]))
     j["coord_events"] = [coord(dx, dy + 1, "Palm191_DataLock")] + [coord(x, VT.H - 3, "Palm191_SouthGate") for x in VT.SOUTH]
     j["bg_events"] = [sign(x, y, s_) for (x, y, s_) in VT_SIGNS]
     jsave(f"{ROOT}/data/maps/PalmVoltara/map.json", j)
