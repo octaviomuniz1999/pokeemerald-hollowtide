@@ -1,9 +1,11 @@
 LittlerootTown_BrendansHouse_2F_MapScripts::
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, LittlerootTown_BrendansHouse_2F_OnFrame
 	map_script MAP_SCRIPT_ON_TRANSITION, LittlerootTown_BrendansHouse_2F_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, LittlerootTown_BrendansHouse_2F_OnWarp
 	.byte 0
 
 LittlerootTown_BrendansHouse_2F_OnTransition:
+	call_if_set FLAG_SYS_GAME_CLEAR, PalmPost_Arm
 	call_if_lt VAR_LITTLEROOT_RIVAL_STATE, 2, LittlerootTown_BrendansHouse_2F_EventScript_CheckSetReadyToMeetBrendan
 	call_if_ge VAR_LITTLEROOT_RIVAL_STATE, 3, LittlerootTown_BrendansHouse_2F_EventScript_CheckShouldUpdateBrendanPos
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 4, PlayersHouse_2F_EventScript_BlockStairsUntilClockIsSet
@@ -299,3 +301,71 @@ PlayersHouse_2F_Text_ItsAGameCube:
 	.string "It's a Nintendo GameCube.\p"
 	.string "A Game Boy Advance is connected to\n"
 	.string "serve as the Controller.$"
+
+LittlerootTown_BrendansHouse_2F_OnFrame:
+	map_script_2 VAR_TEMP_9, 1, PalmPost_Data
+	.2byte 0
+
+PalmPost_Arm::
+	call_if_unset FLAG_HT_POSTGAME_DATA, PalmPost_SetTemp
+	return
+
+PalmPost_SetTemp::
+	setvar VAR_TEMP_9, 1
+	return
+
+PalmPost_Data::
+	lockall
+	setvar VAR_TEMP_9, 2
+	delay 40
+	playse SE_PC_ON
+	msgbox PalmPost_TextBeep, MSGBOX_DEFAULT
+	msgbox PalmPost_TextHoc, MSGBOX_DEFAULT
+	msgbox PalmPost_TextRiven, MSGBOX_DEFAULT
+	msgbox PalmPost_TextJade, MSGBOX_DEFAULT
+	playse SE_PIN
+	msgbox PalmPost_TextDoge, MSGBOX_DEFAULT
+	closemessage
+	playse SE_PC_OFF
+	setflag FLAG_HT_POSTGAME_DATA
+	releaseall
+	end
+
+PalmPost_TextBeep:
+	.string "Beep beep! Beep beep!\p"
+	.string "The PC on the desk is blinking.\n"
+	.string "Three messages arrived at once…$"
+
+PalmPost_TextHoc:
+	.string "HOC: Hey, CHAMPION! Congratulations!\p"
+	.string "Remember the signal VEGA talked\n"
+	.string "about? “Something answering from\l"
+	.string "far away”?\p"
+	.string "I finally traced it. It comes from\n"
+	.string "the north. From the mountain above\l"
+	.string "PASSWAY VILLAGE.$"
+
+PalmPost_TextRiven:
+	.string "RIVEN: My LEAGUE server logs show the\n"
+	.string "same coordinates. The very summit.\p"
+	.string "I told you to keep the data from\n"
+	.string "VOLTARA. Now you know why.$"
+
+PalmPost_TextJade:
+	.string "JADE: I saw that mountain in a vision.\n"
+	.string "A storm that never ends, and the sea\l"
+	.string "roaring somewhere far below it.\p"
+	.string "Be careful, {PLAYER}. Some storms\n"
+	.string "are carried by people.$"
+
+PalmPost_TextDoge:
+	.string "A fourth message just came in…\p"
+	.string "DOGE: {PLAYER}, it's DOGE.\p"
+	.string "HOC, RIVEN and JADE sent me the same\n"
+	.string "data. That storm isn't natural, and\l"
+	.string "I think I know who is up there.\p"
+	.string "I asked the LEAGUE to open the trail.\n"
+	.string "The guardian at PASSWAY VILLAGE will\l"
+	.string "let you through now.\p"
+	.string "I'm not ordering you to come. But if\n"
+	.string "you do… I'd be glad to have you.$"

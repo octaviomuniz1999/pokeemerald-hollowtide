@@ -2,7 +2,7 @@ PalmPassway_MapScripts::
 	.byte 0
 
 Palm181_StairGate::
-	goto_if_set FLAG_SYS_GAME_CLEAR, Palm181_Ok
+	goto_if_set FLAG_HT_POSTGAME_DATA, Palm181_Ok
 	lockall
 	msgbox Palm181_TextStairGate, MSGBOX_DEFAULT
 	applymovement OBJ_EVENT_ID_PLAYER, Palm181_StepBackSouth

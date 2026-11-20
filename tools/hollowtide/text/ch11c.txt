@@ -1,0 +1,44 @@
+## file: data/maps/LittlerootTown_BrendansHouse_2F/scripts.inc
+== PalmPost_TextBeep
+Beep beep! Beep beep!
+
+The PC on the desk is blinking.
+Three messages arrived at once…
+== PalmPost_TextHoc
+HOC: Hey, CHAMPION! Congratulations!
+
+Remember the signal VEGA talked
+about? “Something answering from
+far away”?
+
+I finally traced it. It comes from
+the north. From the mountain above
+PASSWAY VILLAGE.
+== PalmPost_TextRiven
+RIVEN: My LEAGUE server logs show the
+same coordinates. The very summit.
+
+I told you to keep the data from
+VOLTARA. Now you know why.
+== PalmPost_TextJade
+JADE: I saw that mountain in a vision.
+A storm that never ends, and the sea
+roaring somewhere far below it.
+
+Be careful, {PLAYER}. Some storms
+are carried by people.
+== PalmPost_TextDoge
+A fourth message just came in…
+
+DOGE: {PLAYER}, it's DOGE.
+
+HOC, RIVEN and JADE sent me the same
+data. That storm isn't natural, and
+I think I know who is up there.
+
+I asked the LEAGUE to open the trail.
+The guardian at PASSWAY VILLAGE will
+let you through now.
+
+I'm not ordering you to come. But if
+you do… I'd be glad to have you.

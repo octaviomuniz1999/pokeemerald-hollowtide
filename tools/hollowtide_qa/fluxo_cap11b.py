@@ -3,7 +3,7 @@
 Du (tatame) -> Pkas (sala laranja, Mega Charizard X) -> Doge (Mega Latios) -> Hall da Fama -> fim de jogo.
 Uso: fluxo_cap11b.py ROM RUNNER WORKDIR ESTADO_SAGUAO (c11liga.ss)
 """
-import os, sys
+import os, shutil, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from qa_driver import QA
 from fluxo_cap2_eventos import battle as battle_all
@@ -81,6 +81,7 @@ def main(rom, runner, work, pre):
             break
     ok(q.flag(GAME_CLEAR), "Hall da Fama registrado (FLAG_SYS_GAME_CLEAR)")
     q.run(["wait 600", "shot cap11b_creditos.png"])
+    shutil.copy(q.state, f"{work}/c11fim.ss")
     print("\nRESUMO CAPITULO 11 (parte 2)")
     for r in res:
         print(" ", r[0], r[1])

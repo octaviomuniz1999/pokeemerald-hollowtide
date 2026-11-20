@@ -146,7 +146,7 @@ def main():
             e["map"], e["x"], e["y"] = "MAP_PALM_PASSWAY", PW.door("pc")[0], PW.door("pc")[1] + 1
     jsave(hl, hj)
     sc = ["PalmPassway_MapScripts::\n\t.byte 0\n",
-          "Palm181_StairGate::\n\tgoto_if_set FLAG_SYS_GAME_CLEAR, Palm181_Ok\n\tlockall\n\tmsgbox Palm181_TextStairGate, MSGBOX_DEFAULT\n"
+          "Palm181_StairGate::\n\tgoto_if_set FLAG_HT_POSTGAME_DATA, Palm181_Ok\n\tlockall\n\tmsgbox Palm181_TextStairGate, MSGBOX_DEFAULT\n"
           "\tapplymovement OBJ_EVENT_ID_PLAYER, Palm181_StepBackSouth\n\twaitmovement 0\n\treleaseall\n\tend\n",
           "Palm181_EastGate::\n\tgoto_if_set FLAG_HT_PASSWAY_EAST_OPEN, Palm181_Ok\n\tlockall\n\tmsgbox Palm181_TextEastGate, MSGBOX_DEFAULT\n"
           "\tapplymovement OBJ_EVENT_ID_PLAYER, Palm181_StepBackWest\n\twaitmovement 0\n\treleaseall\n\tend\n",
