@@ -72,7 +72,7 @@ def lint(name, ref, mtcache):
         if not any(tab[idx]):
             issues.append(("ERRO", x, y, f"metatile {mt} vazio"))
             continue
-        c = ref.get((ts, mt))
+        c = ref.get((ts, mt)) if j["layout"].startswith("LAYOUT_PALM") else None   # layouts vanilla sao a propria referencia
         if c and sum(c.values()) >= 8:
             blocked_ratio = c[True] / sum(c.values())
             if blocked_ratio >= 0.95 and not col:
