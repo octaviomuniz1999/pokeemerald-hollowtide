@@ -22,7 +22,25 @@ EXHIBITS = {(1, 1): "Lantern", (2, 1): "Lantern", (5, 1): "Crown", (6, 1): "Crow
             (17, 9): "Tablet", (18, 9): "Tablet", (18, 11): "MoonStone", (19, 1): "Twins", (20, 1): "Twins"}
 
 
+def flatten_steps():
+    """O carimbo do museu traz a escadaria com elevacao 5 (como na Lilycove, onde a praca e mais alta); em Horizon a
+    rua e elevacao 3 e a escada ficava inalcancavel: os degraus andaveis do carimbo (x 42-51, y 9-12) viram 3."""
+    import struct
+    lp = f"{ROOT}/data/layouts/PalmHorizon/map.bin"
+    d = bytearray(open(lp, "rb").read())
+    w = jload(f"{ROOT}/data/layouts/layouts.json")
+    W = next(l for l in w["layouts"] if l.get("id") == "LAYOUT_PALM_HORIZON")["width"]
+    for y in range(9, 13):
+        for x in range(42, 52):
+            i = 2 * (y * W + x)
+            v = struct.unpack_from("<H", d, i)[0]
+            if (v >> 12) == 5 and (v >> 10) & 3 == 0:
+                struct.pack_into("<H", d, i, (v & 0x0FFF) | (3 << 12))
+    open(lp, "wb").write(bytes(d))
+
+
 def main():
+    flatten_steps()
     hp = f"{ROOT}/data/maps/PalmHorizon/map.json"
     h = jload(hp)
     h["warp_events"] = [w for w in h["warp_events"] if w["dest_map"] != "MAP_PALM_STAR_PAVILION"]

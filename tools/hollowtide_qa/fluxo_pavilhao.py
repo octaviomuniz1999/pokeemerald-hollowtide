@@ -35,7 +35,7 @@ def main(rom, runner, work, pre):
     for x in (46, 47):
         q.goto(HZ, x, 10); q.run(["press UP 20 0", "wait 120"])
         ok(q.mapname() == PV, f"Porta ({x},9) -> Pavilhao das Estrelas")
-        q.goto(PV, 9 if x == 46 else 10, 12); q.run(["press DOWN 20 0", "wait 120"])
+        q.goto(PV, 9 if x == 46 else 10, 12); q.run(["press DOWN 40 0", "wait 120"])
         ok(q.mapname() == HZ and tuple(q.where[2:]) == (x, 10), f"Pavilhao -> Horizon pela porta ({x},9)")
     q.goto(HZ, 46, 10); q.run(["press UP 20 0", "wait 120"])
     q.goto(PV, 2, 2); q.run(["press UP 10 10", "press A 4 40", "mash A 8", "mash B 6", "shot pavilhao_lanterna.png"])
