@@ -60,6 +60,13 @@ def compose():
     c.forest(lambda x, y: (x < 2 or y < 2 or x >= W - 2) and y < 25, avoid, margin=0)
     for bl in [blob(40, 9, 4, 3), blob(6, 18, 4, 3), blob(26, 2, 3, 1.5), blob(44, 16, 2, 2)]:
         c.forest(bl, avoid)
+    c.forest(blob(29, 21, 3, 1.6), avoid | {(36, 18), (37, 18), (21, 27)})      # bosque no prado entre o patamar e a praia
+    for (x0, y0, rows) in [(13, 20, ["ff ", "fff", " f "]), (34, 22, ["ff", " ff"]), (9, 23, ["f f", "ff "])]:   # flores do prado
+        for dy, r in enumerate(rows):
+            for dx, ch in enumerate(r):
+                x, y = x0 + dx, y0 + dy
+                if ch == "f" and c.terrain[y][x] == "grass" and (x, y) not in avoid:
+                    c.terrain[y][x] = "flower"
     for (x, y) in [(12, 22), (38, 23), (24, 13)]:
         if c.terrain[y][x] == "grass":
             c.put(x, y, 226, collision=1)

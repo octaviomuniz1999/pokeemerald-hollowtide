@@ -58,10 +58,14 @@ def register(name, layout_id, c, bl):
     open(f"{d}/map.bin", "wb").write(struct.pack(f"<{len(bl)}H", *bl))
     open(f"{d}/border.bin", "wb").write(struct.pack("<4H", *[m | (3 << 12) for m in (468, 469, 476, 477)]))
     lay = jload(f"{ROOT}/data/layouts/layouts.json")
+    entry_new = None
+    old_idx = next((i for i, l in enumerate(lay["layouts"]) if l.get("id") == layout_id), None)
     lay["layouts"] = [l for l in lay["layouts"] if l.get("id") != layout_id] + [OD([
         ("id", layout_id), ("name", f"{name}_Layout"), ("width", c.w), ("height", c.h), ("primary_tileset", c.primary),
         ("secondary_tileset", c.secondary), ("border_filepath", f"data/layouts/{name}/border.bin"),
         ("blockdata_filepath", f"data/layouts/{name}/map.bin"), ("layout_version", "emerald")])]
+    if old_idx is not None:                       # reinstalar mantem a posicao (a ordem numera os layouts; saves guardam o numero)
+        lay["layouts"].insert(old_idx, lay["layouts"].pop())
     jsave(f"{ROOT}/data/layouts/layouts.json", lay)
     mg = jload(f"{ROOT}/data/maps/map_groups.json")
     grp = mg["gMapGroup_TownsAndRoutes"]
