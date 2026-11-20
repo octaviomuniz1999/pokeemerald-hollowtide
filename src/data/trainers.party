@@ -769,19 +769,31 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Cool
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move
 
 Altaria
 Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Dragon Pulse
+- Moonblast
+- Flamethrower
+- Cotton Guard
 
 Gardevoir
 Level: 54
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Psychic
+- Moonblast
+- Shadow Ball
+- Calm Mind
 
 Milotic
 Level: 54
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Hydro Pump
+- Ice Beam
+- Dragon Pulse
+- Recover
 
 === TRAINER_VIOLET ===
 Name: YUE
@@ -1438,19 +1450,31 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move
 
 Lucario
 Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Aura Sphere
+- Flash Cannon
+- Dark Pulse
+- Extreme Speed
 
 Gyarados
 Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Waterfall
+- Crunch
+- Ice Fang
+- Dragon Dance
 
 Magnezone
 Level: 54
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Thunderbolt
+- Flash Cannon
+- Tri Attack
+- Volt Switch
 
 === TRAINER_LEROY ===
 Name: LEROY
@@ -1459,19 +1483,31 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move
 
 Hawlucha
 Level: 54
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Flying Press
+- X-Scissor
+- Poison Jab
+- Swords Dance
 
 Druddigon
 Level: 54
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Dragon Claw
+- Fire Punch
+- Thunder Punch
+- Sucker Punch
 
 Garchomp
 Level: 55
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Earthquake
+- Dragon Claw
+- Stone Edge
+- Fire Fang
 
 === TRAINER_WILTON_1 ===
 Name: WILTON
@@ -4625,208 +4661,215 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Roar
 
 === TRAINER_SIDNEY ===
-Name: SIDNEY
+Name: DU
+Class: Elite Four
+Pic: Black Belt
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Green
+
+Hawlucha
+Level: 61
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Flying Press
+- Close Combat
+- Poison Jab
+- Swords Dance
+
+Infernape
+Level: 62
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Close Combat
+- Flare Blitz
+- Mach Punch
+- U-turn
+
+Lucario
+Level: 63
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Aura Sphere
+- Flash Cannon
+- Dark Pulse
+- Nasty Plot
+
+Kommo-o
+Level: 64
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Clanging Scales
+- Close Combat
+- Iron Head
+- Dragon Dance
+
+Conkeldurr @ Sitrus Berry
+Ability: Guts
+Level: 66
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Drain Punch
+- Mach Punch
+- Knock Off
+- Ice Punch
+
+=== TRAINER_PHOEBE ===
+Name: RIVEN
+Class: Elite Four
+Pic: Psychic M
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint
+Mugshot: Purple
+
+Furfrou
+Level: 58
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Double Edge
+- Sucker Punch
+- U-turn
+- Thunder Wave
+
+Stoutland
+Ability: Intimidate
+Level: 59
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Facade
+- Crunch
+- Play Rough
+- Wild Charge
+
+Porygon2 @ Eviolite
+Level: 59
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Tri Attack
+- Ice Beam
+- Thunderbolt
+- Recover
+
+Zoroark-Hisui
+Level: 60
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Shadow Ball
+- Hyper Voice
+- Focus Blast
+- Nasty Plot
+
+Porygon-Z @ Sitrus Berry
+Ability: Adaptability
+Level: 62
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tri Attack
+- Dark Pulse
+- Ice Beam
+- Thunderbolt
+
+=== TRAINER_GLACIA ===
+Name: ANGELIC
 Class: Elite Four
 Pic: Elite Four Sidney
 Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer / Force Setup First Turn
-Mugshot: Purple
+AI: Check Bad Move / Try To Faint
+Mugshot: Blue
 
-Mightyena
-Level: 46
+Ninetales-Alola
+Ability: Snow Warning
+Level: 55
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Roar
-- Double Edge
-- Sand Attack
-- Crunch
-
-Shiftry
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Torment
-- Double Team
-- Swagger
-- Extrasensory
-
-Cacturne
-Level: 46
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Leech Seed
-- Feint Attack
-- Needle Arm
-- Cotton Spore
-
-Crawdaunt
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Surf
-- Swords Dance
-- Strength
-- Facade
-
-Absol @ Sitrus Berry
-Level: 49
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Aerial Ace
-- Rock Slide
-- Swords Dance
-- Slash
-
-=== TRAINER_PHOEBE ===
-Name: PHOEBE
-Class: Elite Four
-Pic: Elite Four Phoebe
-Gender: Female
-Music: Elite Four
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer
-Mugshot: Green
-
-Dusclops
-Level: 48
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Punch
-- Confuse Ray
-- Curse
-- Protect
-
-Banette
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Grudge
-- Will O Wisp
-- Feint Attack
-
-Sableye
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Double Team
-- Night Shade
-- Feint Attack
-
-Banette
-Level: 49
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Shadow Ball
-- Psychic
-- Thunderbolt
-- Facade
-
-Dusclops @ Sitrus Berry
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shadow Ball
-- Ice Beam
-- Rock Slide
-- Earthquake
-
-=== TRAINER_GLACIA ===
-Name: GLACIA
-Class: Elite Four
-Pic: Elite Four Glacia
-Gender: Female
-Music: Elite Four
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Basic Trainer
-Mugshot: Pink
-
-Sealeo
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Encore
-- Body Slam
-- Hail
-- Ice Ball
-
-Glalie
-Level: 50
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Light Screen
-- Crunch
-- Icy Wind
-- Ice Beam
-
-Sealeo
-Level: 52
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Attract
-- Double Edge
-- Hail
 - Blizzard
+- Moonblast
+- Aurora Veil
+- Freeze-Dry
 
-Glalie
-Level: 52
+Froslass
+Level: 56
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Ice Beam
 - Shadow Ball
-- Explosion
-- Hail
-- Ice Beam
+- Thunderbolt
+- Will-O-Wisp
 
-Walrein @ Sitrus Berry
-Level: 53
+Glaceon
+Level: 57
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Blizzard
+- Shadow Ball
+- Water Pulse
+- Calm Mind
+
+Weavile
+Level: 58
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Triple Axel
+- Knock Off
+- Ice Shard
+- Swords Dance
+
+Mamoswine @ Sitrus Berry
+Level: 59
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Surf
-- Body Slam
-- Ice Beam
-- Sheer Cold
+- Earthquake
+- Icicle Crash
+- Ice Shard
+- Stone Edge
 
 === TRAINER_DRAKE ===
-Name: DRAKE
+Name: PKAS
 Class: Elite Four
 Pic: Elite Four Drake
 Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
-Mugshot: Blue
+AI: Check Bad Move / Try To Faint
+Mugshot: Yellow
 
-Shelgon
-Level: 52
+Torkoal
+Ability: Drought
+Level: 65
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Rock Tomb
-- Dragon Claw
-- Protect
-- Double Edge
+- Lava Plume
+- Solar Beam
+- Earth Power
+- Yawn
 
-Altaria
-Level: 54
+Venusaur
+Ability: Chlorophyll
+Level: 66
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Double Edge
-- Dragon Breath
-- Dragon Dance
-- Aerial Ace
+- Solar Beam
+- Sludge Bomb
+- Weather Ball
+- Sleep Powder
 
-Kingdra
-Level: 53
+Heliolisk
+Ability: Solar Power
+Level: 67
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Smokescreen
-- Dragon Dance
-- Surf
-- Body Slam
+- Thunderbolt
+- Weather Ball
+- Grass Knot
+- Volt Switch
 
-Flygon
-Level: 53
+Volcarona
+Level: 68
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-- Flamethrower
-- Crunch
-- Dragon Breath
-- Earthquake
+- Fiery Dance
+- Bug Buzz
+- Giga Drain
+- Quiver Dance
 
-Salamence @ Sitrus Berry
-Level: 55
+Charizard @ Charizardite X
+Level: 70
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Flamethrower
+- Flare Blitz
 - Dragon Claw
-- Rock Slide
-- Crunch
+- Earthquake
+- Dragon Dance
 
 === TRAINER_ROXANNE_1 ===
 Name: NEVARD
@@ -6219,63 +6262,65 @@ Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_WALLACE ===
-Name: WALLACE
+Name: DOGE
 Class: Champion
 Pic: Champion Wallace
 Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint
 Mugshot: Yellow
 
-Wailord
-Level: 57
+Meowscarada
+Level: 71
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Rain Dance
-- Water Spout
-- Double Edge
-- Blizzard
+- Flower Trick
+- Knock Off
+- U-turn
+- Play Rough
 
-Tentacruel
-Level: 55
+Ninetales
+Ability: Flash Fire
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Toxic
-- Hydro Pump
-- Sludge Bomb
+- Fire Blast
+- Energy Ball
+- Will-O-Wisp
+- Nasty Plot
+
+Vaporeon
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Scald
 - Ice Beam
+- Shadow Ball
+- Hyper Voice
 
-Ludicolo
-Level: 56
+Umbreon
+Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Giga Drain
-- Surf
-- Leech Seed
-- Double Team
-
-Whiscash
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Earthquake
-- Surf
-- Amnesia
-- Hyper Beam
-
-Gyarados
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Dragon Dance
-- Earthquake
-- Hyper Beam
-- Surf
-
-Milotic @ Sitrus Berry
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Recover
-- Surf
-- Ice Beam
+- Foul Play
+- Moonlight
 - Toxic
+- Snarl
+
+Lugia
+Ability: Multiscale
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Aeroblast
+- Psychic
+- Calm Mind
+- Roost
+
+Latios @ Latiosite
+Level: 77
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Draco Meteor
+- Luster Purge
+- Calm Mind
+- Surf
 
 === TRAINER_ANDREW ===
 Name: ANDREW

@@ -1,0 +1,143 @@
+## file: data/maps/EverGrandeCity_GlaciasRoom/scripts.inc
+== EverGrandeCity_GlaciasRoom_Text_IntroSpeech
+ANGELIC: Oh. A challenger.
+Already.
+
+Can we make this quick?
+
+…No, I'm not nervous.
+I'm just freezing you.
+
+I'm ANGELIC of the ELITE FOUR.
+Let's get this over with!
+== EverGrandeCity_GlaciasRoom_Text_Defeat
+…Okay. That was fast.
+Just not the way I wanted.
+== EverGrandeCity_GlaciasRoom_Text_PostBattleSpeech
+ANGELIC: Go on, the next room is open.
+
+RIVEN is in there. Don't let him
+start talking about servers.
+
+## file: data/maps/EverGrandeCity_PhoebesRoom/scripts.inc
+== EverGrandeCity_PhoebesRoom_Text_IntroSpeech
+RIVEN: Welcome. I'm RIVEN of the
+ELITE FOUR.
+
+I keep the LEAGUE's systems running.
+HOC sends me his logs, JADE sends me
+tea. Everybody keeps me working.
+
+If I pass this battle, the server
+keeps running.
+
+If you pass… well, it looks like
+there'll be a new challenge for DOGE.
+== EverGrandeCity_PhoebesRoom_Text_Defeat
+Connection lost.
+…That one's on me.
+== EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech
+RIVEN: Keep the data you got in
+VOLTARA. You'll understand why later.
+
+Now go. DU has been waiting all day.
+
+## file: data/maps/EverGrandeCity_SidneysRoom/scripts.inc
+== EverGrandeCity_SidneysRoom_Text_IntroSpeech
+DU: Finally! It's my turn!
+
+I'm DU of the ELITE FOUR, and I've
+been warming up since breakfast!
+
+If you get past me, I'll have to
+start training twice as hard!
+HAHAHA!
+
+Come on, give me everything!
+== EverGrandeCity_SidneysRoom_Text_Defeat
+HAHAHA! What a fight!
+Double training starts tomorrow!
+== EverGrandeCity_SidneysRoom_Text_PostBattleSpeech
+DU: The last one is PKAS.
+
+He's calm, he's kind, and his
+CHARIZARD is something else.
+Don't blink!
+
+## file: data/maps/EverGrandeCity_DrakesRoom/scripts.inc
+== EverGrandeCity_DrakesRoom_Text_IntroSpeech
+PKAS: I'm PKAS, the last of the
+ELITE FOUR.
+
+You made it this far because you
+learned to trust your team.
+
+I believe in the same kind of
+strength.
+
+CHARIZARD, let's show them what
+that means!
+== EverGrandeCity_DrakesRoom_Text_Defeat
+Even in full sunlight…
+you shone brighter.
+== EverGrandeCity_DrakesRoom_Text_PostBattleSpeech
+PKAS: Behind that door is DOGE,
+the CHAMPION.
+
+He fights for someone he lost.
+Fight for your team, and you'll
+be fine.
+
+## file: data/maps/EverGrandeCity_ChampionsRoom/scripts.inc
+== EverGrandeCity_ChampionsRoom_Text_IntroSpeech
+DOGE: So you're {PLAYER}.
+I've heard a lot about you.
+
+Before I became CHAMPION, I lost to
+the old CHAMPION more times than I
+can count. He was my friend.
+My teacher.
+
+He didn't disappear because he lost
+the title.
+
+When I won, he looked happy for me.
+That's why I need to find out what
+happened to him.
+
+But that's my problem, not yours.
+
+If you want this position, come and
+take it. I won't make it easy.
+== EverGrandeCity_ChampionsRoom_Text_Defeat
+…That's it.
+
+No tricks, no luck.
+You earned it, {PLAYER}.
+== EverGrandeCity_ChampionsRoom_Text_PostBattleSpeech
+DOGE: The title is yours.
+Fair and square.
+
+From today, you are the CHAMPION
+of the LUNIA POKéMON LEAGUE.
+== EverGrandeCity_ChampionsRoom_Text_ComeWithMe
+DOGE: Come with me. There's a room
+where we honor CHAMPIONS…
+
+and the POKéMON who stood with them.
+
+## file: data/maps/EverGrandeCity_HallOfFame/scripts.inc
+== EverGrandeCity_HallOfFame_Text_HereWeHonorLeagueChampions
+DOGE: This is the HALL OF FAME.
+
+Every CHAMPION of LUNIA is recorded
+here, with the team that got them
+to the top.
+
+He's here too. So am I.
+== EverGrandeCity_HallOfFame_Text_LetsRecordYouAndYourPartnersNames
+DOGE: Now it's your turn.
+
+Let's record your name, and the
+names of the partners who fought
+by your side.

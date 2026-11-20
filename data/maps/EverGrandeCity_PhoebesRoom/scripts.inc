@@ -59,26 +59,22 @@ EverGrandeCity_PhoebesRoom_EventScript_Defeated::
 	end
 
 EverGrandeCity_PhoebesRoom_Text_IntroSpeech:
-	.string "Ahahaha!\p"
-	.string "I'm PHOEBE of the ELITE FOUR.\n"
-	.string "I did my training on MT. PYRE.\p"
-	.string "While I trained, I gained the ability\n"
-	.string "to commune with GHOST-type POKéMON.\p"
-	.string "Yes, the bond I developed with POKéMON\n"
-	.string "is extremely tight.\p"
-	.string "So, come on, just try and see if you can\n"
-	.string "even inflict damage on my POKéMON!$"
+	.string "RIVEN: Welcome. I'm RIVEN of the\n"
+	.string "ELITE FOUR.\p"
+	.string "I keep the LEAGUE's systems running.\n"
+	.string "HOC sends me his logs, JADE sends me\l"
+	.string "tea. Everybody keeps me working.\p"
+	.string "If I pass this battle, the server\n"
+	.string "keeps running.\p"
+	.string "If you pass… well, it looks like\n"
+	.string "there'll be a new challenge for DOGE.$"
 
 EverGrandeCity_PhoebesRoom_Text_Defeat:
-	.string "Oh, darn.\n"
-	.string "I've gone and lost.$"
+	.string "Connection lost.\n"
+	.string "…That one's on me.$"
 
 EverGrandeCity_PhoebesRoom_Text_PostBattleSpeech:
-	.string "There's a definite bond between you\n"
-	.string "and your POKéMON, too.\p"
-	.string "I didn't recognize it, so it's only\n"
-	.string "natural that I lost.\p"
-	.string "Yup, I'd like to see how far your bond\n"
-	.string "will carry you.\p"
-	.string "Go ahead, move on to the next room.$"
+	.string "RIVEN: Keep the data you got in\n"
+	.string "VOLTARA. You'll understand why later.\p"
+	.string "Now go. DU has been waiting all day.$"
 
