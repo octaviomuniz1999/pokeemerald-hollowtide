@@ -371,3 +371,11 @@ warps, não as batalhas nem os eventos.
 | map_lint | **0 erros, 0 avisos em todos os mapas** (os avisos de colisão por metatile valem só para layouts gerados — os vanilla reaproveitados, como a Marine Cave End do epílogo, são a própria referência; a placa fora do mapa da loja, dado morto do vanilla, saiu) — **r59: 427 conferências, 0 falhas** de primeira, já com a QA da Liga no godmode |
 | Revisão visual | Route 11: o prado entre o patamar e a praia ganhou bosque e canteiros de flores (antes um gramado vazio); `fluxo_cap11` 14/14 na ROM nova (map.bin do mesmo tamanho, nenhum endereço mudou). `register()` agora mantém a posição do layout ao reinstalar — antes ele ia para o fim da lista, o que renumeraria os layouts seguintes (os saves guardam esse número) |
 | Revisão visual | Route 10: canteiros de flores e pedras soltas na faixa de grama da restinga (fora das linhas de visão dos treinadores); só o map.bin foi regravado (o `install_cap10` também reescreve a Tidemouth, que os instaladores seguintes mudaram); `fluxo_cap10` 20/20 na ROM nova |
+
+## 32. Revisão de coerência: portas sem destino — 20/11/2026
+
+| Item | Estado |
+|---|---|
+| Varredura | todos os mapas Palm: tiles com comportamento de porta (0x60/0x69) sem warp. Interiores (saguões, hotel, pavilhão) já tinham funcionário na frente |
+| Correções (`install_doors.py`, último passo da instalação) | Ferrália (29,12), segunda folha da porta da estação: warp para o saguão; terminal de balsas de Tidemouth (33,36) e casa do faroleiro da Breezeport (63,43), que eram andáveis e não levavam a lugar nenhum: sólidas, com recado próprio; 21 portas trancadas (prédios sem interior em Ferrália, Pillarton, Tradepost, Voltara e Routes 2–4) respondem "The door is locked."; subestação da Route 9 com recado |
+| QA | `fluxo_trem` entra pela segunda folha da porta de Ferrália; **r60: 427 conferências, 0 falhas** — **build 20ac** |
