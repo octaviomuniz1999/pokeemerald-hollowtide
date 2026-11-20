@@ -37,7 +37,7 @@ def main(rom, runner, work, pre):
             break
     ok(home, "Depois dos creditos: Continuar -> quarto em Dawnmere")
     for _ in range(30):
-        q.run(["wait 60", "press A 4 40"])
+        q.run(["wait 30", "mash A 8"])
         if q.flag(POSTGAME):
             break
     q.run(["mash B 10", "shot cap11c_quarto.png"])
