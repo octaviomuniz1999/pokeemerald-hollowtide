@@ -27,13 +27,13 @@ Palm230_Cynthia::
 	end
 
 Palm230_CynthiaTalk::
+	playbgm MUS_HT_CYNTHIA_ENCOUNTER, FALSE
 	msgbox Palm230_TextCynthiaWarn1, MSGBOX_DEFAULT
 	msgbox Palm230_TextCynthiaAsk, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Palm230_TurnBack
 	msgbox Palm230_TextCynthiaWarn2, MSGBOX_DEFAULT
 	msgbox Palm230_TextCynthiaAsk, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, Palm230_TurnBack
-	playbgm MUS_ENCOUNTER_CHAMPION, FALSE
 	msgbox Palm230_TextCynthiaIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_STEVEN, Palm230_TextCynthiaDefeat
 	msgbox Palm230_TextCynthiaPost, MSGBOX_DEFAULT
@@ -54,6 +54,7 @@ Palm230_CynthiaTalk::
 
 Palm230_TurnBack::
 	msgbox Palm230_TextCynthiaThanks, MSGBOX_DEFAULT
+	fadedefaultbgm
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Palm230_StepBackDown
 	waitmovement 0

@@ -21,6 +21,16 @@ IDS = {m.group(1): int(m.group(2)) for m in re.finditer(r"#define (TRAINER_\w+)\
 BEST = {442: 2, 407: 3, 468: 2, 448: 1, 350: 2, 445: 3, 947: 3,           # Cynthia
         279: 2, 260: 3, 212: 2, 1230: 3, 382: 2, 954: 2}                    # Tavinho
 res = []
+MAPF = os.path.join(os.path.dirname(__file__), "..", "..", "pokeemerald.map")
+
+
+def sym(name):
+    return int(re.search(r"0x([0-9a-f]{8})\s+%s\n" % name, open(MAPF).read()).group(1), 16)
+
+
+def bgm(q):
+    """Cabecalho da musica que o player de BGM esta tocando (gMPlayInfo_BGM.songHeader)."""
+    return q.peek32(sym("gMPlayInfo_BGM"))
 
 
 def ok(cond, label):
@@ -74,17 +84,21 @@ def main(rom, runner, work, pre):
     q.goto(CB, 3, 6); q.run(["press DOWN 30 0", "wait 120"])
     ok(q.mapname() == SR and tuple(q.where[2:]) == (13, 38), "Cabana -> crista (porta certa)")
     # Cynthia: aceitar voltar (A no SIM) -> recua
-    q.goto(SR, 17, 15); q.run(["press UP 8 0", "wait 30"])
+    q.goto(SR, 17, 15); q.run(["shot cap12b_cynthia_mapa.png", "press UP 8 0", "wait 30"])
+    ok(bgm(q) == sym("mus_ht_cynthia_encounter"), "Cynthia: tema de pre-batalha no dialogo")
     for _ in range(30):
         q.run(["press A 4 30", "wait 10"])
         if q.where[3] >= 15:
             break
-    q.run(["wait 60"])
+    q.run(["wait 240"])
     ok(not q.flag(CYNTHIA_DONE) and q.where[3] >= 15, "Cynthia: aceitar voltar faz o jogador recuar")
+    ok(bgm(q) != sym("mus_ht_cynthia_encounter"), "Cynthia: ao recuar volta a musica do mapa")
     # insistir (B = NAO nas duas perguntas) -> luta
     q.strong(); q.run([f"setflag 1270 {GODMODE:X}"])
     q.goto(SR, 17, 15); q.run(["press UP 20 0", "wait 30"])       # depois de recuar ele olha para baixo: vira e anda
     ok(until_battle(q, ["press B 4 30"]), "Cynthia: insistir duas vezes -> luta")
+    q.run(["wait 240", "shot cap12b_cynthia_luta.png"])
+    ok(bgm(q) == sym("mus_ht_vs_cynthia"), "Cynthia: tema de batalha proprio")
     ok(battle(q, TF + IDS["TRAINER_STEVEN"]), "Venceu CYNTHIA (Mega Garchomp por ultimo)")
     for _ in range(40):
         if q.flag(CYNTHIA_DONE):

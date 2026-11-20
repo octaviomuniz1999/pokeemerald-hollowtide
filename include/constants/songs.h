@@ -547,6 +547,10 @@
 #define PH_NURSE_HELD               608
 #define PH_NURSE_SOLO               609
 
+// Hollowtide: temas da Cynthia (MIDIs fornecidos pelo diretor)
+#define MUS_HT_CYNTHIA_ENCOUNTER    610
+#define MUS_HT_VS_CYNTHIA           611
+
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

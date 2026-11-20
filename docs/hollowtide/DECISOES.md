@@ -62,7 +62,8 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
   (ROM fornecida pelo diretor; o retrato é o sprite oficial de Platinum convertido para GBA). Arquivos
   `graphics/trainers/front_pics/champion_cynthia.png`, `graphics/object_events/pics/people/champion_cynthia.png` e
   `graphics/object_events/palettes/champion_cynthia.pal`. A hack não tem tema musical da Cynthia (tabela de músicas igual
-  à do Emerald), então a luta segue com a música atual.
+  à do Emerald). As músicas vieram depois, em MIDI enviado pelo diretor: tema de pré-batalha (só no diálogo antes da luta)
+  e tema de batalha próprios.
 
 ## Entrega
 

@@ -5124,6 +5124,10 @@ u16 GetBattleBGM(void)
         else
             trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
 
+        // Hollowtide: a Cynthia (slot TRAINER_STEVEN) tem tema proprio
+        if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL)) && TRAINER_BATTLE_PARAM.opponentA == TRAINER_STEVEN)
+            return MUS_HT_VS_CYNTHIA;
+
         switch (trainerClass)
         {
         case TRAINER_CLASS_AQUA_LEADER:

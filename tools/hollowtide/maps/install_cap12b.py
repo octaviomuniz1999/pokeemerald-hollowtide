@@ -83,11 +83,11 @@ def main():
           "\tapplymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkInPlaceFasterUp\n\twaitmovement 0\n"
           "\tgoto Palm230_CynthiaTalk\n\tend\n",
           "Palm230_Cynthia::\n\tlockall\n\tgoto_if_set FLAG_HT_CYNTHIA_DONE, Palm230_CynthiaAfter\n\tgoto Palm230_CynthiaTalk\n\tend\n",
-          "Palm230_CynthiaTalk::\n\tmsgbox Palm230_TextCynthiaWarn1, MSGBOX_DEFAULT\n"
+          "Palm230_CynthiaTalk::\n\tplaybgm MUS_HT_CYNTHIA_ENCOUNTER, FALSE\n\tmsgbox Palm230_TextCynthiaWarn1, MSGBOX_DEFAULT\n"
           "\tmsgbox Palm230_TextCynthiaAsk, MSGBOX_YESNO\n\tgoto_if_eq VAR_RESULT, YES, Palm230_TurnBack\n"
           "\tmsgbox Palm230_TextCynthiaWarn2, MSGBOX_DEFAULT\n"
           "\tmsgbox Palm230_TextCynthiaAsk, MSGBOX_YESNO\n\tgoto_if_eq VAR_RESULT, YES, Palm230_TurnBack\n"
-          "\tplaybgm MUS_ENCOUNTER_CHAMPION, FALSE\n\tmsgbox Palm230_TextCynthiaIntro, MSGBOX_DEFAULT\n"
+          "\tmsgbox Palm230_TextCynthiaIntro, MSGBOX_DEFAULT\n"
           "\ttrainerbattle_no_intro TRAINER_STEVEN, Palm230_TextCynthiaDefeat\n"
           "\tmsgbox Palm230_TextCynthiaPost, MSGBOX_DEFAULT\n\tcloseMessage\n"
           "\tfadescreen FADE_TO_BLACK\n\tspecial HealPlayerParty\n\tplayfanfare MUS_HEAL\n\twaitfanfare\n\tfadescreen FADE_FROM_BLACK\n"
@@ -95,7 +95,7 @@ def main():
           "\tapplymovement LOCALID_STORM_CYNTHIA, Palm230_StepAside\n\twaitmovement 0\n"
           "\tsetflag FLAG_HT_CYNTHIA_DONE\n\tcall Palm230_CynthiaAside\n"
           "\tmsgbox Palm230_TextCynthiaGo, MSGBOX_DEFAULT\n\treleaseall\n\tend\n",
-          "Palm230_TurnBack::\n\tmsgbox Palm230_TextCynthiaThanks, MSGBOX_DEFAULT\n\tcloseMessage\n"
+          "Palm230_TurnBack::\n\tmsgbox Palm230_TextCynthiaThanks, MSGBOX_DEFAULT\n\tfadedefaultbgm\n\tcloseMessage\n"
           "\tapplymovement OBJ_EVENT_ID_PLAYER, Palm230_StepBackDown\n\twaitmovement 0\n\treleaseall\n\tend\n",
           "Palm230_CynthiaAfter::\n\tmsgbox Palm230_TextCynthiaGo, MSGBOX_DEFAULT\n\treleaseall\n\tend\n",
           "Palm230_End::\n\tend\n",
