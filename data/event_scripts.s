@@ -1746,6 +1746,8 @@ EventScript_PalletTown_PlayersHouse_2F_TurnOnPC::
 	.include "data/maps/PalmRoute03/scripts.inc"
 
 	.include "data/maps/PalmFerralia/scripts.inc"
+	.include "data/maps/PalmOceanComplexCore/scripts.inc"
+	.include "data/maps/PalmOceanComplex1F/scripts.inc"
 	.include "data/maps/PalmTidemouth/scripts.inc"
 	.include "data/maps/PalmRoute10/scripts.inc"
 	.include "data/maps/PalmHocGym/scripts.inc"

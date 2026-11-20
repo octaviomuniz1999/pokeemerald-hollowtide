@@ -1,4 +1,5 @@
 PalmTidemouth_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Palm201_Transition
 	.byte 0
 
 Palm201_Nami::
@@ -17,6 +18,7 @@ Palm201_NamiAgain::
 
 Palm201_PortLock::
 	lockall
+	goto_if_set FLAG_HT_TIDEMOUTH_NAMI_MET, Palm201_Boat
 	msgbox Palm201_TextPortLock, MSGBOX_DEFAULT
 	applymovement OBJ_EVENT_ID_PLAYER, Palm201_StepBackSouth
 	waitmovement 0
@@ -24,6 +26,7 @@ Palm201_PortLock::
 	end
 
 Palm201_GymLock::
+	goto_if_set FLAG_HT_TIDEMOUTH_COMPLEX_DONE, Palm201_TransEnd
 	lockall
 	msgbox Palm201_TextGymLock, MSGBOX_DEFAULT
 	applymovement OBJ_EVENT_ID_PLAYER, Palm201_StepBackSouth
@@ -247,3 +250,27 @@ Palm202_House2Woman_Text:
 
 Palm202_House2Azumarill_Text:
 	.string "AZUMARILL: Rurill!$"
+Palm201_Transition::
+	goto_if_unset FLAG_HT_TIDEMOUTH_COMPLEX_DONE, Palm201_TransEnd
+	setweather WEATHER_SUNNY
+Palm201_TransEnd::
+	end
+
+Palm201_Boat::
+	msgbox Palm201_TextBoat, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Palm201_BoatNo
+	warp MAP_PALM_OCEAN_COMPLEX_1F, 10, 26
+	waitstate
+	releaseall
+	end
+Palm201_BoatNo::
+	applymovement OBJ_EVENT_ID_PLAYER, Palm201_StepBackSouth
+	waitmovement 0
+	releaseall
+	end
+
+
+Palm201_TextBoat:
+	.string "SAILOR: NAMI asked me to take you out\n"
+	.string "to that TEAM PALM complex.\p"
+	.string "The sea is rough. Ready to go?$"

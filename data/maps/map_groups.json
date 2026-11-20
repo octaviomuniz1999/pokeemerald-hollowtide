@@ -157,7 +157,9 @@
     "PalmDataCenter2F",
     "PalmHocGym",
     "PalmRoute10",
-    "PalmTidemouth"
+    "PalmTidemouth",
+    "PalmOceanComplex1F",
+    "PalmOceanComplexCore"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
