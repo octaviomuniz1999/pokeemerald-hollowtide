@@ -22,6 +22,16 @@ def ok(cond, label):
         raise SystemExit(1)
 
 
+def ride(q, target, first):
+    """Aceita o barco (texto longo + SIM marcado) ate o mapa mudar."""
+    q.run(first)
+    for _ in range(14):
+        if q.mapname() == target:
+            break
+        q.run(["press A 4 45", "wait 20"])
+    q.run(["wait 120"])
+
+
 def sighted(q, mapa, ax, ay, walk, nome, tid, avoid=()):
     q.strong()
     q.goto(mapa, ax, ay, avoid=avoid)
@@ -30,7 +40,7 @@ def sighted(q, mapa, ax, ay, walk, nome, tid, avoid=()):
         return
     q.run([walk, "wait 60"])
     seen = False
-    for _ in range(25):
+    for _ in range(60):
         if q.in_battle():
             seen = True
             break
@@ -43,7 +53,7 @@ def sighted(q, mapa, ax, ay, walk, nome, tid, avoid=()):
 def main(rom, runner, work, pre):
     q = QA(rom, runner, work)
     q.load(pre); q.no_wild(); q.run(["mash B 10", "setflag 1270 31", "clearflag 1270 30"]); q.strong()
-    q.goto(TD, 33, 38, avoid={(35, 38)}); q.run(["press UP 18 0", "wait 30"] + ["press A 4 45"] * 5 + ["wait 160", "shot cap10_complexo.png"])
+    q.goto(TD, 33, 38, avoid={(35, 38)}); ride(q, C1, ["press UP 18 0", "wait 30"]); q.run(["shot cap10_complexo.png"])
     ok(q.mapname() == C1, "Barco da Nami: Tidemouth -> Complexo Oceanico")
     sighted(q, C1, 4, 24, "walk UP 2", "Recruta do complexo 1", 5)
     sighted(q, C1, 11, 9, "walk RIGHT 2", "Recruta do complexo 2", 27, avoid={(4, 21)})
@@ -58,7 +68,7 @@ def main(rom, runner, work, pre):
     ok(q.flag(0x55), "Sistema central desligado: a Team Palm se dissolve")
     q.goto(CC, 13, 2, avoid={(15, 18), (13, 21)}); q.run(["press UP 30 0", "wait 120"])
     ok(q.mapname() == C1, "Sala de controle -> 1F")
-    q.goto(C1, 10, 26, avoid={(4, 21), (13, 10), (23, 7)}); q.run(["press LEFT 10 10"] + ["press A 4 45"] * 4 + ["wait 160"])
+    q.goto(C1, 10, 26, avoid={(4, 21), (13, 10), (23, 7)}); ride(q, TD, ["press LEFT 10 10", "press A 4 40"])
     ok(q.mapname() == TD, "Barco de volta a Tidemouth")
     q.goto(TD, 18, 26, avoid={(16, 28)}); q.run(["press UP 18 0", "wait 60", "mash B 10"])
     ok(q.mapname() == TD and q.where[3] <= 25, "Ginasio da Nami destrancado depois do complexo")

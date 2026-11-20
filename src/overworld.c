@@ -1887,7 +1887,7 @@ static void HtQaBoostParty(void)
         else
         {
             // QA de eventos: golpes de ataque variados (nenhum de status), para batalhas nao travarem
-            static const u16 sQaMoves[MAX_MON_MOVES] = {MOVE_SURF, MOVE_PSYSTRIKE, MOVE_THUNDERBOLT, MOVE_ICE_BEAM};
+            static const u16 sQaMoves[MAX_MON_MOVES] = {MOVE_SURF, MOVE_AURA_SPHERE, MOVE_THUNDERBOLT, MOVE_PSYSTRIKE};
             u32 m;
             for (m = 0; m < MAX_MON_MOVES; m++)
             {
