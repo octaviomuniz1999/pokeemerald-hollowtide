@@ -17,8 +17,9 @@ def battle(q, flag, tries=140):
             return True
         if q.in_battle():
             nav = [] if i % 3 else ["press RIGHT 4 6"]
+            shot = [f"shot bt_{flag:x}_{i:03d}.png"] if os.environ.get("QA_SHOTS") else []
             q.run(["press B 4 8", "press UP 4 6", "press LEFT 4 6", "press A 4 20", "press UP 4 6", "press LEFT 4 6"]
-                  + nav + ["press A 4 20", "wait 150", "mash B 4"])
+                  + nav + ["press A 4 20"] + shot + ["wait 150", "mash B 4"])
         else:
             q.run(["mash B 6", "press A 4 30"])
     return q.flag(flag)
