@@ -285,3 +285,13 @@ warps, não as batalhas nem os eventos.
 | Voltara | as duas folhas da porta do Centro de Dados entram; a porta do ginásio abre com a energia de volta |
 | Vega | sem Recover/Thunder Wave (paralisia + cura deixavam a luta empatada): Mirror Shot no Magneton, Ice Beam no Porygon2 |
 | QA | pedido do diretor: o líder do time de QA vira um **Mewtwo Lv 100 Modest** (IVs 31, 252 EVs em Sp. Atk e Speed; Surf, Psystrike, Thunderbolt, Ice Beam), só no gancho de QA de builds não-release; ele conta como encontrado no Lv 5 (a obediência Gen 8+ usa o nível de encontro — sem isso ele cochilava, "began to nap"); limite de turnos 140 em todos os fluxos; **suíte completa 582/582 (Cap. 1–9)** — build 20s |
+
+## 26. Capítulo 10 (parte 1) — Route 10 e Tidemouth — 20/11/2026
+
+| Item | Estado |
+|---|---|
+| Voltara | faixa sul (linhas 37-43, colunas 12-49) repintada só com primário: grama, mata e estrada de terra (a Route 10 usa Lilycove); clareira na frente do prédio de apartamentos |
+| Route 10 | mapa novo (38×60, General + Lilycove): estrada desce de Voltara e segue pela praia contínua entre o mar e as falésias com mata; faróis-guia (postes compostos sobre areia) em duas pontas de pedra, enseada rasa, restinga com mato alto; Tomas (Pelipper/Machoke), Rita (Marill/Azumarill), Jonas (Remoraid/Qwilfish/Octillery), Luana (Lumineon/Seaking/Starmie), Lv 45–48; Deep Sea Scale, Damp Rock, Max Repel; encontros de terra (Wingull, Lombre, Pelipper, Krabby, Corphish…) e surf (Tentacruel, Wailmer, Mantine, Lapras raro) |
+| Tidemouth | mapa novo (64×48, General + Lilycove, chuva): avenida calçada, motel, Grand Hotel (fechado), Centro Pokémon, Mart, casas, canal de água (3 de largura — 2 de água rasa não tem borda boa), parque aquático, porto com o terminal; ginásio da Nami no pavilhão — o carimbo vinha com o patamar da Lilycove (escada em elevação 5), agora o piso andável fica no nível da rua; interiores de Pacifidlog/Sootopolis/Lilycove (motel só térreo) com moradores novos; ponto de cura |
+| Evento | Nami coordena a evacuação na avenida ("nobody goes in the water…", "these guys put an entire city at risk"); porto com as balsas suspensas e ginásio trancado com o bilhete da Nami; correção: a trava do porto empurrava o jogador para dentro da porta (agora recua para o sul) |
+| QA | `fluxo_cap10.py` (conexões nos dois sentidos, 4 treinadores com visão, 3 itens, Nami, porto e ginásio fechados, Centro Pokémon); o QA desvia dos treinadores parados na estrada; **suíte completa 622/622 (Cap. 1–10 parte 1)** — build 20t |
