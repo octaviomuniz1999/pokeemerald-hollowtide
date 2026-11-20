@@ -77,6 +77,17 @@ def compose():
     for (x, y) in [(5, 25), (11, 44), (7, 52)]:
         if c.terrain[y][x] in ("sand", "shallow"):
             c.put(x, y, 226, collision=1)
+    # restinga: canteiros de flores e pedras soltas na faixa de grama entre a praia e a mata (fora das linhas de visao)
+    keep = {(21, 18), (13, 26), (20, 36), (22, 48), (26, 22), (20, 4), (21, 54)}
+    for (x0, y0, rows) in [(23, 6, ["ff", "fff"]), (24, 26, [" ff", "ff "]), (23, 40, ["fff", " f "]), (25, 52, ["ff"]), (21, 12, ["f f"])]:
+        for dy, r in enumerate(rows):
+            for dx, ch in enumerate(r):
+                x, y = x0 + dx, y0 + dy
+                if ch == "f" and c.terrain[y][x] == "grass" and (x, y) not in keep:
+                    c.terrain[y][x] = "flower"
+    for (x, y) in [(25, 9), (24, 33), (25, 44), (23, 29)]:
+        if c.terrain[y][x] == "grass" and (x, y) not in keep:
+            c.put(x, y, 226, collision=1)
     return c
 
 
