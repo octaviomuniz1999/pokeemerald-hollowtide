@@ -1852,6 +1852,18 @@ u8 UpdateSpritePaletteWithTime(u8 paletteNum)
 static void HtQaBoostParty(void)
 {
     u32 i;
+    if (!VarGet(VAR_HT_QA_LEVEL) && GetMonData(&gPlayerParty[0], MON_DATA_SPECIES) != SPECIES_MEWTWO)
+    {
+        // QA de eventos: o lider vira um Mewtwo Lv 100 Modest (IVs 31, 252 EVs em Sp. Atk e Speed), para que as
+        // batalhas de QA nao dependam de sorte (paralisia, cura, empate). So existe em builds nao-release.
+        u8 ev = MAX_PER_STAT_EVS;
+        u32 personality = GetMonPersonality(SPECIES_MEWTWO, MON_GENDER_RANDOM, NATURE_MODEST, RANDOM_UNOWN_LETTER);
+        CreateMonWithIVs(&gPlayerParty[0], SPECIES_MEWTWO, MAX_LEVEL, personality, OTID_STRUCT_PLAYER_ID, MAX_PER_STAT_IVS);
+        SetMonData(&gPlayerParty[0], MON_DATA_SPATK_EV, &ev);
+        SetMonData(&gPlayerParty[0], MON_DATA_SPEED_EV, &ev);
+        CalculateMonStats(&gPlayerParty[0]);
+        CalculatePlayerPartyCount();
+    }
     for (i = 0; i < PARTY_SIZE; i++)
     {
         struct Pokemon *mon = &gPlayerParty[i];
@@ -1869,7 +1881,7 @@ static void HtQaBoostParty(void)
         else
         {
             // QA de eventos: golpes de ataque variados (nenhum de status), para batalhas nao travarem
-            static const u16 sQaMoves[MAX_MON_MOVES] = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_THUNDERBOLT, MOVE_BODY_SLAM};
+            static const u16 sQaMoves[MAX_MON_MOVES] = {MOVE_SURF, MOVE_PSYSTRIKE, MOVE_THUNDERBOLT, MOVE_ICE_BEAM};
             u32 m;
             for (m = 0; m < MAX_MON_MOVES; m++)
             {
