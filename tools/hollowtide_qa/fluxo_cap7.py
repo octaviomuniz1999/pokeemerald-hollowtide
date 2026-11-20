@@ -73,9 +73,9 @@ def talk(q, mapa, x, y, face, extra=("mash B 20",)):
     q.run([f"press {face} 10 10", "press A 4 40"] + list(extra))
 
 
-def interact_until(q, mapa, x, y, face, flag, presses=16):
+def interact_until(q, mapa, x, y, face, flag, presses=16, avoid=()):
     """Fala/examina e vai apertando A ate a flag ligar (textos longos e SIM/NAO com SIM marcado)."""
-    q.goto(mapa, x, y, ignore=GONE, avoid=MOVED if mapa == R7 else ())
+    q.goto(mapa, x, y, ignore=GONE, avoid=set(avoid) | (MOVED if mapa == R7 else set()))
     q.run([f"press {face} 10 10"])
     for _ in range(presses):
         q.run(["press A 4 45"])

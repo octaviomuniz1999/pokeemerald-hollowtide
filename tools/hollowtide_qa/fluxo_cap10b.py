@@ -85,7 +85,7 @@ def main(rom, runner, work, pre):
     q.goto(CC, 14, 17); q.run(["press RIGHT 10 10", "press A 4 40", "mash B 40"])
     sighted(q, CC, 13, 18, "walk DOWN 2", "ABELF", 34, avoid={(15, 18)})
     q.run(["mash B 60", "shot cap10_abelf.png"])
-    interact_until(q, CC, 12, 22, "LEFT", 0x55, presses=24)
+    interact_until(q, CC, 12, 22, "LEFT", 0x55, presses=24, avoid={(13, 21), (15, 18)})
     q.run(["mash A 20", "mash B 40", "shot cap10_montanha.png"])
     ok(q.flag(0x55), "Sistema central desligado: a Team Palm se dissolve")
     q.goto(CC, 13, 2, avoid={(15, 18), (13, 21)}); q.run(["press UP 30 0", "wait 120"])

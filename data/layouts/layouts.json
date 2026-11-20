@@ -9565,6 +9565,17 @@
       "border_filepath": "data/layouts/PalmTidemouth/border.bin",
       "blockdata_filepath": "data/layouts/PalmTidemouth/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_NAMI_GYM",
+      "name": "PalmNamiGym_Layout",
+      "width": 24,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lilycove",
+      "border_filepath": "data/layouts/PalmNamiGym/border.bin",
+      "blockdata_filepath": "data/layouts/PalmNamiGym/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
