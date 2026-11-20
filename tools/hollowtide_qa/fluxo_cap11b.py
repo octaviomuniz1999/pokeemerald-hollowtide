@@ -8,6 +8,24 @@ sys.path.insert(0, os.path.dirname(__file__))
 from qa_driver import QA
 from fluxo_cap2_eventos import battle as battle_all
 
+NAV = {0: [], 1: ["press RIGHT 4 6"], 2: ["press DOWN 4 6"], 3: ["press DOWN 4 6", "press RIGHT 4 6"]}
+
+
+def battle_seq(q, flag, seq, tries=260):
+    """Como battle_all, mas numa sequencia fixa de golpes do Mewtwo de QA (0 Surf, 1 Aura Sphere, 2 Thunderbolt,
+    3 Psystrike): contra o Doge, Aura Sphere (Meowscarada/Umbreon), Psystrike (Ninetales/Vaporeon) e Thunderbolt
+    (Lugia/Latios) em rodizio, no lugar do rodizio cego que gastava turnos com Surf."""
+    for i in range(tries):
+        if q.flag(flag) and not q.in_battle():
+            q.run(["mash B 20"])
+            return True
+        if q.in_battle():
+            q.run(["press B 4 8", "press UP 4 6", "press LEFT 4 6", "press A 4 20", "press UP 4 6", "press LEFT 4 6"]
+                  + NAV[seq[i % len(seq)]] + ["press A 4 20", "wait 150", "mash B 4"])
+        else:
+            q.run(["mash B 6", "press A 4 30"])
+    return q.flag(flag)
+
 TF = 0x500
 L1 = "MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F"
 H = {i: f"MAP_EVER_GRANDE_CITY_HALL{i}" for i in range(1, 6)}
@@ -73,7 +91,7 @@ def main(rom, runner, work, pre):
             break
         q.run(["press A 4 30"])
     ok(seen, "DOGE desafia o jogador")
-    ok(battle_all(q, TF + WALLACE, tries=260), "Venceu DOGE (campeao)")
+    ok(battle_seq(q, TF + WALLACE, [1, 3, 2]), "Venceu DOGE (campeao)")
     for _ in range(40):
         q.run(["mash A 10", "wait 60"])
         if q.mapname() == HOF:

@@ -85,8 +85,8 @@ PARTIES = {
         mon("Meowscarada", 71, ["Flower Trick", "Knock Off", "U-turn", "Play Rough"], 31),
         mon("Ninetales", 72, ["Fire Blast", "Energy Ball", "Will-O-Wisp", "Nasty Plot"], 31, ability="Flash Fire"),
         mon("Vaporeon", 72, ["Scald", "Ice Beam", "Shadow Ball", "Hyper Voice"], 31),
-        mon("Umbreon", 73, ["Foul Play", "Moonlight", "Toxic", "Snarl"], 31),
-        mon("Lugia", 75, ["Aeroblast", "Psychic", "Calm Mind", "Roost"], 31, ability="Multiscale"),
+        mon("Umbreon", 73, ["Foul Play", "Moonlight", "Shadow Ball", "Quick Attack"], 31),
+        mon("Lugia", 75, ["Aeroblast", "Psychic", "Ice Beam", "Calm Mind"], 31, ability="Multiscale"),
         mon("Latios", 77, ["Draco Meteor", "Luster Purge", "Calm Mind", "Surf"], 31, "Latiosite")]),
 }
 

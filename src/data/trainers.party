@@ -6302,8 +6302,8 @@ Level: 73
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Foul Play
 - Moonlight
-- Toxic
-- Snarl
+- Shadow Ball
+- Quick Attack
 
 Lugia
 Ability: Multiscale
@@ -6311,8 +6311,8 @@ Level: 75
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Aeroblast
 - Psychic
+- Ice Beam
 - Calm Mind
-- Roost
 
 Latios @ Latiosite
 Level: 77
