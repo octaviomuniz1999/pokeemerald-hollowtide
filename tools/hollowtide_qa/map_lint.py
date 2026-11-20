@@ -81,6 +81,19 @@ def lint(name, ref, mtcache):
                 issues.append(("AVISO", x, y, f"metatile {mt} bloqueado (passavel em {1 - blocked_ratio:.0%} dos mapas oficiais)"))
     def blocked(x, y):
         return (bl[y * w + x] >> 10) & 3 != 0
+    # degrau impossivel: dois tiles andaveis vizinhos com elevacoes diferentes (sem 0/15 de transicao nem agua 1).
+    # So nos mapas gerados (Palm*): os mapas vanilla reaproveitados tem tiles de elevacao 4 em cantos inalcancaveis.
+    for y in (range(h) if name.startswith("Palm") else ()):
+        for x in range(w):
+            e = bl[y * w + x] >> 12
+            if blocked(x, y) or e in (0, 1, 15):
+                continue
+            for dx, dy in ((1, 0), (0, 1)):
+                X, Y = x + dx, y + dy
+                if X < w and Y < h and not blocked(X, Y):
+                    e2 = bl[Y * w + X] >> 12
+                    if e2 not in (0, 1, 15) and e2 != e:
+                        issues.append(("ERRO", x, y, f"degrau impossivel: elevacao {e} ao lado de {e2} em ({X},{Y})"))
     for kind in ("coord_events", "bg_events"):
         for e in j.get(kind, []):
             if not (0 <= e["x"] < w and 0 <= e["y"] < h):
