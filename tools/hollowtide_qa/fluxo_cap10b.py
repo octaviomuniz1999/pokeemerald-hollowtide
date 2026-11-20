@@ -100,8 +100,9 @@ def main(rom, runner, work, pre):
     q.strong()
     q.goto(TD, 39, 22, avoid={(33, 37), (44, 17), (18, 25)}); q.run(["press RIGHT 8 10", "press A 4 40", "wait 150", "press A 4 60",
                                "press A 4 30", "wait 120", "press A 4 30", "wait 300",     # SIM; "MEWTWO used SURF!"
-                               "press RIGHT 16 0", "wait 30", "shot cap10_surf.png"])
+                               "shot cap10_surf.png"])
     ok(q.mapname() == TD and q.where[2] >= 40, "Surf no canal de Tidemouth (uso de campo)")
+    q.run(["press LEFT 16 0", "wait 60", "mash B 4"])         # volta a margem oeste (desce da agua sozinho)
     q.goto(TD, 18, 26, avoid={(16, 28)}); q.run(["press UP 18 0", "wait 60", "mash B 10"])
     ok(q.mapname() != TD or q.where[3] <= 25, "Ginasio da Nami destrancado depois do complexo")
     shutil.copy(q.state, f"{work}/c10complexo.ss")
