@@ -134,6 +134,25 @@ def rewire():
         jsave(mp, j)
 
 
+def renumber_state():
+    """VAR_ELITE_4_STATE conta as salas na ordem vanilla (Sidney 0->1, Phoebe 1->2, Glacia 2->3, Drake 3->4).
+    Na ordem nova: Glacia 0->1, Phoebe 1->2 (igual), Sidney 2->3, Drake 3->4 (igual)."""
+    sub = {"EverGrandeCity_GlaciasRoom": [("map_script_2 VAR_ELITE_4_STATE, 2,", "map_script_2 VAR_ELITE_4_STATE, 0,"),
+                                          ("setvar VAR_ELITE_4_STATE, 3", "setvar VAR_ELITE_4_STATE, 1"),
+                                          ("call_if_eq VAR_ELITE_4_STATE, 3,", "call_if_eq VAR_ELITE_4_STATE, 1,")],
+           "EverGrandeCity_SidneysRoom": [("map_script_2 VAR_ELITE_4_STATE, 0,", "map_script_2 VAR_ELITE_4_STATE, 2,"),
+                                          ("setvar VAR_ELITE_4_STATE, 1", "setvar VAR_ELITE_4_STATE, 3"),
+                                          ("call_if_eq VAR_ELITE_4_STATE, 1,", "call_if_eq VAR_ELITE_4_STATE, 3,")]}
+    for f, pairs in sub.items():
+        p = f"{ROOT}/data/maps/{f}/scripts.inc"
+        t = open(p).read()
+        for a, b in pairs:
+            if b not in t:
+                assert t.count(a) == 1, (f, a)
+                t = t.replace(a, b)
+        open(p, "w").write(t)
+
+
 CHAMPION = """EverGrandeCity_ChampionsRoom_MapScripts::
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, EverGrandeCity_ChampionsRoom_OnWarp
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, EverGrandeCity_ChampionsRoom_OnFrame
@@ -233,6 +252,7 @@ EverGrandeCity_ChampionsRoom_Text_ComeWithMe:
 def main():
     set_parties()
     rewire()
+    renumber_state()
     open(f"{ROOT}/data/maps/EverGrandeCity_ChampionsRoom/scripts.inc", "w").write(CHAMPION)
     subprocess.run([sys.executable, f"{ROOT}/tools/hollowtide/texts.py", f"{ROOT}/tools/hollowtide/text/ch11b.txt"], check=True)
     print("Cap. 11 (parte 2) instalado: Elite (Angelic, Riven, Du, Pkas) e campeao Doge")
