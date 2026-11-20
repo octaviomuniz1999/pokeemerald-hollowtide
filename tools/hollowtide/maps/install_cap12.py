@@ -66,7 +66,7 @@ def main():
     j["object_events"] = [
         obj("STEVEN", sx, sy, "MOVEMENT_TYPE_FACE_LEFT", "Palm220_Steven"),
         obj("OBJ_EVENT_GFX_SPECIES(METAGROSS)", sx + 1, sy, "MOVEMENT_TYPE_FACE_LEFT", "Palm220_Metagross"),
-        obj("OBJ_EVENT_GFX_COOLTRAINER_M", lx + 1, ly - 1, "MOVEMENT_TYPE_FACE_DOWN", "Palm220_Leon"),
+        obj("TUCKER", lx + 1, ly - 1, "MOVEMENT_TYPE_FACE_DOWN", "Palm220_Leon"),
         obj("OBJ_EVENT_GFX_SPECIES(CHARIZARD)", lx + 2, ly - 1, "MOVEMENT_TYPE_FACE_DOWN", "Palm220_Charizard")]
     for (x, y, item, flag) in ITEMS:
         assert walkable(bl, c.w, x, y), (item, x, y)

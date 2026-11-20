@@ -70,7 +70,9 @@ def main():
     open(pp, "w").write(pat.sub(lambda _m: TAVINHO_PARTY.rstrip("\n") + "\n", pt))
     # a luta multi da Mossdeep (inalcancavel) usava o slot: troca por um trainerbattle de Maxie de outro slot
     ms = f"{ROOT}/data/maps/MossdeepCity_SpaceCenter_2F/scripts.inc"
-    open(ms, "w").write(open(ms).read().replace("multi_2_vs_2 TRAINER_MAXIE_MOSSDEEP,", "multi_2_vs_2 TRAINER_MAXIE_MAGMA_HIDEOUT,"))
+    mt = open(ms).read()
+    assert len(mt) > 1000, ms
+    open(ms, "w").write(mt.replace("multi_2_vs_2 TRAINER_MAXIE_MOSSDEEP,", "multi_2_vs_2 TRAINER_MAXIE_MAGMA_HIDEOUT,"))
 
     # ---------------- crista -> cume
     rp = f"{ROOT}/data/maps/PalmStormRidge/map.json"
@@ -90,7 +92,7 @@ def main():
     dx, dy = SM.DOGE_IN
     for (x, y) in [(tx, ty), (dx, dy), (tx + 1, ty + 2)]:
         assert walkable(bl, c.w, x, y), (x, y)
-    tav = OD([("local_id", "LOCALID_SUMMIT_TAVINHO")] + list(obj("RED", tx, ty, "MOVEMENT_TYPE_FACE_DOWN", "Palm240_Tavinho").items()))
+    tav = OD([("local_id", "LOCALID_SUMMIT_TAVINHO")] + list(obj("NOLAND", tx, ty, "MOVEMENT_TYPE_FACE_DOWN", "Palm240_Tavinho").items()))
     dog = OD([("local_id", "LOCALID_SUMMIT_DOGE")] + list(obj("WALLACE", dx, dy, "MOVEMENT_TYPE_FACE_UP", "Palm240_Doge",
                                                                 flag="FLAG_HT_HIDE_SUMMIT_DOGE").items()))
     j["object_events"] = [tav, dog]

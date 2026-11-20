@@ -23,7 +23,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_SUMMIT_TAVINHO",
-      "graphics_id": "OBJ_EVENT_GFX_RED",
+      "graphics_id": "OBJ_EVENT_GFX_NOLAND",
       "x": 11,
       "y": 6,
       "elevation": 3,

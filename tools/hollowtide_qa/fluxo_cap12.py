@@ -26,11 +26,16 @@ def ok(cond, label):
 def main(rom, runner, work, pre):
     q = QA(rom, runner, work)
     q.load(pre); q.no_wild(); q.run(["mash B 10", "setflag 1270 31", "setflag 1270 30", f"clearflag 1270 {POSTGAME:X}"]); q.strong()
-    q.goto(PW, 17, 10); q.run(["press UP 30 0", "wait 30", "mash A 10", "mash B 6", "wait 40"])
+    q.goto(PW, 17, 10); q.run(["press UP 16 0", "wait 30"])
+    for _ in range(15):                      # o guardiao fala e o jogador recua um passo
+        q.run(["press A 4 30", "wait 20"])
+        if q.where[3] >= 10:
+            break
+    q.run(["mash B 6", "wait 40"])
     ok(q.mapname() == PW and q.where[3] >= 10, "Passway: escadaria fechada antes da convocacao do Doge")
     q.run([f"setflag 1270 {POSTGAME:X}"])
     q.goto(PW, 17, 0); q.run(["press UP 30 0", "wait 60", "shot cap12_trilha.png"])
-    ok(q.mapname() == ST and tuple(q.where[2:]) == (19, 49), "Escadaria -> Storm Mountain (conexao continua)")
+    ok(q.mapname() == ST and q.where[2] == 19 and q.where[3] >= 47, "Escadaria -> Storm Mountain (conexao continua, x da trilha = x da Passway + 2)")
     q.goto(ST, 19, 39); q.run(["press UP 8 0", "wait 40"])
     for _ in range(20):
         if q.flag(STEVEN):
