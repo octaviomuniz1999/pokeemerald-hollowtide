@@ -233,6 +233,13 @@
       "elevation": 0,
       "dest_map": "MAP_PALM_STATION_FERRALIA",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 29,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_PALM_STATION_FERRALIA",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
@@ -327,6 +334,94 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Common_EventScript_ShowPokemartSign"
+    },
+    {
+      "type": "sign",
+      "x": 64,
+      "y": 8,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Palm280_DoorLocked"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Palm280_DoorLocked"
+    },
+    {
+      "type": "sign",
+      "x": 46,
+      "y": 25,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Palm280_DoorLocked"
+    },
+    {
+      "type": "sign",
+      "x": 53,
+      "y": 25,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Palm280_DoorLocked"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 36,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Palm280_DoorLocked"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 36,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Palm280_DoorLocked"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 47,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Palm280_DoorLocked"
+    },
+    {
+      "type": "sign",
+      "x": 22,
+      "y": 47,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Palm280_DoorLocked"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 47,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Palm280_DoorLocked"
+    },
+    {
+      "type": "sign",
+      "x": 54,
+      "y": 47,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Palm280_DoorLocked"
+    },
+    {
+      "type": "sign",
+      "x": 63,
+      "y": 47,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Palm280_DoorLocked"
     }
   ]
 }

@@ -240,3 +240,28 @@ Palm103_TextEastGate:
 	.string "EAST LINE - ROUTE 4\p"
 	.string "The road is closed for a cargo\n"
 	.string "inspection. Talk to the GYM LEADER.$"
+Palm280_DoorLocked::
+	msgbox Palm280_TextDoorLocked, MSGBOX_SIGN
+	end
+
+Palm280_Terminal::
+	msgbox Palm280_TextTerminal, MSGBOX_SIGN
+	end
+
+Palm280_KeeperHouse::
+	msgbox Palm280_TextKeeperHouse, MSGBOX_SIGN
+	end
+
+
+Palm280_TextDoorLocked:
+	.string "The door is locked.$"
+
+Palm280_TextTerminal:
+	.string "TIDEMOUTH FERRY TERMINAL\p"
+	.string "Closed for repairs after the flood.\n"
+	.string "Boats leave from the pier.$"
+
+Palm280_TextKeeperHouse:
+	.string "The lighthouse keeper's house.\p"
+	.string "Nobody answers. The keeper must be\n"
+	.string "out by the lighthouse.$"

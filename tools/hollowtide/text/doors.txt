@@ -1,0 +1,13 @@
+## file: data/maps/PalmFerralia/scripts.inc
+==+ Palm280_TextDoorLocked
+The door is locked.
+==+ Palm280_TextTerminal
+TIDEMOUTH FERRY TERMINAL
+
+Closed for repairs after the flood.
+Boats leave from the pier.
+==+ Palm280_TextKeeperHouse
+The lighthouse keeper's house.
+
+Nobody answers. The keeper must be
+out by the lighthouse.

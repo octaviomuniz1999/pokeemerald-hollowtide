@@ -149,6 +149,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Palm100_SignPlateau"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 61,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "Palm280_DoorLocked"
     }
   ]
 }

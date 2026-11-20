@@ -6,7 +6,7 @@ Rodar depois de install_train.py.
 """
 import os, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, "..", "mapgen"))
+sys.path.insert(0, HERE); sys.path.insert(0, os.path.join(HERE, "..", "mapgen"))
 from canvas import ROOT
 
 INN_OLD = "Palm182_Innkeeper::\n\tmsgbox Palm182_Innkeeper_Text, MSGBOX_NPC\n\tend\n"
@@ -48,7 +48,26 @@ Palm182_InnGuestStorm::
 """
 
 
+def substation_door():
+    """Route 9: a porta da subestacao e uma porta de verdade, mas trancada (solida, sem destino): agora ela responde."""
+    import collections
+    from install_cap4 import jload, jsave, sign
+    mp = f"{ROOT}/data/maps/PalmRoute09/map.json"
+    j = jload(mp)
+    if not any(b.get("script") == "Palm190_SubstationDoor" for b in j["bg_events"]):
+        b = sign(36, 24, "Palm190_SubstationDoor")
+        b["player_facing_dir"] = "BG_EVENT_PLAYER_FACING_NORTH"
+        j["bg_events"].append(b)
+        jsave(mp, j)
+    sp = f"{ROOT}/data/maps/PalmRoute09/scripts.inc"
+    s = open(sp).read()
+    if "Palm190_SubstationDoor::" not in s:
+        s += "\nPalm190_SubstationDoor::\n\tmsgbox Palm190_TextSubstationDoor, MSGBOX_SIGN\n\tend\n"
+        open(sp, "w").write(s)
+
+
 def main():
+    substation_door()
     p = f"{ROOT}/data/maps/PalmPassway/scripts.inc"
     t = open(p).read()
     if "Palm182_InnRest_Text" not in t:

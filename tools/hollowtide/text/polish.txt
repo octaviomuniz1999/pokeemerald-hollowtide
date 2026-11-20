@@ -83,3 +83,14 @@ festival!
 I want to show everyone how tough my
 POKéMON is, so we're going to visit
 every GYM in LUNIA together!
+
+## file: data/maps/PalmRoute09/scripts.inc
+== Palm190_SignStation_Text
+ROUTE 9 POWER SUBSTATION
+Danger! High voltage!
+Authorized staff only.
+==+ Palm190_TextSubstationDoor
+The door is locked tight.
+
+A low hum comes from the machines
+inside.

@@ -56,7 +56,7 @@ def main(rom, runner, work, pre_tp, pre_vt):
     ride_first(q, STV, STF, "Trem: Voltara -> Ferralia")
     q.run(["shot trem_ferralia.png"])
     leave(q, STF, FR, (28, 12), "Ferralia")
-    enter(q, FR, (28, 12), STF, "Ferralia")
+    enter(q, FR, (29, 12), STF, "Ferralia (segunda folha da porta)")
     ride_first(q, STF, STV, "Trem: Ferralia -> Voltara")
     leave(q, STV, VT, (26, 17), "Voltara")
     print("\nRESUMO FERROVIA")

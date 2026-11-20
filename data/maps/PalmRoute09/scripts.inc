@@ -112,4 +112,14 @@ Palm190_SignEast_Text:
 
 Palm190_SignStation_Text:
 	.string "ROUTE 9 POWER SUBSTATION\n"
-	.string "Danger! High voltage!$"
+	.string "Danger! High voltage!\l"
+	.string "Authorized staff only.$"
+Palm190_SubstationDoor::
+	msgbox Palm190_TextSubstationDoor, MSGBOX_SIGN
+	end
+
+
+Palm190_TextSubstationDoor:
+	.string "The door is locked tight.\p"
+	.string "A low hum comes from the machines\n"
+	.string "inside.$"
