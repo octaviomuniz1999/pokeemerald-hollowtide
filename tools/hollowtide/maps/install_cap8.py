@@ -87,7 +87,7 @@ def main():
     register("PalmRoute08", "LAYOUT_PALM_ROUTE08", c8, bl8)
     j = map_json("MAP_PALM_ROUTE08", "PalmRoute08", "LAYOUT_PALM_ROUTE08", "MUS_ROUTE113", "MAPSEC_ROUTE_108", "MAP_TYPE_ROUTE",
                  [OD([("map", "MAP_PALM_HORIZON"), ("offset", -R8.OFFSET_HORIZON), ("direction", "down")]),
-                  OD([("map", "MAP_PALM_PASSWAY"), ("offset", -PW.OFFSET_ROUTE8), ("direction", "up")])])
+                  OD([("map", "MAP_PALM_PASSWAY"), ("offset", PW.OFFSET_ROUTE8), ("direction", "up")])])
     for (x, y, gfx, d, sight, script, _) in R8_TRAINERS:
         assert walkable(bl8, c8.w, x, y), (script, x, y)
         j["object_events"].append(obj(gfx, x, y, f"MOVEMENT_TYPE_FACE_{d}", script, "TRAINER_TYPE_NORMAL", sight))
@@ -114,7 +114,7 @@ def main():
     seam_check(blp, cp.w, cp.h, range(cp.h - 7, cp.h))
     register("PalmPassway", "LAYOUT_PALM_PASSWAY", cp, blp)
     j = map_json("MAP_PALM_PASSWAY", "PalmPassway", "LAYOUT_PALM_PASSWAY", "MUS_FALLARBOR", "MAPSEC_VERDANTURF_TOWN", "MAP_TYPE_TOWN",
-                 [OD([("map", "MAP_PALM_ROUTE08"), ("offset", PW.OFFSET_ROUTE8), ("direction", "down")])])
+                 [OD([("map", "MAP_PALM_ROUTE08"), ("offset", -PW.OFFSET_ROUTE8), ("direction", "down")])])
     for (x, y, gfx, mv, script) in PW_NPCS:
         assert walkable(blp, cp.w, x, y), (script, x, y)
         j["object_events"].append(obj(gfx, x, y, mv, script, rng=1 if "WANDER" in mv else 0))
