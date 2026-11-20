@@ -26,6 +26,16 @@ def ok(cond, label):
 def main(rom, runner, work, pre):
     q = QA(rom, runner, work)
     q.load(pre); q.no_wild(); q.run(["mash B 10", "setflag 1270 31", "setflag 1270 30", f"clearflag 1270 {POSTGAME:X}"]); q.strong()
+    # estalagem: pernoite (cura) e volta pela porta
+    q.goto(PW, 23, 16); q.run(["press UP 20 0", "wait 120"])
+    ok(q.mapname() == "MAP_PACIFIDLOG_TOWN_HOUSE1", "Passway -> estalagem")
+    q.goto("MAP_PACIFIDLOG_TOWN_HOUSE1", 3, 6); q.run(["press UP 10 10", "press A 4 40"])
+    for _ in range(12):
+        q.run(["press A 4 40", "wait 30"])
+    q.run(["wait 200", "mash A 6", "mash B 6", "shot cap12_estalagem.png"])
+    ok(q.mapname() == "MAP_PACIFIDLOG_TOWN_HOUSE1" and tuple(q.where[2:]) == (3, 6), "Estalagem: pernoite aceito, cena termina e o jogador fica livre")
+    q.goto("MAP_PACIFIDLOG_TOWN_HOUSE1", 4, 7); q.run(["press DOWN 20 0", "wait 120"])
+    ok(q.mapname() == PW and tuple(q.where[2:]) == (23, 16), "Estalagem -> Passway (porta certa)")
     q.goto(PW, 17, 10); q.run(["press UP 16 0", "wait 30"])
     for _ in range(15):                      # o guardiao fala e o jogador recua um passo
         q.run(["press A 4 30", "wait 20"])
