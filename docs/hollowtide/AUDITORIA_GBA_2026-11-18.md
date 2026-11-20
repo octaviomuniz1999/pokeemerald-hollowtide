@@ -304,3 +304,17 @@ warps, não as batalhas nem os eventos.
 | Tidemouth | depois do complexo a chuva para (ON_TRANSITION) e o ginásio destranca |
 | Ginásio | **"As Eclusas"**: arena aquática a céu aberto (General + Lilycove), 3 piscinas atravessando a arena; o mapa salvo tem os canais secos e o ON_LOAD enche os que ainda estão fechados (água por setmetatile entra bloqueada); cada alavanca drena o canal da sua piscina e a próxima só fica alcançável depois (conferido por BFS etapa a etapa); 3 nadadores; **Nami** (sprite/retrato provisórios: Beauty) Pelipper 47, Ludicolo 48, Wailord 49, Milotic 50, Gyarados 52 → **Insígnia Maré** (8ª) + **HM07 Waterfall** (o "TM Waterfall" proposto vira o HM que já existe, para não duplicar o golpe na lista de TM/HM) |
 | QA | o Mewtwo de QA usa Surf/Aura Sphere/Thunderbolt/Psystrike (Psystrike não acerta os Sombrios do Abelf); os fluxos desviam dos treinadores parados depois da luta (crista da Pillarton, Route 10, Abelf); **suíte completa 676/676 (Cap. 1–10)** — build 20u |
+
+## 28. Capítulo 11 — Route 11, a Liga Pokémon de Lunia e o pós-créditos — 20/11/2026
+
+| Item | Estado |
+|---|---|
+| Route 11 | mapa novo (48×36, General + Lilycove): saída oeste de Tidemouth (linhas 28-29) com guarda das 8 insígnias; praia sob as falésias, patamares 5 e 7 com escadas, boca do túnel (metatile 0xA7) na parede do patamar alto; Vincent, Felix e Leroy com visão e **golpes definidos** (o Altaria do Felix aprendia Perish Song pelo nível e derrubava o time de QA de um Pokémon só); 3 itens; encontros de caverna |
+| Ilha da Liga | o túnel sai na parte alta de Ever Grande (warp 18,27); conexões com a Route 128 removidas; guardas do saguão conferem a **8ª** insígnia |
+| Ordem das salas | refeita pelos warps para combinar piso e tipo: Hall5 → sala de gelo (**Angelic**, Gelo) → Hall1 → sala roxa (**Riven**, Normal) → Hall2 → tatame (**Du**, Lutador) → Hall3 → sala laranja (**Pkas**, Solar) → Hall4 → campeão |
+| Times | do cânone, com golpes; Pkas é o **primeiro adversário com Mega** (Charizard @ Charizardite X, Lv 70); **Doge**: Meowscarada 71, Ninetales 72, Vaporeon 72, Umbreon 73, Lugia 75, Latios @ Latiosite 77 por último; a IA mega-evolui só com a pedra (sem Key Stone para o oponente) |
+| Falas | do roteiro (sec. 16) em inglês: Angelic ("I'm just freezing you"), Riven (o servidor; referências discretas a Hoc e Jade), Du ("HAHAHA"), Pkas (confiar na equipe, Charizard), Doge (o amigo e mestre que sumiu sem ser nomeado; "come and take it") |
+| Sala do campeão | sem rival nem professor: Doge entrega o título e leva o jogador ao Hall da Fama; Hall da Fama com as falas do Doge |
+| Pós-créditos | na 1ª vez no quarto depois do Hall da Fama, o PC apita: dados de Hoc, Riven e Jade apontando o cume acima da Passway e a convocação do Doge (`FLAG_HT_POSTGAME_DATA` 0x68 — a 0x20 parecia livre mas é de um item da Route 101); a escadaria da Passway abre com essa flag |
+| Sprites | provisórios oficiais: Angelic = Sidney, Riven = Psychic M, Du = Black Belt, Pkas = Drake, Doge = Wallace |
+| QA | `fluxo_cap11.py` (Route 11 e ilha), `fluxo_cap11b.py` (as 4 salas, Doge, Hall da Fama, FLAG_SYS_GAME_CLEAR), `fluxo_cap11c.py` (créditos → Continuar → quarto → cena do PC) |
