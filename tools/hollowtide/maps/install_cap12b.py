@@ -3,7 +3,7 @@
 
 - MAP_PALM_STORM_RIDGE continua a trilha pelo norte (mesmo x); MAP_PALM_STORM_CABIN e a cabana de campanha
   da Liga (layout de casa generico) com a Enfermeira Joy: cura e conta da Cynthia (roteiro, sec. 17);
-- a Cynthia (slot TRAINER_STEVEN, sem uso; sprite provisorio Lucy) para o jogador no pe da ultima escadaria:
+- a Cynthia (slot TRAINER_STEVEN, sem uso; sprite de PK Black Pearl) para o jogador no pe da ultima escadaria:
   avisa, pergunta se ele volta; se insistir, luta (Spiritomb 79, Roserade 80, Togekiss 81, Lucario 82, Milotic 83,
   Garchomp @ Garchompite 85 por ultimo); depois da vitoria a Joy sobe e cura o time, e a Cynthia sai da frente;
 - a escadaria leva ao cume (parte 3).
@@ -20,7 +20,7 @@ from install_cap11b import mon, header
 
 OD = collections.OrderedDict
 FLAG = ("FLAG_UNUSED_0x1AB", "0x1AB", "FLAG_HT_CYNTHIA_DONE", "Cynthia vencida na ultima escadaria da Storm Mountain")
-CYNTHIA_PARTY = header("TRAINER_STEVEN", "CYNTHIA", "Champion", "Pike Queen Lucy", "Female", "Female",
+CYNTHIA_PARTY = header("TRAINER_STEVEN", "CYNTHIA", "Champion", "Champion Cynthia", "Female", "Female",
                        ["Full Restore"] * 4, "Check Bad Move / Try To Faint", "Purple") + "\n".join([
     mon("Spiritomb", 79, ["Shadow Ball", "Dark Pulse", "Will-O-Wisp", "Sucker Punch"], 31),
     mon("Roserade", 80, ["Leaf Storm", "Sludge Bomb", "Shadow Ball", "Extrasensory"], 31),
@@ -64,7 +64,7 @@ def main():
     j["weather"] = "WEATHER_RAIN_THUNDERSTORM"
     cx, cy = SR.CYNTHIA
     assert walkable(bl, c.w, cx, cy) and walkable(bl, c.w, cx + 1, cy)
-    cyn = obj("LUCY", cx, cy, "MOVEMENT_TYPE_FACE_DOWN", "Palm230_Cynthia")
+    cyn = obj("CHAMPION_CYNTHIA", cx, cy, "MOVEMENT_TYPE_FACE_DOWN", "Palm230_Cynthia")
     cyn = OD([("local_id", "LOCALID_STORM_CYNTHIA")] + list(cyn.items()))
     j["object_events"] = [cyn]
     for (x, y, item, flag) in ITEMS:

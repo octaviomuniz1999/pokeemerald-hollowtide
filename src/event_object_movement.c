@@ -498,6 +498,7 @@ const u8 gInitialMovementTypeFacingDirections[NUM_MOVEMENT_TYPES] = {
 static const u16 sObjectEventPal_Nevard[] = INCGFX_U16("graphics/object_events/palettes/nevard.pal", ".gbapal");
 static const u16 sObjectEventPal_PalmJay[] = INCGFX_U16("graphics/object_events/palettes/palm_jay.pal", ".gbapal");
 static const u16 sObjectEventPal_TeamPalm[] = INCGFX_U16("graphics/object_events/palettes/team_palm.pal", ".gbapal");
+static const u16 sObjectEventPal_ChampionCynthia[] = INCGFX_U16("graphics/object_events/palettes/champion_cynthia.pal", ".gbapal");
 
 static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Npc1,                  OBJ_EVENT_PAL_TAG_NPC_1},
@@ -591,6 +592,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {sObjectEventPal_Nevard, OBJ_EVENT_PAL_TAG_NEVARD},
     {sObjectEventPal_PalmJay, OBJ_EVENT_PAL_TAG_PALM_JAY},
     {sObjectEventPal_TeamPalm, OBJ_EVENT_PAL_TAG_TEAM_PALM},
+    {sObjectEventPal_ChampionCynthia, OBJ_EVENT_PAL_TAG_CHAMPION_CYNTHIA},
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE},
 #else
     {}, // BUG: FindObjectEventPaletteIndexByTag looks for OBJ_EVENT_PAL_TAG_NONE and not 0x0.

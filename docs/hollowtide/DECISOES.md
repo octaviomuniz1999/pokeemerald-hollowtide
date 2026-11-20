@@ -58,6 +58,11 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
 - Corcovado, Paulista, Serra do Mar etc. só como referência; locais com nomes fictícios.
 - Team Palm: recoloração provisória verde-oliva escura de sprites existentes, sem alterar globalmente sprites usados em outros lugares; sem futebol.
 - Música: faixas existentes do Emerald/Expansion por atmosfera.
+- Cynthia (20/11, pedido do diretor): retrato de batalha e boneco de mapa extraídos da hack *PK Black Pearl EMR*
+  (ROM fornecida pelo diretor; o retrato é o sprite oficial de Platinum convertido para GBA). Arquivos
+  `graphics/trainers/front_pics/champion_cynthia.png`, `graphics/object_events/pics/people/champion_cynthia.png` e
+  `graphics/object_events/palettes/champion_cynthia.pal`. A hack não tem tema musical da Cynthia (tabela de músicas igual
+  à do Emerald), então a luta segue com a música atual.
 
 ## Entrega
 

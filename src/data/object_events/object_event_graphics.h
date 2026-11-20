@@ -635,3 +635,4 @@ const u16 gObjectEventPic_ClefairyOld[] = INCGFX_U16("graphics/object_events/pic
 #endif // IS_FRLG
 
 const u32 gObjectEventPic_PalmJay[] = INCGFX_U32("graphics/object_events/pics/people/gym_leaders/palm_jay.png", ".4bpp", "-mwidth 2 -mheight 4");
+const u32 gObjectEventPic_ChampionCynthia[] = INCGFX_U32("graphics/object_events/pics/people/champion_cynthia.png", ".4bpp", "-mwidth 2 -mheight 4");

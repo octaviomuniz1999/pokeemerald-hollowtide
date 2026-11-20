@@ -2506,3 +2506,7 @@ static const struct SpriteFrameImage sPicTable_PalmJay[] = {
     overworld_frame(gObjectEventPic_PalmJay, 2, 4, 7),
     overworld_frame(gObjectEventPic_PalmJay, 2, 4, 8),
 };
+
+static const struct SpriteFrameImage sPicTable_ChampionCynthia[] = {
+    overworld_ascending_frames(gObjectEventPic_ChampionCynthia, 2, 4),
+};

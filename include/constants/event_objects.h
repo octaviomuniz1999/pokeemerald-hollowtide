@@ -414,6 +414,7 @@ enum
     OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG,
     OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG,
     OBJ_EVENT_GFX_PALM_JAY,
+    OBJ_EVENT_GFX_CHAMPION_CYNTHIA,
     NUM_OBJ_EVENT_GFX,
 };
 
@@ -616,6 +617,7 @@ enum
 #define OBJ_EVENT_PAL_TAG_NEVARD                 0x1134
 #define OBJ_EVENT_PAL_TAG_PALM_JAY               0x11F0
 #define OBJ_EVENT_PAL_TAG_TEAM_PALM              0x11F1 // Hollowtide: uniforme verde-oliva da Team Palm
+#define OBJ_EVENT_PAL_TAG_CHAMPION_CYNTHIA       0x11F2 // Hollowtide: Cynthia (sprite de PK Black Pearl)
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 // This + localId is used as the tileTag
