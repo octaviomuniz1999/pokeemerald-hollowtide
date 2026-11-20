@@ -1,0 +1,38 @@
+## file: data/maps/PalmRoute15/scripts.inc
+==+ Palm253_SignEast_Text
+ROUTE 15 - COASTAL GROTTO
+East: ROUTE 11
+
+==+ Palm253_TextOSCARIntro
+Ahoy! The ferries stopped during the
+storm, so I walk the shore now.
+
+==+ Palm253_TextOSCARLoss
+Sunk without a trace!
+
+==+ Palm253_TextOSCARAfter
+The sea's calm again. Soon the boats
+will sail out of TIDEMOUTH like before.
+
+==+ Palm253_TextPEDROIntro
+You found my secret spot! Now you
+have to get past me.
+
+==+ Palm253_TextPEDROLoss
+Fine… Just don't tell anyone.
+
+==+ Palm253_TextPEDROAfter
+At high tide the sea fills this
+grotto. RELICANTH come in from the
+deep. Old fish, older than the LEAGUE.
+
+==+ Palm253_TextNINAIntro
+The sea breeze is perfect today.
+Let's battle before the tide turns!
+
+==+ Palm253_TextNINALoss
+My hair! The wind ruined it!
+
+==+ Palm253_TextNINAAfter
+Shells wash up on this beach after
+every storm. Some people find pearls.

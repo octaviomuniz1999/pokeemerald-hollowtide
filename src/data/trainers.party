@@ -2350,7 +2350,7 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Sand Attack
 
 === TRAINER_MELISSA ===
-Name: MELISSA
+Name: NINA
 Class: Beauty
 Pic: Beauty
 Gender: Female
@@ -2358,9 +2358,13 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Marill
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gorebyss
+Level: 53
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Dhelmise
+Level: 54
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_SHEILA ===
 Name: SHEILA
@@ -2822,30 +2826,38 @@ Level: 35
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 
 === TRAINER_LUIS ===
-Name: LUIS
-Class: Swimmer M
-Pic: Swimmer M
+Name: OSCAR
+Class: Sailor
+Pic: Sailor
 Gender: Male
-Music: Swimmer
+Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Corsola
+Level: 52
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Cloyster
+Level: 54
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_DOMINIK ===
-Name: DOMINIK
-Class: Swimmer M
-Pic: Swimmer M
+Name: PEDRO
+Class: Fisherman
+Pic: Fisherman
 Gender: Male
-Music: Swimmer
+Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Tentacool
-Level: 26
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Clamperl
+Level: 52
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+
+Relicanth
+Level: 54
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_DOUGLAS ===
 Name: DOUGLAS

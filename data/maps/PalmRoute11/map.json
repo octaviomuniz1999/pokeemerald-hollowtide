@@ -18,6 +18,11 @@
       "map": "MAP_PALM_TIDEMOUTH",
       "offset": -8,
       "direction": "right"
+    },
+    {
+      "map": "MAP_PALM_ROUTE15",
+      "offset": 0,
+      "direction": "left"
     }
   ],
   "object_events": [

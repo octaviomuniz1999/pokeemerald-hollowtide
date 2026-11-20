@@ -37745,6 +37745,160 @@
           }
         },
         {
+          "map": "MAP_PALM_ROUTE15",
+          "base_label": "gPalmRoute15",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 50,
+                "max_level": 52,
+                "species": "SPECIES_CORSOLA"
+              },
+              {
+                "min_level": 50,
+                "max_level": 52,
+                "species": "SPECIES_SHELLDER"
+              },
+              {
+                "min_level": 50,
+                "max_level": 52,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 50,
+                "max_level": 52,
+                "species": "SPECIES_CLAMPERL"
+              },
+              {
+                "min_level": 51,
+                "max_level": 53,
+                "species": "SPECIES_CORSOLA"
+              },
+              {
+                "min_level": 51,
+                "max_level": 53,
+                "species": "SPECIES_SHELLDER"
+              },
+              {
+                "min_level": 52,
+                "max_level": 54,
+                "species": "SPECIES_CORSOLA"
+              },
+              {
+                "min_level": 52,
+                "max_level": 54,
+                "species": "SPECIES_SHELLDER"
+              },
+              {
+                "min_level": 52,
+                "max_level": 54,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 51,
+                "max_level": 53,
+                "species": "SPECIES_CLAMPERL"
+              },
+              {
+                "min_level": 53,
+                "max_level": 54,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 53,
+                "max_level": 54,
+                "species": "SPECIES_CORSOLA"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 50,
+                "max_level": 54,
+                "species": "SPECIES_SHELLDER"
+              },
+              {
+                "min_level": 50,
+                "max_level": 54,
+                "species": "SPECIES_CLAMPERL"
+              },
+              {
+                "min_level": 50,
+                "max_level": 54,
+                "species": "SPECIES_CORSOLA"
+              },
+              {
+                "min_level": 52,
+                "max_level": 54,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 52,
+                "max_level": 54,
+                "species": "SPECIES_RELICANTH"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_SHELLDER"
+              },
+              {
+                "min_level": 20,
+                "max_level": 25,
+                "species": "SPECIES_CLAMPERL"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_SHELLDER"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_CLAMPERL"
+              },
+              {
+                "min_level": 40,
+                "max_level": 45,
+                "species": "SPECIES_CORSOLA"
+              },
+              {
+                "min_level": 50,
+                "max_level": 54,
+                "species": "SPECIES_CORSOLA"
+              },
+              {
+                "min_level": 50,
+                "max_level": 54,
+                "species": "SPECIES_DHELMISE"
+              },
+              {
+                "min_level": 50,
+                "max_level": 54,
+                "species": "SPECIES_SHELLDER"
+              },
+              {
+                "min_level": 52,
+                "max_level": 54,
+                "species": "SPECIES_CLAMPERL"
+              },
+              {
+                "min_level": 52,
+                "max_level": 54,
+                "species": "SPECIES_RELICANTH"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_PALM_STORM_TRAIL",
           "base_label": "gPalmStormTrail",
           "land_mons": {

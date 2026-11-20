@@ -25,6 +25,7 @@ python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap9b.py" "$ROOT/pokeemerald.gba" "$
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap10.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/c9hoc.ss" | grep -E "^ *(OK|FALHA)|RESUMO|Traceback|Error|FLUXO"
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap10b.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/c10tide.ss" | grep -E "^ *(OK|FALHA)|RESUMO|Traceback|Error|FLUXO"
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap11.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/c10nami.ss" | grep -E "^ *(OK|FALHA)|RESUMO|Traceback|Error|FLUXO"
+python3 -I "$ROOT/tools/hollowtide_qa/fluxo_rota15.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/c10nami.ss" | grep -E "^ *(OK|FALHA)|RESUMO|Traceback|Error|FLUXO"
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap11b.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/c11liga.ss" | grep -E "^ *(OK|FALHA)|RESUMO|Traceback|Error|FLUXO"
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap11c.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/c11fim.ss" | grep -E "^ *(OK|FALHA)|RESUMO|Traceback|Error|FLUXO"
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_cap12.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/c8passway.ss" | grep -E "^ *(OK|FALHA)|RESUMO|Traceback|Error|FLUXO"
