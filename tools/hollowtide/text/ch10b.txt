@@ -1,0 +1,114 @@
+## file: data/maps/PalmTidemouth/scripts.inc
+==+ Palm201_TextBoat
+SAILOR: NAMI asked me to take you out
+to that TEAM PALM complex.
+
+The sea is rough. Ready to go?
+
+## file: data/maps/PalmOceanComplex1F/scripts.inc
+==+ Palm203_TextBoat
+SAILOR: I'll wait for you here.
+Want to go back to TIDEMOUTH?
+==+ Palm203_TextGrunt1Intro
+A kid on our platform? Security!
+…Oh, that's me. Fine!
+==+ Palm203_TextGrunt1Loss
+Security has failed.
+==+ Palm203_TextGrunt1After
+The turbines feed the whole complex.
+The boss says it's the future.
+==+ Palm203_TextGrunt2Intro
+Every wave out there pays our bills!
+You're not stopping the machines!
+==+ Palm203_TextGrunt2Loss
+Wiped out!
+==+ Palm203_TextGrunt2After
+We mine PALM COIN with the power
+from the sea. Isn't that genius?
+==+ Palm203_TextGrunt3Intro
+ABELF is upstairs. Nobody bothers
+ABELF. Especially not you!
+==+ Palm203_TextGrunt3Loss
+…He's going to be so mad.
+==+ Palm203_TextGrunt3After
+Go on, then. See what happens when
+you meet the boss.
+==+ Palm203_Turbine_Text
+A massive turbine roars, pulling
+water from the sea.
+==+ Palm203_Tank_Text
+A reservoir tank. The water inside
+churns in slow circles.
+
+## file: data/maps/PalmOceanComplexCore/scripts.inc
+==+ Palm204_TextNami
+NAMI: {PLAYER}! I came on my WAILORD.
+I couldn't just wait in town.
+
+That's ABELF, the head of TEAM PALM.
+Let's end this together!
+==+ Palm204_TextAbelfIntro
+ABELF: Ah, the child from the news.
+And the GYM LEADER, too.
+
+I'm not building a power plant.
+I'm creating the future of the economy.
+
+NAMI: You're flooding the city!
+
+ABELF: Temporary sacrifices.
+Permanent profit.
+
+NAMI: Then we'll end that future of
+yours right now. {PLAYER}, go!
+==+ Palm204_TextAbelfLoss
+ABELF: …So the future can lose.
+==+ Palm204_TextAbelfAfter
+ABELF: Take your victory. Shut it all
+down, if you like.
+
+We were never trying to rule the sea.
+We were looking for a source of power
+that vanished long ago.
+
+The machines only caught its echoes.
+Whatever is out there, it isn't mine
+to control anymore.
+==+ Palm204_TextNamiConsole
+NAMI: The main console is right there.
+Shut it down, {PLAYER}!
+==+ Palm204_TextConsoleGuarded
+ABELF is standing in front of the
+main console.
+==+ Palm204_TextConsole
+The main console controls every
+turbine and every machine.
+
+Shut down the system?
+==+ Palm204_TextShutdown
+The turbines wind down one by one.
+The roar of the sea grows quiet…
+
+TEAM PALM's machines are silent.
+==+ Palm204_TextMountain
+…For less than a second, an image
+flickers on the main monitor.
+
+The outline of a mountain, under
+a dark, swirling sky.
+
+Then the screen goes black.
+==+ Palm204_TextNamiDone
+NAMI: We did it! The tide is already
+going down. The city is safe!
+
+But that mountain on the screen…
+The storm isn't over, is it?
+
+Come to my GYM when you're ready.
+Let's battle like we mean it!
+==+ Palm204_TextConsoleOff
+The main console is dark and silent.
+==+ Palm204_TextMonitor
+The monitor shows tide graphs.
+The lines are slowly falling.
