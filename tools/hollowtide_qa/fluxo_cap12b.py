@@ -39,12 +39,14 @@ def var(q, v):
     return (word >> (8 * (addr & 3))) & 0xFFFF
 
 
-def battle(q, flag, tries=300):
-    for _ in range(tries):
+def battle(q, flag, tries=500):
+    for i in range(tries):
         if q.flag(flag) and not q.in_battle():
             return True
         if q.in_battle():
             slot = BEST.get(enemy_species(q), 3)
+            if i % 5 == 4:                 # o golpe certo pode ficar sem PP numa luta longa (Full Restores): varia
+                slot = (i // 5) % 4
             q.run(["press B 4 8", "press UP 4 6", "press LEFT 4 6", "press A 4 20", "press UP 4 6", "press LEFT 4 6"]
                   + NAV[slot] + ["press A 4 20", "wait 150", "mash B 4"])
         else:
