@@ -4,7 +4,7 @@
   "layout": "LAYOUT_PALM_ROUTE11",
   "music": "MUS_VICTORY_ROAD",
   "region": "REGION_HOENN",
-  "region_map_section": "MAPSEC_VICTORY_ROAD",
+  "region_map_section": "MAPSEC_ROUTE_111",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",

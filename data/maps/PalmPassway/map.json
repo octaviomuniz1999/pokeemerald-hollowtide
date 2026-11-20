@@ -23,6 +23,11 @@
       "map": "MAP_PALM_ROUTE09",
       "offset": 0,
       "direction": "right"
+    },
+    {
+      "map": "MAP_PALM_STORM_TRAIL",
+      "offset": -2,
+      "direction": "up"
     }
   ],
   "object_events": [

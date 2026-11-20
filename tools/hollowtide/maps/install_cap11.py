@@ -44,7 +44,7 @@ def main():
         c.put(x, y, 3, collision=1)
     bl = R11.flatten(c.build())
     register("PalmRoute11", "LAYOUT_PALM_ROUTE11", c, bl)
-    j = map_json("MAP_PALM_ROUTE11", "PalmRoute11", "LAYOUT_PALM_ROUTE11", "MUS_VICTORY_ROAD", "MAPSEC_VICTORY_ROAD", "MAP_TYPE_ROUTE",
+    j = map_json("MAP_PALM_ROUTE11", "PalmRoute11", "LAYOUT_PALM_ROUTE11", "MUS_VICTORY_ROAD", "MAPSEC_ROUTE_111", "MAP_TYPE_ROUTE",
                  [OD([("map", "MAP_PALM_TIDEMOUTH"), ("offset", -R11.OFFSET_TIDEMOUTH), ("direction", "right")])])
     for (x, y, gfx, d, sight, script, _) in R11_TRAINERS:
         assert walkable(bl, c.w, x, y), (script, x, y)

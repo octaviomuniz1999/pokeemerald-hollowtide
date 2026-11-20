@@ -1,0 +1,52 @@
+## file: data/maps/PalmStormTrail/scripts.inc
+==+ Palm220_TextSteven
+STEVEN: …You're the new CHAMPION.
+DOGE said you might come.
+
+I'm STEVEN. I came from HOENN when
+the storm readings reached us.
+
+I lost to him.
+
+The pressure of that energy was
+different from anything we ever
+studied in HOENN.
+
+Don't underestimate the storm.
+==+ Palm220_TextStevenAfter
+STEVEN: METAGROSS and I will rest here
+for a while.
+
+The trail splits the mountain in two
+further up. Stay on the path.
+==+ Palm220_TextMetagross
+METAGROSS: Gu-gugugu…
+
+It looks tired, but it's still
+keeping watch over STEVEN.
+==+ Palm220_TextLeon
+LEON: Hold on. You're the one DOGE
+sent for, right?
+
+I'm LEON. CHARIZARD and I went up
+this gorge a few hours ago.
+
+My CHARIZARD fought with everything
+it had.
+
+Even so, I had to fall back to keep
+it safe.
+
+If you keep going, know that your
+courage will come at a price.
+==+ Palm220_TextLeonAfter
+LEON: Past the gorge, there's a nurse
+from the LEAGUE.
+
+She came all the way up here to look
+after the CHAMPIONS' teams.
+==+ Palm220_TextCharizard
+CHARIZARD: Grooar…
+
+Its tail flame is small, but it
+still burns steadily.

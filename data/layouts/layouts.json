@@ -9587,6 +9587,17 @@
       "border_filepath": "data/layouts/PalmRoute11/border.bin",
       "blockdata_filepath": "data/layouts/PalmRoute11/map.bin",
       "layout_version": "emerald"
+    },
+    {
+      "id": "LAYOUT_PALM_STORM_TRAIL",
+      "name": "PalmStormTrail_Layout",
+      "width": 40,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/PalmStormTrail/border.bin",
+      "blockdata_filepath": "data/layouts/PalmStormTrail/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }
