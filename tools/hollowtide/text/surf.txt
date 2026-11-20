@@ -1,0 +1,17 @@
+## file: data/maps/PalmOceanComplexCore/scripts.inc
+==+ Palm204_TextNamiSurf
+NAMI: Oh, one more thing!
+
+You came here on my boat, but I rode
+my WAILORD across the bay.
+
+You shouldn't have to wait for a boat
+to cross the water. Take this!
+
+==+ Palm204_TextNamiSurfHint
+NAMI: Teach SURF to a POKéMON that
+can swim, and the lakes and the sea
+are yours to explore.
+
+Rivers, coves, the lake at HORIZON…
+There's a lot out there to see!

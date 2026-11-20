@@ -676,7 +676,7 @@
 #define FLAG_HT_R15_ITEM_1                   0x26D // Route 15: Pearl String
 #define FLAG_HT_R15_ITEM_2                   0x26E // Route 15: Deep Sea Tooth
 #define FLAG_HT_R15_ITEM_3                   0x26F // Route 15: Shell Bell
-#define FLAG_UNUSED_0x270  0x270 // Unused Flag
+#define FLAG_HT_RECEIVED_SURF                0x270 // Nami entregou a HM03 Surf (fim do Complexo Oceanico)
 #define FLAG_UNUSED_0x271  0x271 // Unused Flag
 #define FLAG_UNUSED_0x272  0x272 // Unused Flag
 #define FLAG_UNUSED_0x273  0x273 // Unused Flag

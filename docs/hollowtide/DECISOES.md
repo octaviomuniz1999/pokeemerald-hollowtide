@@ -47,6 +47,9 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
 - Pokédex regional curada (~250 espécies, todas as gerações, por bioma). Iniciais Snivy/Fennekin/Mudkip e espécies dos times principais obrigatórias. **Kyogre e Lugia nunca como encontro selvagem comum.**
 - Pokémon seguidor e dia/noite por relógio: ativos, com verificação de sprites/paletas.
 - Sem HMs obrigatórias: habilidades de campo/itens-chave, mantendo bloqueios que fazem sentido.
+  - 20/11 (diretor: "você decide" / "o ponto mais coeso para entregar o surf"): a Nami entrega a **HM03 Surf** no fim
+    do Complexo Oceânico (ela chega montada no Wailord; levou o jogador de barco até ali). A **HM07 Waterfall** continua HM
+    (trocar por TM renumeraria as HMs dos saves), mas as HMs passam a poder ser esquecidas (`P_CAN_FORGET_HIDDEN_MOVE`).
 - **Sem rival.**
 - Rotas 12–15 no jogo base, com exploração e recompensas.
 - Sem Battle Frontier/revanches extensas. Pós-jogo obrigatório: Cynthia, Tavinho, Primal Kyogre, Medalhão de Atlas, resolução em Hoenn — com narrativa, não batalha avulsa.

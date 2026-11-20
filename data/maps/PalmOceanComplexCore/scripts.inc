@@ -28,6 +28,7 @@ Palm204_NamiConsole::
 
 Palm204_NamiDone::
 	msgbox Palm204_TextNamiDone, MSGBOX_DEFAULT
+	call Palm204_GiveSurf
 	release
 	end
 
@@ -44,6 +45,7 @@ Palm204_Console::
 	playse SE_PIN
 	msgbox Palm204_TextMountain, MSGBOX_DEFAULT
 	msgbox Palm204_TextNamiDone, MSGBOX_DEFAULT
+	call Palm204_GiveSurf
 	releaseall
 	end
 
@@ -135,3 +137,28 @@ Palm204_TextConsoleOff:
 Palm204_TextMonitor:
 	.string "The monitor shows tide graphs.\n"
 	.string "The lines are slowly falling.$"
+
+Palm204_GiveSurf::
+	goto_if_set FLAG_HT_RECEIVED_SURF, Palm204_GiveSurfEnd
+	msgbox Palm204_TextNamiSurf, MSGBOX_DEFAULT
+	giveitem ITEM_HM_SURF
+	goto_if_eq VAR_RESULT, FALSE, Palm204_GiveSurfEnd
+	setflag FLAG_HT_RECEIVED_SURF
+	msgbox Palm204_TextNamiSurfHint, MSGBOX_DEFAULT
+Palm204_GiveSurfEnd::
+	return
+
+
+Palm204_TextNamiSurf:
+	.string "NAMI: Oh, one more thing!\p"
+	.string "You came here on my boat, but I rode\n"
+	.string "my WAILORD across the bay.\p"
+	.string "You shouldn't have to wait for a boat\n"
+	.string "to cross the water. Take this!$"
+
+Palm204_TextNamiSurfHint:
+	.string "NAMI: Teach SURF to a POKéMON that\n"
+	.string "can swim, and the lakes and the sea\l"
+	.string "are yours to explore.\p"
+	.string "Rivers, coves, the lake at HORIZON…\n"
+	.string "There's a lot out there to see!$"
