@@ -25,10 +25,14 @@ def main(rom, runner, work, pre):
     if q.mapname() != TD:
         raise AssertionError(f"estado fora de Tidemouth: {q.mapname()}")
     # porto depois da crise: o marinheiro fala do mar calmo e ainda leva ao complexo (Nami la, com o Surf)
-    q.goto(TD, 33, 38, avoid={(33, 37)}); q.run(["press UP 8 0", "wait 40", "press A 4 60", "wait 60", "shot porto_calmo.png",
-                                                "press B 4 30", "wait 60", "mash B 4"])
+    q.goto(TD, 33, 38, avoid={(33, 37)}); q.run(["press UP 20 0", "wait 90", "shot porto_calmo.png"])
+    for _ in range(8):                                   # passa as paginas e responde NAO (o jogador recua)
+        q.run(["press B 4 40", "wait 30"])
+        if q.where[3] == 38:
+            break
+    q.run(["mash B 4"])
     ok(q.mapname() == TD and tuple(q.where[2:]) == (33, 38), "Porto depois da crise: barco oferecido (mar calmo); NAO recua")
-    q.goto(TD, 44, 18, avoid={(46, 18)})
+    q.goto(TD, 44, 18, avoid={(46, 18), (33, 37)})
     q.run([f"clearflag 1270 {DONE:X}", "press UP 20 0", "wait 30"])
     for _ in range(10):
         q.run(["press A 4 30", "wait 10"])
@@ -36,7 +40,7 @@ def main(rom, runner, work, pre):
             break
     ok(q.mapname() == TD and q.where[3] >= 18, "Grand Hotel fechado durante a crise (recua)")
     q.run([f"setflag 1270 {DONE:X}", "mash B 4"])
-    q.goto(TD, 44, 17, avoid={(46, 18)}); q.run(["press UP 20 0", "wait 120"])
+    q.goto(TD, 44, 17, avoid={(46, 18), (33, 37)}); q.run(["press UP 20 0", "wait 120"])
     ok(q.mapname() == GH, "Porta do hotel -> saguao")
     q.goto(GH, 8, 4); q.run(["press UP 10 10", "press A 4 40"])
     for _ in range(12):
