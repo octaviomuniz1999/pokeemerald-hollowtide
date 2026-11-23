@@ -98,7 +98,7 @@ def goto(d, rom, goal, cells, map_id, out, tag, fight_ok=True, max_steps=400, av
                 break
             d.shot(f"{out}/{tag}_batalha_{battles}.png"); battles += 1
             fight(d); advance(d, 6); continue
-        if not w or w[0] != map_id:
+        if not w or w[0] not in (map_id if isinstance(map_id, (set, tuple, list)) else {map_id}):
             break
         cur = (w[1], w[2])
         if cur == goal:
@@ -192,6 +192,23 @@ def nevard_gym(d, rom, out, ok):
         d.press("UP", 16, 24)
     d.wait(200); d.shot(f"{out}/16_route2.png")
     ok["route2"] = d.where()
+
+
+ROUTE2_MAPS = {34, 35}                                   # MAP_R30, MAP_R31
+ROUTE2_CELLS = [(17, 9), (17, 10), (17, 11), (16, 8), (17, 8)]
+ROUTE2_NPCS = {(561, 350), (551, 316), (550, 279)}         # Liang, Mei Lan, Qin
+GATE, BREEZEPORT = 97, 77                                  # MAP_R31R0101, MAP_T26 (Olivine)
+
+
+def route2(d, rom, out, ok):
+    """Route 2 (Route 30+31) ate a guarita e a passagem para Breezeport."""
+    b, w = goto(d, rom, (519, 269), ROUTE2_CELLS, ROUTE2_MAPS, out, "r2", avoid=ROUTE2_NPCS, max_steps=900)
+    ok["r2_batalhas"] = b
+    ok["r2_fim"] = d.where(); d.shot(f"{out}/17_route2_fim.png")
+    d.press("LEFT", 16, 24); d.wait(200)
+    ok["guarita"] = d.where()
+    walk(d, ["LEFT"] * 12, stop_map=BREEZEPORT); d.wait(200)
+    ok["breezeport"] = d.where(); d.shot(f"{out}/18_breezeport.png")
 
 
 def cross_route1(d, rom, out, n0):
@@ -299,14 +316,17 @@ def main(rom, base, out):
         harvestvale(d, rom, out, ok)
         if ok.get("hv_ginasio", (0,))[0] == GYM:
             nevard_gym(d, rom, out, ok)
+            if ok.get("route2", (0,))[0] in ROUTE2_MAPS:
+                route2(d, rom, out, ok)
     for k, v in ok.items():
         print(f"{k:10} {v}")
     good = ok["barrado"] and ok["barrado"][0] == 60 and ok["route1"] and ok["route1"][0] == 33 and ok["harvestvale"] and ok["harvestvale"][0] == HARVESTVALE
     hv = good and ok.get("hv_ginasio_fechado", (0,))[0] == HARVESTVALE and ok.get("hv_saida_norte", (0,))[0] == HARVESTVALE \
         and ok.get("hv_ginasio", (0,))[0] == GYM
     gym = ok.get("route2", (0,))[0] == ROUTE2
+    r2 = ok.get("breezeport", (0,))[0] == BREEZEPORT
     print("RESULTADO:", "ok" if good else "FALHOU", "| Harvestvale:", "ok" if hv else "FALHOU",
-          "| Nevard e saida norte:", "ok" if gym else "FALHOU")
+          "| Nevard e saida norte:", "ok" if gym else "FALHOU", "| Route 2 e Breezeport:", "ok" if r2 else "FALHOU")
 
 
 if __name__ == "__main__":
