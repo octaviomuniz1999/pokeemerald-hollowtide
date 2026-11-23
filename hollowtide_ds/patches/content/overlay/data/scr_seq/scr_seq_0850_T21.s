@@ -111,6 +111,7 @@ scr_seq_T21_004:
 	check_battle_won VAR_SPECIAL_RESULT
 	compare VAR_SPECIAL_RESULT, 0
 	goto_if_eq _HT_Lost
+	settrainerflag 483                       // trainer_battle por script nao marca o treinador como vencido
 	releaseall
 	end
 
