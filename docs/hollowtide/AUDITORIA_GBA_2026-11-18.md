@@ -426,3 +426,12 @@ warps, não as batalhas nem os eventos.
 | Curva antes da Jay | Route 2: selvagens Lv 9–13, treinadores 12–15; Linh (Teatro) 17; a **Breezeport não tinha Pokémon selvagens** — o salto até o ás 21 não tinha onde ser treinado |
 | Ajuste (`install_brisa_wild.py`) | encontros do cânone na Breezeport (POKEDEX_LUNIA, Cap. 2 Lv 9–21): no mato alto do noroeste Pidove, Hoothoot, Shuppet (Lv 14–18) e Misdreavus raro (1%, o ás da Jay); na orla, surf/pesca com Tentacool, Wingull, Krabby, Staryu e Corsola raro. Sem mudar mapa nem o time da Jay |
 | QA | **r69: 494 conferências, 0 falhas** (as rotas de QA usam Repel/nível 100; nenhum fluxo travou na Breezeport) — **build 23al**. Pendência "balanceamento fino da Jay" resolvida (tirada do LEIA-ME). Não houve teste jogado com o time natural do jogador contra a Jay: a análise é pelos dados (níveis, golpes, curva) |
+
+## 37. Balanceamento do Cap. 1 — 23/11/2026
+
+| Item | Estado |
+|---|---|
+| Teste | `fluxo_cap1_balanco` com o inicial (Fennekin) **no Lv 10**, sozinho, sem itens, só Ember: vence recruta, Josh, Tommy e **o Nevard** (termina no Lv 12). No Lv 8 perdia para o Nevard (sec. 32) |
+| Buraco | a Route 1 ia só até Lv 6 (o cânone do capítulo é Lv 3–9); a Harvestvale não tem mato alto (cânone: "sem grama alta"). Treinar até ~10 exigia muito tempo contra selvagens Lv 4–6 |
+| Ajuste (`install_route1_wild.py`) | mesmas espécies do cânone; encontros comuns continuam Lv 3–6, os menos frequentes sobem: Sewaddle/Bidoof 6–8 (5% cada), Shinx/Sewaddle/Zigzagoon 7–9 (raros). Só valores numéricos (nenhum endereço muda). Time do Nevard mantido (cânone) |
+| QA | r70 em andamento |
