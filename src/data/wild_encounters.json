@@ -36648,6 +36648,160 @@
           }
         },
         {
+          "map": "MAP_PALM_BRISA",
+          "base_label": "gPalmBrisa",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_PIDOVE"
+              },
+              {
+                "min_level": 14,
+                "max_level": 16,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_PIDOVE"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_SHUPPET"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_PIDOVE"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_SHUPPET"
+              },
+              {
+                "min_level": 17,
+                "max_level": 18,
+                "species": "SPECIES_PIDOVE"
+              },
+              {
+                "min_level": 17,
+                "max_level": 18,
+                "species": "SPECIES_HOOTHOOT"
+              },
+              {
+                "min_level": 17,
+                "max_level": 18,
+                "species": "SPECIES_SHUPPET"
+              },
+              {
+                "min_level": 16,
+                "max_level": 18,
+                "species": "SPECIES_MISDREAVUS"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 25,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 25,
+                "species": "SPECIES_WINGULL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 25,
+                "species": "SPECIES_STARYU"
+              },
+              {
+                "min_level": 20,
+                "max_level": 28,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 20,
+                "max_level": 28,
+                "species": "SPECIES_CORSOLA"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 20,
+                "species": "SPECIES_STARYU"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_STARYU"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_KRABBY"
+              },
+              {
+                "min_level": 25,
+                "max_level": 30,
+                "species": "SPECIES_TENTACOOL"
+              },
+              {
+                "min_level": 28,
+                "max_level": 32,
+                "species": "SPECIES_STARYU"
+              },
+              {
+                "min_level": 28,
+                "max_level": 32,
+                "species": "SPECIES_CORSOLA"
+              }
+            ]
+          }
+        },
+        {
           "map": "MAP_PALM_ROUTE03",
           "base_label": "gPalmRoute03",
           "land_mons": {
