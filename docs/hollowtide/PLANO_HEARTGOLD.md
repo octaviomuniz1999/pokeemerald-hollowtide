@@ -34,6 +34,14 @@ pedaço sem ferramenta continua sendo a geometria 3D (blocos e matriz), que o ca
 Layout no repositório: `hollowtide_ds/` (patches de conteúdo + ajustes do hg-engine; nada da Nintendo no git) e
 `tools/hollowtide_ds/` (build, extração de textos, QA). Ver `hollowtide_ds/README.md`.
 
+## Estado da Fase 1 (23/11/2026)
+
+| Item | Estado |
+|---|---|
+| Inventário de Lunia | `tools/hollowtide_ds/lunia_inventory.py` → `docs/hollowtide/ds/lunia_inventory.json`: percorre o mundo do GBA a partir do quarto (conexões, warps, warps de script) — 147 mapas, 140 treinadores (slots de Hoenn resolvidos pelos `#define` de `opponents.h`), 26 tabelas de encontro, 7 presentes |
+| Sprites | **sem lacunas** (`docs/hollowtide/ds/SPRITES.md`): as 270 espécies/formas usadas, as Megas/Primal do cânone e as 128 famílias da Pokédex têm batalha, seguidor e ícone no hg-engine |
+| Próximo | conversor de times → `data/Trainers.c`; encontros → `data/Encounters.c`; presentes e trocas |
+
 ## 1. O que o hg-engine resolve e o que não resolve
 
 Fonte: README e wiki do `BluRosie/hg-engine` (lidos em 23/11/2026).

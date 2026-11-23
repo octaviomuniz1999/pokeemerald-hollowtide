@@ -1,0 +1,8544 @@
+{
+ "start": "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+ "maps": [
+  "MAP_DEWFORD_TOWN_HOUSE2",
+  "MAP_DEWFORD_TOWN_POKEMON_CENTER_1F",
+  "MAP_DEWFORD_TOWN_POKEMON_CENTER_2F",
+  "MAP_EVER_GRANDE_CITY",
+  "MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM",
+  "MAP_EVER_GRANDE_CITY_DRAKES_ROOM",
+  "MAP_EVER_GRANDE_CITY_GLACIAS_ROOM",
+  "MAP_EVER_GRANDE_CITY_HALL1",
+  "MAP_EVER_GRANDE_CITY_HALL2",
+  "MAP_EVER_GRANDE_CITY_HALL3",
+  "MAP_EVER_GRANDE_CITY_HALL4",
+  "MAP_EVER_GRANDE_CITY_HALL5",
+  "MAP_EVER_GRANDE_CITY_HALL_OF_FAME",
+  "MAP_EVER_GRANDE_CITY_PHOEBES_ROOM",
+  "MAP_EVER_GRANDE_CITY_POKEMON_CENTER_1F",
+  "MAP_EVER_GRANDE_CITY_POKEMON_CENTER_2F",
+  "MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F",
+  "MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_2F",
+  "MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM",
+  "MAP_FALLARBOR_TOWN_MART",
+  "MAP_FALLARBOR_TOWN_MOVE_RELEARNERS_HOUSE",
+  "MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F",
+  "MAP_FALLARBOR_TOWN_POKEMON_CENTER_2F",
+  "MAP_FORTREE_CITY_GYM",
+  "MAP_FORTREE_CITY_HOUSE1",
+  "MAP_FORTREE_CITY_HOUSE2",
+  "MAP_FORTREE_CITY_HOUSE3",
+  "MAP_FORTREE_CITY_MART",
+  "MAP_FORTREE_CITY_POKEMON_CENTER_1F",
+  "MAP_FORTREE_CITY_POKEMON_CENTER_2F",
+  "MAP_LAVARIDGE_TOWN_HOUSE",
+  "MAP_LAVARIDGE_TOWN_MART",
+  "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F",
+  "MAP_LAVARIDGE_TOWN_POKEMON_CENTER_2F",
+  "MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F",
+  "MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F",
+  "MAP_LILYCOVE_CITY_DEPARTMENT_STORE_2F",
+  "MAP_LILYCOVE_CITY_DEPARTMENT_STORE_3F",
+  "MAP_LILYCOVE_CITY_DEPARTMENT_STORE_4F",
+  "MAP_LILYCOVE_CITY_DEPARTMENT_STORE_5F",
+  "MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR",
+  "MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP",
+  "MAP_LILYCOVE_CITY_HOUSE1",
+  "MAP_LILYCOVE_CITY_HOUSE2",
+  "MAP_LILYCOVE_CITY_HOUSE3",
+  "MAP_LILYCOVE_CITY_HOUSE4",
+  "MAP_LILYCOVE_CITY_MOVE_DELETERS_HOUSE",
+  "MAP_LITTLEROOT_TOWN",
+  "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F",
+  "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
+  "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F",
+  "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_2F",
+  "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
+  "MAP_MAUVILLE_CITY_GYM",
+  "MAP_MAUVILLE_CITY_HOUSE1",
+  "MAP_MAUVILLE_CITY_HOUSE2",
+  "MAP_MAUVILLE_CITY_MART",
+  "MAP_MAUVILLE_CITY_POKEMON_CENTER_1F",
+  "MAP_MAUVILLE_CITY_POKEMON_CENTER_2F",
+  "MAP_MOSSDEEP_CITY_HOUSE1",
+  "MAP_MOSSDEEP_CITY_HOUSE3",
+  "MAP_MOSSDEEP_CITY_HOUSE4",
+  "MAP_MOSSDEEP_CITY_MART",
+  "MAP_MOSSDEEP_CITY_POKEMON_CENTER_1F",
+  "MAP_MOSSDEEP_CITY_POKEMON_CENTER_2F",
+  "MAP_OLDALE_TOWN",
+  "MAP_OLDALE_TOWN_HOUSE1",
+  "MAP_OLDALE_TOWN_HOUSE2",
+  "MAP_OLDALE_TOWN_MART",
+  "MAP_OLDALE_TOWN_POKEMON_CENTER_1F",
+  "MAP_OLDALE_TOWN_POKEMON_CENTER_2F",
+  "MAP_PACIFIDLOG_TOWN_HOUSE1",
+  "MAP_PACIFIDLOG_TOWN_HOUSE4",
+  "MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F",
+  "MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_2F",
+  "MAP_PALM_BRISA",
+  "MAP_PALM_DATA_CENTER_1F",
+  "MAP_PALM_DATA_CENTER_2F",
+  "MAP_PALM_FERRALIA",
+  "MAP_PALM_GRAND_HOTEL",
+  "MAP_PALM_HOC_GYM",
+  "MAP_PALM_HORIZON",
+  "MAP_PALM_JADE_GYM",
+  "MAP_PALM_LAKE_STATION",
+  "MAP_PALM_MARINE_EPILOGUE",
+  "MAP_PALM_NAMI_GYM",
+  "MAP_PALM_OCEAN_COMPLEX_1F",
+  "MAP_PALM_OCEAN_COMPLEX_CORE",
+  "MAP_PALM_PASSWAY",
+  "MAP_PALM_PILLARTON",
+  "MAP_PALM_ROUTE02",
+  "MAP_PALM_ROUTE03",
+  "MAP_PALM_ROUTE04",
+  "MAP_PALM_ROUTE05",
+  "MAP_PALM_ROUTE06",
+  "MAP_PALM_ROUTE07",
+  "MAP_PALM_ROUTE08",
+  "MAP_PALM_ROUTE09",
+  "MAP_PALM_ROUTE10",
+  "MAP_PALM_ROUTE11",
+  "MAP_PALM_ROUTE12",
+  "MAP_PALM_ROUTE13",
+  "MAP_PALM_ROUTE14",
+  "MAP_PALM_ROUTE15",
+  "MAP_PALM_SERENIA",
+  "MAP_PALM_STAR_PAVILION",
+  "MAP_PALM_STATION_FERRALIA",
+  "MAP_PALM_STATION_TRADEPOST",
+  "MAP_PALM_STATION_VOLTARA",
+  "MAP_PALM_STORM_CABIN",
+  "MAP_PALM_STORM_HOLLOW",
+  "MAP_PALM_STORM_RIDGE",
+  "MAP_PALM_STORM_SUMMIT",
+  "MAP_PALM_STORM_TRAIL",
+  "MAP_PALM_TEATRO",
+  "MAP_PALM_TIDEMOUTH",
+  "MAP_PALM_TRADEPOST",
+  "MAP_PALM_VOLTARA",
+  "MAP_ROUTE101",
+  "MAP_RUSTBORO_CITY_FLAT1_1F",
+  "MAP_RUSTBORO_CITY_FLAT1_2F",
+  "MAP_RUSTBORO_CITY_FLAT2_1F",
+  "MAP_RUSTBORO_CITY_FLAT2_2F",
+  "MAP_RUSTBORO_CITY_FLAT2_3F",
+  "MAP_RUSTBORO_CITY_GYM",
+  "MAP_RUSTBORO_CITY_HOUSE1",
+  "MAP_RUSTBORO_CITY_HOUSE2",
+  "MAP_RUSTBORO_CITY_HOUSE3",
+  "MAP_RUSTBORO_CITY_MART",
+  "MAP_RUSTBORO_CITY_POKEMON_CENTER_1F",
+  "MAP_RUSTBORO_CITY_POKEMON_CENTER_2F",
+  "MAP_SLATEPORT_CITY_MART",
+  "MAP_SOOTOPOLIS_CITY_GYM_1F",
+  "MAP_SOOTOPOLIS_CITY_GYM_B1F",
+  "MAP_SOOTOPOLIS_CITY_HOUSE2",
+  "MAP_SOOTOPOLIS_CITY_HOUSE4",
+  "MAP_SOOTOPOLIS_CITY_HOUSE7",
+  "MAP_SOOTOPOLIS_CITY_MART",
+  "MAP_TRADE_CENTER",
+  "MAP_UNION_ROOM",
+  "MAP_VERDANTURF_TOWN_HOUSE",
+  "MAP_VERDANTURF_TOWN_MART",
+  "MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F",
+  "MAP_VERDANTURF_TOWN_POKEMON_CENTER_2F",
+  "MAP_VICTORY_ROAD_1F",
+  "MAP_VICTORY_ROAD_B1F",
+  "MAP_VICTORY_ROAD_B2F"
+ ],
+ "trainers": {
+  "TRAINER_ALBERT": {
+   "slot": "TRAINER_ALBERT",
+   "maps": [
+    "MAP_VICTORY_ROAD_1F"
+   ],
+   "fields": {
+    "Name": "ALBERT",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer M",
+    "Gender": "Male",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Magneton",
+     "head": "Magneton",
+     "lines": [
+      "Level: 43",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Muk",
+     "head": "Muk",
+     "lines": [
+      "Level: 43",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_ANDREA": {
+   "slot": "TRAINER_ANDREA",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "ANDREA",
+    "Class": "Lass",
+    "Pic": "Lass",
+    "Gender": "Female",
+    "Music": "Girl",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Snubbull",
+     "head": "Snubbull",
+     "lines": [
+      "Level: 38",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Clefairy",
+     "head": "Clefairy",
+     "lines": [
+      "Level: 38",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_ANGELO": {
+   "slot": "TRAINER_ANGELO",
+   "maps": [
+    "MAP_MAUVILLE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "ANGELO",
+    "Class": "Guitarist",
+    "Pic": "Guitarist",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Klink",
+     "head": "Klink",
+     "lines": [
+      "Level: 22",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Bronzor",
+     "head": "Bronzor",
+     "lines": [
+      "Level: 22",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_ANNIKA": {
+   "slot": "TRAINER_ANNIKA",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "ANNIKA",
+    "Class": "Pokefan",
+    "Pic": "Pokefan F",
+    "Gender": "Female",
+    "Music": "Twins",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Feebas",
+     "head": "Feebas @ Oran Berry",
+     "lines": [
+      "Level: 39",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
+      "- Flail",
+      "- Water Pulse",
+      "- Return",
+      "- Attract"
+     ]
+    },
+    {
+     "species": "Feebas",
+     "head": "Feebas @ Oran Berry",
+     "lines": [
+      "Level: 39",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
+      "- Flail",
+      "- Water Pulse",
+      "- Return",
+      "- Attract"
+     ]
+    }
+   ]
+  },
+  "TRAINER_ASHLEY": {
+   "slot": "TRAINER_ASHLEY",
+   "maps": [
+    "MAP_FORTREE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "ASHLEY",
+    "Class": "Picnicker",
+    "Pic": "Picnicker",
+    "Gender": "Female",
+    "Music": "Girl",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Wooper",
+     "head": "Wooper",
+     "lines": [
+      "Level: 26",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Phanpy",
+     "head": "Phanpy",
+     "lines": [
+      "Level: 27",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_BEN": {
+   "slot": "TRAINER_BEN",
+   "maps": [
+    "MAP_MAUVILLE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "BEN",
+    "Class": "Youngster",
+    "Pic": "Youngster",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Ferroseed",
+     "head": "Ferroseed",
+     "lines": [
+      "Level: 21",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Pawniard",
+     "head": "Pawniard",
+     "lines": [
+      "Level: 21",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_BETHANY": {
+   "slot": "TRAINER_BETHANY",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "BETHANY",
+    "Class": "Pokefan",
+    "Pic": "Pokefan F",
+    "Gender": "Female",
+    "Music": "Twins",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Azurill",
+     "head": "Azurill @ Oran Berry",
+     "lines": [
+      "Level: 35",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Marill",
+     "head": "Marill @ Oran Berry",
+     "lines": [
+      "Level: 37",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Azumarill",
+     "head": "Azumarill @ Oran Berry",
+     "lines": [
+      "Level: 39",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_BRIANNA": {
+   "slot": "TRAINER_BRIANNA",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "BRIANNA",
+    "Class": "Lady",
+    "Pic": "Lady",
+    "Gender": "Female",
+    "Music": "Female",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Seaking",
+     "head": "Seaking @ Nugget",
+     "lines": [
+      "Level: 40",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_BRIDGET": {
+   "slot": "TRAINER_BRIDGET",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "BRIDGET",
+    "Class": "Beauty",
+    "Pic": "Beauty",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Togetic",
+     "head": "Togetic",
+     "lines": [
+      "Level: 39",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Granbull",
+     "head": "Granbull",
+     "lines": [
+      "Level: 40",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_CAROLINE": {
+   "slot": "TRAINER_CAROLINE",
+   "maps": [
+    "MAP_VICTORY_ROAD_B2F"
+   ],
+   "fields": {
+    "Name": "CAROLINE",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer F",
+    "Gender": "Female",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Skarmory",
+     "head": "Skarmory",
+     "lines": [
+      "Level: 43",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Sableye",
+     "head": "Sableye",
+     "lines": [
+      "Level: 43",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_CONNIE": {
+   "slot": "TRAINER_CONNIE",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "CONNIE",
+    "Class": "Beauty",
+    "Pic": "Beauty",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Spritzee",
+     "head": "Spritzee",
+     "lines": [
+      "Level: 37",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Flabebe",
+     "head": "Flabebe",
+     "lines": [
+      "Level: 37",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_CRISSY": {
+   "slot": "TRAINER_CRISSY",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "CRISSY",
+    "Class": "Lass",
+    "Pic": "Lass",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Goldeen",
+     "head": "Goldeen",
+     "lines": [
+      "Level: 39",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Wailmer",
+     "head": "Wailmer",
+     "lines": [
+      "Level: 39",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_DAPHNE": {
+   "slot": "TRAINER_DAPHNE",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "DAPHNE",
+    "Class": "Lady",
+    "Pic": "Lady",
+    "Gender": "Female",
+    "Music": "Rich",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Spritzee",
+     "head": "Spritzee",
+     "lines": [
+      "Level: 38",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Swirlix",
+     "head": "Swirlix",
+     "lines": [
+      "Level: 38",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Floette",
+     "head": "Floette",
+     "lines": [
+      "Level: 39",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_DARIUS": {
+   "slot": "TRAINER_DARIUS",
+   "maps": [
+    "MAP_FORTREE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "DARIUS",
+    "Class": "Ruin Maniac",
+    "Pic": "Ruin Maniac",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Baltoy",
+     "head": "Baltoy",
+     "lines": [
+      "Level: 27",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Larvitar",
+     "head": "Larvitar",
+     "lines": [
+      "Level: 27",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_DIANNE": {
+   "slot": "TRAINER_DIANNE",
+   "maps": [
+    "MAP_VICTORY_ROAD_B2F"
+   ],
+   "fields": {
+    "Name": "DIANNE",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer F",
+    "Gender": "Female",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No"
+   },
+   "party": [
+    {
+     "species": "Claydol",
+     "head": "Claydol",
+     "lines": [
+      "Level: 43",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe",
+      "- Skill Swap",
+      "- Earthquake"
+     ]
+    },
+    {
+     "species": "Lanturn",
+     "head": "Lanturn",
+     "lines": [
+      "Level: 43",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe",
+      "- Thunderbolt",
+      "- Earthquake"
+     ]
+    }
+   ]
+  },
+  "TRAINER_DRAKE": {
+   "slot": "TRAINER_DRAKE",
+   "maps": [
+    "MAP_EVER_GRANDE_CITY_DRAKES_ROOM"
+   ],
+   "fields": {
+    "Name": "PKAS",
+    "Class": "Elite Four",
+    "Pic": "Elite Four Drake",
+    "Gender": "Male",
+    "Music": "Elite Four",
+    "Items": "Full Restore / Full Restore",
+    "Double Battle": "No",
+    "AI": "Check Bad Move / Try To Faint",
+    "Mugshot": "Yellow"
+   },
+   "party": [
+    {
+     "species": "Torkoal",
+     "head": "Torkoal",
+     "lines": [
+      "Ability: Drought",
+      "Level: 65",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Lava Plume",
+      "- Solar Beam",
+      "- Earth Power",
+      "- Yawn"
+     ]
+    },
+    {
+     "species": "Venusaur",
+     "head": "Venusaur",
+     "lines": [
+      "Ability: Chlorophyll",
+      "Level: 66",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Solar Beam",
+      "- Sludge Bomb",
+      "- Weather Ball",
+      "- Sleep Powder"
+     ]
+    },
+    {
+     "species": "Heliolisk",
+     "head": "Heliolisk",
+     "lines": [
+      "Ability: Solar Power",
+      "Level: 67",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Thunderbolt",
+      "- Weather Ball",
+      "- Grass Knot",
+      "- Volt Switch"
+     ]
+    },
+    {
+     "species": "Volcarona",
+     "head": "Volcarona",
+     "lines": [
+      "Level: 68",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Fiery Dance",
+      "- Bug Buzz",
+      "- Giga Drain",
+      "- Quiver Dance"
+     ]
+    },
+    {
+     "species": "Charizard",
+     "head": "Charizard @ Charizardite X",
+     "lines": [
+      "Level: 70",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Flare Blitz",
+      "- Dragon Claw",
+      "- Earthquake",
+      "- Dragon Dance"
+     ]
+    }
+   ]
+  },
+  "TRAINER_EDGAR": {
+   "slot": "TRAINER_EDGAR",
+   "maps": [
+    "MAP_VICTORY_ROAD_1F"
+   ],
+   "fields": {
+    "Name": "EDGAR",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer M",
+    "Gender": "Male",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Cacturne",
+     "head": "Cacturne",
+     "lines": [
+      "Level: 43",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Pelipper",
+     "head": "Pelipper",
+     "lines": [
+      "Level: 43",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_EDWARDO": {
+   "slot": "TRAINER_EDWARDO",
+   "maps": [
+    "MAP_FORTREE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "EDWARDO",
+    "Class": "Ruin Maniac",
+    "Pic": "Ruin Maniac",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Cubone",
+     "head": "Cubone",
+     "lines": [
+      "Level: 27",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_FELIX": {
+   "slot": "TRAINER_FELIX",
+   "maps": [
+    "MAP_VICTORY_ROAD_B2F"
+   ],
+   "fields": {
+    "Name": "FELIX",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer F",
+    "Gender": "Female",
+    "Music": "Cool",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Altaria",
+     "head": "Altaria",
+     "lines": [
+      "Level: 53",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Dragon Pulse",
+      "- Moonblast",
+      "- Flamethrower",
+      "- Cotton Guard"
+     ]
+    },
+    {
+     "species": "Gardevoir",
+     "head": "Gardevoir",
+     "lines": [
+      "Level: 54",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Psychic",
+      "- Moonblast",
+      "- Shadow Ball",
+      "- Calm Mind"
+     ]
+    },
+    {
+     "species": "Milotic",
+     "head": "Milotic",
+     "lines": [
+      "Level: 54",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Hydro Pump",
+      "- Ice Beam",
+      "- Dragon Pulse",
+      "- Recover"
+     ]
+    }
+   ]
+  },
+  "TRAINER_FLINT": {
+   "slot": "TRAINER_FLINT",
+   "maps": [
+    "MAP_FORTREE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "FLINT",
+    "Class": "Camper",
+    "Pic": "Camper",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Sandshrew",
+     "head": "Sandshrew",
+     "lines": [
+      "Level: 26",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Trapinch",
+     "head": "Trapinch",
+     "lines": [
+      "Level: 26",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_GLACIA": {
+   "slot": "TRAINER_GLACIA",
+   "maps": [
+    "MAP_EVER_GRANDE_CITY_GLACIAS_ROOM"
+   ],
+   "fields": {
+    "Name": "ANGELIC",
+    "Class": "Elite Four",
+    "Pic": "Elite Four Sidney",
+    "Gender": "Male",
+    "Music": "Elite Four",
+    "Items": "Full Restore / Full Restore",
+    "Double Battle": "No",
+    "AI": "Check Bad Move / Try To Faint",
+    "Mugshot": "Blue"
+   },
+   "party": [
+    {
+     "species": "Ninetales-Alola",
+     "head": "Ninetales-Alola",
+     "lines": [
+      "Ability: Snow Warning",
+      "Level: 55",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Blizzard",
+      "- Moonblast",
+      "- Aurora Veil",
+      "- Freeze-Dry"
+     ]
+    },
+    {
+     "species": "Froslass",
+     "head": "Froslass",
+     "lines": [
+      "Level: 56",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Ice Beam",
+      "- Shadow Ball",
+      "- Thunderbolt",
+      "- Will-O-Wisp"
+     ]
+    },
+    {
+     "species": "Glaceon",
+     "head": "Glaceon",
+     "lines": [
+      "Level: 57",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Blizzard",
+      "- Shadow Ball",
+      "- Water Pulse",
+      "- Calm Mind"
+     ]
+    },
+    {
+     "species": "Weavile",
+     "head": "Weavile",
+     "lines": [
+      "Level: 58",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Triple Axel",
+      "- Knock Off",
+      "- Ice Shard",
+      "- Swords Dance"
+     ]
+    },
+    {
+     "species": "Mamoswine",
+     "head": "Mamoswine @ Sitrus Berry",
+     "lines": [
+      "Level: 59",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Earthquake",
+      "- Icicle Crash",
+      "- Ice Shard",
+      "- Stone Edge"
+     ]
+    }
+   ]
+  },
+  "TRAINER_HALLE": {
+   "slot": "TRAINER_HALLE",
+   "maps": [
+    "MAP_VICTORY_ROAD_B1F"
+   ],
+   "fields": {
+    "Name": "HALLE",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer F",
+    "Gender": "Female",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Sableye",
+     "head": "Sableye",
+     "lines": [
+      "Level: 43",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    },
+    {
+     "species": "Absol",
+     "head": "Absol",
+     "lines": [
+      "Level: 43",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_HOPE": {
+   "slot": "TRAINER_HOPE",
+   "maps": [
+    "MAP_VICTORY_ROAD_1F"
+   ],
+   "fields": {
+    "Name": "HOPE",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer F",
+    "Gender": "Female",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Roselia",
+     "head": "Roselia",
+     "lines": [
+      "Level: 45",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_HUMBERTO": {
+   "slot": "TRAINER_HUMBERTO",
+   "maps": [
+    "MAP_FORTREE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "HUMBERTO",
+    "Class": "Hiker",
+    "Pic": "Hiker",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Nosepass",
+     "head": "Nosepass",
+     "lines": [
+      "Level: 27",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Drilbur",
+     "head": "Drilbur",
+     "lines": [
+      "Level: 27",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_JARED": {
+   "slot": "TRAINER_JARED",
+   "maps": [
+    "MAP_FORTREE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "OTTO",
+    "Class": "Hiker",
+    "Pic": "Hiker",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Rockruff",
+     "head": "Rockruff",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Houndoom",
+     "head": "Houndoom",
+     "lines": [
+      "Level: 44",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_JOSH": {
+   "slot": "TRAINER_JOSH",
+   "maps": [
+    "MAP_RUSTBORO_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "JOSH",
+    "Class": "Youngster",
+    "Pic": "Youngster",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Oddish",
+     "head": "Oddish",
+     "lines": [
+      "Level: 9",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_JUAN_1": {
+   "slot": "TRAINER_JUAN_1",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_1F"
+   ],
+   "fields": {
+    "Name": "CHELSIA",
+    "Class": "Leader",
+    "Pic": "Salon Maiden Anabel",
+    "Gender": "Female",
+    "Music": "Female",
+    "Items": "Hyper Potion / Hyper Potion",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Clefable",
+     "head": "Clefable",
+     "lines": [
+      "Level: 40",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Moonblast",
+      "- Calm Mind",
+      "- Soft-Boiled",
+      "- Thunder Wave"
+     ]
+    },
+    {
+     "species": "Azumarill",
+     "head": "Azumarill",
+     "lines": [
+      "Level: 41",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Play Rough",
+      "- Aqua Tail",
+      "- Bounce",
+      "- Rollout"
+     ]
+    },
+    {
+     "species": "Sylveon",
+     "head": "Sylveon",
+     "lines": [
+      "Level: 43",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Moonblast",
+      "- Draining Kiss",
+      "- Quick Attack",
+      "- Calm Mind"
+     ]
+    }
+   ]
+  },
+  "TRAINER_JULIE": {
+   "slot": "TRAINER_JULIE",
+   "maps": [
+    "MAP_VICTORY_ROAD_B2F"
+   ],
+   "fields": {
+    "Name": "JULIE",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer F",
+    "Gender": "Female",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Sandslash",
+     "head": "Sandslash",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Ninetales",
+     "head": "Ninetales",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Tropius",
+     "head": "Tropius",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_KATELYNN": {
+   "slot": "TRAINER_KATELYNN",
+   "maps": [
+    "MAP_VICTORY_ROAD_1F"
+   ],
+   "fields": {
+    "Name": "KATELYNN",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer F",
+    "Gender": "Female",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Gardevoir",
+     "head": "Gardevoir",
+     "lines": [
+      "Level: 43",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
+      "- Skill Swap",
+      "- Psychic",
+      "- Thunderbolt",
+      "- Calm Mind"
+     ]
+    },
+    {
+     "species": "Slaking",
+     "head": "Slaking",
+     "lines": [
+      "Level: 43",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
+      "- Earthquake",
+      "- Shadow Ball",
+      "- Aerial Ace",
+      "- Brick Break"
+     ]
+    }
+   ]
+  },
+  "TRAINER_KIRK": {
+   "slot": "TRAINER_KIRK",
+   "maps": [
+    "MAP_MAUVILLE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "KIRK",
+    "Class": "Guitarist",
+    "Pic": "Guitarist",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Klink",
+     "head": "Klink",
+     "lines": [
+      "Level: 21",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Magnemite",
+     "head": "Magnemite",
+     "lines": [
+      "Level: 21",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_MARC": {
+   "slot": "TRAINER_MARC",
+   "maps": [
+    "MAP_RUSTBORO_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "MARC",
+    "Class": "Hiker",
+    "Pic": "Hiker",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Seedot",
+     "head": "Seedot",
+     "lines": [
+      "Level: 8",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Shroomish",
+     "head": "Shroomish",
+     "lines": [
+      "Level: 8",
+      "IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_MAXIE_MOSSDEEP": {
+   "slot": "TRAINER_MAXIE_MOSSDEEP",
+   "maps": [
+    "MAP_PALM_STORM_SUMMIT"
+   ],
+   "fields": {
+    "Name": "TAVINHO",
+    "Class": "Champion",
+    "Pic": "Red",
+    "Gender": "Male",
+    "Music": "Male",
+    "Items": "Full Restore / Full Restore / Full Restore / Full Restore",
+    "Double Battle": "No",
+    "AI": "Check Bad Move / Try To Faint",
+    "Mugshot": "Blue"
+   },
+   "party": [
+    {
+     "species": "Pelipper",
+     "head": "Pelipper",
+     "lines": [
+      "Ability: Drizzle",
+      "Level: 87",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Hurricane",
+      "- Hydro Pump",
+      "- Ice Beam",
+      "- U-turn"
+     ]
+    },
+    {
+     "species": "Swampert",
+     "head": "Swampert",
+     "lines": [
+      "Level: 88",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Waterfall",
+      "- Earthquake",
+      "- Ice Punch",
+      "- Stone Edge"
+     ]
+    },
+    {
+     "species": "Scizor",
+     "head": "Scizor",
+     "lines": [
+      "Ability: Technician",
+      "Level: 89",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Bullet Punch",
+      "- X-Scissor",
+      "- Close Combat",
+      "- Swords Dance"
+     ]
+    },
+    {
+     "species": "Garchomp",
+     "head": "Garchomp",
+     "lines": [
+      "Level: 90",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Earthquake",
+      "- Dragon Claw",
+      "- Stone Edge",
+      "- Fire Fang"
+     ]
+    },
+    {
+     "species": "Urshifu-Rapid-Strike",
+     "head": "Urshifu-Rapid-Strike",
+     "lines": [
+      "Level: 91",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Surging Strikes",
+      "- Close Combat",
+      "- Aqua Jet",
+      "- U-turn"
+     ]
+    },
+    {
+     "species": "Kyogre",
+     "head": "Kyogre @ Blue Orb",
+     "lines": [
+      "Level: 94",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Origin Pulse",
+      "- Ice Beam",
+      "- Thunder",
+      "- Water Spout"
+     ]
+    }
+   ]
+  },
+  "TRAINER_MICHELLE": {
+   "slot": "TRAINER_MICHELLE",
+   "maps": [
+    "MAP_VICTORY_ROAD_B1F"
+   ],
+   "fields": {
+    "Name": "MICHELLE",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer F",
+    "Gender": "Female",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Torkoal",
+     "head": "Torkoal",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Medicham",
+     "head": "Medicham",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Ludicolo",
+     "head": "Ludicolo",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_MITCHELL": {
+   "slot": "TRAINER_MITCHELL",
+   "maps": [
+    "MAP_VICTORY_ROAD_B1F"
+   ],
+   "fields": {
+    "Name": "MITCHELL",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer M",
+    "Gender": "Male",
+    "Music": "Cool",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Lunatone",
+     "head": "Lunatone",
+     "lines": [
+      "Level: 43",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe",
+      "- Explosion",
+      "- Reflect",
+      "- Light Screen",
+      "- Psychic"
+     ]
+    },
+    {
+     "species": "Solrock",
+     "head": "Solrock",
+     "lines": [
+      "Level: 43",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe",
+      "- Explosion",
+      "- Reflect",
+      "- Light Screen",
+      "- Shadow Ball"
+     ]
+    }
+   ]
+  },
+  "TRAINER_OLIVIA": {
+   "slot": "TRAINER_OLIVIA",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "OLIVIA",
+    "Class": "Beauty",
+    "Pic": "Beauty",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Clamperl",
+     "head": "Clamperl",
+     "lines": [
+      "Level: 35",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
+      "- Iron Defense",
+      "- Whirlpool",
+      "- Rain Dance",
+      "- Water Pulse"
+     ]
+    },
+    {
+     "species": "Corphish",
+     "head": "Corphish",
+     "lines": [
+      "Level: 37",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
+      "- Taunt",
+      "- Crabhammer",
+      "- Water Pulse"
+     ]
+    },
+    {
+     "species": "Lombre",
+     "head": "Lombre",
+     "lines": [
+      "Level: 39",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
+      "- Uproar",
+      "- Fury Swipes",
+      "- Fake Out",
+      "- Water Pulse"
+     ]
+    }
+   ]
+  },
+  "TRAINER_OWEN": {
+   "slot": "TRAINER_OWEN",
+   "maps": [
+    "MAP_VICTORY_ROAD_B2F"
+   ],
+   "fields": {
+    "Name": "OWEN",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer M",
+    "Gender": "Male",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Kecleon",
+     "head": "Kecleon",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Graveler",
+     "head": "Graveler",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Wailord",
+     "head": "Wailord",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ABELF": {
+   "slot": "TRAINER_ARCHIE",
+   "maps": [
+    "MAP_PALM_OCEAN_COMPLEX_CORE"
+   ],
+   "fields": {
+    "Name": "ABELF",
+    "Class": "Aqua Leader",
+    "Pic": "Aqua Leader Archie",
+    "Gender": "Male",
+    "Music": "Aqua",
+    "Items": "Full Restore / Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Krookodile",
+     "head": "Krookodile",
+     "lines": [
+      "Level: 49",
+      "IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe",
+      "- Earthquake",
+      "- Crunch",
+      "- Stone Edge",
+      "- Dragon Claw"
+     ]
+    },
+    {
+     "species": "Magnezone",
+     "head": "Magnezone",
+     "lines": [
+      "Level: 50",
+      "IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe",
+      "- Thunderbolt",
+      "- Flash Cannon",
+      "- Tri Attack",
+      "- Mirror Shot"
+     ]
+    },
+    {
+     "species": "Kingambit",
+     "head": "Kingambit",
+     "lines": [
+      "Level: 51",
+      "IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe",
+      "- Iron Head",
+      "- Night Slash",
+      "- Psycho Cut",
+      "- X-Scissor"
+     ]
+    },
+    {
+     "species": "Gyarados",
+     "head": "Gyarados",
+     "lines": [
+      "Level: 52",
+      "IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe",
+      "- Waterfall",
+      "- Crunch",
+      "- Ice Fang",
+      "- Dragon Dance"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_CHELSIA": {
+   "slot": "TRAINER_JUAN_1",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_1F"
+   ],
+   "fields": {
+    "Name": "CHELSIA",
+    "Class": "Leader",
+    "Pic": "Salon Maiden Anabel",
+    "Gender": "Female",
+    "Music": "Female",
+    "Items": "Hyper Potion / Hyper Potion",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Clefable",
+     "head": "Clefable",
+     "lines": [
+      "Level: 40",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Moonblast",
+      "- Calm Mind",
+      "- Soft-Boiled",
+      "- Thunder Wave"
+     ]
+    },
+    {
+     "species": "Azumarill",
+     "head": "Azumarill",
+     "lines": [
+      "Level: 41",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Play Rough",
+      "- Aqua Tail",
+      "- Bounce",
+      "- Rollout"
+     ]
+    },
+    {
+     "species": "Sylveon",
+     "head": "Sylveon",
+     "lines": [
+      "Level: 43",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Moonblast",
+      "- Draining Kiss",
+      "- Quick Attack",
+      "- Calm Mind"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_CHELSIA_GYM_A": {
+   "slot": "TRAINER_ANDREA",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "ANDREA",
+    "Class": "Lass",
+    "Pic": "Lass",
+    "Gender": "Female",
+    "Music": "Girl",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Snubbull",
+     "head": "Snubbull",
+     "lines": [
+      "Level: 38",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Clefairy",
+     "head": "Clefairy",
+     "lines": [
+      "Level: 38",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_CHELSIA_GYM_B": {
+   "slot": "TRAINER_DAPHNE",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "DAPHNE",
+    "Class": "Lady",
+    "Pic": "Lady",
+    "Gender": "Female",
+    "Music": "Rich",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Spritzee",
+     "head": "Spritzee",
+     "lines": [
+      "Level: 38",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Swirlix",
+     "head": "Swirlix",
+     "lines": [
+      "Level: 38",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Floette",
+     "head": "Floette",
+     "lines": [
+      "Level: 39",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_CHELSIA_GYM_C": {
+   "slot": "TRAINER_BRIDGET",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "BRIDGET",
+    "Class": "Beauty",
+    "Pic": "Beauty",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Togetic",
+     "head": "Togetic",
+     "lines": [
+      "Level: 39",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Granbull",
+     "head": "Granbull",
+     "lines": [
+      "Level: 40",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_COMPLEX_GRUNT_1": {
+   "slot": "TRAINER_GRUNT_AQUA_HIDEOUT_4",
+   "maps": [
+    "MAP_PALM_OCEAN_COMPLEX_1F"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt M",
+    "Gender": "Male",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Sharpedo",
+     "head": "Sharpedo",
+     "lines": [
+      "Level: 46",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Crawdaunt",
+     "head": "Crawdaunt",
+     "lines": [
+      "Level: 47",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_COMPLEX_GRUNT_2": {
+   "slot": "TRAINER_GRUNT_AQUA_HIDEOUT_5",
+   "maps": [
+    "MAP_PALM_OCEAN_COMPLEX_1F"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt F",
+    "Gender": "Female",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Golbat",
+     "head": "Golbat",
+     "lines": [
+      "Level: 46",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Liepard",
+     "head": "Liepard",
+     "lines": [
+      "Level: 47",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_COMPLEX_GRUNT_3": {
+   "slot": "TRAINER_GRUNT_AQUA_HIDEOUT_6",
+   "maps": [
+    "MAP_PALM_OCEAN_COMPLEX_1F"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt M",
+    "Gender": "Male",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Weezing",
+     "head": "Weezing",
+     "lines": [
+      "Level: 47",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Mightyena",
+     "head": "Mightyena",
+     "lines": [
+      "Level: 47",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_DAM_GRUNT_1": {
+   "slot": "TRAINER_GRUNT_WEATHER_INST_1",
+   "maps": [
+    "MAP_PALM_PILLARTON"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt M",
+    "Gender": "Male",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Koffing",
+     "head": "Koffing",
+     "lines": [
+      "Level: 26",
+      "IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe"
+     ]
+    },
+    {
+     "species": "Purrloin",
+     "head": "Purrloin",
+     "lines": [
+      "Level: 26",
+      "IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_DAM_GRUNT_2": {
+   "slot": "TRAINER_GRUNT_WEATHER_INST_4",
+   "maps": [
+    "MAP_PALM_PILLARTON"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt F",
+    "Gender": "Female",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Trubbish",
+     "head": "Trubbish",
+     "lines": [
+      "Level: 26",
+      "IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe"
+     ]
+    },
+    {
+     "species": "Chinchou",
+     "head": "Chinchou",
+     "lines": [
+      "Level: 27",
+      "IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_DATA_GRUNT_1": {
+   "slot": "TRAINER_GRUNT_SPACE_CENTER_1",
+   "maps": [
+    "MAP_PALM_DATA_CENTER_1F"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt M",
+    "Gender": "Male",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Magneton",
+     "head": "Magneton",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Muk",
+     "head": "Muk",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_DATA_GRUNT_2": {
+   "slot": "TRAINER_GRUNT_SPACE_CENTER_2",
+   "maps": [
+    "MAP_PALM_DATA_CENTER_1F"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt F",
+    "Gender": "Female",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Klang",
+     "head": "Klang",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Skuntank",
+     "head": "Skuntank",
+     "lines": [
+      "Level: 43",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_HOC": {
+   "slot": "TRAINER_FLANNERY_1",
+   "maps": [
+    "MAP_PALM_HOC_GYM"
+   ],
+   "fields": {
+    "Name": "HOC",
+    "Class": "Leader",
+    "Pic": "Leader Norman",
+    "Gender": "Male",
+    "Music": "Male",
+    "Items": "Hyper Potion / Hyper Potion",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Jolteon",
+     "head": "Jolteon",
+     "lines": [
+      "Level: 44",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Thunderbolt",
+      "- Shadow Ball",
+      "- Double Kick",
+      "- Thunder Wave"
+     ]
+    },
+    {
+     "species": "Luxray",
+     "head": "Luxray",
+     "lines": [
+      "Level: 45",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Wild Charge",
+      "- Crunch",
+      "- Ice Fang",
+      "- Swagger"
+     ]
+    },
+    {
+     "species": "Ampharos",
+     "head": "Ampharos",
+     "lines": [
+      "Level: 46",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Thunderbolt",
+      "- Power Gem",
+      "- Signal Beam",
+      "- Cotton Guard"
+     ]
+    },
+    {
+     "species": "Rotom",
+     "head": "Rotom",
+     "lines": [
+      "Level: 47",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Thunderbolt",
+      "- Hex",
+      "- Will-O-Wisp",
+      "- Volt Switch"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_HOC_GYM_A": {
+   "slot": "TRAINER_MARCOS",
+   "maps": [
+    "MAP_PALM_HOC_GYM"
+   ],
+   "fields": {
+    "Name": "MARCOS",
+    "Class": "Guitarist",
+    "Pic": "Guitarist",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Electabuzz",
+     "head": "Electabuzz",
+     "lines": [
+      "Level: 43",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    },
+    {
+     "species": "Lanturn",
+     "head": "Lanturn",
+     "lines": [
+      "Level: 44",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_HOC_GYM_B": {
+   "slot": "TRAINER_CONOR",
+   "maps": [
+    "MAP_PALM_HOC_GYM"
+   ],
+   "fields": {
+    "Name": "CONOR",
+    "Class": "Expert",
+    "Pic": "Expert M",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Magnezone",
+     "head": "Magnezone",
+     "lines": [
+      "Level: 44",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_HOC_GYM_C": {
+   "slot": "TRAINER_PAXTON",
+   "maps": [
+    "MAP_PALM_HOC_GYM"
+   ],
+   "fields": {
+    "Name": "PAXTON",
+    "Class": "Expert",
+    "Pic": "Expert M",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Manectric",
+     "head": "Manectric",
+     "lines": [
+      "Level: 44",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    },
+    {
+     "species": "Electrode",
+     "head": "Electrode",
+     "lines": [
+      "Level: 44",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_IRRIGATION_RECRUIT": {
+   "slot": "TRAINER_PALM_IRRIGATION_RECRUIT",
+   "maps": [
+    "MAP_OLDALE_TOWN"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt M",
+    "Gender": "Male",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Poochyena",
+     "head": "Poochyena",
+     "lines": [
+      "Level: 8",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_JADE": {
+   "slot": "TRAINER_NORMAN_1",
+   "maps": [
+    "MAP_PALM_JADE_GYM"
+   ],
+   "fields": {
+    "Name": "JADE",
+    "Class": "Leader",
+    "Pic": "Leader Winona",
+    "Gender": "Female",
+    "Music": "Female",
+    "Items": "Super Potion / Super Potion",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Chimecho",
+     "head": "Chimecho",
+     "lines": [
+      "Level: 34",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Psybeam",
+      "- Synchronoise",
+      "- Heal Bell",
+      "- Astonish"
+     ]
+    },
+    {
+     "species": "Gardevoir",
+     "head": "Gardevoir",
+     "lines": [
+      "Level: 36",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Psychic",
+      "- Draining Kiss",
+      "- Calm Mind",
+      "- Double Team"
+     ]
+    },
+    {
+     "species": "Espeon",
+     "head": "Espeon",
+     "lines": [
+      "Level: 38",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Psychic",
+      "- Dazzling Gleam",
+      "- Morning Sun",
+      "- Quick Attack"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_JADE_GYM_A": {
+   "slot": "TRAINER_RANDALL",
+   "maps": [
+    "MAP_PALM_JADE_GYM"
+   ],
+   "fields": {
+    "Name": "SORA",
+    "Class": "Psychic",
+    "Pic": "Psychic M",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Kirlia",
+     "head": "Kirlia",
+     "lines": [
+      "Level: 33",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Natu",
+     "head": "Natu",
+     "lines": [
+      "Level: 33",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_JADE_GYM_B": {
+   "slot": "TRAINER_MARY",
+   "maps": [
+    "MAP_PALM_JADE_GYM"
+   ],
+   "fields": {
+    "Name": "YUKI",
+    "Class": "Hex Maniac",
+    "Pic": "Hex Maniac",
+    "Gender": "Female",
+    "Music": "Suspicious",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Espurr",
+     "head": "Espurr",
+     "lines": [
+      "Level: 33",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Chimecho",
+     "head": "Chimecho",
+     "lines": [
+      "Level: 34",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_JADE_GYM_C": {
+   "slot": "TRAINER_ALEXIA",
+   "maps": [
+    "MAP_PALM_JADE_GYM"
+   ],
+   "fields": {
+    "Name": "KENJI",
+    "Class": "Psychic",
+    "Pic": "Psychic M",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Xatu",
+     "head": "Xatu",
+     "lines": [
+      "Level: 34",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Meowstic",
+     "head": "Meowstic",
+     "lines": [
+      "Level: 34",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_JAY": {
+   "slot": "TRAINER_PALM_JAY",
+   "maps": [
+    "MAP_PALM_TEATRO"
+   ],
+   "fields": {
+    "Name": "JAY",
+    "Class": "Leader",
+    "Pic": "Elite Four Phoebe",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Shuppet",
+     "head": "Shuppet",
+     "lines": [
+      "Level: 18",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    },
+    {
+     "species": "Misdreavus",
+     "head": "Misdreavus",
+     "lines": [
+      "Level: 21",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_KAI": {
+   "slot": "TRAINER_PALM_KAI",
+   "maps": [
+    "MAP_ROUTE101"
+   ],
+   "fields": {
+    "Name": "KAI",
+    "Class": "Youngster",
+    "Pic": "Youngster",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Zigzagoon",
+     "head": "Zigzagoon",
+     "lines": [
+      "Level: 4",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    },
+    {
+     "species": "Bidoof",
+     "head": "Bidoof",
+     "lines": [
+      "Level: 5",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_LELA": {
+   "slot": "TRAINER_SHELLY_WEATHER_INSTITUTE",
+   "maps": [
+    "MAP_PALM_PILLARTON"
+   ],
+   "fields": {
+    "Name": "LELA",
+    "Class": "Aqua Admin",
+    "Pic": "Aqua Admin F",
+    "Gender": "Female",
+    "Music": "Aqua",
+    "Items": "Super Potion",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Persian",
+     "head": "Persian",
+     "lines": [
+      "Level: 28",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Fake Out",
+      "- Pay Day",
+      "- Bite",
+      "- Screech"
+     ]
+    },
+    {
+     "species": "Roselia",
+     "head": "Roselia",
+     "lines": [
+      "Level: 29",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Giga Drain",
+      "- Poison Sting",
+      "- Stun Spore",
+      "- Leech Seed"
+     ]
+    },
+    {
+     "species": "Lanturn",
+     "head": "Lanturn",
+     "lines": [
+      "Level: 30",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Spark",
+      "- Water Gun",
+      "- Confuse Ray",
+      "- Thunder Wave"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_LINH": {
+   "slot": "TRAINER_PALM_LINH",
+   "maps": [
+    "MAP_PALM_TEATRO"
+   ],
+   "fields": {
+    "Name": "LINH",
+    "Class": "Youngster",
+    "Pic": "Youngster",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Duskull",
+     "head": "Duskull",
+     "lines": [
+      "Level: 17",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_MIN": {
+   "slot": "TRAINER_PALM_MIN",
+   "maps": [
+    "MAP_ROUTE101"
+   ],
+   "fields": {
+    "Name": "MIN",
+    "Class": "Youngster",
+    "Pic": "Youngster",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Sewaddle",
+     "head": "Sewaddle",
+     "lines": [
+      "Level: 5",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    },
+    {
+     "species": "Fletchling",
+     "head": "Fletchling",
+     "lines": [
+      "Level: 6",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_NAMI": {
+   "slot": "TRAINER_TATE_AND_LIZA_1",
+   "maps": [
+    "MAP_PALM_NAMI_GYM"
+   ],
+   "fields": {
+    "Name": "NAMI",
+    "Class": "Leader",
+    "Pic": "Beauty",
+    "Gender": "Female",
+    "Music": "Female",
+    "Items": "Full Restore / Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Pelipper",
+     "head": "Pelipper",
+     "lines": [
+      "Level: 47",
+      "IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe",
+      "- Hurricane",
+      "- Scald",
+      "- Roost",
+      "- Protect"
+     ]
+    },
+    {
+     "species": "Ludicolo",
+     "head": "Ludicolo",
+     "lines": [
+      "Level: 48",
+      "IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe",
+      "- Hydro Pump",
+      "- Giga Drain",
+      "- Ice Beam",
+      "- Rain Dance"
+     ]
+    },
+    {
+     "species": "Wailord",
+     "head": "Wailord",
+     "lines": [
+      "Level: 49",
+      "IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe",
+      "- Water Spout",
+      "- Hydro Pump",
+      "- Heavy Slam",
+      "- Rest"
+     ]
+    },
+    {
+     "species": "Milotic",
+     "head": "Milotic",
+     "lines": [
+      "Level: 50",
+      "IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe",
+      "- Scald",
+      "- Ice Beam",
+      "- Recover",
+      "- Dragon Pulse"
+     ]
+    },
+    {
+     "species": "Gyarados",
+     "head": "Gyarados",
+     "lines": [
+      "Level: 52",
+      "IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe",
+      "- Waterfall",
+      "- Crunch",
+      "- Dragon Dance",
+      "- Ice Fang"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_NAMI_GYM_A": {
+   "slot": "TRAINER_KATIE",
+   "maps": [
+    "MAP_PALM_NAMI_GYM"
+   ],
+   "fields": {
+    "Name": "KATIE",
+    "Class": "Swimmer F",
+    "Pic": "Swimmer F",
+    "Gender": "Female",
+    "Music": "Swimmer",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Floatzel",
+     "head": "Floatzel",
+     "lines": [
+      "Level: 48",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    },
+    {
+     "species": "Seaking",
+     "head": "Seaking",
+     "lines": [
+      "Level: 48",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_NAMI_GYM_B": {
+   "slot": "TRAINER_NIKKI",
+   "maps": [
+    "MAP_PALM_NAMI_GYM"
+   ],
+   "fields": {
+    "Name": "NIKKI",
+    "Class": "Swimmer M",
+    "Pic": "Swimmer M",
+    "Gender": "Male",
+    "Music": "Swimmer",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Sharpedo",
+     "head": "Sharpedo",
+     "lines": [
+      "Level: 48",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    },
+    {
+     "species": "Golduck",
+     "head": "Golduck",
+     "lines": [
+      "Level: 49",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_NAMI_GYM_C": {
+   "slot": "TRAINER_ISABELLA",
+   "maps": [
+    "MAP_PALM_NAMI_GYM"
+   ],
+   "fields": {
+    "Name": "ISABELLA",
+    "Class": "Swimmer F",
+    "Pic": "Swimmer F",
+    "Gender": "Female",
+    "Music": "Swimmer",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Starmie",
+     "head": "Starmie",
+     "lines": [
+      "Level: 49",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    },
+    {
+     "species": "Lanturn",
+     "head": "Lanturn",
+     "lines": [
+      "Level: 49",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE02_LIANG": {
+   "slot": "TRAINER_PALM_ROUTE02_LIANG",
+   "maps": [
+    "MAP_PALM_ROUTE02"
+   ],
+   "fields": {
+    "Name": "LIANG",
+    "Class": "Hiker",
+    "Pic": "Hiker",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Geodude",
+     "head": "Geodude",
+     "lines": [
+      "Level: 12",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    },
+    {
+     "species": "Machop",
+     "head": "Machop",
+     "lines": [
+      "Level: 13",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE02_MEI_LAN": {
+   "slot": "TRAINER_PALM_ROUTE02_MEI_LAN",
+   "maps": [
+    "MAP_PALM_ROUTE02"
+   ],
+   "fields": {
+    "Name": "MEI-LAN",
+    "Class": "Swimmer F",
+    "Pic": "Swimmer F",
+    "Gender": "Female",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Wingull",
+     "head": "Wingull",
+     "lines": [
+      "Level: 13",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    },
+    {
+     "species": "Buizel",
+     "head": "Buizel",
+     "lines": [
+      "Level: 14",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE02_QIN": {
+   "slot": "TRAINER_PALM_ROUTE02_QIN",
+   "maps": [
+    "MAP_PALM_ROUTE02"
+   ],
+   "fields": {
+    "Name": "QIN",
+    "Class": "Youngster",
+    "Pic": "Youngster",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Poochyena",
+     "head": "Poochyena",
+     "lines": [
+      "Level: 14",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    },
+    {
+     "species": "Stunky",
+     "head": "Stunky",
+     "lines": [
+      "Level: 15",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE03_BENTO": {
+   "slot": "TRAINER_ED",
+   "maps": [
+    "MAP_PALM_ROUTE03"
+   ],
+   "fields": {
+    "Name": "BENTO",
+    "Class": "Hiker",
+    "Pic": "Hiker",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Geodude",
+     "head": "Geodude",
+     "lines": [
+      "Level: 20",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    },
+    {
+     "species": "Aipom",
+     "head": "Aipom",
+     "lines": [
+      "Level: 21",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE03_DAVI": {
+   "slot": "TRAINER_FREDRICK",
+   "maps": [
+    "MAP_PALM_ROUTE03"
+   ],
+   "fields": {
+    "Name": "DAVI",
+    "Class": "Camper",
+    "Pic": "Camper",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Mareep",
+     "head": "Mareep",
+     "lines": [
+      "Level: 21",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    },
+    {
+     "species": "Lillipup",
+     "head": "Lillipup",
+     "lines": [
+      "Level: 21",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    },
+    {
+     "species": "Skiddo",
+     "head": "Skiddo",
+     "lines": [
+      "Level: 22",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE03_IARA": {
+   "slot": "TRAINER_DECLAN",
+   "maps": [
+    "MAP_PALM_ROUTE03"
+   ],
+   "fields": {
+    "Name": "IARA",
+    "Class": "Picnicker",
+    "Pic": "Picnicker",
+    "Gender": "Female",
+    "Music": "Girl",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Hoppip",
+     "head": "Hoppip",
+     "lines": [
+      "Level: 20",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    },
+    {
+     "species": "Pikipek",
+     "head": "Pikipek",
+     "lines": [
+      "Level: 21",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE03_RUI": {
+   "slot": "TRAINER_MARCEL",
+   "maps": [
+    "MAP_PALM_ROUTE03"
+   ],
+   "fields": {
+    "Name": "RUI",
+    "Class": "Fisherman",
+    "Pic": "Fisherman",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Wingull",
+     "head": "Wingull",
+     "lines": [
+      "Level: 19",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    },
+    {
+     "species": "Krabby",
+     "head": "Krabby",
+     "lines": [
+      "Level: 20",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE03_TOMAS": {
+   "slot": "TRAINER_ALBERTO",
+   "maps": [
+    "MAP_PALM_ROUTE03"
+   ],
+   "fields": {
+    "Name": "TOMAS",
+    "Class": "Bug Catcher",
+    "Pic": "Bug Catcher",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Venipede",
+     "head": "Venipede",
+     "lines": [
+      "Level: 19",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    },
+    {
+     "species": "Combee",
+     "head": "Combee",
+     "lines": [
+      "Level: 19",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    },
+    {
+     "species": "Nincada",
+     "head": "Nincada",
+     "lines": [
+      "Level: 20",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE04_MARA": {
+   "slot": "TRAINER_BRAXTON",
+   "maps": [
+    "MAP_PALM_ROUTE04"
+   ],
+   "fields": {
+    "Name": "MARA",
+    "Class": "Pokefan",
+    "Pic": "Pokefan F",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Nincada",
+     "head": "Nincada",
+     "lines": [
+      "Level: 22",
+      "IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe"
+     ]
+    },
+    {
+     "species": "Dwebble",
+     "head": "Dwebble",
+     "lines": [
+      "Level: 24",
+      "IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE04_QIAO": {
+   "slot": "TRAINER_CHIP",
+   "maps": [
+    "MAP_PALM_ROUTE04"
+   ],
+   "fields": {
+    "Name": "QIAO",
+    "Class": "Black Belt",
+    "Pic": "Black Belt",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Timburr",
+     "head": "Timburr",
+     "lines": [
+      "Level: 23",
+      "IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe"
+     ]
+    },
+    {
+     "species": "Electrike",
+     "head": "Electrike",
+     "lines": [
+      "Level: 24",
+      "IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE04_YUE": {
+   "slot": "TRAINER_VIOLET",
+   "maps": [
+    "MAP_PALM_ROUTE04"
+   ],
+   "fields": {
+    "Name": "YUE",
+    "Class": "Lass",
+    "Pic": "Lass",
+    "Gender": "Female",
+    "Music": "Girl",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Meowth",
+     "head": "Meowth",
+     "lines": [
+      "Level: 22",
+      "IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe"
+     ]
+    },
+    {
+     "species": "Koffing",
+     "head": "Koffing",
+     "lines": [
+      "Level: 23",
+      "IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE05_DUDU": {
+   "slot": "TRAINER_KINDRA",
+   "maps": [
+    "MAP_PALM_ROUTE05"
+   ],
+   "fields": {
+    "Name": "DUDU",
+    "Class": "Ruin Maniac",
+    "Pic": "Ruin Maniac",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Cubone",
+     "head": "Cubone",
+     "lines": [
+      "Level: 26",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    },
+    {
+     "species": "Larvitar",
+     "head": "Larvitar",
+     "lines": [
+      "Level: 25",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE05_LIA": {
+   "slot": "TRAINER_JENNIFER",
+   "maps": [
+    "MAP_PALM_ROUTE05"
+   ],
+   "fields": {
+    "Name": "LIA",
+    "Class": "Picnicker",
+    "Pic": "Picnicker",
+    "Gender": "Female",
+    "Music": "Girl",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Marill",
+     "head": "Marill",
+     "lines": [
+      "Level: 26",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    },
+    {
+     "species": "Lotad",
+     "head": "Lotad",
+     "lines": [
+      "Level: 26",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE05_ODAIR": {
+   "slot": "TRAINER_WENDY",
+   "maps": [
+    "MAP_PALM_ROUTE05"
+   ],
+   "fields": {
+    "Name": "ODAIR",
+    "Class": "Hiker",
+    "Pic": "Hiker",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Sandshrew",
+     "head": "Sandshrew",
+     "lines": [
+      "Level: 25",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    },
+    {
+     "species": "Phanpy",
+     "head": "Phanpy",
+     "lines": [
+      "Level: 26",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE05_TIAGO": {
+   "slot": "TRAINER_WARREN",
+   "maps": [
+    "MAP_PALM_ROUTE05"
+   ],
+   "fields": {
+    "Name": "TIAGO",
+    "Class": "Fisherman",
+    "Pic": "Fisherman",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Barboach",
+     "head": "Barboach",
+     "lines": [
+      "Level: 25",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    },
+    {
+     "species": "Wooper",
+     "head": "Wooper",
+     "lines": [
+      "Level: 25",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE06_HANA": {
+   "slot": "TRAINER_ROLAND",
+   "maps": [
+    "MAP_PALM_ROUTE06"
+   ],
+   "fields": {
+    "Name": "HANA",
+    "Class": "Aroma Lady",
+    "Pic": "Aroma Lady",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Petilil",
+     "head": "Petilil",
+     "lines": [
+      "Level: 31",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Cottonee",
+     "head": "Cottonee",
+     "lines": [
+      "Level: 31",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE06_MIKA": {
+   "slot": "TRAINER_MOLLIE",
+   "maps": [
+    "MAP_PALM_ROUTE06"
+   ],
+   "fields": {
+    "Name": "MIKA",
+    "Class": "Lass",
+    "Pic": "Lass",
+    "Gender": "Female",
+    "Music": "Girl",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Snubbull",
+     "head": "Snubbull",
+     "lines": [
+      "Level: 30",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Cottonee",
+     "head": "Cottonee",
+     "lines": [
+      "Level: 31",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE06_REN": {
+   "slot": "TRAINER_TAMMY",
+   "maps": [
+    "MAP_PALM_ROUTE06"
+   ],
+   "fields": {
+    "Name": "REN",
+    "Class": "Psychic",
+    "Pic": "Psychic M",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Natu",
+     "head": "Natu",
+     "lines": [
+      "Level: 31",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Espurr",
+     "head": "Espurr",
+     "lines": [
+      "Level: 31",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE06_SAYO": {
+   "slot": "TRAINER_SPENCER",
+   "maps": [
+    "MAP_PALM_ROUTE06"
+   ],
+   "fields": {
+    "Name": "SAYO",
+    "Class": "Hex Maniac",
+    "Pic": "Hex Maniac",
+    "Gender": "Female",
+    "Music": "Suspicious",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Chingling",
+     "head": "Chingling",
+     "lines": [
+      "Level: 31",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Ralts",
+     "head": "Ralts",
+     "lines": [
+      "Level: 32",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE07_CELIA": {
+   "slot": "TRAINER_CELIA",
+   "maps": [
+    "MAP_PALM_ROUTE07"
+   ],
+   "fields": {
+    "Name": "CELIA",
+    "Class": "Picnicker",
+    "Pic": "Picnicker",
+    "Gender": "Female",
+    "Music": "Girl",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Swirlix",
+     "head": "Swirlix",
+     "lines": [
+      "Level: 36",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Togepi",
+     "head": "Togepi",
+     "lines": [
+      "Level: 36",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Marill",
+     "head": "Marill",
+     "lines": [
+      "Level: 37",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE07_COLIN": {
+   "slot": "TRAINER_COLIN",
+   "maps": [
+    "MAP_PALM_ROUTE07"
+   ],
+   "fields": {
+    "Name": "COLIN",
+    "Class": "Bird Keeper",
+    "Pic": "Bird Keeper",
+    "Gender": "Male",
+    "Music": "Cool",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Swablu",
+     "head": "Swablu",
+     "lines": [
+      "Level: 37",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Altaria",
+     "head": "Altaria",
+     "lines": [
+      "Level: 39",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE07_CONNIE": {
+   "slot": "TRAINER_CONNIE",
+   "maps": [
+    "MAP_PALM_ROUTE07"
+   ],
+   "fields": {
+    "Name": "CONNIE",
+    "Class": "Beauty",
+    "Pic": "Beauty",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Spritzee",
+     "head": "Spritzee",
+     "lines": [
+      "Level: 37",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Flabebe",
+     "head": "Flabebe",
+     "lines": [
+      "Level: 37",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE07_HENRY": {
+   "slot": "TRAINER_HENRY",
+   "maps": [
+    "MAP_PALM_ROUTE07"
+   ],
+   "fields": {
+    "Name": "HENRY",
+    "Class": "Fisherman",
+    "Pic": "Fisherman",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Goldeen",
+     "head": "Goldeen",
+     "lines": [
+      "Level: 36",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Psyduck",
+     "head": "Psyduck",
+     "lines": [
+      "Level: 36",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    },
+    {
+     "species": "Seaking",
+     "head": "Seaking",
+     "lines": [
+      "Level: 38",
+      "IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE08_ALAN": {
+   "slot": "TRAINER_ALAN",
+   "maps": [
+    "MAP_PALM_ROUTE08"
+   ],
+   "fields": {
+    "Name": "ALAN",
+    "Class": "Hiker",
+    "Pic": "Hiker",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Swinub",
+     "head": "Swinub",
+     "lines": [
+      "Level: 40",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    },
+    {
+     "species": "Graveler",
+     "head": "Graveler",
+     "lines": [
+      "Level: 41",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    },
+    {
+     "species": "Ursaring",
+     "head": "Ursaring",
+     "lines": [
+      "Level: 42",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE08_AURON": {
+   "slot": "TRAINER_AURON",
+   "maps": [
+    "MAP_PALM_ROUTE08"
+   ],
+   "fields": {
+    "Name": "AURON",
+    "Class": "Expert",
+    "Pic": "Expert M",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Glalie",
+     "head": "Glalie",
+     "lines": [
+      "Level: 42",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    },
+    {
+     "species": "Abomasnow",
+     "head": "Abomasnow",
+     "lines": [
+      "Level: 43",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE08_CORA": {
+   "slot": "TRAINER_CORA",
+   "maps": [
+    "MAP_PALM_ROUTE08"
+   ],
+   "fields": {
+    "Name": "CORA",
+    "Class": "Battle Girl",
+    "Pic": "Battle Girl",
+    "Gender": "Female",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Meditite",
+     "head": "Meditite",
+     "lines": [
+      "Level: 41",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    },
+    {
+     "species": "Sneasel",
+     "head": "Sneasel",
+     "lines": [
+      "Level: 42",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE08_KIYO": {
+   "slot": "TRAINER_KIYO",
+   "maps": [
+    "MAP_PALM_ROUTE08"
+   ],
+   "fields": {
+    "Name": "KIYO",
+    "Class": "Black Belt",
+    "Pic": "Black Belt",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Machoke",
+     "head": "Machoke",
+     "lines": [
+      "Level: 41",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    },
+    {
+     "species": "Riolu",
+     "head": "Riolu",
+     "lines": [
+      "Level: 41",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE09_DREW": {
+   "slot": "TRAINER_DREW",
+   "maps": [
+    "MAP_PALM_ROUTE09"
+   ],
+   "fields": {
+    "Name": "DREW",
+    "Class": "Camper",
+    "Pic": "Camper",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Shinx",
+     "head": "Shinx",
+     "lines": [
+      "Level: 42",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    },
+    {
+     "species": "Blitzle",
+     "head": "Blitzle",
+     "lines": [
+      "Level: 43",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE09_FABIAN": {
+   "slot": "TRAINER_FABIAN",
+   "maps": [
+    "MAP_PALM_ROUTE09"
+   ],
+   "fields": {
+    "Name": "FABIAN",
+    "Class": "Guitarist",
+    "Pic": "Guitarist",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Magneton",
+     "head": "Magneton",
+     "lines": [
+      "Level: 43",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    },
+    {
+     "species": "Galvantula",
+     "head": "Galvantula",
+     "lines": [
+      "Level: 44",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE09_HEIDI": {
+   "slot": "TRAINER_HEIDI",
+   "maps": [
+    "MAP_PALM_ROUTE09"
+   ],
+   "fields": {
+    "Name": "HEIDI",
+    "Class": "Picnicker",
+    "Pic": "Picnicker",
+    "Gender": "Female",
+    "Music": "Girl",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Helioptile",
+     "head": "Helioptile",
+     "lines": [
+      "Level: 42",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    },
+    {
+     "species": "Pachirisu",
+     "head": "Pachirisu",
+     "lines": [
+      "Level: 43",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE09_JOSEPH": {
+   "slot": "TRAINER_JOSEPH",
+   "maps": [
+    "MAP_PALM_ROUTE09"
+   ],
+   "fields": {
+    "Name": "JOSEPH",
+    "Class": "Guitarist",
+    "Pic": "Guitarist",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Electrike",
+     "head": "Electrike",
+     "lines": [
+      "Level: 42",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    },
+    {
+     "species": "Voltorb",
+     "head": "Voltorb",
+     "lines": [
+      "Level: 42",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    },
+    {
+     "species": "Manectric",
+     "head": "Manectric",
+     "lines": [
+      "Level: 43",
+      "IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE10_JONAS": {
+   "slot": "TRAINER_IVAN",
+   "maps": [
+    "MAP_PALM_ROUTE10"
+   ],
+   "fields": {
+    "Name": "JONAS",
+    "Class": "Fisherman",
+    "Pic": "Fisherman",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Remoraid",
+     "head": "Remoraid",
+     "lines": [
+      "Level: 46",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    },
+    {
+     "species": "Qwilfish",
+     "head": "Qwilfish",
+     "lines": [
+      "Level: 46",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    },
+    {
+     "species": "Octillery",
+     "head": "Octillery",
+     "lines": [
+      "Level: 47",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE10_LUANA": {
+   "slot": "TRAINER_DENISE",
+   "maps": [
+    "MAP_PALM_ROUTE10"
+   ],
+   "fields": {
+    "Name": "LUANA",
+    "Class": "Swimmer F",
+    "Pic": "Swimmer F",
+    "Gender": "Female",
+    "Music": "Swimmer",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Lumineon",
+     "head": "Lumineon",
+     "lines": [
+      "Level: 47",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    },
+    {
+     "species": "Seaking",
+     "head": "Seaking",
+     "lines": [
+      "Level: 47",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    },
+    {
+     "species": "Starmie",
+     "head": "Starmie",
+     "lines": [
+      "Level: 48",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE10_RITA": {
+   "slot": "TRAINER_GWEN",
+   "maps": [
+    "MAP_PALM_ROUTE10"
+   ],
+   "fields": {
+    "Name": "RITA",
+    "Class": "Tuber F",
+    "Pic": "Tuber F",
+    "Gender": "Female",
+    "Music": "Girl",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Marill",
+     "head": "Marill",
+     "lines": [
+      "Level: 45",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    },
+    {
+     "species": "Azumarill",
+     "head": "Azumarill",
+     "lines": [
+      "Level: 47",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE10_TOMAS": {
+   "slot": "TRAINER_DWAYNE",
+   "maps": [
+    "MAP_PALM_ROUTE10"
+   ],
+   "fields": {
+    "Name": "TOMAS",
+    "Class": "Sailor",
+    "Pic": "Sailor",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Pelipper",
+     "head": "Pelipper",
+     "lines": [
+      "Level: 46",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    },
+    {
+     "species": "Machoke",
+     "head": "Machoke",
+     "lines": [
+      "Level: 47",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE11_FELIX": {
+   "slot": "TRAINER_FELIX",
+   "maps": [
+    "MAP_PALM_ROUTE11"
+   ],
+   "fields": {
+    "Name": "FELIX",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer F",
+    "Gender": "Female",
+    "Music": "Cool",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Altaria",
+     "head": "Altaria",
+     "lines": [
+      "Level: 53",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Dragon Pulse",
+      "- Moonblast",
+      "- Flamethrower",
+      "- Cotton Guard"
+     ]
+    },
+    {
+     "species": "Gardevoir",
+     "head": "Gardevoir",
+     "lines": [
+      "Level: 54",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Psychic",
+      "- Moonblast",
+      "- Shadow Ball",
+      "- Calm Mind"
+     ]
+    },
+    {
+     "species": "Milotic",
+     "head": "Milotic",
+     "lines": [
+      "Level: 54",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Hydro Pump",
+      "- Ice Beam",
+      "- Dragon Pulse",
+      "- Recover"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE11_LEROY": {
+   "slot": "TRAINER_LEROY",
+   "maps": [
+    "MAP_PALM_ROUTE11"
+   ],
+   "fields": {
+    "Name": "LEROY",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer M",
+    "Gender": "Male",
+    "Music": "Cool",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Hawlucha",
+     "head": "Hawlucha",
+     "lines": [
+      "Level: 54",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Flying Press",
+      "- X-Scissor",
+      "- Poison Jab",
+      "- Swords Dance"
+     ]
+    },
+    {
+     "species": "Druddigon",
+     "head": "Druddigon",
+     "lines": [
+      "Level: 54",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Dragon Claw",
+      "- Fire Punch",
+      "- Thunder Punch",
+      "- Sucker Punch"
+     ]
+    },
+    {
+     "species": "Garchomp",
+     "head": "Garchomp",
+     "lines": [
+      "Level: 55",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Earthquake",
+      "- Dragon Claw",
+      "- Stone Edge",
+      "- Fire Fang"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE11_VINCENT": {
+   "slot": "TRAINER_VINCENT",
+   "maps": [
+    "MAP_PALM_ROUTE11"
+   ],
+   "fields": {
+    "Name": "VINCENT",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer M",
+    "Gender": "Male",
+    "Music": "Cool",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Lucario",
+     "head": "Lucario",
+     "lines": [
+      "Level: 53",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Aura Sphere",
+      "- Flash Cannon",
+      "- Dark Pulse",
+      "- Extreme Speed"
+     ]
+    },
+    {
+     "species": "Gyarados",
+     "head": "Gyarados",
+     "lines": [
+      "Level: 53",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Waterfall",
+      "- Crunch",
+      "- Ice Fang",
+      "- Dragon Dance"
+     ]
+    },
+    {
+     "species": "Magnezone",
+     "head": "Magnezone",
+     "lines": [
+      "Level: 54",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Thunderbolt",
+      "- Flash Cannon",
+      "- Tri Attack",
+      "- Volt Switch"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE12_ARTUR": {
+   "slot": "TRAINER_BARNY",
+   "maps": [
+    "MAP_PALM_ROUTE12"
+   ],
+   "fields": {
+    "Name": "ARTUR",
+    "Class": "Fisherman",
+    "Pic": "Fisherman",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Basculin",
+     "head": "Basculin",
+     "lines": [
+      "Level: 28",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Corphish",
+     "head": "Corphish",
+     "lines": [
+      "Level: 29",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE12_BIA": {
+   "slot": "TRAINER_HAILEY",
+   "maps": [
+    "MAP_PALM_ROUTE12"
+   ],
+   "fields": {
+    "Name": "BIA",
+    "Class": "Picnicker",
+    "Pic": "Picnicker",
+    "Gender": "Female",
+    "Music": "Girl",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Marill",
+     "head": "Marill",
+     "lines": [
+      "Level: 28",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Ducklett",
+     "head": "Ducklett",
+     "lines": [
+      "Level: 29",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE12_NICO": {
+   "slot": "TRAINER_CLARK",
+   "maps": [
+    "MAP_PALM_ROUTE12"
+   ],
+   "fields": {
+    "Name": "NICO",
+    "Class": "Camper",
+    "Pic": "Camper",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Tympole",
+     "head": "Tympole",
+     "lines": [
+      "Level: 27",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Ducklett",
+     "head": "Ducklett",
+     "lines": [
+      "Level: 27",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Palpitoad",
+     "head": "Palpitoad",
+     "lines": [
+      "Level: 29",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE13_KAIO": {
+   "slot": "TRAINER_DEAN",
+   "maps": [
+    "MAP_PALM_ROUTE13"
+   ],
+   "fields": {
+    "Name": "KAIO",
+    "Class": "Psychic",
+    "Pic": "Psychic M",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Mime Jr.",
+     "head": "Mime Jr.",
+     "lines": [
+      "Level: 37",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Mr. Mime",
+     "head": "Mr. Mime",
+     "lines": [
+      "Level: 39",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE13_LUNA": {
+   "slot": "TRAINER_NED",
+   "maps": [
+    "MAP_PALM_ROUTE13"
+   ],
+   "fields": {
+    "Name": "LUNA",
+    "Class": "Hex Maniac",
+    "Pic": "Hex Maniac",
+    "Gender": "Female",
+    "Music": "Suspicious",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Shuppet",
+     "head": "Shuppet",
+     "lines": [
+      "Level: 37",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Lampent",
+     "head": "Lampent",
+     "lines": [
+      "Level: 39",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE13_RAUL": {
+   "slot": "TRAINER_EVERETT",
+   "maps": [
+    "MAP_PALM_ROUTE13"
+   ],
+   "fields": {
+    "Name": "RAUL",
+    "Class": "Ruin Maniac",
+    "Pic": "Ruin Maniac",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Foongus",
+     "head": "Foongus",
+     "lines": [
+      "Level: 37",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Litwick",
+     "head": "Litwick",
+     "lines": [
+      "Level: 37",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Amoonguss",
+     "head": "Amoonguss",
+     "lines": [
+      "Level: 39",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE14_BETO": {
+   "slot": "TRAINER_SEBASTIAN",
+   "maps": [
+    "MAP_PALM_ROUTE14"
+   ],
+   "fields": {
+    "Name": "BETO",
+    "Class": "Pkmn Ranger",
+    "Pic": "Pokemon Ranger M",
+    "Gender": "Male",
+    "Music": "Cool",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Herdier",
+     "head": "Herdier",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Lycanroc",
+     "head": "Lycanroc",
+     "lines": [
+      "Level: 44",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE14_CLARA": {
+   "slot": "TRAINER_PAT",
+   "maps": [
+    "MAP_PALM_ROUTE14"
+   ],
+   "fields": {
+    "Name": "CLARA",
+    "Class": "Pkmn Breeder",
+    "Pic": "Pokemon Breeder F",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Lillipup",
+     "head": "Lillipup",
+     "lines": [
+      "Level: 41",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Houndour",
+     "head": "Houndour",
+     "lines": [
+      "Level: 41",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Herdier",
+     "head": "Herdier",
+     "lines": [
+      "Level: 43",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE14_OTTO": {
+   "slot": "TRAINER_JARED",
+   "maps": [
+    "MAP_PALM_ROUTE14"
+   ],
+   "fields": {
+    "Name": "OTTO",
+    "Class": "Hiker",
+    "Pic": "Hiker",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Rockruff",
+     "head": "Rockruff",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Houndoom",
+     "head": "Houndoom",
+     "lines": [
+      "Level: 44",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE15_NINA": {
+   "slot": "TRAINER_MELISSA",
+   "maps": [
+    "MAP_PALM_ROUTE15"
+   ],
+   "fields": {
+    "Name": "NINA",
+    "Class": "Beauty",
+    "Pic": "Beauty",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Gorebyss",
+     "head": "Gorebyss",
+     "lines": [
+      "Level: 53",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Dhelmise",
+     "head": "Dhelmise",
+     "lines": [
+      "Level: 54",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE15_OSCAR": {
+   "slot": "TRAINER_LUIS",
+   "maps": [
+    "MAP_PALM_ROUTE15"
+   ],
+   "fields": {
+    "Name": "OSCAR",
+    "Class": "Sailor",
+    "Pic": "Sailor",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Corsola",
+     "head": "Corsola",
+     "lines": [
+      "Level: 52",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Cloyster",
+     "head": "Cloyster",
+     "lines": [
+      "Level: 54",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_ROUTE15_PEDRO": {
+   "slot": "TRAINER_DOMINIK",
+   "maps": [
+    "MAP_PALM_ROUTE15"
+   ],
+   "fields": {
+    "Name": "PEDRO",
+    "Class": "Fisherman",
+    "Pic": "Fisherman",
+    "Gender": "Male",
+    "Music": "Hiker",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Clamperl",
+     "head": "Clamperl",
+     "lines": [
+      "Level: 52",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Relicanth",
+     "head": "Relicanth",
+     "lines": [
+      "Level: 54",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_STATION_GRUNT_1": {
+   "slot": "TRAINER_GRUNT_AQUA_HIDEOUT_1",
+   "maps": [
+    "MAP_PALM_LAKE_STATION"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt M",
+    "Gender": "Male",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Golbat",
+     "head": "Golbat",
+     "lines": [
+      "Level: 36",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    },
+    {
+     "species": "Skuntank",
+     "head": "Skuntank",
+     "lines": [
+      "Level: 37",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_STATION_GRUNT_2": {
+   "slot": "TRAINER_GRUNT_AQUA_HIDEOUT_2",
+   "maps": [
+    "MAP_PALM_LAKE_STATION"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt F",
+    "Gender": "Female",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Sharpedo",
+     "head": "Sharpedo",
+     "lines": [
+      "Level: 37",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    },
+    {
+     "species": "Liepard",
+     "head": "Liepard",
+     "lines": [
+      "Level: 37",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_STATION_GRUNT_3": {
+   "slot": "TRAINER_GRUNT_AQUA_HIDEOUT_3",
+   "maps": [
+    "MAP_PALM_LAKE_STATION"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt M",
+    "Gender": "Male",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Weezing",
+     "head": "Weezing",
+     "lines": [
+      "Level: 37",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    },
+    {
+     "species": "Crawdaunt",
+     "head": "Crawdaunt",
+     "lines": [
+      "Level: 38",
+      "IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_VEGA": {
+   "slot": "TRAINER_MATT",
+   "maps": [
+    "MAP_PALM_DATA_CENTER_2F"
+   ],
+   "fields": {
+    "Name": "VEGA",
+    "Class": "Aqua Admin",
+    "Pic": "Aqua Admin M",
+    "Gender": "Male",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Magneton",
+     "head": "Magneton",
+     "lines": [
+      "Level: 43",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Thunderbolt",
+      "- Flash Cannon",
+      "- Mirror Shot",
+      "- Tri Attack"
+     ]
+    },
+    {
+     "species": "Porygon2",
+     "head": "Porygon2",
+     "lines": [
+      "Level: 44",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Tri Attack",
+      "- Psybeam",
+      "- Ice Beam",
+      "- Thunderbolt"
+     ]
+    },
+    {
+     "species": "Eelektrik",
+     "head": "Eelektrik",
+     "lines": [
+      "Level: 45",
+      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
+      "- Discharge",
+      "- Crunch",
+      "- Acid",
+      "- Bind"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_YARD_GRUNT_1": {
+   "slot": "TRAINER_GRUNT_RUSTURF_TUNNEL",
+   "maps": [
+    "MAP_PALM_FERRALIA"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt M",
+    "Gender": "Male",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Trubbish",
+     "head": "Trubbish",
+     "lines": [
+      "Level: 21",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    },
+    {
+     "species": "Poochyena",
+     "head": "Poochyena",
+     "lines": [
+      "Level: 21",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_YARD_GRUNT_2": {
+   "slot": "TRAINER_GRUNT_MUSEUM_1",
+   "maps": [
+    "MAP_PALM_FERRALIA"
+   ],
+   "fields": {
+    "Name": "GRUNT",
+    "Class": "Team Aqua",
+    "Pic": "Aqua Grunt M",
+    "Gender": "Male",
+    "Music": "Aqua",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Koffing",
+     "head": "Koffing",
+     "lines": [
+      "Level: 22",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    },
+    {
+     "species": "Grimer",
+     "head": "Grimer",
+     "lines": [
+      "Level: 22",
+      "IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PALM_YUMI": {
+   "slot": "TRAINER_PALM_YUMI",
+   "maps": [
+    "MAP_PALM_TEATRO"
+   ],
+   "fields": {
+    "Name": "YUMI",
+    "Class": "Lass",
+    "Pic": "Lass",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Gastly",
+     "head": "Gastly",
+     "lines": [
+      "Level: 18",
+      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_PHOEBE": {
+   "slot": "TRAINER_PHOEBE",
+   "maps": [
+    "MAP_EVER_GRANDE_CITY_PHOEBES_ROOM"
+   ],
+   "fields": {
+    "Name": "RIVEN",
+    "Class": "Elite Four",
+    "Pic": "Psychic M",
+    "Gender": "Male",
+    "Music": "Elite Four",
+    "Items": "Full Restore / Full Restore",
+    "Double Battle": "No",
+    "AI": "Check Bad Move / Try To Faint",
+    "Mugshot": "Purple"
+   },
+   "party": [
+    {
+     "species": "Furfrou",
+     "head": "Furfrou",
+     "lines": [
+      "Level: 58",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Double Edge",
+      "- Sucker Punch",
+      "- U-turn",
+      "- Thunder Wave"
+     ]
+    },
+    {
+     "species": "Stoutland",
+     "head": "Stoutland",
+     "lines": [
+      "Ability: Intimidate",
+      "Level: 59",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Facade",
+      "- Crunch",
+      "- Play Rough",
+      "- Wild Charge"
+     ]
+    },
+    {
+     "species": "Porygon2",
+     "head": "Porygon2 @ Eviolite",
+     "lines": [
+      "Level: 59",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Tri Attack",
+      "- Ice Beam",
+      "- Thunderbolt",
+      "- Recover"
+     ]
+    },
+    {
+     "species": "Zoroark-Hisui",
+     "head": "Zoroark-Hisui",
+     "lines": [
+      "Level: 60",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Shadow Ball",
+      "- Hyper Voice",
+      "- Focus Blast",
+      "- Nasty Plot"
+     ]
+    },
+    {
+     "species": "Porygon-Z",
+     "head": "Porygon-Z @ Sitrus Berry",
+     "lines": [
+      "Ability: Adaptability",
+      "Level: 62",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Tri Attack",
+      "- Dark Pulse",
+      "- Ice Beam",
+      "- Thunderbolt"
+     ]
+    }
+   ]
+  },
+  "TRAINER_QUINCY": {
+   "slot": "TRAINER_QUINCY",
+   "maps": [
+    "MAP_VICTORY_ROAD_1F"
+   ],
+   "fields": {
+    "Name": "QUINCY",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer M",
+    "Gender": "Male",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Slaking",
+     "head": "Slaking",
+     "lines": [
+      "Level: 43",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
+      "- Attract",
+      "- Ice Beam",
+      "- Thunderbolt",
+      "- Flamethrower"
+     ]
+    },
+    {
+     "species": "Dusclops",
+     "head": "Dusclops",
+     "lines": [
+      "Level: 43",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
+      "- Skill Swap",
+      "- Protect",
+      "- Will O Wisp",
+      "- Toxic"
+     ]
+    }
+   ]
+  },
+  "TRAINER_ROXANNE_1": {
+   "slot": "TRAINER_ROXANNE_1",
+   "maps": [
+    "MAP_RUSTBORO_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "NEVARD",
+    "Class": "Leader",
+    "Pic": "Camper",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Shroomish",
+     "head": "Shroomish",
+     "lines": [
+      "Level: 12",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
+      "- Absorb",
+      "- Tackle",
+      "- Leech Seed",
+      "- Growth"
+     ]
+    },
+    {
+     "species": "Treecko",
+     "head": "Treecko @ Oran Berry",
+     "lines": [
+      "Level: 14",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
+      "- Pound",
+      "- Leer",
+      "- Quick Attack",
+      "- Absorb"
+     ]
+    }
+   ]
+  },
+  "TRAINER_SAMUEL": {
+   "slot": "TRAINER_SAMUEL",
+   "maps": [
+    "MAP_VICTORY_ROAD_B1F"
+   ],
+   "fields": {
+    "Name": "SAMUEL",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer M",
+    "Gender": "Male",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Swellow",
+     "head": "Swellow",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Mawile",
+     "head": "Mawile",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Kadabra",
+     "head": "Kadabra",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_SHANNON": {
+   "slot": "TRAINER_SHANNON",
+   "maps": [
+    "MAP_VICTORY_ROAD_B1F"
+   ],
+   "fields": {
+    "Name": "SHANNON",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer F",
+    "Gender": "Female",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Claydol",
+     "head": "Claydol",
+     "lines": [
+      "Level: 45",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_SHAWN": {
+   "slot": "TRAINER_SHAWN",
+   "maps": [
+    "MAP_MAUVILLE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "SHAWN",
+    "Class": "Guitarist",
+    "Pic": "Guitarist",
+    "Gender": "Male",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Aron",
+     "head": "Aron",
+     "lines": [
+      "Level: 22",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_SIDNEY": {
+   "slot": "TRAINER_SIDNEY",
+   "maps": [
+    "MAP_EVER_GRANDE_CITY_SIDNEYS_ROOM"
+   ],
+   "fields": {
+    "Name": "DU",
+    "Class": "Elite Four",
+    "Pic": "Black Belt",
+    "Gender": "Male",
+    "Music": "Elite Four",
+    "Items": "Full Restore / Full Restore",
+    "Double Battle": "No",
+    "AI": "Check Bad Move / Try To Faint",
+    "Mugshot": "Green"
+   },
+   "party": [
+    {
+     "species": "Hawlucha",
+     "head": "Hawlucha",
+     "lines": [
+      "Level: 61",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Flying Press",
+      "- Close Combat",
+      "- Poison Jab",
+      "- Swords Dance"
+     ]
+    },
+    {
+     "species": "Infernape",
+     "head": "Infernape",
+     "lines": [
+      "Level: 62",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Close Combat",
+      "- Flare Blitz",
+      "- Mach Punch",
+      "- U-turn"
+     ]
+    },
+    {
+     "species": "Lucario",
+     "head": "Lucario",
+     "lines": [
+      "Level: 63",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Aura Sphere",
+      "- Flash Cannon",
+      "- Dark Pulse",
+      "- Nasty Plot"
+     ]
+    },
+    {
+     "species": "Kommo-o",
+     "head": "Kommo-o",
+     "lines": [
+      "Level: 64",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Clanging Scales",
+      "- Close Combat",
+      "- Iron Head",
+      "- Dragon Dance"
+     ]
+    },
+    {
+     "species": "Conkeldurr",
+     "head": "Conkeldurr @ Sitrus Berry",
+     "lines": [
+      "Ability: Guts",
+      "Level: 66",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Drain Punch",
+      "- Mach Punch",
+      "- Knock Off",
+      "- Ice Punch"
+     ]
+    }
+   ]
+  },
+  "TRAINER_STEVEN": {
+   "slot": "TRAINER_STEVEN",
+   "maps": [
+    "MAP_PALM_STORM_RIDGE"
+   ],
+   "fields": {
+    "Name": "CYNTHIA",
+    "Class": "Champion",
+    "Pic": "Champion Cynthia",
+    "Gender": "Female",
+    "Music": "Female",
+    "Items": "Full Restore / Full Restore / Full Restore / Full Restore",
+    "Double Battle": "No",
+    "AI": "Check Bad Move / Try To Faint",
+    "Mugshot": "Purple"
+   },
+   "party": [
+    {
+     "species": "Spiritomb",
+     "head": "Spiritomb",
+     "lines": [
+      "Level: 79",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Shadow Ball",
+      "- Dark Pulse",
+      "- Will-O-Wisp",
+      "- Sucker Punch"
+     ]
+    },
+    {
+     "species": "Roserade",
+     "head": "Roserade",
+     "lines": [
+      "Level: 80",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Leaf Storm",
+      "- Sludge Bomb",
+      "- Shadow Ball",
+      "- Extrasensory"
+     ]
+    },
+    {
+     "species": "Togekiss",
+     "head": "Togekiss",
+     "lines": [
+      "Ability: Serene Grace",
+      "Level: 81",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Air Slash",
+      "- Dazzling Gleam",
+      "- Aura Sphere",
+      "- Flamethrower"
+     ]
+    },
+    {
+     "species": "Lucario",
+     "head": "Lucario",
+     "lines": [
+      "Level: 82",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Aura Sphere",
+      "- Flash Cannon",
+      "- Dragon Pulse",
+      "- Extreme Speed"
+     ]
+    },
+    {
+     "species": "Milotic",
+     "head": "Milotic",
+     "lines": [
+      "Level: 83",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Hydro Pump",
+      "- Ice Beam",
+      "- Dragon Pulse",
+      "- Recover"
+     ]
+    },
+    {
+     "species": "Garchomp",
+     "head": "Garchomp @ Garchompite",
+     "lines": [
+      "Level: 85",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Earthquake",
+      "- Dragon Claw",
+      "- Stone Edge",
+      "- Swords Dance"
+     ]
+    }
+   ]
+  },
+  "TRAINER_TIFFANY": {
+   "slot": "TRAINER_TIFFANY",
+   "maps": [
+    "MAP_SOOTOPOLIS_CITY_GYM_B1F"
+   ],
+   "fields": {
+    "Name": "TIFFANY",
+    "Class": "Beauty",
+    "Pic": "Beauty",
+    "Gender": "Female",
+    "Music": "Female",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Carvanha",
+     "head": "Carvanha",
+     "lines": [
+      "Level: 39",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Sharpedo",
+     "head": "Sharpedo",
+     "lines": [
+      "Level: 39",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_TOMMY": {
+   "slot": "TRAINER_TOMMY",
+   "maps": [
+    "MAP_RUSTBORO_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "TOMMY",
+    "Class": "Youngster",
+    "Pic": "Youngster",
+    "Gender": "Male",
+    "Music": "Male",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Budew",
+     "head": "Budew",
+     "lines": [
+      "Level: 10",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_VITO": {
+   "slot": "TRAINER_VITO",
+   "maps": [
+    "MAP_VICTORY_ROAD_B2F"
+   ],
+   "fields": {
+    "Name": "VITO",
+    "Class": "Cooltrainer",
+    "Pic": "Cooltrainer M",
+    "Gender": "Male",
+    "Music": "Cool",
+    "Items": "Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Dodrio",
+     "head": "Dodrio",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Kadabra",
+     "head": "Kadabra",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Electrode",
+     "head": "Electrode",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    },
+    {
+     "species": "Shiftry",
+     "head": "Shiftry",
+     "lines": [
+      "Level: 42",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_VIVIAN": {
+   "slot": "TRAINER_VIVIAN",
+   "maps": [
+    "MAP_MAUVILLE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "VIVIAN",
+    "Class": "Battle Girl",
+    "Pic": "Battle Girl",
+    "Gender": "Female",
+    "Music": "Intense",
+    "Double Battle": "No",
+    "AI": "Check Bad Move"
+   },
+   "party": [
+    {
+     "species": "Mawile",
+     "head": "Mawile",
+     "lines": [
+      "Level: 22",
+      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
+     ]
+    }
+   ]
+  },
+  "TRAINER_WALLACE": {
+   "slot": "TRAINER_WALLACE",
+   "maps": [
+    "MAP_EVER_GRANDE_CITY_CHAMPIONS_ROOM"
+   ],
+   "fields": {
+    "Name": "DOGE",
+    "Class": "Champion",
+    "Pic": "Champion Wallace",
+    "Gender": "Male",
+    "Music": "Male",
+    "Items": "Full Restore / Full Restore / Full Restore / Full Restore",
+    "Double Battle": "No",
+    "AI": "Check Bad Move / Try To Faint",
+    "Mugshot": "Yellow"
+   },
+   "party": [
+    {
+     "species": "Meowscarada",
+     "head": "Meowscarada",
+     "lines": [
+      "Level: 71",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Flower Trick",
+      "- Knock Off",
+      "- U-turn",
+      "- Play Rough"
+     ]
+    },
+    {
+     "species": "Ninetales",
+     "head": "Ninetales",
+     "lines": [
+      "Ability: Flash Fire",
+      "Level: 72",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Fire Blast",
+      "- Energy Ball",
+      "- Will-O-Wisp",
+      "- Nasty Plot"
+     ]
+    },
+    {
+     "species": "Vaporeon",
+     "head": "Vaporeon",
+     "lines": [
+      "Level: 72",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Scald",
+      "- Ice Beam",
+      "- Shadow Ball",
+      "- Hyper Voice"
+     ]
+    },
+    {
+     "species": "Umbreon",
+     "head": "Umbreon",
+     "lines": [
+      "Level: 73",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Foul Play",
+      "- Moonlight",
+      "- Shadow Ball",
+      "- Quick Attack"
+     ]
+    },
+    {
+     "species": "Lugia",
+     "head": "Lugia",
+     "lines": [
+      "Ability: Multiscale",
+      "Level: 75",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Aeroblast",
+      "- Psychic",
+      "- Ice Beam",
+      "- Calm Mind"
+     ]
+    },
+    {
+     "species": "Latios",
+     "head": "Latios @ Latiosite",
+     "lines": [
+      "Level: 77",
+      "IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe",
+      "- Draco Meteor",
+      "- Luster Purge",
+      "- Calm Mind",
+      "- Surf"
+     ]
+    }
+   ]
+  },
+  "TRAINER_WALLY_VR_1": {
+   "slot": "TRAINER_WALLY_VR_1",
+   "maps": [
+    "MAP_VICTORY_ROAD_1F"
+   ],
+   "fields": {
+    "Name": "WALLY",
+    "Class": "Rival",
+    "Pic": "Wally",
+    "Gender": "Male",
+    "Music": "Male",
+    "Items": "Full Restore / Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Altaria",
+     "head": "Altaria",
+     "lines": [
+      "Level: 44",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
+      "- Aerial Ace",
+      "- Safeguard",
+      "- Dragon Breath",
+      "- Dragon Dance"
+     ]
+    },
+    {
+     "species": "Delcatty",
+     "head": "Delcatty",
+     "lines": [
+      "Level: 43",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
+      "- Sing",
+      "- Assist",
+      "- Charm",
+      "- Feint Attack"
+     ]
+    },
+    {
+     "species": "Roselia",
+     "head": "Roselia",
+     "lines": [
+      "Level: 44",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
+      "- Magical Leaf",
+      "- Leech Seed",
+      "- Giga Drain",
+      "- Toxic"
+     ]
+    },
+    {
+     "species": "Magneton",
+     "head": "Magneton",
+     "lines": [
+      "Level: 41",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
+      "- Supersonic",
+      "- Thunderbolt",
+      "- Tri Attack",
+      "- Screech"
+     ]
+    },
+    {
+     "species": "Gardevoir",
+     "head": "Gardevoir",
+     "lines": [
+      "Level: 45",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Double Team",
+      "- Calm Mind",
+      "- Psychic",
+      "- Future Sight"
+     ]
+    }
+   ]
+  },
+  "TRAINER_WALLY_VR_2": {
+   "slot": "TRAINER_WALLY_VR_2",
+   "maps": [
+    "MAP_VICTORY_ROAD_1F"
+   ],
+   "fields": {
+    "Name": "WALLY",
+    "Class": "Rival",
+    "Pic": "Wally",
+    "Gender": "Male",
+    "Music": "Male",
+    "Items": "Full Restore / Full Restore",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Altaria",
+     "head": "Altaria",
+     "lines": [
+      "Level: 47",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
+      "- Aerial Ace",
+      "- Safeguard",
+      "- Dragon Breath",
+      "- Dragon Dance"
+     ]
+    },
+    {
+     "species": "Delcatty",
+     "head": "Delcatty",
+     "lines": [
+      "Level: 46",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
+      "- Sing",
+      "- Assist",
+      "- Charm",
+      "- Feint Attack"
+     ]
+    },
+    {
+     "species": "Roselia",
+     "head": "Roselia",
+     "lines": [
+      "Level: 47",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
+      "- Magical Leaf",
+      "- Leech Seed",
+      "- Giga Drain",
+      "- Toxic"
+     ]
+    },
+    {
+     "species": "Magneton",
+     "head": "Magneton",
+     "lines": [
+      "Level: 44",
+      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
+      "- Supersonic",
+      "- Thunderbolt",
+      "- Tri Attack",
+      "- Screech"
+     ]
+    },
+    {
+     "species": "Gardevoir",
+     "head": "Gardevoir",
+     "lines": [
+      "Level: 48",
+      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
+      "- Double Team",
+      "- Calm Mind",
+      "- Psychic",
+      "- Future Sight"
+     ]
+    }
+   ]
+  },
+  "TRAINER_WATTSON_1": {
+   "slot": "TRAINER_WATTSON_1",
+   "maps": [
+    "MAP_MAUVILLE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "VESSEL",
+    "Class": "Leader",
+    "Pic": "Leader Wattson",
+    "Gender": "Male",
+    "Music": "Male",
+    "Items": "Super Potion / Super Potion",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Magnemite",
+     "head": "Magnemite",
+     "lines": [
+      "Level: 22",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Thunder Shock",
+      "- Sonic Boom",
+      "- Metal Sound",
+      "- Thunder Wave"
+     ]
+    },
+    {
+     "species": "Mawile",
+     "head": "Mawile",
+     "lines": [
+      "Level: 24",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Iron Defense",
+      "- Bite",
+      "- Fake Tears",
+      "- Astonish"
+     ]
+    },
+    {
+     "species": "Aron",
+     "head": "Aron",
+     "lines": [
+      "Level: 26",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Metal Claw",
+      "- Headbutt",
+      "- Rock Tomb",
+      "- Iron Defense"
+     ]
+    }
+   ]
+  },
+  "TRAINER_WINONA_1": {
+   "slot": "TRAINER_WINONA_1",
+   "maps": [
+    "MAP_FORTREE_CITY_GYM"
+   ],
+   "fields": {
+    "Name": "TCHUM",
+    "Class": "Leader",
+    "Pic": "Leader Brawly",
+    "Gender": "Male",
+    "Music": "Male",
+    "Items": "Super Potion / Super Potion",
+    "Double Battle": "No",
+    "AI": "Basic Trainer"
+   },
+   "party": [
+    {
+     "species": "Sandshrew",
+     "head": "Sandshrew",
+     "lines": [
+      "Level: 27",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Rollout",
+      "- Magnitude",
+      "- Rapid Spin",
+      "- Sand Attack"
+     ]
+    },
+    {
+     "species": "Phanpy",
+     "head": "Phanpy",
+     "lines": [
+      "Level: 28",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Bulldoze",
+      "- Rollout",
+      "- Defense Curl",
+      "- Take Down"
+     ]
+    },
+    {
+     "species": "Marowak",
+     "head": "Marowak",
+     "lines": [
+      "Level: 31",
+      "IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe",
+      "- Bonemerang",
+      "- Headbutt",
+      "- Rock Slide",
+      "- Focus Energy"
+     ]
+    }
+   ]
+  }
+ },
+ "encounters": [
+  {
+   "map": "MAP_ROUTE101",
+   "base_label": "gRoute101",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 3,
+      "max_level": 4,
+      "species": "SPECIES_ZIGZAGOON"
+     },
+     {
+      "min_level": 3,
+      "max_level": 4,
+      "species": "SPECIES_FLETCHLING"
+     },
+     {
+      "min_level": 4,
+      "max_level": 5,
+      "species": "SPECIES_SEWADDLE"
+     },
+     {
+      "min_level": 3,
+      "max_level": 5,
+      "species": "SPECIES_BIDOOF"
+     },
+     {
+      "min_level": 4,
+      "max_level": 6,
+      "species": "SPECIES_ZIGZAGOON"
+     },
+     {
+      "min_level": 4,
+      "max_level": 6,
+      "species": "SPECIES_FLETCHLING"
+     },
+     {
+      "min_level": 6,
+      "max_level": 8,
+      "species": "SPECIES_SEWADDLE"
+     },
+     {
+      "min_level": 6,
+      "max_level": 8,
+      "species": "SPECIES_BIDOOF"
+     },
+     {
+      "min_level": 7,
+      "max_level": 9,
+      "species": "SPECIES_SHINX"
+     },
+     {
+      "min_level": 7,
+      "max_level": 9,
+      "species": "SPECIES_SEWADDLE"
+     },
+     {
+      "min_level": 8,
+      "max_level": 9,
+      "species": "SPECIES_SHINX"
+     },
+     {
+      "min_level": 8,
+      "max_level": 9,
+      "species": "SPECIES_ZIGZAGOON"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_VICTORY_ROAD_1F",
+   "base_label": "gVictoryRoad_1F",
+   "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+     {
+      "min_level": 40,
+      "max_level": 40,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 40,
+      "max_level": 40,
+      "species": "SPECIES_HARIYAMA"
+     },
+     {
+      "min_level": 40,
+      "max_level": 40,
+      "species": "SPECIES_LAIRON"
+     },
+     {
+      "min_level": 40,
+      "max_level": 40,
+      "species": "SPECIES_LOUDRED"
+     },
+     {
+      "min_level": 36,
+      "max_level": 36,
+      "species": "SPECIES_ZUBAT"
+     },
+     {
+      "min_level": 36,
+      "max_level": 36,
+      "species": "SPECIES_MAKUHITA"
+     },
+     {
+      "min_level": 38,
+      "max_level": 38,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 38,
+      "max_level": 38,
+      "species": "SPECIES_HARIYAMA"
+     },
+     {
+      "min_level": 36,
+      "max_level": 36,
+      "species": "SPECIES_ARON"
+     },
+     {
+      "min_level": 36,
+      "max_level": 36,
+      "species": "SPECIES_WHISMUR"
+     },
+     {
+      "min_level": 36,
+      "max_level": 36,
+      "species": "SPECIES_ARON"
+     },
+     {
+      "min_level": 36,
+      "max_level": 36,
+      "species": "SPECIES_WHISMUR"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_VICTORY_ROAD_B1F",
+   "base_label": "gVictoryRoad_B1F",
+   "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+     {
+      "min_level": 40,
+      "max_level": 40,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 40,
+      "max_level": 40,
+      "species": "SPECIES_HARIYAMA"
+     },
+     {
+      "min_level": 40,
+      "max_level": 40,
+      "species": "SPECIES_LAIRON"
+     },
+     {
+      "min_level": 40,
+      "max_level": 40,
+      "species": "SPECIES_LAIRON"
+     },
+     {
+      "min_level": 38,
+      "max_level": 38,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 38,
+      "max_level": 38,
+      "species": "SPECIES_HARIYAMA"
+     },
+     {
+      "min_level": 42,
+      "max_level": 42,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 42,
+      "max_level": 42,
+      "species": "SPECIES_HARIYAMA"
+     },
+     {
+      "min_level": 42,
+      "max_level": 42,
+      "species": "SPECIES_LAIRON"
+     },
+     {
+      "min_level": 38,
+      "max_level": 38,
+      "species": "SPECIES_MAWILE"
+     },
+     {
+      "min_level": 42,
+      "max_level": 42,
+      "species": "SPECIES_LAIRON"
+     },
+     {
+      "min_level": 38,
+      "max_level": 38,
+      "species": "SPECIES_MAWILE"
+     }
+    ]
+   },
+   "rock_smash_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 30,
+      "max_level": 40,
+      "species": "SPECIES_GRAVELER"
+     },
+     {
+      "min_level": 30,
+      "max_level": 40,
+      "species": "SPECIES_GEODUDE"
+     },
+     {
+      "min_level": 35,
+      "max_level": 40,
+      "species": "SPECIES_GRAVELER"
+     },
+     {
+      "min_level": 35,
+      "max_level": 40,
+      "species": "SPECIES_GRAVELER"
+     },
+     {
+      "min_level": 35,
+      "max_level": 40,
+      "species": "SPECIES_GRAVELER"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_VICTORY_ROAD_B2F",
+   "base_label": "gVictoryRoad_B2F",
+   "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+     {
+      "min_level": 40,
+      "max_level": 40,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 40,
+      "max_level": 40,
+      "species": "SPECIES_SABLEYE"
+     },
+     {
+      "min_level": 40,
+      "max_level": 40,
+      "species": "SPECIES_LAIRON"
+     },
+     {
+      "min_level": 40,
+      "max_level": 40,
+      "species": "SPECIES_LAIRON"
+     },
+     {
+      "min_level": 42,
+      "max_level": 42,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 42,
+      "max_level": 42,
+      "species": "SPECIES_SABLEYE"
+     },
+     {
+      "min_level": 44,
+      "max_level": 44,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 44,
+      "max_level": 44,
+      "species": "SPECIES_SABLEYE"
+     },
+     {
+      "min_level": 42,
+      "max_level": 42,
+      "species": "SPECIES_LAIRON"
+     },
+     {
+      "min_level": 42,
+      "max_level": 42,
+      "species": "SPECIES_MAWILE"
+     },
+     {
+      "min_level": 44,
+      "max_level": 44,
+      "species": "SPECIES_LAIRON"
+     },
+     {
+      "min_level": 44,
+      "max_level": 44,
+      "species": "SPECIES_MAWILE"
+     }
+    ]
+   },
+   "water_mons": {
+    "encounter_rate": 4,
+    "mons": [
+     {
+      "min_level": 30,
+      "max_level": 35,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 35,
+      "max_level": 40,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 35,
+      "max_level": 40,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 35,
+      "max_level": 40,
+      "species": "SPECIES_GOLBAT"
+     }
+    ]
+   },
+   "fishing_mons": {
+    "encounter_rate": 30,
+    "mons": [
+     {
+      "min_level": 5,
+      "max_level": 10,
+      "species": "SPECIES_MAGIKARP"
+     },
+     {
+      "min_level": 5,
+      "max_level": 10,
+      "species": "SPECIES_GOLDEEN"
+     },
+     {
+      "min_level": 10,
+      "max_level": 30,
+      "species": "SPECIES_MAGIKARP"
+     },
+     {
+      "min_level": 10,
+      "max_level": 30,
+      "species": "SPECIES_GOLDEEN"
+     },
+     {
+      "min_level": 10,
+      "max_level": 30,
+      "species": "SPECIES_BARBOACH"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_BARBOACH"
+     },
+     {
+      "min_level": 30,
+      "max_level": 35,
+      "species": "SPECIES_BARBOACH"
+     },
+     {
+      "min_level": 30,
+      "max_level": 35,
+      "species": "SPECIES_WHISCASH"
+     },
+     {
+      "min_level": 35,
+      "max_level": 40,
+      "species": "SPECIES_WHISCASH"
+     },
+     {
+      "min_level": 40,
+      "max_level": 45,
+      "species": "SPECIES_WHISCASH"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_EVER_GRANDE_CITY",
+   "base_label": "gEverGrandeCity",
+   "water_mons": {
+    "encounter_rate": 4,
+    "mons": [
+     {
+      "min_level": 5,
+      "max_level": 35,
+      "species": "SPECIES_TENTACOOL"
+     },
+     {
+      "min_level": 10,
+      "max_level": 30,
+      "species": "SPECIES_WINGULL"
+     },
+     {
+      "min_level": 15,
+      "max_level": 25,
+      "species": "SPECIES_WINGULL"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_PELIPPER"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_PELIPPER"
+     }
+    ]
+   },
+   "fishing_mons": {
+    "encounter_rate": 10,
+    "mons": [
+     {
+      "min_level": 5,
+      "max_level": 10,
+      "species": "SPECIES_MAGIKARP"
+     },
+     {
+      "min_level": 5,
+      "max_level": 10,
+      "species": "SPECIES_TENTACOOL"
+     },
+     {
+      "min_level": 10,
+      "max_level": 30,
+      "species": "SPECIES_MAGIKARP"
+     },
+     {
+      "min_level": 10,
+      "max_level": 30,
+      "species": "SPECIES_LUVDISC"
+     },
+     {
+      "min_level": 10,
+      "max_level": 30,
+      "species": "SPECIES_WAILMER"
+     },
+     {
+      "min_level": 30,
+      "max_level": 35,
+      "species": "SPECIES_LUVDISC"
+     },
+     {
+      "min_level": 30,
+      "max_level": 35,
+      "species": "SPECIES_WAILMER"
+     },
+     {
+      "min_level": 30,
+      "max_level": 35,
+      "species": "SPECIES_CORSOLA"
+     },
+     {
+      "min_level": 35,
+      "max_level": 40,
+      "species": "SPECIES_WAILMER"
+     },
+     {
+      "min_level": 40,
+      "max_level": 45,
+      "species": "SPECIES_WAILMER"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE02",
+   "base_label": "gPalmRoute02",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 9,
+      "max_level": 12,
+      "species": "SPECIES_WINGULL"
+     },
+     {
+      "min_level": 9,
+      "max_level": 12,
+      "species": "SPECIES_POOCHYENA"
+     },
+     {
+      "min_level": 9,
+      "max_level": 12,
+      "species": "SPECIES_WINGULL"
+     },
+     {
+      "min_level": 10,
+      "max_level": 12,
+      "species": "SPECIES_TAILLOW"
+     },
+     {
+      "min_level": 10,
+      "max_level": 12,
+      "species": "SPECIES_TAILLOW"
+     },
+     {
+      "min_level": 10,
+      "max_level": 13,
+      "species": "SPECIES_BUIZEL"
+     },
+     {
+      "min_level": 9,
+      "max_level": 12,
+      "species": "SPECIES_ODDISH"
+     },
+     {
+      "min_level": 9,
+      "max_level": 12,
+      "species": "SPECIES_ODDISH"
+     },
+     {
+      "min_level": 11,
+      "max_level": 13,
+      "species": "SPECIES_STUNKY"
+     },
+     {
+      "min_level": 11,
+      "max_level": 13,
+      "species": "SPECIES_STUNKY"
+     },
+     {
+      "min_level": 9,
+      "max_level": 10,
+      "species": "SPECIES_AZURILL"
+     },
+     {
+      "min_level": 9,
+      "max_level": 10,
+      "species": "SPECIES_AZURILL"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_BRISA",
+   "base_label": "gPalmBrisa",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 14,
+      "max_level": 16,
+      "species": "SPECIES_PIDOVE"
+     },
+     {
+      "min_level": 14,
+      "max_level": 16,
+      "species": "SPECIES_HOOTHOOT"
+     },
+     {
+      "min_level": 15,
+      "max_level": 17,
+      "species": "SPECIES_PIDOVE"
+     },
+     {
+      "min_level": 15,
+      "max_level": 17,
+      "species": "SPECIES_HOOTHOOT"
+     },
+     {
+      "min_level": 15,
+      "max_level": 17,
+      "species": "SPECIES_SHUPPET"
+     },
+     {
+      "min_level": 16,
+      "max_level": 18,
+      "species": "SPECIES_PIDOVE"
+     },
+     {
+      "min_level": 16,
+      "max_level": 18,
+      "species": "SPECIES_HOOTHOOT"
+     },
+     {
+      "min_level": 16,
+      "max_level": 18,
+      "species": "SPECIES_SHUPPET"
+     },
+     {
+      "min_level": 17,
+      "max_level": 18,
+      "species": "SPECIES_PIDOVE"
+     },
+     {
+      "min_level": 17,
+      "max_level": 18,
+      "species": "SPECIES_HOOTHOOT"
+     },
+     {
+      "min_level": 17,
+      "max_level": 18,
+      "species": "SPECIES_SHUPPET"
+     },
+     {
+      "min_level": 16,
+      "max_level": 18,
+      "species": "SPECIES_MISDREAVUS"
+     }
+    ]
+   },
+   "water_mons": {
+    "encounter_rate": 4,
+    "mons": [
+     {
+      "min_level": 15,
+      "max_level": 25,
+      "species": "SPECIES_TENTACOOL"
+     },
+     {
+      "min_level": 15,
+      "max_level": 25,
+      "species": "SPECIES_WINGULL"
+     },
+     {
+      "min_level": 15,
+      "max_level": 25,
+      "species": "SPECIES_STARYU"
+     },
+     {
+      "min_level": 20,
+      "max_level": 28,
+      "species": "SPECIES_TENTACOOL"
+     },
+     {
+      "min_level": 20,
+      "max_level": 28,
+      "species": "SPECIES_CORSOLA"
+     }
+    ]
+   },
+   "fishing_mons": {
+    "encounter_rate": 30,
+    "mons": [
+     {
+      "min_level": 5,
+      "max_level": 10,
+      "species": "SPECIES_TENTACOOL"
+     },
+     {
+      "min_level": 5,
+      "max_level": 10,
+      "species": "SPECIES_KRABBY"
+     },
+     {
+      "min_level": 15,
+      "max_level": 20,
+      "species": "SPECIES_KRABBY"
+     },
+     {
+      "min_level": 15,
+      "max_level": 20,
+      "species": "SPECIES_TENTACOOL"
+     },
+     {
+      "min_level": 15,
+      "max_level": 20,
+      "species": "SPECIES_STARYU"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_STARYU"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_KRABBY"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_TENTACOOL"
+     },
+     {
+      "min_level": 28,
+      "max_level": 32,
+      "species": "SPECIES_STARYU"
+     },
+     {
+      "min_level": 28,
+      "max_level": 32,
+      "species": "SPECIES_CORSOLA"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE03",
+   "base_label": "gPalmRoute03",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 17,
+      "max_level": 19,
+      "species": "SPECIES_WINGULL"
+     },
+     {
+      "min_level": 17,
+      "max_level": 19,
+      "species": "SPECIES_PIKIPEK"
+     },
+     {
+      "min_level": 18,
+      "max_level": 20,
+      "species": "SPECIES_AIPOM"
+     },
+     {
+      "min_level": 17,
+      "max_level": 19,
+      "species": "SPECIES_COMBEE"
+     },
+     {
+      "min_level": 17,
+      "max_level": 19,
+      "species": "SPECIES_VENIPEDE"
+     },
+     {
+      "min_level": 18,
+      "max_level": 20,
+      "species": "SPECIES_HOPPIP"
+     },
+     {
+      "min_level": 18,
+      "max_level": 20,
+      "species": "SPECIES_MAREEP"
+     },
+     {
+      "min_level": 18,
+      "max_level": 20,
+      "species": "SPECIES_LILLIPUP"
+     },
+     {
+      "min_level": 18,
+      "max_level": 20,
+      "species": "SPECIES_SANDYGAST"
+     },
+     {
+      "min_level": 19,
+      "max_level": 21,
+      "species": "SPECIES_SKIDDO"
+     },
+     {
+      "min_level": 19,
+      "max_level": 21,
+      "species": "SPECIES_NINCADA"
+     },
+     {
+      "min_level": 19,
+      "max_level": 21,
+      "species": "SPECIES_PANSAGE"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_FERRALIA",
+   "base_label": "gPalmFerralia",
+   "land_mons": {
+    "encounter_rate": 15,
+    "mons": [
+     {
+      "min_level": 20,
+      "max_level": 22,
+      "species": "SPECIES_PIDOVE"
+     },
+     {
+      "min_level": 20,
+      "max_level": 22,
+      "species": "SPECIES_TRUBBISH"
+     },
+     {
+      "min_level": 20,
+      "max_level": 22,
+      "species": "SPECIES_PIDOVE"
+     },
+     {
+      "min_level": 21,
+      "max_level": 23,
+      "species": "SPECIES_TRUBBISH"
+     },
+     {
+      "min_level": 20,
+      "max_level": 22,
+      "species": "SPECIES_RATTATA"
+     },
+     {
+      "min_level": 20,
+      "max_level": 22,
+      "species": "SPECIES_LILLIPUP"
+     },
+     {
+      "min_level": 21,
+      "max_level": 23,
+      "species": "SPECIES_PIDOVE"
+     },
+     {
+      "min_level": 21,
+      "max_level": 23,
+      "species": "SPECIES_TRUBBISH"
+     },
+     {
+      "min_level": 21,
+      "max_level": 23,
+      "species": "SPECIES_GRIMER"
+     },
+     {
+      "min_level": 21,
+      "max_level": 23,
+      "species": "SPECIES_MAGNEMITE"
+     },
+     {
+      "min_level": 22,
+      "max_level": 23,
+      "species": "SPECIES_KLINK"
+     },
+     {
+      "min_level": 22,
+      "max_level": 23,
+      "species": "SPECIES_ARON"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE04",
+   "base_label": "gPalmRoute04",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 19,
+      "max_level": 22,
+      "species": "SPECIES_MEOWTH"
+     },
+     {
+      "min_level": 19,
+      "max_level": 22,
+      "species": "SPECIES_GROWLITHE"
+     },
+     {
+      "min_level": 20,
+      "max_level": 22,
+      "species": "SPECIES_TIMBURR"
+     },
+     {
+      "min_level": 20,
+      "max_level": 22,
+      "species": "SPECIES_DRILBUR"
+     },
+     {
+      "min_level": 20,
+      "max_level": 22,
+      "species": "SPECIES_ROGGENROLA"
+     },
+     {
+      "min_level": 20,
+      "max_level": 22,
+      "species": "SPECIES_ELECTRIKE"
+     },
+     {
+      "min_level": 20,
+      "max_level": 23,
+      "species": "SPECIES_MEOWTH"
+     },
+     {
+      "min_level": 20,
+      "max_level": 23,
+      "species": "SPECIES_GROWLITHE"
+     },
+     {
+      "min_level": 21,
+      "max_level": 23,
+      "species": "SPECIES_DRILBUR"
+     },
+     {
+      "min_level": 21,
+      "max_level": 23,
+      "species": "SPECIES_ROGGENROLA"
+     },
+     {
+      "min_level": 21,
+      "max_level": 23,
+      "species": "SPECIES_TRUBBISH"
+     },
+     {
+      "min_level": 21,
+      "max_level": 23,
+      "species": "SPECIES_DWEBBLE"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE05",
+   "base_label": "gPalmRoute05",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 24,
+      "max_level": 26,
+      "species": "SPECIES_SANDSHREW"
+     },
+     {
+      "min_level": 24,
+      "max_level": 26,
+      "species": "SPECIES_PHANPY"
+     },
+     {
+      "min_level": 24,
+      "max_level": 26,
+      "species": "SPECIES_CUBONE"
+     },
+     {
+      "min_level": 24,
+      "max_level": 26,
+      "species": "SPECIES_WOOPER"
+     },
+     {
+      "min_level": 24,
+      "max_level": 26,
+      "species": "SPECIES_MARILL"
+     },
+     {
+      "min_level": 24,
+      "max_level": 26,
+      "species": "SPECIES_LOTAD"
+     },
+     {
+      "min_level": 25,
+      "max_level": 27,
+      "species": "SPECIES_SANDSHREW"
+     },
+     {
+      "min_level": 25,
+      "max_level": 27,
+      "species": "SPECIES_PHANPY"
+     },
+     {
+      "min_level": 25,
+      "max_level": 27,
+      "species": "SPECIES_CUBONE"
+     },
+     {
+      "min_level": 25,
+      "max_level": 27,
+      "species": "SPECIES_WOOPER"
+     },
+     {
+      "min_level": 25,
+      "max_level": 27,
+      "species": "SPECIES_LARVITAR"
+     },
+     {
+      "min_level": 25,
+      "max_level": 27,
+      "species": "SPECIES_LARVITAR"
+     }
+    ]
+   },
+   "water_mons": {
+    "encounter_rate": 4,
+    "mons": [
+     {
+      "min_level": 24,
+      "max_level": 28,
+      "species": "SPECIES_MARILL"
+     },
+     {
+      "min_level": 24,
+      "max_level": 28,
+      "species": "SPECIES_WOOPER"
+     },
+     {
+      "min_level": 24,
+      "max_level": 28,
+      "species": "SPECIES_LOTAD"
+     },
+     {
+      "min_level": 25,
+      "max_level": 28,
+      "species": "SPECIES_BARBOACH"
+     },
+     {
+      "min_level": 26,
+      "max_level": 29,
+      "species": "SPECIES_MARILL"
+     }
+    ]
+   },
+   "fishing_mons": {
+    "encounter_rate": 30,
+    "mons": [
+     {
+      "min_level": 5,
+      "max_level": 10,
+      "species": "SPECIES_MAGIKARP"
+     },
+     {
+      "min_level": 5,
+      "max_level": 10,
+      "species": "SPECIES_BARBOACH"
+     },
+     {
+      "min_level": 15,
+      "max_level": 20,
+      "species": "SPECIES_BARBOACH"
+     },
+     {
+      "min_level": 15,
+      "max_level": 20,
+      "species": "SPECIES_MAGIKARP"
+     },
+     {
+      "min_level": 15,
+      "max_level": 20,
+      "species": "SPECIES_WOOPER"
+     },
+     {
+      "min_level": 25,
+      "max_level": 28,
+      "species": "SPECIES_BARBOACH"
+     },
+     {
+      "min_level": 26,
+      "max_level": 30,
+      "species": "SPECIES_WHISCASH"
+     },
+     {
+      "min_level": 26,
+      "max_level": 28,
+      "species": "SPECIES_BARBOACH"
+     },
+     {
+      "min_level": 25,
+      "max_level": 28,
+      "species": "SPECIES_MARILL"
+     },
+     {
+      "min_level": 28,
+      "max_level": 30,
+      "species": "SPECIES_WHISCASH"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_PILLARTON",
+   "base_label": "gPalmPillarton",
+   "water_mons": {
+    "encounter_rate": 4,
+    "mons": [
+     {
+      "min_level": 27,
+      "max_level": 31,
+      "species": "SPECIES_CHINCHOU"
+     },
+     {
+      "min_level": 27,
+      "max_level": 31,
+      "species": "SPECIES_MARILL"
+     },
+     {
+      "min_level": 27,
+      "max_level": 31,
+      "species": "SPECIES_WOOPER"
+     },
+     {
+      "min_level": 29,
+      "max_level": 32,
+      "species": "SPECIES_CHINCHOU"
+     },
+     {
+      "min_level": 30,
+      "max_level": 33,
+      "species": "SPECIES_LANTURN"
+     }
+    ]
+   },
+   "fishing_mons": {
+    "encounter_rate": 30,
+    "mons": [
+     {
+      "min_level": 5,
+      "max_level": 10,
+      "species": "SPECIES_MAGIKARP"
+     },
+     {
+      "min_level": 5,
+      "max_level": 10,
+      "species": "SPECIES_CHINCHOU"
+     },
+     {
+      "min_level": 15,
+      "max_level": 20,
+      "species": "SPECIES_CHINCHOU"
+     },
+     {
+      "min_level": 15,
+      "max_level": 20,
+      "species": "SPECIES_MAGIKARP"
+     },
+     {
+      "min_level": 15,
+      "max_level": 20,
+      "species": "SPECIES_BARBOACH"
+     },
+     {
+      "min_level": 27,
+      "max_level": 31,
+      "species": "SPECIES_CHINCHOU"
+     },
+     {
+      "min_level": 29,
+      "max_level": 33,
+      "species": "SPECIES_LANTURN"
+     },
+     {
+      "min_level": 28,
+      "max_level": 31,
+      "species": "SPECIES_CHINCHOU"
+     },
+     {
+      "min_level": 27,
+      "max_level": 30,
+      "species": "SPECIES_BARBOACH"
+     },
+     {
+      "min_level": 31,
+      "max_level": 33,
+      "species": "SPECIES_LANTURN"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE12",
+   "base_label": "gPalmRoute12",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 26,
+      "max_level": 28,
+      "species": "SPECIES_TYMPOLE"
+     },
+     {
+      "min_level": 26,
+      "max_level": 28,
+      "species": "SPECIES_DUCKLETT"
+     },
+     {
+      "min_level": 27,
+      "max_level": 29,
+      "species": "SPECIES_TYMPOLE"
+     },
+     {
+      "min_level": 27,
+      "max_level": 29,
+      "species": "SPECIES_DUCKLETT"
+     },
+     {
+      "min_level": 26,
+      "max_level": 28,
+      "species": "SPECIES_CORPHISH"
+     },
+     {
+      "min_level": 27,
+      "max_level": 29,
+      "species": "SPECIES_CORPHISH"
+     },
+     {
+      "min_level": 28,
+      "max_level": 29,
+      "species": "SPECIES_TYMPOLE"
+     },
+     {
+      "min_level": 28,
+      "max_level": 29,
+      "species": "SPECIES_DUCKLETT"
+     },
+     {
+      "min_level": 28,
+      "max_level": 29,
+      "species": "SPECIES_CORPHISH"
+     },
+     {
+      "min_level": 28,
+      "max_level": 29,
+      "species": "SPECIES_TYMPOLE"
+     },
+     {
+      "min_level": 26,
+      "max_level": 28,
+      "species": "SPECIES_FROAKIE"
+     },
+     {
+      "min_level": 27,
+      "max_level": 29,
+      "species": "SPECIES_FROAKIE"
+     }
+    ]
+   },
+   "water_mons": {
+    "encounter_rate": 4,
+    "mons": [
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_BASCULIN"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_DUCKLETT"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_CORPHISH"
+     },
+     {
+      "min_level": 28,
+      "max_level": 32,
+      "species": "SPECIES_BASCULIN"
+     },
+     {
+      "min_level": 30,
+      "max_level": 33,
+      "species": "SPECIES_BASCULIN"
+     }
+    ]
+   },
+   "fishing_mons": {
+    "encounter_rate": 30,
+    "mons": [
+     {
+      "min_level": 10,
+      "max_level": 15,
+      "species": "SPECIES_BASCULIN"
+     },
+     {
+      "min_level": 10,
+      "max_level": 15,
+      "species": "SPECIES_CORPHISH"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_BASCULIN"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_CORPHISH"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_BASCULIN"
+     },
+     {
+      "min_level": 30,
+      "max_level": 35,
+      "species": "SPECIES_BASCULIN"
+     },
+     {
+      "min_level": 30,
+      "max_level": 35,
+      "species": "SPECIES_CORPHISH"
+     },
+     {
+      "min_level": 30,
+      "max_level": 35,
+      "species": "SPECIES_BASCULIN"
+     },
+     {
+      "min_level": 32,
+      "max_level": 36,
+      "species": "SPECIES_CORPHISH"
+     },
+     {
+      "min_level": 35,
+      "max_level": 38,
+      "species": "SPECIES_BASCULIN"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE06",
+   "base_label": "gPalmRoute06",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 30,
+      "max_level": 32,
+      "species": "SPECIES_RALTS"
+     },
+     {
+      "min_level": 30,
+      "max_level": 32,
+      "species": "SPECIES_CHINGLING"
+     },
+     {
+      "min_level": 30,
+      "max_level": 32,
+      "species": "SPECIES_NATU"
+     },
+     {
+      "min_level": 30,
+      "max_level": 32,
+      "species": "SPECIES_ESPURR"
+     },
+     {
+      "min_level": 30,
+      "max_level": 32,
+      "species": "SPECIES_SNUBBULL"
+     },
+     {
+      "min_level": 30,
+      "max_level": 32,
+      "species": "SPECIES_PETILIL"
+     },
+     {
+      "min_level": 31,
+      "max_level": 33,
+      "species": "SPECIES_COTTONEE"
+     },
+     {
+      "min_level": 31,
+      "max_level": 33,
+      "species": "SPECIES_NATU"
+     },
+     {
+      "min_level": 31,
+      "max_level": 33,
+      "species": "SPECIES_ESPURR"
+     },
+     {
+      "min_level": 31,
+      "max_level": 33,
+      "species": "SPECIES_COTTONEE"
+     },
+     {
+      "min_level": 32,
+      "max_level": 33,
+      "species": "SPECIES_CHIMECHO"
+     },
+     {
+      "min_level": 32,
+      "max_level": 33,
+      "species": "SPECIES_RALTS"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE07",
+   "base_label": "gPalmRoute07",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 36,
+      "max_level": 38,
+      "species": "SPECIES_CLEFAIRY"
+     },
+     {
+      "min_level": 36,
+      "max_level": 38,
+      "species": "SPECIES_SWABLU"
+     },
+     {
+      "min_level": 36,
+      "max_level": 38,
+      "species": "SPECIES_FLABEBE"
+     },
+     {
+      "min_level": 36,
+      "max_level": 38,
+      "species": "SPECIES_SPRITZEE"
+     },
+     {
+      "min_level": 36,
+      "max_level": 38,
+      "species": "SPECIES_SWIRLIX"
+     },
+     {
+      "min_level": 37,
+      "max_level": 39,
+      "species": "SPECIES_SWABLU"
+     },
+     {
+      "min_level": 37,
+      "max_level": 39,
+      "species": "SPECIES_CLEFAIRY"
+     },
+     {
+      "min_level": 37,
+      "max_level": 39,
+      "species": "SPECIES_FLABEBE"
+     },
+     {
+      "min_level": 37,
+      "max_level": 39,
+      "species": "SPECIES_SPRITZEE"
+     },
+     {
+      "min_level": 37,
+      "max_level": 39,
+      "species": "SPECIES_SWIRLIX"
+     },
+     {
+      "min_level": 36,
+      "max_level": 38,
+      "species": "SPECIES_TOGEPI"
+     },
+     {
+      "min_level": 38,
+      "max_level": 39,
+      "species": "SPECIES_TOGEPI"
+     }
+    ]
+   },
+   "water_mons": {
+    "encounter_rate": 4,
+    "mons": [
+     {
+      "min_level": 35,
+      "max_level": 38,
+      "species": "SPECIES_PSYDUCK"
+     },
+     {
+      "min_level": 35,
+      "max_level": 38,
+      "species": "SPECIES_MARILL"
+     },
+     {
+      "min_level": 35,
+      "max_level": 38,
+      "species": "SPECIES_GOLDEEN"
+     },
+     {
+      "min_level": 38,
+      "max_level": 40,
+      "species": "SPECIES_AZUMARILL"
+     },
+     {
+      "min_level": 38,
+      "max_level": 40,
+      "species": "SPECIES_GOLDUCK"
+     }
+    ]
+   },
+   "fishing_mons": {
+    "encounter_rate": 30,
+    "mons": [
+     {
+      "min_level": 10,
+      "max_level": 15,
+      "species": "SPECIES_MAGIKARP"
+     },
+     {
+      "min_level": 10,
+      "max_level": 15,
+      "species": "SPECIES_GOLDEEN"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_GOLDEEN"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_MAGIKARP"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_FEEBAS"
+     },
+     {
+      "min_level": 35,
+      "max_level": 38,
+      "species": "SPECIES_GOLDEEN"
+     },
+     {
+      "min_level": 36,
+      "max_level": 40,
+      "species": "SPECIES_SEAKING"
+     },
+     {
+      "min_level": 30,
+      "max_level": 35,
+      "species": "SPECIES_FEEBAS"
+     },
+     {
+      "min_level": 35,
+      "max_level": 40,
+      "species": "SPECIES_GOLDEEN"
+     },
+     {
+      "min_level": 38,
+      "max_level": 42,
+      "species": "SPECIES_SEAKING"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE13",
+   "base_label": "gPalmRoute13",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 36,
+      "max_level": 38,
+      "species": "SPECIES_SHUPPET"
+     },
+     {
+      "min_level": 36,
+      "max_level": 38,
+      "species": "SPECIES_LITWICK"
+     },
+     {
+      "min_level": 36,
+      "max_level": 38,
+      "species": "SPECIES_FOONGUS"
+     },
+     {
+      "min_level": 36,
+      "max_level": 38,
+      "species": "SPECIES_MIME_JR"
+     },
+     {
+      "min_level": 37,
+      "max_level": 39,
+      "species": "SPECIES_SHUPPET"
+     },
+     {
+      "min_level": 37,
+      "max_level": 39,
+      "species": "SPECIES_LITWICK"
+     },
+     {
+      "min_level": 37,
+      "max_level": 39,
+      "species": "SPECIES_FOONGUS"
+     },
+     {
+      "min_level": 37,
+      "max_level": 39,
+      "species": "SPECIES_MIME_JR"
+     },
+     {
+      "min_level": 38,
+      "max_level": 40,
+      "species": "SPECIES_SHUPPET"
+     },
+     {
+      "min_level": 38,
+      "max_level": 40,
+      "species": "SPECIES_FOONGUS"
+     },
+     {
+      "min_level": 36,
+      "max_level": 38,
+      "species": "SPECIES_ZORUA_HISUI"
+     },
+     {
+      "min_level": 37,
+      "max_level": 39,
+      "species": "SPECIES_ZORUA_HISUI"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE08",
+   "base_label": "gPalmRoute08",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 40,
+      "max_level": 42,
+      "species": "SPECIES_SNORUNT"
+     },
+     {
+      "min_level": 40,
+      "max_level": 42,
+      "species": "SPECIES_SWINUB"
+     },
+     {
+      "min_level": 40,
+      "max_level": 42,
+      "species": "SPECIES_TEDDIURSA"
+     },
+     {
+      "min_level": 40,
+      "max_level": 42,
+      "species": "SPECIES_STANTLER"
+     },
+     {
+      "min_level": 40,
+      "max_level": 42,
+      "species": "SPECIES_SNOVER"
+     },
+     {
+      "min_level": 41,
+      "max_level": 43,
+      "species": "SPECIES_SNORUNT"
+     },
+     {
+      "min_level": 41,
+      "max_level": 43,
+      "species": "SPECIES_SWINUB"
+     },
+     {
+      "min_level": 41,
+      "max_level": 43,
+      "species": "SPECIES_TEDDIURSA"
+     },
+     {
+      "min_level": 41,
+      "max_level": 43,
+      "species": "SPECIES_STANTLER"
+     },
+     {
+      "min_level": 41,
+      "max_level": 43,
+      "species": "SPECIES_SNOVER"
+     },
+     {
+      "min_level": 41,
+      "max_level": 43,
+      "species": "SPECIES_SNEASEL"
+     },
+     {
+      "min_level": 40,
+      "max_level": 42,
+      "species": "SPECIES_RIOLU"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE14",
+   "base_label": "gPalmRoute14",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 41,
+      "max_level": 43,
+      "species": "SPECIES_LILLIPUP"
+     },
+     {
+      "min_level": 41,
+      "max_level": 43,
+      "species": "SPECIES_HOUNDOUR"
+     },
+     {
+      "min_level": 41,
+      "max_level": 43,
+      "species": "SPECIES_ROCKRUFF"
+     },
+     {
+      "min_level": 42,
+      "max_level": 44,
+      "species": "SPECIES_HERDIER"
+     },
+     {
+      "min_level": 42,
+      "max_level": 44,
+      "species": "SPECIES_LILLIPUP"
+     },
+     {
+      "min_level": 42,
+      "max_level": 44,
+      "species": "SPECIES_HOUNDOUR"
+     },
+     {
+      "min_level": 42,
+      "max_level": 44,
+      "species": "SPECIES_ROCKRUFF"
+     },
+     {
+      "min_level": 43,
+      "max_level": 45,
+      "species": "SPECIES_HERDIER"
+     },
+     {
+      "min_level": 43,
+      "max_level": 45,
+      "species": "SPECIES_HOUNDOUR"
+     },
+     {
+      "min_level": 44,
+      "max_level": 45,
+      "species": "SPECIES_STOUTLAND"
+     },
+     {
+      "min_level": 42,
+      "max_level": 44,
+      "species": "SPECIES_ABSOL"
+     },
+     {
+      "min_level": 43,
+      "max_level": 45,
+      "species": "SPECIES_ABSOL"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE09",
+   "base_label": "gPalmRoute09",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 42,
+      "max_level": 44,
+      "species": "SPECIES_ELECTRIKE"
+     },
+     {
+      "min_level": 42,
+      "max_level": 44,
+      "species": "SPECIES_BLITZLE"
+     },
+     {
+      "min_level": 42,
+      "max_level": 44,
+      "species": "SPECIES_SHINX"
+     },
+     {
+      "min_level": 42,
+      "max_level": 44,
+      "species": "SPECIES_JOLTIK"
+     },
+     {
+      "min_level": 42,
+      "max_level": 44,
+      "species": "SPECIES_HELIOPTILE"
+     },
+     {
+      "min_level": 43,
+      "max_level": 45,
+      "species": "SPECIES_ELECTRIKE"
+     },
+     {
+      "min_level": 43,
+      "max_level": 45,
+      "species": "SPECIES_BLITZLE"
+     },
+     {
+      "min_level": 43,
+      "max_level": 45,
+      "species": "SPECIES_SHINX"
+     },
+     {
+      "min_level": 43,
+      "max_level": 45,
+      "species": "SPECIES_JOLTIK"
+     },
+     {
+      "min_level": 43,
+      "max_level": 45,
+      "species": "SPECIES_HELIOPTILE"
+     },
+     {
+      "min_level": 44,
+      "max_level": 45,
+      "species": "SPECIES_LUXIO"
+     },
+     {
+      "min_level": 42,
+      "max_level": 44,
+      "species": "SPECIES_ELEKID"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE10",
+   "base_label": "gPalmRoute10",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 46,
+      "max_level": 48,
+      "species": "SPECIES_WINGULL"
+     },
+     {
+      "min_level": 46,
+      "max_level": 48,
+      "species": "SPECIES_LOMBRE"
+     },
+     {
+      "min_level": 47,
+      "max_level": 49,
+      "species": "SPECIES_PELIPPER"
+     },
+     {
+      "min_level": 46,
+      "max_level": 48,
+      "species": "SPECIES_WINGULL"
+     },
+     {
+      "min_level": 47,
+      "max_level": 49,
+      "species": "SPECIES_LOMBRE"
+     },
+     {
+      "min_level": 46,
+      "max_level": 48,
+      "species": "SPECIES_KRABBY"
+     },
+     {
+      "min_level": 48,
+      "max_level": 50,
+      "species": "SPECIES_KINGLER"
+     },
+     {
+      "min_level": 46,
+      "max_level": 48,
+      "species": "SPECIES_CORPHISH"
+     },
+     {
+      "min_level": 48,
+      "max_level": 50,
+      "species": "SPECIES_PELIPPER"
+     },
+     {
+      "min_level": 47,
+      "max_level": 49,
+      "species": "SPECIES_KRABBY"
+     },
+     {
+      "min_level": 49,
+      "max_level": 50,
+      "species": "SPECIES_LUDICOLO"
+     },
+     {
+      "min_level": 49,
+      "max_level": 50,
+      "species": "SPECIES_CRAWDAUNT"
+     }
+    ]
+   },
+   "water_mons": {
+    "encounter_rate": 4,
+    "mons": [
+     {
+      "min_level": 46,
+      "max_level": 50,
+      "species": "SPECIES_TENTACRUEL"
+     },
+     {
+      "min_level": 46,
+      "max_level": 50,
+      "species": "SPECIES_WAILMER"
+     },
+     {
+      "min_level": 47,
+      "max_level": 50,
+      "species": "SPECIES_MANTINE"
+     },
+     {
+      "min_level": 47,
+      "max_level": 50,
+      "species": "SPECIES_PELIPPER"
+     },
+     {
+      "min_level": 48,
+      "max_level": 50,
+      "species": "SPECIES_LAPRAS"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_TIDEMOUTH",
+   "base_label": "gPalmTidemouth",
+   "water_mons": {
+    "encounter_rate": 4,
+    "mons": [
+     {
+      "min_level": 47,
+      "max_level": 51,
+      "species": "SPECIES_TENTACOOL"
+     },
+     {
+      "min_level": 47,
+      "max_level": 51,
+      "species": "SPECIES_HORSEA"
+     },
+     {
+      "min_level": 47,
+      "max_level": 51,
+      "species": "SPECIES_WAILMER"
+     },
+     {
+      "min_level": 48,
+      "max_level": 51,
+      "species": "SPECIES_CLAUNCHER"
+     },
+     {
+      "min_level": 49,
+      "max_level": 52,
+      "species": "SPECIES_DHELMISE"
+     }
+    ]
+   },
+   "fishing_mons": {
+    "encounter_rate": 30,
+    "mons": [
+     {
+      "min_level": 10,
+      "max_level": 15,
+      "species": "SPECIES_MAGIKARP"
+     },
+     {
+      "min_level": 10,
+      "max_level": 15,
+      "species": "SPECIES_HORSEA"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_HORSEA"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_CLAUNCHER"
+     },
+     {
+      "min_level": 25,
+      "max_level": 30,
+      "species": "SPECIES_TENTACOOL"
+     },
+     {
+      "min_level": 47,
+      "max_level": 51,
+      "species": "SPECIES_HORSEA"
+     },
+     {
+      "min_level": 47,
+      "max_level": 51,
+      "species": "SPECIES_CLAUNCHER"
+     },
+     {
+      "min_level": 47,
+      "max_level": 51,
+      "species": "SPECIES_WAILMER"
+     },
+     {
+      "min_level": 49,
+      "max_level": 52,
+      "species": "SPECIES_SEADRA"
+     },
+     {
+      "min_level": 49,
+      "max_level": 52,
+      "species": "SPECIES_DHELMISE"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE11",
+   "base_label": "gPalmRoute11",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 52,
+      "max_level": 55,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 52,
+      "max_level": 55,
+      "species": "SPECIES_LAIRON"
+     },
+     {
+      "min_level": 52,
+      "max_level": 55,
+      "species": "SPECIES_HAWLUCHA"
+     },
+     {
+      "min_level": 54,
+      "max_level": 56,
+      "species": "SPECIES_DRUDDIGON"
+     },
+     {
+      "min_level": 54,
+      "max_level": 56,
+      "species": "SPECIES_GOLBAT"
+     },
+     {
+      "min_level": 54,
+      "max_level": 56,
+      "species": "SPECIES_LAIRON"
+     },
+     {
+      "min_level": 54,
+      "max_level": 56,
+      "species": "SPECIES_HAWLUCHA"
+     },
+     {
+      "min_level": 52,
+      "max_level": 55,
+      "species": "SPECIES_SNEASEL"
+     },
+     {
+      "min_level": 55,
+      "max_level": 58,
+      "species": "SPECIES_DRUDDIGON"
+     },
+     {
+      "min_level": 54,
+      "max_level": 56,
+      "species": "SPECIES_SNEASEL"
+     },
+     {
+      "min_level": 55,
+      "max_level": 58,
+      "species": "SPECIES_GABITE"
+     },
+     {
+      "min_level": 52,
+      "max_level": 55,
+      "species": "SPECIES_JANGMO_O"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_ROUTE15",
+   "base_label": "gPalmRoute15",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 50,
+      "max_level": 52,
+      "species": "SPECIES_CORSOLA"
+     },
+     {
+      "min_level": 50,
+      "max_level": 52,
+      "species": "SPECIES_SHELLDER"
+     },
+     {
+      "min_level": 50,
+      "max_level": 52,
+      "species": "SPECIES_DHELMISE"
+     },
+     {
+      "min_level": 50,
+      "max_level": 52,
+      "species": "SPECIES_CLAMPERL"
+     },
+     {
+      "min_level": 51,
+      "max_level": 53,
+      "species": "SPECIES_CORSOLA"
+     },
+     {
+      "min_level": 51,
+      "max_level": 53,
+      "species": "SPECIES_SHELLDER"
+     },
+     {
+      "min_level": 52,
+      "max_level": 54,
+      "species": "SPECIES_CORSOLA"
+     },
+     {
+      "min_level": 52,
+      "max_level": 54,
+      "species": "SPECIES_SHELLDER"
+     },
+     {
+      "min_level": 52,
+      "max_level": 54,
+      "species": "SPECIES_DHELMISE"
+     },
+     {
+      "min_level": 51,
+      "max_level": 53,
+      "species": "SPECIES_CLAMPERL"
+     },
+     {
+      "min_level": 53,
+      "max_level": 54,
+      "species": "SPECIES_DHELMISE"
+     },
+     {
+      "min_level": 53,
+      "max_level": 54,
+      "species": "SPECIES_CORSOLA"
+     }
+    ]
+   },
+   "water_mons": {
+    "encounter_rate": 4,
+    "mons": [
+     {
+      "min_level": 50,
+      "max_level": 54,
+      "species": "SPECIES_SHELLDER"
+     },
+     {
+      "min_level": 50,
+      "max_level": 54,
+      "species": "SPECIES_CLAMPERL"
+     },
+     {
+      "min_level": 50,
+      "max_level": 54,
+      "species": "SPECIES_CORSOLA"
+     },
+     {
+      "min_level": 52,
+      "max_level": 54,
+      "species": "SPECIES_DHELMISE"
+     },
+     {
+      "min_level": 52,
+      "max_level": 54,
+      "species": "SPECIES_RELICANTH"
+     }
+    ]
+   },
+   "fishing_mons": {
+    "encounter_rate": 30,
+    "mons": [
+     {
+      "min_level": 20,
+      "max_level": 25,
+      "species": "SPECIES_SHELLDER"
+     },
+     {
+      "min_level": 20,
+      "max_level": 25,
+      "species": "SPECIES_CLAMPERL"
+     },
+     {
+      "min_level": 40,
+      "max_level": 45,
+      "species": "SPECIES_SHELLDER"
+     },
+     {
+      "min_level": 40,
+      "max_level": 45,
+      "species": "SPECIES_CLAMPERL"
+     },
+     {
+      "min_level": 40,
+      "max_level": 45,
+      "species": "SPECIES_CORSOLA"
+     },
+     {
+      "min_level": 50,
+      "max_level": 54,
+      "species": "SPECIES_CORSOLA"
+     },
+     {
+      "min_level": 50,
+      "max_level": 54,
+      "species": "SPECIES_DHELMISE"
+     },
+     {
+      "min_level": 50,
+      "max_level": 54,
+      "species": "SPECIES_SHELLDER"
+     },
+     {
+      "min_level": 52,
+      "max_level": 54,
+      "species": "SPECIES_CLAMPERL"
+     },
+     {
+      "min_level": 52,
+      "max_level": 54,
+      "species": "SPECIES_RELICANTH"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_STORM_TRAIL",
+   "base_label": "gPalmStormTrail",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 70,
+      "max_level": 72,
+      "species": "SPECIES_BAGON"
+     },
+     {
+      "min_level": 70,
+      "max_level": 72,
+      "species": "SPECIES_DRUDDIGON"
+     },
+     {
+      "min_level": 70,
+      "max_level": 72,
+      "species": "SPECIES_SNORUNT"
+     },
+     {
+      "min_level": 71,
+      "max_level": 73,
+      "species": "SPECIES_BAGON"
+     },
+     {
+      "min_level": 71,
+      "max_level": 73,
+      "species": "SPECIES_DRUDDIGON"
+     },
+     {
+      "min_level": 71,
+      "max_level": 73,
+      "species": "SPECIES_SNORUNT"
+     },
+     {
+      "min_level": 72,
+      "max_level": 74,
+      "species": "SPECIES_SHELGON"
+     },
+     {
+      "min_level": 72,
+      "max_level": 74,
+      "species": "SPECIES_SCYTHER"
+     },
+     {
+      "min_level": 73,
+      "max_level": 75,
+      "species": "SPECIES_DRUDDIGON"
+     },
+     {
+      "min_level": 73,
+      "max_level": 75,
+      "species": "SPECIES_SNORUNT"
+     },
+     {
+      "min_level": 72,
+      "max_level": 74,
+      "species": "SPECIES_GIBLE"
+     },
+     {
+      "min_level": 74,
+      "max_level": 76,
+      "species": "SPECIES_GIBLE"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_STORM_RIDGE",
+   "base_label": "gPalmStormRidge",
+   "land_mons": {
+    "encounter_rate": 20,
+    "mons": [
+     {
+      "min_level": 74,
+      "max_level": 76,
+      "species": "SPECIES_BAGON"
+     },
+     {
+      "min_level": 74,
+      "max_level": 76,
+      "species": "SPECIES_DRUDDIGON"
+     },
+     {
+      "min_level": 74,
+      "max_level": 76,
+      "species": "SPECIES_SNORUNT"
+     },
+     {
+      "min_level": 75,
+      "max_level": 77,
+      "species": "SPECIES_BAGON"
+     },
+     {
+      "min_level": 75,
+      "max_level": 77,
+      "species": "SPECIES_DRUDDIGON"
+     },
+     {
+      "min_level": 75,
+      "max_level": 77,
+      "species": "SPECIES_SNORUNT"
+     },
+     {
+      "min_level": 76,
+      "max_level": 78,
+      "species": "SPECIES_SHELGON"
+     },
+     {
+      "min_level": 76,
+      "max_level": 78,
+      "species": "SPECIES_SCYTHER"
+     },
+     {
+      "min_level": 77,
+      "max_level": 79,
+      "species": "SPECIES_DRUDDIGON"
+     },
+     {
+      "min_level": 77,
+      "max_level": 79,
+      "species": "SPECIES_SNORUNT"
+     },
+     {
+      "min_level": 76,
+      "max_level": 78,
+      "species": "SPECIES_GIBLE"
+     },
+     {
+      "min_level": 78,
+      "max_level": 80,
+      "species": "SPECIES_GIBLE"
+     }
+    ]
+   }
+  },
+  {
+   "map": "MAP_PALM_STORM_HOLLOW",
+   "base_label": "gPalmStormHollow",
+   "land_mons": {
+    "encounter_rate": 10,
+    "mons": [
+     {
+      "min_level": 80,
+      "max_level": 82,
+      "species": "SPECIES_SHELGON"
+     },
+     {
+      "min_level": 80,
+      "max_level": 82,
+      "species": "SPECIES_GABITE"
+     },
+     {
+      "min_level": 80,
+      "max_level": 83,
+      "species": "SPECIES_DRUDDIGON"
+     },
+     {
+      "min_level": 80,
+      "max_level": 83,
+      "species": "SPECIES_GLALIE"
+     },
+     {
+      "min_level": 81,
+      "max_level": 83,
+      "species": "SPECIES_SHELGON"
+     },
+     {
+      "min_level": 81,
+      "max_level": 83,
+      "species": "SPECIES_GABITE"
+     },
+     {
+      "min_level": 81,
+      "max_level": 84,
+      "species": "SPECIES_FROSLASS"
+     },
+     {
+      "min_level": 81,
+      "max_level": 84,
+      "species": "SPECIES_SCYTHER"
+     },
+     {
+      "min_level": 82,
+      "max_level": 85,
+      "species": "SPECIES_DRUDDIGON"
+     },
+     {
+      "min_level": 82,
+      "max_level": 85,
+      "species": "SPECIES_GLALIE"
+     },
+     {
+      "min_level": 83,
+      "max_level": 86,
+      "species": "SPECIES_SALAMENCE"
+     },
+     {
+      "min_level": 83,
+      "max_level": 86,
+      "species": "SPECIES_GARCHOMP"
+     }
+    ]
+   }
+  }
+ ],
+ "gifts": [
+  {
+   "species": "SPECIES_CYNDAQUIL",
+   "level": 5,
+   "where": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+  },
+  {
+   "species": "SPECIES_TOTODILE",
+   "level": 5,
+   "where": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+  },
+  {
+   "species": "SPECIES_CHIKORITA",
+   "level": 5,
+   "where": "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
+  },
+  {
+   "species": "SPECIES_EEVEE",
+   "level": 30,
+   "where": "data/scripts/hollowtide_gifts.inc"
+  },
+  {
+   "species": "SPECIES_PORYGON",
+   "level": 24,
+   "where": "data/scripts/hollowtide_gifts.inc"
+  },
+  {
+   "species": "SPECIES_ROTOM",
+   "level": 40,
+   "where": "data/scripts/hollowtide_gifts.inc"
+  },
+  {
+   "species": "SPECIES_FURFROU",
+   "level": 27,
+   "where": "data/scripts/hollowtide_gifts.inc"
+  }
+ ],
+ "species": [
+  "Abomasnow",
+  "Absol",
+  "Aipom",
+  "Altaria",
+  "Amoonguss",
+  "Ampharos",
+  "Aron",
+  "Azumarill",
+  "Azurill",
+  "Baltoy",
+  "Barboach",
+  "Basculin",
+  "Bidoof",
+  "Blitzle",
+  "Bronzor",
+  "Budew",
+  "Buizel",
+  "Cacturne",
+  "Carvanha",
+  "Charizard",
+  "Chimecho",
+  "Chinchou",
+  "Chingling",
+  "Clamperl",
+  "Claydol",
+  "Clefable",
+  "Clefairy",
+  "Cloyster",
+  "Combee",
+  "Conkeldurr",
+  "Corphish",
+  "Corsola",
+  "Cottonee",
+  "Crawdaunt",
+  "Cubone",
+  "Delcatty",
+  "Dhelmise",
+  "Dodrio",
+  "Drilbur",
+  "Druddigon",
+  "Ducklett",
+  "Dusclops",
+  "Duskull",
+  "Dwebble",
+  "Eelektrik",
+  "Electabuzz",
+  "Electrike",
+  "Electrode",
+  "Espeon",
+  "Espurr",
+  "Feebas",
+  "Ferroseed",
+  "Flabebe",
+  "Fletchling",
+  "Floatzel",
+  "Floette",
+  "Foongus",
+  "Froslass",
+  "Furfrou",
+  "Galvantula",
+  "Garchomp",
+  "Gardevoir",
+  "Gastly",
+  "Geodude",
+  "Glaceon",
+  "Glalie",
+  "Golbat",
+  "Goldeen",
+  "Golduck",
+  "Gorebyss",
+  "Granbull",
+  "Graveler",
+  "Grimer",
+  "Gyarados",
+  "Hawlucha",
+  "Heliolisk",
+  "Helioptile",
+  "Herdier",
+  "Hoppip",
+  "Houndoom",
+  "Houndour",
+  "Infernape",
+  "Jolteon",
+  "Kadabra",
+  "Kecleon",
+  "Kingambit",
+  "Kirlia",
+  "Klang",
+  "Klink",
+  "Koffing",
+  "Kommo-o",
+  "Krabby",
+  "Krookodile",
+  "Kyogre",
+  "Lampent",
+  "Lanturn",
+  "Larvitar",
+  "Latios",
+  "Liepard",
+  "Lillipup",
+  "Litwick",
+  "Lombre",
+  "Lotad",
+  "Lucario",
+  "Ludicolo",
+  "Lugia",
+  "Lumineon",
+  "Lunatone",
+  "Luxray",
+  "Lycanroc",
+  "Machoke",
+  "Machop",
+  "Magnemite",
+  "Magneton",
+  "Magnezone",
+  "Mamoswine",
+  "Manectric",
+  "Mareep",
+  "Marill",
+  "Marowak",
+  "Mawile",
+  "Medicham",
+  "Meditite",
+  "Meowscarada",
+  "Meowstic",
+  "Meowth",
+  "Mightyena",
+  "Milotic",
+  "Mime Jr.",
+  "Misdreavus",
+  "Mr. Mime",
+  "Muk",
+  "Natu",
+  "Nincada",
+  "Ninetales",
+  "Ninetales-Alola",
+  "Nosepass",
+  "Octillery",
+  "Oddish",
+  "Pachirisu",
+  "Palpitoad",
+  "Pawniard",
+  "Pelipper",
+  "Persian",
+  "Petilil",
+  "Phanpy",
+  "Pikipek",
+  "Poochyena",
+  "Porygon-Z",
+  "Porygon2",
+  "Psyduck",
+  "Purrloin",
+  "Qwilfish",
+  "Ralts",
+  "Relicanth",
+  "Remoraid",
+  "Riolu",
+  "Rockruff",
+  "Roselia",
+  "Roserade",
+  "Rotom",
+  "SPECIES_ABSOL",
+  "SPECIES_AIPOM",
+  "SPECIES_ARON",
+  "SPECIES_AZUMARILL",
+  "SPECIES_AZURILL",
+  "SPECIES_BAGON",
+  "SPECIES_BARBOACH",
+  "SPECIES_BASCULIN",
+  "SPECIES_BIDOOF",
+  "SPECIES_BLITZLE",
+  "SPECIES_BUIZEL",
+  "SPECIES_CHIKORITA",
+  "SPECIES_CHIMECHO",
+  "SPECIES_CHINCHOU",
+  "SPECIES_CHINGLING",
+  "SPECIES_CLAMPERL",
+  "SPECIES_CLAUNCHER",
+  "SPECIES_CLEFAIRY",
+  "SPECIES_COMBEE",
+  "SPECIES_CORPHISH",
+  "SPECIES_CORSOLA",
+  "SPECIES_COTTONEE",
+  "SPECIES_CRAWDAUNT",
+  "SPECIES_CUBONE",
+  "SPECIES_CYNDAQUIL",
+  "SPECIES_DHELMISE",
+  "SPECIES_DRILBUR",
+  "SPECIES_DRUDDIGON",
+  "SPECIES_DUCKLETT",
+  "SPECIES_DWEBBLE",
+  "SPECIES_EEVEE",
+  "SPECIES_ELECTRIKE",
+  "SPECIES_ELEKID",
+  "SPECIES_ESPURR",
+  "SPECIES_FEEBAS",
+  "SPECIES_FLABEBE",
+  "SPECIES_FLETCHLING",
+  "SPECIES_FOONGUS",
+  "SPECIES_FROAKIE",
+  "SPECIES_FROSLASS",
+  "SPECIES_FURFROU",
+  "SPECIES_GABITE",
+  "SPECIES_GARCHOMP",
+  "SPECIES_GEODUDE",
+  "SPECIES_GIBLE",
+  "SPECIES_GLALIE",
+  "SPECIES_GOLBAT",
+  "SPECIES_GOLDEEN",
+  "SPECIES_GOLDUCK",
+  "SPECIES_GRAVELER",
+  "SPECIES_GRIMER",
+  "SPECIES_GROWLITHE",
+  "SPECIES_HARIYAMA",
+  "SPECIES_HAWLUCHA",
+  "SPECIES_HELIOPTILE",
+  "SPECIES_HERDIER",
+  "SPECIES_HOOTHOOT",
+  "SPECIES_HOPPIP",
+  "SPECIES_HORSEA",
+  "SPECIES_HOUNDOUR",
+  "SPECIES_JANGMO_O",
+  "SPECIES_JOLTIK",
+  "SPECIES_KINGLER",
+  "SPECIES_KLINK",
+  "SPECIES_KRABBY",
+  "SPECIES_LAIRON",
+  "SPECIES_LANTURN",
+  "SPECIES_LAPRAS",
+  "SPECIES_LARVITAR",
+  "SPECIES_LILLIPUP",
+  "SPECIES_LITWICK",
+  "SPECIES_LOMBRE",
+  "SPECIES_LOTAD",
+  "SPECIES_LOUDRED",
+  "SPECIES_LUDICOLO",
+  "SPECIES_LUVDISC",
+  "SPECIES_LUXIO",
+  "SPECIES_MAGIKARP",
+  "SPECIES_MAGNEMITE",
+  "SPECIES_MAKUHITA",
+  "SPECIES_MANTINE",
+  "SPECIES_MAREEP",
+  "SPECIES_MARILL",
+  "SPECIES_MAWILE",
+  "SPECIES_MEOWTH",
+  "SPECIES_MIME_JR",
+  "SPECIES_MISDREAVUS",
+  "SPECIES_NATU",
+  "SPECIES_NINCADA",
+  "SPECIES_ODDISH",
+  "SPECIES_PANSAGE",
+  "SPECIES_PELIPPER",
+  "SPECIES_PETILIL",
+  "SPECIES_PHANPY",
+  "SPECIES_PIDOVE",
+  "SPECIES_PIKIPEK",
+  "SPECIES_POOCHYENA",
+  "SPECIES_PORYGON",
+  "SPECIES_PSYDUCK",
+  "SPECIES_RALTS",
+  "SPECIES_RATTATA",
+  "SPECIES_RELICANTH",
+  "SPECIES_RIOLU",
+  "SPECIES_ROCKRUFF",
+  "SPECIES_ROGGENROLA",
+  "SPECIES_ROTOM",
+  "SPECIES_SABLEYE",
+  "SPECIES_SALAMENCE",
+  "SPECIES_SANDSHREW",
+  "SPECIES_SANDYGAST",
+  "SPECIES_SCYTHER",
+  "SPECIES_SEADRA",
+  "SPECIES_SEAKING",
+  "SPECIES_SEWADDLE",
+  "SPECIES_SHELGON",
+  "SPECIES_SHELLDER",
+  "SPECIES_SHINX",
+  "SPECIES_SHUPPET",
+  "SPECIES_SKIDDO",
+  "SPECIES_SNEASEL",
+  "SPECIES_SNORUNT",
+  "SPECIES_SNOVER",
+  "SPECIES_SNUBBULL",
+  "SPECIES_SPRITZEE",
+  "SPECIES_STANTLER",
+  "SPECIES_STARYU",
+  "SPECIES_STOUTLAND",
+  "SPECIES_STUNKY",
+  "SPECIES_SWABLU",
+  "SPECIES_SWINUB",
+  "SPECIES_SWIRLIX",
+  "SPECIES_TAILLOW",
+  "SPECIES_TEDDIURSA",
+  "SPECIES_TENTACOOL",
+  "SPECIES_TENTACRUEL",
+  "SPECIES_TIMBURR",
+  "SPECIES_TOGEPI",
+  "SPECIES_TOTODILE",
+  "SPECIES_TRUBBISH",
+  "SPECIES_TYMPOLE",
+  "SPECIES_VENIPEDE",
+  "SPECIES_WAILMER",
+  "SPECIES_WHISCASH",
+  "SPECIES_WHISMUR",
+  "SPECIES_WINGULL",
+  "SPECIES_WOOPER",
+  "SPECIES_ZIGZAGOON",
+  "SPECIES_ZORUA_HISUI",
+  "SPECIES_ZUBAT",
+  "Sableye",
+  "Sandshrew",
+  "Sandslash",
+  "Scizor",
+  "Seaking",
+  "Seedot",
+  "Sewaddle",
+  "Sharpedo",
+  "Shiftry",
+  "Shinx",
+  "Shroomish",
+  "Shuppet",
+  "Skarmory",
+  "Skiddo",
+  "Skuntank",
+  "Slaking",
+  "Sneasel",
+  "Snubbull",
+  "Solrock",
+  "Spiritomb",
+  "Spritzee",
+  "Starmie",
+  "Stoutland",
+  "Stunky",
+  "Swablu",
+  "Swampert",
+  "Swellow",
+  "Swinub",
+  "Swirlix",
+  "Sylveon",
+  "Timburr",
+  "Togekiss",
+  "Togepi",
+  "Togetic",
+  "Torkoal",
+  "Trapinch",
+  "Treecko",
+  "Tropius",
+  "Trubbish",
+  "Tympole",
+  "Umbreon",
+  "Ursaring",
+  "Urshifu-Rapid-Strike",
+  "Vaporeon",
+  "Venipede",
+  "Venusaur",
+  "Volcarona",
+  "Voltorb",
+  "Wailmer",
+  "Wailord",
+  "Weavile",
+  "Weezing",
+  "Wingull",
+  "Wooper",
+  "Xatu",
+  "Zigzagoon",
+  "Zoroark-Hisui"
+ ]
+}
