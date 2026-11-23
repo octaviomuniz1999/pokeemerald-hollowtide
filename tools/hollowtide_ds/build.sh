@@ -57,4 +57,9 @@ rm -rf "$TXT"
 # o header gerado sobrevive a limpezas de build/, mas os .c que ele gera nao: forca a geracao
 [ -e build/learnset/MachineMoveLearnsets.c ] || rm -f include/constants/generated/learnsets.h
 make -j"$(nproc)" > build_make.log 2>&1 || { grep -nE "error|Error" build_make.log | head -20; exit 1; }
+
+# mapas: o hg-engine nao cobre a matriz; as edicoes (matrix.json) entram direto na ROM pronta
+MATRIX=()
+for d in "${PATCH_DIRS[@]}"; do [ -e "$d/matrix.json" ] && MATRIX+=("$d/matrix.json"); done
+[ ${#MATRIX[@]} -gt 0 ] && python3 "$HERE/matrix.py" test.nds "${MATRIX[@]}"
 echo "ok: $HG/test.nds"

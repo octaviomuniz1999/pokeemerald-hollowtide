@@ -9,21 +9,21 @@ Versão de referência do GBA: **23ap** (506/506 testes). O GBA fica congelado c
 - Arte (modelos, sprites originais, Town Map): **depois do fim da produção**; até lá, placeholders oficiais.
 - GBA: **congelado** na 23ap; não se mexe nele por enquanto.
 
-## Estado da Fase 0 (23/11/2026)
+## Estado da Fase 0 (23/11/2026) — concluída
 
 | Item | Estado |
 |---|---|
 | hg-engine | commit fixo `b578c990` (`hollowtide_ds/hg-engine.commit`); `make` exige `rom.nds` com código **IPKE** (HeartGold EUA) já na leitura do Makefile |
 | ROM | HeartGold EUA, **IPKE**, SHA-1 `4fcded0e2713dc03929845de631d0932ea2b5a37`; fora do repositório |
 | Build | **ok**: `tools/hollowtide_ds/build.sh` refaz tudo do zero em ~1–3 min e reproduz byte a byte a ROM conferida à mão (0 de 537 arquivos diferentes) |
-| Emulador de QA | **ok**: DeSmuME sem tela (`py-desmume`); `ds_intro.py` leva um jogo novo ao quarto em ~1m45; leitura de mapa/posição, entrada, toque, capturas, estados |
+| Emulador de QA | **ok**: DeSmuME sem tela (`py-desmume`); `ds_intro.py` leva um jogo novo ao quarto em ~1m45 (responde ao que está na tela — menu de tópicos, teclado do nome — em vez de seguir uma sequência fixa: o relógio do DS muda o tempo das falas; 3/3 seguidas); leitura de mapa/posição, entrada, toque, capturas, estados |
 | Scripts, eventos e textos como código-fonte | **ok** — o hg-engine tem `make dump_scripts`: os 963 scripts (a/0/1/2) viram `.s`, os 491 arquivos de eventos (a/0/3/2) viram JSON e recompilam **idênticos** ao ROM (só mudam os que editamos e o script comum do próprio hg-engine). Os textos (a/0/2/7) saem pelo `msg_dump.py` (829/829 idênticos; o despejo de texto do hg-engine perde quebras de linha) |
 | Prova: texto | **ok** — mensagem do Wii do quarto trocada, vista na tela |
 | Prova: script | **ok** — o mesmo objeto passa a dar um Mudkip Lv10 e abrir batalha |
 | Prova: treinador | **ok** — Youngster Joey com Fennekin Lv5 (espécie da Gen 6, com sprite) na batalha; a fala de entrada só aparece pela visão do treinador (não testada) |
 | Prova: warp | **ok** — via `ndspy` direto na ROM (escada → mapa 66) e via JSON no build (escada → porta da guarita da Route 29) |
 | Prova: encontro | **ok** — Route 29 só com Sprigatito (Gen 9) em `data/Encounters.c`: Sprigatito Lv2 selvagem no mato alto |
-| Pendente | troca de bloco da matriz de mapas (o que falta para o caminho A) |
+| Prova: matriz de mapas | **ok** — `matrix.py` (passo depois do `make`, a partir de `matrix.json`): a célula (19,12) da matriz 0 (bloco da guarita da Route 29) recebeu o bloco de New Bark; no jogo o nome continua "Route 29" e a paisagem é a de New Bark. Edita só o NARC da matriz (a/0/4/1) |
 | Fluxo | `prova_fase0.py` faz tudo numa passada a partir do estado base (inclui vencer a batalha pelo toque: FIGHT e golpe 2) |
 | Lição | estado salvo só vale na ROM em que foi feito: o mapa carregado fica na RAM; toda prova de edição parte de um boot limpo |
 
