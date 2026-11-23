@@ -3,7 +3,7 @@
 
 Fonte: hollowtide_ds/data/texts.json  {"190": {"0": "Prof. Alex: ...", "1": "..."}, ...}
 (indices de mensagem; escapes \\n \\r \\f como no msgenc; ou {"gba": "LabelDoGBA"} para trazer o texto do
-GBA convertido por gba_text.py). As copias originais saem byte a byte da ROM (msg_dump.py).
+GBA convertido por gba_text.py, com "replace": [[trecho, novo], ...] para adaptacoes registradas). As copias originais saem byte a byte da ROM (msg_dump.py).
 Saida: hollowtide_ds/patches/content/0500-texts.patch. Uso: text_patch.py HG_ENGINE
 """
 import json, os, subprocess, sys, tempfile
@@ -28,7 +28,15 @@ def main(hg):
             for i, t in data[arc].items():
                 if i.startswith("_"):
                     continue
-                msgs[int(i)] = gba_text.text_of(t["gba"]) if isinstance(t, dict) else t
+                if isinstance(t, dict):
+                    txt = gba_text.text_of(t["gba"])
+                    for old, new in t.get("replace", []):          # adaptacoes registradas (ex.: direcoes no mapa do DS)
+                        if old not in txt:
+                            raise ValueError(f"{arc}/{i}: trecho para trocar nao encontrado: {old!r}")
+                        txt = txt.replace(old, new)
+                    msgs[int(i)] = txt
+                else:
+                    msgs[int(i)] = t
             a, b = os.path.join(tmp, "a"), os.path.join(tmp, "b")
             open(a, "w", encoding="utf-8", newline="").write(orig)
             open(b, "w", encoding="utf-8", newline="").write("\r\n".join(msgs))

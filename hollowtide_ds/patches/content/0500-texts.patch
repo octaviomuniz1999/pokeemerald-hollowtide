@@ -17,6 +17,28 @@
 +{COLOR 2}MUDKIP{COLOR 0}, the Water-type Pokémon, is\nin this Poké Ball!
  Once you’ve decided, touch a Poké Ball!
  Touch the Poké Ball button to select.\nTouch elsewhere to change your selection.
+--- a/data/text/custom/542.txt
++++ b/data/text/custom/542.txt
+@@ -1,11 +1,11 @@
+-Wow, your Pokégear is impressive!
+-Wait, {STRVAR_1 3, 0, 0}!
+-Wait, {STRVAR_1 3, 0, 0}!
+-What do you think you’re doing?\r
+-It’s dangerous to go out without\na Pokémon!\rWild Pokémon jump out of the grass\non the way to the next town.
+-Oh! Your Pokémon is adorable!\nI wish I had one!
+-Hi, {STRVAR_1 3, 0, 0}!\nLeaving again?\rYou should tell your mom if you\nare leaving.
+-Hi, {STRVAR_1 3, 0, 0}!\nLeaving again?\rYou should tell your mom if you\nare leaving.
++The lab is up the hill.\nRoute 1 starts at the east edge.
++My grandkids went on journeys,\ntoo. They always wrote home.\fWell… almost always.
++Far away, a peak disappears into\nthe clouds.\fFrom up here, Dawnmere looks\nso small.
++Prof. Alex’s Lab\nPokémon and Water Ecology
++{STRVAR_1 3, 0, 0}’s House
++The Neighbors’ House
++Dawnmere Village\nWest exit: Route 1\fWhere mornings begin in mist.
++It’s not safe to cross the tall\ngrass without a Pokémon.\fProf. Alex’s lab is up the hill\nto the north.
+ Call your mom on your Pokégear to\nlet her know how you’re doing.
+ I like your Bag!
+ Wait a sec!\r
 --- a/data/text/custom/543.txt
 +++ b/data/text/custom/543.txt
 @@ -1,8 +1,8 @@
@@ -28,7 +50,7 @@
 +Prof. Alex: {STRVAR_1 3, 0, 0}! Good, you came.\fI study how water and weather\nshape the lives of Pokémon.\fThe rivers around here have been\nacting strange lately.\fI could use someone out there\nwho keeps their eyes open.\fThese three were raised here at\nthe lab. Go on, pick a partner.
 +Prof. Alex: A fine choice.\nYou two already look like a team.\fTake this as well. It’s a Pokédex.\nIt records every Pokémon you meet.
 +{STRVAR_1 3, 0, 0} received the Pokédex!
-+Prof. Alex: Follow Route 1 east,\nthen head south across the river.\fYou’ll reach Harvestvale.\nNevard runs the Gym there.\fThe farmers say their canals\nhave been running low.\fIf you hear anything, let me know,\nall right?\fOh, and hold the B Button to run.\nTake care out there!
++Prof. Alex: Follow Route 1 to the west.\fYou’ll reach Harvestvale.\nNevard runs the Gym there.\fThe farmers say their canals\nhave been running low.\fIf you hear anything, let me know,\nall right?\fOh, and hold the B Button to run.\nTake care out there!
 +Check your Bag for Poké Balls.\fWeaken a wild Pokémon first,\nthen throw one to catch it!
  Professor Elm: If a wild Pokémon\nappears, let your Pokémon battle it!
  Professor Elm: Where are you going?\nThe Poké Balls are in that device.\r

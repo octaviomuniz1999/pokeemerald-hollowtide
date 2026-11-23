@@ -36,10 +36,51 @@
    "gba": "Palm040_TextReceivedPokedex"
   },
   "3": {
-   "gba": "Palm040_TextMission"
+   "gba": "Palm040_TextMission",
+   "replace": [
+    [
+     "Follow Route 1 east,\\nthen head south across the river.",
+     "Follow Route 1 to the west."
+    ]
+   ],
+   "_por_que": "no DS a Route 1 vai para oeste e chega a Harvestvale sem atravessar rio (caminho A)"
   },
   "4": {
    "gba": "Palm040_TextAide"
+  }
+ },
+ "542": {
+  "_": "Dawnmere Village (exterior de New Bark; script em overlay/data/scr_seq/scr_seq_0842_T20.s)",
+  "0": {
+   "gba": "Palm040_TextGuide"
+  },
+  "1": {
+   "gba": "Palm040_TextNeighbor"
+  },
+  "2": {
+   "gba": "Palm040_TextOverlook"
+  },
+  "3": {
+   "gba": "Palm040_TextLabSign"
+  },
+  "4": {
+   "gba": "Palm040_TextHomeSign"
+  },
+  "5": {
+   "gba": "Palm040_TextNeighborSign"
+  },
+  "6": {
+   "gba": "Palm040_TextTownSign",
+   "replace": [
+    [
+     "East exit",
+     "West exit"
+    ]
+   ],
+   "_por_que": "no DS a Route 1 (Route 29) fica a oeste de Dawnmere (caminho A: geometria do HGSS)"
+  },
+  "7": {
+   "gba": "Palm040_TextNeedStarter"
   }
  }
 }

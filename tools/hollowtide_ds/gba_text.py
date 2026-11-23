@@ -15,6 +15,8 @@ CASE = [
     ("PROF. ALEX", "Prof. Alex"), ("MOM", "Mom"), ("ATLAS", "Atlas"), ("DAWNMERE", "Dawnmere"),
     ("HARVESTVALE", "Harvestvale"), ("NEVARD", "Nevard"), ("ROUTE", "Route"), ("GYM", "Gym"), ("LAB", "Lab"),
     ("BAG", "Bag"), ("B BUTTON", "B Button"), ("TEAM PALM", "Team Palm"),
+    # cabecalhos de placa, todos em maiusculas no GBA
+    ("VILLAGE", "Village"), ("THE NEIGHBORS", "The Neighbors"), ("HOUSE", "House"),
 ]
 _cache = None
 
@@ -46,6 +48,7 @@ def convert(s):
         s = re.sub(r"(?<![A-Za-z])%s(?![A-Za-z])" % re.escape(a), b, s)
     for k, v in esc.items():
         s = s.replace(v, k)
+    s = re.sub(r"(?<=[a-z])’S\b", "’s", s)             # "Prof. Alex’S" -> "Prof. Alex’s"
     if re.search(r"\{(?!STRVAR_1 3, 0, 0\})", s):
         raise ValueError(f"codigo de texto do GBA sem equivalente: {s}")
     return s
