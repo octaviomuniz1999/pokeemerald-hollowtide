@@ -1,0 +1,11 @@
+--- a/data/scr_seq/scr_seq_0846_T20R0202.s
++++ b/data/scr_seq/scr_seq_0846_T20R0202.s
+@@ -63,6 +63,8 @@
+ 	npc_msg 2
+ 	wait_button
+ 	closemsg
++	give_mon SPECIES_MUDKIP, 10, 0, 0, 0, VAR_SPECIAL_RESULT
++	trainer_battle TRAINER_YOUNGSTER_JOEY, 0, 0, 0
+ 	releaseall
+ 	end
+ 	.balign 4

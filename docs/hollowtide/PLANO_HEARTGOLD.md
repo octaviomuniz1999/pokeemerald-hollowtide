@@ -43,7 +43,9 @@ Layout no repositório: `hollowtide_ds/` (patches de conteúdo + ajustes do hg-e
 | Times | **ok** — `tools/hollowtide_ds/convert_trainers.py` → `hollowtide_ds/patches/content/0100-trainers.patch`: os 116 treinadores de Lunia (122 nomes; 6 são aliases do mesmo slot) nos índices 400–515 de HGSS (tabela fixa em `hollowtide_ds/data/trainer_slots.json`; constantes `TRAINER_HT_*` em `data/scr_seq/include/hollowtide_trainers.inc`). Espécie, nível, golpes, item, habilidade (pelo slot quando é a 1/2/oculta), IVs, itens de bolsa e as falas (entrada, derrota, depois) vindas dos scripts do GBA. Classe: líderes/Elite/campeões com classe de HGSS do mesmo papel (título certo na batalha), demais pelo sprite do GBA — placeholders até a arte. IA de especialista em líderes, Elite, campeões e chefes da Team Palm |
 | Prova: times | **ok** — batalha contra o Doge (índice 511) no emulador: Meowscarada Lv71 usando Flower Trick, golpes do GBA |
 | A conferir | 5 falas com o nome do jogador (`{STRVAR_1 3, 0, 0}`): Doge (derrota, dentro da batalha), Hoc, Abelf e Nami — os scripts da Fase 3 precisam de `buffer_players_name 0` antes; nomes com mais de 10 letras saem abreviados pelo hg-engine (Meowscarada → "Mewscarada") |
-| Próximo | encontros → `data/Encounters.c`; presentes e trocas |
+| Encontros | **ok** — `tools/hollowtide_ds/convert_encounters.py`: as 23 tabelas de Lunia validadas e convertidas (grama com as mesmas chances por vaga e o nível no meio da faixa do GBA; surf igual; Old/Super Rod exatas, Good Rod 45/40/15 em vez de 60/20/20 — as vagas do DS não permitem; manhã/dia/noite iguais, como no GBA). Cada tabela entra no ENCDATA do mapa de HGSS que hospedar o lugar de Lunia (`hollowtide_ds/data/map_bindings.json`, Fase 2) |
+| Prova: encontros | **ok** — Route 2 ligada provisoriamente à tabela da Route 29 (`provas/fase1_encontros`): Wingull Lv11 no mato alto |
+| Próximo | presentes e trocas; depois a Fase 2 (que mapa de HGSS hospeda cada lugar de Lunia) |
 
 ## 1. O que o hg-engine resolve e o que não resolve
 
