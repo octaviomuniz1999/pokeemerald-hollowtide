@@ -29,7 +29,7 @@ def starter_screen(d):
     return im.getpixel((5, 5))[:3] == (64, 64, 72) and im.getpixel((128, 250))[:3] == (88, 88, 96)
 
 
-def route_path(rom_path, start, goal, cells):
+def route_path(rom_path, start, goal, cells, avoid=()):
     """Caminho mais curto a pe entre dois tiles pela colisao dos blocos (matriz 0, celulas dadas)."""
     import collections
     import ndspy.narc, ndspy.rom
@@ -53,7 +53,7 @@ def route_path(rom_path, start, goal, cells):
             break
         for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
             n = (c[0] + dx, c[1] + dy)
-            if n in free and n not in prev:
+            if n in free and n not in prev and n not in avoid:
                 prev[n] = c; q.append(n)
     path, c = [], goal
     while c:
@@ -83,12 +83,12 @@ GYM = 395                                                # MAP_T07GYM0101 (inter
 HARVESTVALE = 67                                         # MAP_T21 (Cherrygrove), asm/include/maps.inc
 
 
-def goto(d, rom, goal, cells, map_id, out, tag, fight_ok=True, max_steps=400):
+def goto(d, rom, goal, cells, map_id, out, tag, fight_ok=True, max_steps=400, avoid=()):
     """Anda ate goal pelo caminho mais curto (colisao dos blocos), lutando se uma batalha comecar.
     Devolve (batalhas, posicao final)."""
     battles = 0
     w = d.where()
-    path = route_path(rom, (w[1], w[2]), goal, cells)
+    path = route_path(rom, (w[1], w[2]), goal, cells, avoid)
     i, steps, last, still = 1, 0, None, 0
     while steps < max_steps:
         steps += 1
@@ -116,7 +116,7 @@ def goto(d, rom, goal, cells, map_id, out, tag, fight_ok=True, max_steps=400):
         nx = path[i]
         key = {(1, 0): "RIGHT", (-1, 0): "LEFT", (0, 1): "DOWN", (0, -1): "UP"}.get((nx[0] - cur[0], nx[1] - cur[1]))
         if key is None:
-            path = route_path(rom, cur, goal, cells); i = 1; continue
+            path = route_path(rom, cur, goal, cells, avoid); i = 1; continue
         d.press(key, 16, 24)
     return battles, d.where()
 
@@ -127,6 +127,7 @@ def face(d, key):
 
 
 HV_CELLS = [(16, 12), (17, 12)]
+HV_NPCS = {(538, 403), (566, 396)}                      # recruta e fazendeiro (objetos nao entram na colisao)
 
 
 def harvestvale(d, rom, out, ok):
@@ -134,11 +135,11 @@ def harvestvale(d, rom, out, ok):
     d.shot(f"{out}/8_chegada.png"); advance(d, 20)
     ok["hv_chegada"] = d.where()
     # porta do ginasio (558,401) ainda fechada: tenta entrar e deve voltar
-    goto(d, rom, (558, 403), HV_CELLS, HARVESTVALE, out, "hv")
+    goto(d, rom, (558, 403), HV_CELLS, HARVESTVALE, out, "hv", avoid=HV_NPCS)
     d.press("UP", 16, 24); d.wait(30); d.shot(f"{out}/9_ginasio_fechado.png"); advance(d, 10)
     ok["hv_ginasio_fechado"] = d.where()
     # recruta no quiosque (538,403), virado para a direita: fala de (539,403)
-    goto(d, rom, (539, 403), HV_CELLS, HARVESTVALE, out, "hv")
+    goto(d, rom, (539, 403), HV_CELLS, HARVESTVALE, out, "hv", avoid=HV_NPCS)
     face(d, "LEFT"); d.press("A", 4, 60); advance(d, 8, "A")
     d.wait(200); d.shot(f"{out}/10_recruta.png")
     if not d.top_is_field():
@@ -146,14 +147,14 @@ def harvestvale(d, rom, out, ok):
     advance(d, 12)
     ok["hv_recruta"] = d.where()
     # valvula (537,396): fala de (538,396) olhando para a esquerda
-    goto(d, rom, (538, 396), HV_CELLS, HARVESTVALE, out, "hv")
+    goto(d, rom, (538, 396), HV_CELLS, HARVESTVALE, out, "hv", avoid=HV_NPCS)
     face(d, "LEFT"); d.press("A", 4, 60); d.shot(f"{out}/11_valvula.png"); advance(d, 12)
     # saida norte (547,385) fechada ate o Nevard
-    goto(d, rom, (547, 387), HV_CELLS, HARVESTVALE, out, "hv")
+    goto(d, rom, (547, 387), HV_CELLS, HARVESTVALE, out, "hv", avoid=HV_NPCS)
     d.press("UP", 16, 24); d.press("UP", 16, 24); d.wait(30); d.shot(f"{out}/12_saida_norte.png"); advance(d, 10)
     ok["hv_saida_norte"] = d.where()
     # ginasio aberto
-    goto(d, rom, (558, 402), HV_CELLS, HARVESTVALE, out, "hv")
+    goto(d, rom, (558, 402), HV_CELLS, HARVESTVALE, out, "hv", avoid=HV_NPCS)
     d.press("UP", 16, 24); d.wait(200); d.shot(f"{out}/13_ginasio.png")
     ok["hv_ginasio"] = d.where()
 
