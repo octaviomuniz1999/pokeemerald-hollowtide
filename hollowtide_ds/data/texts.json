@@ -223,5 +223,13 @@
   "6": {
    "gba": "RustboroCity_Gym_Text_GymStatue"
   }
+ },
+ "553": {
+  "_": "casa de Harvestvale (Cherrygrove R0301): texto genérico do HGSS com o nome da região trocado",
+  "0": "You’re trying to see how good you\\nare as a Pokémon Trainer?\\rYou better visit the Pokémon Gyms\\nall over Lunia and collect Badges."
+ },
+ "549": {
+  "_": "quarto da casa dos vizinhos (T20R0402): o Wii, com o nome da região trocado",
+  "17": "It’s a Wii!\\rWii is huge in Lunia, too!"
  }
 }

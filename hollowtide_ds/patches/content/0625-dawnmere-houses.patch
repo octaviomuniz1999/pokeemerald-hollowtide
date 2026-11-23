@@ -1,0 +1,104 @@
+--- a/data/eventdata/zone_event/062_T20R0301.json
++++ b/data/eventdata/zone_event/062_T20R0301.json
+@@ -1,25 +1,7 @@
+ {
+   "header": "data/scr_seq/include/event_T20R0301.inc",
+   "eventId": "062",
+-  "object_events": [
+-    {
+-      "id": "obj_T20R0301_gswoman3",
+-      "graphics_id": "SPRITE_GSWOMAN3",
+-      "movement_type": 17,
+-      "trainer_type": 0,
+-      "hidden_flag": "FLAG_NOTHING",
+-      "script": "_EV_scr_seq_T20R0301_000 + 1",
+-      "initial_dir": 3,
+-      "param0": 0,
+-      "param1": 0,
+-      "param2": 0,
+-      "movement_range_x": 0,
+-      "movement_range_z": 0,
+-      "x": 5,
+-      "z": 5,
+-      "y": 0
+-    }
+-  ],
++  "object_events": [],
+   "warp_events": [
+     {
+       "x": 4,
+--- a/data/eventdata/zone_event/063_T20R0401.json
++++ b/data/eventdata/zone_event/063_T20R0401.json
+@@ -1,25 +1,7 @@
+ {
+   "header": "data/scr_seq/include/event_T20R0401.inc",
+   "eventId": "063",
+-  "object_events": [
+-    {
+-      "id": "obj_T20R0401_gsmiddleman1",
+-      "graphics_id": "SPRITE_GSMIDDLEMAN1",
+-      "movement_type": 0,
+-      "trainer_type": 0,
+-      "hidden_flag": "FLAG_NOTHING",
+-      "script": "_EV_scr_seq_T20R0401_000 + 1",
+-      "initial_dir": 1,
+-      "param0": 0,
+-      "param1": 0,
+-      "param2": 0,
+-      "movement_range_x": 0,
+-      "movement_range_z": 0,
+-      "x": 6,
+-      "z": 7,
+-      "y": 0
+-    }
+-  ],
++  "object_events": [],
+   "warp_events": [
+     {
+       "x": 3,
+--- a/data/eventdata/zone_event/341_T20R0402.json
++++ b/data/eventdata/zone_event/341_T20R0402.json
+@@ -19,42 +19,7 @@
+       "player_facing_dir": 0
+     }
+   ],
+-  "object_events": [
+-    {
+-      "id": "obj_T20R0402_var_1",
+-      "graphics_id": "SPRITE_VAR_1",
+-      "movement_type": 16,
+-      "trainer_type": 0,
+-      "hidden_flag": "FLAG_HIDE_NEW_BARK_FRIENDS_ROOM_FRIEND",
+-      "script": "_EV_scr_seq_T20R0402_000 + 1",
+-      "initial_dir": 2,
+-      "param0": 0,
+-      "param1": 0,
+-      "param2": 0,
+-      "movement_range_x": 0,
+-      "movement_range_z": 0,
+-      "x": 7,
+-      "z": 7,
+-      "y": 0
+-    },
+-    {
+-      "id": "obj_T20R0402_follower_mon_static_marill",
+-      "graphics_id": "SPRITE_FOLLOWER_MON_STATIC_MARILL",
+-      "movement_type": 44,
+-      "trainer_type": 0,
+-      "hidden_flag": "FLAG_HIDE_NEW_BARK_FRIENDS_ROOM_FRIEND",
+-      "script": "_EV_scr_seq_T20R0402_001 + 1",
+-      "initial_dir": 1,
+-      "param0": 0,
+-      "param1": 0,
+-      "param2": 0,
+-      "movement_range_x": 2,
+-      "movement_range_z": 2,
+-      "x": 4,
+-      "z": 6,
+-      "y": 0
+-    }
+-  ],
++  "object_events": [],
+   "warp_events": [
+     {
+       "x": 3,

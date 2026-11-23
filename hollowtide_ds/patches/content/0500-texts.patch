@@ -97,6 +97,15 @@
  These are also rather helpful...\r
  Just try touching the buttons, and\nyou’ll know what to do in no time.\r
  Professor Elm has been waiting for\nyou, dear. Please, go and help him.
+--- a/data/text/custom/549.txt
++++ b/data/text/custom/549.txt
+@@ -15,5 +15,5 @@
+ Ethan: Cherish your friendship with\nPokémon for years to come!
+ Lyra: Hi, {STRVAR_1 3, 0, 0}!\nHow is your Pokémon?\rYou can talk to it as you walk from time\nto time to nurture your friendship!\r...\rOh, I get it.\nAre you here to check on the award\fwith {STRVAR_1 1, 1, 0}?\r
+ Ethan: Hi, {STRVAR_1 3, 0, 0}!\nHow is your Pokémon?\rYou can talk to it as you walk from time\nto time to nurture your friendship!\r...\rOh, I get it.\nAre you here to check on the award\fwith {STRVAR_1 1, 1, 0}?\r
+-It’s a Wii!\rWii is huge in Johto, too!
++It’s a Wii!\rWii is huge in Lunia, too!
+ You shouldn’t mess with someone\nelse’s PC!
 --- a/data/text/custom/550.txt
 +++ b/data/text/custom/550.txt
 @@ -1,22 +1,22 @@
@@ -140,6 +149,12 @@
  I battled the Trainers on the road.\nMy Pokémon lost.\rThey’re a mess! I must take them to\na Pokémon Center.
  A Pokémon I caught had an item.\nI think it’s Mystic Water.\rI don’t need it, so do you want it?\r
  Back to fishing for me, then.
+--- a/data/text/custom/553.txt
++++ b/data/text/custom/553.txt
+@@ -1,2 +1,2 @@
+-You’re trying to see how good you\nare as a Pokémon Trainer?\rYou better visit the Pokémon Gyms\nall over Johto and collect Badges.
++You’re trying to see how good you\nare as a Pokémon Trainer?\rYou better visit the Pokémon Gyms\nall over Lunia and collect Badges.
+ When I get older, I’m going to be a\nGym Leader!\rI make my Pokémon battle with my\nfriends’ to make them tougher!
 --- a/data/text/040.txt
 +++ b/data/text/040.txt
 @@ -40,7 +40,7 @@

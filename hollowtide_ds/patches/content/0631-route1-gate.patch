@@ -1,0 +1,26 @@
+--- a/data/eventdata/zone_event/030_R29.json
++++ b/data/eventdata/zone_event/030_R29.json
+@@ -89,21 +89,6 @@
+       "y": 0
+     }
+   ],
+-  "warp_events": [
+-    {
+-      "x": 626,
+-      "z": 389,
+-      "dest_header_id": "MAP_R29R0101",
+-      "dest_warp_id": 0,
+-      "y": 0
+-    },
+-    {
+-      "x": 627,
+-      "z": 389,
+-      "dest_header_id": "MAP_R29R0101",
+-      "dest_warp_id": 0,
+-      "y": 0
+-    }
+-  ],
++  "warp_events": [],
+   "coord_events": []
+ }
+\ No newline at end of file
