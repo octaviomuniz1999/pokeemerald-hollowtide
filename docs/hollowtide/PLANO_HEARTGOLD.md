@@ -48,7 +48,16 @@ Layout no repositório: `hollowtide_ds/` (patches de conteúdo + ajustes do hg-e
 | Trocas | **ok** — `tools/hollowtide_ds/npc_trades.py`: as 4 trocas do Tradepost (Kadabra "Kada", Machoke "Muscle", Graveler "Pebbles", Haunter "Boo") nas vagas 0–3 das 13 trocas de HGSS (NARC `a/1/1/2`, aplicado pelo `build.sh` depois do `make`; apelidos/OT no texto 200; constantes `NPC_TRADE_HT_*`) |
 | Prova: troca | **ok** no emulador: "Rafa sent over Kada." — mas **a troca com NPC do DS não faz o Pokémon evoluir** (no GBA o Kadabra vira Alakazam ao chegar). Fica para a Fase 3: gancho no hg-engine que chama a evolução por troca depois de `npc_trade_exec` |
 | Presentes | os 4 presentes de Lunia (Porygon Lv24, Furfrou Lv27, Eevee Lv30, Rotom Lv40 — `hollowtide_gifts.inc`) viram `give_mon` nos scripts da Fase 3 (prova de `give_mon` já feita na Fase 0). Os iniciais vêm da escolha de inicial do GBA (Snivy/Fennekin/Mudkip), não de `givemon`; os Cyndaquil/Totodile/Chikorita do laboratório são sobra do Emerald |
-| Próximo | Fase 2: que mapa de HGSS hospeda cada lugar de Lunia (`map_bindings.json`) |
+| Próximo | Fase 2 (ver abaixo) |
+
+## Estado da Fase 2 (23/11/2026)
+
+| Item | Estado |
+|---|---|
+| Catálogo de HGSS | `hgss_catalog.py` → `docs/hollowtide/ds/HGSS_MAPAS.md` (76 mapas externos na matriz do mundo) e `hgss_seams.py` → `HGSS_EMENDAS.md` (47 divisas andáveis pela colisão dos blocos) |
+| Regra de montagem | `docs/hollowtide/ds/FASE2_MAPAS.md`: cada lugar de Lunia em mapas de HGSS já ligados entre si (divisa ou guarita), na ordem de Lunia; um lugar pode juntar células de vários mapas (os eventos usam coordenadas da matriz inteira); sem cavernas/florestas de HGSS como passagem |
+| Fatia vertical (Cap. 1) | Dawnmere = New Bark (+ casa do jogador e laboratório do Elm), Route 1 = Route 29, Harvestvale = Cherrygrove; encontros da Route 1 já ligados à Route 29 e compilando com times e trocas |
+| Próximo | nomes de lugar e músicas de Lunia nos headers; eventos da Vila (casa, laboratório, escolha de inicial Snivy/Fennekin/Mudkip), Route 1 e Harvestvale; ginásio do Nevard |
 
 ## 1. O que o hg-engine resolve e o que não resolve
 
