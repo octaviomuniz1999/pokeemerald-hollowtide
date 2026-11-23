@@ -1,0 +1,15 @@
+--- a/src/starters.c
++++ b/src/starters.c
+@@ -17,9 +17,9 @@
+ // sequence. To update that text, modify text archive 190 in
+ // DSPRE.
+ static const u16 sStarterChoices[3] = {
+-    SPECIES_CHIKORITA,
+-    SPECIES_CYNDAQUIL,
+-    SPECIES_TOTODILE,
++    SPECIES_SNIVY,     // Hollowtide: iniciais de Lunia (Grama, Fogo, Agua)
++    SPECIES_FENNEKIN,
++    SPECIES_MUDKIP,
+ };
+ 
+ /**

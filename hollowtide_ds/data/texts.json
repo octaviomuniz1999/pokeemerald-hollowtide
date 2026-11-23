@@ -1,0 +1,12 @@
+{
+ "190": {
+  "_": "escolha de inicial (tela das Poké Balls): Prof. Alex e Snivy/Fennekin/Mudkip",
+  "0": "Prof. Alex: Touch a Poké Ball to\\nsee which Pokémon is inside!",
+  "1": "Prof. Alex: So, you like {COLOR 3}SNIVY{COLOR 0},\\nthe Grass-type Pokémon?",
+  "2": "Prof. Alex: You’ll take {COLOR 1}FENNEKIN{COLOR 0},\\nthe Fire-type Pokémon?",
+  "3": "Prof. Alex: Do you want {COLOR 2}MUDKIP{COLOR 0},\\nthe Water-type Pokémon?",
+  "4": "{COLOR 3}SNIVY{COLOR 0}, the Grass-type Pokémon, is\\nin this Poké Ball!",
+  "5": "{COLOR 1}FENNEKIN{COLOR 0}, the Fire-type Pokémon, is\\nin this Poké Ball!",
+  "6": "{COLOR 2}MUDKIP{COLOR 0}, the Water-type Pokémon, is\\nin this Poké Ball!"
+ }
+}
