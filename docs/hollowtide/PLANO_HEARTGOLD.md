@@ -3,6 +3,21 @@
 Versão de referência do GBA: **23ap** (506/506 testes). O GBA fica congelado como referência jogável do conteúdo
 (história, mapas, times, encontros, textos) enquanto a versão DS é construída.
 
+## 0. Decisões do diretor (23/11/2026)
+
+- Mapas: **caminho A** — Lunia montada com a geometria 3D que o HeartGold já tem, eventos e textos por script.
+- Arte (modelos, sprites originais, Town Map): **depois do fim da produção**; até lá, placeholders oficiais.
+- GBA: **congelado** na 23ap; não se mexe nele por enquanto.
+
+## Estado da Fase 0
+
+| Item | Estado |
+|---|---|
+| hg-engine | clonado (`/home/user/blurosie/hg-engine`, submódulo `nitrogfx` iniciado, venv com `requirements.txt`); `make` exige `rom.nds` com código **IPKE** (HeartGold EUA) já na leitura do Makefile, inclusive para as ferramentas |
+| ROM | recebidas as partes 02–06 de um RAR em volumes; **faltam a parte 01 e as partes depois da 06** (o cabeçalho da 06 marca "não é o último volume") |
+| Emulador de QA | **DeSmuME 0.9.12 sem tela funciona** (`py-desmume`, com `SDL_VIDEODRIVER=dummy`): ler/escrever memória, entrada, captura de tela, savestates — dá para montar o harness como o `mgba_runner` |
+| Arquivos do ROM | `ndspy` instalado (abrir e regravar NARCs e o sistema de arquivos do ROM) |
+
 ## 1. O que o hg-engine resolve e o que não resolve
 
 Fonte: README e wiki do `BluRosie/hg-engine` (lidos em 23/11/2026).
