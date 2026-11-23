@@ -434,4 +434,4 @@ warps, não as batalhas nem os eventos.
 | Teste | `fluxo_cap1_balanco` com o inicial (Fennekin) **no Lv 10**, sozinho, sem itens, só Ember: vence recruta, Josh, Tommy e **o Nevard** (termina no Lv 12). No Lv 8 perdia para o Nevard (sec. 32) |
 | Buraco | a Route 1 ia só até Lv 6 (o cânone do capítulo é Lv 3–9); a Harvestvale não tem mato alto (cânone: "sem grama alta"). Treinar até ~10 exigia muito tempo contra selvagens Lv 4–6 |
 | Ajuste (`install_route1_wild.py`) | mesmas espécies do cânone; encontros comuns continuam Lv 3–6, os menos frequentes sobem: Sewaddle/Bidoof 6–8 (5% cada), Shinx/Sewaddle/Zigzagoon 7–9 (raros). Só valores numéricos (nenhum endereço muda). Time do Nevard mantido (cânone) |
-| QA | r70 em andamento |
+| QA | **r70: 494 conferências, 0 falhas** — **build 23am** |
