@@ -32,7 +32,7 @@ Status ao lado de cada item: `[ ]` a fazer · `[~]` em andamento · `[x]` conclu
 - [x] Exp. Share sempre ativo, seguidores, dia/noite (padrão da expansion), flags de QA
 - [x] Ferramentas: renderizador, folha de metatiles, linter, correção de colisão, runner/driver de emulador
 - [x] Título com HOLLOWTIDE e créditos "Created by respectlol1" (fundo do título: Rayquaza placeholder — Kyogre revelaria o pós-jogo)
-- [~] Pokédex regional: design em `POKEDEX_LUNIA.md`; tabelas de encontro aplicadas por capítulo ao construir os mapas — lacunas de encontro e presentes (Eevee, Porygon, Rotom, Furfrou) aplicados em 23/11 (AUDITORIA sec. 38); faltam as trocas do Tradepost e os avistamentos sem mato (Onix, Lunatone/Solrock, Smeargle, Chansey)
+- [~] Pokédex regional: design em `POKEDEX_LUNIA.md`; tabelas de encontro aplicadas por capítulo ao construir os mapas — lacunas de encontro e presentes (Eevee, Porygon, Rotom, Furfrou) aplicados em 23/11 (AUDITORIA sec. 38); trocas do Tradepost feitas (build 23ap); faltam só os avistamentos sem mato (Onix, Lunatone/Solrock, Smeargle, Chansey) — decisão de design
 - [~] Curva de níveis da campanha (Cap. 1 ajustado; demais capítulos ao construir)
 - [x] TMs dos líderes: Bullet Seed (Nevard, TM09), Hex (Jay, TM51), Flash Cannon (Vessel, TM52), Bulldoze (Tchum, TM53); aprendizados regenerados no build
 - [x] Field moves sem HM (itens-chave/habilidades de campo) — levantamento feito (AUDITORIA sec. 35): nenhum obstáculo de HM no jogo, nada obrigatório; decidido: HM03 Surf da Nami no fim do Complexo Oceânico; Waterfall fica HM07 e as HMs são esquecíveis — build 20aj (r67 493/493)

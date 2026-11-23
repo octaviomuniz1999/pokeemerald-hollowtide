@@ -14,7 +14,7 @@ from install_cap4 import jload, jsave, obj, walkable
 # (chave, trade id, oferece, apelido, pede, OT, sexo OT, otId, IVs, gfx, x, y, flag)
 TRADES = [("Kadabra", "INGAME_TRADE_HT_KADABRA", "KADABRA", "KADA", "MEOWTH", "RAFA", "MALE", 51203, "PSYCHIC_M", 14, 18, "0x275"),
           ("Machoke", "INGAME_TRADE_HT_MACHOKE", "MACHOKE", "MUSCLE", "TIMBURR", "CIDA", "FEMALE", 30711, "BLACK_BELT", 16, 22, "0x276"),
-          ("Graveler", "INGAME_TRADE_HT_GRAVELER", "GRAVELER", "PEBBLES", "ROGGENROLA", "TONI", "MALE", 44190, "HIKER", 28, 17, "0x277"),
+          ("Graveler", "INGAME_TRADE_HT_GRAVELER", "GRAVELER", "PEBBLES", "ROGGENROLA", "TONI", "MALE", 44190, "HIKER", 17, 19, "0x277"),
           ("Haunter", "INGAME_TRADE_HT_HAUNTER", "HAUNTER", "BOO", "TRUBBISH", "DANI", "FEMALE", 12876, "HEX_MANIAC", 11, 18, "0x278")]
 
 

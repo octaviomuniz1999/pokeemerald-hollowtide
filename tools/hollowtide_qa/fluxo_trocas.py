@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from qa_driver import QA
 
 TP = "MAP_PALM_TRADEPOST"
-TRADERS = [("KADABRA", 14, 18, 0x275), ("MACHOKE", 16, 22, 0x276), ("GRAVELER", 28, 17, 0x277), ("HAUNTER", 11, 18, 0x278)]
+TRADERS = [("KADABRA", 14, 18, 0x275), ("MACHOKE", 16, 22, 0x276), ("GRAVELER", 17, 19, 0x277), ("HAUNTER", 11, 18, 0x278)]
 res = []
 
 
@@ -22,10 +22,14 @@ def ok(cond, label):
 def main(rom, runner, work):
     q = QA(rom, runner, work)
     q.load(f"{work}/cap4_pos_troca.ss"); q.no_wild(); q.run(["mash B 10"])
+    # entra e sai de uma casa: recarrega os objetos do mapa (o estado pode ter sido salvo com dados antigos)
+    q.goto(TP, 22, 8); q.run(["press UP 30 0", "wait 120"])
+    q.goto("MAP_VERDANTURF_TOWN_HOUSE", 3, 7); q.run(["press DOWN 40 0", "wait 120"])
+    ok(q.mapname() == TP, "Tradepost recarregado (entra e sai do salao)")
     for (nome, x, y, flag) in TRADERS:
         q.goto(TP, x, y + 1)
-        q.run(["press UP 10 10", "press A 4 40", "wait 90", "press A 4 40", "wait 90", "press A 4 40", "wait 60",
-               f"shot troca_{nome.lower()}.png", "press B 4 40", "wait 60", "mash B 10"])
+        q.run(["press UP 10 10", "press A 4 40", "wait 90", f"shot troca_{nome.lower()}.png", "press A 4 40", "wait 90",
+               "press A 4 40", "wait 60", "press B 4 40", "wait 60", "mash B 10"])
         ok(q.mapname() == TP and not q.flag(flag), f"Tradepost: troca do {nome} oferecida e recusada sem travar")
     print("\nRESUMO TROCAS")
     for r in res:
