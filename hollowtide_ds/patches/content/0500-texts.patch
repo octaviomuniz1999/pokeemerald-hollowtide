@@ -29,6 +29,22 @@
  See? Just like that!\rIt’s better to lower your\ntarget’s HP more than I did,\for make it sleep or something.\rYou can try all kinds of things\nto see what works.\rI’ll give you these. Good luck!\r
  See? Just like that!\rIt’s better to lower your\ntarget’s HP more than I did,\for make it sleep or something.\rYou can try all kinds of things\nto see what works.\rI’ll give you these. Good luck!\r
                        
+--- a/data/text/custom/492.txt
++++ b/data/text/custom/492.txt
+@@ -1,7 +1,7 @@
+-Erika: Hello...\nLovely weather, isn’t it?\rIt’s so pleasant...\nI’m afraid I might doze off...\rMy name is Erika.\nI am the Leader of Celadon Gym.\r...Oh? You are from Johto, you say?\fHow nice...\rOh. I’m sorry, I didn’t realize that\nyou wished to challenge me.\rI know.\rI have been training myself on\nnot only flower arrangement\fbut also Pokémon battle.\rI shall not lose.\r
++Nevard: Welcome to Harvestvale!\fI look after the coffee, and the\nPokémon who live on this land.\fThanks for bringing the water\nback. Now let’s see if your team\rcan bloom in battle, too!
+ Erika: Oh!\nI concede defeat...\rYou are remarkably strong...\nI shall give you the Rainbow Badge...\r
+-{STRVAR_1 3, 0, 0} received\nthe Rainbow Badge.
+-Erika: That was a delightful match.\nI felt inspired.\rPlease, I wish you to have this TM19\nas a special token.\rIt is Giga Drain.\nIt is a wonderful move that drains\fhalf the damage it inflicts to heal\fyour Pokémon.\rIt is indeed a horrifying move.\r
+-Erika: Losing leaves a\nbitter aftertaste...\rBut knowing that there are strong\nTrainers spurs me to do better...
+-Celadon City Pokémon Gym
+-Celadon City Pokémon Gym\rGym Leader: Erika\nCertified Trainer!\f{STRVAR_1 3, 0, 0}
++{STRVAR_1 3, 0, 0} received the Harvest\nBadge from Nevard!
++Nevard: Your first Badge. Hold on\nto that feeling.\fAnd take this, too!
++Nevard: That TM teaches Bullet\nSeed.\fIt fires a burst of seeds, two to\nfive times in a row!
++Nevard: The fields change every\nseason, and so will you.\fKeep looking after your Pokémon.\nThey’ll look after you.
++Harvestvale Pokémon Gym\nLeader: Nevard
 --- a/data/text/custom/542.txt
 +++ b/data/text/custom/542.txt
 @@ -1,11 +1,11 @@
@@ -81,3 +97,57 @@
  These are also rather helpful...\r
  Just try touching the buttons, and\nyou’ll know what to do in no time.\r
  Professor Elm has been waiting for\nyou, dear. Please, go and help him.
+--- a/data/text/custom/550.txt
++++ b/data/text/custom/550.txt
+@@ -1,22 +1,22 @@
+-You’re a rookie Trainer, aren’t you?\nI can tell!\rThat’s OK! Everyone is a rookie\nat some point!\rIf you’d like, I can teach you a\nfew things.\fOK, then! Follow me!\r
+-Ohh... I’m sorry.\nI forgot that you weren’t wearing the\fRunning Shoes!\rI’ll try to go as slow as possible, so\ntry keeping up!\r
+-This is a Pokémon Center. They heal\nyour Pokémon in no time at all.\rYou’ll be relying on them a lot, so\nyou better learn about them.\r
++Team Palm shut the canal valve.\fThey want us to pay for water\nthat’s always belonged to all\rof us.\fTheir recruit hangs around the\nkiosk down south.
++The water’s back in the fields!\fNevard’s waiting for you at\nthe Gym. Thank you. Really.
++Team Palm manages the water now.\fWant to irrigate without signing\na contract? Get past me first!
+ This is a Pokémon Mart.\nThey sell Poké Balls for catching wild\fPokémon and other useful items.\r
+-Route 30 is out this way.\rTrainers will be battling their\nPokémon there.\rIf you go a little farther,\nyou’ll see Mr. Pokémon’s House.\r
+-This is the sea, as you can see.\rSome Pokémon are found only in water.\r
+-Here...\nIt’s my house!\rFor your effort keeping up with me,\nI’ll give you my Running Shoes!\fThey’re still warm!\r...\n...\rGot you, didn’t I?\nDon’t worry, these are brand new!\r
+-{STRVAR_1 3, 0, 0} received\nthe Running Shoes from the Guide Gent!
+-The instructions read,\n“Touch the Sprint Button on the\fTouch Screen to sprint.”\rIt also says,\n“Hold the B Button down to sprint.”\r
+-...Hffp... Hffp...\nI made it...\rI forgot about one thing.\nThis is another token from me!\rTake it.\r
+-The Guide Gent loaded the Map Card\non {STRVAR_1 3, 0, 0}’s Pokégear!
+-{STRVAR_1 3, 0, 0}’s Pokégear\ncan now show the Town Map!\r
+-Select the Pokégear on the\nTouch Screen and then select\fthe Town Map icon.\rYou’ll see the map of the region\nyou’re currently in!\rThe Pokégear becomes more useful as\nyou add Cards.\rI wish you luck on your journey!\r
+-...\rYou got a Pokémon at the Lab.\nWhat a waste.\rThat’s a Pokémon that’s too good for\na wimp like you.\r...\nDon’t you get what I’m saying?\rWell, I too have a good Pokémon.\nI’ll show you what I mean!\r
+-...\rDo you want to know who I am?\n...\rI’m going to be the world’s greatest\nPokémon Trainer.\r
+-Give it back!\nThat’s my Trainer Card!\rOh no!\nYou saw my name...\r
+-Did you talk to the old man by the\nPokémon Center?\rHe’ll put a Map of Johto on your\nPokégear.
+-When you’re with Pokémon,\ngoing anywhere is fun.
+-Mr. Pokémon’s house is still farther\nup ahead.\rYou could use the Running Shoes if\nyou had a pair.\rBut beware of wild Pokémon and\nTrainers!\rWhen you run, the noise will\nattract them.
++Use the key on the valve.\fIt’s on the west bank of the\ncanal, near the coffee fields.
++The bosses won’t like this…\nTeam Palm always collects.
++Villager: Hey, you! A trainer?\fTeam Palm shut off the canal\nvalve. The Gym’s gone dry, too.\fTheir recruit has the key.\nHe’s at the blue kiosk to the\rsouthwest.
++Harvestvale\nEast: Route 1\fFields of coffee and quiet canals.
++Route 2\fThe road north is closed while\nthe fields are being repaired.\fNevard will reopen it.
++Route 2\fThe road north is closed while\nthe fields are being repaired.\fNevard will reopen it.
++Harvestvale Pokémon Gym\fClosed until water returns to the\nfields. - Nevard
++Harvestvale Pokémon Gym\nLeader: Nevard\fThe farmer who never stops\ngrowing.
++Team Palm Water Kiosk\nIrrigation contracts signed here.
++The valve is locked tight.\fThe recruit at the blue kiosk\nhas the key.
++{STRVAR_1 3, 0, 0} turned the valve!\fWater rushes back into the\ncanals. The Gym is open again!
++Water flows toward the fields.
++Harvestvale Coffee Fields\nWatered by the village canal.
++Drying Yard\nCoffee beans dry here in the sun.\fWhen the rain comes, everyone\nruns to roll up the mats!
++Irrigation Schedule\nEach field gets its turn.\fA Team Palm flyer covers half of\nit: Water Under Contract.
+ I battled the Trainers on the road.\nMy Pokémon lost.\rThey’re a mess! I must take them to\na Pokémon Center.
+ A Pokémon I caught had an item.\nI think it’s Mystic Water.\rI don’t need it, so do you want it?\r
+ Back to fishing for me, then.
+--- a/data/text/040.txt
++++ b/data/text/040.txt
+@@ -40,7 +40,7 @@
+ 
+ There! All happy and healthy!\nGood luck and take care!
+ Mom: {STRVAR_1 3, 0, 0}!\nWelcome home.\rIt sounds like you had quite the\nexperience out there.\rMaybe you should take a quick\nrest so you can relax.\r...\n...
+-Mom: Oh, good! You and your\nPokémon are looking great.\rOh, yes, I heard from Professor Elm.\rHe said that a Pokémon’s energy is\nmeasured in HP (Hit Points).\rIf your Pokémon lose their HP,\nyou can restore it at any\fPokémon Center.\rIf you’re going to travel far away,\nthe smart Trainer stocks up on\fPotions at the Pokémon Mart.\rMake me proud, honey!\nTake care!
++Mom: Oh, good! You and your\nPokémon are looking great.\rOh, yes, I heard from Prof. Alex.\rHe said that a Pokémon’s energy is\nmeasured in HP (Hit Points).\rIf your Pokémon lose their HP,\nyou can restore it at any\fPokémon Center.\rIf you’re going to travel far away,\nthe smart Trainer stocks up on\fPotions at the Pokémon Mart.\rMake me proud, honey!\nTake care!
+ Mom: Oh, good! You and your\nPokémon are looking great.\rOh yes, {STRVAR_1 3, 0, 0}, your Pokémon\nwill faint if it runs out of HP.\rIf your Pokémon loses its HP, come\nhome before it faints.\rIt will be healed to full health by\ntaking a rest.\rWell, honey, make me proud!\nTake care!
+ First, let’s restore your Pokémon\nto full health.
+ Your Pokémon have been healed\nto perfect health.

@@ -166,7 +166,7 @@ def main(rom, base, out):
         tries += 1
         w = d.where()
         if w and w[0] == 63:                              # derrota: de volta ao terreo de casa
-            advance(d, 15)
+            advance(d, 70)                               # a fala da mae depois da derrota e longa
             x, y = d.where()[1:]
             walk(d, ["LEFT"] * max(0, x - 3) + ["DOWN"] * 6, stop_map=60); d.wait(200)
             walk(d, ["DOWN"] + ["LEFT"] * 30, stop_map=33); d.wait(200)

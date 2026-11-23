@@ -115,5 +115,113 @@
    ],
    "_por_que": "placa da ponta leste; Dawnmere fica a leste no DS"
   }
+ },
+ "engine:040": {
+  "_": "mensagens comuns: a mãe depois de perder (volta para casa) cita o professor da região",
+  "replace_all": [
+   [
+    "Professor Elm",
+    "Prof. Alex"
+   ]
+  ]
+ },
+ "550": {
+  "_": "Harvestvale (Cherrygrove do HGSS; script em overlay/data/scr_seq/scr_seq_0850_T21.s)",
+  "0": {
+   "gba": "Palm071_TextFarmer"
+  },
+  "1": {
+   "gba": "Palm071_TextFarmerRestored"
+  },
+  "2": {
+   "gba": "Palm071_TextRecruit"
+  },
+  "4": {
+   "gba": "Palm072_TextValveHint"
+  },
+  "5": {
+   "gba": "Palm073_TextRecruitRestored"
+  },
+  "6": {
+   "gba": "Palm072_TextArrival"
+  },
+  "7": {
+   "gba": "Palm060_TextWelcome",
+   "replace": [
+    [
+     "North: Route 1",
+     "East: Route 1"
+    ]
+   ],
+   "_por_que": "no DS a Route 1 chega pelo leste de Harvestvale"
+  },
+  "8": {
+   "gba": "Palm060_TextClosedRoad",
+   "replace": [
+    [
+     "The road south is closed",
+     "The road north is closed"
+    ]
+   ],
+   "_por_que": "no DS a saída para a Route 2 fica ao norte"
+  },
+  "9": {
+   "gba": "Palm060_TextClosedRoad",
+   "replace": [
+    [
+     "The road south is closed",
+     "The road north is closed"
+    ]
+   ],
+   "_por_que": "no DS a saída para a Route 2 fica ao norte"
+  },
+  "10": {
+   "gba": "Palm071_TextGymLocked"
+  },
+  "11": {
+   "gba": "Palm060_TextGymSign"
+  },
+  "12": {
+   "gba": "Palm060_TextKioskSign"
+  },
+  "13": {
+   "gba": "Palm071_TextValveLocked"
+  },
+  "14": {
+   "gba": "Palm071_TextRestored"
+  },
+  "15": {
+   "gba": "Palm071_TextValveRestored"
+  },
+  "16": {
+   "gba": "Palm062_CoffeeText"
+  },
+  "17": {
+   "gba": "Palm064_DryingYard_Text"
+  },
+  "18": {
+   "gba": "Palm064_WaterBoard_Text"
+  }
+ },
+ "492": {
+  "_": "ginásio do Nevard (interior do ginásio da Erika; script em overlay/data/scr_seq/scr_seq_0786_T07GYM0101.s)",
+  "0": {
+   "gba": "RustboroCity_Gym_Text_RoxanneIntro"
+  },
+  "2": {
+   "gba": "RustboroCity_Gym_Text_ReceivedStoneBadge"
+  },
+  "3": {
+   "gba": "RustboroCity_Gym_Text_StoneBadgeInfoTakeThis"
+  },
+  "4": {
+   "gba": "RustboroCity_Gym_Text_ExplainRockTomb"
+  },
+  "5": {
+   "gba": "RustboroCity_Gym_Text_RoxannePostBattle"
+  },
+  "6": {
+   "gba": "RustboroCity_Gym_Text_GymStatue"
+  }
  }
 }

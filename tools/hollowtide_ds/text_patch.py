@@ -3,7 +3,8 @@
 
 Fonte: hollowtide_ds/data/texts.json  {"190": {"0": "Prof. Alex: ...", "1": "..."}, ...}
 (indices de mensagem; escapes \\n \\r \\f como no msgenc; ou {"gba": "LabelDoGBA"} para trazer o texto do
-GBA convertido por gba_text.py, com "replace": [[trecho, novo], ...] para adaptacoes registradas). As copias originais saem byte a byte da ROM (msg_dump.py).
+GBA convertido por gba_text.py, com "replace"; e "engine:NNN": {"replace_all": [[trecho, novo]]} para os textos do
+proprio hg-engine em data/text/NNN.txt: [[trecho, novo], ...] para adaptacoes registradas). As copias originais saem byte a byte da ROM (msg_dump.py).
 Saida: hollowtide_ds/patches/content/0500-texts.patch. Uso: text_patch.py HG_ENGINE
 """
 import json, os, subprocess, sys, tempfile
@@ -21,7 +22,7 @@ def main(hg):
     with tempfile.TemporaryDirectory() as tmp:
         subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "msg_dump.py"), hg, os.path.join(hg, "rom.nds"), tmp],
                        check=True, capture_output=True)
-        for arc in sorted(data, key=int):
+        for arc in sorted((a for a in data if not a.startswith("engine:")), key=int):
             name = f"{int(arc):03d}.txt"
             orig = open(os.path.join(tmp, name), encoding="utf-8", newline="").read()
             msgs = orig.split("\r\n")
@@ -42,8 +43,21 @@ def main(hg):
             open(b, "w", encoding="utf-8", newline="").write("\r\n".join(msgs))
             out += subprocess.run(["diff", "-u", "--label", f"a/data/text/custom/{name}", "--label", f"b/data/text/custom/{name}", a, b],
                                   capture_output=True).stdout.decode("utf-8")
+        # textos do proprio hg-engine (data/text/NNN.txt): so trocas registradas de trechos
+        for arc in sorted(a for a in data if a.startswith("engine:")):
+            name = f"data/text/{int(arc[7:]):03d}.txt"
+            orig = subprocess.run(["git", "-C", hg, "cat-file", "--filters", f"HEAD:{name}"], capture_output=True, check=True).stdout.decode("utf-8")
+            new = orig
+            for old, rep in data[arc]["replace_all"]:
+                if old not in new:
+                    raise ValueError(f"{arc}: trecho nao encontrado: {old!r}")
+                new = new.replace(old, rep)
+            a, b = os.path.join(tmp, "a"), os.path.join(tmp, "b")
+            open(a, "w", encoding="utf-8", newline="").write(orig)
+            open(b, "w", encoding="utf-8", newline="").write(new)
+            out += subprocess.run(["diff", "-u", "--label", f"a/{name}", "--label", f"b/{name}", a, b], capture_output=True).stdout.decode("utf-8")
     open(PATCH, "w", encoding="utf-8", newline="").write(out)
-    print(f"{sum(len([k for k in v if not k.startswith('_')]) for v in data.values())} mensagem(ns) em {len(data)} texto(s) -> {PATCH}")
+    print(f"{len(data)} texto(s) -> {PATCH}")
 
 
 if __name__ == "__main__":

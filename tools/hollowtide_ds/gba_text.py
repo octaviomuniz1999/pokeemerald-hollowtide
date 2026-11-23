@@ -16,7 +16,10 @@ CASE = [
     ("HARVESTVALE", "Harvestvale"), ("NEVARD", "Nevard"), ("ROUTE", "Route"), ("GYM", "Gym"), ("LAB", "Lab"),
     ("BAG", "Bag"), ("B BUTTON", "B Button"), ("TEAM PALM", "Team Palm"),
     # cabecalhos de placa, todos em maiusculas no GBA
-    ("VILLAGE", "Village"), ("THE NEIGHBORS", "The Neighbors"), ("HOUSE", "House"),
+    ("VILLAGE", "Village"), ("VILLAGER", "Villager"), ("LEADER", "Leader"), ("BADGE", "Badge"),
+    ("HARVEST", "Harvest"), ("BULLET", "Bullet"), ("SEED", "Seed"), ("COFFEE FIELDS", "Coffee Fields"),
+    ("WATER KIOSK", "Water Kiosk"), ("DRYING YARD", "Drying Yard"), ("IRRIGATION SCHEDULE", "Irrigation Schedule"),
+    ("WATER UNDER CONTRACT", "Water Under Contract"), ("THE NEIGHBORS", "The Neighbors"), ("HOUSE", "House"),
 ]
 _cache = None
 
