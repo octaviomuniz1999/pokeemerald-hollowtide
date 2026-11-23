@@ -74,7 +74,7 @@ def main(hg, bind_path=BIND, patch_path=PATCH):
     valid = set(re.findall(r"#define\s+(SPECIES_[A-Z0-9_]+)\b", open(os.path.join(hg, "include/constants/species.h")).read()))
     inv = json.load(open(os.path.join(REPO, "docs/hollowtide/ds/lunia_inventory.json")))
     bind = json.load(open(bind_path)) if os.path.exists(bind_path) else {}
-    orig = subprocess.run(["git", "-C", hg, "show", "HEAD:data/Encounters.c"], capture_output=True, text=True, check=True).stdout
+    orig = subprocess.run(["git", "-C", hg, "cat-file", "--filters", "HEAD:data/Encounters.c"], capture_output=True, text=True, check=True).stdout
     new, done, unbound = orig, [], []
     for enc in inv["encounters"]:
         text = entry(valid, enc, "X")                      # valida mesmo sem ligacao

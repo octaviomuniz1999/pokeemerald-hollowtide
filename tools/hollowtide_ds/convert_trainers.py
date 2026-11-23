@@ -247,7 +247,7 @@ def main(hg):
     texts = {}
     for n, t in texts_by_name.items():
         texts.setdefault(alias_to_slot[n], t)
-    orig = subprocess.run(["git", "-C", hg, "show", "HEAD:data/Trainers.c"], capture_output=True, text=True, check=True).stdout
+    orig = subprocess.run(["git", "-C", hg, "cat-file", "--filters", "HEAD:data/Trainers.c"], capture_output=True, text=True, check=True).stdout
     new = orig
     for s, (name, tr) in sorted(by_slot.items(), key=lambda x: slots[x[0]]):
         idx = slots[s]

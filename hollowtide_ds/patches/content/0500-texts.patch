@@ -17,3 +17,17 @@
 +{COLOR 2}MUDKIP{COLOR 0}, the Water-type Pokémon, is\nin this Poké Ball!
  Once you’ve decided, touch a Poké Ball!
  Touch the Poké Ball button to select.\nTouch elsewhere to change your selection.
+--- a/data/text/custom/545.txt
++++ b/data/text/custom/545.txt
+@@ -1,7 +1,7 @@
+-Hi, {STRVAR_1 3, 0, 0}!\nYou’re finally awake.\fYour friend Lyra was just here.\rShe was playing hide-and-seek with\nher MARILL.\rOh, I almost forgot! Our acquaintance,\nProfessor Elm, was looking for you.\rHe said he had a favor to ask of you.\rYou know where the lab is, right?\nIt’s right next door to us.\rBy the way, do you have everything\nyou need to go out?\fHere, use this Bag to carry things...\r
+-Hi, {STRVAR_1 3, 0, 0}!\nYou’re finally awake.\fYour friend Ethan was just here.\rHe was playing hide-and-seek with\nhis MARILL.\rOh, I almost forgot! Our acquaintance,\nProfessor Elm, was looking for you.\rHe said he had a favor to ask of you.\rYou know where the lab is, right?\nIt’s right next door to us.\rBy the way, do you have everything\nyou need to go out?\fHere, use this Bag to carry things...\r
+-This is your Trainer Card...\r
+-Here you can save a record of\nyour progress...\r
++Mom: {STRVAR_1 3, 0, 0}, wait a second!\fBefore you go, I want you to\nhave this.
++It’s been in our family for a\nlong, long time.\fThe dog on it is called Atlas.\nYour grandma used to say he\rwalked beside anyone who needed\rcompany on the road.\fI don’t know if that’s true…\nbut I like the idea that you\rwon’t be walking alone.\fNow go on! Prof. Alex is waiting.
++Mom: Morning, sleepyhead!\nProf. Alex stopped by earlier.\fHe’s waiting for you at the lab,\nup on the hill to the north.
++Mom: Sit down for a minute.\nYou both look worn out.\f…There. All better!\nCome home whenever you need.
+ These are also rather helpful...\r
+ Just try touching the buttons, and\nyou’ll know what to do in no time.\r
+ Professor Elm has been waiting for\nyou, dear. Please, go and help him.

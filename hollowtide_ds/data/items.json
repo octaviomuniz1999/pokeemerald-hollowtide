@@ -1,0 +1,9 @@
+{
+ "ITEM_RELIC_GOLD": {
+  "alias": "ITEM_ATLAS_MEDALLION",
+  "name": "Atlas Medallion",
+  "plural": "Atlas Medallions",
+  "description": "An old family keepsake.\\nA black dog with a\\nwhite circle on its chest.",
+  "key_item": true
+ }
+}

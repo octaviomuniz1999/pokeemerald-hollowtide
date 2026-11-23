@@ -1,0 +1,303 @@
+--- a/data/scr_seq/scr_seq_0845_T20R0201.s
++++ b/data/scr_seq/scr_seq_0845_T20R0201.s
+@@ -20,6 +20,7 @@
+ #include "constants/species.h"
+ 
+ .include "data/scr_seq/include/event_T20R0201.inc"
++.include "data/scr_seq/include/hollowtide_items.inc"
+ 
+ 
+ // text archive to grab from: 545.txt
+@@ -37,8 +38,14 @@
+ scrdef_end
+ 
+ scr_seq_T20R0201_000:
++	// Hollowtide: a mae entrega o Medalhao de Atlas na primeira descida (GBA Palm040_GiveMedallion);
++	// as flags do menu (bolsa, cartao, salvar, opcoes) que a cena do HGSS dava continuam aqui
+ 	scrcmd_609
+ 	lockall
++	setflag FLAG_GOT_BAG
++	setflag FLAG_GOT_TRAINER_CARD
++	setflag FLAG_GOT_SAVE_BUTTON
++	setflag FLAG_GOT_OPTIONS_BUTTON
+ 	apply_movement obj_player, _00A4
+ 	apply_movement obj_T20R0201_gsmama, _00B0
+ 	wait_movement
+@@ -47,25 +54,13 @@
+ 	apply_movement obj_T20R0201_gsmama, _00B8
+ 	wait_movement
+ 	buffer_players_name 0
+-	gender_msgbox 0, 1
+-	setflag FLAG_GOT_BAG
+-	play_fanfare SEQ_SE_PL_KIRAKIRA
+-	wait_fanfare
+-	npc_msg 2
+-	setflag FLAG_GOT_TRAINER_CARD
+-	play_fanfare SEQ_SE_PL_KIRAKIRA
+-	wait_fanfare
+-	npc_msg 3
+-	setflag FLAG_GOT_SAVE_BUTTON
+-	play_fanfare SEQ_SE_PL_KIRAKIRA
+-	wait_fanfare
+-	npc_msg 4
+-	setflag FLAG_GOT_OPTIONS_BUTTON
+-	play_fanfare SEQ_SE_PL_KIRAKIRA
+-	wait_fanfare
+-	npc_msg 5
++	npc_msg 0
++	setvar VAR_SPECIAL_x8004, ITEM_ATLAS_MEDALLION
++	setvar VAR_SPECIAL_x8005, 1
++	callstd std_give_item_verbose
++	npc_msg 1
++	wait_button
+ 	closemsg
+-	wait 15, VAR_SPECIAL_RESULT
+ 	apply_movement obj_T20R0201_gsmama, _00C8
+ 	wait_movement
+ 	callstd std_fade_end_mom_music
+@@ -121,239 +116,21 @@
+ 	end
+ 
+ scr_seq_T20R0201_001:
+-	goto_if_set FLAG_GAME_CLEAR, _015C
+-	compare VAR_SCENE_ELMS_LAB, 4
+-	goto_if_ge _0205
+-	goto_if_set FLAG_GOT_STARTER, _0179
+-	simple_npc_msg 6
+-	end
+-
+-_015C:
+-	hasitem ITEM_SS_TICKET, 1, VAR_SPECIAL_RESULT
+-	compare VAR_SPECIAL_RESULT, 0
+-	goto_if_eq _01F2
+-	goto _0205
+-
+-	.byte 0x02, 0x00
+-_0179:
+-	play_se SEQ_SE_DP_SELECT
+-	lockall
+-	faceplayer
+-	goto_if_set FLAG_GOT_POKEGEAR, _01D4
+-	buffer_players_name 0
+-	npc_msg 7
+-	buffer_players_name 0
+-	npc_msg 8
+-	setflag FLAG_GOT_POKEGEAR
+-	play_fanfare SEQ_ME_ITEM
+-	wait_fanfare
+-	npc_msg 9
+-	npc_msg 10
+-	touchscreen_menu_hide
+-	getmenuchoice VAR_SPECIAL_RESULT
+-	touchscreen_menu_show
+-	compare VAR_SPECIAL_RESULT, 0
+-	goto_if_ne _01C6
+-	npc_msg 11
+-	goto _01C9
+-
+-_01C6:
+-	npc_msg 12
+-_01C9:
+-	npc_msg 13
+-	wait_button_or_dpad
+-	closemsg
+-	releaseall
+-	end
+-
+-_01D4:
+-	npc_msg 14
+-	wait_button
+-	closemsg
+-	releaseall
+-	end
+-
+-	.byte 0x49
+-	.byte 0x00, 0xdc, 0x05, 0x60, 0x00, 0x68, 0x00, 0x2d, 0x00, 0x07, 0x32, 0x00, 0x35, 0x00, 0x61, 0x00
+-	.byte 0x02, 0x00
+-_01F2:
+-	simple_npc_msg 34
+-	end
+-
+-_0205:
++	// Hollowtide: antes do inicial, a mae manda ao laboratorio; depois, cura o time (GBA Palm040_Mom)
+ 	play_se SEQ_SE_DP_SELECT
+ 	lockall
+ 	faceplayer
+-	goto_if_set FLAG_TALKED_TO_MOM_AFTER_NAMING_RIVAL, _0275
+-	check_badge BADGE_ZEPHYR, VAR_TEMP_x4000
+-	compare VAR_TEMP_x4000, 0
+-	goto_if_ne _0234
+-	npc_msg 15
+-	goto _023A
+-
+-_0234:
+ 	buffer_players_name 0
+-	npc_msg 16
+-_023A:
+-	setflag FLAG_TALKED_TO_MOM_AFTER_NAMING_RIVAL
+-	setvar VAR_SCENE_ROUTE_30_PHONE_CALL, 0
+-	touchscreen_menu_hide
+-	getmenuchoice VAR_SPECIAL_RESULT
+-	touchscreen_menu_show
+-	compare VAR_SPECIAL_RESULT, 0
+-	goto_if_ne _0266
+-	npc_msg 17
+-	setflag FLAG_SYS_MOMS_SAVINGS
+-	goto _026D
+-
+-_0266:
+-	npc_msg 18
+-	clearflag FLAG_SYS_MOMS_SAVINGS
+-_026D:
+-	wait_button
+-	closemsg
+-	releaseall
+-	end
+-
+-_0275:
+-	npc_msg 20
+-	scrcmd_795 1, 1
+-	touchscreen_menu_hide
+-	menu_init 1, 1, 0, 1, VAR_SPECIAL_RESULT
+-	menu_item_add 29, 255, 0
+-	menu_item_add 30, 255, 1
+-	menu_item_add 31, 255, 2
+-	menu_item_add 32, 255, 3
+-	menu_exec
+-	switch VAR_SPECIAL_RESULT
+-	case 0, _02DF
+-	case 1, _0335
+-	case 2, _0398
+-	goto _03D1
+-
+-	.byte 0x02, 0x00
+-_02DF:
+-	bank_or_wallet_is_full 1, VAR_SPECIAL_RESULT
+-	compare VAR_SPECIAL_RESULT, 1
+-	goto_if_eq _043A
+-	check_bank_balance VAR_SPECIAL_RESULT, 1
+-	compare VAR_SPECIAL_RESULT, 0
+-	goto_if_eq _041C
+-	bank_transaction 1, VAR_SPECIAL_RESULT
+-	scrcmd_796
+-	touchscreen_menu_show
+-	switch VAR_SPECIAL_RESULT
+-	case 0, _03E0
+-	case 1, _0411
+-	releaseall
+-	end
+-
+-_0335:
+-	bank_or_wallet_is_full 0, VAR_SPECIAL_RESULT
+-	compare VAR_SPECIAL_RESULT, 1
+-	goto_if_eq _042B
+-	hasenoughmoneyvar VAR_SPECIAL_RESULT, 1
+-	compare VAR_SPECIAL_RESULT, 0
+-	goto_if_eq _0389
+-	bank_transaction 0, VAR_SPECIAL_RESULT
+-	scrcmd_796
+-	touchscreen_menu_show
+-	switch VAR_SPECIAL_RESULT
+-	case 0, _03FA
+-	case 1, _0411
+-	releaseall
+-	end
+-
+-_0389:
+-	touchscreen_menu_show
+-	scrcmd_796
+-	npc_msg 26
+-	wait_button
+-	closemsg
+-	releaseall
+-	end
+-
+-_0398:
+-	npc_msg 25
+-	touchscreen_menu_hide
+-	getmenuchoice VAR_SPECIAL_RESULT
+-	touchscreen_menu_show
+-	scrcmd_796
+-	compare VAR_SPECIAL_RESULT, 0
+-	goto_if_ne _03C2
+-	buffer_players_name 0
+-	npc_msg 17
+-	setflag FLAG_SYS_MOMS_SAVINGS
+-	goto _03C9
+-
+-_03C2:
+-	npc_msg 18
+-	clearflag FLAG_SYS_MOMS_SAVINGS
+-_03C9:
+-	wait_button
+-	closemsg
+-	releaseall
+-	end
+-
+-_03D1:
+-	scrcmd_796
+-	touchscreen_menu_show
+-	npc_msg 21
+-	wait_button
+-	closemsg
+-	releaseall
+-	end
+-
+-_03E0:
+-	closemsg
+-	wait 8, VAR_SPECIAL_RESULT
+-	play_se SEQ_SE_GS_OKOZUKAI
+-	buffer_players_name 0
+-	npc_msg 24
+-	wait_button
+-	closemsg
+-	releaseall
+-	end
+-
+-_03FA:
+-	closemsg
+-	wait 8, VAR_SPECIAL_RESULT
+-	play_se SEQ_SE_GS_OKOZUKAI
+-	npc_msg 23
+-	wait_button
+-	closemsg
+-	releaseall
+-	end
+-
+-_0411:
+-	npc_msg 21
+-	wait_button
+-	closemsg
+-	releaseall
+-	end
+-
+-_041C:
+-	touchscreen_menu_show
+-	scrcmd_796
+-	npc_msg 22
+-	wait_button
+-	closemsg
+-	releaseall
+-	end
+-
+-_042B:
+-	touchscreen_menu_show
+-	scrcmd_796
+-	npc_msg 27
++	goto_if_set FLAG_GOT_STARTER, _HT_MomHeal
++	npc_msg 2
+ 	wait_button
+ 	closemsg
+ 	releaseall
+ 	end
+ 
+-_043A:
+-	touchscreen_menu_show
+-	scrcmd_796
+-	npc_msg 28
++_HT_MomHeal:
++	heal_party
++	npc_msg 3
+ 	wait_button
+ 	closemsg
+ 	releaseall

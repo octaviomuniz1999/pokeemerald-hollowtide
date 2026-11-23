@@ -1,0 +1,79 @@
+--- a/data/itemdata/itemdata.c
++++ b/data/itemdata/itemdata.c
+@@ -38108,12 +38108,12 @@
+     .holdEffectParam = 0,
+     .pluckEffect = 0,
+     .flingEffect = 0,
+-    .flingPower = 30,
++    .flingPower = 0,
+     .naturalGiftPower = 0,
+     .naturalGiftType = 31,
+-    .prevent_toss = FALSE,
++    .prevent_toss = TRUE,
+     .selectable = FALSE,
+-    .fieldPocket = POCKET_ITEMS,
++    .fieldPocket = POCKET_KEY_ITEMS,
+     .battlePocket = BATTLE_POCKET_NONE,
+     .fieldUseFunc = 0,
+     .battleUseFunc = 0,
+--- a/data/text/222.txt
++++ b/data/text/222.txt
+@@ -584,7 +584,7 @@
+ Comet Shard
+ Relic Copper
+ Relic Silver
+-Relic Gold
++Atlas Medallion
+ Relic Vase
+ Relic Band
+ Relic Statue
+--- a/data/text/834.txt
++++ b/data/text/834.txt
+@@ -47,7 +47,7 @@
+ A shard that fell to the ground when a\ncomet passed nearby.\nIt can be sold at a high price to shops.
+ A copper coin used by an ancient\ncivilization about three thousand\nyears ago.
+ A silver coin used by an ancient\ncivilization about three thousand\nyears ago.
+-A gold coin used by an ancient\ncivilization about three thousand\nyears ago.
++An old family keepsake.\nA black dog with a\nwhite circle on its chest.
+ A vase made by an ancient\ncivilization about three thousand\nyears ago.
+ A bracelet made by an ancient\ncivilization about three thousand\nyears ago.
+ A stone figurine made by an ancient\ncivilization about three thousand\nyears ago.
+--- a/data/text/835.txt
++++ b/data/text/835.txt
+@@ -47,7 +47,7 @@
+ a {COLOR 255}Comet Shard{COLOR 0}
+ a {COLOR 255}Relic Copper{COLOR 0}
+ a {COLOR 255}Relic Silver{COLOR 0}
+-a {COLOR 255}Relic Gold{COLOR 0}
++an {COLOR 255}Atlas Medallion{COLOR 0}
+ a {COLOR 255}Relic Vase{COLOR 0}
+ a {COLOR 255}Relic Band{COLOR 0}
+ a {COLOR 255}Relic Statue{COLOR 0}
+--- a/data/text/836.txt
++++ b/data/text/836.txt
+@@ -47,7 +47,7 @@
+ {COLOR 255}Comet Shards{COLOR 0}
+ {COLOR 255}Relic Coppers{COLOR 0}
+ {COLOR 255}Relic Silvers{COLOR 0}
+-{COLOR 255}Relic Golds{COLOR 0}
++{COLOR 255}Atlas Medallions{COLOR 0}
+ {COLOR 255}Relic Vases{COLOR 0}
+ {COLOR 255}Relic Bands{COLOR 0}
+ {COLOR 255}Relic Statues{COLOR 0}
+--- a/data/text/837.txt
++++ b/data/text/837.txt
+@@ -47,7 +47,7 @@
+ a {COLOR 255}Comet Shard{COLOR 0}
+ a {COLOR 255}Relic Copper{COLOR 0}
+ a {COLOR 255}Relic Silver{COLOR 0}
+-a {COLOR 255}Relic Gold{COLOR 0}
++an {COLOR 255}Atlas Medallion{COLOR 0}
+ a {COLOR 255}Relic Vase{COLOR 0}
+ a {COLOR 255}Relic Band{COLOR 0}
+ a {COLOR 255}Relic Statue{COLOR 0}
+--- /dev/null
++++ b/data/scr_seq/include/hollowtide_items.inc
+@@ -0,0 +1,3 @@
++// gerado por tools/hollowtide_ds/items.py — itens de Lunia nas vagas reaproveitadas
++
++.equ ITEM_ATLAS_MEDALLION, 586  // vaga de ITEM_RELIC_GOLD

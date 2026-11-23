@@ -8,5 +8,20 @@
   "4": "{COLOR 3}SNIVY{COLOR 0}, the Grass-type Pokémon, is\\nin this Poké Ball!",
   "5": "{COLOR 1}FENNEKIN{COLOR 0}, the Fire-type Pokémon, is\\nin this Poké Ball!",
   "6": "{COLOR 2}MUDKIP{COLOR 0}, the Water-type Pokémon, is\\nin this Poké Ball!"
+ },
+ "545": {
+  "_": "casa do jogador, térreo (T20R0201): a mãe — Medalhão de Atlas e cura (GBA Palm040_*)",
+  "0": {
+   "gba": "Palm040_TextMedallion"
+  },
+  "1": {
+   "gba": "Palm040_TextMedallion2"
+  },
+  "2": {
+   "gba": "Palm040_TextMomIntro"
+  },
+  "3": {
+   "gba": "Palm040_TextMomHeal"
+  }
  }
 }
