@@ -44,3 +44,14 @@ tabela.
 `hollowtide_ds/data/map_bindings.json`: Route 1 (GBA `MAP_ROUTE101`) → `ENCDATA_R29_ROUTE_29`.
 
 Nomes de lugar (`hollowtide_ds/data/place_names.json` → texto 279): `MAPSEC_NEW_BARK_TOWN` = Dawnmere Village, `MAPSEC_ROUTE_29` = Route 1, `MAPSEC_CHERRYGROVE_CITY` = Harvestvale.
+
+## Cap. 2 (Route 2 → Breezeport) — decisão de 23/11/2026
+
+| Lunia | HGSS | Por quê |
+|---|---|---|
+| Route 2 (campo → litoral) | Route 30 + Route 31 (`MAP_R30`, `MAP_R31`) | ligadas a pé com Cherrygrove (saída norte de Harvestvale, já fechada até o Nevard); campo e mato alto |
+| Breezeport (praia, farol, morro) | Olivine City (`MAP_T26`) | o único lugar de HGSS com farol, praia e porto juntos |
+| Teatro (ginásio da Jay, Ghost) | interior do ginásio do Morty (Ecruteak, chão escuro) | placeholder de ginásio Ghost |
+
+**Exceção à regra 1:** Olivine não se liga à Route 31 no HGSS. A guarita do fim da Route 31 (que levava a Violet)
+passa a levar a Olivine — continua sendo uma porta de guarita (placeholder até a arte). Violet City fica de fora.
