@@ -677,10 +677,10 @@
 #define FLAG_HT_R15_ITEM_2                   0x26E // Route 15: Deep Sea Tooth
 #define FLAG_HT_R15_ITEM_3                   0x26F // Route 15: Shell Bell
 #define FLAG_HT_RECEIVED_SURF                0x270 // Nami entregou a HM03 Surf (fim do Complexo Oceanico)
-#define FLAG_UNUSED_0x271  0x271 // Unused Flag
-#define FLAG_UNUSED_0x272  0x272 // Unused Flag
-#define FLAG_UNUSED_0x273  0x273 // Unused Flag
-#define FLAG_UNUSED_0x274  0x274 // Unused Flag
+#define FLAG_HT_GIFT_EEVEE                   0x271 // jardineiro de Serenia deu o Eevee
+#define FLAG_HT_GIFT_ROTOM                   0x272 // Rotom do centro de dados foi com o jogador
+#define FLAG_HT_GIFT_PORYGON                 0x273 // sede da ferrovia de Ferralia deu o Porygon
+#define FLAG_HT_GIFT_FURFROU                 0x274 // salao de tosa do Tradepost deu o Furfrou
 #define FLAG_UNUSED_0x275  0x275 // Unused Flag
 #define FLAG_UNUSED_0x276  0x276 // Unused Flag
 #define FLAG_UNUSED_0x277  0x277 // Unused Flag

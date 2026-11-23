@@ -1,0 +1,51 @@
+## file: data/scripts/hollowtide_gifts.inc
+== Palm260_TextObtainedMon
+{PLAYER} received {STR_VAR_2}!
+== Palm260_TextEeveeOffer
+Since the shrine was restored, this
+EEVEE comes to the garden every day.
+
+It keeps watching travelers pass by,
+like LAU once did with JADE.
+
+I think it wants to go with you.
+Will you take care of it?
+== Palm260_TextEeveeAfter
+EEVEE can become many things.
+
+Whatever it becomes, I'm sure it will
+remember this garden.
+== Palm260_TextPorygonOffer
+Thanks to you, the cargo is moving
+again and our network is back online.
+
+While we rebuilt the timetables, this
+POKéMON showed up in our data.
+
+It's a PORYGON. It should see the real
+world. Will you take it?
+== Palm260_TextPorygonAfter
+Some say an UP-GRADE can make PORYGON
+even smarter. Data never stops
+growing, I guess!
+== Palm260_TextRotomBefore
+Bzzt… A ROTOM is trapped in the relay's
+current. It can't get out.
+== Palm260_TextRotomOffer
+The relays are off. The ROTOM is free!
+
+It spins around you and buzzes happily.
+It seems to want to come along.
+== Palm260_TextRotomAfter
+Bzzzt!
+== Palm260_TextFurfrouOffer
+With the fair open again, my salon is
+full of customers!
+
+This FURFROU was waiting for a new
+partner. It's freshly groomed, too.
+
+Would you give it a home?
+== Palm260_TextFurfrouAfter
+Bring it back anytime for a trim.
+A happy FURFROU is a stylish FURFROU!
