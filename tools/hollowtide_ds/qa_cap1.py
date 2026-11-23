@@ -76,7 +76,83 @@ def fight(d, max_turns=25):
     return False
 
 
+GYM = 395                                                # MAP_T07GYM0101 (interior do ginasio do Nevard), asm/include/maps.inc
 HARVESTVALE = 67                                         # MAP_T21 (Cherrygrove), asm/include/maps.inc
+
+
+def goto(d, rom, goal, cells, map_id, out, tag, fight_ok=True, max_steps=400):
+    """Anda ate goal pelo caminho mais curto (colisao dos blocos), lutando se uma batalha comecar.
+    Devolve (batalhas, posicao final)."""
+    battles = 0
+    w = d.where()
+    path = route_path(rom, (w[1], w[2]), goal, cells)
+    i, steps, last, still = 1, 0, None, 0
+    while steps < max_steps:
+        steps += 1
+        w = d.where()
+        if not d.top_is_field():
+            if not fight_ok:
+                break
+            d.shot(f"{out}/{tag}_batalha_{battles}.png"); battles += 1
+            fight(d); advance(d, 6); continue
+        if not w or w[0] != map_id:
+            break
+        cur = (w[1], w[2])
+        if cur == goal:
+            break
+        still = still + 1 if cur == last else 0
+        last = cur
+        if still in (8, 30):
+            d.shot(f"{out}/{tag}_parado_{cur[0]}_{cur[1]}.png"); advance(d, 6)
+        if still > 40:
+            break
+        if cur in path:
+            i = path.index(cur) + 1
+        if i >= len(path):
+            break
+        nx = path[i]
+        key = {(1, 0): "RIGHT", (-1, 0): "LEFT", (0, 1): "DOWN", (0, -1): "UP"}.get((nx[0] - cur[0], nx[1] - cur[1]))
+        if key is None:
+            path = route_path(rom, cur, goal, cells); i = 1; continue
+        d.press(key, 16, 24)
+    return battles, d.where()
+
+
+def face(d, key):
+    """Vira para um lado sem andar (toque curto)."""
+    d.press(key, 3, 20)
+
+
+HV_CELLS = [(16, 12), (17, 12)]
+
+
+def harvestvale(d, rom, out, ok):
+    """Harvestvale: chegada, porta do ginasio fechada, recruta, valvula, ginasio aberto, saida norte fechada."""
+    d.shot(f"{out}/8_chegada.png"); advance(d, 20)
+    ok["hv_chegada"] = d.where()
+    # porta do ginasio (558,401) ainda fechada: tenta entrar e deve voltar
+    goto(d, rom, (558, 403), HV_CELLS, HARVESTVALE, out, "hv")
+    d.press("UP", 16, 24); d.wait(30); d.shot(f"{out}/9_ginasio_fechado.png"); advance(d, 10)
+    ok["hv_ginasio_fechado"] = d.where()
+    # recruta no quiosque (538,403), virado para a direita: fala de (539,403)
+    goto(d, rom, (539, 403), HV_CELLS, HARVESTVALE, out, "hv")
+    face(d, "LEFT"); d.press("A", 4, 60); advance(d, 8, "A")
+    d.wait(200); d.shot(f"{out}/10_recruta.png")
+    if not d.top_is_field():
+        fight(d)
+    advance(d, 12)
+    ok["hv_recruta"] = d.where()
+    # valvula (537,396): fala de (538,396) olhando para a esquerda
+    goto(d, rom, (538, 396), HV_CELLS, HARVESTVALE, out, "hv")
+    face(d, "LEFT"); d.press("A", 4, 60); d.shot(f"{out}/11_valvula.png"); advance(d, 12)
+    # saida norte (547,385) fechada ate o Nevard
+    goto(d, rom, (547, 387), HV_CELLS, HARVESTVALE, out, "hv")
+    d.press("UP", 16, 24); d.press("UP", 16, 24); d.wait(30); d.shot(f"{out}/12_saida_norte.png"); advance(d, 10)
+    ok["hv_saida_norte"] = d.where()
+    # ginasio aberto
+    goto(d, rom, (558, 402), HV_CELLS, HARVESTVALE, out, "hv")
+    d.press("UP", 16, 24); d.wait(200); d.shot(f"{out}/13_ginasio.png")
+    ok["hv_ginasio"] = d.where()
 
 
 def cross_route1(d, rom, out, n0):
@@ -180,10 +256,14 @@ def main(rom, base, out):
     ok["tentativas"] = tries
     ok["batalhas"] = battles
     ok["harvestvale"] = d.where(); d.shot(f"{out}/7_harvestvale.png")
+    if ok["harvestvale"] and ok["harvestvale"][0] == HARVESTVALE:
+        harvestvale(d, rom, out, ok)
     for k, v in ok.items():
         print(f"{k:10} {v}")
     good = ok["barrado"] and ok["barrado"][0] == 60 and ok["route1"] and ok["route1"][0] == 33 and ok["harvestvale"] and ok["harvestvale"][0] == HARVESTVALE
-    print("RESULTADO:", "ok" if good else "FALHOU")
+    hv = good and ok.get("hv_ginasio_fechado", (0,))[0] == HARVESTVALE and ok.get("hv_saida_norte", (0,))[0] == HARVESTVALE \
+        and ok.get("hv_ginasio", (0,))[0] == GYM
+    print("RESULTADO:", "ok" if good else "FALHOU", "| Harvestvale:", "ok" if hv else "FALHOU")
 
 
 if __name__ == "__main__":
