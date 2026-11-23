@@ -14,9 +14,12 @@ Versão de referência do GBA: **23ap** (506/506 testes). O GBA fica congelado c
 | Item | Estado |
 |---|---|
 | hg-engine | clonado (`/home/user/blurosie/hg-engine`, submódulo `nitrogfx` iniciado, venv com `requirements.txt`); `make` exige `rom.nds` com código **IPKE** (HeartGold EUA) já na leitura do Makefile, inclusive para as ferramentas |
-| ROM | recebidas as partes 02–06 de um RAR em volumes; **faltam a parte 01 e as partes depois da 06** (o cabeçalho da 06 marca "não é o último volume") |
+| ROM | HeartGold EUA completa (8 volumes RAR), código **IPKE**, SHA-1 `4fcded0e2713dc03929845de631d0932ea2b5a37`; cópia limpa guardada fora do repositório (base dos patches); nada de ROM no git |
+| Build do hg-engine | **ok**: `make -j8` em ~3 min (ferramentas Rust/armips/nitrogfx incluídas) → `test.nds` (256 MB) |
+| ROM do hg-engine no emulador | **ok**: liga, passa a abertura e chega à transição do menu sem travar |
 | Emulador de QA | **DeSmuME 0.9.12 sem tela funciona** (`py-desmume`, com `SDL_VIDEODRIVER=dummy`): ler/escrever memória, entrada, captura de tela, savestates — dá para montar o harness como o `mgba_runner` |
-| Arquivos do ROM | `ndspy` instalado (abrir e regravar NARCs e o sistema de arquivos do ROM) |
+| Arquivos do ROM | `ndspy` abre a ROM e os NARCs (`a/0/6/5`: 676 arquivos, `a/0/1/2`: 965, `a/0/2/7`: 829, `a/0/3/2`: 491, `a/0/4/1`: 288 — o papel de cada um ainda será confirmado na documentação de HGSS antes de editar) |
+| Próximo | provas de edição (texto, treinador, encontro, warp/NPC) e o harness de QA de DS; decidir onde o projeto DS vive no repositório (dados e scripts nossos + hg-engine como dependência) |
 
 ## 1. O que o hg-engine resolve e o que não resolve
 
