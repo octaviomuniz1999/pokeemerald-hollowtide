@@ -76,6 +76,43 @@ def fight(d, max_turns=25):
     return False
 
 
+HARVESTVALE = 67                                         # MAP_T21 (Cherrygrove), asm/include/maps.inc
+
+
+def cross_route1(d, rom, out, n0):
+    """Atravessa a Route 1 (mapa 33) para o oeste pelo caminho mais curto; devolve (batalhas, posicao final)."""
+    battles = 0
+    start = d.where()[1:]
+    path = route_path(rom, start, (576, 399), [(18, 12), (19, 12), (20, 12)])
+    i, steps, last, still = 1, 0, None, 0
+    while i < len(path) and steps < 600:
+        steps += 1
+        w = d.where()
+        if not d.top_is_field():
+            d.shot(f"{out}/6_batalha_{n0 + battles}.png"); battles += 1
+            fight(d); advance(d, 6); continue
+        if w and w[0] != 33:
+            return battles, w
+        cur = (w[1], w[2])
+        still = still + 1 if cur == last else 0
+        last = cur
+        if still in (8, 30):                             # parado: algo na frente (mensagem, NPC) -> registra e tenta B
+            d.shot(f"{out}/6_parado_{cur[0]}_{cur[1]}.png"); advance(d, 6)
+        if still > 40:
+            break
+        if cur in path:
+            i = path.index(cur) + 1
+            if i >= len(path):
+                break
+        nx = path[i]
+        key = {(1, 0): "RIGHT", (-1, 0): "LEFT", (0, 1): "DOWN", (0, -1): "UP"}.get((nx[0] - cur[0], nx[1] - cur[1]))
+        if key is None:
+            break
+        d.press(key, 16, 24)
+    walk(d, ["LEFT"] * 4, stop_map=None); d.wait(200)
+    return battles, d.where()
+
+
 def advance(d, n=40, key="B"):
     for _ in range(n):
         d.press(key, 4, 40)
@@ -122,41 +159,30 @@ def main(rom, base, out):
     walk(d, ["LEFT", "LEFT"] + ["DOWN"] * 9, stop_map=60); d.wait(200)
     walk(d, ["DOWN"] * 4 + ["LEFT"] * 30, stop_map=33); d.wait(200)   # linha y=398 (a vizinha fica em 683,399)
     ok["route1"] = d.where(); d.shot(f"{out}/5_route1.png")
-    # Route 1 a pe ate Harvestvale, lutando o que aparecer (Kai e Min veem o jogador; mato alto tem selvagens)
-    battles = 0
-    if ok["route1"] and ok["route1"][0] == 33:
-        path = route_path(rom, ok["route1"][1:], (576, 399), [(18, 12), (19, 12), (20, 12)])
-        i, steps, last, still = 1, 0, None, 0
-        while i < len(path) and steps < 600:
-            steps += 1
-            w = d.where()
-            if not d.top_is_field():
-                d.shot(f"{out}/6_batalha_{battles}.png"); battles += 1
-                fight(d); advance(d, 6); continue
-            if w and w[0] != 33:
-                break
-            cur = (w[1], w[2])
-            still = still + 1 if cur == last else 0
-            last = cur
-            if still in (8, 30):                         # parado: algo na frente (mensagem, NPC) -> registra e tenta B
-                d.shot(f"{out}/6_parado_{cur[0]}_{cur[1]}.png"); advance(d, 6)
-            if still > 40:
-                break
-            if cur in path:
-                i = path.index(cur) + 1
-                if i >= len(path):
-                    break
-            nx = path[i]
-            key = {(1, 0): "RIGHT", (-1, 0): "LEFT", (0, 1): "DOWN", (0, -1): "UP"}.get((nx[0] - cur[0], nx[1] - cur[1]))
-            if key is None:
-                break
-            d.press(key, 16, 24)
-        walk(d, ["LEFT"] * 4, stop_map=None); d.wait(200)
+    # Route 1 a pe ate Harvestvale, lutando o que aparecer (Kai e Min veem o jogador; mato alto tem selvagens).
+    # Se perder, o jogo leva para casa (a mae cura): sai de novo e tenta outra vez, como um jogador faria.
+    battles, tries = 0, 0
+    while tries < 4:
+        tries += 1
+        w = d.where()
+        if w and w[0] == 63:                              # derrota: de volta ao terreo de casa
+            advance(d, 15)
+            x, y = d.where()[1:]
+            walk(d, ["LEFT"] * max(0, x - 3) + ["DOWN"] * 6, stop_map=60); d.wait(200)
+            walk(d, ["DOWN"] + ["LEFT"] * 30, stop_map=33); d.wait(200)
+        w = d.where()
+        if not w or w[0] != 33:
+            break
+        b, w = cross_route1(d, rom, out, battles)
+        battles += b
+        if w and w[0] == HARVESTVALE:
+            break
+    ok["tentativas"] = tries
     ok["batalhas"] = battles
     ok["harvestvale"] = d.where(); d.shot(f"{out}/7_harvestvale.png")
     for k, v in ok.items():
         print(f"{k:10} {v}")
-    good = ok["barrado"] and ok["barrado"][0] == 60 and ok["route1"] and ok["route1"][0] == 33 and ok["harvestvale"] and ok["harvestvale"][0] != 33
+    good = ok["barrado"] and ok["barrado"][0] == 60 and ok["route1"] and ok["route1"][0] == 33 and ok["harvestvale"] and ok["harvestvale"][0] == HARVESTVALE
     print("RESULTADO:", "ok" if good else "FALHOU")
 
 
