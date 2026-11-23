@@ -1,0 +1,27 @@
+diff --git a/include/config.h b/include/config.h
+index 4a937b2c..6eaf437b 100644
+--- a/include/config.h
++++ b/include/config.h
+@@ -276,7 +276,7 @@
+ // Dumped scripts are not built into the rom unless the matching define below is uncommented, so that a rom.nds edited with
+ // DSPRE, PokeText, or any other external tool keeps its own version of everything hg-engine does not itself change.
+ // hg-engine's own text archives and its common and trainer scripts are always built.
+-// #define BUILD_DUMPED_EVENTDATA
+-// #define BUILD_DUMPED_SCR_SEQ
++#define BUILD_DUMPED_EVENTDATA
++#define BUILD_DUMPED_SCR_SEQ
+ 
+ #endif
+diff --git a/tools/source/dumptools/dump_event_scripts.py b/tools/source/dumptools/dump_event_scripts.py
+index 98e4cdd9..1b124f56 100644
+--- a/tools/source/dumptools/dump_event_scripts.py
++++ b/tools/source/dumptools/dump_event_scripts.py
+@@ -1095,7 +1095,7 @@ def dump_text(msg_members, repo_root, msgenc, charmap, include_generated, includ
+ 
+         out_file = os.path.join(repo_root, "data", "text", "custom", f"{i:03d}.txt") if keep else f"{member_file}.txt"
+ 
+-        proc = subprocess.run([msgenc, "-d", "-c", charmap, member_file, out_file],
++        proc = subprocess.run([msgenc, "-d", "-c", charmap, out_file, member_file],
+                               check = True, capture_output = True, text = True)
+ 
+         if m := re.search(r"^Key:\s*([0-9a-fA-F]+)$", proc.stdout, re.M):

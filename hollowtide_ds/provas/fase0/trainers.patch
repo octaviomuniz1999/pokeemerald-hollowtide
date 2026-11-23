@@ -1,0 +1,23 @@
+diff --git a/data/Trainers.c b/data/Trainers.c
+index 73b4afe6..ceb36369 100644
+--- a/data/Trainers.c
++++ b/data/Trainers.c
+@@ -318,15 +318,15 @@ const TrainerData sTrainerData[] = {
+             {
+                 .ivs = 0,
+                 .abilitySlot = TRAINER_POKEMON_ABILITY_1,
+-                .level = 4,
+-                .species = SPECIES_RATTATA,
++                .level = 5,
++                .species = SPECIES_FENNEKIN,
+                 .ballSeal = 0,
+             },
+         },
+         .text = {
+             {
+                 .type = TRMSG_INTRO,
+-                .text = "I just lost, so I’m trying to find\\nmore Pokémon.\\rWait! You look weak! Come on,\\nlet’s battle!\\r",
++                .text = "Hollowtide: trainer edit OK!\\r",
+             },
+             {
+                 .type = TRMSG_LOSE,

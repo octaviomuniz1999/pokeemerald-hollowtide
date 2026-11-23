@@ -9,17 +9,28 @@ Versão de referência do GBA: **23ap** (506/506 testes). O GBA fica congelado c
 - Arte (modelos, sprites originais, Town Map): **depois do fim da produção**; até lá, placeholders oficiais.
 - GBA: **congelado** na 23ap; não se mexe nele por enquanto.
 
-## Estado da Fase 0
+## Estado da Fase 0 (23/11/2026)
 
 | Item | Estado |
 |---|---|
-| hg-engine | clonado (`/home/user/blurosie/hg-engine`, submódulo `nitrogfx` iniciado, venv com `requirements.txt`); `make` exige `rom.nds` com código **IPKE** (HeartGold EUA) já na leitura do Makefile, inclusive para as ferramentas |
-| ROM | HeartGold EUA completa (8 volumes RAR), código **IPKE**, SHA-1 `4fcded0e2713dc03929845de631d0932ea2b5a37`; cópia limpa guardada fora do repositório (base dos patches); nada de ROM no git |
-| Build do hg-engine | **ok**: `make -j8` em ~3 min (ferramentas Rust/armips/nitrogfx incluídas) → `test.nds` (256 MB) |
-| ROM do hg-engine no emulador | **ok**: liga, passa a abertura e chega à transição do menu sem travar |
-| Emulador de QA | **DeSmuME 0.9.12 sem tela funciona** (`py-desmume`, com `SDL_VIDEODRIVER=dummy`): ler/escrever memória, entrada, captura de tela, savestates — dá para montar o harness como o `mgba_runner` |
-| Arquivos do ROM | `ndspy` abre a ROM e os NARCs (`a/0/6/5`: 676 arquivos, `a/0/1/2`: 965, `a/0/2/7`: 829, `a/0/3/2`: 491, `a/0/4/1`: 288 — o papel de cada um ainda será confirmado na documentação de HGSS antes de editar) |
-| Próximo | provas de edição (texto, treinador, encontro, warp/NPC) e o harness de QA de DS; decidir onde o projeto DS vive no repositório (dados e scripts nossos + hg-engine como dependência) |
+| hg-engine | commit fixo `b578c990` (`hollowtide_ds/hg-engine.commit`); `make` exige `rom.nds` com código **IPKE** (HeartGold EUA) já na leitura do Makefile |
+| ROM | HeartGold EUA, **IPKE**, SHA-1 `4fcded0e2713dc03929845de631d0932ea2b5a37`; fora do repositório |
+| Build | **ok**: `tools/hollowtide_ds/build.sh` refaz tudo do zero em ~1–3 min e reproduz byte a byte a ROM conferida à mão (0 de 537 arquivos diferentes) |
+| Emulador de QA | **ok**: DeSmuME sem tela (`py-desmume`); `ds_intro.py` leva um jogo novo ao quarto em ~1m45; leitura de mapa/posição, entrada, toque, capturas, estados |
+| Scripts, eventos e textos como código-fonte | **ok** — o hg-engine tem `make dump_scripts`: os 963 scripts (a/0/1/2) viram `.s`, os 491 arquivos de eventos (a/0/3/2) viram JSON e recompilam **idênticos** ao ROM (só mudam os que editamos e o script comum do próprio hg-engine). Os textos (a/0/2/7) saem pelo `msg_dump.py` (829/829 idênticos; o despejo de texto do hg-engine perde quebras de linha) |
+| Prova: texto | **ok** — mensagem do Wii do quarto trocada, vista na tela |
+| Prova: script | **ok** — o mesmo objeto passa a dar um Mudkip Lv10 e abrir batalha |
+| Prova: treinador | **ok** — Youngster Joey com Fennekin Lv5 (espécie da Gen 6, com sprite) na batalha; a fala de entrada só aparece pela visão do treinador (não testada) |
+| Prova: warp | **ok** duas vezes — via `ndspy` direto na ROM e via JSON no build: a escada do quarto leva ao mapa 66 |
+| Pendente | tabela de encontro (`data/Encounters.c`) e troca de bloco da matriz de mapas — próxima rodada |
+| Lição | estado salvo só vale na ROM em que foi feito: o mapa carregado fica na RAM; toda prova de edição parte de um boot limpo |
+
+**Recomendação: caminho A confirmado.** O que o plano dava como "não coberto" (scripts de evento, NPCs, warps, textos de
+mapa) está coberto: tudo vira código-fonte editável, recompilável e testável aqui, como no decomp do GBA. O único
+pedaço sem ferramenta continua sendo a geometria 3D (blocos e matriz), que o caminho A reaproveita do HeartGold.
+
+Layout no repositório: `hollowtide_ds/` (patches de conteúdo + ajustes do hg-engine; nada da Nintendo no git) e
+`tools/hollowtide_ds/` (build, extração de textos, QA). Ver `hollowtide_ds/README.md`.
 
 ## 1. O que o hg-engine resolve e o que não resolve
 
@@ -30,9 +41,9 @@ Fonte: README e wiki do `BluRosie/hg-engine` (lidos em 23/11/2026).
 | Base | HeartGold **inglês**, `rom.nds` na raiz; `make` gera `test.nds` | build em Linux (gcc-arm-none-eabi, cmake, python, rust), WSL, macOS ou Docker — roda neste container |
 | Batalha | mecânicas modernas, tipo Fada, habilidades ocultas, **Mega e Primal**, climas novos, itens e golpes de gerações novas | tudo o que o cânone usa (Mega Charizard X, Mega Latios, Mega Garchomp, Primal Kyogre) está na lista |
 | Espécies | dados de todas até Gen 9 (Teal Mask); **sprites ainda incompletos** | conferir uma a uma as ~150 espécies da Pokédex de Lunia (Fennekin, Snivy, Zorua de Hisui, Dhelmise, Meowscarada, Urshifu…) |
-| Dados | texto `armips` editável: `mondata.s`, `levelupdata.s`, `evodata.s`, `encounters.s`, `trainers.s`, `trainertext.s`, sprites em `data/graphics/sprites` | dá para gerar por script a partir dos dados do GBA (times, encontros, presentes) |
-| **Mapas** | **não cobre** | mapas DS são blocos 32×32 com modelo 3D (NSBMD), colisão/permissões e uma matriz de blocos por área |
-| **Scripts de evento e textos de mapa** | **não cobre** (só o texto de treinador) | eventos, NPCs, warps e diálogos ficam nos arquivos do jogo (NARCs) |
+| Dados | C e JSON editáveis em `data/`: `Species.c`, `learnsets/learnsets.json`, `Evolutions.c`, `Encounters.c`, `Trainers.c` (time e falas juntos), sprites em `data/graphics/sprites` | dá para gerar por script a partir dos dados do GBA (times, encontros, presentes) |
+| **Mapas** | **não cobre** a geometria | mapas DS são blocos 32×32 com modelo 3D (NSBMD), colisão/permissões e uma matriz de blocos por área |
+| **Scripts de evento e textos de mapa** | **cobre** (descoberto na Fase 0) | `make dump_scripts` + `BUILD_DUMPED_SCR_SEQ`/`BUILD_DUMPED_EVENTDATA`: scripts em `.s`, eventos (NPCs, warps, gatilhos, placas) em JSON, textos em `.txt` |
 | Licença | uso livre **sem dinheiro envolvido**; nada atrás de paywall; copiar os créditos (`CREDITS.md`) | distribuição por patch xdelta, como hoje |
 
 ## 2. A decisão que define o projeto: como fazer os mapas
@@ -59,8 +70,8 @@ rodam neste container. Há três caminhos:
   um NPC num mapa existente via `ndspy`; trocar um bloco da matriz.
 - Relatório: o que funcionou, o que não, e a recomendação final A/B/C.
 
-**Fase 1 — Dados de Lunia.** Conversores do GBA para o hg-engine: times (`trainers.party` → `trainers.s`, com os
-golpes definidos), encontros por mapa (`wild_encounters.json` → `encounters.s`), presentes e trocas, itens; checagem
+**Fase 1 — Dados de Lunia.** Conversores do GBA para o hg-engine: times (`trainers.party` → `data/Trainers.c`, com os
+golpes definidos), encontros por mapa (`wild_encounters.json` → `data/Encounters.c`), presentes e trocas, itens; checagem
 de sprites das espécies da Pokédex (lista do que falta); configuração de Mega/Primal, Fada, Exp. Share e curva de
 níveis (o que o GBA já balanceou: Route 1 até Lv 9, Breezeport 14–18, área 80+ do cume).
 
