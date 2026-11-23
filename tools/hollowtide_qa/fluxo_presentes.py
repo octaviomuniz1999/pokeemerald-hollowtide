@@ -36,6 +36,8 @@ def main(rom, runner, work):
     ok(receive(q, "UP", 0x271), "Serenia: jardineiro entrega o EEVEE depois do arco de Lau")
     # Porygon: sede da ferrovia de Ferralia
     q.load(f"{work}/cap3_pos_vessel.ss"); q.no_wild(); q.run(["mash B 10"])
+    if q.mapname() == "MAP_MAUVILLE_CITY_GYM":              # o estado e salvo ainda dentro do ginasio do Vessel
+        q.goto("MAP_MAUVILLE_CITY_GYM", 5, 19); q.run(["press DOWN 30 0", "wait 120"])
     q.goto("MAP_PALM_FERRALIA", 28, 13); q.run(["press UP 30 0", "wait 120"])
     ok(q.mapname() == "MAP_PALM_STATION_FERRALIA", "Ferralia -> sede da ferrovia")
     q.goto("MAP_PALM_STATION_FERRALIA", 14, 2)
