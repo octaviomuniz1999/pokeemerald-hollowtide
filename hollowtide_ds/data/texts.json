@@ -82,5 +82,38 @@
   "7": {
    "gba": "Palm040_TextNeedStarter"
   }
+ },
+ "373": {
+  "_": "Route 1 (Route 29 do HGSS; script em overlay/data/scr_seq/scr_seq_0225_R29.s)",
+  "0": {
+   "gba": "Palm050_TextWalker",
+   "replace": [
+    [
+     "Follow the trail and cross the\\nbridge to reach Harvestvale.",
+     "Follow the trail west to\\nreach Harvestvale."
+    ]
+   ],
+   "_por_que": "a Route 29 não tem ponte; Harvestvale fica a oeste (caminho A)"
+  },
+  "1": {
+   "gba": "Palm050_TextSouthSign",
+   "replace": [
+    [
+     "South: Harvestvale",
+     "West: Harvestvale"
+    ]
+   ],
+   "_por_que": "placa da ponta oeste; Harvestvale fica a oeste no DS"
+  },
+  "2": {
+   "gba": "Palm050_TextNorthSign",
+   "replace": [
+    [
+     "West: Dawnmere",
+     "East: Dawnmere"
+    ]
+   ],
+   "_por_que": "placa da ponta leste; Dawnmere fica a leste no DS"
+  }
  }
 }

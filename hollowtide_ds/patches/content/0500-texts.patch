@@ -17,6 +17,18 @@
 +{COLOR 2}MUDKIP{COLOR 0}, the Water-type Pokémon, is\nin this Poké Ball!
  Once you’ve decided, touch a Poké Ball!
  Touch the Poké Ball button to select.\nTouch elsewhere to change your selection.
+--- a/data/text/custom/373.txt
++++ b/data/text/custom/373.txt
+@@ -1,6 +1,6 @@
+-Lyra: {STRVAR_1 3, 0, 0}!\nYou can catch wild Pokémon\fwith Poké Balls.\rFollow me!\r
+-Ethan: {STRVAR_1 3, 0, 0}!\nYou can catch wild Pokémon\fwith Poké Balls.\rFollow me!\r
+-...Just like that!\r...\nHuh? Was I too fast?\rI’ll try again. Come this way!\r
++Pokémon live in the tall grass.\fFollow the trail west to\nreach Harvestvale.
++Route 1\nWest: Harvestvale
++Route 1\nEast: Dawnmere
+ See? Just like that!\rIt’s better to lower your\ntarget’s HP more than I did,\for make it sleep or something.\rYou can try all kinds of things\nto see what works.\rI’ll give you these. Good luck!\r
+ See? Just like that!\rIt’s better to lower your\ntarget’s HP more than I did,\for make it sleep or something.\rYou can try all kinds of things\nto see what works.\rI’ll give you these. Good luck!\r
+                       
 --- a/data/text/custom/542.txt
 +++ b/data/text/custom/542.txt
 @@ -1,11 +1,11 @@
