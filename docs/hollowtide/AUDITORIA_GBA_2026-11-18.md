@@ -444,4 +444,4 @@ warps, não as batalhas nem os eventos.
 | Aplicado (`install_dex_gaps.py`) | **Route 4** (mato): Growlithe, Drilbur, Roggenrola entram junto de Meowth/Timburr (mesmos níveis). **Route 5** (reservatório, surf/pesca): Marill, Wooper, Lotad, Barboach/Whiscash. **Pillarton** (represa, surf/pesca): Chinchou/Lanturn. **Tidemouth** (porto, surf/pesca): Horsea/Seadra, Clauncher, Wailmer, Dhelmise raro. A pesca usa as varas do jogo e o surf vem da Nami |
 | Fica de fora (sem mato alto no mapa) | Onix (Pillarton), Lunatone/Solrock (Horizon), Smeargle e Chansey (Passway) — no cânone estão como avistamentos/raros desses lugares; dependem de mudar o mapa (mato) ou virar presente/NPC: decisão de design para depois |
 | Presentes do cânone ainda não verificados | Eevee (Serenia, após o arco de Lau), Porygon (pós-ginásio de Ferrália), Furfrou (Tradepost), trocas do Tradepost — conferir numa próxima rodada |
-| QA | r71 em andamento |
+| QA | **r71: 494 conferências, 0 falhas** — **build 23an** |

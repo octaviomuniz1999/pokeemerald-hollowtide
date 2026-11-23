@@ -104,7 +104,7 @@ def main():
     s = open(es).read()
     inc = '\t.include "data/scripts/hollowtide_gifts.inc"\n'
     if inc not in s:
-        anchor = '\t.include "data/scripts/trainer_tower.inc"\n'
+        anchor = '\t.include "data/scripts/shared_secret_base.inc"\n'   # fora do bloco .if IS_FRLG
         assert anchor in s
         s = s.replace(anchor, anchor + inc)
         open(es, "w").write(s)

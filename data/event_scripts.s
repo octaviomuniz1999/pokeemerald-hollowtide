@@ -477,6 +477,7 @@ gStdScripts_End::
 	.include "data/maps/AlteringCave/scripts.inc"
 	.include "data/maps/MeteorFalls_StevensCave/scripts.inc"
 	.include "data/scripts/shared_secret_base.inc"
+	.include "data/scripts/hollowtide_gifts.inc"
 	.include "data/maps/BattleColosseum_2P/scripts.inc"
 	.include "data/maps/TradeCenter/scripts.inc"
 	.include "data/maps/RecordCorner/scripts.inc"
@@ -1023,7 +1024,6 @@ gStdScripts_End::
 	.include "data/maps/SevenIsland_SevaultCanyon_House_Frlg/scripts.inc"
 
 	.include "data/scripts/trainer_tower.inc"
-	.include "data/scripts/hollowtide_gifts.inc"
 	.include "data/scripts/fame_checker_frlg.inc"
 	.include "data/text/fame_checker_frlg.inc"
 	.include "data/scripts/item_ball_scripts_frlg.inc"

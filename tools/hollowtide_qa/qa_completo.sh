@@ -34,3 +34,4 @@ python3 -I "$ROOT/tools/hollowtide_qa/fluxo_trem.py" "$ROOT/pokeemerald.gba" "$R
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_pavilhao.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/c7chelsia.ss" | grep -E "^ *(OK|FALHA)|RESUMO|Traceback|Error|FLUXO"
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_hotel.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/c10nami.ss" | grep -E "^ *(OK|FALHA)|RESUMO|Traceback|Error|FLUXO"
 python3 -I "$ROOT/tools/hollowtide_qa/fluxo_caverna.py" "$ROOT/pokeemerald.gba" "$R" "$W" "$W/c12fim.ss" | grep -E "^ *(OK|FALHA)|RESUMO|Traceback|Error|FLUXO"
+python3 -I "$ROOT/tools/hollowtide_qa/fluxo_presentes.py" "$ROOT/pokeemerald.gba" "$R" "$W" | grep -E "^ *(OK|FALHA)|RESUMO|Traceback|Error|FLUXO"
