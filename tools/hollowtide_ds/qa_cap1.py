@@ -29,7 +29,7 @@ def starter_screen(d):
     return im.getpixel((5, 5))[:3] == (64, 64, 72) and im.getpixel((128, 250))[:3] == (88, 88, 96)
 
 
-def route_path(rom_path, start, goal, cells, avoid=()):
+def route_path(rom_path, start, goal, cells, avoid=(), matrix=0):
     """Caminho mais curto a pe entre dois tiles pela colisao dos blocos (matriz 0, celulas dadas)."""
     import collections
     import ndspy.narc, ndspy.rom
@@ -37,7 +37,7 @@ def route_path(rom_path, start, goal, cells, avoid=()):
     from hgss_seams import perms
     rom = ndspy.rom.NintendoDSRom.fromFile(rom_path)
     lds = ndspy.narc.NARC(rom.getFileByName("a/0/6/5")).files
-    mt = Matrix(ndspy.narc.NARC(rom.getFileByName("a/0/4/1")).files[0])
+    mt = Matrix(ndspy.narc.NARC(rom.getFileByName("a/0/4/1")).files[matrix])
     free = set()
     for bx, by in cells:
         pm = perms(lds[mt.land[by * mt.w + bx]])
@@ -83,12 +83,12 @@ GYM = 395                                                # MAP_T07GYM0101 (inter
 HARVESTVALE = 67                                         # MAP_T21 (Cherrygrove), asm/include/maps.inc
 
 
-def goto(d, rom, goal, cells, map_id, out, tag, fight_ok=True, max_steps=400, avoid=()):
+def goto(d, rom, goal, cells, map_id, out, tag, fight_ok=True, max_steps=400, avoid=(), matrix=0):
     """Anda ate goal pelo caminho mais curto (colisao dos blocos), lutando se uma batalha comecar.
     Devolve (batalhas, posicao final)."""
     battles = 0
     w = d.where()
-    path = route_path(rom, (w[1], w[2]), goal, cells, avoid)
+    path = route_path(rom, (w[1], w[2]), goal, cells, avoid, matrix)
     i, steps, last, still = 1, 0, None, 0
     while steps < max_steps:
         steps += 1
@@ -116,7 +116,7 @@ def goto(d, rom, goal, cells, map_id, out, tag, fight_ok=True, max_steps=400, av
         nx = path[i]
         key = {(1, 0): "RIGHT", (-1, 0): "LEFT", (0, 1): "DOWN", (0, -1): "UP"}.get((nx[0] - cur[0], nx[1] - cur[1]))
         if key is None:
-            path = route_path(rom, cur, goal, cells, avoid); i = 1; continue
+            path = route_path(rom, cur, goal, cells, avoid, matrix); i = 1; continue
         d.press(key, 16, 24)
     return battles, d.where()
 
@@ -157,6 +157,41 @@ def harvestvale(d, rom, out, ok):
     goto(d, rom, (558, 402), HV_CELLS, HARVESTVALE, out, "hv", avoid=HV_NPCS)
     d.press("UP", 16, 24); d.wait(200); d.shot(f"{out}/13_ginasio.png")
     ok["hv_ginasio"] = d.where()
+
+
+GYM_MATRIX, GYM_CELLS = 258, [(0, 0), (0, 1)]           # interior do ginasio: matriz propria, 2 blocos
+GYM_NPCS = {(13, 34), (7, 17), (10, 17)}                  # Josh, Tommy, Marc
+ROUTE2 = 34                                               # MAP_R30 (Route 2 de Lunia, ainda sem conteudo), asm/include/maps.inc
+
+
+def nevard_gym(d, rom, out, ok):
+    """Dentro do ginasio: ate o Nevard (os treinadores com visao chamam no caminho), batalha, insignia e TM;
+    depois sai e confere a saida norte de Harvestvale liberada."""
+    b, w = goto(d, rom, (7, 4), GYM_CELLS, GYM, out, "gym", avoid=GYM_NPCS, matrix=GYM_MATRIX, max_steps=600)
+    ok["gym_batalhas_caminho"] = b
+    ok["gym_diante_nevard"] = d.where()
+    face(d, "UP"); d.press("A", 4, 60)
+    for _ in range(12):
+        d.press("A", 4, 45)
+        if not d.top_is_field():
+            break
+    d.wait(200); d.shot(f"{out}/14_nevard.png")
+    if not d.top_is_field():
+        fight(d, 40)
+    for i in range(16):
+        d.press("B", 4, 45)
+        if i in (3, 8, 13):
+            d.shot(f"{out}/15_insignia_{i:02d}.png")
+    advance(d, 20)
+    ok["gym_depois"] = d.where()
+    # sai do ginasio e tenta a saida norte
+    goto(d, rom, (7, 46), GYM_CELLS, GYM, out, "gym", avoid=GYM_NPCS, matrix=GYM_MATRIX, max_steps=600)
+    d.press("DOWN", 16, 24); d.wait(200)
+    goto(d, rom, (547, 386), HV_CELLS, HARVESTVALE, out, "hv2", avoid=HV_NPCS)
+    for _ in range(4):
+        d.press("UP", 16, 24)
+    d.wait(200); d.shot(f"{out}/16_route2.png")
+    ok["route2"] = d.where()
 
 
 def cross_route1(d, rom, out, n0):
@@ -262,12 +297,16 @@ def main(rom, base, out):
     ok["harvestvale"] = d.where(); d.shot(f"{out}/7_harvestvale.png")
     if ok["harvestvale"] and ok["harvestvale"][0] == HARVESTVALE:
         harvestvale(d, rom, out, ok)
+        if ok.get("hv_ginasio", (0,))[0] == GYM:
+            nevard_gym(d, rom, out, ok)
     for k, v in ok.items():
         print(f"{k:10} {v}")
     good = ok["barrado"] and ok["barrado"][0] == 60 and ok["route1"] and ok["route1"][0] == 33 and ok["harvestvale"] and ok["harvestvale"][0] == HARVESTVALE
     hv = good and ok.get("hv_ginasio_fechado", (0,))[0] == HARVESTVALE and ok.get("hv_saida_norte", (0,))[0] == HARVESTVALE \
         and ok.get("hv_ginasio", (0,))[0] == GYM
-    print("RESULTADO:", "ok" if good else "FALHOU", "| Harvestvale:", "ok" if hv else "FALHOU")
+    gym = ok.get("route2", (0,))[0] == ROUTE2
+    print("RESULTADO:", "ok" if good else "FALHOU", "| Harvestvale:", "ok" if hv else "FALHOU",
+          "| Nevard e saida norte:", "ok" if gym else "FALHOU")
 
 
 if __name__ == "__main__":
