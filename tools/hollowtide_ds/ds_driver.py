@@ -70,9 +70,10 @@ class DS:
         self.emu.screenshot().save(path)
 
     def top_is_field(self):
-        """Tela de baixo do campo (o verde do Pokegear em (60,300) e (100,350)); na batalha ela e a interface de luta."""
+        """Tela de baixo do campo: a margem esquerda do painel do menu e verde (8,260) e (8,360); na batalha ela e a
+        interface de luta. (Os pontos do meio somem quando o menu ganha os icones de Pokemon e Pokedex.)"""
         im = self.emu.screenshot()
-        return all(im.getpixel(p)[:3] == (24, 200, 112) for p in [(60, 300), (100, 350)])
+        return all(im.getpixel(p)[:3] == (24, 200, 112) for p in [(8, 260), (8, 360)])
 
     def save(self, path):
         """Salva o estado e, ao lado, os ponteiros capturados (a RAM volta igual ao carregar)."""
