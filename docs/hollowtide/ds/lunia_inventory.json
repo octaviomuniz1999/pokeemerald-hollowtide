@@ -144,46 +144,9 @@
   "MAP_VERDANTURF_TOWN_HOUSE",
   "MAP_VERDANTURF_TOWN_MART",
   "MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F",
-  "MAP_VERDANTURF_TOWN_POKEMON_CENTER_2F",
-  "MAP_VICTORY_ROAD_1F",
-  "MAP_VICTORY_ROAD_B1F",
-  "MAP_VICTORY_ROAD_B2F"
+  "MAP_VERDANTURF_TOWN_POKEMON_CENTER_2F"
  ],
  "trainers": {
-  "TRAINER_ALBERT": {
-   "slot": "TRAINER_ALBERT",
-   "maps": [
-    "MAP_VICTORY_ROAD_1F"
-   ],
-   "fields": {
-    "Name": "ALBERT",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer M",
-    "Gender": "Male",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Magneton",
-     "head": "Magneton",
-     "lines": [
-      "Level: 43",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Muk",
-     "head": "Muk",
-     "lines": [
-      "Level: 43",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    }
-   ]
-  },
   "TRAINER_ANDREA": {
    "slot": "TRAINER_ANDREA",
    "maps": [
@@ -457,40 +420,6 @@
     }
    ]
   },
-  "TRAINER_CAROLINE": {
-   "slot": "TRAINER_CAROLINE",
-   "maps": [
-    "MAP_VICTORY_ROAD_B2F"
-   ],
-   "fields": {
-    "Name": "CAROLINE",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer F",
-    "Gender": "Female",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Skarmory",
-     "head": "Skarmory",
-     "lines": [
-      "Level: 43",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Sableye",
-     "head": "Sableye",
-     "lines": [
-      "Level: 43",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    }
-   ]
-  },
   "TRAINER_CONNIE": {
    "slot": "TRAINER_CONNIE",
    "maps": [
@@ -631,43 +560,6 @@
     }
    ]
   },
-  "TRAINER_DIANNE": {
-   "slot": "TRAINER_DIANNE",
-   "maps": [
-    "MAP_VICTORY_ROAD_B2F"
-   ],
-   "fields": {
-    "Name": "DIANNE",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer F",
-    "Gender": "Female",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No"
-   },
-   "party": [
-    {
-     "species": "Claydol",
-     "head": "Claydol",
-     "lines": [
-      "Level: 43",
-      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe",
-      "- Skill Swap",
-      "- Earthquake"
-     ]
-    },
-    {
-     "species": "Lanturn",
-     "head": "Lanturn",
-     "lines": [
-      "Level: 43",
-      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe",
-      "- Thunderbolt",
-      "- Earthquake"
-     ]
-    }
-   ]
-  },
   "TRAINER_DRAKE": {
    "slot": "TRAINER_DRAKE",
    "maps": [
@@ -750,40 +642,6 @@
     }
    ]
   },
-  "TRAINER_EDGAR": {
-   "slot": "TRAINER_EDGAR",
-   "maps": [
-    "MAP_VICTORY_ROAD_1F"
-   ],
-   "fields": {
-    "Name": "EDGAR",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer M",
-    "Gender": "Male",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Cacturne",
-     "head": "Cacturne",
-     "lines": [
-      "Level: 43",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Pelipper",
-     "head": "Pelipper",
-     "lines": [
-      "Level: 43",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    }
-   ]
-  },
   "TRAINER_EDWARDO": {
    "slot": "TRAINER_EDWARDO",
    "maps": [
@@ -805,59 +663,6 @@
      "lines": [
       "Level: 27",
       "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    }
-   ]
-  },
-  "TRAINER_FELIX": {
-   "slot": "TRAINER_FELIX",
-   "maps": [
-    "MAP_VICTORY_ROAD_B2F"
-   ],
-   "fields": {
-    "Name": "FELIX",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer F",
-    "Gender": "Female",
-    "Music": "Cool",
-    "Double Battle": "No",
-    "AI": "Check Bad Move"
-   },
-   "party": [
-    {
-     "species": "Altaria",
-     "head": "Altaria",
-     "lines": [
-      "Level: 53",
-      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
-      "- Dragon Pulse",
-      "- Moonblast",
-      "- Flamethrower",
-      "- Cotton Guard"
-     ]
-    },
-    {
-     "species": "Gardevoir",
-     "head": "Gardevoir",
-     "lines": [
-      "Level: 54",
-      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
-      "- Psychic",
-      "- Moonblast",
-      "- Shadow Ball",
-      "- Calm Mind"
-     ]
-    },
-    {
-     "species": "Milotic",
-     "head": "Milotic",
-     "lines": [
-      "Level: 54",
-      "IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe",
-      "- Hydro Pump",
-      "- Ice Beam",
-      "- Dragon Pulse",
-      "- Recover"
      ]
     }
    ]
@@ -971,66 +776,6 @@
       "- Icicle Crash",
       "- Ice Shard",
       "- Stone Edge"
-     ]
-    }
-   ]
-  },
-  "TRAINER_HALLE": {
-   "slot": "TRAINER_HALLE",
-   "maps": [
-    "MAP_VICTORY_ROAD_B1F"
-   ],
-   "fields": {
-    "Name": "HALLE",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer F",
-    "Gender": "Female",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Sableye",
-     "head": "Sableye",
-     "lines": [
-      "Level: 43",
-      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
-     ]
-    },
-    {
-     "species": "Absol",
-     "head": "Absol",
-     "lines": [
-      "Level: 43",
-      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe"
-     ]
-    }
-   ]
-  },
-  "TRAINER_HOPE": {
-   "slot": "TRAINER_HOPE",
-   "maps": [
-    "MAP_VICTORY_ROAD_1F"
-   ],
-   "fields": {
-    "Name": "HOPE",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer F",
-    "Gender": "Female",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Roselia",
-     "head": "Roselia",
-     "lines": [
-      "Level: 45",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
      ]
     }
    ]
@@ -1176,90 +921,6 @@
       "- Draining Kiss",
       "- Quick Attack",
       "- Calm Mind"
-     ]
-    }
-   ]
-  },
-  "TRAINER_JULIE": {
-   "slot": "TRAINER_JULIE",
-   "maps": [
-    "MAP_VICTORY_ROAD_B2F"
-   ],
-   "fields": {
-    "Name": "JULIE",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer F",
-    "Gender": "Female",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Sandslash",
-     "head": "Sandslash",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Ninetales",
-     "head": "Ninetales",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Tropius",
-     "head": "Tropius",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    }
-   ]
-  },
-  "TRAINER_KATELYNN": {
-   "slot": "TRAINER_KATELYNN",
-   "maps": [
-    "MAP_VICTORY_ROAD_1F"
-   ],
-   "fields": {
-    "Name": "KATELYNN",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer F",
-    "Gender": "Female",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Gardevoir",
-     "head": "Gardevoir",
-     "lines": [
-      "Level: 43",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
-      "- Skill Swap",
-      "- Psychic",
-      "- Thunderbolt",
-      "- Calm Mind"
-     ]
-    },
-    {
-     "species": "Slaking",
-     "head": "Slaking",
-     "lines": [
-      "Level: 43",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
-      "- Earthquake",
-      "- Shadow Ball",
-      "- Aerial Ace",
-      "- Brick Break"
      ]
     }
    ]
@@ -1423,89 +1084,6 @@
     }
    ]
   },
-  "TRAINER_MICHELLE": {
-   "slot": "TRAINER_MICHELLE",
-   "maps": [
-    "MAP_VICTORY_ROAD_B1F"
-   ],
-   "fields": {
-    "Name": "MICHELLE",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer F",
-    "Gender": "Female",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Torkoal",
-     "head": "Torkoal",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Medicham",
-     "head": "Medicham",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Ludicolo",
-     "head": "Ludicolo",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    }
-   ]
-  },
-  "TRAINER_MITCHELL": {
-   "slot": "TRAINER_MITCHELL",
-   "maps": [
-    "MAP_VICTORY_ROAD_B1F"
-   ],
-   "fields": {
-    "Name": "MITCHELL",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer M",
-    "Gender": "Male",
-    "Music": "Cool",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Lunatone",
-     "head": "Lunatone",
-     "lines": [
-      "Level: 43",
-      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe",
-      "- Explosion",
-      "- Reflect",
-      "- Light Screen",
-      "- Psychic"
-     ]
-    },
-    {
-     "species": "Solrock",
-     "head": "Solrock",
-     "lines": [
-      "Level: 43",
-      "IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe",
-      "- Explosion",
-      "- Reflect",
-      "- Light Screen",
-      "- Shadow Ball"
-     ]
-    }
-   ]
-  },
   "TRAINER_OLIVIA": {
    "slot": "TRAINER_OLIVIA",
    "maps": [
@@ -1554,48 +1132,6 @@
       "- Fury Swipes",
       "- Fake Out",
       "- Water Pulse"
-     ]
-    }
-   ]
-  },
-  "TRAINER_OWEN": {
-   "slot": "TRAINER_OWEN",
-   "maps": [
-    "MAP_VICTORY_ROAD_B2F"
-   ],
-   "fields": {
-    "Name": "OWEN",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer M",
-    "Gender": "Male",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Kecleon",
-     "head": "Kecleon",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Graveler",
-     "head": "Graveler",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Wailord",
-     "head": "Wailord",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
      ]
     }
    ]
@@ -4870,48 +4406,6 @@
     }
    ]
   },
-  "TRAINER_QUINCY": {
-   "slot": "TRAINER_QUINCY",
-   "maps": [
-    "MAP_VICTORY_ROAD_1F"
-   ],
-   "fields": {
-    "Name": "QUINCY",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer M",
-    "Gender": "Male",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Slaking",
-     "head": "Slaking",
-     "lines": [
-      "Level: 43",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
-      "- Attract",
-      "- Ice Beam",
-      "- Thunderbolt",
-      "- Flamethrower"
-     ]
-    },
-    {
-     "species": "Dusclops",
-     "head": "Dusclops",
-     "lines": [
-      "Level: 43",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe",
-      "- Skill Swap",
-      "- Protect",
-      "- Will O Wisp",
-      "- Toxic"
-     ]
-    }
-   ]
-  },
   "TRAINER_ROXANNE_1": {
    "slot": "TRAINER_ROXANNE_1",
    "maps": [
@@ -4949,74 +4443,6 @@
       "- Leer",
       "- Quick Attack",
       "- Absorb"
-     ]
-    }
-   ]
-  },
-  "TRAINER_SAMUEL": {
-   "slot": "TRAINER_SAMUEL",
-   "maps": [
-    "MAP_VICTORY_ROAD_B1F"
-   ],
-   "fields": {
-    "Name": "SAMUEL",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer M",
-    "Gender": "Male",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Swellow",
-     "head": "Swellow",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Mawile",
-     "head": "Mawile",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Kadabra",
-     "head": "Kadabra",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    }
-   ]
-  },
-  "TRAINER_SHANNON": {
-   "slot": "TRAINER_SHANNON",
-   "maps": [
-    "MAP_VICTORY_ROAD_B1F"
-   ],
-   "fields": {
-    "Name": "SHANNON",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer F",
-    "Gender": "Female",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Claydol",
-     "head": "Claydol",
-     "lines": [
-      "Level: 45",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
      ]
     }
    ]
@@ -5276,56 +4702,6 @@
     }
    ]
   },
-  "TRAINER_VITO": {
-   "slot": "TRAINER_VITO",
-   "maps": [
-    "MAP_VICTORY_ROAD_B2F"
-   ],
-   "fields": {
-    "Name": "VITO",
-    "Class": "Cooltrainer",
-    "Pic": "Cooltrainer M",
-    "Gender": "Male",
-    "Music": "Cool",
-    "Items": "Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Dodrio",
-     "head": "Dodrio",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Kadabra",
-     "head": "Kadabra",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Electrode",
-     "head": "Electrode",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    },
-    {
-     "species": "Shiftry",
-     "head": "Shiftry",
-     "lines": [
-      "Level: 42",
-      "IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe"
-     ]
-    }
-   ]
-  },
   "TRAINER_VIVIAN": {
    "slot": "TRAINER_VIVIAN",
    "maps": [
@@ -5440,162 +4816,6 @@
       "- Luster Purge",
       "- Calm Mind",
       "- Surf"
-     ]
-    }
-   ]
-  },
-  "TRAINER_WALLY_VR_1": {
-   "slot": "TRAINER_WALLY_VR_1",
-   "maps": [
-    "MAP_VICTORY_ROAD_1F"
-   ],
-   "fields": {
-    "Name": "WALLY",
-    "Class": "Rival",
-    "Pic": "Wally",
-    "Gender": "Male",
-    "Music": "Male",
-    "Items": "Full Restore / Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Altaria",
-     "head": "Altaria",
-     "lines": [
-      "Level: 44",
-      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
-      "- Aerial Ace",
-      "- Safeguard",
-      "- Dragon Breath",
-      "- Dragon Dance"
-     ]
-    },
-    {
-     "species": "Delcatty",
-     "head": "Delcatty",
-     "lines": [
-      "Level: 43",
-      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
-      "- Sing",
-      "- Assist",
-      "- Charm",
-      "- Feint Attack"
-     ]
-    },
-    {
-     "species": "Roselia",
-     "head": "Roselia",
-     "lines": [
-      "Level: 44",
-      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
-      "- Magical Leaf",
-      "- Leech Seed",
-      "- Giga Drain",
-      "- Toxic"
-     ]
-    },
-    {
-     "species": "Magneton",
-     "head": "Magneton",
-     "lines": [
-      "Level: 41",
-      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
-      "- Supersonic",
-      "- Thunderbolt",
-      "- Tri Attack",
-      "- Screech"
-     ]
-    },
-    {
-     "species": "Gardevoir",
-     "head": "Gardevoir",
-     "lines": [
-      "Level: 45",
-      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
-      "- Double Team",
-      "- Calm Mind",
-      "- Psychic",
-      "- Future Sight"
-     ]
-    }
-   ]
-  },
-  "TRAINER_WALLY_VR_2": {
-   "slot": "TRAINER_WALLY_VR_2",
-   "maps": [
-    "MAP_VICTORY_ROAD_1F"
-   ],
-   "fields": {
-    "Name": "WALLY",
-    "Class": "Rival",
-    "Pic": "Wally",
-    "Gender": "Male",
-    "Music": "Male",
-    "Items": "Full Restore / Full Restore",
-    "Double Battle": "No",
-    "AI": "Basic Trainer"
-   },
-   "party": [
-    {
-     "species": "Altaria",
-     "head": "Altaria",
-     "lines": [
-      "Level: 47",
-      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
-      "- Aerial Ace",
-      "- Safeguard",
-      "- Dragon Breath",
-      "- Dragon Dance"
-     ]
-    },
-    {
-     "species": "Delcatty",
-     "head": "Delcatty",
-     "lines": [
-      "Level: 46",
-      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
-      "- Sing",
-      "- Assist",
-      "- Charm",
-      "- Feint Attack"
-     ]
-    },
-    {
-     "species": "Roselia",
-     "head": "Roselia",
-     "lines": [
-      "Level: 47",
-      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
-      "- Magical Leaf",
-      "- Leech Seed",
-      "- Giga Drain",
-      "- Toxic"
-     ]
-    },
-    {
-     "species": "Magneton",
-     "head": "Magneton",
-     "lines": [
-      "Level: 44",
-      "IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe",
-      "- Supersonic",
-      "- Thunderbolt",
-      "- Tri Attack",
-      "- Screech"
-     ]
-    },
-    {
-     "species": "Gardevoir",
-     "head": "Gardevoir",
-     "lines": [
-      "Level: 48",
-      "IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe",
-      "- Double Team",
-      "- Calm Mind",
-      "- Psychic",
-      "- Future Sight"
      ]
     }
    ]
@@ -5775,328 +4995,6 @@
       "min_level": 8,
       "max_level": 9,
       "species": "SPECIES_ZIGZAGOON"
-     }
-    ]
-   }
-  },
-  {
-   "map": "MAP_VICTORY_ROAD_1F",
-   "base_label": "gVictoryRoad_1F",
-   "land_mons": {
-    "encounter_rate": 10,
-    "mons": [
-     {
-      "min_level": 40,
-      "max_level": 40,
-      "species": "SPECIES_GOLBAT"
-     },
-     {
-      "min_level": 40,
-      "max_level": 40,
-      "species": "SPECIES_HARIYAMA"
-     },
-     {
-      "min_level": 40,
-      "max_level": 40,
-      "species": "SPECIES_LAIRON"
-     },
-     {
-      "min_level": 40,
-      "max_level": 40,
-      "species": "SPECIES_LOUDRED"
-     },
-     {
-      "min_level": 36,
-      "max_level": 36,
-      "species": "SPECIES_ZUBAT"
-     },
-     {
-      "min_level": 36,
-      "max_level": 36,
-      "species": "SPECIES_MAKUHITA"
-     },
-     {
-      "min_level": 38,
-      "max_level": 38,
-      "species": "SPECIES_GOLBAT"
-     },
-     {
-      "min_level": 38,
-      "max_level": 38,
-      "species": "SPECIES_HARIYAMA"
-     },
-     {
-      "min_level": 36,
-      "max_level": 36,
-      "species": "SPECIES_ARON"
-     },
-     {
-      "min_level": 36,
-      "max_level": 36,
-      "species": "SPECIES_WHISMUR"
-     },
-     {
-      "min_level": 36,
-      "max_level": 36,
-      "species": "SPECIES_ARON"
-     },
-     {
-      "min_level": 36,
-      "max_level": 36,
-      "species": "SPECIES_WHISMUR"
-     }
-    ]
-   }
-  },
-  {
-   "map": "MAP_VICTORY_ROAD_B1F",
-   "base_label": "gVictoryRoad_B1F",
-   "land_mons": {
-    "encounter_rate": 10,
-    "mons": [
-     {
-      "min_level": 40,
-      "max_level": 40,
-      "species": "SPECIES_GOLBAT"
-     },
-     {
-      "min_level": 40,
-      "max_level": 40,
-      "species": "SPECIES_HARIYAMA"
-     },
-     {
-      "min_level": 40,
-      "max_level": 40,
-      "species": "SPECIES_LAIRON"
-     },
-     {
-      "min_level": 40,
-      "max_level": 40,
-      "species": "SPECIES_LAIRON"
-     },
-     {
-      "min_level": 38,
-      "max_level": 38,
-      "species": "SPECIES_GOLBAT"
-     },
-     {
-      "min_level": 38,
-      "max_level": 38,
-      "species": "SPECIES_HARIYAMA"
-     },
-     {
-      "min_level": 42,
-      "max_level": 42,
-      "species": "SPECIES_GOLBAT"
-     },
-     {
-      "min_level": 42,
-      "max_level": 42,
-      "species": "SPECIES_HARIYAMA"
-     },
-     {
-      "min_level": 42,
-      "max_level": 42,
-      "species": "SPECIES_LAIRON"
-     },
-     {
-      "min_level": 38,
-      "max_level": 38,
-      "species": "SPECIES_MAWILE"
-     },
-     {
-      "min_level": 42,
-      "max_level": 42,
-      "species": "SPECIES_LAIRON"
-     },
-     {
-      "min_level": 38,
-      "max_level": 38,
-      "species": "SPECIES_MAWILE"
-     }
-    ]
-   },
-   "rock_smash_mons": {
-    "encounter_rate": 20,
-    "mons": [
-     {
-      "min_level": 30,
-      "max_level": 40,
-      "species": "SPECIES_GRAVELER"
-     },
-     {
-      "min_level": 30,
-      "max_level": 40,
-      "species": "SPECIES_GEODUDE"
-     },
-     {
-      "min_level": 35,
-      "max_level": 40,
-      "species": "SPECIES_GRAVELER"
-     },
-     {
-      "min_level": 35,
-      "max_level": 40,
-      "species": "SPECIES_GRAVELER"
-     },
-     {
-      "min_level": 35,
-      "max_level": 40,
-      "species": "SPECIES_GRAVELER"
-     }
-    ]
-   }
-  },
-  {
-   "map": "MAP_VICTORY_ROAD_B2F",
-   "base_label": "gVictoryRoad_B2F",
-   "land_mons": {
-    "encounter_rate": 10,
-    "mons": [
-     {
-      "min_level": 40,
-      "max_level": 40,
-      "species": "SPECIES_GOLBAT"
-     },
-     {
-      "min_level": 40,
-      "max_level": 40,
-      "species": "SPECIES_SABLEYE"
-     },
-     {
-      "min_level": 40,
-      "max_level": 40,
-      "species": "SPECIES_LAIRON"
-     },
-     {
-      "min_level": 40,
-      "max_level": 40,
-      "species": "SPECIES_LAIRON"
-     },
-     {
-      "min_level": 42,
-      "max_level": 42,
-      "species": "SPECIES_GOLBAT"
-     },
-     {
-      "min_level": 42,
-      "max_level": 42,
-      "species": "SPECIES_SABLEYE"
-     },
-     {
-      "min_level": 44,
-      "max_level": 44,
-      "species": "SPECIES_GOLBAT"
-     },
-     {
-      "min_level": 44,
-      "max_level": 44,
-      "species": "SPECIES_SABLEYE"
-     },
-     {
-      "min_level": 42,
-      "max_level": 42,
-      "species": "SPECIES_LAIRON"
-     },
-     {
-      "min_level": 42,
-      "max_level": 42,
-      "species": "SPECIES_MAWILE"
-     },
-     {
-      "min_level": 44,
-      "max_level": 44,
-      "species": "SPECIES_LAIRON"
-     },
-     {
-      "min_level": 44,
-      "max_level": 44,
-      "species": "SPECIES_MAWILE"
-     }
-    ]
-   },
-   "water_mons": {
-    "encounter_rate": 4,
-    "mons": [
-     {
-      "min_level": 30,
-      "max_level": 35,
-      "species": "SPECIES_GOLBAT"
-     },
-     {
-      "min_level": 25,
-      "max_level": 30,
-      "species": "SPECIES_GOLBAT"
-     },
-     {
-      "min_level": 35,
-      "max_level": 40,
-      "species": "SPECIES_GOLBAT"
-     },
-     {
-      "min_level": 35,
-      "max_level": 40,
-      "species": "SPECIES_GOLBAT"
-     },
-     {
-      "min_level": 35,
-      "max_level": 40,
-      "species": "SPECIES_GOLBAT"
-     }
-    ]
-   },
-   "fishing_mons": {
-    "encounter_rate": 30,
-    "mons": [
-     {
-      "min_level": 5,
-      "max_level": 10,
-      "species": "SPECIES_MAGIKARP"
-     },
-     {
-      "min_level": 5,
-      "max_level": 10,
-      "species": "SPECIES_GOLDEEN"
-     },
-     {
-      "min_level": 10,
-      "max_level": 30,
-      "species": "SPECIES_MAGIKARP"
-     },
-     {
-      "min_level": 10,
-      "max_level": 30,
-      "species": "SPECIES_GOLDEEN"
-     },
-     {
-      "min_level": 10,
-      "max_level": 30,
-      "species": "SPECIES_BARBOACH"
-     },
-     {
-      "min_level": 25,
-      "max_level": 30,
-      "species": "SPECIES_BARBOACH"
-     },
-     {
-      "min_level": 30,
-      "max_level": 35,
-      "species": "SPECIES_BARBOACH"
-     },
-     {
-      "min_level": 30,
-      "max_level": 35,
-      "species": "SPECIES_WHISCASH"
-     },
-     {
-      "min_level": 35,
-      "max_level": 40,
-      "species": "SPECIES_WHISCASH"
-     },
-     {
-      "min_level": 40,
-      "max_level": 45,
-      "species": "SPECIES_WHISCASH"
      }
     ]
    }
@@ -8174,7 +7072,6 @@
  ],
  "species": [
   "Abomasnow",
-  "Absol",
   "Aipom",
   "Altaria",
   "Amoonguss",
@@ -8190,14 +7087,12 @@
   "Bronzor",
   "Budew",
   "Buizel",
-  "Cacturne",
   "Carvanha",
   "Charizard",
   "Chimecho",
   "Chinchou",
   "Chingling",
   "Clamperl",
-  "Claydol",
   "Clefable",
   "Clefairy",
   "Cloyster",
@@ -8208,13 +7103,10 @@
   "Cottonee",
   "Crawdaunt",
   "Cubone",
-  "Delcatty",
   "Dhelmise",
-  "Dodrio",
   "Drilbur",
   "Druddigon",
   "Ducklett",
-  "Dusclops",
   "Duskull",
   "Dwebble",
   "Eelektrik",
@@ -8256,8 +7148,6 @@
   "Houndour",
   "Infernape",
   "Jolteon",
-  "Kadabra",
-  "Kecleon",
   "Kingambit",
   "Kirlia",
   "Klang",
@@ -8280,7 +7170,6 @@
   "Ludicolo",
   "Lugia",
   "Lumineon",
-  "Lunatone",
   "Luxray",
   "Lycanroc",
   "Machoke",
@@ -8294,7 +7183,6 @@
   "Marill",
   "Marowak",
   "Mawile",
-  "Medicham",
   "Meditite",
   "Meowscarada",
   "Meowstic",
@@ -8377,16 +7265,13 @@
   "SPECIES_FURFROU",
   "SPECIES_GABITE",
   "SPECIES_GARCHOMP",
-  "SPECIES_GEODUDE",
   "SPECIES_GIBLE",
   "SPECIES_GLALIE",
   "SPECIES_GOLBAT",
   "SPECIES_GOLDEEN",
   "SPECIES_GOLDUCK",
-  "SPECIES_GRAVELER",
   "SPECIES_GRIMER",
   "SPECIES_GROWLITHE",
-  "SPECIES_HARIYAMA",
   "SPECIES_HAWLUCHA",
   "SPECIES_HELIOPTILE",
   "SPECIES_HERDIER",
@@ -8407,17 +7292,14 @@
   "SPECIES_LITWICK",
   "SPECIES_LOMBRE",
   "SPECIES_LOTAD",
-  "SPECIES_LOUDRED",
   "SPECIES_LUDICOLO",
   "SPECIES_LUVDISC",
   "SPECIES_LUXIO",
   "SPECIES_MAGIKARP",
   "SPECIES_MAGNEMITE",
-  "SPECIES_MAKUHITA",
   "SPECIES_MANTINE",
   "SPECIES_MAREEP",
   "SPECIES_MARILL",
-  "SPECIES_MAWILE",
   "SPECIES_MEOWTH",
   "SPECIES_MIME_JR",
   "SPECIES_MISDREAVUS",
@@ -8440,7 +7322,6 @@
   "SPECIES_ROCKRUFF",
   "SPECIES_ROGGENROLA",
   "SPECIES_ROTOM",
-  "SPECIES_SABLEYE",
   "SPECIES_SALAMENCE",
   "SPECIES_SANDSHREW",
   "SPECIES_SANDYGAST",
@@ -8477,31 +7358,23 @@
   "SPECIES_VENIPEDE",
   "SPECIES_WAILMER",
   "SPECIES_WHISCASH",
-  "SPECIES_WHISMUR",
   "SPECIES_WINGULL",
   "SPECIES_WOOPER",
   "SPECIES_ZIGZAGOON",
   "SPECIES_ZORUA_HISUI",
-  "SPECIES_ZUBAT",
-  "Sableye",
   "Sandshrew",
-  "Sandslash",
   "Scizor",
   "Seaking",
   "Seedot",
   "Sewaddle",
   "Sharpedo",
-  "Shiftry",
   "Shinx",
   "Shroomish",
   "Shuppet",
-  "Skarmory",
   "Skiddo",
   "Skuntank",
-  "Slaking",
   "Sneasel",
   "Snubbull",
-  "Solrock",
   "Spiritomb",
   "Spritzee",
   "Starmie",
@@ -8509,7 +7382,6 @@
   "Stunky",
   "Swablu",
   "Swampert",
-  "Swellow",
   "Swinub",
   "Swirlix",
   "Sylveon",
@@ -8520,7 +7392,6 @@
   "Torkoal",
   "Trapinch",
   "Treecko",
-  "Tropius",
   "Trubbish",
   "Tympole",
   "Umbreon",

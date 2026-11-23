@@ -38,9 +38,12 @@ Layout no repositório: `hollowtide_ds/` (patches de conteúdo + ajustes do hg-e
 
 | Item | Estado |
 |---|---|
-| Inventário de Lunia | `tools/hollowtide_ds/lunia_inventory.py` → `docs/hollowtide/ds/lunia_inventory.json`: percorre o mundo do GBA a partir do quarto (conexões, warps, warps de script) — 147 mapas, 140 treinadores (slots de Hoenn resolvidos pelos `#define` de `opponents.h`), 26 tabelas de encontro, 7 presentes |
-| Sprites | **sem lacunas** (`docs/hollowtide/ds/SPRITES.md`): as 270 espécies/formas usadas, as Megas/Primal do cânone e as 128 famílias da Pokédex têm batalha, seguidor e ícone no hg-engine |
-| Próximo | conversor de times → `data/Trainers.c`; encontros → `data/Encounters.c`; presentes e trocas |
+| Inventário de Lunia | `tools/hollowtide_ds/lunia_inventory.py` → `docs/hollowtide/ds/lunia_inventory.json`: percorre o mundo do GBA a partir do quarto (conexões, warps, warps de script) — 144 mapas, 122 treinadores (slots de Hoenn resolvidos pelos `#define` de `opponents.h`), 23 tabelas de encontro, 7 presentes; fora do percurso: Victory Road e Route 128 (ligações de Hoenn que sobraram na Ever Grande City; no cânone a Route 11 leva direto à Liga e não há rival) |
+| Sprites | **sem lacunas** (`docs/hollowtide/ds/SPRITES.md`): as 248 espécies/formas usadas, as Megas/Primal do cânone e as 128 famílias da Pokédex têm batalha, seguidor e ícone no hg-engine |
+| Times | **ok** — `tools/hollowtide_ds/convert_trainers.py` → `hollowtide_ds/patches/content/0100-trainers.patch`: os 116 treinadores de Lunia (122 nomes; 6 são aliases do mesmo slot) nos índices 400–515 de HGSS (tabela fixa em `hollowtide_ds/data/trainer_slots.json`; constantes `TRAINER_HT_*` em `data/scr_seq/include/hollowtide_trainers.inc`). Espécie, nível, golpes, item, habilidade (pelo slot quando é a 1/2/oculta), IVs, itens de bolsa e as falas (entrada, derrota, depois) vindas dos scripts do GBA. Classe: líderes/Elite/campeões com classe de HGSS do mesmo papel (título certo na batalha), demais pelo sprite do GBA — placeholders até a arte. IA de especialista em líderes, Elite, campeões e chefes da Team Palm |
+| Prova: times | **ok** — batalha contra o Doge (índice 511) no emulador: Meowscarada Lv71 usando Flower Trick, golpes do GBA |
+| A conferir | 5 falas com o nome do jogador (`{STRVAR_1 3, 0, 0}`): Doge (derrota, dentro da batalha), Hoc, Abelf e Nami — os scripts da Fase 3 precisam de `buffer_players_name 0` antes; nomes com mais de 10 letras saem abreviados pelo hg-engine (Meowscarada → "Mewscarada") |
+| Próximo | encontros → `data/Encounters.c`; presentes e trocas |
 
 ## 1. O que o hg-engine resolve e o que não resolve
 

@@ -12,6 +12,10 @@ import glob, json, os, re, sys
 
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 START = "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F"
+# ligacoes de Hoenn que sobraram nos mapas reaproveitados e nao fazem parte de Lunia: a Ever Grande City (fachada da
+# Liga, ligada a Route 11) ainda tem a entrada da Victory Road e a conexao com a Route 128 do Emerald; no canone a
+# Route 11 leva direto a Liga e nao ha rival (DECISOES: "Sem rival").
+EXCLUDE_PREFIX = ("MAP_VICTORY_ROAD", "MAP_ROUTE128")
 SHARED_SCRIPTS = ["data/scripts/hollowtide_gifts.inc", "data/scripts/hollowtide_trades.inc"]
 RE_WARP = re.compile(r"\b(?:warp|warpsilent|warpdoor|warphole|warpteleport|warpspinenter|setwarp|setdynamicwarp|"
                      r"setescapewarp|setdivewarp|setholewarp|warpmossdeepgym|warpwhitefade)\s+(MAP_[A-Z0-9_]+)")
@@ -37,7 +41,7 @@ def walk(maps):
     seen, todo = set(), [START]
     while todo:
         mid = todo.pop()
-        if mid in seen or mid not in maps:
+        if mid in seen or mid not in maps or mid.startswith(EXCLUDE_PREFIX):
             continue
         seen.add(mid)
         m = maps[mid]
