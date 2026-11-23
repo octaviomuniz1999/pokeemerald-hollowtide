@@ -21,6 +21,11 @@ enum InGameTradeID
     INGAME_TRADE_ELECTRODE,
     INGAME_TRADE_TANGELA,
     INGAME_TRADE_SEEL,
+    // Hollowtide: trocas do Tradepost
+    INGAME_TRADE_HT_KADABRA,
+    INGAME_TRADE_HT_MACHOKE,
+    INGAME_TRADE_HT_GRAVELER,
+    INGAME_TRADE_HT_HAUNTER,
 };
 
 // Return values for CanTradeSelectedMon and CanSpinTradeMon

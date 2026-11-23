@@ -681,10 +681,10 @@
 #define FLAG_HT_GIFT_ROTOM                   0x272 // Rotom do centro de dados foi com o jogador
 #define FLAG_HT_GIFT_PORYGON                 0x273 // sede da ferrovia de Ferralia deu o Porygon
 #define FLAG_HT_GIFT_FURFROU                 0x274 // salao de tosa do Tradepost deu o Furfrou
-#define FLAG_UNUSED_0x275  0x275 // Unused Flag
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
+#define FLAG_HT_TRADE_KADABRA                0x275 // troca do Tradepost: Kadabra
+#define FLAG_HT_TRADE_MACHOKE                0x276 // troca do Tradepost: Machoke
+#define FLAG_HT_TRADE_GRAVELER               0x277 // troca do Tradepost: Graveler
+#define FLAG_HT_TRADE_HAUNTER                0x278 // troca do Tradepost: Haunter
 #define FLAG_UNUSED_0x279  0x279 // Unused Flag
 #define FLAG_UNUSED_0x27A  0x27A // Unused Flag
 #define FLAG_UNUSED_0x27B  0x27B // Unused Flag

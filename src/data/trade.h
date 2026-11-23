@@ -1032,6 +1032,70 @@ static const struct InGameTrade sIngameTrades[] =
         .sheen = 10,
         .requestedSpecies = SPECIES_SKITTY
     },
+    [INGAME_TRADE_HT_KADABRA] =
+    {
+        .nickname = _("KADA"),
+        .species = SPECIES_KADABRA,
+        .ivs = {20, 20, 20, 20, 20, 20},
+        .abilityNum = 0,
+        .otId = 51203,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x7815,
+        .heldItem = ITEM_NONE,
+        .mailNum = MAIL_NONE,
+        .otName = _("RAFA"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_MEOWTH
+    },
+    [INGAME_TRADE_HT_MACHOKE] =
+    {
+        .nickname = _("MUSCLE"),
+        .species = SPECIES_MACHOKE,
+        .ivs = {20, 20, 20, 20, 20, 20},
+        .abilityNum = 0,
+        .otId = 30711,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x47c1,
+        .heldItem = ITEM_NONE,
+        .mailNum = MAIL_NONE,
+        .otName = _("CIDA"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_TIMBURR
+    },
+    [INGAME_TRADE_HT_GRAVELER] =
+    {
+        .nickname = _("PEBBLES"),
+        .species = SPECIES_GRAVELER,
+        .ivs = {20, 20, 20, 20, 20, 20},
+        .abilityNum = 0,
+        .otId = 44190,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0xb852,
+        .heldItem = ITEM_NONE,
+        .mailNum = MAIL_NONE,
+        .otName = _("TONI"),
+        .otGender = MALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_ROGGENROLA
+    },
+    [INGAME_TRADE_HT_HAUNTER] =
+    {
+        .nickname = _("BOO"),
+        .species = SPECIES_HAUNTER,
+        .ivs = {20, 20, 20, 20, 20, 20},
+        .abilityNum = 0,
+        .otId = 12876,
+        .conditions = {5, 5, 5, 5, 5},
+        .personality = 0x6014,
+        .heldItem = ITEM_NONE,
+        .mailNum = MAIL_NONE,
+        .otName = _("DANI"),
+        .otGender = FEMALE,
+        .sheen = 10,
+        .requestedSpecies = SPECIES_TRUBBISH
+    },
     [INGAME_TRADE_MR_MIME] = 
     {
         .nickname = _("MIMIEN"),

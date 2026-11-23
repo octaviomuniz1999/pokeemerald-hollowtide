@@ -1,0 +1,60 @@
+## file: data/scripts/hollowtide_trades.inc
+== Palm261_TextTradeWrong
+Hmm? That doesn't look like
+a {STR_VAR_1} to me.
+== Palm261_TextKadabraWant
+TRADEPOST rule: nobody owns the road,
+but everybody trades on it!
+
+I'll trade my {STR_VAR_2} for
+a {STR_VAR_1}. Deal?
+== Palm261_TextKadabraThanks
+A fair trade! Funny thing, KADABRA
+always changes when it changes hands.
+== Palm261_TextKadabraDecline
+No deal? The fair is open all day.
+== Palm261_TextKadabraDone
+My MEOWTH already counts coins better
+than I do!
+== Palm261_TextMachokeWant
+I need someone to help carry crates
+at the station. A {STR_VAR_1} would do.
+
+Want my {STR_VAR_2} in exchange?
+== Palm261_TextMachokeThanks
+Treat it well! A traded MACHOKE gets
+a lot stronger, you know.
+== Palm261_TextMachokeDecline
+Too bad. These crates won't move
+themselves.
+== Palm261_TextMachokeDone
+TIMBURR and I move the cargo
+together now. Thanks again!
+== Palm261_TextGravelerWant
+I collect rocks from every road.
+I don't have a {STR_VAR_1} yet!
+
+I'll give you my {STR_VAR_2} for one.
+How about it?
+== Palm261_TextGravelerThanks
+Ha! Look at it! Some rocks only
+shine after a long trip.
+== Palm261_TextGravelerDecline
+Maybe next time you pass by.
+== Palm261_TextGravelerDone
+My collection keeps growing. Every
+road has its own kind of stone.
+== Palm261_TextHaunterWant
+Sometimes trash is a treasure.
+I'd love a {STR_VAR_1}.
+
+I'll trade my {STR_VAR_2}. It's
+a little spooky, but very loyal.
+== Palm261_TextHaunterThanks
+Hehehe… HAUNTER always shows its
+true face after a trade.
+== Palm261_TextHaunterDecline
+Too spooky? I understand.
+== Palm261_TextHaunterDone
+TRUBBISH and I clean the canal at
+night. It's happier than ever.
