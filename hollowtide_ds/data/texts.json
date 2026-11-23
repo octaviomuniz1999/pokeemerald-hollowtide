@@ -23,5 +23,23 @@
   "3": {
    "gba": "Palm040_TextMomHeal"
   }
+ },
+ "543": {
+  "_": "laboratório do Prof. Alex (T20R0101; script em overlay/data/scr_seq/scr_seq_0843_T20R0101.s)",
+  "0": {
+   "gba": "Palm040_TextAlexIntro"
+  },
+  "1": {
+   "gba": "Palm040_TextAlexChosen"
+  },
+  "2": {
+   "gba": "Palm040_TextReceivedPokedex"
+  },
+  "3": {
+   "gba": "Palm040_TextMission"
+  },
+  "4": {
+   "gba": "Palm040_TextAide"
+  }
  }
 }

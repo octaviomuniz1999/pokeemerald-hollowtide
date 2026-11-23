@@ -17,6 +17,22 @@
 +{COLOR 2}MUDKIP{COLOR 0}, the Water-type Pokémon, is\nin this Poké Ball!
  Once you’ve decided, touch a Poké Ball!
  Touch the Poké Ball button to select.\nTouch elsewhere to change your selection.
+--- a/data/text/custom/543.txt
++++ b/data/text/custom/543.txt
+@@ -1,8 +1,8 @@
+-Professor Elm: Hi, {STRVAR_1 3, 0, 0}!\nI’ve been waiting for you!\rDo you know anything about\nmy research?\rAs you know, Pokémon are carried\nin Poké Balls these days.\rBut before the Poké Ball was invented,\npeople used to walk with Pokémon.\fJust like your friend Lyra does!\rPoké Balls are great because you can\ncarry many Pokémon.\rBut walking with Pokémon must have\nsome advantages.\rIt could have something to do with how\nPokémon grow or evolve...\rSo I’m going to give you a Pokémon!\rCan you walk beside this Pokémon,\noutside of its Poké Ball, to see if this\fbrings any special feelings or bonds\fbetween Pokémon and people?\rThe device over there has some Pokémon\nyou could choose from...\r
+-Professor Elm: Hi, {STRVAR_1 3, 0, 0}!\nI’ve been waiting for you!\rDo you know anything about\nmy research?\rAs you know, Pokémon are carried\nin Poké Balls these days.\rBut before the Poké Ball was invented,\npeople used to walk with Pokémon.\fJust like your friend Ethan does!\rPoké Balls are great because you can\ncarry many Pokémon.\rBut walking with Pokémon must have\nsome advantages.\rIt could have something to do with how\nPokémon grow or evolve...\rSo I’m going to give you a Pokémon!\rCan you walk beside this Pokémon,\noutside of its Poké Ball, to see if this\fbrings any special feelings or bonds\fbetween Pokémon and people?\rThe device over there has some Pokémon\nyou could choose from...\r
+-Professor Elm: Oh, hey! I got an email!\r
+-Professor Elm: ...\nHm... Uh-huh... OK...\r
+-Professor Elm: Hey, listen.\nI have this acquaintance that people\fcall Mr. Pokémon.\rHe keeps finding weird things and\nraving about his discoveries.\rAnyway, I just got an email from him\nsaying that this time it’s real.\rIt’s probably another Pokémon Egg,\nbut we’re still so busy with our\fPokémon research...\rWait!\nI know!\rYou can go in our place, right?\nCan we count on you?\rYou can choose one of the Pokémon\nover there.\r
++Prof. Alex: {STRVAR_1 3, 0, 0}! Good, you came.\fI study how water and weather\nshape the lives of Pokémon.\fThe rivers around here have been\nacting strange lately.\fI could use someone out there\nwho keeps their eyes open.\fThese three were raised here at\nthe lab. Go on, pick a partner.
++Prof. Alex: A fine choice.\nYou two already look like a team.\fTake this as well. It’s a Pokédex.\nIt records every Pokémon you meet.
++{STRVAR_1 3, 0, 0} received the Pokédex!
++Prof. Alex: Follow Route 1 east,\nthen head south across the river.\fYou’ll reach Harvestvale.\nNevard runs the Gym there.\fThe farmers say their canals\nhave been running low.\fIf you hear anything, let me know,\nall right?\fOh, and hold the B Button to run.\nTake care out there!
++Check your Bag for Poké Balls.\fWeaken a wild Pokémon first,\nthen throw one to catch it!
+ Professor Elm: If a wild Pokémon\nappears, let your Pokémon battle it!
+ Professor Elm: Where are you going?\nThe Poké Balls are in that device.\r
+ {STRVAR_1 3, 0, 0} received {STRVAR_1 0, 1, 0}\nfrom Professor Elm!
 --- a/data/text/custom/545.txt
 +++ b/data/text/custom/545.txt
 @@ -1,7 +1,7 @@

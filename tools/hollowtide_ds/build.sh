@@ -43,6 +43,8 @@ rm -f data/text/custom/*.txt
 TXT="$(mktemp -d)"
 python3 "$HERE/msg_dump.py" "$HG" rom.nds "$TXT" > /dev/null
 for d in "${PATCH_DIRS[@]}"; do
+    # arquivos inteiros nossos (scripts reescritos): copiados por cima do despejo antes dos patches da pasta
+    if [ -d "$d/overlay" ]; then cp -r "$d/overlay/." .; echo "overlay: ${d#$REPO/}/overlay"; fi
     for p in "$d"/*.patch; do
         [ -e "$p" ] || continue
         for f in $(grep -oE '^\+\+\+ b/data/text/custom/[0-9]{3}\.txt' "$p" | sed 's|^+++ b/||'); do
