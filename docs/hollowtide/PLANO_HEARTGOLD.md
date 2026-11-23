@@ -57,7 +57,9 @@ Layout no repositório: `hollowtide_ds/` (patches de conteúdo + ajustes do hg-e
 | Catálogo de HGSS | `hgss_catalog.py` → `docs/hollowtide/ds/HGSS_MAPAS.md` (76 mapas externos na matriz do mundo) e `hgss_seams.py` → `HGSS_EMENDAS.md` (47 divisas andáveis pela colisão dos blocos) |
 | Regra de montagem | `docs/hollowtide/ds/FASE2_MAPAS.md`: cada lugar de Lunia em mapas de HGSS já ligados entre si (divisa ou guarita), na ordem de Lunia; um lugar pode juntar células de vários mapas (os eventos usam coordenadas da matriz inteira); sem cavernas/florestas de HGSS como passagem |
 | Fatia vertical (Cap. 1) | Dawnmere = New Bark (+ casa do jogador e laboratório do Elm), Route 1 = Route 29, Harvestvale = Cherrygrove; encontros da Route 1 já ligados à Route 29 e compilando com times e trocas |
-| Próximo | nomes de lugar e músicas de Lunia nos headers; eventos da Vila (casa, laboratório, escolha de inicial Snivy/Fennekin/Mudkip), Route 1 e Harvestvale; ginásio do Nevard |
+| Nomes de lugar | **ok** — `tools/hollowtide_ds/place_names.py` (texto 279, um nome por MAPSEC; fonte `hollowtide_ds/data/place_names.json`): Dawnmere Village, Route 1, Harvestvale. No emulador: placa "Route 1" ao chegar na Route 29 e Fletchling Lv4 selvagem (tabela da Route 1 de Lunia) — `provas/fase2` |
+| Músicas | ficam as de HGSS por enquanto (New Bark, Route 29, Cherrygrove): no GBA o cânone usou faixas existentes por atmosfera; os temas próprios entram na Fase 5 |
+| Próximo | eventos da Vila (mãe, Prof. Alex no laboratório, escolha de inicial Snivy/Fennekin/Mudkip), Route 1 e Harvestvale; ginásio do Nevard |
 
 ## 1. O que o hg-engine resolve e o que não resolve
 

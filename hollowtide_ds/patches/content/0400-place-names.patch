@@ -1,0 +1,22 @@
+--- a/data/text/custom/279.txt
++++ b/data/text/custom/279.txt
+@@ -124,8 +124,8 @@
+ Iron Ruins
+ Iceberg Ruins
+ Rock Peak Ruins
+-New Bark Town
+-Cherrygrove City
++Dawnmere Village
++Harvestvale
+ Violet City
+ Azalea Town
+ Cianwood City
+@@ -175,7 +175,7 @@
+ Route 26
+ Route 27
+ Route 28
+-Route 29
++Route 1
+ Route 30
+ Route 31
+ Route 32

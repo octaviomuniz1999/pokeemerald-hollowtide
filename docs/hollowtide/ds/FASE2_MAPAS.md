@@ -42,3 +42,5 @@ tabela.
 ## Ligações de encontros já feitas
 
 `hollowtide_ds/data/map_bindings.json`: Route 1 (GBA `MAP_ROUTE101`) → `ENCDATA_R29_ROUTE_29`.
+
+Nomes de lugar (`hollowtide_ds/data/place_names.json` → texto 279): `MAPSEC_NEW_BARK_TOWN` = Dawnmere Village, `MAPSEC_ROUTE_29` = Route 1, `MAPSEC_CHERRYGROVE_CITY` = Harvestvale.
