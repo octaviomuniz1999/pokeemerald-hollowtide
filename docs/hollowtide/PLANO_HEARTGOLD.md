@@ -45,7 +45,10 @@ Layout no repositório: `hollowtide_ds/` (patches de conteúdo + ajustes do hg-e
 | A conferir | 5 falas com o nome do jogador (`{STRVAR_1 3, 0, 0}`): Doge (derrota, dentro da batalha), Hoc, Abelf e Nami — os scripts da Fase 3 precisam de `buffer_players_name 0` antes; nomes com mais de 10 letras saem abreviados pelo hg-engine (Meowscarada → "Mewscarada") |
 | Encontros | **ok** — `tools/hollowtide_ds/convert_encounters.py`: as 23 tabelas de Lunia validadas e convertidas (grama com as mesmas chances por vaga e o nível no meio da faixa do GBA; surf igual; Old/Super Rod exatas, Good Rod 45/40/15 em vez de 60/20/20 — as vagas do DS não permitem; manhã/dia/noite iguais, como no GBA). Cada tabela entra no ENCDATA do mapa de HGSS que hospedar o lugar de Lunia (`hollowtide_ds/data/map_bindings.json`, Fase 2) |
 | Prova: encontros | **ok** — Route 2 ligada provisoriamente à tabela da Route 29 (`provas/fase1_encontros`): Wingull Lv11 no mato alto |
-| Próximo | presentes e trocas; depois a Fase 2 (que mapa de HGSS hospeda cada lugar de Lunia) |
+| Trocas | **ok** — `tools/hollowtide_ds/npc_trades.py`: as 4 trocas do Tradepost (Kadabra "Kada", Machoke "Muscle", Graveler "Pebbles", Haunter "Boo") nas vagas 0–3 das 13 trocas de HGSS (NARC `a/1/1/2`, aplicado pelo `build.sh` depois do `make`; apelidos/OT no texto 200; constantes `NPC_TRADE_HT_*`) |
+| Prova: troca | **ok** no emulador: "Rafa sent over Kada." — mas **a troca com NPC do DS não faz o Pokémon evoluir** (no GBA o Kadabra vira Alakazam ao chegar). Fica para a Fase 3: gancho no hg-engine que chama a evolução por troca depois de `npc_trade_exec` |
+| Presentes | os 4 presentes de Lunia (Porygon Lv24, Furfrou Lv27, Eevee Lv30, Rotom Lv40 — `hollowtide_gifts.inc`) viram `give_mon` nos scripts da Fase 3 (prova de `give_mon` já feita na Fase 0). Os iniciais vêm da escolha de inicial do GBA (Snivy/Fennekin/Mudkip), não de `givemon`; os Cyndaquil/Totodile/Chikorita do laboratório são sobra do Emerald |
+| Próximo | Fase 2: que mapa de HGSS hospeda cada lugar de Lunia (`map_bindings.json`) |
 
 ## 1. O que o hg-engine resolve e o que não resolve
 

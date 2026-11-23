@@ -62,4 +62,8 @@ make -j"$(nproc)" > build_make.log 2>&1 || { grep -nE "error|Error" build_make.l
 MATRIX=()
 for d in "${PATCH_DIRS[@]}"; do [ -e "$d/matrix.json" ] && MATRIX+=("$d/matrix.json"); done
 [ ${#MATRIX[@]} -gt 0 ] && python3 "$HERE/matrix.py" test.nds "${MATRIX[@]}"
+# trocas com NPC (NARC a/1/1/2): trades.json de cada pasta
+TRADES=()
+for d in "${PATCH_DIRS[@]}"; do [ -e "$d/trades.json" ] && TRADES+=("$d/trades.json"); done
+[ ${#TRADES[@]} -gt 0 ] && python3 "$HERE/npc_trades.py" apply test.nds "${TRADES[@]}"
 echo "ok: $HG/test.nds"

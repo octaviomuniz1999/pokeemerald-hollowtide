@@ -1,0 +1,37 @@
+--- a/data/text/custom/200.txt
++++ b/data/text/custom/200.txt
+@@ -1,7 +1,7 @@
+-Rocky
++Kada
+ Muscle
+-Billy
+-Doris
++Pebbles
++Boo
+ Sprints
+ Rusty
+ Shuckie
+@@ -11,10 +11,10 @@
+ Volty
+ Hornlette
+ Iron
+-Rudy
+-Jose
+-Richard
+-Ayana
++Rafa
++Cida
++Toni
++Dani
+ Stuart
+ Jasmine
+ Kirk
+--- /dev/null
++++ b/data/scr_seq/include/hollowtide_trades.inc
+@@ -0,0 +1,6 @@
++// gerado por tools/hollowtide_ds/npc_trades.py — vagas das trocas de Lunia (load_npc_trade N)
++
++.equ NPC_TRADE_HT_KADABRA, 0
++.equ NPC_TRADE_HT_MACHOKE, 1
++.equ NPC_TRADE_HT_GRAVELER, 2
++.equ NPC_TRADE_HT_HAUNTER, 3

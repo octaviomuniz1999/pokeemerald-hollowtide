@@ -1,0 +1,15 @@
+--- a/data/scr_seq/scr_seq_0846_T20R0202.s
++++ b/data/scr_seq/scr_seq_0846_T20R0202.s
+@@ -63,6 +63,12 @@
+ 	npc_msg 2
+ 	wait_button
+ 	closemsg
++	give_mon SPECIES_MEOWTH, 10, 0, 0, 0, VAR_SPECIAL_RESULT
++	load_npc_trade 0
++	setvar VAR_SPECIAL_x8004, 0
++	npc_trade_exec VAR_SPECIAL_x8004
++	npc_trade_end
++	give_mon SPECIES_MEOWTH, 10, 0, 0, 0, VAR_SPECIAL_RESULT
+ 	releaseall
+ 	end
+ 	.balign 4
