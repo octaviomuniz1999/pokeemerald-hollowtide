@@ -21,8 +21,10 @@ Versão de referência do GBA: **23ap** (506/506 testes). O GBA fica congelado c
 | Prova: texto | **ok** — mensagem do Wii do quarto trocada, vista na tela |
 | Prova: script | **ok** — o mesmo objeto passa a dar um Mudkip Lv10 e abrir batalha |
 | Prova: treinador | **ok** — Youngster Joey com Fennekin Lv5 (espécie da Gen 6, com sprite) na batalha; a fala de entrada só aparece pela visão do treinador (não testada) |
-| Prova: warp | **ok** duas vezes — via `ndspy` direto na ROM e via JSON no build: a escada do quarto leva ao mapa 66 |
-| Pendente | tabela de encontro (`data/Encounters.c`) e troca de bloco da matriz de mapas — próxima rodada |
+| Prova: warp | **ok** — via `ndspy` direto na ROM (escada → mapa 66) e via JSON no build (escada → porta da guarita da Route 29) |
+| Prova: encontro | **ok** — Route 29 só com Sprigatito (Gen 9) em `data/Encounters.c`: Sprigatito Lv2 selvagem no mato alto |
+| Pendente | troca de bloco da matriz de mapas (o que falta para o caminho A) |
+| Fluxo | `prova_fase0.py` faz tudo numa passada a partir do estado base (inclui vencer a batalha pelo toque: FIGHT e golpe 2) |
 | Lição | estado salvo só vale na ROM em que foi feito: o mapa carregado fica na RAM; toda prova de edição parte de um boot limpo |
 
 **Recomendação: caminho A confirmado.** O que o plano dava como "não coberto" (scripts de evento, NPCs, warps, textos de

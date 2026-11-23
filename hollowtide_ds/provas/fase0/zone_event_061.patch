@@ -1,11 +1,13 @@
 --- a/data/eventdata/zone_event/061_T20R0202.json
 +++ b/data/eventdata/zone_event/061_T20R0202.json
-@@ -76,7 +76,7 @@
+@@ -76,8 +76,8 @@
      {
        "x": 3,
        "z": 4,
 -      "dest_header_id": "MAP_T20R0201",
-+      "dest_header_id": "MAP_T20R0401",
-       "dest_warp_id": 1,
+-      "dest_warp_id": 1,
++      "dest_header_id": "MAP_R29",
++      "dest_warp_id": 0,
        "y": 0
      }
+   ]

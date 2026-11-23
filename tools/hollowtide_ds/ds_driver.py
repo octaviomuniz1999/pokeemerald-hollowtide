@@ -69,6 +69,11 @@ class DS:
     def shot(self, path):
         self.emu.screenshot().save(path)
 
+    def top_is_field(self):
+        """Tela de baixo do campo (o verde do Pokegear em (60,300) e (100,350)); na batalha ela e a interface de luta."""
+        im = self.emu.screenshot()
+        return all(im.getpixel(p)[:3] == (24, 200, 112) for p in [(60, 300), (100, 350)])
+
     def save(self, path):
         """Salva o estado e, ao lado, os ponteiros capturados (a RAM volta igual ao carregar)."""
         self.emu.savestate.save_file(path)
