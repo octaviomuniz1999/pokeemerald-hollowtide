@@ -126,8 +126,9 @@ def main(rom, base, out):
     battles = 0
     if ok["route1"] and ok["route1"][0] == 33:
         path = route_path(rom, ok["route1"][1:], (576, 399), [(18, 12), (19, 12), (20, 12)])
-        i = 1
-        while i < len(path):
+        i, steps, last, still = 1, 0, None, 0
+        while i < len(path) and steps < 600:
+            steps += 1
             w = d.where()
             if not d.top_is_field():
                 d.shot(f"{out}/6_batalha_{battles}.png"); battles += 1
@@ -135,6 +136,12 @@ def main(rom, base, out):
             if w and w[0] != 33:
                 break
             cur = (w[1], w[2])
+            still = still + 1 if cur == last else 0
+            last = cur
+            if still in (8, 30):                         # parado: algo na frente (mensagem, NPC) -> registra e tenta B
+                d.shot(f"{out}/6_parado_{cur[0]}_{cur[1]}.png"); advance(d, 6)
+            if still > 40:
+                break
             if cur in path:
                 i = path.index(cur) + 1
                 if i >= len(path):
