@@ -1,0 +1,10322 @@
+[
+{
+"id": 0,
+"name": "MAP_EVERYWHERE",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1000,
+"mapsec": 0,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0,
+"cells": [
+[
+0,
+14,
+0
+],
+[
+0,
+15,
+0
+],
+[
+0,
+16,
+0
+],
+[
+0,
+17,
+0
+],
+[
+0,
+18,
+0
+],
+[
+0,
+40,
+0
+],
+[
+0,
+41,
+0
+],
+[
+0,
+42,
+0
+],
+[
+0,
+43,
+0
+],
+[
+0,
+44,
+0
+],
+[
+0,
+45,
+0
+],
+[
+0,
+14,
+1
+],
+[
+0,
+18,
+1
+],
+[
+0,
+31,
+1
+],
+[
+0,
+32,
+1
+],
+[
+0,
+33,
+1
+],
+[
+0,
+34,
+1
+],
+[
+0,
+40,
+1
+],
+[
+0,
+45,
+1
+],
+[
+0,
+14,
+2
+],
+[
+0,
+18,
+2
+],
+[
+0,
+31,
+2
+],
+[
+0,
+34,
+2
+],
+[
+0,
+35,
+2
+],
+[
+0,
+36,
+2
+],
+[
+0,
+37,
+2
+],
+[
+0,
+38,
+2
+],
+[
+0,
+39,
+2
+],
+[
+0,
+40,
+2
+],
+[
+0,
+42,
+2
+],
+[
+0,
+43,
+2
+],
+[
+0,
+44,
+2
+],
+[
+0,
+45,
+2
+],
+[
+0,
+10,
+3
+],
+[
+0,
+11,
+3
+],
+[
+0,
+12,
+3
+],
+[
+0,
+13,
+3
+],
+[
+0,
+14,
+3
+],
+[
+0,
+15,
+3
+],
+[
+0,
+17,
+3
+],
+[
+0,
+18,
+3
+],
+[
+0,
+19,
+3
+],
+[
+0,
+20,
+3
+],
+[
+0,
+21,
+3
+],
+[
+0,
+22,
+3
+],
+[
+0,
+31,
+3
+],
+[
+0,
+42,
+3
+],
+[
+0,
+43,
+3
+],
+[
+0,
+44,
+3
+],
+[
+0,
+45,
+3
+],
+[
+0,
+7,
+4
+],
+[
+0,
+8,
+4
+],
+[
+0,
+9,
+4
+],
+[
+0,
+10,
+4
+],
+[
+0,
+13,
+4
+],
+[
+0,
+14,
+4
+],
+[
+0,
+15,
+4
+],
+[
+0,
+17,
+4
+],
+[
+0,
+18,
+4
+],
+[
+0,
+19,
+4
+],
+[
+0,
+22,
+4
+],
+[
+0,
+31,
+4
+],
+[
+0,
+33,
+4
+],
+[
+0,
+34,
+4
+],
+[
+0,
+35,
+4
+],
+[
+0,
+36,
+4
+],
+[
+0,
+37,
+4
+],
+[
+0,
+38,
+4
+],
+[
+0,
+39,
+4
+],
+[
+0,
+45,
+4
+],
+[
+0,
+7,
+5
+],
+[
+0,
+22,
+5
+],
+[
+0,
+27,
+5
+],
+[
+0,
+28,
+5
+],
+[
+0,
+29,
+5
+],
+[
+0,
+31,
+5
+],
+[
+0,
+33,
+5
+],
+[
+0,
+39,
+5
+],
+[
+0,
+41,
+5
+],
+[
+0,
+42,
+5
+],
+[
+0,
+43,
+5
+],
+[
+0,
+45,
+5
+],
+[
+0,
+7,
+6
+],
+[
+0,
+9,
+6
+],
+[
+0,
+10,
+6
+],
+[
+0,
+11,
+6
+],
+[
+0,
+13,
+6
+],
+[
+0,
+14,
+6
+],
+[
+0,
+15,
+6
+],
+[
+0,
+16,
+6
+],
+[
+0,
+17,
+6
+],
+[
+0,
+18,
+6
+],
+[
+0,
+19,
+6
+],
+[
+0,
+21,
+6
+],
+[
+0,
+22,
+6
+],
+[
+0,
+27,
+6
+],
+[
+0,
+29,
+6
+],
+[
+0,
+30,
+6
+],
+[
+0,
+31,
+6
+],
+[
+0,
+33,
+6
+],
+[
+0,
+36,
+6
+],
+[
+0,
+37,
+6
+],
+[
+0,
+38,
+6
+],
+[
+0,
+39,
+6
+],
+[
+0,
+42,
+6
+],
+[
+0,
+43,
+6
+],
+[
+0,
+45,
+6
+],
+[
+0,
+1,
+7
+],
+[
+0,
+2,
+7
+],
+[
+0,
+3,
+7
+],
+[
+0,
+4,
+7
+],
+[
+0,
+7,
+7
+],
+[
+0,
+10,
+7
+],
+[
+0,
+16,
+7
+],
+[
+0,
+17,
+7
+],
+[
+0,
+18,
+7
+],
+[
+0,
+19,
+7
+],
+[
+0,
+21,
+7
+],
+[
+0,
+24,
+7
+],
+[
+0,
+25,
+7
+],
+[
+0,
+26,
+7
+],
+[
+0,
+27,
+7
+],
+[
+0,
+28,
+7
+],
+[
+0,
+29,
+7
+],
+[
+0,
+30,
+7
+],
+[
+0,
+33,
+7
+],
+[
+0,
+34,
+7
+],
+[
+0,
+35,
+7
+],
+[
+0,
+36,
+7
+],
+[
+0,
+45,
+7
+],
+[
+0,
+1,
+8
+],
+[
+0,
+4,
+8
+],
+[
+0,
+6,
+8
+],
+[
+0,
+10,
+8
+],
+[
+0,
+12,
+8
+],
+[
+0,
+18,
+8
+],
+[
+0,
+19,
+8
+],
+[
+0,
+21,
+8
+],
+[
+0,
+24,
+8
+],
+[
+0,
+28,
+8
+],
+[
+0,
+33,
+8
+],
+[
+0,
+34,
+8
+],
+[
+0,
+39,
+8
+],
+[
+0,
+41,
+8
+],
+[
+0,
+42,
+8
+],
+[
+0,
+43,
+8
+],
+[
+0,
+45,
+8
+],
+[
+0,
+1,
+9
+],
+[
+0,
+4,
+9
+],
+[
+0,
+5,
+9
+],
+[
+0,
+6,
+9
+],
+[
+0,
+8,
+9
+],
+[
+0,
+9,
+9
+],
+[
+0,
+10,
+9
+],
+[
+0,
+12,
+9
+],
+[
+0,
+15,
+9
+],
+[
+0,
+16,
+9
+],
+[
+0,
+18,
+9
+],
+[
+0,
+19,
+9
+],
+[
+0,
+21,
+9
+],
+[
+0,
+24,
+9
+],
+[
+0,
+25,
+9
+],
+[
+0,
+26,
+9
+],
+[
+0,
+27,
+9
+],
+[
+0,
+29,
+9
+],
+[
+0,
+30,
+9
+],
+[
+0,
+31,
+9
+],
+[
+0,
+33,
+9
+],
+[
+0,
+34,
+9
+],
+[
+0,
+36,
+9
+],
+[
+0,
+37,
+9
+],
+[
+0,
+38,
+9
+],
+[
+0,
+39,
+9
+],
+[
+0,
+45,
+9
+],
+[
+0,
+1,
+10
+],
+[
+0,
+4,
+10
+],
+[
+0,
+8,
+10
+],
+[
+0,
+12,
+10
+],
+[
+0,
+13,
+10
+],
+[
+0,
+15,
+10
+],
+[
+0,
+16,
+10
+],
+[
+0,
+18,
+10
+],
+[
+0,
+21,
+10
+],
+[
+0,
+27,
+10
+],
+[
+0,
+29,
+10
+],
+[
+0,
+31,
+10
+],
+[
+0,
+33,
+10
+],
+[
+0,
+34,
+10
+],
+[
+0,
+36,
+10
+],
+[
+0,
+39,
+10
+],
+[
+0,
+42,
+10
+],
+[
+0,
+43,
+10
+],
+[
+0,
+45,
+10
+],
+[
+0,
+1,
+11
+],
+[
+0,
+8,
+11
+],
+[
+0,
+12,
+11
+],
+[
+0,
+13,
+11
+],
+[
+0,
+15,
+11
+],
+[
+0,
+16,
+11
+],
+[
+0,
+18,
+11
+],
+[
+0,
+20,
+11
+],
+[
+0,
+21,
+11
+],
+[
+0,
+22,
+11
+],
+[
+0,
+23,
+11
+],
+[
+0,
+24,
+11
+],
+[
+0,
+25,
+11
+],
+[
+0,
+26,
+11
+],
+[
+0,
+27,
+11
+],
+[
+0,
+29,
+11
+],
+[
+0,
+31,
+11
+],
+[
+0,
+33,
+11
+],
+[
+0,
+34,
+11
+],
+[
+0,
+36,
+11
+],
+[
+0,
+37,
+11
+],
+[
+0,
+38,
+11
+],
+[
+0,
+39,
+11
+],
+[
+0,
+40,
+11
+],
+[
+0,
+41,
+11
+],
+[
+0,
+45,
+11
+],
+[
+0,
+1,
+12
+],
+[
+0,
+5,
+12
+],
+[
+0,
+6,
+12
+],
+[
+0,
+7,
+12
+],
+[
+0,
+8,
+12
+],
+[
+0,
+9,
+12
+],
+[
+0,
+10,
+12
+],
+[
+0,
+12,
+12
+],
+[
+0,
+13,
+12
+],
+[
+0,
+15,
+12
+],
+[
+0,
+29,
+12
+],
+[
+0,
+31,
+12
+],
+[
+0,
+33,
+12
+],
+[
+0,
+34,
+12
+],
+[
+0,
+36,
+12
+],
+[
+0,
+39,
+12
+],
+[
+0,
+40,
+12
+],
+[
+0,
+41,
+12
+],
+[
+0,
+43,
+12
+],
+[
+0,
+44,
+12
+],
+[
+0,
+45,
+12
+],
+[
+0,
+10,
+13
+],
+[
+0,
+12,
+13
+],
+[
+0,
+13,
+13
+],
+[
+0,
+15,
+13
+],
+[
+0,
+16,
+13
+],
+[
+0,
+17,
+13
+],
+[
+0,
+18,
+13
+],
+[
+0,
+19,
+13
+],
+[
+0,
+20,
+13
+],
+[
+0,
+21,
+13
+],
+[
+0,
+22,
+13
+],
+[
+0,
+23,
+13
+],
+[
+0,
+24,
+13
+],
+[
+0,
+25,
+13
+],
+[
+0,
+26,
+13
+],
+[
+0,
+27,
+13
+],
+[
+0,
+28,
+13
+],
+[
+0,
+29,
+13
+],
+[
+0,
+31,
+13
+],
+[
+0,
+33,
+13
+],
+[
+0,
+34,
+13
+],
+[
+0,
+43,
+13
+],
+[
+0,
+10,
+14
+],
+[
+0,
+15,
+14
+],
+[
+0,
+31,
+14
+],
+[
+0,
+33,
+14
+],
+[
+0,
+34,
+14
+],
+[
+0,
+35,
+14
+],
+[
+0,
+36,
+14
+],
+[
+0,
+38,
+14
+],
+[
+0,
+39,
+14
+],
+[
+0,
+40,
+14
+],
+[
+0,
+41,
+14
+],
+[
+0,
+42,
+14
+],
+[
+0,
+43,
+14
+],
+[
+0,
+10,
+15
+],
+[
+0,
+11,
+15
+],
+[
+0,
+12,
+15
+],
+[
+0,
+13,
+15
+],
+[
+0,
+14,
+15
+],
+[
+0,
+15,
+15
+],
+[
+0,
+31,
+15
+],
+[
+0,
+38,
+15
+],
+[
+0,
+31,
+16
+],
+[
+0,
+32,
+16
+],
+[
+0,
+33,
+16
+],
+[
+0,
+34,
+16
+],
+[
+0,
+35,
+16
+],
+[
+0,
+36,
+16
+],
+[
+0,
+37,
+16
+],
+[
+0,
+38,
+16
+],
+[
+212,
+0,
+0
+],
+[
+212,
+1,
+0
+],
+[
+212,
+2,
+0
+],
+[
+212,
+3,
+0
+],
+[
+212,
+4,
+0
+],
+[
+212,
+0,
+1
+],
+[
+212,
+4,
+1
+],
+[
+212,
+0,
+2
+],
+[
+212,
+4,
+2
+],
+[
+212,
+0,
+3
+],
+[
+212,
+1,
+3
+],
+[
+212,
+3,
+3
+],
+[
+212,
+4,
+3
+]
+],
+"rect": [
+0,
+0,
+45,
+16
+],
+"n_cells": 304,
+"world_matrix": 0
+},
+{
+"id": 1,
+"name": "MAP_NOTHING",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1000,
+"mapsec": 0,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 2,
+"name": "MAP_UNION",
+"matrix": 74,
+"events": 1,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 0,
+"placas": 0,
+"npcs": 51,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 3,
+"name": "MAP_UG",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 0,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 4,
+"name": "MAP_DIRECT2",
+"matrix": 75,
+"events": 2,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 0,
+"placas": 0,
+"npcs": 1,
+"warps": 0,
+"gatilhos": 1
+},
+{
+"id": 5,
+"name": "MAP_DIRECT4",
+"matrix": 76,
+"events": 3,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 0,
+"placas": 0,
+"npcs": 1,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 6,
+"name": "MAP_D17R1101",
+"matrix": 67,
+"events": 4,
+"wild": 255,
+"music_day": 1001,
+"mapsec": 230,
+"placas": 5,
+"npcs": 1,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 7,
+"name": "MAP_D18R0101",
+"matrix": 25,
+"events": 5,
+"wild": 28,
+"music_day": 1076,
+"mapsec": 206,
+"placas": 2,
+"npcs": 14,
+"warps": 2,
+"gatilhos": 2
+},
+{
+"id": 8,
+"name": "MAP_D24",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1074,
+"mapsec": 209,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 9,
+"name": "MAP_R01",
+"matrix": 0,
+"events": 6,
+"wild": 111,
+"music_day": 1050,
+"mapsec": 149,
+"placas": 1,
+"npcs": 6,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+32,
+9
+],
+[
+0,
+32,
+10
+]
+],
+"rect": [
+32,
+9,
+32,
+10
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 10,
+"name": "MAP_R02",
+"matrix": 0,
+"events": 7,
+"wild": 112,
+"music_day": 1051,
+"mapsec": 150,
+"placas": 1,
+"npcs": 6,
+"warps": 4,
+"gatilhos": 0,
+"cells": [
+[
+0,
+32,
+6
+]
+],
+"rect": [
+32,
+6,
+32,
+6
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 11,
+"name": "MAP_R03",
+"matrix": 0,
+"events": 8,
+"wild": 113,
+"music_day": 1057,
+"mapsec": 151,
+"placas": 8,
+"npcs": 19,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+34,
+3
+],
+[
+0,
+35,
+3
+],
+[
+0,
+36,
+3
+]
+],
+"rect": [
+34,
+3,
+36,
+3
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 12,
+"name": "MAP_R04",
+"matrix": 0,
+"events": 9,
+"wild": 114,
+"music_day": 1053,
+"mapsec": 152,
+"placas": 3,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 0,
+"cells": [
+[
+0,
+37,
+3
+],
+[
+0,
+38,
+3
+],
+[
+0,
+39,
+3
+]
+],
+"rect": [
+37,
+3,
+39,
+3
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 13,
+"name": "MAP_R05",
+"matrix": 0,
+"events": 10,
+"wild": 115,
+"music_day": 1053,
+"mapsec": 153,
+"placas": 1,
+"npcs": 1,
+"warps": 4,
+"gatilhos": 0,
+"cells": [
+[
+0,
+40,
+5
+]
+],
+"rect": [
+40,
+5,
+40,
+5
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 14,
+"name": "MAP_R06",
+"matrix": 0,
+"events": 11,
+"wild": 116,
+"music_day": 1052,
+"mapsec": 154,
+"placas": 1,
+"npcs": 6,
+"warps": 3,
+"gatilhos": 0,
+"cells": [
+[
+0,
+40,
+8
+]
+],
+"rect": [
+40,
+8,
+40,
+8
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 15,
+"name": "MAP_R07",
+"matrix": 0,
+"events": 12,
+"wild": 117,
+"music_day": 1055,
+"mapsec": 155,
+"placas": 2,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+39,
+7
+]
+],
+"rect": [
+39,
+7,
+39,
+7
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 16,
+"name": "MAP_R08",
+"matrix": 0,
+"events": 13,
+"wild": 118,
+"music_day": 1054,
+"mapsec": 156,
+"placas": 2,
+"npcs": 13,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+42,
+7
+],
+[
+0,
+43,
+7
+]
+],
+"rect": [
+42,
+7,
+43,
+7
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 17,
+"name": "MAP_R09",
+"matrix": 0,
+"events": 14,
+"wild": 119,
+"music_day": 1053,
+"mapsec": 157,
+"placas": 2,
+"npcs": 17,
+"warps": 0,
+"gatilhos": 0,
+"cells": [
+[
+0,
+42,
+4
+],
+[
+0,
+43,
+4
+],
+[
+0,
+44,
+4
+]
+],
+"rect": [
+42,
+4,
+44,
+4
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 18,
+"name": "MAP_R10",
+"matrix": 0,
+"events": 15,
+"wild": 120,
+"music_day": 1053,
+"mapsec": 158,
+"placas": 3,
+"npcs": 2,
+"warps": 3,
+"gatilhos": 1,
+"cells": [
+[
+0,
+44,
+5
+]
+],
+"rect": [
+44,
+5,
+44,
+5
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 19,
+"name": "MAP_R11",
+"matrix": 0,
+"events": 16,
+"wild": 121,
+"music_day": 1059,
+"mapsec": 159,
+"placas": 3,
+"npcs": 10,
+"warps": 3,
+"gatilhos": 0,
+"cells": [
+[
+0,
+42,
+9
+],
+[
+0,
+43,
+9
+]
+],
+"rect": [
+42,
+9,
+43,
+9
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 20,
+"name": "MAP_R12",
+"matrix": 0,
+"events": 17,
+"wild": 92,
+"music_day": 1060,
+"mapsec": 160,
+"placas": 3,
+"npcs": 19,
+"warps": 3,
+"gatilhos": 0,
+"cells": [
+[
+0,
+44,
+8
+],
+[
+0,
+44,
+9
+],
+[
+0,
+44,
+10
+]
+],
+"rect": [
+44,
+8,
+44,
+10
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 21,
+"name": "MAP_R13",
+"matrix": 0,
+"events": 18,
+"wild": 122,
+"music_day": 1060,
+"mapsec": 161,
+"placas": 4,
+"npcs": 13,
+"warps": 0,
+"gatilhos": 0,
+"cells": [
+[
+0,
+42,
+11
+],
+[
+0,
+43,
+11
+],
+[
+0,
+44,
+11
+]
+],
+"rect": [
+42,
+11,
+44,
+11
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 22,
+"name": "MAP_R14",
+"matrix": 0,
+"events": 19,
+"wild": 123,
+"music_day": 1060,
+"mapsec": 162,
+"placas": 0,
+"npcs": 18,
+"warps": 0,
+"gatilhos": 1,
+"cells": [
+[
+0,
+42,
+12
+],
+[
+0,
+42,
+13
+]
+],
+"rect": [
+42,
+12,
+42,
+13
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 23,
+"name": "MAP_R15",
+"matrix": 0,
+"events": 20,
+"wild": 124,
+"music_day": 1060,
+"mapsec": 163,
+"placas": 1,
+"npcs": 13,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+39,
+13
+],
+[
+0,
+40,
+13
+],
+[
+0,
+41,
+13
+]
+],
+"rect": [
+39,
+13,
+41,
+13
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 24,
+"name": "MAP_R16",
+"matrix": 0,
+"events": 21,
+"wild": 255,
+"music_day": 1056,
+"mapsec": 164,
+"placas": 1,
+"npcs": 0,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+35,
+8
+]
+],
+"rect": [
+35,
+8,
+35,
+8
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 25,
+"name": "MAP_R17",
+"matrix": 0,
+"events": 22,
+"wild": 126,
+"music_day": 1216,
+"mapsec": 165,
+"placas": 2,
+"npcs": 11,
+"warps": 0,
+"gatilhos": 0,
+"cells": [
+[
+0,
+35,
+9
+],
+[
+0,
+35,
+10
+],
+[
+0,
+35,
+11
+],
+[
+0,
+35,
+12
+]
+],
+"rect": [
+35,
+9,
+35,
+12
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 26,
+"name": "MAP_R18",
+"matrix": 0,
+"events": 23,
+"wild": 127,
+"music_day": 1056,
+"mapsec": 166,
+"placas": 1,
+"npcs": 3,
+"warps": 4,
+"gatilhos": 0,
+"cells": [
+[
+0,
+35,
+13
+],
+[
+0,
+36,
+13
+]
+],
+"rect": [
+35,
+13,
+36,
+13
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 27,
+"name": "MAP_R22",
+"matrix": 0,
+"events": 24,
+"wild": 129,
+"music_day": 1051,
+"mapsec": 170,
+"placas": 1,
+"npcs": 4,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+29,
+8
+],
+[
+0,
+30,
+8
+]
+],
+"rect": [
+29,
+8,
+30,
+8
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 28,
+"name": "MAP_R24",
+"matrix": 0,
+"events": 25,
+"wild": 130,
+"music_day": 1061,
+"mapsec": 172,
+"placas": 0,
+"npcs": 3,
+"warps": 0,
+"gatilhos": 1,
+"cells": [
+[
+0,
+41,
+2
+]
+],
+"rect": [
+41,
+2,
+41,
+2
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 29,
+"name": "MAP_R25",
+"matrix": 0,
+"events": 26,
+"wild": 131,
+"music_day": 1061,
+"mapsec": 173,
+"placas": 2,
+"npcs": 16,
+"warps": 1,
+"gatilhos": 2,
+"cells": [
+[
+0,
+41,
+1
+],
+[
+0,
+42,
+1
+],
+[
+0,
+43,
+1
+],
+[
+0,
+44,
+1
+]
+],
+"rect": [
+41,
+1,
+44,
+1
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 30,
+"name": "MAP_R26",
+"matrix": 0,
+"events": 27,
+"wild": 103,
+"music_day": 1062,
+"mapsec": 174,
+"placas": 4,
+"npcs": 9,
+"warps": 4,
+"gatilhos": 0,
+"cells": [
+[
+0,
+28,
+9
+],
+[
+0,
+28,
+10
+],
+[
+0,
+28,
+11
+],
+[
+0,
+28,
+12
+]
+],
+"rect": [
+28,
+9,
+28,
+12
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 31,
+"name": "MAP_R27",
+"matrix": 0,
+"events": 28,
+"wild": 104,
+"music_day": 1062,
+"mapsec": 175,
+"placas": 5,
+"npcs": 10,
+"warps": 3,
+"gatilhos": 1,
+"cells": [
+[
+0,
+22,
+12
+],
+[
+0,
+23,
+12
+],
+[
+0,
+24,
+12
+],
+[
+0,
+25,
+12
+],
+[
+0,
+26,
+12
+],
+[
+0,
+27,
+12
+]
+],
+"rect": [
+22,
+12,
+27,
+12
+],
+"n_cells": 6,
+"world_matrix": 0
+},
+{
+"id": 32,
+"name": "MAP_R28",
+"matrix": 0,
+"events": 29,
+"wild": 105,
+"music_day": 1085,
+"mapsec": 176,
+"placas": 2,
+"npcs": 2,
+"warps": 3,
+"gatilhos": 0,
+"cells": [
+[
+0,
+26,
+8
+],
+[
+0,
+27,
+8
+]
+],
+"rect": [
+26,
+8,
+27,
+8
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 33,
+"name": "MAP_R29",
+"matrix": 0,
+"events": 30,
+"wild": 1,
+"music_day": 1028,
+"mapsec": 177,
+"placas": 3,
+"npcs": 11,
+"warps": 2,
+"gatilhos": 1,
+"cells": [
+[
+0,
+18,
+12
+],
+[
+0,
+19,
+12
+],
+[
+0,
+20,
+12
+]
+],
+"rect": [
+18,
+12,
+20,
+12
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 34,
+"name": "MAP_R30",
+"matrix": 0,
+"events": 31,
+"wild": 3,
+"music_day": 1029,
+"mapsec": 178,
+"placas": 6,
+"npcs": 15,
+"warps": 2,
+"gatilhos": 2,
+"cells": [
+[
+0,
+17,
+9
+],
+[
+0,
+17,
+10
+],
+[
+0,
+17,
+11
+]
+],
+"rect": [
+17,
+9,
+17,
+11
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 35,
+"name": "MAP_R31",
+"matrix": 0,
+"events": 32,
+"wild": 4,
+"music_day": 1029,
+"mapsec": 179,
+"placas": 2,
+"npcs": 9,
+"warps": 3,
+"gatilhos": 0,
+"cells": [
+[
+0,
+16,
+8
+],
+[
+0,
+17,
+8
+]
+],
+"rect": [
+16,
+8,
+17,
+8
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 36,
+"name": "MAP_R32",
+"matrix": 0,
+"events": 33,
+"wild": 8,
+"music_day": 1030,
+"mapsec": 180,
+"placas": 6,
+"npcs": 19,
+"warps": 4,
+"gatilhos": 1,
+"cells": [
+[
+0,
+14,
+9
+],
+[
+0,
+14,
+10
+],
+[
+0,
+14,
+11
+],
+[
+0,
+14,
+12
+],
+[
+0,
+14,
+13
+]
+],
+"rect": [
+14,
+9,
+14,
+13
+],
+"n_cells": 5,
+"world_matrix": 0
+},
+{
+"id": 37,
+"name": "MAP_R33",
+"matrix": 0,
+"events": 34,
+"wild": 17,
+"music_day": 1031,
+"mapsec": 181,
+"placas": 1,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 0,
+"cells": [
+[
+0,
+14,
+14
+]
+],
+"rect": [
+14,
+14,
+14,
+14
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 38,
+"name": "MAP_R34",
+"matrix": 0,
+"events": 35,
+"wild": 21,
+"music_day": 1032,
+"mapsec": 182,
+"placas": 6,
+"npcs": 16,
+"warps": 3,
+"gatilhos": 3,
+"cells": [
+[
+0,
+11,
+12
+],
+[
+0,
+11,
+13
+],
+[
+0,
+11,
+14
+]
+],
+"rect": [
+11,
+12,
+11,
+14
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 39,
+"name": "MAP_R35",
+"matrix": 0,
+"events": 36,
+"wild": 22,
+"music_day": 1033,
+"mapsec": 183,
+"placas": 3,
+"npcs": 15,
+"warps": 4,
+"gatilhos": 0,
+"cells": [
+[
+0,
+11,
+8
+],
+[
+0,
+11,
+9
+]
+],
+"rect": [
+11,
+8,
+11,
+9
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 40,
+"name": "MAP_R36",
+"matrix": 0,
+"events": 37,
+"wild": 25,
+"music_day": 1033,
+"mapsec": 184,
+"placas": 5,
+"npcs": 9,
+"warps": 6,
+"gatilhos": 0,
+"cells": [
+[
+0,
+11,
+7
+],
+[
+0,
+12,
+7
+],
+[
+0,
+13,
+7
+]
+],
+"rect": [
+11,
+7,
+13,
+7
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 41,
+"name": "MAP_R37",
+"matrix": 0,
+"events": 38,
+"wild": 26,
+"music_day": 1033,
+"mapsec": 185,
+"placas": 2,
+"npcs": 9,
+"warps": 0,
+"gatilhos": 0,
+"cells": [
+[
+0,
+12,
+6
+]
+],
+"rect": [
+12,
+6,
+12,
+6
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 42,
+"name": "MAP_R38",
+"matrix": 0,
+"events": 39,
+"wild": 38,
+"music_day": 1036,
+"mapsec": 186,
+"placas": 3,
+"npcs": 8,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+9,
+5
+],
+[
+0,
+10,
+5
+]
+],
+"rect": [
+9,
+5,
+10,
+5
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 43,
+"name": "MAP_R39",
+"matrix": 0,
+"events": 40,
+"wild": 39,
+"music_day": 1036,
+"mapsec": 187,
+"placas": 7,
+"npcs": 13,
+"warps": 2,
+"gatilhos": 1,
+"cells": [
+[
+0,
+8,
+5
+],
+[
+0,
+8,
+6
+]
+],
+"rect": [
+8,
+5,
+8,
+6
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 44,
+"name": "MAP_R42",
+"matrix": 0,
+"events": 41,
+"wild": 52,
+"music_day": 1037,
+"mapsec": 190,
+"placas": 5,
+"npcs": 13,
+"warps": 6,
+"gatilhos": 2,
+"cells": [
+[
+0,
+13,
+5
+],
+[
+0,
+14,
+5
+],
+[
+0,
+15,
+5
+]
+],
+"rect": [
+13,
+5,
+15,
+5
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 45,
+"name": "MAP_R43",
+"matrix": 0,
+"events": 42,
+"wild": 57,
+"music_day": 1037,
+"mapsec": 191,
+"placas": 3,
+"npcs": 9,
+"warps": 6,
+"gatilhos": 0,
+"cells": [
+[
+0,
+16,
+3
+],
+[
+0,
+16,
+4
+]
+],
+"rect": [
+16,
+3,
+16,
+4
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 46,
+"name": "MAP_R44",
+"matrix": 0,
+"events": 43,
+"wild": 59,
+"music_day": 1037,
+"mapsec": 192,
+"placas": 3,
+"npcs": 12,
+"warps": 1,
+"gatilhos": 0,
+"cells": [
+[
+0,
+17,
+5
+],
+[
+0,
+18,
+5
+],
+[
+0,
+19,
+5
+]
+],
+"rect": [
+17,
+5,
+19,
+5
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 47,
+"name": "MAP_R45",
+"matrix": 0,
+"events": 44,
+"wild": 67,
+"music_day": 1035,
+"mapsec": 193,
+"placas": 4,
+"npcs": 15,
+"warps": 1,
+"gatilhos": 0,
+"cells": [
+[
+0,
+20,
+6
+],
+[
+0,
+20,
+7
+],
+[
+0,
+20,
+8
+],
+[
+0,
+20,
+9
+],
+[
+0,
+20,
+10
+]
+],
+"rect": [
+20,
+6,
+20,
+10
+],
+"n_cells": 5,
+"world_matrix": 0
+},
+{
+"id": 48,
+"name": "MAP_R46",
+"matrix": 0,
+"events": 45,
+"wild": 68,
+"music_day": 1035,
+"mapsec": 194,
+"placas": 3,
+"npcs": 7,
+"warps": 3,
+"gatilhos": 0,
+"cells": [
+[
+0,
+19,
+10
+],
+[
+0,
+19,
+11
+]
+],
+"rect": [
+19,
+10,
+19,
+11
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 49,
+"name": "MAP_T01",
+"matrix": 0,
+"events": 46,
+"wild": 95,
+"music_day": 1046,
+"mapsec": 138,
+"placas": 4,
+"npcs": 3,
+"warps": 3,
+"gatilhos": 0,
+"cells": [
+[
+0,
+32,
+11
+]
+],
+"rect": [
+32,
+11,
+32,
+11
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 50,
+"name": "MAP_T02",
+"matrix": 0,
+"events": 47,
+"wild": 96,
+"music_day": 1045,
+"mapsec": 139,
+"placas": 6,
+"npcs": 8,
+"warps": 7,
+"gatilhos": 0,
+"cells": [
+[
+0,
+31,
+7
+],
+[
+0,
+32,
+7
+],
+[
+0,
+31,
+8
+],
+[
+0,
+32,
+8
+]
+],
+"rect": [
+31,
+7,
+32,
+8
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 51,
+"name": "MAP_T03",
+"matrix": 0,
+"events": 48,
+"wild": 255,
+"music_day": 1044,
+"mapsec": 140,
+"placas": 7,
+"npcs": 11,
+"warps": 6,
+"gatilhos": 0,
+"cells": [
+[
+0,
+32,
+2
+],
+[
+0,
+33,
+2
+],
+[
+0,
+32,
+3
+],
+[
+0,
+33,
+3
+]
+],
+"rect": [
+32,
+2,
+33,
+3
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 52,
+"name": "MAP_T04",
+"matrix": 0,
+"events": 49,
+"wild": 97,
+"music_day": 1040,
+"mapsec": 141,
+"placas": 6,
+"npcs": 8,
+"warps": 8,
+"gatilhos": 0,
+"cells": [
+[
+0,
+40,
+3
+],
+[
+0,
+41,
+3
+],
+[
+0,
+40,
+4
+],
+[
+0,
+41,
+4
+]
+],
+"rect": [
+40,
+3,
+41,
+4
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 53,
+"name": "MAP_T05",
+"matrix": 0,
+"events": 50,
+"wild": 255,
+"music_day": 1041,
+"mapsec": 142,
+"placas": 4,
+"npcs": 4,
+"warps": 7,
+"gatilhos": 0,
+"cells": [
+[
+0,
+44,
+7
+]
+],
+"rect": [
+44,
+7,
+44,
+7
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 54,
+"name": "MAP_T06",
+"matrix": 0,
+"events": 51,
+"wild": 98,
+"music_day": 1038,
+"mapsec": 143,
+"placas": 9,
+"npcs": 19,
+"warps": 8,
+"gatilhos": 3,
+"cells": [
+[
+0,
+40,
+9
+],
+[
+0,
+41,
+9
+],
+[
+0,
+40,
+10
+],
+[
+0,
+41,
+10
+]
+],
+"rect": [
+40,
+9,
+41,
+10
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 55,
+"name": "MAP_T07",
+"matrix": 0,
+"events": 52,
+"wild": 99,
+"music_day": 1042,
+"mapsec": 144,
+"placas": 7,
+"npcs": 14,
+"warps": 7,
+"gatilhos": 0,
+"cells": [
+[
+0,
+37,
+7
+],
+[
+0,
+38,
+7
+],
+[
+0,
+37,
+8
+],
+[
+0,
+38,
+8
+]
+],
+"rect": [
+37,
+7,
+38,
+8
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 56,
+"name": "MAP_T08",
+"matrix": 0,
+"events": 53,
+"wild": 100,
+"music_day": 1043,
+"mapsec": 145,
+"placas": 5,
+"npcs": 7,
+"warps": 11,
+"gatilhos": 0,
+"cells": [
+[
+0,
+37,
+12
+],
+[
+0,
+38,
+12
+],
+[
+0,
+37,
+13
+],
+[
+0,
+38,
+13
+]
+],
+"rect": [
+37,
+12,
+38,
+13
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 57,
+"name": "MAP_T09",
+"matrix": 0,
+"events": 54,
+"wild": 101,
+"music_day": 1047,
+"mapsec": 146,
+"placas": 5,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0,
+"cells": [
+[
+0,
+32,
+15
+]
+],
+"rect": [
+32,
+15,
+32,
+15
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 58,
+"name": "MAP_T10",
+"matrix": 0,
+"events": 55,
+"wild": 255,
+"music_day": 1085,
+"mapsec": 147,
+"placas": 2,
+"npcs": 0,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+28,
+6
+]
+],
+"rect": [
+28,
+6,
+28,
+6
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 59,
+"name": "MAP_T11",
+"matrix": 0,
+"events": 56,
+"wild": 255,
+"music_day": 1039,
+"mapsec": 148,
+"placas": 6,
+"npcs": 10,
+"warps": 17,
+"gatilhos": 0,
+"cells": [
+[
+0,
+40,
+6
+],
+[
+0,
+41,
+6
+],
+[
+0,
+40,
+7
+],
+[
+0,
+41,
+7
+]
+],
+"rect": [
+40,
+6,
+41,
+7
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 60,
+"name": "MAP_T20",
+"matrix": 0,
+"events": 57,
+"wild": 0,
+"music_day": 1018,
+"mapsec": 126,
+"placas": 5,
+"npcs": 10,
+"warps": 5,
+"gatilhos": 4,
+"cells": [
+[
+0,
+21,
+12
+]
+],
+"rect": [
+21,
+12,
+21,
+12
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 61,
+"name": "MAP_T20R0101",
+"matrix": 100,
+"events": 58,
+"wild": 255,
+"music_day": 1066,
+"mapsec": 126,
+"placas": 11,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 2
+},
+{
+"id": 62,
+"name": "MAP_T20R0102",
+"matrix": 101,
+"events": 59,
+"wild": 255,
+"music_day": 1018,
+"mapsec": 126,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 63,
+"name": "MAP_T20R0201",
+"matrix": 71,
+"events": 60,
+"wild": 255,
+"music_day": 1018,
+"mapsec": 126,
+"placas": 5,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 64,
+"name": "MAP_T20R0202",
+"matrix": 72,
+"events": 61,
+"wild": 255,
+"music_day": 1018,
+"mapsec": 126,
+"placas": 2,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 65,
+"name": "MAP_T20R0301",
+"matrix": 66,
+"events": 62,
+"wild": 255,
+"music_day": 1018,
+"mapsec": 126,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 66,
+"name": "MAP_T20R0401",
+"matrix": 71,
+"events": 63,
+"wild": 255,
+"music_day": 1018,
+"mapsec": 126,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 67,
+"name": "MAP_T21",
+"matrix": 0,
+"events": 64,
+"wild": 2,
+"music_day": 1019,
+"mapsec": 127,
+"placas": 4,
+"npcs": 6,
+"warps": 5,
+"gatilhos": 3,
+"cells": [
+[
+0,
+16,
+12
+],
+[
+0,
+17,
+12
+]
+],
+"rect": [
+16,
+12,
+17,
+12
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 68,
+"name": "MAP_T21FS0101",
+"matrix": 104,
+"events": 65,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 127,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 69,
+"name": "MAP_T21PC0101",
+"matrix": 73,
+"events": 66,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 127,
+"placas": 1,
+"npcs": 10,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 70,
+"name": "MAP_T21R0301",
+"matrix": 97,
+"events": 67,
+"wild": 255,
+"music_day": 1019,
+"mapsec": 127,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 71,
+"name": "MAP_T21R0401",
+"matrix": 96,
+"events": 68,
+"wild": 255,
+"music_day": 1019,
+"mapsec": 127,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 72,
+"name": "MAP_T21R0501",
+"matrix": 97,
+"events": 69,
+"wild": 255,
+"music_day": 1019,
+"mapsec": 127,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 73,
+"name": "MAP_T22",
+"matrix": 0,
+"events": 70,
+"wild": 5,
+"music_day": 1020,
+"mapsec": 128,
+"placas": 6,
+"npcs": 13,
+"warps": 11,
+"gatilhos": 1,
+"cells": [
+[
+0,
+14,
+7
+],
+[
+0,
+15,
+7
+],
+[
+0,
+14,
+8
+],
+[
+0,
+15,
+8
+]
+],
+"rect": [
+14,
+7,
+15,
+8
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 74,
+"name": "MAP_T23",
+"matrix": 0,
+"events": 71,
+"wild": 255,
+"music_day": 1021,
+"mapsec": 129,
+"placas": 7,
+"npcs": 14,
+"warps": 8,
+"gatilhos": 2,
+"cells": [
+[
+0,
+12,
+14
+],
+[
+0,
+13,
+14
+]
+],
+"rect": [
+12,
+14,
+13,
+14
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 75,
+"name": "MAP_T24",
+"matrix": 0,
+"events": 72,
+"wild": 51,
+"music_day": 1025,
+"mapsec": 130,
+"placas": 8,
+"npcs": 12,
+"warps": 8,
+"gatilhos": 1,
+"cells": [
+[
+0,
+5,
+10
+],
+[
+0,
+5,
+11
+]
+],
+"rect": [
+5,
+10,
+5,
+11
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 76,
+"name": "MAP_T25",
+"matrix": 0,
+"events": 73,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 12,
+"npcs": 21,
+"warps": 17,
+"gatilhos": 1,
+"cells": [
+[
+0,
+9,
+10
+],
+[
+0,
+10,
+10
+],
+[
+0,
+11,
+10
+],
+[
+0,
+9,
+11
+],
+[
+0,
+10,
+11
+],
+[
+0,
+11,
+11
+]
+],
+"rect": [
+9,
+10,
+11,
+11
+],
+"n_cells": 6,
+"world_matrix": 0
+},
+{
+"id": 77,
+"name": "MAP_T26",
+"matrix": 0,
+"events": 74,
+"wild": 40,
+"music_day": 1024,
+"mapsec": 132,
+"placas": 6,
+"npcs": 9,
+"warps": 9,
+"gatilhos": 1,
+"cells": [
+[
+0,
+8,
+7
+],
+[
+0,
+9,
+7
+],
+[
+0,
+8,
+8
+],
+[
+0,
+9,
+8
+]
+],
+"rect": [
+8,
+7,
+9,
+8
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 78,
+"name": "MAP_T27",
+"matrix": 0,
+"events": 75,
+"wild": 27,
+"music_day": 1023,
+"mapsec": 133,
+"placas": 9,
+"npcs": 9,
+"warps": 12,
+"gatilhos": 1,
+"cells": [
+[
+0,
+11,
+4
+],
+[
+0,
+12,
+4
+],
+[
+0,
+11,
+5
+],
+[
+0,
+12,
+5
+]
+],
+"rect": [
+11,
+4,
+12,
+5
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 79,
+"name": "MAP_T27FS0101",
+"matrix": 104,
+"events": 76,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 133,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 80,
+"name": "MAP_T27GYM0101",
+"matrix": 90,
+"events": 77,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 133,
+"placas": 2,
+"npcs": 7,
+"warps": 1,
+"gatilhos": 15
+},
+{
+"id": 81,
+"name": "MAP_T27PC0101",
+"matrix": 73,
+"events": 78,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 133,
+"placas": 1,
+"npcs": 8,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 82,
+"name": "MAP_T27R0101",
+"matrix": 66,
+"events": 79,
+"wild": 255,
+"music_day": 1023,
+"mapsec": 6,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 83,
+"name": "MAP_T27R0201",
+"matrix": 68,
+"events": 80,
+"wild": 255,
+"music_day": 1023,
+"mapsec": 133,
+"placas": 0,
+"npcs": 3,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 84,
+"name": "MAP_T27R0801",
+"matrix": 66,
+"events": 81,
+"wild": 255,
+"music_day": 1023,
+"mapsec": 133,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 85,
+"name": "MAP_T27R0401",
+"matrix": 66,
+"events": 82,
+"wild": 255,
+"music_day": 1023,
+"mapsec": 133,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 86,
+"name": "MAP_T27R0501",
+"matrix": 126,
+"events": 83,
+"wild": 255,
+"music_day": 1068,
+"mapsec": 133,
+"placas": 2,
+"npcs": 13,
+"warps": 1,
+"gatilhos": 2
+},
+{
+"id": 87,
+"name": "MAP_T28",
+"matrix": 0,
+"events": 84,
+"wild": 255,
+"music_day": 1026,
+"mapsec": 134,
+"placas": 3,
+"npcs": 4,
+"warps": 6,
+"gatilhos": 1,
+"cells": [
+[
+0,
+16,
+5
+]
+],
+"rect": [
+16,
+5,
+16,
+5
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 88,
+"name": "MAP_T29",
+"matrix": 0,
+"events": 85,
+"wild": 58,
+"music_day": 1037,
+"mapsec": 135,
+"placas": 5,
+"npcs": 21,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+15,
+1
+],
+[
+0,
+16,
+1
+],
+[
+0,
+17,
+1
+],
+[
+0,
+15,
+2
+],
+[
+0,
+16,
+2
+],
+[
+0,
+17,
+2
+]
+],
+"rect": [
+15,
+1,
+17,
+2
+],
+"n_cells": 6,
+"world_matrix": 0
+},
+{
+"id": 89,
+"name": "MAP_T30",
+"matrix": 0,
+"events": 86,
+"wild": 65,
+"music_day": 1027,
+"mapsec": 136,
+"placas": 5,
+"npcs": 10,
+"warps": 8,
+"gatilhos": 0,
+"cells": [
+[
+0,
+20,
+4
+],
+[
+0,
+21,
+4
+],
+[
+0,
+20,
+5
+],
+[
+0,
+21,
+5
+]
+],
+"rect": [
+20,
+4,
+21,
+5
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 90,
+"name": "MAP_T31",
+"matrix": 0,
+"events": 87,
+"wild": 85,
+"music_day": 1085,
+"mapsec": 137,
+"placas": 2,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+25,
+8
+]
+],
+"rect": [
+25,
+8,
+25,
+8
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 91,
+"name": "MAP_W19",
+"matrix": 0,
+"events": 88,
+"wild": 93,
+"music_day": 1056,
+"mapsec": 167,
+"placas": 7,
+"npcs": 18,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+37,
+14
+],
+[
+0,
+37,
+15
+]
+],
+"rect": [
+37,
+14,
+37,
+15
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 92,
+"name": "MAP_W20",
+"matrix": 0,
+"events": 89,
+"wild": 94,
+"music_day": 1056,
+"mapsec": 168,
+"placas": 5,
+"npcs": 12,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+0,
+33,
+15
+],
+[
+0,
+34,
+15
+],
+[
+0,
+35,
+15
+],
+[
+0,
+36,
+15
+]
+],
+"rect": [
+33,
+15,
+36,
+15
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 93,
+"name": "MAP_W21",
+"matrix": 0,
+"events": 90,
+"wild": 128,
+"music_day": 1058,
+"mapsec": 169,
+"placas": 4,
+"npcs": 14,
+"warps": 0,
+"gatilhos": 0,
+"cells": [
+[
+0,
+32,
+12
+],
+[
+0,
+32,
+13
+],
+[
+0,
+32,
+14
+]
+],
+"rect": [
+32,
+12,
+32,
+14
+],
+"n_cells": 3,
+"world_matrix": 0
+},
+{
+"id": 94,
+"name": "MAP_W40",
+"matrix": 0,
+"events": 91,
+"wild": 41,
+"music_day": 1034,
+"mapsec": 188,
+"placas": 3,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 1,
+"cells": [
+[
+0,
+7,
+8
+],
+[
+0,
+7,
+9
+]
+],
+"rect": [
+7,
+8,
+7,
+9
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 95,
+"name": "MAP_W41",
+"matrix": 0,
+"events": 92,
+"wild": 42,
+"music_day": 1034,
+"mapsec": 189,
+"placas": 5,
+"npcs": 10,
+"warps": 4,
+"gatilhos": 0,
+"cells": [
+[
+0,
+6,
+10
+],
+[
+0,
+7,
+10
+],
+[
+0,
+6,
+11
+],
+[
+0,
+7,
+11
+]
+],
+"rect": [
+6,
+10,
+7,
+11
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 96,
+"name": "MAP_D22R0101",
+"matrix": 27,
+"events": 93,
+"wild": 23,
+"music_day": 1075,
+"mapsec": 207,
+"placas": 5,
+"npcs": 29,
+"warps": 7,
+"gatilhos": 0
+},
+{
+"id": 97,
+"name": "MAP_R31R0101",
+"matrix": 70,
+"events": 94,
+"wild": 255,
+"music_day": 1029,
+"mapsec": 179,
+"placas": 0,
+"npcs": 3,
+"warps": 2,
+"gatilhos": 1
+},
+{
+"id": 98,
+"name": "MAP_R32R0101",
+"matrix": 70,
+"events": 95,
+"wild": 255,
+"music_day": 1030,
+"mapsec": 180,
+"placas": 0,
+"npcs": 3,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 99,
+"name": "MAP_D25R0101",
+"matrix": 42,
+"events": 96,
+"wild": 14,
+"music_day": 1073,
+"mapsec": 210,
+"placas": 3,
+"npcs": 9,
+"warps": 8,
+"gatilhos": 0
+},
+{
+"id": 100,
+"name": "MAP_T23R0101",
+"matrix": 70,
+"events": 97,
+"wild": 255,
+"music_day": 1033,
+"mapsec": 129,
+"placas": 0,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 101,
+"name": "MAP_R35R0101",
+"matrix": 69,
+"events": 98,
+"wild": 255,
+"music_day": 1033,
+"mapsec": 183,
+"placas": 0,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 102,
+"name": "MAP_R35R0201",
+"matrix": 196,
+"events": 99,
+"wild": 255,
+"music_day": 1033,
+"mapsec": 183,
+"placas": 5,
+"npcs": 8,
+"warps": 3,
+"gatilhos": 1
+},
+{
+"id": 103,
+"name": "MAP_R36R0101",
+"matrix": 69,
+"events": 100,
+"wild": 255,
+"music_day": 1033,
+"mapsec": 184,
+"placas": 0,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 104,
+"name": "MAP_R36R0201",
+"matrix": 70,
+"events": 101,
+"wild": 255,
+"music_day": 1033,
+"mapsec": 184,
+"placas": 0,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 105,
+"name": "MAP_T27R0601",
+"matrix": 70,
+"events": 102,
+"wild": 255,
+"music_day": 1033,
+"mapsec": 6,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 106,
+"name": "MAP_D01R0101",
+"matrix": 2,
+"events": 103,
+"wild": 133,
+"music_day": 1082,
+"mapsec": 197,
+"placas": 2,
+"npcs": 4,
+"warps": 8,
+"gatilhos": 0
+},
+{
+"id": 107,
+"name": "MAP_D02R0101",
+"matrix": 3,
+"events": 104,
+"wild": 106,
+"music_day": 1073,
+"mapsec": 198,
+"placas": 1,
+"npcs": 1,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 108,
+"name": "MAP_D05R0101",
+"matrix": 6,
+"events": 105,
+"wild": 108,
+"music_day": 1082,
+"mapsec": 200,
+"placas": 2,
+"npcs": 2,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 109,
+"name": "MAP_D10R0101",
+"matrix": 8,
+"events": 106,
+"wild": 255,
+"music_day": 1159,
+"mapsec": 55,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 1
+},
+{
+"id": 110,
+"name": "MAP_D15R0101",
+"matrix": 12,
+"events": 107,
+"wild": 255,
+"music_day": 1072,
+"mapsec": 204,
+"placas": 0,
+"npcs": 6,
+"warps": 7,
+"gatilhos": 0
+},
+{
+"id": 111,
+"name": "MAP_D17R0101",
+"matrix": 15,
+"events": 108,
+"wild": 255,
+"music_day": 1077,
+"mapsec": 205,
+"placas": 0,
+"npcs": 1,
+"warps": 3,
+"gatilhos": 2
+},
+{
+"id": 112,
+"name": "MAP_D23R0101",
+"matrix": 28,
+"events": 109,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 208,
+"placas": 2,
+"npcs": 8,
+"warps": 2,
+"gatilhos": 1
+},
+{
+"id": 113,
+"name": "MAP_D24R0101",
+"matrix": 0,
+"events": 110,
+"wild": 9,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 9,
+"npcs": 10,
+"warps": 17,
+"gatilhos": 1,
+"cells": [
+[
+0,
+13,
+8
+],
+[
+0,
+13,
+9
+]
+],
+"rect": [
+13,
+8,
+13,
+9
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 114,
+"name": "MAP_D26R0101",
+"matrix": 45,
+"events": 111,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 211,
+"placas": 1,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 115,
+"name": "MAP_D27R0101",
+"matrix": 47,
+"events": 112,
+"wild": 255,
+"music_day": 1078,
+"mapsec": 212,
+"placas": 0,
+"npcs": 2,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 116,
+"name": "MAP_D35R0101",
+"matrix": 138,
+"events": 113,
+"wild": 255,
+"music_day": 1026,
+"mapsec": 134,
+"placas": 1,
+"npcs": 9,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 117,
+"name": "MAP_D36R0101",
+"matrix": 56,
+"events": 114,
+"wild": 20,
+"music_day": 1073,
+"mapsec": 214,
+"placas": 11,
+"npcs": 18,
+"warps": 6,
+"gatilhos": 9
+},
+{
+"id": 118,
+"name": "MAP_D37R0101",
+"matrix": 57,
+"events": 115,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 215,
+"placas": 0,
+"npcs": 4,
+"warps": 10,
+"gatilhos": 0
+},
+{
+"id": 119,
+"name": "MAP_D38R0101",
+"matrix": 62,
+"events": 116,
+"wild": 53,
+"music_day": 1073,
+"mapsec": 216,
+"placas": 2,
+"npcs": 2,
+"warps": 11,
+"gatilhos": 0
+},
+{
+"id": 120,
+"name": "MAP_D39R0101",
+"matrix": 132,
+"events": 117,
+"wild": 60,
+"music_day": 1080,
+"mapsec": 217,
+"placas": 2,
+"npcs": 6,
+"warps": 4,
+"gatilhos": 1
+},
+{
+"id": 121,
+"name": "MAP_D40R0101",
+"matrix": 141,
+"events": 118,
+"wild": 43,
+"music_day": 1073,
+"mapsec": 218,
+"placas": 1,
+"npcs": 2,
+"warps": 10,
+"gatilhos": 0
+},
+{
+"id": 122,
+"name": "MAP_D41R0101",
+"matrix": 265,
+"events": 119,
+"wild": 86,
+"music_day": 1078,
+"mapsec": 219,
+"placas": 3,
+"npcs": 2,
+"warps": 7,
+"gatilhos": 0
+},
+{
+"id": 123,
+"name": "MAP_D42R0101",
+"matrix": 98,
+"events": 120,
+"wild": 70,
+"music_day": 1080,
+"mapsec": 220,
+"placas": 3,
+"npcs": 3,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 124,
+"name": "MAP_D43R0101",
+"matrix": 161,
+"events": 121,
+"wild": 110,
+"music_day": 1084,
+"mapsec": 221,
+"placas": 2,
+"npcs": 6,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 125,
+"name": "MAP_D44R0101",
+"matrix": 145,
+"events": 122,
+"wild": 255,
+"music_day": 1081,
+"mapsec": 222,
+"placas": 0,
+"npcs": 0,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 126,
+"name": "MAP_D45R0101",
+"matrix": 151,
+"events": 123,
+"wild": 132,
+"music_day": 1073,
+"mapsec": 223,
+"placas": 0,
+"npcs": 2,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 127,
+"name": "MAP_R30R0101",
+"matrix": 66,
+"events": 124,
+"wild": 255,
+"music_day": 1029,
+"mapsec": 178,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 128,
+"name": "MAP_T27PC0102",
+"matrix": 74,
+"events": 125,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 133,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 1
+},
+{
+"id": 129,
+"name": "MAP_T27PC0103",
+"matrix": 75,
+"events": 126,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 133,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 130,
+"name": "MAP_T27PC0104",
+"matrix": 76,
+"events": 0,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 133,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 131,
+"name": "MAP_T27PC0105",
+"matrix": 77,
+"events": 127,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 133,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 132,
+"name": "MAP_R42R0101",
+"matrix": 70,
+"events": 128,
+"wild": 255,
+"music_day": 1037,
+"mapsec": 190,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 133,
+"name": "MAP_T28R0201",
+"matrix": 95,
+"events": 129,
+"wild": 255,
+"music_day": 1026,
+"mapsec": 134,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 134,
+"name": "MAP_R29R0101",
+"matrix": 69,
+"events": 130,
+"wild": 255,
+"music_day": 1028,
+"mapsec": 177,
+"placas": 0,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 135,
+"name": "MAP_T22GYM0101",
+"matrix": 87,
+"events": 131,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 128,
+"placas": 2,
+"npcs": 5,
+"warps": 1,
+"gatilhos": 1
+},
+{
+"id": 136,
+"name": "MAP_T23GYM0101",
+"matrix": 88,
+"events": 132,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 129,
+"placas": 2,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 137,
+"name": "MAP_T25GYM0101",
+"matrix": 89,
+"events": 133,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 131,
+"placas": 2,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 1
+},
+{
+"id": 138,
+"name": "MAP_T26GYM0101",
+"matrix": 91,
+"events": 134,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 132,
+"placas": 2,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 2
+},
+{
+"id": 139,
+"name": "MAP_T24GYM0101",
+"matrix": 92,
+"events": 135,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 130,
+"placas": 3,
+"npcs": 5,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 140,
+"name": "MAP_T28GYM0101",
+"matrix": 229,
+"events": 136,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 134,
+"placas": 0,
+"npcs": 7,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 141,
+"name": "MAP_T30GYM0101",
+"matrix": 94,
+"events": 137,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 136,
+"placas": 2,
+"npcs": 7,
+"warps": 1,
+"gatilhos": 4
+},
+{
+"id": 142,
+"name": "MAP_R43R0101",
+"matrix": 69,
+"events": 138,
+"wild": 255,
+"music_day": 1037,
+"mapsec": 191,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 143,
+"name": "MAP_R30R0201",
+"matrix": 103,
+"events": 139,
+"wild": 255,
+"music_day": 1029,
+"mapsec": 178,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 144,
+"name": "MAP_T21PC0102",
+"matrix": 77,
+"events": 140,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 127,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 145,
+"name": "MAP_D03R0101",
+"matrix": 78,
+"events": 141,
+"wild": 139,
+"music_day": 1082,
+"mapsec": 199,
+"placas": 3,
+"npcs": 11,
+"warps": 15,
+"gatilhos": 0
+},
+{
+"id": 146,
+"name": "MAP_D11R0101",
+"matrix": 81,
+"events": 142,
+"wild": 74,
+"music_day": 1080,
+"mapsec": 203,
+"placas": 1,
+"npcs": 0,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 147,
+"name": "MAP_D46R0101",
+"matrix": 86,
+"events": 143,
+"wild": 137,
+"music_day": 1083,
+"mapsec": 224,
+"placas": 7,
+"npcs": 12,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 148,
+"name": "MAP_R09R0101",
+"matrix": 66,
+"events": 0,
+"wild": 255,
+"music_day": 1044,
+"mapsec": 201,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 149,
+"name": "MAP_T22R0701",
+"matrix": 70,
+"events": 144,
+"wild": 255,
+"music_day": 1033,
+"mapsec": 184,
+"placas": 0,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 150,
+"name": "MAP_D22R0201",
+"matrix": 69,
+"events": 145,
+"wild": 255,
+"music_day": 1134,
+"mapsec": 225,
+"placas": 0,
+"npcs": 0,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 151,
+"name": "MAP_R47",
+"matrix": 0,
+"events": 146,
+"wild": 71,
+"music_day": 1157,
+"mapsec": 195,
+"placas": 2,
+"npcs": 13,
+"warps": 7,
+"gatilhos": 0,
+"cells": [
+[
+0,
+2,
+11
+],
+[
+0,
+3,
+11
+],
+[
+0,
+4,
+11
+],
+[
+0,
+2,
+12
+],
+[
+0,
+3,
+12
+],
+[
+0,
+4,
+12
+]
+],
+"rect": [
+2,
+11,
+4,
+12
+],
+"n_cells": 6,
+"world_matrix": 0
+},
+{
+"id": 152,
+"name": "MAP_R48",
+"matrix": 0,
+"events": 147,
+"wild": 102,
+"music_day": 1157,
+"mapsec": 196,
+"placas": 1,
+"npcs": 6,
+"warps": 0,
+"gatilhos": 0,
+"cells": [
+[
+0,
+2,
+10
+],
+[
+0,
+3,
+10
+]
+],
+"rect": [
+2,
+10,
+3,
+10
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 153,
+"name": "MAP_D25R0102",
+"matrix": 43,
+"events": 148,
+"wild": 15,
+"music_day": 1073,
+"mapsec": 210,
+"placas": 2,
+"npcs": 7,
+"warps": 5,
+"gatilhos": 0
+},
+{
+"id": 154,
+"name": "MAP_D25R0103",
+"matrix": 44,
+"events": 149,
+"wild": 16,
+"music_day": 1073,
+"mapsec": 210,
+"placas": 2,
+"npcs": 6,
+"warps": 5,
+"gatilhos": 0
+},
+{
+"id": 155,
+"name": "MAP_D15R0102",
+"matrix": 13,
+"events": 150,
+"wild": 6,
+"music_day": 1072,
+"mapsec": 204,
+"placas": 0,
+"npcs": 3,
+"warps": 4,
+"gatilhos": 0
+},
+{
+"id": 156,
+"name": "MAP_D15R0103",
+"matrix": 14,
+"events": 151,
+"wild": 7,
+"music_day": 1072,
+"mapsec": 204,
+"placas": 0,
+"npcs": 7,
+"warps": 1,
+"gatilhos": 1
+},
+{
+"id": 157,
+"name": "MAP_T22FS0101",
+"matrix": 104,
+"events": 152,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 128,
+"placas": 0,
+"npcs": 7,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 158,
+"name": "MAP_T22PC0101",
+"matrix": 73,
+"events": 153,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 128,
+"placas": 1,
+"npcs": 10,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 159,
+"name": "MAP_T22R0301",
+"matrix": 102,
+"events": 154,
+"wild": 255,
+"music_day": 1020,
+"mapsec": 128,
+"placas": 4,
+"npcs": 7,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 160,
+"name": "MAP_T22R0401",
+"matrix": 95,
+"events": 155,
+"wild": 255,
+"music_day": 1020,
+"mapsec": 128,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 161,
+"name": "MAP_T22R0501",
+"matrix": 66,
+"events": 0,
+"wild": 255,
+"music_day": 1019,
+"mapsec": 6,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 162,
+"name": "MAP_T22R0601",
+"matrix": 95,
+"events": 156,
+"wild": 255,
+"music_day": 1020,
+"mapsec": 128,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 163,
+"name": "MAP_T23R0201",
+"matrix": 125,
+"events": 157,
+"wild": 255,
+"music_day": 1021,
+"mapsec": 129,
+"placas": 0,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 164,
+"name": "MAP_T23R0501",
+"matrix": 127,
+"events": 158,
+"wild": 255,
+"music_day": 1021,
+"mapsec": 129,
+"placas": 2,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 165,
+"name": "MAP_T23FS0101",
+"matrix": 104,
+"events": 159,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 129,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 166,
+"name": "MAP_T23PC0101",
+"matrix": 73,
+"events": 160,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 129,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 167,
+"name": "MAP_T22PC0102",
+"matrix": 77,
+"events": 161,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 128,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 168,
+"name": "MAP_T23PC0102",
+"matrix": 77,
+"events": 162,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 129,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 169,
+"name": "MAP_R32PC0101",
+"matrix": 73,
+"events": 163,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 180,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 170,
+"name": "MAP_R32PC0102",
+"matrix": 77,
+"events": 164,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 180,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 171,
+"name": "MAP_R34R0201",
+"matrix": 69,
+"events": 165,
+"wild": 255,
+"music_day": 1032,
+"mapsec": 182,
+"placas": 0,
+"npcs": 3,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 172,
+"name": "MAP_R38R0101",
+"matrix": 70,
+"events": 166,
+"wild": 255,
+"music_day": 1036,
+"mapsec": 186,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 173,
+"name": "MAP_D47R0101",
+"matrix": 227,
+"events": 167,
+"wild": 255,
+"music_day": 1158,
+"mapsec": 227,
+"placas": 1,
+"npcs": 7,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 174,
+"name": "MAP_D47",
+"matrix": 0,
+"events": 168,
+"wild": 255,
+"music_day": 1158,
+"mapsec": 227,
+"placas": 4,
+"npcs": 15,
+"warps": 3,
+"gatilhos": 0,
+"cells": [
+[
+0,
+2,
+8
+],
+[
+0,
+3,
+8
+],
+[
+0,
+2,
+9
+],
+[
+0,
+3,
+9
+]
+],
+"rect": [
+2,
+8,
+3,
+9
+],
+"n_cells": 4,
+"world_matrix": 0
+},
+{
+"id": 175,
+"name": "MAP_T27R0301",
+"matrix": 66,
+"events": 0,
+"wild": 255,
+"music_day": 1023,
+"mapsec": 6,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 176,
+"name": "MAP_D42R0102",
+"matrix": 99,
+"events": 169,
+"wild": 69,
+"music_day": 1080,
+"mapsec": 220,
+"placas": 2,
+"npcs": 10,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 177,
+"name": "MAP_D26R0102",
+"matrix": 46,
+"events": 170,
+"wild": 18,
+"music_day": 1073,
+"mapsec": 211,
+"placas": 2,
+"npcs": 9,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 178,
+"name": "MAP_D43R0102",
+"matrix": 162,
+"events": 171,
+"wild": 134,
+"music_day": 1084,
+"mapsec": 221,
+"placas": 3,
+"npcs": 5,
+"warps": 9,
+"gatilhos": 0
+},
+{
+"id": 179,
+"name": "MAP_D43R0103",
+"matrix": 163,
+"events": 172,
+"wild": 135,
+"music_day": 1084,
+"mapsec": 221,
+"placas": 2,
+"npcs": 11,
+"warps": 6,
+"gatilhos": 6
+},
+{
+"id": 180,
+"name": "MAP_T23GYM0102",
+"matrix": 105,
+"events": 173,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 129,
+"placas": 4,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 12
+},
+{
+"id": 181,
+"name": "MAP_D26R0103",
+"matrix": 106,
+"events": 174,
+"wild": 19,
+"music_day": 1073,
+"mapsec": 211,
+"placas": 0,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 182,
+"name": "MAP_T25R0201",
+"matrix": 107,
+"events": 175,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 16,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 183,
+"name": "MAP_T25R1101",
+"matrix": 109,
+"events": 176,
+"wild": 255,
+"music_day": 1069,
+"mapsec": 131,
+"placas": 22,
+"npcs": 11,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 184,
+"name": "MAP_T25R0601",
+"matrix": 108,
+"events": 177,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 185,
+"name": "MAP_T25PC0101",
+"matrix": 73,
+"events": 178,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 131,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 186,
+"name": "MAP_D23R0102",
+"matrix": 29,
+"events": 179,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 208,
+"placas": 3,
+"npcs": 10,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 187,
+"name": "MAP_D23R0103",
+"matrix": 30,
+"events": 180,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 208,
+"placas": 3,
+"npcs": 9,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 188,
+"name": "MAP_D23R0104",
+"matrix": 31,
+"events": 181,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 208,
+"placas": 2,
+"npcs": 9,
+"warps": 4,
+"gatilhos": 0
+},
+{
+"id": 189,
+"name": "MAP_D23R0105",
+"matrix": 32,
+"events": 182,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 208,
+"placas": 2,
+"npcs": 3,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 190,
+"name": "MAP_D23R0106",
+"matrix": 110,
+"events": 183,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 208,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 191,
+"name": "MAP_T25R1001",
+"matrix": 113,
+"events": 184,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 131,
+"placas": 1,
+"npcs": 6,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 192,
+"name": "MAP_T25R1002",
+"matrix": 114,
+"events": 185,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 131,
+"placas": 1,
+"npcs": 5,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 193,
+"name": "MAP_T25R1003",
+"matrix": 115,
+"events": 186,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 131,
+"placas": 1,
+"npcs": 3,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 194,
+"name": "MAP_T25R1004",
+"matrix": 116,
+"events": 187,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 131,
+"placas": 1,
+"npcs": 4,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 195,
+"name": "MAP_T25R1005",
+"matrix": 117,
+"events": 188,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 131,
+"placas": 1,
+"npcs": 5,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 196,
+"name": "MAP_T25R1006",
+"matrix": 118,
+"events": 189,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 131,
+"placas": 4,
+"npcs": 5,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 197,
+"name": "MAP_T25R0501",
+"matrix": 111,
+"events": 190,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 1,
+"npcs": 1,
+"warps": 3,
+"gatilhos": 6
+},
+{
+"id": 198,
+"name": "MAP_T25R0502",
+"matrix": 112,
+"events": 191,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 199,
+"name": "MAP_D37R0102",
+"matrix": 58,
+"events": 192,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 215,
+"placas": 12,
+"npcs": 14,
+"warps": 7,
+"gatilhos": 2
+},
+{
+"id": 200,
+"name": "MAP_D37R0103",
+"matrix": 59,
+"events": 193,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 3,
+"npcs": 22,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 201,
+"name": "MAP_D37R0104",
+"matrix": 60,
+"events": 194,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 131,
+"placas": 4,
+"npcs": 37,
+"warps": 2,
+"gatilhos": 1
+},
+{
+"id": 202,
+"name": "MAP_D37R0105",
+"matrix": 61,
+"events": 195,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 131,
+"placas": 2,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 203,
+"name": "MAP_T25R0401",
+"matrix": 97,
+"events": 196,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 204,
+"name": "MAP_T25R0301",
+"matrix": 96,
+"events": 197,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 205,
+"name": "MAP_T25R0801",
+"matrix": 96,
+"events": 198,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 206,
+"name": "MAP_T25R0901",
+"matrix": 140,
+"events": 199,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 207,
+"name": "MAP_T25R1201",
+"matrix": 237,
+"events": 200,
+"wild": 255,
+"music_day": 1154,
+"mapsec": 118,
+"placas": 11,
+"npcs": 13,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 208,
+"name": "MAP_T25R1301",
+"matrix": 119,
+"events": 0,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 209,
+"name": "MAP_T25R1302",
+"matrix": 120,
+"events": 0,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 210,
+"name": "MAP_T25R1303",
+"matrix": 121,
+"events": 0,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 211,
+"name": "MAP_T25R1304",
+"matrix": 122,
+"events": 0,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 212,
+"name": "MAP_T25R1305",
+"matrix": 123,
+"events": 0,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 213,
+"name": "MAP_T25R1306",
+"matrix": 124,
+"events": 0,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 214,
+"name": "MAP_R39R0101",
+"matrix": 128,
+"events": 201,
+"wild": 255,
+"music_day": 1036,
+"mapsec": 187,
+"placas": 0,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 215,
+"name": "MAP_R39R0201",
+"matrix": 129,
+"events": 202,
+"wild": 255,
+"music_day": 1036,
+"mapsec": 187,
+"placas": 0,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 216,
+"name": "MAP_T27R0202",
+"matrix": 130,
+"events": 203,
+"wild": 255,
+"music_day": 1023,
+"mapsec": 133,
+"placas": 0,
+"npcs": 0,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 217,
+"name": "MAP_D18R0102",
+"matrix": 26,
+"events": 204,
+"wild": 29,
+"music_day": 1076,
+"mapsec": 206,
+"placas": 2,
+"npcs": 13,
+"warps": 2,
+"gatilhos": 1
+},
+{
+"id": 218,
+"name": "MAP_D24R0201",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1074,
+"mapsec": 209,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 219,
+"name": "MAP_T25PC0102",
+"matrix": 77,
+"events": 205,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 131,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 220,
+"name": "MAP_D27R0102",
+"matrix": 48,
+"events": 206,
+"wild": 255,
+"music_day": 1078,
+"mapsec": 212,
+"placas": 0,
+"npcs": 2,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 221,
+"name": "MAP_D27R0103",
+"matrix": 49,
+"events": 207,
+"wild": 255,
+"music_day": 1078,
+"mapsec": 212,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 222,
+"name": "MAP_D27R0104",
+"matrix": 50,
+"events": 208,
+"wild": 255,
+"music_day": 1078,
+"mapsec": 212,
+"placas": 1,
+"npcs": 4,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 223,
+"name": "MAP_D27R0105",
+"matrix": 51,
+"events": 209,
+"wild": 255,
+"music_day": 1078,
+"mapsec": 212,
+"placas": 0,
+"npcs": 3,
+"warps": 4,
+"gatilhos": 1
+},
+{
+"id": 224,
+"name": "MAP_D27R0106",
+"matrix": 52,
+"events": 210,
+"wild": 255,
+"music_day": 1078,
+"mapsec": 212,
+"placas": 0,
+"npcs": 4,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 225,
+"name": "MAP_D27R0107",
+"matrix": 131,
+"events": 211,
+"wild": 255,
+"music_day": 1078,
+"mapsec": 212,
+"placas": 0,
+"npcs": 5,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 226,
+"name": "MAP_T26PC0101",
+"matrix": 73,
+"events": 212,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 132,
+"placas": 1,
+"npcs": 8,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 227,
+"name": "MAP_T26FS0101",
+"matrix": 104,
+"events": 213,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 132,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 228,
+"name": "MAP_T26R0301",
+"matrix": 97,
+"events": 214,
+"wild": 255,
+"music_day": 1024,
+"mapsec": 132,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 229,
+"name": "MAP_T26R0501",
+"matrix": 97,
+"events": 215,
+"wild": 255,
+"music_day": 1024,
+"mapsec": 132,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 230,
+"name": "MAP_T26R0601",
+"matrix": 97,
+"events": 216,
+"wild": 255,
+"music_day": 1024,
+"mapsec": 132,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 231,
+"name": "MAP_T26R0701",
+"matrix": 136,
+"events": 217,
+"wild": 255,
+"music_day": 1024,
+"mapsec": 132,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 232,
+"name": "MAP_T24R0201",
+"matrix": 95,
+"events": 218,
+"wild": 255,
+"music_day": 1025,
+"mapsec": 130,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 233,
+"name": "MAP_T24R0501",
+"matrix": 139,
+"events": 219,
+"wild": 255,
+"music_day": 1025,
+"mapsec": 130,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 234,
+"name": "MAP_T24R0601",
+"matrix": 97,
+"events": 220,
+"wild": 255,
+"music_day": 1025,
+"mapsec": 130,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 235,
+"name": "MAP_T24R0701",
+"matrix": 95,
+"events": 221,
+"wild": 255,
+"music_day": 1025,
+"mapsec": 130,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 236,
+"name": "MAP_T24PC0101",
+"matrix": 73,
+"events": 222,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 130,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 237,
+"name": "MAP_D39R0102",
+"matrix": 133,
+"events": 223,
+"wild": 61,
+"music_day": 1080,
+"mapsec": 217,
+"placas": 1,
+"npcs": 6,
+"warps": 6,
+"gatilhos": 4
+},
+{
+"id": 238,
+"name": "MAP_D39R0103",
+"matrix": 134,
+"events": 224,
+"wild": 62,
+"music_day": 1080,
+"mapsec": 217,
+"placas": 1,
+"npcs": 7,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 239,
+"name": "MAP_D39R0104",
+"matrix": 135,
+"events": 225,
+"wild": 63,
+"music_day": 1080,
+"mapsec": 217,
+"placas": 0,
+"npcs": 2,
+"warps": 4,
+"gatilhos": 0
+},
+{
+"id": 240,
+"name": "MAP_P01R0101",
+"matrix": 137,
+"events": 226,
+"wild": 255,
+"music_day": 1024,
+"mapsec": 132,
+"placas": 0,
+"npcs": 4,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 241,
+"name": "MAP_T24PC0102",
+"matrix": 77,
+"events": 227,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 130,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 242,
+"name": "MAP_D40R0102",
+"matrix": 142,
+"events": 228,
+"wild": 44,
+"music_day": 1073,
+"mapsec": 218,
+"placas": 4,
+"npcs": 6,
+"warps": 14,
+"gatilhos": 0
+},
+{
+"id": 243,
+"name": "MAP_D40R0104",
+"matrix": 143,
+"events": 229,
+"wild": 46,
+"music_day": 1073,
+"mapsec": 218,
+"placas": 1,
+"npcs": 4,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 244,
+"name": "MAP_D40R0107",
+"matrix": 144,
+"events": 230,
+"wild": 255,
+"music_day": 1001,
+"mapsec": 218,
+"placas": 0,
+"npcs": 11,
+"warps": 1,
+"gatilhos": 1
+},
+{
+"id": 245,
+"name": "MAP_R43R0201",
+"matrix": 69,
+"events": 231,
+"wild": 255,
+"music_day": 1037,
+"mapsec": 191,
+"placas": 0,
+"npcs": 3,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 246,
+"name": "MAP_T28PC0101",
+"matrix": 73,
+"events": 232,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 134,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 247,
+"name": "MAP_D35R0102",
+"matrix": 53,
+"events": 233,
+"wild": 255,
+"music_day": 1079,
+"mapsec": 213,
+"placas": 2,
+"npcs": 11,
+"warps": 2,
+"gatilhos": 22
+},
+{
+"id": 248,
+"name": "MAP_D35R0103",
+"matrix": 54,
+"events": 234,
+"wild": 255,
+"music_day": 1079,
+"mapsec": 213,
+"placas": 8,
+"npcs": 19,
+"warps": 5,
+"gatilhos": 7
+},
+{
+"id": 249,
+"name": "MAP_D35R0104",
+"matrix": 55,
+"events": 235,
+"wild": 255,
+"music_day": 1079,
+"mapsec": 213,
+"placas": 0,
+"npcs": 19,
+"warps": 4,
+"gatilhos": 3
+},
+{
+"id": 250,
+"name": "MAP_D38R0102",
+"matrix": 63,
+"events": 236,
+"wild": 54,
+"music_day": 1073,
+"mapsec": 216,
+"placas": 5,
+"npcs": 12,
+"warps": 10,
+"gatilhos": 0
+},
+{
+"id": 251,
+"name": "MAP_D38R0103",
+"matrix": 64,
+"events": 237,
+"wild": 55,
+"music_day": 1073,
+"mapsec": 216,
+"placas": 4,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 252,
+"name": "MAP_D38R0104",
+"matrix": 65,
+"events": 238,
+"wild": 56,
+"music_day": 1073,
+"mapsec": 216,
+"placas": 2,
+"npcs": 7,
+"warps": 4,
+"gatilhos": 0
+},
+{
+"id": 253,
+"name": "MAP_D44R0102",
+"matrix": 146,
+"events": 239,
+"wild": 66,
+"music_day": 1081,
+"mapsec": 222,
+"placas": 4,
+"npcs": 13,
+"warps": 3,
+"gatilhos": 2
+},
+{
+"id": 254,
+"name": "MAP_C11",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 81,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 255,
+"name": "MAP_C11PC0101",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 81,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 256,
+"name": "MAP_C11PC0102",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 81,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 257,
+"name": "MAP_C11FS0101",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 81,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 258,
+"name": "MAP_C11R0101",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 81,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 259,
+"name": "MAP_C11R0201",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 81,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 260,
+"name": "MAP_C11R0301",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 81,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 261,
+"name": "MAP_C11R0401",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 81,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 262,
+"name": "MAP_C11PC0103",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 81,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 263,
+"name": "MAP_D31",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 111,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 264,
+"name": "MAP_D31R0101",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 111,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 265,
+"name": "MAP_D31R0201",
+"matrix": 232,
+"events": 240,
+"wild": 255,
+"music_day": 1071,
+"mapsec": 80,
+"placas": 3,
+"npcs": 14,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 266,
+"name": "MAP_D31R0202",
+"matrix": 262,
+"events": 241,
+"wild": 255,
+"music_day": 1071,
+"mapsec": 80,
+"placas": 0,
+"npcs": 1,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 267,
+"name": "MAP_D31R0203",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 80,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 268,
+"name": "MAP_D31R0204",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 80,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 269,
+"name": "MAP_D31R0205",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 80,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 270,
+"name": "MAP_D31R0206",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 80,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 271,
+"name": "MAP_D31R0207",
+"matrix": 263,
+"events": 242,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 80,
+"placas": 0,
+"npcs": 6,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 272,
+"name": "MAP_D32",
+"matrix": 230,
+"events": 243,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 112,
+"placas": 25,
+"npcs": 25,
+"warps": 16,
+"gatilhos": 4
+},
+{
+"id": 273,
+"name": "MAP_D32R0101",
+"matrix": 231,
+"events": 244,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 112,
+"placas": 0,
+"npcs": 10,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 274,
+"name": "MAP_D32R0201",
+"matrix": 232,
+"events": 245,
+"wild": 255,
+"music_day": 1071,
+"mapsec": 80,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 275,
+"name": "MAP_D32R0301",
+"matrix": 233,
+"events": 246,
+"wild": 255,
+"music_day": 1143,
+"mapsec": 113,
+"placas": 1,
+"npcs": 9,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 276,
+"name": "MAP_D32R0401",
+"matrix": 234,
+"events": 247,
+"wild": 255,
+"music_day": 1144,
+"mapsec": 116,
+"placas": 1,
+"npcs": 14,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 277,
+"name": "MAP_D32R0501",
+"matrix": 235,
+"events": 248,
+"wild": 255,
+"music_day": 1146,
+"mapsec": 114,
+"placas": 1,
+"npcs": 9,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 278,
+"name": "MAP_D32R0601",
+"matrix": 236,
+"events": 249,
+"wild": 255,
+"music_day": 1145,
+"mapsec": 115,
+"placas": 1,
+"npcs": 12,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 279,
+"name": "MAP_D48R0101",
+"matrix": 152,
+"events": 250,
+"wild": 82,
+"music_day": 1033,
+"mapsec": 234,
+"placas": 4,
+"npcs": 4,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 280,
+"name": "MAP_D49",
+"matrix": 153,
+"events": 251,
+"wild": 255,
+"music_day": 1033,
+"mapsec": 225,
+"placas": 7,
+"npcs": 19,
+"warps": 4,
+"gatilhos": 1
+},
+{
+"id": 281,
+"name": "MAP_D49R0101",
+"matrix": 154,
+"events": 252,
+"wild": 255,
+"music_day": 1134,
+"mapsec": 225,
+"placas": 12,
+"npcs": 13,
+"warps": 3,
+"gatilhos": 1
+},
+{
+"id": 282,
+"name": "MAP_D49R0102",
+"matrix": 155,
+"events": 253,
+"wild": 255,
+"music_day": 1134,
+"mapsec": 225,
+"placas": 0,
+"npcs": 19,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 283,
+"name": "MAP_D49R0103",
+"matrix": 156,
+"events": 254,
+"wild": 255,
+"music_day": 1134,
+"mapsec": 225,
+"placas": 0,
+"npcs": 0,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 284,
+"name": "MAP_D49R0104",
+"matrix": 157,
+"events": 255,
+"wild": 255,
+"music_day": 1134,
+"mapsec": 225,
+"placas": 11,
+"npcs": 15,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 285,
+"name": "MAP_D49R0105",
+"matrix": 158,
+"events": 256,
+"wild": 255,
+"music_day": 1134,
+"mapsec": 225,
+"placas": 13,
+"npcs": 10,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 286,
+"name": "MAP_D49R0106",
+"matrix": 159,
+"events": 257,
+"wild": 255,
+"music_day": 1134,
+"mapsec": 225,
+"placas": 6,
+"npcs": 6,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 287,
+"name": "MAP_D49R0107",
+"matrix": 160,
+"events": 258,
+"wild": 255,
+"music_day": 1141,
+"mapsec": 225,
+"placas": 4,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 288,
+"name": "MAP_D44R0103",
+"matrix": 149,
+"events": 259,
+"wild": 255,
+"music_day": 1081,
+"mapsec": 222,
+"placas": 0,
+"npcs": 5,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 289,
+"name": "MAP_T30R0201",
+"matrix": 95,
+"events": 260,
+"wild": 255,
+"music_day": 1027,
+"mapsec": 136,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 290,
+"name": "MAP_T30R0301",
+"matrix": 95,
+"events": 261,
+"wild": 255,
+"music_day": 1027,
+"mapsec": 136,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 291,
+"name": "MAP_T30R0601",
+"matrix": 95,
+"events": 262,
+"wild": 255,
+"music_day": 1027,
+"mapsec": 136,
+"placas": 0,
+"npcs": 5,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 292,
+"name": "MAP_T30FS0101",
+"matrix": 104,
+"events": 263,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 136,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 293,
+"name": "MAP_T30PC0101",
+"matrix": 73,
+"events": 264,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 136,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 294,
+"name": "MAP_T29R0101",
+"matrix": 66,
+"events": 265,
+"wild": 255,
+"music_day": 1037,
+"mapsec": 135,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 295,
+"name": "MAP_T29R0201",
+"matrix": 95,
+"events": 266,
+"wild": 255,
+"music_day": 1037,
+"mapsec": 135,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 296,
+"name": "MAP_R26R0101",
+"matrix": 66,
+"events": 267,
+"wild": 255,
+"music_day": 1062,
+"mapsec": 174,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 297,
+"name": "MAP_R26R0201",
+"matrix": 147,
+"events": 268,
+"wild": 255,
+"music_day": 1062,
+"mapsec": 174,
+"placas": 1,
+"npcs": 0,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 298,
+"name": "MAP_D45R0102",
+"matrix": 164,
+"events": 269,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 223,
+"placas": 1,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 299,
+"name": "MAP_R22R0101",
+"matrix": 150,
+"events": 270,
+"wild": 255,
+"music_day": 1062,
+"mapsec": 174,
+"placas": 0,
+"npcs": 4,
+"warps": 4,
+"gatilhos": 3
+},
+{
+"id": 300,
+"name": "MAP_T10R0101",
+"matrix": 148,
+"events": 271,
+"wild": 255,
+"music_day": 1085,
+"mapsec": 15,
+"placas": 2,
+"npcs": 9,
+"warps": 3,
+"gatilhos": 1
+},
+{
+"id": 301,
+"name": "MAP_T10R0201",
+"matrix": 165,
+"events": 272,
+"wild": 255,
+"music_day": 1085,
+"mapsec": 15,
+"placas": 0,
+"npcs": 5,
+"warps": 4,
+"gatilhos": 0
+},
+{
+"id": 302,
+"name": "MAP_T10R0301",
+"matrix": 166,
+"events": 273,
+"wild": 255,
+"music_day": 1085,
+"mapsec": 15,
+"placas": 0,
+"npcs": 5,
+"warps": 4,
+"gatilhos": 0
+},
+{
+"id": 303,
+"name": "MAP_T10R0401",
+"matrix": 167,
+"events": 274,
+"wild": 255,
+"music_day": 1085,
+"mapsec": 15,
+"placas": 0,
+"npcs": 5,
+"warps": 4,
+"gatilhos": 0
+},
+{
+"id": 304,
+"name": "MAP_T10R0501",
+"matrix": 168,
+"events": 275,
+"wild": 255,
+"music_day": 1085,
+"mapsec": 15,
+"placas": 0,
+"npcs": 5,
+"warps": 4,
+"gatilhos": 0
+},
+{
+"id": 305,
+"name": "MAP_T10R0601",
+"matrix": 169,
+"events": 276,
+"wild": 255,
+"music_day": 1085,
+"mapsec": 15,
+"placas": 0,
+"npcs": 5,
+"warps": 2,
+"gatilhos": 1
+},
+{
+"id": 306,
+"name": "MAP_T10R0701",
+"matrix": 170,
+"events": 277,
+"wild": 255,
+"music_day": 1085,
+"mapsec": 15,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 307,
+"name": "MAP_P01R0301",
+"matrix": 171,
+"events": 278,
+"wild": 255,
+"music_day": 1096,
+"mapsec": 226,
+"placas": 0,
+"npcs": 4,
+"warps": 13,
+"gatilhos": 1
+},
+{
+"id": 308,
+"name": "MAP_P01R0302",
+"matrix": 172,
+"events": 279,
+"wild": 255,
+"music_day": 1096,
+"mapsec": 226,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 309,
+"name": "MAP_P01R0303",
+"matrix": 173,
+"events": 280,
+"wild": 255,
+"music_day": 1096,
+"mapsec": 226,
+"placas": 0,
+"npcs": 3,
+"warps": 2,
+"gatilhos": 1
+},
+{
+"id": 310,
+"name": "MAP_P01R0304",
+"matrix": 174,
+"events": 281,
+"wild": 255,
+"music_day": 1096,
+"mapsec": 226,
+"placas": 0,
+"npcs": 4,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 311,
+"name": "MAP_P01R0305",
+"matrix": 175,
+"events": 282,
+"wild": 255,
+"music_day": 1096,
+"mapsec": 226,
+"placas": 0,
+"npcs": 4,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 312,
+"name": "MAP_D24R0202",
+"matrix": 34,
+"events": 283,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 1,
+"npcs": 3,
+"warps": 2,
+"gatilhos": 1
+},
+{
+"id": 313,
+"name": "MAP_D24R0203",
+"matrix": 35,
+"events": 284,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 1
+},
+{
+"id": 314,
+"name": "MAP_D24R0204",
+"matrix": 34,
+"events": 285,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 1,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 1
+},
+{
+"id": 315,
+"name": "MAP_D24R0205",
+"matrix": 37,
+"events": 286,
+"wild": 10,
+"music_day": 1074,
+"mapsec": 209,
+"placas": 30,
+"npcs": 8,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 316,
+"name": "MAP_D24R0206",
+"matrix": 34,
+"events": 287,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 1,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 1
+},
+{
+"id": 317,
+"name": "MAP_D24R0207",
+"matrix": 39,
+"events": 288,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 1
+},
+{
+"id": 318,
+"name": "MAP_D24R0208",
+"matrix": 34,
+"events": 289,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 1,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 1
+},
+{
+"id": 319,
+"name": "MAP_D24R0209",
+"matrix": 41,
+"events": 290,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 1
+},
+{
+"id": 320,
+"name": "MAP_D24R0210",
+"matrix": 180,
+"events": 291,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 1
+},
+{
+"id": 321,
+"name": "MAP_D24R0102",
+"matrix": 273,
+"events": 292,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 3,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 322,
+"name": "MAP_R27R0101",
+"matrix": 66,
+"events": 293,
+"wild": 255,
+"music_day": 1062,
+"mapsec": 175,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 323,
+"name": "MAP_D24R0211",
+"matrix": 181,
+"events": 294,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 17,
+"npcs": 3,
+"warps": 4,
+"gatilhos": 0
+},
+{
+"id": 324,
+"name": "MAP_D24R0212",
+"matrix": 182,
+"events": 295,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 4,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 1
+},
+{
+"id": 325,
+"name": "MAP_D24R0213",
+"matrix": 182,
+"events": 296,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 4,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 1
+},
+{
+"id": 326,
+"name": "MAP_D24R0214",
+"matrix": 182,
+"events": 297,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 4,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 1
+},
+{
+"id": 327,
+"name": "MAP_D24R0215",
+"matrix": 182,
+"events": 298,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 209,
+"placas": 4,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 1
+},
+{
+"id": 328,
+"name": "MAP_P01R0306",
+"matrix": 176,
+"events": 299,
+"wild": 255,
+"music_day": 1096,
+"mapsec": 226,
+"placas": 0,
+"npcs": 9,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 329,
+"name": "MAP_P01R0307",
+"matrix": 177,
+"events": 300,
+"wild": 255,
+"music_day": 1096,
+"mapsec": 226,
+"placas": 0,
+"npcs": 12,
+"warps": 3,
+"gatilhos": 1
+},
+{
+"id": 330,
+"name": "MAP_P01R0102",
+"matrix": 178,
+"events": 301,
+"wild": 255,
+"music_day": 1024,
+"mapsec": 132,
+"placas": 2,
+"npcs": 4,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 331,
+"name": "MAP_R34R0101",
+"matrix": 179,
+"events": 302,
+"wild": 255,
+"music_day": 1032,
+"mapsec": 182,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 332,
+"name": "MAP_D17R0102",
+"matrix": 16,
+"events": 303,
+"wild": 30,
+"music_day": 1077,
+"mapsec": 205,
+"placas": 0,
+"npcs": 0,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 333,
+"name": "MAP_D17R0103",
+"matrix": 17,
+"events": 304,
+"wild": 31,
+"music_day": 1077,
+"mapsec": 205,
+"placas": 1,
+"npcs": 1,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 334,
+"name": "MAP_D17R0104",
+"matrix": 18,
+"events": 305,
+"wild": 32,
+"music_day": 1077,
+"mapsec": 205,
+"placas": 0,
+"npcs": 3,
+"warps": 7,
+"gatilhos": 0
+},
+{
+"id": 335,
+"name": "MAP_D17R0105",
+"matrix": 19,
+"events": 306,
+"wild": 33,
+"music_day": 1077,
+"mapsec": 205,
+"placas": 1,
+"npcs": 1,
+"warps": 5,
+"gatilhos": 0
+},
+{
+"id": 336,
+"name": "MAP_D17R0106",
+"matrix": 20,
+"events": 307,
+"wild": 34,
+"music_day": 1077,
+"mapsec": 205,
+"placas": 0,
+"npcs": 2,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 337,
+"name": "MAP_D17R0107",
+"matrix": 21,
+"events": 308,
+"wild": 35,
+"music_day": 1077,
+"mapsec": 205,
+"placas": 0,
+"npcs": 1,
+"warps": 5,
+"gatilhos": 0
+},
+{
+"id": 338,
+"name": "MAP_D17R0108",
+"matrix": 22,
+"events": 309,
+"wild": 36,
+"music_day": 1077,
+"mapsec": 205,
+"placas": 1,
+"npcs": 3,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 339,
+"name": "MAP_D17R0109",
+"matrix": 23,
+"events": 310,
+"wild": 37,
+"music_day": 1077,
+"mapsec": 205,
+"placas": 0,
+"npcs": 1,
+"warps": 8,
+"gatilhos": 0
+},
+{
+"id": 340,
+"name": "MAP_D17R0110",
+"matrix": 24,
+"events": 311,
+"wild": 255,
+"music_day": 1001,
+"mapsec": 205,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 1
+},
+{
+"id": 341,
+"name": "MAP_D17R0112",
+"matrix": 183,
+"events": 312,
+"wild": 84,
+"music_day": 1077,
+"mapsec": 205,
+"placas": 0,
+"npcs": 0,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 342,
+"name": "MAP_D50R0101",
+"matrix": 184,
+"events": 313,
+"wild": 83,
+"music_day": 1157,
+"mapsec": 228,
+"placas": 1,
+"npcs": 7,
+"warps": 9,
+"gatilhos": 0
+},
+{
+"id": 343,
+"name": "MAP_SAF01",
+"matrix": 197,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 344,
+"name": "MAP_SAF02",
+"matrix": 198,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 345,
+"name": "MAP_SAF03",
+"matrix": 199,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 346,
+"name": "MAP_SAF04",
+"matrix": 200,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 347,
+"name": "MAP_SAF05",
+"matrix": 201,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 348,
+"name": "MAP_SAF06",
+"matrix": 202,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 349,
+"name": "MAP_SAF07",
+"matrix": 203,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 350,
+"name": "MAP_SAF08",
+"matrix": 204,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 351,
+"name": "MAP_SAF09",
+"matrix": 205,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 352,
+"name": "MAP_SAF10",
+"matrix": 206,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 353,
+"name": "MAP_SAF11",
+"matrix": 207,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 354,
+"name": "MAP_SAF12",
+"matrix": 208,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 355,
+"name": "MAP_SAF13",
+"matrix": 209,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 356,
+"name": "MAP_SAF14",
+"matrix": 210,
+"events": 0,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 357,
+"name": "MAP_D47R0102",
+"matrix": 212,
+"events": 314,
+"wild": 91,
+"music_day": 1159,
+"mapsec": 202,
+"placas": 0,
+"npcs": 0,
+"warps": 2,
+"gatilhos": 0,
+"cells": [
+[
+212,
+2,
+3
+]
+],
+"rect": [
+2,
+3,
+2,
+3
+],
+"n_cells": 1,
+"world_matrix": 212
+},
+{
+"id": 358,
+"name": "MAP_T06PC0101",
+"matrix": 73,
+"events": 315,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 143,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 359,
+"name": "MAP_T06PC0102",
+"matrix": 77,
+"events": 316,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 143,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 360,
+"name": "MAP_T06FS0101",
+"matrix": 104,
+"events": 317,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 143,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 361,
+"name": "MAP_T06R0101",
+"matrix": 95,
+"events": 318,
+"wild": 255,
+"music_day": 1038,
+"mapsec": 143,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 362,
+"name": "MAP_T06R0301",
+"matrix": 185,
+"events": 319,
+"wild": 255,
+"music_day": 1038,
+"mapsec": 143,
+"placas": 3,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 363,
+"name": "MAP_T06R0401",
+"matrix": 95,
+"events": 320,
+"wild": 255,
+"music_day": 1038,
+"mapsec": 143,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 364,
+"name": "MAP_T06R0601",
+"matrix": 95,
+"events": 321,
+"wild": 255,
+"music_day": 1038,
+"mapsec": 143,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 365,
+"name": "MAP_T06GYM0101",
+"matrix": 255,
+"events": 322,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 143,
+"placas": 17,
+"npcs": 11,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 366,
+"name": "MAP_W40R0101",
+"matrix": 69,
+"events": 323,
+"wild": 255,
+"music_day": 1034,
+"mapsec": 188,
+"placas": 0,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 367,
+"name": "MAP_T26PC0102",
+"matrix": 77,
+"events": 324,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 132,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 368,
+"name": "MAP_T28PC0102",
+"matrix": 77,
+"events": 325,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 134,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 369,
+"name": "MAP_T30PC0102",
+"matrix": 77,
+"events": 326,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 136,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 370,
+"name": "MAP_T07R0101",
+"matrix": 215,
+"events": 327,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 144,
+"placas": 1,
+"npcs": 5,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 371,
+"name": "MAP_T07R0102",
+"matrix": 216,
+"events": 328,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 144,
+"placas": 1,
+"npcs": 6,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 372,
+"name": "MAP_T07R0103",
+"matrix": 217,
+"events": 329,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 144,
+"placas": 1,
+"npcs": 5,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 373,
+"name": "MAP_T07R0104",
+"matrix": 218,
+"events": 330,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 144,
+"placas": 1,
+"npcs": 5,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 374,
+"name": "MAP_T07R0105",
+"matrix": 219,
+"events": 331,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 144,
+"placas": 1,
+"npcs": 5,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 375,
+"name": "MAP_T07R0106",
+"matrix": 220,
+"events": 332,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 144,
+"placas": 4,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 376,
+"name": "MAP_T07R0201",
+"matrix": 221,
+"events": 333,
+"wild": 255,
+"music_day": 1042,
+"mapsec": 144,
+"placas": 1,
+"npcs": 4,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 377,
+"name": "MAP_T07R0202",
+"matrix": 222,
+"events": 334,
+"wild": 255,
+"music_day": 1042,
+"mapsec": 144,
+"placas": 2,
+"npcs": 0,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 378,
+"name": "MAP_T07R0203",
+"matrix": 223,
+"events": 335,
+"wild": 255,
+"music_day": 1042,
+"mapsec": 144,
+"placas": 15,
+"npcs": 8,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 379,
+"name": "MAP_T07R0204",
+"matrix": 224,
+"events": 336,
+"wild": 255,
+"music_day": 1042,
+"mapsec": 144,
+"placas": 0,
+"npcs": 1,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 380,
+"name": "MAP_T07R0205",
+"matrix": 225,
+"events": 337,
+"wild": 255,
+"music_day": 1042,
+"mapsec": 144,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 381,
+"name": "MAP_T07R0401",
+"matrix": 213,
+"events": 338,
+"wild": 255,
+"music_day": 1069,
+"mapsec": 144,
+"placas": 17,
+"npcs": 8,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 382,
+"name": "MAP_T07R0501",
+"matrix": 214,
+"events": 339,
+"wild": 255,
+"music_day": 1069,
+"mapsec": 144,
+"placas": 2,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 383,
+"name": "MAP_T07R0701",
+"matrix": 226,
+"events": 340,
+"wild": 255,
+"music_day": 1042,
+"mapsec": 144,
+"placas": 1,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 384,
+"name": "MAP_T20R0402",
+"matrix": 72,
+"events": 341,
+"wild": 255,
+"music_day": 1018,
+"mapsec": 126,
+"placas": 2,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 385,
+"name": "MAP_T24R0801",
+"matrix": 95,
+"events": 342,
+"wild": 255,
+"music_day": 1025,
+"mapsec": 130,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 386,
+"name": "MAP_P01R0103",
+"matrix": 186,
+"events": 343,
+"wild": 255,
+"music_day": 1038,
+"mapsec": 143,
+"placas": 0,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 387,
+"name": "MAP_P01R0104",
+"matrix": 211,
+"events": 344,
+"wild": 255,
+"music_day": 1038,
+"mapsec": 143,
+"placas": 1,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 388,
+"name": "MAP_R10R0101",
+"matrix": 0,
+"events": 345,
+"wild": 255,
+"music_day": 1054,
+"mapsec": 158,
+"placas": 1,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 0,
+"cells": [
+[
+0,
+44,
+6
+]
+],
+"rect": [
+44,
+6,
+44,
+6
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 389,
+"name": "MAP_R06R0201",
+"matrix": 69,
+"events": 346,
+"wild": 255,
+"music_day": 1052,
+"mapsec": 154,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 390,
+"name": "MAP_R08R0201",
+"matrix": 70,
+"events": 347,
+"wild": 255,
+"music_day": 1054,
+"mapsec": 156,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 391,
+"name": "MAP_R05R0301",
+"matrix": 69,
+"events": 348,
+"wild": 255,
+"music_day": 1053,
+"mapsec": 153,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 392,
+"name": "MAP_R15R0101",
+"matrix": 70,
+"events": 349,
+"wild": 255,
+"music_day": 1060,
+"mapsec": 163,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 393,
+"name": "MAP_T07PC0101",
+"matrix": 73,
+"events": 350,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 144,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 394,
+"name": "MAP_T07PC0102",
+"matrix": 77,
+"events": 351,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 144,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 395,
+"name": "MAP_T07GYM0101",
+"matrix": 258,
+"events": 352,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 144,
+"placas": 2,
+"npcs": 9,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 396,
+"name": "MAP_T28GYM0102",
+"matrix": 228,
+"events": 353,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 134,
+"placas": 0,
+"npcs": 4,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 397,
+"name": "MAP_T28GYM0103",
+"matrix": 93,
+"events": 354,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 134,
+"placas": 2,
+"npcs": 3,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 398,
+"name": "MAP_T11R0101",
+"matrix": 192,
+"events": 355,
+"wild": 255,
+"music_day": 1039,
+"mapsec": 148,
+"placas": 2,
+"npcs": 17,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 399,
+"name": "MAP_T11R0501",
+"matrix": 97,
+"events": 356,
+"wild": 255,
+"music_day": 1039,
+"mapsec": 148,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 400,
+"name": "MAP_T11R0601",
+"matrix": 187,
+"events": 357,
+"wild": 255,
+"music_day": 1039,
+"mapsec": 148,
+"placas": 1,
+"npcs": 5,
+"warps": 3,
+"gatilhos": 1
+},
+{
+"id": 401,
+"name": "MAP_T11R0602",
+"matrix": 188,
+"events": 358,
+"wild": 255,
+"music_day": 1039,
+"mapsec": 148,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 402,
+"name": "MAP_T11R0701",
+"matrix": 189,
+"events": 359,
+"wild": 255,
+"music_day": 1039,
+"mapsec": 148,
+"placas": 1,
+"npcs": 3,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 403,
+"name": "MAP_T11R0702",
+"matrix": 241,
+"events": 360,
+"wild": 255,
+"music_day": 1039,
+"mapsec": 121,
+"placas": 5,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 404,
+"name": "MAP_T11R0801",
+"matrix": 190,
+"events": 361,
+"wild": 255,
+"music_day": 1039,
+"mapsec": 148,
+"placas": 0,
+"npcs": 3,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 405,
+"name": "MAP_T11R0802",
+"matrix": 191,
+"events": 362,
+"wild": 255,
+"music_day": 1039,
+"mapsec": 148,
+"placas": 3,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 406,
+"name": "MAP_T11R0901",
+"matrix": 66,
+"events": 0,
+"wild": 255,
+"music_day": 1039,
+"mapsec": 148,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 407,
+"name": "MAP_T11PC0101",
+"matrix": 73,
+"events": 363,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 148,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 408,
+"name": "MAP_T11PC0102",
+"matrix": 77,
+"events": 364,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 148,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 409,
+"name": "MAP_T11FS0101",
+"matrix": 104,
+"events": 365,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 148,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 410,
+"name": "MAP_T11GYM0101",
+"matrix": 256,
+"events": 366,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 148,
+"placas": 2,
+"npcs": 6,
+"warps": 31,
+"gatilhos": 1
+},
+{
+"id": 411,
+"name": "MAP_D32R0102",
+"matrix": 240,
+"events": 367,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 229,
+"placas": 2,
+"npcs": 5,
+"warps": 7,
+"gatilhos": 1
+},
+{
+"id": 412,
+"name": "MAP_T25R1202",
+"matrix": 238,
+"events": 368,
+"wild": 255,
+"music_day": 1154,
+"mapsec": 118,
+"placas": 10,
+"npcs": 9,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 413,
+"name": "MAP_T25R1203",
+"matrix": 239,
+"events": 369,
+"wild": 255,
+"music_day": 1154,
+"mapsec": 118,
+"placas": 6,
+"npcs": 9,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 414,
+"name": "MAP_R02R0101",
+"matrix": 0,
+"events": 370,
+"wild": 136,
+"music_day": 1057,
+"mapsec": 150,
+"placas": 1,
+"npcs": 4,
+"warps": 6,
+"gatilhos": 0,
+"cells": [
+[
+0,
+32,
+4
+],
+[
+0,
+32,
+5
+]
+],
+"rect": [
+32,
+4,
+32,
+5
+],
+"n_cells": 2,
+"world_matrix": 0
+},
+{
+"id": 415,
+"name": "MAP_R16R0101",
+"matrix": 66,
+"events": 371,
+"wild": 255,
+"music_day": 1055,
+"mapsec": 164,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 416,
+"name": "MAP_W20R0101",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1058,
+"mapsec": 168,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 417,
+"name": "MAP_R02R0201",
+"matrix": 66,
+"events": 372,
+"wild": 255,
+"music_day": 1057,
+"mapsec": 150,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 418,
+"name": "MAP_R02R0301",
+"matrix": 69,
+"events": 373,
+"wild": 255,
+"music_day": 1057,
+"mapsec": 150,
+"placas": 0,
+"npcs": 2,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 419,
+"name": "MAP_R02R0401",
+"matrix": 69,
+"events": 374,
+"wild": 255,
+"music_day": 1057,
+"mapsec": 150,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 420,
+"name": "MAP_R02R0501",
+"matrix": 69,
+"events": 375,
+"wild": 255,
+"music_day": 1057,
+"mapsec": 150,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 421,
+"name": "MAP_R16R0201",
+"matrix": 70,
+"events": 376,
+"wild": 255,
+"music_day": 1055,
+"mapsec": 164,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 2
+},
+{
+"id": 422,
+"name": "MAP_R16R0301",
+"matrix": 0,
+"events": 377,
+"wild": 125,
+"music_day": 1055,
+"mapsec": 164,
+"placas": 0,
+"npcs": 1,
+"warps": 3,
+"gatilhos": 0,
+"cells": [
+[
+0,
+36,
+8
+]
+],
+"rect": [
+36,
+8,
+36,
+8
+],
+"n_cells": 1,
+"world_matrix": 0
+},
+{
+"id": 423,
+"name": "MAP_R18R0101",
+"matrix": 70,
+"events": 378,
+"wild": 255,
+"music_day": 1056,
+"mapsec": 166,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 2
+},
+{
+"id": 424,
+"name": "MAP_W19R0101",
+"matrix": 69,
+"events": 379,
+"wild": 255,
+"music_day": 1056,
+"mapsec": 167,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 425,
+"name": "MAP_R11R0101",
+"matrix": 70,
+"events": 380,
+"wild": 255,
+"music_day": 1059,
+"mapsec": 159,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 426,
+"name": "MAP_T04FS0101",
+"matrix": 104,
+"events": 381,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 141,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 427,
+"name": "MAP_T04GYM0101",
+"matrix": 257,
+"events": 382,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 141,
+"placas": 2,
+"npcs": 10,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 428,
+"name": "MAP_T04PC0101",
+"matrix": 73,
+"events": 383,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 141,
+"placas": 1,
+"npcs": 6,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 429,
+"name": "MAP_T04R0101",
+"matrix": 96,
+"events": 384,
+"wild": 255,
+"music_day": 1040,
+"mapsec": 141,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 430,
+"name": "MAP_T04R0201",
+"matrix": 97,
+"events": 385,
+"wild": 255,
+"music_day": 1040,
+"mapsec": 141,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 431,
+"name": "MAP_T04R0301",
+"matrix": 96,
+"events": 386,
+"wild": 255,
+"music_day": 1040,
+"mapsec": 141,
+"placas": 0,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 432,
+"name": "MAP_T04R0401",
+"matrix": 274,
+"events": 387,
+"wild": 255,
+"music_day": 1040,
+"mapsec": 141,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 433,
+"name": "MAP_T05FS0101",
+"matrix": 104,
+"events": 388,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 142,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 434,
+"name": "MAP_T05PC0101",
+"matrix": 73,
+"events": 389,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 142,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 435,
+"name": "MAP_T05R0201",
+"matrix": 193,
+"events": 390,
+"wild": 255,
+"music_day": 1041,
+"mapsec": 142,
+"placas": 0,
+"npcs": 5,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 436,
+"name": "MAP_T05R0301",
+"matrix": 96,
+"events": 391,
+"wild": 255,
+"music_day": 1041,
+"mapsec": 142,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 437,
+"name": "MAP_T05R0401",
+"matrix": 140,
+"events": 392,
+"wild": 255,
+"music_day": 1041,
+"mapsec": 142,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 438,
+"name": "MAP_T05R0601",
+"matrix": 194,
+"events": 393,
+"wild": 255,
+"music_day": 1041,
+"mapsec": 142,
+"placas": 0,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 439,
+"name": "MAP_T05R0701",
+"matrix": 195,
+"events": 394,
+"wild": 255,
+"music_day": 1041,
+"mapsec": 142,
+"placas": 2,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 440,
+"name": "MAP_R25R0101",
+"matrix": 254,
+"events": 395,
+"wild": 255,
+"music_day": 1061,
+"mapsec": 173,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 441,
+"name": "MAP_T25R1007",
+"matrix": 262,
+"events": 396,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 131,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 442,
+"name": "MAP_T07R0107",
+"matrix": 262,
+"events": 397,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 144,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 443,
+"name": "MAP_T07R0206",
+"matrix": 262,
+"events": 398,
+"wild": 255,
+"music_day": 1042,
+"mapsec": 144,
+"placas": 0,
+"npcs": 0,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 444,
+"name": "MAP_T07R0207",
+"matrix": 262,
+"events": 399,
+"wild": 255,
+"music_day": 1042,
+"mapsec": 144,
+"placas": 0,
+"npcs": 0,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 445,
+"name": "MAP_T11R0703",
+"matrix": 262,
+"events": 400,
+"wild": 255,
+"music_day": 1039,
+"mapsec": 148,
+"placas": 0,
+"npcs": 0,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 446,
+"name": "MAP_D27R0108",
+"matrix": 262,
+"events": 401,
+"wild": 255,
+"music_day": 1078,
+"mapsec": 212,
+"placas": 0,
+"npcs": 0,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 447,
+"name": "MAP_D23R0107",
+"matrix": 262,
+"events": 402,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 208,
+"placas": 0,
+"npcs": 0,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 448,
+"name": "MAP_D02R0102",
+"matrix": 4,
+"events": 403,
+"wild": 107,
+"music_day": 1073,
+"mapsec": 198,
+"placas": 0,
+"npcs": 0,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 449,
+"name": "MAP_D02R0103",
+"matrix": 5,
+"events": 404,
+"wild": 72,
+"music_day": 1073,
+"mapsec": 198,
+"placas": 2,
+"npcs": 1,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 450,
+"name": "MAP_D03R0102",
+"matrix": 79,
+"events": 405,
+"wild": 140,
+"music_day": 1082,
+"mapsec": 199,
+"placas": 6,
+"npcs": 12,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 451,
+"name": "MAP_D03R0103",
+"matrix": 80,
+"events": 406,
+"wild": 141,
+"music_day": 1082,
+"mapsec": 199,
+"placas": 3,
+"npcs": 16,
+"warps": 4,
+"gatilhos": 0
+},
+{
+"id": 452,
+"name": "MAP_D05R0102",
+"matrix": 7,
+"events": 407,
+"wild": 109,
+"music_day": 1082,
+"mapsec": 200,
+"placas": 2,
+"npcs": 19,
+"warps": 8,
+"gatilhos": 0
+},
+{
+"id": 453,
+"name": "MAP_D11R0102",
+"matrix": 82,
+"events": 408,
+"wild": 75,
+"music_day": 1080,
+"mapsec": 203,
+"placas": 1,
+"npcs": 9,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 454,
+"name": "MAP_D11R0103",
+"matrix": 83,
+"events": 409,
+"wild": 76,
+"music_day": 1080,
+"mapsec": 203,
+"placas": 2,
+"npcs": 4,
+"warps": 12,
+"gatilhos": 0
+},
+{
+"id": 455,
+"name": "MAP_D11R0104",
+"matrix": 84,
+"events": 410,
+"wild": 77,
+"music_day": 1080,
+"mapsec": 203,
+"placas": 2,
+"npcs": 9,
+"warps": 14,
+"gatilhos": 0
+},
+{
+"id": 456,
+"name": "MAP_D11R0105",
+"matrix": 85,
+"events": 411,
+"wild": 78,
+"music_day": 1080,
+"mapsec": 203,
+"placas": 1,
+"npcs": 3,
+"warps": 12,
+"gatilhos": 0
+},
+{
+"id": 457,
+"name": "MAP_D11R0106",
+"matrix": 264,
+"events": 412,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 203,
+"placas": 0,
+"npcs": 8,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 458,
+"name": "MAP_D11R0107",
+"matrix": 264,
+"events": 0,
+"wild": 255,
+"music_day": 1080,
+"mapsec": 203,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 459,
+"name": "MAP_D41R0102",
+"matrix": 266,
+"events": 413,
+"wild": 89,
+"music_day": 1078,
+"mapsec": 219,
+"placas": 3,
+"npcs": 2,
+"warps": 7,
+"gatilhos": 0
+},
+{
+"id": 460,
+"name": "MAP_D41R0103",
+"matrix": 267,
+"events": 414,
+"wild": 87,
+"music_day": 1078,
+"mapsec": 219,
+"placas": 0,
+"npcs": 2,
+"warps": 3,
+"gatilhos": 0
+},
+{
+"id": 461,
+"name": "MAP_D41R0104",
+"matrix": 268,
+"events": 415,
+"wild": 88,
+"music_day": 1078,
+"mapsec": 219,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 462,
+"name": "MAP_D41R0105",
+"matrix": 269,
+"events": 416,
+"wild": 79,
+"music_day": 1078,
+"mapsec": 219,
+"placas": 2,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 463,
+"name": "MAP_D41R0106",
+"matrix": 270,
+"events": 417,
+"wild": 80,
+"music_day": 1078,
+"mapsec": 219,
+"placas": 2,
+"npcs": 9,
+"warps": 7,
+"gatilhos": 0
+},
+{
+"id": 464,
+"name": "MAP_D41R0107",
+"matrix": 271,
+"events": 418,
+"wild": 81,
+"music_day": 1078,
+"mapsec": 219,
+"placas": 1,
+"npcs": 0,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 465,
+"name": "MAP_D41R0108",
+"matrix": 272,
+"events": 419,
+"wild": 255,
+"music_day": 1001,
+"mapsec": 219,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 466,
+"name": "MAP_R10PC0101",
+"matrix": 73,
+"events": 420,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 158,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 467,
+"name": "MAP_R10R0201",
+"matrix": 251,
+"events": 421,
+"wild": 255,
+"music_day": 1044,
+"mapsec": 201,
+"placas": 2,
+"npcs": 7,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 468,
+"name": "MAP_R05R0101",
+"matrix": 252,
+"events": 0,
+"wild": 255,
+"music_day": 1053,
+"mapsec": 153,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 469,
+"name": "MAP_R05R0201",
+"matrix": 253,
+"events": 422,
+"wild": 255,
+"music_day": 1082,
+"mapsec": 153,
+"placas": 0,
+"npcs": 1,
+"warps": 4,
+"gatilhos": 0
+},
+{
+"id": 470,
+"name": "MAP_R06R0101",
+"matrix": 253,
+"events": 423,
+"wild": 255,
+"music_day": 1082,
+"mapsec": 154,
+"placas": 0,
+"npcs": 0,
+"warps": 4,
+"gatilhos": 0
+},
+{
+"id": 471,
+"name": "MAP_T03R0101",
+"matrix": 242,
+"events": 424,
+"wild": 255,
+"music_day": 1044,
+"mapsec": 140,
+"placas": 42,
+"npcs": 8,
+"warps": 1,
+"gatilhos": 1
+},
+{
+"id": 472,
+"name": "MAP_T03R0201",
+"matrix": 66,
+"events": 425,
+"wild": 255,
+"music_day": 1044,
+"mapsec": 140,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 473,
+"name": "MAP_T03GYM0101",
+"matrix": 260,
+"events": 426,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 140,
+"placas": 2,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 474,
+"name": "MAP_T03FS0101",
+"matrix": 104,
+"events": 427,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 140,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 475,
+"name": "MAP_T03PC0101",
+"matrix": 73,
+"events": 428,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 140,
+"placas": 1,
+"npcs": 8,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 476,
+"name": "MAP_T03PC0102",
+"matrix": 77,
+"events": 429,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 140,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 477,
+"name": "MAP_T03R0601",
+"matrix": 66,
+"events": 430,
+"wild": 255,
+"music_day": 1044,
+"mapsec": 140,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 478,
+"name": "MAP_T08FS0101",
+"matrix": 104,
+"events": 431,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 145,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 479,
+"name": "MAP_T08R0201",
+"matrix": 243,
+"events": 432,
+"wild": 255,
+"music_day": 1043,
+"mapsec": 55,
+"placas": 0,
+"npcs": 7,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 480,
+"name": "MAP_T08GYM0101",
+"matrix": 259,
+"events": 433,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 145,
+"placas": 2,
+"npcs": 10,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 481,
+"name": "MAP_T08R0401",
+"matrix": 96,
+"events": 434,
+"wild": 255,
+"music_day": 1043,
+"mapsec": 145,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 482,
+"name": "MAP_T08PC0101",
+"matrix": 73,
+"events": 435,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 145,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 483,
+"name": "MAP_T08R0601",
+"matrix": 97,
+"events": 436,
+"wild": 255,
+"music_day": 1043,
+"mapsec": 145,
+"placas": 0,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 484,
+"name": "MAP_R10PC0102",
+"matrix": 77,
+"events": 437,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 158,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 485,
+"name": "MAP_T08PC0102",
+"matrix": 77,
+"events": 438,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 145,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 486,
+"name": "MAP_D40R0106",
+"matrix": 275,
+"events": 439,
+"wild": 48,
+"music_day": 1073,
+"mapsec": 218,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 487,
+"name": "MAP_D22R0102",
+"matrix": 27,
+"events": 440,
+"wild": 24,
+"music_day": 1092,
+"mapsec": 207,
+"placas": 5,
+"npcs": 13,
+"warps": 7,
+"gatilhos": 0
+},
+{
+"id": 488,
+"name": "MAP_D22R0103",
+"matrix": 27,
+"events": 0,
+"wild": 255,
+"music_day": 1075,
+"mapsec": 207,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 489,
+"name": "MAP_R10R0202",
+"matrix": 276,
+"events": 441,
+"wild": 255,
+"music_day": 1044,
+"mapsec": 201,
+"placas": 2,
+"npcs": 7,
+"warps": 1,
+"gatilhos": 1
+},
+{
+"id": 490,
+"name": "MAP_D24R0216",
+"matrix": 37,
+"events": 442,
+"wild": 11,
+"music_day": 1074,
+"mapsec": 209,
+"placas": 30,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 491,
+"name": "MAP_D24R0217",
+"matrix": 181,
+"events": 443,
+"wild": 13,
+"music_day": 1074,
+"mapsec": 209,
+"placas": 9,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 492,
+"name": "MAP_D24R0218",
+"matrix": 37,
+"events": 444,
+"wild": 12,
+"music_day": 1074,
+"mapsec": 209,
+"placas": 30,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 493,
+"name": "MAP_R07R0101",
+"matrix": 70,
+"events": 445,
+"wild": 255,
+"music_day": 1055,
+"mapsec": 155,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 494,
+"name": "MAP_T05PC0102",
+"matrix": 77,
+"events": 446,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 142,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 495,
+"name": "MAP_T04PC0102",
+"matrix": 77,
+"events": 447,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 141,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 496,
+"name": "MAP_T02GYM0101",
+"matrix": 261,
+"events": 448,
+"wild": 255,
+"music_day": 1065,
+"mapsec": 139,
+"placas": 2,
+"npcs": 7,
+"warps": 1,
+"gatilhos": 1
+},
+{
+"id": 497,
+"name": "MAP_T02R0201",
+"matrix": 96,
+"events": 449,
+"wild": 255,
+"music_day": 1045,
+"mapsec": 139,
+"placas": 0,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 498,
+"name": "MAP_T02R0301",
+"matrix": 244,
+"events": 450,
+"wild": 255,
+"music_day": 1045,
+"mapsec": 139,
+"placas": 2,
+"npcs": 6,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 499,
+"name": "MAP_T02R0302",
+"matrix": 245,
+"events": 451,
+"wild": 255,
+"music_day": 1045,
+"mapsec": 139,
+"placas": 0,
+"npcs": 12,
+"warps": 1,
+"gatilhos": 2
+},
+{
+"id": 500,
+"name": "MAP_T02FS0101",
+"matrix": 104,
+"events": 452,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 139,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 501,
+"name": "MAP_T02PC0101",
+"matrix": 73,
+"events": 453,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 139,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 502,
+"name": "MAP_T02PC0102",
+"matrix": 77,
+"events": 454,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 139,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 503,
+"name": "MAP_T01R0101",
+"matrix": 246,
+"events": 455,
+"wild": 255,
+"music_day": 1046,
+"mapsec": 138,
+"placas": 2,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 504,
+"name": "MAP_T01R0201",
+"matrix": 248,
+"events": 456,
+"wild": 255,
+"music_day": 1046,
+"mapsec": 138,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 505,
+"name": "MAP_T01R0301",
+"matrix": 250,
+"events": 457,
+"wild": 255,
+"music_day": 1046,
+"mapsec": 138,
+"placas": 16,
+"npcs": 7,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 506,
+"name": "MAP_T01R0102",
+"matrix": 247,
+"events": 458,
+"wild": 255,
+"music_day": 1046,
+"mapsec": 138,
+"placas": 2,
+"npcs": 0,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 507,
+"name": "MAP_T01R0202",
+"matrix": 249,
+"events": 459,
+"wild": 255,
+"music_day": 1046,
+"mapsec": 138,
+"placas": 2,
+"npcs": 0,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 508,
+"name": "MAP_T09PC0101",
+"matrix": 73,
+"events": 460,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 146,
+"placas": 1,
+"npcs": 6,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 509,
+"name": "MAP_T09PC0102",
+"matrix": 77,
+"events": 461,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 146,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 510,
+"name": "MAP_R28R0101",
+"matrix": 66,
+"events": 462,
+"wild": 255,
+"music_day": 1085,
+"mapsec": 176,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 511,
+"name": "MAP_R03PC0101",
+"matrix": 73,
+"events": 463,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 151,
+"placas": 1,
+"npcs": 6,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 512,
+"name": "MAP_R03PC0102",
+"matrix": 77,
+"events": 464,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 151,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 513,
+"name": "MAP_D02R0104",
+"matrix": 281,
+"events": 465,
+"wild": 73,
+"music_day": 1097,
+"mapsec": 198,
+"placas": 3,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 1
+},
+{
+"id": 514,
+"name": "MAP_T31PC0101",
+"matrix": 73,
+"events": 466,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 137,
+"placas": 1,
+"npcs": 4,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 515,
+"name": "MAP_T31PC0102",
+"matrix": 77,
+"events": 467,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 137,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 516,
+"name": "MAP_HIROBA",
+"matrix": 280,
+"events": 468,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 0,
+"placas": 0,
+"npcs": 1,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 517,
+"name": "MAP_R05R0401",
+"matrix": 66,
+"events": 469,
+"wild": 255,
+"music_day": 1053,
+"mapsec": 153,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 518,
+"name": "MAP_D02FS0101",
+"matrix": 139,
+"events": 470,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 198,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 519,
+"name": "MAP_T25R0503",
+"matrix": 282,
+"events": 471,
+"wild": 255,
+"music_day": 1022,
+"mapsec": 131,
+"placas": 0,
+"npcs": 0,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 520,
+"name": "MAP_T11R0603",
+"matrix": 283,
+"events": 472,
+"wild": 255,
+"music_day": 1039,
+"mapsec": 148,
+"placas": 0,
+"npcs": 0,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 521,
+"name": "MAP_D51R0101",
+"matrix": 277,
+"events": 473,
+"wild": 255,
+"music_day": 1168,
+"mapsec": 231,
+"placas": 1,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 522,
+"name": "MAP_D51R0201",
+"matrix": 278,
+"events": 474,
+"wild": 255,
+"music_day": 1168,
+"mapsec": 231,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 3
+},
+{
+"id": 523,
+"name": "MAP_D51R0301",
+"matrix": 287,
+"events": 475,
+"wild": 255,
+"music_day": 1168,
+"mapsec": 231,
+"placas": 0,
+"npcs": 4,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 524,
+"name": "MAP_D52R0101",
+"matrix": 279,
+"events": 476,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 232,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 525,
+"name": "MAP_D52R0102",
+"matrix": 284,
+"events": 477,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 232,
+"placas": 0,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 526,
+"name": "MAP_D52R0103",
+"matrix": 285,
+"events": 478,
+"wild": 255,
+"music_day": 1073,
+"mapsec": 232,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 527,
+"name": "MAP_T02R0401",
+"matrix": 69,
+"events": 479,
+"wild": 255,
+"music_day": 1045,
+"mapsec": 149,
+"placas": 0,
+"npcs": 1,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 528,
+"name": "MAP_D32PC0101",
+"matrix": 73,
+"events": 480,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 229,
+"placas": 1,
+"npcs": 7,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 529,
+"name": "MAP_D32PC0102",
+"matrix": 77,
+"events": 481,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 229,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 530,
+"name": "MAP_D32FS0101",
+"matrix": 104,
+"events": 482,
+"wild": 255,
+"music_day": 1064,
+"mapsec": 229,
+"placas": 0,
+"npcs": 6,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 531,
+"name": "MAP_D32R0103",
+"matrix": 97,
+"events": 483,
+"wild": 255,
+"music_day": 1070,
+"mapsec": 229,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 532,
+"name": "MAP_R05R0202",
+"matrix": 252,
+"events": 484,
+"wild": 255,
+"music_day": 1082,
+"mapsec": 153,
+"placas": 2,
+"npcs": 1,
+"warps": 6,
+"gatilhos": 0
+},
+{
+"id": 533,
+"name": "MAP_R12R0101",
+"matrix": 66,
+"events": 485,
+"wild": 255,
+"music_day": 1060,
+"mapsec": 160,
+"placas": 0,
+"npcs": 1,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 534,
+"name": "MAP_D47PC0101",
+"matrix": 73,
+"events": 486,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 227,
+"placas": 1,
+"npcs": 6,
+"warps": 2,
+"gatilhos": 0
+},
+{
+"id": 535,
+"name": "MAP_D47PC0102",
+"matrix": 77,
+"events": 487,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 227,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 536,
+"name": "MAP_T25SP0101",
+"matrix": 286,
+"events": 488,
+"wild": 255,
+"music_day": 1069,
+"mapsec": 131,
+"placas": 5,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 537,
+"name": "MAP_T07SP0101",
+"matrix": 286,
+"events": 489,
+"wild": 255,
+"music_day": 1069,
+"mapsec": 144,
+"placas": 5,
+"npcs": 2,
+"warps": 1,
+"gatilhos": 0
+},
+{
+"id": 538,
+"name": "MAP_R00",
+"matrix": 0,
+"events": 0,
+"wild": 255,
+"music_day": 1069,
+"mapsec": 0,
+"placas": 0,
+"npcs": 0,
+"warps": 0,
+"gatilhos": 0
+},
+{
+"id": 539,
+"name": "MAP_T10R0801",
+"matrix": 77,
+"events": 490,
+"wild": 255,
+"music_day": 1063,
+"mapsec": 15,
+"placas": 0,
+"npcs": 3,
+"warps": 1,
+"gatilhos": 0
+}
+]
