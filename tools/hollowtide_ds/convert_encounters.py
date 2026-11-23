@@ -81,10 +81,11 @@ def main(hg, bind_path=BIND, patch_path=PATCH):
         b = bind.get(enc["map"], {}).get("encdata")
         if not b:
             unbound.append(enc["map"]); continue
-        m = re.search(r"\n    \[%s\] = \{\n.*?\n    \},\n" % re.escape(b), new, re.S)
-        if not m:
-            raise KeyError(f"{b} nao existe em data/Encounters.c")
-        new = new[:m.start() + 1] + entry(valid, enc, b) + new[m.end():]
+        for one in ([b] if isinstance(b, str) else b):    # um lugar de Lunia pode juntar varios mapas de HGSS
+            m = re.search(r"\n    \[%s\] = \{\n.*?\n    \},\n" % re.escape(one), new, re.S)
+            if not m:
+                raise KeyError(f"{one} nao existe em data/Encounters.c")
+            new = new[:m.start() + 1] + entry(valid, enc, one) + new[m.end():]
         done.append(enc["map"])
     if done:
         with tempfile.TemporaryDirectory() as tmp:

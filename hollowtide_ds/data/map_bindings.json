@@ -1,1 +1,18 @@
-{"MAP_ROUTE101": {"hgss_map": "MAP_R29", "encdata": "ENCDATA_R29_ROUTE_29", "lunia": "Route 1"}}
+{
+ "MAP_ROUTE101": {
+  "hgss_map": "MAP_R29",
+  "encdata": "ENCDATA_R29_ROUTE_29",
+  "lunia": "Route 1"
+ },
+ "MAP_PALM_ROUTE02": {
+  "hgss_map": [
+   "MAP_R30",
+   "MAP_R31"
+  ],
+  "encdata": [
+   "ENCDATA_R30_ROUTE_30",
+   "ENCDATA_R31_ROUTE_31"
+  ],
+  "lunia": "Route 2"
+ }
+}

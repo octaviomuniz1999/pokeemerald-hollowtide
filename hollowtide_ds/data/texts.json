@@ -231,5 +231,31 @@
  "549": {
   "_": "quarto da casa dos vizinhos (T20R0402): o Wii, com o nome da região trocado",
   "17": "It’s a Wii!\\rWii is huge in Lunia, too!"
+ },
+ "375": {
+  "_": "Route 2, trecho sul (Route 30; script em overlay/data/scr_seq/scr_seq_0227_R30.s)",
+  "0": {
+   "gba": "Palm080_TextRouteNorth",
+   "replace": [
+    [
+     "North: Harvestvale",
+     "South: Harvestvale"
+    ],
+    [
+     "follow the trail\\nsouth toward the sea",
+     "follow the trail\\nnorth toward the sea"
+    ]
+   ],
+   "_por_que": "no DS a Route 2 sai de Harvestvale para o norte"
+  },
+  "1": {
+   "gba": "Palm280_TextDoorLocked"
+  }
+ },
+ "378": {
+  "_": "Route 2, trecho norte (Route 31; script em overlay/data/scr_seq/scr_seq_0230_R31.s)",
+  "0": {
+   "gba": "Palm080_TextRouteSouth"
+  }
  }
 }

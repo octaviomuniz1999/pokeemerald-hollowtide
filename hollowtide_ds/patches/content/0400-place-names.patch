@@ -1,6 +1,6 @@
 --- a/data/text/custom/279.txt
 +++ b/data/text/custom/279.txt
-@@ -124,8 +124,8 @@
+@@ -124,13 +124,13 @@
  Iron Ruins
  Iceberg Ruins
  Rock Peak Ruins
@@ -11,12 +11,22 @@
  Violet City
  Azalea Town
  Cianwood City
-@@ -175,7 +175,7 @@
+ Goldenrod City
+-Olivine City
++Breezeport City
+ Ecruteak City
+ Mahogany Town
+ Lake of Rage
+@@ -175,9 +175,9 @@
  Route 26
  Route 27
  Route 28
 -Route 29
+-Route 30
+-Route 31
 +Route 1
- Route 30
- Route 31
++Route 2
++Route 2
  Route 32
+ Route 33
+ Route 34

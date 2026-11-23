@@ -17,7 +17,7 @@ CASE = [
     ("BAG", "Bag"), ("B BUTTON", "B Button"), ("TEAM PALM", "Team Palm"),
     # cabecalhos de placa, todos em maiusculas no GBA
     ("VILLAGE", "Village"), ("VILLAGER", "Villager"), ("LEADER", "Leader"), ("BADGE", "Badge"),
-    ("HARVEST", "Harvest"), ("BULLET", "Bullet"), ("SEED", "Seed"), ("COFFEE FIELDS", "Coffee Fields"),
+    ("HARVEST", "Harvest"), ("BREEZEPORT", "Breezeport"), ("CITY", "City"), ("BULLET", "Bullet"), ("SEED", "Seed"), ("COFFEE FIELDS", "Coffee Fields"),
     ("WATER KIOSK", "Water Kiosk"), ("DRYING YARD", "Drying Yard"), ("IRRIGATION SCHEDULE", "Irrigation Schedule"),
     ("WATER UNDER CONTRACT", "Water Under Contract"), ("THE NEIGHBORS", "The Neighbors"), ("HOUSE", "House"),
 ]
