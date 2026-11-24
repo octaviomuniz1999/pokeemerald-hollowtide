@@ -81,3 +81,35 @@ Ainda não está no padrão artístico pedido:
 - (resolvido) cantos da lagoa: convexos e côncavos com o perfil da margem girado em volta da quina.
 
 Ao sul da célula de prova aparece o mar do bloco vazio; no definitivo ali fica o setor C.
+
+## 6. Decisões do diretor (24/11) e plano de execução
+
+O diretor deixou as células comigo; a geometria segue o GBA à risca; a saída de Dawnmere é a leste.
+
+**Conversão fiel.** Cada mapa do GBA (`LittlerootTown` 34×29 = Dawnmere, `Route101` 40×53 = Route 1, `OldaleTown`
+39×37 = Harvestvale) é convertido tile a tile para a grade do gerador:
+- tabela explícita metatile do GBA → letra da grade;
+- alturas pelos bits de elevação;
+- construções do GBA → modelos de construção da área com a porta no tile do warp;
+- NPCs, placas e gatilhos nas posições do `map.json` do GBA.
+
+**Ligações do GBA, que viram divisas naturais no DS:**
+- saída leste de Dawnmere (x 33, linhas 21–22) ↔ entrada oeste da Route 1 (linhas 4–5);
+- saída sul da Route 1 (colunas 9–10, linha 52) ↔ entrada norte de Harvestvale (colunas 8–11, linha 0).
+
+**Células (decisão minha).** Um só desenho contínuo, recortado em blocos de 32×32, nas linhas 13–16 da matriz 0
+(livres, logo abaixo do protótipo):
+- Dawnmere a oeste;
+- a Route 1 encostada no leste de Dawnmere, deslocada 17 linhas para baixo (a divisa fica nas mesmas linhas do GBA);
+- Harvestvale logo abaixo da Route 1, 1 coluna à direita.
+
+Cada célula recebe o header do mapa que ocupa a maior parte dela. O protótipo do caminho A fica intacto até a
+troca.
+
+**Etapas:**
+1. tabela de metatiles + conversor → desenho global → blocos;
+2. Dawnmere na build de prova (visual, colisão, alturas);
+3. eventos de Dawnmere nas posições do GBA;
+4. Route 1;
+5. Harvestvale;
+6. troca do protótipo pela versão original na build de conteúdo, com QA completo do Cap. 1.

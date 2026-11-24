@@ -90,6 +90,9 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
     alturas, conexão, entrada e retorno) validada no DeSmuME.
   - **Push remoto suspenso** até o diretor pedir a publicação; commits locais e ramos isolados; nada de force push.
   - Ordem: CP-DS-02 → CP-DS-02B (save) → CP-DS-03A (pipeline de mapas) → CP-DS-03B (primeira localidade original).
+- 24/11 (diretor, decisões do CP-DS-03B): células do mapa-múndi **a critério do Claude**; **seguir à risca o GBA**
+  (os mapas autorais do GBA 23ap, convertidos para o DS, com a mesma geometria); saída de Dawnmere **a leste**, como
+  no GBA (as adaptações para "oeste" do protótipo deixam de valer quando os mapas originais entrarem).
 
 ## Entrega
 
