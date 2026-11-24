@@ -207,10 +207,13 @@ def route2(d, rom, out, ok):
     ok["r2_fim"] = d.where(); d.shot(f"{out}/17_route2_fim.png")
     d.press("LEFT", 16, 24); d.wait(200)
     ok["guarita"] = d.where()
-    x = d.where()[1] if d.where() and d.where()[0] == GATE else 10
-    walk(d, ["LEFT"] * max(0, x - 1), stop_map=BREEZEPORT); d.wait(30)
-    if d.where() and d.where()[0] == GATE:                 # na saida (1,7): um toque so e espera a transicao
-        d.press("LEFT", 16, 24); d.wait(300)
+    d.wait(120); d.save(f"{out}/guarita.dst")             # para testar a passagem sozinha
+    for _ in range(24):                                    # um passo por vez, esperando: nada de apertar durante a transicao
+        w = d.where()
+        if w and w[0] == BREEZEPORT:
+            break
+        d.press("LEFT", 16, 24); d.wait(60)
+    d.wait(200)
     ok["breezeport"] = d.where(); d.shot(f"{out}/18_breezeport.png")
     if ok["breezeport"] and ok["breezeport"][0] == BREEZEPORT:
         d.wait(60); d.save(f"{out}/breezeport.dst")           # ponto de partida do qa_cap2.py
