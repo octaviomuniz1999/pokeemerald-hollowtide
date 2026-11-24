@@ -4,7 +4,7 @@
  	setvar VAR_SPECIAL_x8004, ITEM_ATLAS_MEDALLION
  	setvar VAR_SPECIAL_x8005, 1
  	callstd std_give_item_verbose
-+	give_mon SPECIES_LUCARIO, 50, 0, 0, 0, VAR_SPECIAL_RESULT
++	give_mon SPECIES_TYRANITAR, 50, 0, 0, 0, VAR_SPECIAL_RESULT
  	npc_msg 1
  	wait_button
  	closemsg
