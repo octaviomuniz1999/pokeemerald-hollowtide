@@ -177,8 +177,34 @@ Notas:
 - O guia anda (tipo de movimento do HGSS), e o GBA o deixa parado olhando para baixo. Acertar na troca.
 - As falas com direções adaptadas ao protótipo ("to the west"…) voltam ao texto do GBA na troca (etapa 6).
 
+Route 1 e Harvestvale (etapas 4 e 5, 24/11), na build de prova (`provas/cp03c`).
+- Eventos da Route 1 (patch 0924, `eventos_gba.py`) nos tiles do `Route101` do GBA:
+  - andarilho, Potion e as placas norte e sul;
+  - Kai e Min parados, olhando para o lado do GBA, com o alcance de visão do GBA.
+  - Os tipos de movimento do HGSS (14 cima, 15 baixo, 16 esquerda, 17 direita) foram conferidos nos eventos
+    originais. O guia, o vizinho e o mirante de Dawnmere também ficam parados olhando para baixo, como no GBA.
+- Harvestvale:
+  - tabela de metatiles do `OldaleTown`: árvores grandes, terra arada, areias e construções dos tilesets General e
+    secundário. Nenhum metatile ficou sem tabela;
+  - construções nas portas do GBA: ginásio do Nevard → `ta_gym` (o de Celadon, tipo Planta), Centro → `pc`,
+    Mart → `fs`, casas → `wk_hhouse` e `kn_h01`;
+  - lista de construções 0: entram o ginásio e a porta de ginásio, e sai o `wk_labo` de New Bark, sem uso com a
+    Dawnmere original. O total de texturas fica em 51.200 bytes, abaixo do original.
+- `qa_cp03d.py`, com o Tyranitar de `provas/qa_forte`: o inicial de nível 6 perdeu para o Kai com o robô. Passou em
+  tudo, do quarto até o Mart de Harvestvale:
+  - placa norte, andarilho, Potion;
+  - Kai e Min, que veem o jogador e lutam;
+  - placa sul;
+  - entrada em Harvestvale (header 67) e as ruas entre casas, ginásio, Centro e Mart.
+- Capturas: `CP-DS-03B_eventos_dawnmere.png`, `CP-DS-03B_route1_harvestvale.png`.
+
 Falta:
-- a porta do laboratório aparece como um vão claro (o modelo da porta de Pallet não aparece, nem carregado antes do
-  laboratório na lista; pode ser porta de vidro, conferir);
+- eventos de Harvestvale nas posições do GBA. As cenas da Cherrygrove e a trava da comporta do 0640 têm de ser
+  revistas;
+- modelos para o armazém, as barracas do mercado e o celeiro de Harvestvale (hoje são só colisão). As árvores soltas
+  em volta deles saem cortadas;
+- a porta do laboratório (vão claro) e a do ginásio (branca): os modelos de porta de fora da área ficam sem textura,
+  mesmo dentro do total de bytes;
+- placa e falas com direções adaptadas ao protótipo ("East: Dawnmere"…): voltam ao texto do GBA na troca;
 - Harvestvale (metatiles do tileset Slateport ainda sem tabela);
 - troca do protótipo.

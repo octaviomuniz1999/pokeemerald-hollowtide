@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.join(REPO, "tools", "hollowtide_qa"))
 # --- tabela metatile -> letra (General = primario, 0x000-0x1FF; secundarios a partir de 0x200) -----------------------
 GENERAL = {
     0x001: ".", 0x00F: "e", 0x003: "S", 0x01B: "S", 0x004: "f", 0x288: "f", 0x289: "f",
-    0x00E: "T", 0x016: "T", 0x01D: "T", 0x01E: "T", 0x01F: "T", 0x026: "T", 0x027: "T", 0x1D6: "T", 0x1D7: "T",
+    0x00E: "T", 0x016: "T", 0x017: "T", 0x01D: "T", 0x01E: "T", 0x01F: "T", 0x026: "T", 0x027: "T", 0x1D6: "T", 0x1D7: "T",
     0x1DE: "T", 0x1DF: "T", 0x23B: "T",
     0x1CE: ".", 0x1CF: ".", 0x1D0: ".", 0x1D1: ".", 0x1D2: ".", 0x1D8: ".", 0x1D9: ".", 0x1DA: ".", 0x1E0: ".",
     0x1E1: ".", 0x1E2: ".", 0x103: ".", 0x105: ".", 0x10B: ".", 0x10D: ".", 0x113: ".", 0x115: ".",
@@ -37,10 +37,13 @@ GENERAL = {
     0x260: "#", 0x264: "#", 0x268: "#", 0x26C: "#",
     0x265: "=", 0x266: "=", 0x267: "=", 0x26D: "=", 0x26E: "=", 0x26F: "=",
 }
+GENERAL.update({0x1D4: "T", 0x1D5: "T", 0x1E4: "T", 0x1E5: "T", 0x1E6: "T", 0x1E7: "T",      # arvores grandes (Harvestvale)
+                0x10C: "=", 0x104: "=", 0x114: "=", 0x124: "="})   # terra arada da plantacao e areias
+PRIMARY_BUILDINGS = [range(0x028, 0x064), range(0x1AA, 0x1CE)]   # Mart/PC e ginasio do tileset General
 for i in range(0x008, 0x023):
-    if i not in (0x00D, 0x00E, 0x00F, 0x016, 0x01B, 0x01D, 0x01E, 0x01F):
+    if i not in (0x00D, 0x00E, 0x00F, 0x016, 0x017, 0x01B, 0x01D, 0x01E, 0x01F):
         GENERAL.setdefault(i, "B")          # casa de telhado vermelho do tileset General
-SECONDARY_BUILDINGS = range(0x200, 0x300)   # nos secundarios destes mapas, metatiles bloqueados = construcoes
+SECONDARY_BUILDINGS = range(0x200, 0x400)   # nos secundarios destes mapas, metatiles bloqueados = construcoes
 
 # --- construcoes: modelo do HGSS sobre a planta do GBA -----------------------------------------------------------------
 # Modelos com textura propria (NARC a/0/4/0); caixa (x0, x1, z0) em tiles a partir do ponto do objeto; porta = modelo da
@@ -52,6 +55,11 @@ MODELOS = {
     0x16: dict(nome="wk_h01 (casa de New Bark)", x0=-2.25, x1=2.5, z0=-1.625, porta=(0x19, 0.126, 0.739, 0.07), dtile=(-0.5, 0.875)),
     0x25: dict(nome="yo_h01 (casa de Cherrygrove)", x0=-2.188, x1=2.5, z0=-1.625, porta=(0x32, 0.125, 0.731, 0.04), dtile=(-0.5, 1.0)),
     0x26: dict(nome="yo_h02 (casa de Cherrygrove)", x0=-2.188, x1=2.5, z0=-1.625, porta=(0x32, 0.12, 0.719, 0.04), dtile=(-0.5, 1.0)),
+    0x29: dict(nome="kn_h01 (casa de Kanto)", x0=-2.188, x1=2.5, z0=-1.625, porta=(0x18, 0.113, 0.763, 0.062), dtile=(-0.5, 1.0)),
+    0x27: dict(nome="fs (Poke Mart)", x0=-2.125, x1=3.633, z0=-1.812, porta=(0x0F, -0.558, 0.757, 0.0), dtile=(-0.5, 1.0)),
+    0x28: dict(nome="pc (Centro Pokemon)", x0=-2.625, x1=3.0, z0=-2.0, porta=(0x0F, 0.0, 1.608, 0.0), dtile=(0, 1.5)),
+    0xF5: dict(nome="ta_gym (ginasio de Celadon, tipo Planta como o do Nevard)", x0=-3.479, x1=3.865, z0=-2.587,
+               porta=(0x10, 0.0, 1.405, 0.0), dtile=(0, 1.5)),
 }
 # Por mapa: retangulo da construcao no GBA (x0, y0, x1, y1, inclusivo, coordenadas do mapa do GBA), modelo, tile da porta
 # no DS (= warp do GBA, salvo quando o modelo nao deixa) e se a porta e de verdade (warp) ou decorativa; "ajustes" sao
@@ -67,13 +75,24 @@ CONSTRUCOES = {
         dict(rect=(6, 19, 10, 23), modelo=0x25, porta=(8, 23), warp=False, altura=1, nota="casa sem porta no GBA"),
         dict(rect=(18, 19, 22, 23), modelo=0x26, porta=(20, 23), warp=False, altura=1, nota="casa sem porta no GBA"),
     ],
+    "Harvestvale": [
+        dict(rect=(2, 17, 7, 21), modelo=0xF5, porta=(5, 21), warp=True, altura=1, nota="ginasio do Nevard (warp do GBA)"),
+        dict(rect=(11, 18, 14, 21), modelo=0x28, porta=(12, 21), warp=True, altura=1, nota="Centro Pokemon"),
+        dict(rect=(22, 29, 25, 31), modelo=0x27, porta=(23, 31), warp=True, altura=1, nota="Poke Mart"),
+        dict(rect=(15, 9, 20, 11), modelo=0x14, porta=(17, 11), warp=True, altura=1, nota="casa (OLDALE_TOWN_HOUSE1)"),
+        dict(rect=(20, 15, 23, 18), modelo=0x29, porta=(21, 18), warp=True, altura=1, nota="casa (OLDALE_TOWN_HOUSE2)"),
+    ],
     "Route1": [
         dict(rect=(4, 17, 10, 20), modelo=0x14, porta=(5, 20), warp=False, altura=1,
              nota="casa da horta (porta decorativa no GBA, sem warp); a casa de Pallet (mst_rdh), de telhado vermelho, "
                   "ficou sem textura: a lista de construcoes da area so tem VRAM para mais dois modelos"),
     ],
 }
-MODELOS_NOVOS_NA_AREA = [0x13A, 0x137]   # entram na lista de construcoes 0 (area 2) pelo land.json
+# lista de construcoes 0 (area 2: os headers de Dawnmere, Route 1 e Harvestvale), pelo land.json: entram o laboratorio
+# de Pallet, o ginasio de Celadon e as portas deles; sai o wk_labo de New Bark (sem uso com Dawnmere original). A VRAM
+# das texturas da lista tem limite: 53 248 bytes funcionaram, ~55 600 nao (o ultimo modelo ficou sem textura).
+MODELOS_NOVOS_NA_AREA = [0x13A, 0x137, 0xF5, 0x10]
+MODELOS_FORA_DA_AREA = [0x15]
 
 
 def construcoes(key, gx, gy, grid, alt):
@@ -145,6 +164,8 @@ def convert(name):
             c = "~"
         elif mt in GENERAL:
             c = GENERAL[mt]
+        elif any(mt in r for r in PRIMARY_BUILDINGS):
+            c = "B" if col else "="                      # parede/telhado de construcao; calcada na frente
         elif mt in SECONDARY_BUILDINGS and col:
             c = "B"
         elif mt in SECONDARY_BUILDINGS:
@@ -189,7 +210,7 @@ def build_global():
         objs, rel = construcoes(key, gx, gy, grid, alt)
         objetos += objs
         for b in j.get("bg_events", []):                 # placas do GBA: modelo de placa do HGSS (board_b) no tile
-            if b.get("type") == "sign" and key in CONSTRUCOES:   # Harvestvale: so na etapa 5 (area ainda sem conferir)
+            if b.get("type") == "sign":                  # as tres celulas sao da area 2 (board_b na lista 0)
                 objetos.append(f"30 {gx + b['x']} {gy + b['y']} 0")
         report[key] = {"gba": name, "origem": (gx, gy), "tam": (w, h), "desconhecidos": dict(unknown),
                        "warps": [(wv["x"] + gx, wv["y"] + gy, wv["dest_map"]) for wv in j.get("warp_events", [])],

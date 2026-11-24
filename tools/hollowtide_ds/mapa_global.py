@@ -10,7 +10,7 @@ de 32x32 e monta tudo na matriz do mundo.
   bloco novo e o header do mapa que ocupa a maior parte de cada bloco (retangulos do relatorio do gba2grade.py).
 Entrada no land.json: {"global": "lunia_cap1.txt", "matriz": 0, "celula": [21, 13], "base": 0,
                        "headers": {"Dawnmere": 60, "Route1": 33, "Harvestvale": 67}, "padrao": 60,
-                       "modelos_area": {"lista": 0, "acrescentar": [314, 311]}}
+                       "modelos_area": {"lista": 0, "acrescentar": [314, 311], "remover": [21]}}
   (modelos_area: construcoes de outras areas acrescentadas a lista a/0/4/3 que a area dos headers usa; formato da lista:
    u16 quantidade + u16 modelos)
 """
@@ -109,11 +109,12 @@ def apply_global(rom, narc, entry, base_dir):
     mnarc.files[entry["matriz"]] = mt.pack()
     if "modelos_area" in entry:                          # modelos de construcao de outras areas: entram na lista da area
         lst, novos = entry["modelos_area"]["lista"], entry["modelos_area"]["acrescentar"]
+        fora = set(entry["modelos_area"].get("remover", []))
         aid = rom.filenames.idOf("a/0/4/3")
         anarc = ndspy.narc.NARC(rom.files[aid])
         f = anarc.files[lst]
         cur = list(struct.unpack_from("<%dH" % (len(f) // 2), f))
-        ids_m = cur[1:1 + cur[0]] + [m for m in novos if m not in cur[1:1 + cur[0]]]
+        ids_m = [m for m in cur[1:1 + cur[0]] if m not in fora] + [m for m in novos if m not in cur[1:1 + cur[0]]]
         anarc.files[lst] = struct.pack("<%dH" % (len(ids_m) + 1), len(ids_m), *ids_m)
         rom.files[aid] = anarc.save()
         print(f"lista de construcoes {lst}: {cur[0]} -> {len(ids_m)} modelos")
