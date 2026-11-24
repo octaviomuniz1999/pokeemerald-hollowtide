@@ -1,0 +1,27 @@
+[
+ {
+  "land": 0,
+  "nota": "Dawnmere (New Bark, MAP_T20): placa da Route 1 na saida oeste (CP-DS-01, prova de edicao de mapa)",
+  "objetos": [
+   {
+    "modelo": 30,
+    "tile": [
+     5,
+     12
+    ],
+    "y": 1
+   }
+  ],
+  "colisao": [
+   {
+    "tiles": [
+     [
+      5,
+      12
+     ]
+    ],
+    "bloqueado": true
+   }
+  ]
+ }
+]

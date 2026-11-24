@@ -64,6 +64,10 @@ make -j"$(nproc)" > build_make.log 2>&1 || { grep -nE "error|Error" build_make.l
 MATRIX=()
 for d in "${PATCH_DIRS[@]}"; do [ -e "$d/matrix.json" ] && MATRIX+=("$d/matrix.json"); done
 [ ${#MATRIX[@]} -gt 0 ] && python3 "$HERE/matrix.py" test.nds "${MATRIX[@]}"
+
+LAND=()      # blocos de mapa (objetos 3D e colisao, a/0/6/5): o hg-engine nao cobre mapas
+for d in "${PATCH_DIRS[@]}"; do [ -e "$d/land.json" ] && LAND+=("$d/land.json"); done
+[ ${#LAND[@]} -gt 0 ] && python3 "$HERE/land_data.py" test.nds "${LAND[@]}"
 # trocas com NPC (NARC a/1/1/2): trades.json de cada pasta
 TRADES=()
 for d in "${PATCH_DIRS[@]}"; do [ -e "$d/trades.json" ] && TRADES+=("$d/trades.json"); done

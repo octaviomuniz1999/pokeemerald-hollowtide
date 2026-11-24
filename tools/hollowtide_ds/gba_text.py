@@ -2,7 +2,7 @@
 """Textos do GBA (labels .string dos scripts) no formato de texto do DS (msgenc / data/text).
 
 - Codigos: \\n fica \\n; \\l (rolar uma linha) -> \\r; \\p (novo paragrafo) -> \\f; $ final sai.
-- {PLAYER} -> {STRVAR_1 3, 0, 0}; ' -> ’ (o charmap do DS nao tem o apostrofo reto) (buffer 0: o script chama buffer_players_name 0 antes).
+- {PLAYER} -> {STRVAR_1 3, 0, 0}; {X_ARROW} -> setas do charmap do DS; ' -> ’ (o charmap do DS nao tem o apostrofo reto) (buffer 0: o script chama buffer_players_name 0 antes).
 - Caixa: o GBA escreve nomes em maiusculas (MOM, PROF. ALEX, POKéMON); o DS usa caixa mista. So os nomes da lista
   abaixo mudam — e so a grafia, o texto e o mesmo.
 Uso como modulo: text_of(label) -> str. Linha de comando: gba_text.py LABEL [LABEL...]
@@ -46,6 +46,8 @@ def convert(s):
     s = s.replace("\\l", "\\r").replace("\\p", "\\f")
     s = s.replace("{PLAYER}", "{STRVAR_1 3, 0, 0}")
     s = s.replace("'", "’")                       # o charmap do DS so tem o apostrofo tipografico
+    for k, v in (("LEFT", "←"), ("UP", "↑"), ("DOWN", "↓"), ("RIGHT", "→")):   # setas: 011B-011E no charmap do DS
+        s = s.replace("{%s_ARROW}" % k, v)
     esc = {"\\n": "\x01", "\\r": "\x02", "\\f": "\x03"}   # para "\\nPROF" nao contar o n como letra
     for k, v in esc.items():
         s = s.replace(k, v)

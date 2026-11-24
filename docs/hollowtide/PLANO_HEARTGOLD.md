@@ -78,9 +78,20 @@ Layout no repositório: `hollowtide_ds/` (patches de conteúdo + ajustes do hg-e
 | Route 2 | Route 30 + Route 31 (`0660`/`0670` + overlays + textos 375/378): Liang, Mei Lan e Qin com visão (posições calculadas sobre o caminho mais curto); placas do GBA com direções adaptadas; porta trancada nas casas (Mr. Pokémon fora); Dark Cave fora; encontros da Route 2 nas duas tabelas. No emulador: os três treinadores veem o jogador e lutam; chega à guarita. **Pendente:** Super Potion do GBA (hoje o Potion do HGSS) |
 | Passagem para Breezeport | guarita da Route 31 → Olivine (casa T26R0701 vira a passagem de volta), `0680` — exceção à regra 1 registrada em `FASE2_MAPAS.md`. Corrigido: a guarita tinha o gatilho da cena da Lyra; sem a Lyra o jogo travava |
 | Breezeport | Olivine (overlay 0911 + `0690` + texto 604): a artista e o festival (3 lampiões), Teatro fechado até as luzes, saída norte (Route 3) fechada até vencer a Jay, 11 NPCs e placas do GBA; farol vira a casa do faroleiro (fechada); porto fechado. **Conferido no emulador** (`qa_cap2.py`): Teatro fechado, artista, os 3 lampiões ("All three lamps are glowing!"), Teatro aberto, saída norte fechada antes da Jay. Corrigidos: índices dos warps depois de apagar farol/porto; lampião no meio do cais |
-| Teatro da Jay | interior do ginásio de Olivine (placeholder) + overlay 0913 + texto 606: refletores ESQUERDA-DIREITA-ESQUERDA, Linh e Yumi, Jay → Echo Badge + **TM65 Shadow Claw** (decisão do diretor, 24/11: no lugar do TM Hex, que o hg-engine não tem). Conferido: refletores e "The stage is lit"; a Jay aparece e a batalha começa (o objeto herdava a flag que escondia a Jasmine). A conferir: vitória, insígnia/TM e a saída norte aberta |
+| Teatro da Jay | interior do ginásio de Olivine (placeholder) + overlay 0913 + texto 606: refletores ESQUERDA-DIREITA-ESQUERDA, Linh e Yumi, Jay → Echo Badge + **TM65 Shadow Claw** (decisão do diretor, 24/11: no lugar do TM Hex, que o hg-engine não tem). Conferido (`qa_cap2.py`, 24/11): refletores e "The stage is lit"; a Jay aparece e luta (o objeto herdava a flag que escondia a Jasmine); depois da vitória a saída norte libera e o jogador chega à Route 39 (mapa 43). A conferir na tela: as mensagens da insígnia e do TM |
 | Patch de teste | `Pokemon_Hollowtide_DS_2026-11-24-cap2.xdelta` entregue ao diretor (até Breezeport) |
-| Próximo | terminar o QA da Jay; Route 3 (Route 39 → Ferralia); comportas do ginásio do Nevard; árvore de Oran; Super Potion da Route 2 |
+| Próximo | ver a seção da ordem mestre abaixo |
+
+## Ordem mestre do diretor (24/11/2026) — checkpoints CP-DS
+
+IMPLEMENTAR → INTEGRAR → COMPILAR → TESTAR → DOCUMENTAR; um checkpoint só fecha com evidência no emulador.
+
+| Checkpoint | Estado |
+|---|---|
+| CP-DS-00 auditoria e baseline | **feito** — `docs/hollowtide/ds/CP-DS-00_AUDITORIA.md` (tag local `cp-ds-00-recebido`): ambiente, pipeline, estado real dos mapas (caminho A = geometria do HGSS intacta até aqui) e divergências com a ordem |
+| CP-DS-01 prova real de integração de mapa | **passou** — `docs/hollowtide/ds/CP-DS-01_PROVA_MAPA.md`: placa nova em Dawnmere (modelo 3D + colisão + leitura), divisa nos dois sentidos, save/CONTINUE; patch `…-cp01.xdelta` |
+| CP-DS-02 diálogos | auditoria automática (`audit_dialogos.py`) e 1ª leva de correções feitas junto com o CP-DS-01; falta o teste dirigido dos eventos principais com capturas |
+| CP-DS-03 em diante | depois do CP-DS-02; o bloqueio técnico é gerar terreno 3D novo (`CP-DS-00_AUDITORIA.md` §5) |
 
 ## 1. O que o hg-engine resolve e o que não resolve
 

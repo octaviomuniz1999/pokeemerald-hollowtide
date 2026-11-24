@@ -3,7 +3,8 @@
 
 Fonte: hollowtide_ds/data/texts.json  {"190": {"0": "Prof. Alex: ...", "1": "..."}, ...}
 (indices de mensagem; escapes \\n \\r \\f como no msgenc; ou {"gba": "LabelDoGBA"} para trazer o texto do
-GBA convertido por gba_text.py, com "replace"; e "engine:NNN": {"replace_all": [[trecho, novo]]} para os textos do
+GBA convertido por gba_text.py, com "replace"; ou {"hgss_replace": [[trecho, novo]]} para manter a fala do HGSS
+num placeholder trocando so um nome de Johto/Kanto; e "engine:NNN": {"replace_all": [[trecho, novo]]} para os textos do
 proprio hg-engine em data/text/NNN.txt: [[trecho, novo], ...] para adaptacoes registradas). As copias originais saem byte a byte da ROM (msg_dump.py).
 Saida: hollowtide_ds/patches/content/0500-texts.patch. Uso: text_patch.py HG_ENGINE
 """
@@ -29,7 +30,14 @@ def main(hg):
             for i, t in data[arc].items():
                 if i.startswith("_"):
                     continue
-                if isinstance(t, dict):
+                if isinstance(t, dict) and "hgss_replace" in t:    # fala original do HGSS, so com nomes trocados
+                    txt = msgs[int(i)]
+                    for old, new in t["hgss_replace"]:
+                        if old not in txt:
+                            raise ValueError(f"{arc}/{i}: trecho do HGSS nao encontrado: {old!r}")
+                        txt = txt.replace(old, new)
+                    msgs[int(i)] = txt
+                elif isinstance(t, dict):
                     txt = gba_text.text_of(t["gba"])
                     for old, new in t.get("replace", []):          # adaptacoes registradas (ex.: direcoes no mapa do DS)
                         if old not in txt:

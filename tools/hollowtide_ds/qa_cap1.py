@@ -258,11 +258,8 @@ def advance(d, n=40, key="B"):
         d.press(key, 4, 40)
 
 
-def main(rom, base, out):
-    os.makedirs(out, exist_ok=True)
-    ok = {}
-    d = DS(rom)
-    d.load(base); d.wait(30)
+def ate_route1(d, out, ok):
+    """Passos 1-4: do quarto (estado base carregado) ate a Route 1, com o inicial."""
     walk(d, ["UP", "UP", "LEFT", "LEFT", "LEFT", "UP", "LEFT", "LEFT"]); d.wait(200)
     d.shot(f"{out}/1_mae.png"); advance(d, 45); d.wait(60)
     ok["casa"] = d.where()
@@ -299,6 +296,15 @@ def main(rom, base, out):
     walk(d, ["LEFT", "LEFT"] + ["DOWN"] * 9, stop_map=60); d.wait(200)
     walk(d, ["DOWN"] * 4 + ["LEFT"] * 30, stop_map=33); d.wait(200)   # linha y=398 (a vizinha fica em 683,399)
     ok["route1"] = d.where(); d.shot(f"{out}/5_route1.png")
+    return ok
+
+
+def main(rom, base, out):
+    os.makedirs(out, exist_ok=True)
+    ok = {}
+    d = DS(rom)
+    d.load(base); d.wait(30)
+    ate_route1(d, out, ok)
     # Route 1 a pe ate Harvestvale, lutando o que aparecer (Kai e Min veem o jogador; mato alto tem selvagens).
     # Se perder, o jogo leva para casa (a mae cura): sai de novo e tenta outra vez, como um jogador faria.
     battles, tries = 0, 0

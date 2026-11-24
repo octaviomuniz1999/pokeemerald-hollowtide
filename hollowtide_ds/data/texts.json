@@ -18,10 +18,26 @@
    "gba": "Palm040_TextMedallion2"
   },
   "2": {
-   "gba": "Palm040_TextMomIntro"
+   "gba": "Palm040_TextMomIntro",
+   "replace": [
+    [
+     "to the north",
+     "to the west"
+    ]
+   ],
+   "_por_que": "CP-DS-02: direção do GBA não bate com o mapa do DS (caminho A: geometria do HGSS) — da casa, o laboratório fica a oeste"
   },
   "3": {
    "gba": "Palm040_TextMomHeal"
+  },
+  "36": {
+   "hgss_replace": [
+    [
+     "Cinnabar Volcano Burger!",
+     "Volcano Burger!"
+    ]
+   ],
+   "_por_que": "CP-DS-02: fala genérica do HGSS mantida no interior placeholder; só o nome de lugar de Johto/Kanto sai (Cinnabar é de Kanto)"
   }
  },
  "543": {
@@ -52,7 +68,14 @@
  "542": {
   "_": "Dawnmere Village (exterior de New Bark; script em overlay/data/scr_seq/scr_seq_0842_T20.s)",
   "0": {
-   "gba": "Palm040_TextGuide"
+   "gba": "Palm040_TextGuide",
+   "replace": [
+    [
+     "east edge",
+     "west edge"
+    ]
+   ],
+   "_por_que": "CP-DS-02: direção do GBA não bate com o mapa do DS (caminho A: geometria do HGSS) — a Route 1 sai pelo oeste de Dawnmere"
   },
   "1": {
    "gba": "Palm040_TextNeighbor"
@@ -80,7 +103,24 @@
    "_por_que": "no DS a Route 1 (Route 29) fica a oeste de Dawnmere (caminho A: geometria do HGSS)"
   },
   "7": {
-   "gba": "Palm040_TextNeedStarter"
+   "gba": "Palm040_TextNeedStarter",
+   "replace": [
+    [
+     "to the north",
+     "to the east"
+    ]
+   ],
+   "_por_que": "CP-DS-02: direção do GBA não bate com o mapa do DS (caminho A: geometria do HGSS) — da saída oeste, o laboratório fica a leste"
+  },
+  "8": {
+   "gba": "Route101_Text_RouteSign",
+   "replace": [
+    [
+     "↓ Harvestvale",
+     "← Harvestvale"
+    ]
+   ],
+   "_por_que": "placa nova da prova de mapa CP-DS-01 na saída oeste de Dawnmere: no DS a Route 1 (Route 29) e Harvestvale ficam a oeste"
   }
  },
  "373": {
@@ -371,6 +411,29 @@
   },
   "13": {
    "gba": "Palm090_TextYumiLoss"
+  }
+ },
+ "546": {
+  "2": {
+   "hgss_replace": [
+    [
+     "Johto",
+     "Lunia"
+    ]
+   ],
+   "_por_que": "CP-DS-02: fala genérica do HGSS mantida no interior placeholder; só o nome de lugar de Johto/Kanto sai"
+  }
+ },
+ "610": {
+  "_": "Breezeport, casa do pescador (T26R0601; placeholder do HGSS)",
+  "0": {
+   "hgss_replace": [
+    [
+     "Olivine",
+     "Breezeport"
+    ]
+   ],
+   "_por_que": "CP-DS-02: fala genérica do HGSS mantida no interior placeholder; só o nome de lugar de Johto/Kanto sai"
   }
  }
 }

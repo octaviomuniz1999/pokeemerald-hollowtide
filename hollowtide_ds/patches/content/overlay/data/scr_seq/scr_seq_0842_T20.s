@@ -47,6 +47,7 @@ scrdef scr_seq_T20_014
 scrdef scr_seq_T20_015
 scrdef scr_seq_T20_016
 scrdef scr_seq_T20_017
+scrdef scr_seq_T20_018
 scrdef_end
 
 scr_seq_T20_015:
@@ -117,6 +118,16 @@ scr_seq_T20_014:
 	lockall
 	buffer_players_name 0
 	npc_msg 6
+	wait_button
+	closemsg
+	releaseall
+	end
+
+// placa da Route 1 na saida oeste (nova; CP-DS-01: modelo e colisao em land.json, placa em 0621)
+scr_seq_T20_018:
+	play_se SEQ_SE_DP_SELECT
+	lockall
+	npc_msg 8
 	wait_button
 	closemsg
 	releaseall

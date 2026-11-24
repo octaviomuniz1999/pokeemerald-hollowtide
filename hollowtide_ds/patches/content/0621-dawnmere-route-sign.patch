@@ -1,0 +1,17 @@
+--- a/data/eventdata/zone_event/057_T20.json
++++ b/data/eventdata/zone_event/057_T20.json
+@@ -33,6 +33,14 @@
+       "z": 407,
+       "y": 0,
+       "player_facing_dir": 4
++    },
++    {
++      "script": "19",
++      "type": 1,
++      "x": 677,
++      "z": 396,
++      "y": 0,
++      "player_facing_dir": 4
+     }
+   ],
+   "object_events": [

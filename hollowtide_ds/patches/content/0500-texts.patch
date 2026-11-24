@@ -65,7 +65,7 @@
 +Harvestvale Pokémon Gym\nLeader: Nevard
 --- a/data/text/custom/542.txt
 +++ b/data/text/custom/542.txt
-@@ -1,11 +1,11 @@
+@@ -1,12 +1,12 @@
 -Wow, your Pokégear is impressive!
 -Wait, {STRVAR_1 3, 0, 0}!
 -Wait, {STRVAR_1 3, 0, 0}!
@@ -74,17 +74,19 @@
 -Oh! Your Pokémon is adorable!\nI wish I had one!
 -Hi, {STRVAR_1 3, 0, 0}!\nLeaving again?\rYou should tell your mom if you\nare leaving.
 -Hi, {STRVAR_1 3, 0, 0}!\nLeaving again?\rYou should tell your mom if you\nare leaving.
-+The lab is up the hill.\nRoute 1 starts at the east edge.
+-Call your mom on your Pokégear to\nlet her know how you’re doing.
++The lab is up the hill.\nRoute 1 starts at the west edge.
 +My grandkids went on journeys,\ntoo. They always wrote home.\fWell… almost always.
 +Far away, a peak disappears into\nthe clouds.\fFrom up here, Dawnmere looks\nso small.
 +Prof. Alex’s Lab\nPokémon and Water Ecology
 +{STRVAR_1 3, 0, 0}’s House
 +The Neighbors’ House
 +Dawnmere Village\nWest exit: Route 1\fWhere mornings begin in mist.
-+It’s not safe to cross the tall\ngrass without a Pokémon.\fProf. Alex’s lab is up the hill\nto the north.
- Call your mom on your Pokégear to\nlet her know how you’re doing.
++It’s not safe to cross the tall\ngrass without a Pokémon.\fProf. Alex’s lab is up the hill\nto the east.
++Route 1\n← Harvestvale
  I like your Bag!
  Wait a sec!\r
+ Did you leave your Pokégear at home?\rYou should ask your mom.
 --- a/data/text/custom/543.txt
 +++ b/data/text/custom/543.txt
 @@ -1,8 +1,8 @@
@@ -110,11 +112,26 @@
 -Here you can save a record of\nyour progress...\r
 +Mom: {STRVAR_1 3, 0, 0}, wait a second!\fBefore you go, I want you to\nhave this.
 +It’s been in our family for a\nlong, long time.\fThe dog on it is called Atlas.\nYour grandma used to say he\rwalked beside anyone who needed\rcompany on the road.\fI don’t know if that’s true…\nbut I like the idea that you\rwon’t be walking alone.\fNow go on! Prof. Alex is waiting.
-+Mom: Morning, sleepyhead!\nProf. Alex stopped by earlier.\fHe’s waiting for you at the lab,\nup on the hill to the north.
++Mom: Morning, sleepyhead!\nProf. Alex stopped by earlier.\fHe’s waiting for you at the lab,\nup on the hill to the west.
 +Mom: Sit down for a minute.\nYou both look worn out.\f…There. All better!\nCome home whenever you need.
  These are also rather helpful...\r
  Just try touching the buttons, and\nyou’ll know what to do in no time.\r
  Professor Elm has been waiting for\nyou, dear. Please, go and help him.
+@@ -34,6 +34,6 @@
+ Hi, {STRVAR_1 3, 0, 0}!\nProfessor Elm told me that\fhe has something to give you!\r
+ Professor Elm told me that\nhe has something to give you.\fWhy don’t you visit his lab?
+ The TV is playing a movie!\rTwo boys are in a cave searching\nfor treasure!\rI better get going...
+-Cinnabar Volcano Burger!\nMom’s specialty!
++Volcano Burger!\nMom’s specialty!
+ A squeaky-clean sink!\nMom loves having it clean.
+ What’s in the fridge...?\rLots of drinking water and\nsweeeet lemonade!
+--- a/data/text/custom/546.txt
++++ b/data/text/custom/546.txt
+@@ -1,3 +1,3 @@
+ {STRVAR_1 3, 0, 0} booted up the PC and\nchecked the Mailbox!\r
+ There is no Mail...
+-It’s a Wii!\rWii is huge in Johto, too!
++It’s a Wii!\rWii is huge in Lunia, too!
 --- a/data/text/custom/549.txt
 +++ b/data/text/custom/549.txt
 @@ -15,5 +15,5 @@
@@ -240,6 +257,14 @@
  Jasmine: I like Eggs, too, but\nI’d like a Pokémon, {STRVAR_1 3, 0, 0}.\fOne that might have a little training...
  Jasmine: I’d appreciate it so much...\nExcept that I cannot accept such\fa precious Pokémon.
  Jasmine, the Gym Leader?\nShe’s at the Lighthouse.\rShe’s been tending to a sick Pokémon.\rA strong Trainer is compassionate\nat the same time...
+--- a/data/text/custom/610.txt
++++ b/data/text/custom/610.txt
+@@ -1,4 +1,4 @@
+-Olivine is on the sea!\rAnd if it’s on the sea, there is bound\nto be something to catch!\rI’ve fished here for 30 years.\rWould you like to face the sea\nand fish? {YESNO 0}
++Breezeport is on the sea!\rAnd if it’s on the sea, there is bound\nto be something to catch!\rI’ve fished here for 30 years.\rWould you like to face the sea\nand fish? {YESNO 0}
+ Ah, hahah!\nWe have ourselves a new angler!
+                     
+ Water-type Pokémon aren’t found\nin the sea alone.\fThey go wherever there is water.
 --- a/data/text/040.txt
 +++ b/data/text/040.txt
 @@ -40,7 +40,7 @@

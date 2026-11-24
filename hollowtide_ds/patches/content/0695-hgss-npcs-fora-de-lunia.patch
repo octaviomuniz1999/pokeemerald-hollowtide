@@ -1,0 +1,127 @@
+--- a/data/eventdata/zone_event/059_T20R0102.json
++++ b/data/eventdata/zone_event/059_T20R0102.json
+@@ -1,42 +1,7 @@
+ {
+   "header": "data/scr_seq/include/event_T20R0102.inc",
+   "eventId": "059",
+-  "object_events": [
+-    {
+-      "id": "obj_T20R0102_gswoman1",
+-      "graphics_id": "SPRITE_GSWOMAN1",
+-      "movement_type": 0,
+-      "trainer_type": 0,
+-      "hidden_flag": "FLAG_NOTHING",
+-      "script": "_EV_scr_seq_T20R0102_000 + 1",
+-      "initial_dir": 1,
+-      "param0": 0,
+-      "param1": 0,
+-      "param2": 0,
+-      "movement_range_x": 0,
+-      "movement_range_z": 0,
+-      "x": 7,
+-      "z": 5,
+-      "y": 0
+-    },
+-    {
+-      "id": "obj_T20R0102_gsboy2",
+-      "graphics_id": "SPRITE_GSBOY2",
+-      "movement_type": 3,
+-      "trainer_type": 0,
+-      "hidden_flag": "FLAG_NOTHING",
+-      "script": "_EV_scr_seq_T20R0102_001 + 1",
+-      "initial_dir": 2,
+-      "param0": 0,
+-      "param1": 0,
+-      "param2": 0,
+-      "movement_range_x": 1,
+-      "movement_range_z": 2,
+-      "x": 3,
+-      "z": 9,
+-      "y": 0
+-    }
+-  ],
++  "object_events": [],
+   "warp_events": [
+     {
+       "x": 12,
+--- a/data/eventdata/zone_event/212_T26PC0101.json
++++ b/data/eventdata/zone_event/212_T26PC0101.json
+@@ -115,23 +115,6 @@
+       "y": 0
+     },
+     {
+-      "id": "obj_T26PC0101_gswoman1",
+-      "graphics_id": "SPRITE_GSWOMAN1",
+-      "movement_type": 46,
+-      "trainer_type": 0,
+-      "hidden_flag": "FLAG_NOTHING",
+-      "script": "_EV_scr_seq_T26PC0101_003 + 1",
+-      "initial_dir": 3,
+-      "param0": 0,
+-      "param1": 0,
+-      "param2": 0,
+-      "movement_range_x": 2,
+-      "movement_range_z": 0,
+-      "x": 4,
+-      "z": 14,
+-      "y": 0
+-    },
+-    {
+       "id": "obj_T26PC0101_gswoman2",
+       "graphics_id": "SPRITE_GSWOMAN2",
+       "movement_type": 0,
+--- a/data/eventdata/zone_event/214_T26R0301.json
++++ b/data/eventdata/zone_event/214_T26R0301.json
+@@ -1,25 +1,7 @@
+ {
+   "header": "data/scr_seq/include/event_T26R0301.inc",
+   "eventId": "214",
+-  "object_events": [
+-    {
+-      "id": "obj_T26R0301_fishing_2",
+-      "graphics_id": "SPRITE_FISHING_2",
+-      "movement_type": 0,
+-      "trainer_type": 0,
+-      "hidden_flag": "FLAG_NOTHING",
+-      "script": "_EV_scr_seq_T26R0301_000 + 1",
+-      "initial_dir": 0,
+-      "param0": 0,
+-      "param1": 0,
+-      "param2": 0,
+-      "movement_range_x": 0,
+-      "movement_range_z": 0,
+-      "x": 5,
+-      "z": 5,
+-      "y": 0
+-    }
+-  ],
++  "object_events": [],
+   "warp_events": [
+     {
+       "x": 4,
+--- a/data/eventdata/zone_event/215_T26R0501.json
++++ b/data/eventdata/zone_event/215_T26R0501.json
+@@ -20,23 +20,6 @@
+       "y": 0
+     },
+     {
+-      "id": "obj_T26R0501_gsmiddleman1",
+-      "graphics_id": "SPRITE_GSMIDDLEMAN1",
+-      "movement_type": 0,
+-      "trainer_type": 0,
+-      "hidden_flag": "FLAG_NOTHING",
+-      "script": "_EV_scr_seq_T26R0501_000 + 1",
+-      "initial_dir": 2,
+-      "param0": 0,
+-      "param1": 0,
+-      "param2": 0,
+-      "movement_range_x": 0,
+-      "movement_range_z": 0,
+-      "x": 8,
+-      "z": 5,
+-      "y": 0
+-    },
+-    {
+       "id": "obj_T26R0501_gsbabygirl1",
+       "graphics_id": "SPRITE_GSBABYGIRL1",
+       "movement_type": 2,

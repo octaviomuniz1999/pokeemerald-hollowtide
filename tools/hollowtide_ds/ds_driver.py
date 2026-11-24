@@ -27,6 +27,9 @@ class DS:
         self.emu.volume_set(0)
         self.fsys = 0
         self.avatar = 0
+        self._hook()
+
+    def _hook(self):
         mem = self.emu.memory
         def on_flag(addr, size):
             self.fsys = mem.register_arm9.r0
@@ -34,6 +37,12 @@ class DS:
             self.avatar = mem.register_arm9.r0
         mem.register_exec(FLAGCHECK, on_flag)
         mem.register_exec(GETX, on_getx)
+
+    def reset(self):
+        """Reinicia o console (a memoria do save fica); os ganchos sao registrados de novo."""
+        self.emu.reset()
+        self.fsys = self.avatar = 0
+        self._hook()
 
     def wait(self, n):
         for _ in range(n):
