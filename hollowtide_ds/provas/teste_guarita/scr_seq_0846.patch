@@ -1,0 +1,11 @@
+--- a/data/scr_seq/scr_seq_0846_T20R0202.s
++++ b/data/scr_seq/scr_seq_0846_T20R0202.s
+@@ -63,6 +63,8 @@
+ 	npc_msg 2
+ 	wait_button
+ 	closemsg
++	warp MAP_R31R0101, 0, 5, 7, DIR_WEST
++	end
+ 	releaseall
+ 	end
+ 	.balign 4
