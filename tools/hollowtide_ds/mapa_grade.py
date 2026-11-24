@@ -26,12 +26,17 @@ UP = 511 << 10
 MAXQ = 4
 FLOOR = {".": "grass01", "=": "road01", "e": "grass01", "f": "grass01", "T": "grass01", "#": "grass01", "S": "grass01", "~": None}
 PERM = {"T": 0x8000, "#": 0x8000, "S": 0x8000, "e": 0x0002, "~": 0x0015}
-ORDER = ["grass01", "road01", "road01_r", "egrass", "wall01_g", "sea_un", "sea_on", "flower01", "tree01_un", "tree01_re", "tree01"]
+ORDER = ["grass01", "road01", "road01_r", "egrass", "wall01_g", "sea_un", "sea_on", "pond_line", "sea_line02", "flower01", "tree01_un", "tree01_re", "tree01"]
 
 
 def nrm(x, y, z):
     q = lambda v: int(round(max(-1, min(0.998, v)) * 512)) & 0x3FF
     return q(x) | (q(y) << 10) | (q(z) << 20)
+
+
+# margem de lagoa copiada de New Bark (bloco 0): perfis (d = distancia da borda, + para a terra; y com chao 1,0; v)
+POND_LINE = [(-0.29, 0.52, 250), (-0.16, 0.61, 194), (-0.11, 0.96, 89), (0.02, 1.11, 53), (0.22, 1.13, 5)]
+SEA_LINE = [(-0.55, 0.40, 1024), (-0.22, 0.61, 761), (-0.16, 0.91, 640)]
 
 
 def load(path):
@@ -166,7 +171,29 @@ def build_mesh(g):
         n = nrm(0, 1 / math.hypot(1, k), -k / math.hypot(1, k))
         m.quad("road01", [(x, hs + 0.01, z1, 256 * (x - 16), 256 * (z1 - 16)), (x + 1, hs + 0.01, z1, 256 * (x - 15), 256 * (z1 - 16)),
                           (x + 1, hn + 0.01, z0, 256 * (x - 15), 256 * (z0 - 16)), (x, hn + 0.01, z0, 256 * (x - 16), 256 * (z0 - 16))], n)
-    # faces de penhasco: toda aresta entre tiles nao-rampa com alturas diferentes (e margem da agua)
+    # margem: faixas pond_line e sea_line02 ao longo da aresta agua/terra, com a face virada para a agua e para cima
+    def bank(x, z, dx, dz, water_first, h):
+        if dz:                                       # aresta horizontal em z+1, de x a x+1
+            c, a0, a1 = z + 1, x, x + 1
+            land = 1 if water_first else -1          # sentido +z aponta para a terra?
+            pt = lambda t, d, y: (t, y, c + land * d)
+        else:                                        # aresta vertical em x+1, de z a z+1
+            c, a0, a1 = x + 1, z, z + 1
+            land = 1 if water_first else -1
+            pt = lambda t, d, y: (c + land * d, y, t)
+        toward_water = (0, 0, -land) if dz else (-land, 0, 0)
+        for prof, mat in ((POND_LINE, "pond_line"), (SEA_LINE, "sea_line02")):
+            for (d0, y0, v0), (d1, y1, v1) in zip(prof, prof[1:]):
+                A, B = pt(a0, d0, y0 - 1 + h), pt(a1, d0, y0 - 1 + h)
+                C, D = pt(a1, d1, y1 - 1 + h), pt(a0, d1, y1 - 1 + h)
+                q = [(*A, 256 * a0, v0), (*B, 256 * a1, v0), (*C, 256 * a1, v1), (*D, 256 * a0, v1)]
+                u = [B[i] - A[i] for i in range(3)]; w = [D[i] - A[i] for i in range(3)]
+                n = (u[1] * w[2] - u[2] * w[1], u[2] * w[0] - u[0] * w[2], u[0] * w[1] - u[1] * w[0])
+                if n[0] * toward_water[0] + n[1] + n[2] * toward_water[2] < 0:
+                    q = q[::-1]
+                m.quad(mat, q, nrm(toward_water[0] * 0.5, 0.85, toward_water[2] * 0.5))
+
+    # faces de penhasco: toda aresta entre tiles nao-rampa com alturas diferentes
     def top(x, z):
         return H[z][x] - (0.5 if tiles[z][x] == "~" else 0)
     for z in range(32):
@@ -177,6 +204,10 @@ def build_mesh(g):
                     continue
                 a, b = top(x, z), top(x2, z2)
                 if a == b:
+                    continue
+                wa, wb = tiles[z][x] == "~", tiles[z2][x2] == "~"
+                if wa != wb and abs(H[z][x] - H[z2][x2]) < 1e-6:
+                    bank(x, z, dx, dz, water_first=wa, h=H[z][x])
                     continue
                 hi, lo = max(a, b), min(a, b)
                 if dz:                                   # aresta horizontal em z = z2
@@ -279,9 +310,10 @@ def build_mesh(g):
                 i += 1
             hz = H[min(z + h - 1, 31)][x0]
             zb = z + h
-            mat, uw = ("tree01", 1024) if w == 4 else ("tree01_re", 512 if w == 2 else 256)
-            m.quad(mat, [(x0, hz, zb + 0.62, 0, 1024), (x0 + w, hz, zb + 0.62, uw, 1024),
-                         (x0 + w, hz + 3.08, zb - 1.92, uw, 0), (x0, hz + 3.08, zb - 1.92, 0, 0)], 0x18b51800)
+            # arvore isolada = o meio da textura tree01 (u 384-896), como na Route 29 (bloco 2); par = textura inteira
+            mat, u0, u1 = {4: ("tree01", 0, 1024), 2: ("tree01", 384, 896), 1: ("tree01_re", 384, 640)}[w]
+            m.quad(mat, [(x0, hz, zb + 0.62, u0, 1024), (x0 + w, hz, zb + 0.62, u1, 1024),
+                         (x0 + w, hz + 3.08, zb - 1.92, u1, 0), (x0, hz + 3.08, zb - 1.92, u0, 0)], 0x18b51800)
     return m, H, ramps
 
 

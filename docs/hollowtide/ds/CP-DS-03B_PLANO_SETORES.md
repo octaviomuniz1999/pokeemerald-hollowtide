@@ -71,8 +71,8 @@ Melhorado (24/11):
   1 tile, gerava dezenas de cantos sobrepostos.
 
 Ainda não está no padrão artístico pedido:
-- a margem da lagoa é reta (faltam `pond_edge`/`pond_line`);
-- as árvores soltas saem estreitas (falta o carimbo de árvore isolada do HGSS);
-- não há casa com cerca e horta (faltam cercas no gerador; a casa só entra com interior funcional).
+
+- não há casa com cerca e horta (faltam cercas no gerador; a casa só entra com interior funcional);
+- os cantos da margem da lagoa ainda são em degrau, e há pequenos cortes onde duas faixas se encontram.
 
 Ao sul da célula de prova aparece o mar do bloco vazio; no definitivo ali fica o setor C.
