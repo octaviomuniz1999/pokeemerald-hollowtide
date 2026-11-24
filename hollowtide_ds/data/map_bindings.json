@@ -14,5 +14,10 @@
    "ENCDATA_R31_ROUTE_31"
   ],
   "lunia": "Route 2"
+ },
+ "MAP_PALM_BRISA": {
+  "hgss_map": "MAP_T26",
+  "encdata": "ENCDATA_T26_OLIVINE_CITY",
+  "lunia": "Breezeport City"
  }
 }

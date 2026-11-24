@@ -165,6 +165,15 @@ def main(rom, state, out):
         go(BR(1, 33), "br"); d.press("LEFT", 16, 24); d.wait(40)
         step("41_saida_oeste_fechada"); advance(d, 12); d.wait(60)
         step("42_depois_da_saida_oeste", "esperado GBA (1,33): um passo para leste")
+        go(BR(6, 13), "br")                               # mato alto de Breezeport (GBA 2-11, 12-13): encontro do GBA
+        sel = 0
+        for k in range(60):
+            d.press("LEFT" if (k // 4) % 2 else "RIGHT", 16, 24)
+            if not d.top_is_field():
+                d.wait(240); d.shot(f"{out}/43_selvagem_breezeport.png"); sel = 1
+                fight(d); advance(d, 10)
+                break
+        step("44_depois_do_selvagem", f"selvagem: {sel}")
     for t, w, e in log:
         print(f"{t:20} {w}  {e}")
     r = {t: w for t, w, _ in log}
@@ -187,7 +196,8 @@ def main(rom, state, out):
                        "Liang": nl >= 1, "Mei Lan": nm2 >= 1, "Qin": nq >= 1,
                        "Breezeport a pe": r["37_breezeport_entrada"] and r["37_breezeport_entrada"][0] == BREEZEPORT,
                        "teatro fechado": r["40_depois_do_teatro"] == (BREEZEPORT, *BR(47, 29)),
-                       "saida oeste fechada": r["42_depois_da_saida_oeste"] == (BREEZEPORT, *BR(1, 33))})
+                       "saida oeste fechada": r["42_depois_da_saida_oeste"] == (BREEZEPORT, *BR(1, 33)),
+                       "selvagem em Breezeport": "selvagem: 1" in dict((t, e) for t, _, e in log)["44_depois_do_selvagem"]})
     for k, v in checks.items():
         print(f"  {k:14} {'ok' if v else 'FALHOU'}")
     print("RESULTADO CP-DS-03B eventos de Dawnmere:", "ok" if all(checks.values()) else "FALHOU")

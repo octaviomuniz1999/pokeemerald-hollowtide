@@ -370,7 +370,8 @@ Falta:
   - Capturas: `CP-DS-03B_breezeport.png`.
 - **Falha registrada:** a primeira build falhou porque dei ao Qin um id textual sem símbolo no hg-engine; agora o id é
   numérico.
+- **Encontros:** os do GBA (terra, surf, varas) estão na tabela de Olivine (ENCDATA_T26 = 40, a do header 77;
+  `map_bindings.json`). No QA, um selvagem aparece no mato alto de Breezeport (23/23).
 - **Falta em Breezeport:**
-  - os encontros selvagens do GBA (terra, água, pesca), porque o T26 ainda usa os do protótipo;
   - modelo para os postes da avenida;
   - o farol que o diretor pediu: o mapa do GBA não tem farol, e o modelo existe na área 7 (`as_toudai`).
