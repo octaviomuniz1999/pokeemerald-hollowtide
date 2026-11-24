@@ -64,8 +64,13 @@ de 4 blocos doadores (New Bark e Route 29/Cherrygrove). No DeSmuME (`qa_cp03b.py
 
 Capturas: `CP-DS-03B_rota1n.png`, entregue ao diretor.
 
+Melhorado (24/11):
+- bordas do caminho com as peças do HGSS (`road01_r`): faixa de 1 tile do lado da grama (u 250 → 6) e cantos externos
+  com a outra metade da textura, como na Route 29;
+- caminho redesenhado em trechos retos com curvas em L, de 3 tiles de largura. O desenho anterior, em degraus de
+  1 tile, gerava dezenas de cantos sobrepostos.
+
 Ainda não está no padrão artístico pedido:
-- o caminho tem bordas em degrau (faltam as peças de borda do HGSS, `road01_r`/`road01_sub`);
 - a margem da lagoa é reta (faltam `pond_edge`/`pond_line`);
 - as árvores soltas saem estreitas (falta o carimbo de árvore isolada do HGSS);
 - não há casa com cerca e horta (faltam cercas no gerador; a casa só entra com interior funcional).

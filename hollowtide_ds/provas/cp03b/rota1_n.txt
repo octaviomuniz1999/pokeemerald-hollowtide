@@ -3,7 +3,7 @@
 ; ilhas de mato alto a leste e a sudoeste, arvores em pares e na borda. Pendente: casa com cerca e horta (gerador
 ; ainda sem cercas; casa so com interior funcional). Materiais da area 2 (Dawnmere/Route 29).
 [doadores]
-0 2 5 4
+2 0 5 4
 [tiles]
 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
@@ -11,32 +11,32 @@ TTTT......ff......~~~~~~~~~~TTTT
 TTTT..TT..ff.....~~~~~~~~~~~TTTT
 TTTT..TT.........~~~~~~~~~~~TTTT
 ff.f.............~~~~~~~~~~.TTTT
-=========........~~~~~~~~~..TTTT
-=========.....ff..~~~~~~~...TTTT
-ff.f...===....ff............TTTT
-TTTT...===........TT........TTTT
+===========......~~~~~~~~~..TTTT
+===========...ff..~~~~~~~...TTTT
+ff.f....===...ff............TTTT
+TTTT....===.......TT........TTTT
 TTTT....===.......TT..TT....TTTT
-TTTT.....====.........TT....TTTT
-TTTT.TT...====..............TTTT
-TTTT.TT.....===.....eeeeee..TTTT
-TTTT........===.....eeeeee..TTTT
-TTTT.......===......eeeeee..TTTT
-TTTT......===...ff..eeeeee..TTTT
-TTTT.....===....ff..........TTTT
-TTTT.....===.........TT.....TTTT
-TTTT.eee..===........TT.....TTTT
-TTTT.eee...===..............TTTT
-TTTT.eee....====....eeee....TTTT
-TTTT.eee.......===..eeee....TTTT
+TTTT....===...........TT....TTTT
+TTTT.TT.===.................TTTT
+TTTT.TT.===========.eeeeee..TTTT
+TTTT....===========.eeeeee..TTTT
+TTTT....===========.eeeeee..TTTT
+TTTT............===.eeeeee..TTTT
+TTTT............===.........TTTT
+TTTT............===..TT.....TTTT
+TTTT.eee........===..TT.....TTTT
+TTTT.eee........===.........TTTT
+TTTT.eee........===.eeee....TTTT
+TTTT.eee........===.eeee....TTTT
 TTTT............===.eeee....TTTT
-TTTT..TT.........===........TTTT
-TTTT..TT.........===...TT...TTTT
-TTTT.............===...TT...TTTT
-TTTT.....ff......===........TTTT
-TTTTTTTTTTTTTTTT.===.TTTTTTTTTTT
-TTTTTTTTTTTTTTTT.===.TTTTTTTTTTT
-TTTTTTTTTTTTTTTT.===.TTTTTTTTTTT
-TTTTTTTTTTTTTTTT#####TTTTTTTTTTT
+TTTT..TT........===.........TTTT
+TTTT..TT........===....TT...TTTT
+TTTT............===....TT...TTTT
+TTTT.....ff.....===.........TTTT
+TTTTTTTTTTTTTTTT===TTTTTTTTTTTTT
+TTTTTTTTTTTTTTTT===TTTTTTTTTTTTT
+TTTTTTTTTTTTTTTT===TTTTTTTTTTTTT
+TTTTTTTTTTTTTTTT###TTTTTTTTTTTTT
 [alturas]
 11111111111111111111111111111111
 11111111111111111111111111111111

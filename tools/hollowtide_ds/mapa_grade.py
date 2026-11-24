@@ -26,7 +26,7 @@ UP = 511 << 10
 MAXQ = 4
 FLOOR = {".": "grass01", "=": "road01", "e": "grass01", "f": "grass01", "T": "grass01", "#": "grass01", "S": "grass01", "~": None}
 PERM = {"T": 0x8000, "#": 0x8000, "S": 0x8000, "e": 0x0002, "~": 0x0015}
-ORDER = ["grass01", "road01", "egrass", "wall01_g", "sea_un", "sea_on", "flower01", "tree01_un", "tree01_re", "tree01"]
+ORDER = ["grass01", "road01", "road01_r", "egrass", "wall01_g", "sea_un", "sea_on", "flower01", "tree01_un", "tree01_re", "tree01"]
 
 
 def nrm(x, y, z):
@@ -208,6 +208,42 @@ def build_mesh(g):
                     zb = z1 if hn > hs else z0
                     tri = [(xs, base, zb, 256 * zb, 248), (xs, base, zt, 256 * zt, 248), (xs, highest, zt, 256 * zt, 8), (xs, highest, zt, 256 * zt, 8)]
                     m.quad("wall01_g", tri if xs == x + 1 else tri[::-1], nrm(0, 0.55, 0.83))
+    # bordas do caminho como no HGSS (road01_r): faixa de 1 tile no lado da grama, u 250 junto ao caminho -> 6 na grama,
+    # v ao longo da borda; canto externo (caminho so na diagonal) com a outra metade da textura (u, v 259..505)
+    road = {(x, z) for z in range(32) for x in range(32) if tiles[z][x] == "=" and (x, z) not in ramp_cells}
+    soft = {".", "f", "#", "S"}
+    def ccw(q):                                  # mesmo sentido dos quads do HGSS (area com sinal negativa em x-z)
+        a = sum(q[i][0] * q[(i + 1) % 4][2] - q[(i + 1) % 4][0] * q[i][2] for i in range(4))
+        return q if a < 0 else q[::-1]
+    for z in range(32):
+        for x in range(32):
+            if (x, z) in road or tiles[z][x] not in soft or (x, z) in ramp_cells:
+                continue
+            h = H[z][x] + 0.008
+            same = lambda xx, zz: (xx, zz) in road and H[zz][xx] == H[z][x]
+            orth = False
+            for dx, dz in ((0, -1), (0, 1), (-1, 0), (1, 0)):
+                if not same(x + dx, z + dz):
+                    continue
+                orth = True
+                if dz:                               # caminho ao norte/sul: borda horizontal
+                    zi, zo = (z, z + 1) if dz < 0 else (z + 1, z)
+                    q = [(x + 1, h, zo, 6, 256 * (x + 1)), (x + 1, h, zi, 250, 256 * (x + 1)),
+                         (x, h, zi, 250, 256 * x), (x, h, zo, 6, 256 * x)]
+                else:                                # caminho a oeste/leste: borda vertical
+                    xi, xo = (x, x + 1) if dx < 0 else (x + 1, x)
+                    q = [(xo, h, z + 1, 6, 256 * (z + 1)), (xi, h, z + 1, 250, 256 * (z + 1)),
+                         (xi, h, z, 250, 256 * z), (xo, h, z, 6, 256 * z)]
+                m.quad("road01_r", ccw(q))
+            if orth:
+                continue
+            for sx, sz in ((1, -1), (1, 1), (-1, -1), (-1, 1)):
+                if same(x + sx, z + sz):
+                    nx, nz = x + (1 if sx > 0 else 0), z + (1 if sz > 0 else 0)
+                    fx, fz = x + (0 if sx > 0 else 1), z + (0 if sz > 0 else 1)
+                    q = [(nx, h, nz, 259, 259), (fx, h, nz, 259, 508), (fx, h, fz, 505, 508), (nx, h, fz, 505, 259)]
+                    m.quad("road01_r", ccw(q))
+                    break
     # mato alto e flores por cima da grama
     for c, mat, dy, uv0 in (("e", "egrass", 0.12, (-22528, 2048)), ("f", "flower01", 0.06, (-22528, 1024))):
         cells = {(x, z) for z in range(32) for x in range(32) if tiles[z][x] == c}
