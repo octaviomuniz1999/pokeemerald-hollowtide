@@ -51,6 +51,17 @@ Formatos lidos e escritos, com **ida e volta byte a byte em todos os 676 blocos 
   de teste ganhou uma lagoa com a água do bloco 59 (sea_un/sea_on) junto com os materiais do bloco 57. A água
   aparece animada, com margem, e a colisão de água (0x15) bloqueia o jogador; o QA do mapa de teste continua
   passando inteiro.
+- `mapa_grade.py` (gerador v2, 24/11): o setor é desenhado num **arquivo de texto**, com grade 32×32 de letras por
+  tipo de tile, grade de alturas com rampas e lista de objetos. O gerador deriva tudo:
+  - chão por material e água em duas camadas;
+  - faces de penhasco em todo desnível e lados de rampa;
+  - árvores em blocos 2×2;
+  - alturas BDHC e colisão.
+
+  O mapa de teste reescrito nesse formato (`provas/cp03a/mapa_teste.txt`) tem colisão idêntica nos 1024 tiles,
+  alturas idênticas nos 1024 centros e objetos iguais aos do gerador v1. No DeSmuME o QA passa inteiro. Erros vistos e
+  corrigidos: árvores cortadas ao meio entre duas fileiras (agora em blocos 2×2) e meia árvore com metade da textura
+  tree01, que é espelhada (árvore solta = tree01_re). Limite visual que fica: uma árvore solta ainda parece estreita.
 
 Limites atuais (o que o CP-DS-03B ainda precisa):
 - Penhascos retos, sem as curvas e bordas arredondadas do HGSS.

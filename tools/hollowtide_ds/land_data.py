@@ -16,7 +16,8 @@ pronta pelo build.sh, como a matriz:
     "remover": [3],                                                 (indices de construcoes originais a tirar)
     "colisao": [{"tiles": [[20, 14]], "bloqueado": true}]}]         (liga/desliga o bit 0x8000; "comportamento": N opcional)
   ou {"land": 57, "gerador": "mapa_teste"}: o modulo (tools/hollowtide_ds/) gera o bloco inteiro — modelo 3D, alturas e
-  colisao — a partir do bloco original (de onde so aproveita os materiais).
+  colisao — a partir do bloco original (de onde so aproveita os materiais);
+  ou {"land": 57, "grade": "arquivo.txt"}: setor desenhado em grade de texto (mapa_grade.py; caminho relativo ao land.json).
 Uso: land_data.py ROM.nds land.json [land.json ...]   (grava na propria ROM)
      land_data.py ROM.nds --show LAND                 (objetos e colisao de um bloco)
 """
@@ -64,6 +65,12 @@ def apply(rom_path, json_paths):
     count = 0
     for jp in json_paths:
         for e in json.load(open(jp)):
+            if "grade" in e:                           # setor desenhado em grade de texto (mapa_grade.py)
+                import os, mapa_grade
+                path = os.path.join(os.path.dirname(os.path.abspath(jp)), e["grade"])
+                narc.files[e["land"]] = mapa_grade.gerar(bytes(narc.files[e["land"]]), [bytes(f) for f in narc.files], path)
+                count += 1
+                continue
             if "gerador" in e:                         # bloco inteiro gerado (modelo, alturas, colisao): ver mapa_teste.py
                 import importlib
                 gen = importlib.import_module(e["gerador"])
