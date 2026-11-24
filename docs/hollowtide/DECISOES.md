@@ -123,3 +123,13 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
 
 - O diretor autorizou voltar a publicar ("volta com os pushes quando julgar necessário, e vai seguindo"). Publico as
   entregas validadas no branch claude/new-session-tnwrgl, sem force push e sem ROM ou save.
+
+## 24/11/2026 (noite) — Breezeport original
+
+- Breezeport convertida do GBA abaixo da Route 2, com ligação a pé (sem a guarita do protótipo).
+- A saída para a Route 3 volta a ser a borda oeste (GBA). A Route 3 ainda é a do protótipo (Route 39), então há uma
+  ponte provisória nos dois sentidos, depois da Jay.
+- O teatro usa o modelo do ginásio de Olivine (a porta central coincide com a do GBA). A loja de departamentos fica
+  decorativa, como o diretor decidiu.
+- Pendente para o diretor: o farol. O mapa do GBA de Breezeport não tem farol; o modelo do farol de Olivine existe na
+  área 7 e pode entrar onde o diretor indicar.

@@ -1,0 +1,380 @@
+--- a/data/eventdata/zone_event/074_T26.json
++++ b/data/eventdata/zone_event/074_T26.json
+@@ -5,72 +5,88 @@
+     {
+       "script": "15",
+       "type": 1,
+-      "x": 280,
+-      "z": 266,
++      "x": 87,
++      "z": 179,
+       "y": 0,
+       "player_facing_dir": 4
+     },
+     {
+       "script": "16",
+       "type": 1,
+-      "x": 265,
+-      "z": 238,
++      "x": 115,
++      "z": 204,
+       "y": 0,
+       "player_facing_dir": 4
+     },
+     {
+       "script": "17",
+       "type": 1,
+-      "x": 279,
+-      "z": 247,
++      "x": 92,
++      "z": 197,
+       "y": 0,
+       "player_facing_dir": 4
+     },
+     {
+       "script": "18",
+       "type": 0,
+-      "x": 276,
+-      "z": 234,
++      "x": 67,
++      "z": 213,
+       "y": 0,
+       "player_facing_dir": 4
+     },
+     {
+       "script": "19",
+       "type": 1,
+-      "x": 302,
+-      "z": 264,
++      "x": 127,
++      "z": 219,
+       "y": 0,
+       "player_facing_dir": 4
+     },
+     {
+       "script": "19",
+       "type": 0,
+-      "x": 301,
+-      "z": 263,
++      "x": 128,
++      "z": 219,
+       "y": 0,
+       "player_facing_dir": 4
+     },
+     {
+       "script": "20",
+       "type": 0,
+-      "x": 266,
+-      "z": 250,
++      "x": 77,
++      "z": 197,
+       "y": 0,
+       "player_facing_dir": 4
+     },
+     {
+       "script": "21",
+       "type": 0,
+-      "x": 277,
+-      "z": 262,
++      "x": 98,
++      "z": 198,
+       "y": 0,
+       "player_facing_dir": 4
+     },
+     {
+       "script": "22",
+       "type": 0,
+-      "x": 276,
+-      "z": 271,
++      "x": 125,
++      "z": 211,
++      "y": 0,
++      "player_facing_dir": 4
++    },
++    {
++      "script": "3",
++      "type": 1,
++      "x": 82,
++      "z": 168,
++      "y": 0,
++      "player_facing_dir": 4
++    },
++    {
++      "script": "4",
++      "type": 1,
++      "x": 79,
++      "z": 164,
+       "y": 0,
+       "player_facing_dir": 4
+     }
+@@ -89,25 +105,25 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 270,
+-      "z": 240,
++      "x": 110,
++      "z": 205,
+       "y": 0
+     },
+     {
+       "id": "obj_T26_gsboy1",
+       "graphics_id": "SPRITE_GSMAN1",
+-      "movement_type": 15,
++      "movement_type": 16,
+       "trainer_type": 0,
+       "hidden_flag": "FLAG_NOTHING",
+       "script": "2",
+-      "initial_dir": 1,
+-      "param0": 0,
+-      "param1": 0,
+-      "param2": 0,
+-      "movement_range_x": 0,
+-      "movement_range_z": 0,
+-      "x": 266,
+-      "z": 259,
++      "initial_dir": 2,
++      "param0": 0,
++      "param1": 0,
++      "param2": 0,
++      "movement_range_x": 0,
++      "movement_range_z": 0,
++      "x": 86,
++      "z": 184,
+       "y": 0
+     },
+     {
+@@ -123,25 +139,25 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 280,
+-      "z": 262,
++      "x": 95,
++      "z": 201,
+       "y": 0
+     },
+     {
+       "id": "obj_T26_gsrivel",
+       "graphics_id": "SPRITE_GSBIGMAN",
+-      "movement_type": 15,
++      "movement_type": 16,
+       "trainer_type": 0,
+       "hidden_flag": "FLAG_NOTHING",
+       "script": "6",
+-      "initial_dir": 1,
+-      "param0": 0,
+-      "param1": 0,
+-      "param2": 0,
+-      "movement_range_x": 0,
+-      "movement_range_z": 0,
+-      "x": 279,
+-      "z": 237,
++      "initial_dir": 2,
++      "param0": 0,
++      "param1": 0,
++      "param2": 0,
++      "movement_range_x": 0,
++      "movement_range_z": 0,
++      "x": 112,
++      "z": 183,
+       "y": 0
+     },
+     {
+@@ -157,8 +173,8 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 262,
+-      "z": 266,
++      "x": 85,
++      "z": 217,
+       "y": 0
+     },
+     {
+@@ -174,8 +190,8 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 279,
+-      "z": 275,
++      "x": 101,
++      "z": 220,
+       "y": 0
+     },
+     {
+@@ -191,8 +207,8 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 273,
+-      "z": 242,
++      "x": 115,
++      "z": 212,
+       "y": 0
+     },
+     {
+@@ -208,8 +224,8 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 299,
+-      "z": 265,
++      "x": 129,
++      "z": 222,
+       "y": 0
+     },
+     {
+@@ -225,8 +241,8 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 289,
+-      "z": 243,
++      "x": 77,
++      "z": 207,
+       "y": 0
+     },
+     {
+@@ -242,8 +258,8 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 286,
+-      "z": 259,
++      "x": 101,
++      "z": 195,
+       "y": 0
+     },
+     {
+@@ -259,57 +275,74 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 284,
+-      "z": 264,
++      "x": 114,
++      "z": 206,
++      "y": 0
++    },
++    {
++      "id": 11,
++      "graphics_id": "SPRITE_GSBOY2",
++      "movement_type": 16,
++      "trainer_type": 1,
++      "hidden_flag": "FLAG_NOTHING",
++      "script": "490 - 1 + _std_npc_trainer",
++      "initial_dir": 2,
++      "param0": 3,
++      "param1": 0,
++      "param2": 0,
++      "movement_range_x": 0,
++      "movement_range_z": 0,
++      "x": 86,
++      "z": 163,
+       "y": 0
+     }
+   ],
+   "warp_events": [
+     {
+-      "x": 269,
+-      "z": 238,
++      "x": 112,
++      "z": 203,
+       "dest_header_id": "MAP_T26GYM0101",
+       "dest_warp_id": 0,
+       "y": 0
+     },
+     {
+-      "x": 272,
+-      "z": 257,
++      "x": 88,
++      "z": 192,
+       "dest_header_id": "MAP_T26PC0101",
+       "dest_warp_id": 0,
+       "y": 0
+     },
+     {
+-      "x": 285,
+-      "z": 257,
++      "x": 79,
++      "z": 192,
+       "dest_header_id": "MAP_T26FS0101",
+       "dest_warp_id": 0,
+       "y": 0
+     },
+     {
+-      "x": 273,
+-      "z": 247,
++      "x": 69,
++      "z": 206,
+       "dest_header_id": "MAP_T26R0601",
+       "dest_warp_id": 0,
+       "y": 0
+     },
+     {
+-      "x": 265,
+-      "z": 257,
++      "x": 121,
++      "z": 209,
+       "dest_header_id": "MAP_R31R0101",
+       "dest_warp_id": 0,
+       "y": 0
+     },
+     {
+-      "x": 287,
+-      "z": 241,
++      "x": 69,
++      "z": 200,
+       "dest_header_id": "MAP_T26R0301",
+       "dest_warp_id": 0,
+       "y": 0
+     },
+     {
+-      "x": 292,
+-      "z": 241,
++      "x": 80,
++      "z": 200,
+       "dest_header_id": "MAP_T26R0501",
+       "dest_warp_id": 0,
+       "y": 0
+@@ -318,8 +351,8 @@
+   "coord_events": [
+     {
+       "script": "23",
+-      "x": 269,
+-      "z": 239,
++      "x": 112,
++      "z": 204,
+       "width": 1,
+       "length": 1,
+       "y": 0,
+@@ -328,20 +361,20 @@
+     },
+     {
+       "script": "24",
+-      "x": 277,
+-      "z": 233,
+-      "width": 5,
+-      "length": 1,
++      "x": 65,
++      "z": 208,
++      "width": 1,
++      "length": 28,
+       "y": 0,
+       "value": 0,
+       "var": "VAR_UNK_4078"
+     },
+     {
+       "script": "24",
+-      "x": 277,
+-      "z": 233,
+-      "width": 5,
+-      "length": 1,
++      "x": 65,
++      "z": 208,
++      "width": 1,
++      "length": 28,
+       "y": 0,
+       "value": 1,
+       "var": "VAR_UNK_4078"

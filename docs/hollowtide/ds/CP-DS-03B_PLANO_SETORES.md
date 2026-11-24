@@ -336,3 +336,41 @@ Falta:
   só para os tilesets em que foram conferidas (EverGrande e Petalburg). Breezeport (Lilycove) está toda na tabela.
 - **Pendente:** a Route 3 sai pela borda oeste de Breezeport (GBA: `Palm090_ToRoute03`, linhas 48–59, deslocamento
   −20). Não começar.
+
+### Breezeport original (24/11, noite)
+
+`PalmBrisa` (72×60) convertida abaixo da Route 2, nas linhas de blocos 5–7, como no plano acima.
+
+- **Mapa:** a montanha com platô (altura 2) e cume (3), com as escadas como rampas; avenida, praça, praia e mar. O mar
+  segue pelas áreas sem mapa vizinhas a ele, e a borda externa do desenho tem colisão (`barreira`).
+- **Área 7:** os blocos com o header de Olivine usam doadores de Olivine (58–61) e da Route 39 (54–57); as flores de
+  outros tipos viram `flower01`. Correção: a área 7 usa a lista de construções 6 e o conjunto de texturas 7. Achei
+  isso em a/0/4/2 (área → lista, texturas); antes eu supunha lista = área, o que só valia por acaso para a área 2.
+- **Construções** (lista 6):
+  - casas → `as_h01` e `tn_h01`;
+  - Teatro → `as_gym`, com a porta central como no GBA;
+  - PC e Mart nas portas do GBA;
+  - loja de departamentos → `tn_photo`, decorativa e trancada (decisão do diretor: não existe no jogo);
+  - casa de praia → `as_restaurant`.
+  - As 3 casas do GBA sem interior no DS ficam com a porta decorativa.
+- **Eventos** (0710–0712):
+  - os 11 NPCs e as 9 placas do protótipo nos tiles do GBA, inclusive os 3 lampiões do festival;
+  - 6 warps (Teatro, PC, Mart e 3 casas);
+  - a trava do Teatro, no tile abaixo da porta;
+  - a saída para a Route 3, na borda oeste como no GBA (antes era ao norte). Antes da Jay, a fala e um passo para
+    leste; depois, a ponte provisória para a Route 39, a Route 3 do protótipo. Descendo a Route 39, volta-se à borda
+    oeste de Breezeport;
+  - Qin, a placa sul e a porta trancada da Route 2 passaram para a zona de Breezeport (linha de blocos dividida);
+  - sem guarita: da Route 2 se desce a pé para Breezeport.
+- **QA** (`qa_cp03d.py --cap1`): passou nas 22 checagens, do quarto até Breezeport:
+  - porta trancada, Qin e placa sul da Route 2 já na zona de Breezeport;
+  - entrada a pé e placa de Breezeport;
+  - Teatro fechado (fala e um passo para baixo);
+  - saída oeste fechada (fala e um passo para leste).
+  - Capturas: `CP-DS-03B_breezeport.png`.
+- **Falha registrada:** a primeira build falhou porque dei ao Qin um id textual sem símbolo no hg-engine; agora o id é
+  numérico.
+- **Falta em Breezeport:**
+  - os encontros selvagens do GBA (terra, água, pesca), porque o T26 ainda usa os do protótipo;
+  - modelo para os postes da avenida;
+  - o farol que o diretor pediu: o mapa do GBA não tem farol, e o modelo existe na área 7 (`as_toudai`).

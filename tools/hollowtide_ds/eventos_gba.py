@@ -15,14 +15,16 @@ estes patches: reverta-os com patch -R antes de regenerar):
   0703-harvestvale-eventos-gba.patch (zone_event/064_T21.json)
   0704-harvestvale-saida-sul.patch  (scr_seq_0850_T21.s: a saida para a Route 2 e a do sul, como no GBA)
   0706-route2-r30-eventos-gba.patch (zone_event/031_R30.json: Route 2, linhas 0-31 do GBA)
-  0707-route2-r31-eventos-gba.patch (zone_event/032_R31.json: Route 2, linhas 32-47; porta trancada e saida sul)
-  0708-route2-r31-scripts.patch     (scr_seq_0230_R31.s: porta trancada e ponte provisoria para a guarita)
+  0710-breezeport-eventos-gba.patch (zone_event/074_T26.json: Breezeport, mais o fim da Route 2 na linha dividida)
+  0711-breezeport-scripts.patch     (scr_seq_0911_T26.s: placa e porta da Route 2, saida oeste e ponte para a Route 39)
+  0712-route39-volta-breezeport.patch (Route 39: descendo, volta a borda oeste de Breezeport)
 Uso: eventos_gba.py HG_ENGINE PASTA_SAIDA
 """
 import difflib, json, os, sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from lunia_mundo import X0, Z0, ORIGENS   # canto do desenho na matriz 0 e de cada mapa do GBA no desenho
+from lunia_mundo import X0, Z0, ORIGENS, gba   # canto do desenho na matriz 0 e de cada mapa do GBA no desenho
+HG = None
 OLHA = {"cima": (14, 0), "baixo": (15, 1), "esquerda": (16, 2), "direita": (17, 3)}
 
 ZONAS = {
@@ -93,17 +95,38 @@ ZONAS = {
         tirar_placas={"_EV_scr_seq_R30_006 + 1"},   # porta trancada: a casa fica nas linhas do R31 (scr_seq_R31_003)
         warps={}, coord={},
     ),
-    "032_R31": dict(
-        origem=ORIGENS["Route2"],
-        objetos={"490 - 1 + _std_npc_trainer": ((21, 35), "esquerda")},  # Qin (Palm080_RouteQIN)
-        placas={"_EV_scr_seq_R31_002 + 1": (17, 40)},                    # Palm080_RouteSignSouth
+    # Breezeport (PalmBrisa), header de Olivine (T26). A linha de blocos 5 e dividida com o fim da Route 2 e fica com
+    # o header de Breezeport: Qin, a placa sul e a porta trancada da Route 2 entram nesta zona (novos_*)
+    "074_T26": dict(
+        origem=ORIGENS["Brisa"],
+        objetos={"1": ((45, 29), "baixo"),        # artista, anfitria do festival (Palm080_BrisaHost)
+                 "2": ((21, 8), "esquerda"),      # Palm093_Greeter
+                 "5": ((30, 25), None),           # Palm093_PlazaGirl
+                 "6": ((47, 7), "esquerda"),      # Palm093_LookoutHiker
+                 "7": ((20, 41), None),           # Palm093_BeachWoman
+                 "8": ((36, 44), "baixo"),        # Palm093_Fisherman
+                 "9": ((50, 36), None),           # Palm093_JayFan
+                 "10": ((64, 46), "baixo"),       # Palm093_KeeperOldMan
+                 "11": ((12, 31), None),          # Palm093_PumpWife
+                 "12": ((36, 19), None),          # Palm093_StoreKid (fala do Poke Mart)
+                 "14": ((49, 30), "baixo")},      # Palm093_FestivalBeauty
+        placas={"15": (22, 3),                    # Palm080_BrisaSign
+                "16": (50, 28),                   # Palm090_TheaterSign
+                "17": (27, 21),                   # Palm090_PalmPoster
+                "18": (2, 37),                    # Palm090_EastSign (Route 3)
+                "19": [(62, 43), (63, 43)],       # Palm092/Palm280_KeeperHouse
+                "20": (12, 21), "21": (33, 22), "22": (60, 35)},   # lampioes do festival (Palm090_CityLamp1-3)
         tirar_placas=set(),
-        # chegada de quem sai da guarita (proto) para a Route 2: logo acima da saida sul do GBA (18-21, 47)
-        warps={"MAP_R31R0101": (19, 46)},
-        coord={},
-        novos_bg=[{"script": "_EV_scr_seq_R31_003 + 1", "type": 1, "gba": (14, 36), "player_facing_dir": 4}],   # Palm280_DoorLocked
-        novos_coord=[{"script": "_EV_scr_seq_R31_004 + 1", "gba": (18, 47), "width": 4, "length": 1,
-                      "value": 0, "var": "VAR_TEMP_x4001"}],   # saida sul: ponte provisoria para a guarita de Breezeport
+        warps={"MAP_T26GYM0101": (47, 27),        # Teatro (ginasio da Jay)
+               "MAP_T26PC0101": (23, 16), "MAP_T26FS0101": (14, 16),
+               "MAP_T26R0301": (4, 24), "MAP_T26R0501": (15, 24), "MAP_T26R0601": (4, 30),
+               "MAP_R31R0101": (56, 33)},         # guarita do prototipo: sem uso (porta decorativa da loja, bloqueada)
+        coord={"23": ("gba", 47, 28, 1, 1),       # porta do Teatro fechada ate as luzes: o tile abaixo da porta
+               "24": ("gba", 0, 32, 1, 28)},      # saida para a Route 3: a borda oeste do GBA (Palm090_ToRoute03)
+        novos_bg=[{"script": "3", "type": 1, "mapa": "Route2", "gba": (17, 40), "player_facing_dir": 4},   # placa sul
+                  {"script": "4", "type": 1, "mapa": "Route2", "gba": (14, 36), "player_facing_dir": 4}],  # porta trancada
+        novos_obj=[{"de": "032_R31", "script": "490 - 1 + _std_npc_trainer", "mapa": "Route2", "gba": (21, 35),
+                    "lado": "esquerda"}],   # Qin
     ),
 }
 
@@ -119,14 +142,27 @@ def mover(j, z):
                 o["movement_type"], o["initial_dir"] = OLHA[lado]
                 o["movement_range_x"] = o["movement_range_z"] = 0
     j["bg_events"] = [b for b in j["bg_events"] if b["script"] not in z["tirar_placas"]]
+    usados = {}
     for b in j["bg_events"]:
         if b["script"] in z["placas"]:
-            b["x"], b["z"] = w(*z["placas"][b["script"]])
+            pos = z["placas"][b["script"]]
+            if isinstance(pos, list):                    # o mesmo script em varias placas: na ordem do arquivo
+                k = usados.get(b["script"], 0); usados[b["script"]] = k + 1
+                pos = pos[min(k, len(pos) - 1)]
+            b["x"], b["z"] = w(*pos)
     for wp in j["warp_events"]:
         if wp["dest_header_id"] in z["warps"]:
             wp["x"], wp["z"] = w(*z["warps"][wp["dest_header_id"]])
+    for o in z.get("novos_obj", []):
+        src = json.load(open(os.path.join(HG, f"data/eventdata/zone_event/{o['de']}.json")))
+        n = dict(next(e for e in src["object_events"] if e["script"] == o["script"]))
+        n["id"] = len(j["object_events"])               # id numerico (um nome obj_* precisaria de simbolo no hg-engine)
+        n["x"], n["z"] = gba(o["mapa"], *o["gba"])
+        n["movement_type"], n["initial_dir"] = OLHA[o["lado"]]
+        n["movement_range_x"] = n["movement_range_z"] = 0
+        j["object_events"].append(n)
     for b in z.get("novos_bg", []):
-        x, zz = w(*b["gba"])
+        x, zz = gba(b["mapa"], *b["gba"]) if "mapa" in b else w(*b["gba"])
         j.setdefault("bg_events", []).append({"script": b["script"], "type": b["type"], "x": x, "z": zz, "y": 0,
                                               "player_facing_dir": b["player_facing_dir"]})
     for c in z.get("novos_coord", []):
@@ -157,26 +193,60 @@ def zona(hg, out, nome, arquivo):
 
 
 def main(hg, out):
+    global HG
+    HG = hg
     zona(hg, out, "057_T20", "0700-dawnmere-eventos-gba.patch")
     zona(hg, out, "030_R29", "0702-route1-eventos-gba.patch")
     zona(hg, out, "064_T21", "0703-harvestvale-eventos-gba.patch")
     zona(hg, out, "031_R30", "0706-route2-r30-eventos-gba.patch")
-    zona(hg, out, "032_R31", "0707-route2-r31-eventos-gba.patch")
-    rel = "data/scr_seq/scr_seq_0230_R31.s"
+    zona(hg, out, "074_T26", "0710-breezeport-eventos-gba.patch")
+    # Breezeport: placa sul e porta trancada da Route 2 (zona de Breezeport); a saida para a Route 3 e a borda oeste
+    # (passo de volta para leste) e, depois da Jay, a ponte provisoria para a Route 39 (a Route 3 do prototipo)
+    rel = "data/scr_seq/scr_seq_0911_T26.s"
     old = open(os.path.join(hg, rel)).read()
-    a = "scr_seq_R31_001:\nscr_seq_R31_003:\nscr_seq_R31_004:\n"
-    assert a in old, "stubs do R31 mudaram"
-    new = old.replace(a, "scr_seq_R31_001:\n").replace(
-        "scr_seq_R31_000:\n",
-        "// casa de porta trancada da Route 2 (Palm280_DoorLocked; a casa fica nas linhas de header R31)\n"
-        "scr_seq_R31_003:\n\tplay_se SEQ_SE_DP_SELECT\n\tlockall\n\tnpc_msg 1\n\twait_button\n\tcloseMsg_PLACEHOLDER\n"
-        "\treleaseall\n\tend\n\n"
-        "// ponte provisoria: a saida sul da Route 2 (GBA) leva a guarita do prototipo, do lado da Route 2; dali se segue\n"
-        "// para Breezeport (Olivine do HGSS) ate Breezeport ser convertida\n"
-        "scr_seq_R31_004:\n\tlockall\n\twarp MAP_R31R0101, 0, 9, 7, DIR_WEST\n\treleaseall\n\tend\n\n"
-        "scr_seq_R31_000:\n", 1).replace("closeMsg_PLACEHOLDER", "closemsg")
-    assert new.count("scr_seq_R31_003:") == 1 and new.count("scr_seq_R31_004:") == 1
-    open(os.path.join(out, "0708-route2-r31-scripts.patch"), "w").write(diff(rel, old, new))
+    a = "scr_seq_T26_002:\nscr_seq_T26_003:\nscr_seq_T26_012:\n"
+    assert a in old
+    new = old.replace(a, "scr_seq_T26_012:\n")
+    sign = lambda lab, msg, nota: (f"// {nota}\n{lab}:\n\tplay_se SEQ_SE_DP_SELECT\n\tlockall\n\tnpc_msg {msg}\n"
+                                   "\twait_button\n\tclosemsg\n\treleaseall\n\tend\n\n")
+    new = new.replace("// gatilhos de quadro e carga do HGSS (rival, Jasmine): nada\n",
+                      sign("scr_seq_T26_002", 20, "placa sul da Route 2 (a linha de blocos 5 e de Breezeport)") +
+                      sign("scr_seq_T26_003", 21, "porta trancada da Route 2 (Palm280_DoorLocked)") +
+                      "// gatilhos de quadro e carga do HGSS (rival, Jasmine): nada\n", 1)
+    new = new.replace("// saida norte (Route 3): fechada ate vencer a Jay",
+                      "// saida para a Route 3: a borda oeste, como no GBA (Palm090_ToRoute03); fechada ate vencer a Jay")
+    a = new.index("scr_seq_T26_023:"); b = new.index("_HT_NorthOpen:", a)
+    new = new[:a] + new[a:b].replace("_HT_StepDown", "_HT_StepRight") + new[b:]
+    r39 = gba("Brisa", 1, 33)
+    new = new.replace("_HT_NorthOpen:\n\tsetvar VAR_UNK_4078, 2\n\treleaseall\n\tend\n",
+                      "_HT_NorthOpen:\n\tsetvar VAR_UNK_4078, 2\n"
+                      "\t// ponte provisoria: a Route 3 original ainda nao existe; vai para a do prototipo (Route 39)\n"
+                      "\twarp MAP_R39, 0, 279, 222, DIR_NORTH\n\treleaseall\n\tend\n")
+    new = new.rstrip("\n") + "\n_HT_StepRight:\n\tstep MOVEMENT_STEP_RIGHT, 1\n\tstep_end\n\t.balign 4\n"
+    assert new.count("_HT_StepRight") == 2 and "warp MAP_R39" in new
+    open(os.path.join(out, "0711-breezeport-scripts.patch"), "w").write(diff(rel, old, new))
+    # Route 39: descendo para Olivine (celulas antigas, sem eventos), volta a borda oeste de Breezeport
+    parts = []
+    rel = "data/scr_seq/scr_seq_0249_R39.s"
+    old = open(os.path.join(hg, rel)).read()
+    new = old.replace("scrdef scr_seq_R39_007\nscrdef_end", "scrdef scr_seq_R39_007\nscrdef scr_seq_R39_008\nscrdef_end")
+    new = new.rstrip("\n") + ("\n\n// Hollowtide: ponte provisoria, a Route 39 (Route 3 do prototipo) volta para a borda oeste de\n"
+                               f"// Breezeport nos mapas originais\nscr_seq_R39_008:\n\tlockall\n\twarp MAP_T26, 0, {r39[0]}, {r39[1]}, DIR_EAST\n"
+                               "\treleaseall\n\tend\n")
+    assert new != old
+    parts.append(diff(rel, old, new))
+    rel = "data/scr_seq/include/event_R39.inc"
+    old = open(os.path.join(hg, rel)).read()
+    new = old.replace(".equ _EV_scr_seq_R39_007, 7\n", ".equ _EV_scr_seq_R39_007, 7\n.equ _EV_scr_seq_R39_008, 8\n")
+    assert new != old
+    parts.append(diff(rel, old, new))
+    rel = "data/eventdata/zone_event/040_R39.json"
+    old = open(os.path.join(hg, rel)).read()
+    jj = json.loads(old)
+    jj.setdefault("coord_events", []).append({"script": "_EV_scr_seq_R39_008 + 1", "x": 277, "z": 223, "width": 5,
+                                              "length": 1, "y": 0, "value": 0, "var": "VAR_TEMP_x4001"})
+    parts.append(diff(rel, old, json.dumps(jj, indent=2, ensure_ascii=False) + ("\n" if old.endswith("\n") else "")))
+    open(os.path.join(out, "0712-route39-volta-breezeport.patch"), "w").write("".join(parts))
     rel = "data/scr_seq/scr_seq_0850_T21.s"
     old = open(os.path.join(hg, rel)).read()
     new = old.replace("// chegada pelo leste (Route 1)", "// chegada pelo norte (Route 1), como no GBA (Palm072_Arrival)")

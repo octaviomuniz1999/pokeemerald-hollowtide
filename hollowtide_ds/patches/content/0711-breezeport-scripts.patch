@@ -1,0 +1,61 @@
+--- a/data/scr_seq/scr_seq_0911_T26.s
++++ b/data/scr_seq/scr_seq_0911_T26.s
+@@ -313,26 +313,46 @@
+ 	releaseall
+ 	end
+ 
+-// saida norte (Route 3): fechada ate vencer a Jay
++// saida para a Route 3: a borda oeste, como no GBA (Palm090_ToRoute03); fechada ate vencer a Jay
+ scr_seq_T26_023:
+ 	lockall
+ 	goto_if_set FLAG_HT_DEFEATED_JAY, _HT_NorthOpen
+ 	npc_msg 15
+ 	wait_button
+ 	closemsg
+-	apply_movement obj_player, _HT_StepDown
++	apply_movement obj_player, _HT_StepRight
+ 	wait_movement
+ 	releaseall
+ 	end
+ 
+ _HT_NorthOpen:
+ 	setvar VAR_UNK_4078, 2
++	// ponte provisoria: a Route 3 original ainda nao existe; vai para a do prototipo (Route 39)
++	warp MAP_R39, 0, 279, 222, DIR_NORTH
++	releaseall
++	end
++
++// placa sul da Route 2 (a linha de blocos 5 e de Breezeport)
++scr_seq_T26_002:
++	play_se SEQ_SE_DP_SELECT
++	lockall
++	npc_msg 20
++	wait_button
++	closemsg
++	releaseall
++	end
++
++// porta trancada da Route 2 (Palm280_DoorLocked)
++scr_seq_T26_003:
++	play_se SEQ_SE_DP_SELECT
++	lockall
++	npc_msg 21
++	wait_button
++	closemsg
+ 	releaseall
+ 	end
+ 
+ // gatilhos de quadro e carga do HGSS (rival, Jasmine): nada
+-scr_seq_T26_002:
+-scr_seq_T26_003:
+ scr_seq_T26_012:
+ 	end
+ 
+@@ -341,3 +361,7 @@
+ 	step MOVEMENT_STEP_DOWN, 1
+ 	step_end
+ 	.balign 4
++_HT_StepRight:
++	step MOVEMENT_STEP_RIGHT, 1
++	step_end
++	.balign 4

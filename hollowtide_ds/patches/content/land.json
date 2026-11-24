@@ -11,7 +11,8 @@
    "Dawnmere": 60,
    "Route1": 33,
    "Harvestvale": 67,
-   "Route2": 34
+   "Route2": 34,
+   "Brisa": 77
   },
   "padrao": 60,
   "modelos_area": {
@@ -26,10 +27,30 @@
     21
    ]
   },
-  "nota": "CP-DS-03B: Dawnmere, Route 1, Harvestvale e Route 2 convertidos dos mapas do GBA (gba2grade.py), a partir da celula (0,0) da matriz 0 (canto superior esquerdo, vazio no HGSS). O desenho fica deslocado (30,21) para que cada celula tenha um mapa so (um header por celula). A Route 2 usa os headers R30 (linhas 0-31 do GBA) e R31 (linhas 32-47). Os mapas do caminho A ficam nas celulas antigas, sem eventos.",
+  "nota": "CP-DS-03B: Dawnmere, Route 1, Harvestvale e Route 2 convertidos dos mapas do GBA (gba2grade.py), a partir da celula (0,0) da matriz 0 (canto superior esquerdo, vazio no HGSS). O desenho fica deslocado (30,21) para que cada celula tenha um mapa so (um header por celula). A Route 2 usa o header R30; o fim dela (linhas 32-47 do GBA) divide a linha de blocos 5 com Breezeport e fica com o header de Breezeport (T26, area 7: doadores de material de Olivine e da Route 39). A borda externa do desenho tem colisao. Os mapas do caminho A ficam nas celulas antigas, sem eventos.",
   "headers_celula": {
-   "2,5": 35,
-   "3,5": 35
-  }
+   "2,5": 77,
+   "3,5": 77,
+   "0,7": 77,
+   "1,7": 77
+  },
+  "doadores_por_header": {
+   "77": [
+    58,
+    59,
+    60,
+    61,
+    54,
+    55,
+    56,
+    57
+   ]
+  },
+  "substituir": {
+   "flower02": "flower01",
+   "flower03": "flower01",
+   "fence_b": null
+  },
+  "barreira": true
  }
 ]

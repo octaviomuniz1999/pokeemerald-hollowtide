@@ -13,7 +13,8 @@ from ds_driver import DS
 from qa_cap1 import walk, goto, face, advance, starter_screen, fight, route2, GYM_CELLS, GYM_NPCS, GYM_MATRIX, BREEZEPORT
 CAP1 = "--cap1" in sys.argv                              # build de conteudo: segue pelo Nevard, a ponte e a Route 2
 
-from lunia_mundo import X0, Z0, CELLS, D, R1, HV, R2
+from lunia_mundo import X0, Z0, CELLS, D, R1, HV, R2, gba
+BR = lambda x, y: gba("Brisa", x, y)
 DAWNMERE, ROUTE1, LAB, HARVESTVALE, GYM = 60, 33, 61, 67, 395
 NPCS = {D(23, 18), D(11, 24), D(23, 10),              # guia, vizinho, mirante (fora da colisao dos blocos)
         R1(12, 6), R1(22, 25), R1(17, 39), R1(13, 24),  # andarilho, Kai, Min, Potion (Route 1)
@@ -21,11 +22,13 @@ NPCS = {D(23, 18), D(11, 24), D(23, 10),              # guia, vizinho, mirante (
         HV(11, 6), HV(7, 32),                            # fazendeiro e recruta (Harvestvale)
         R2(26, 13), R2(16, 27), R2(21, 35), R2(7, 26),   # Liang, Mei Lan, Qin, Super Potion (Route 2)
         R2(24, 13), R2(18, 27), R2(19, 35)}              # Liang, Mei Lan e Qin depois de virem ate o jogador
+NPCS_BR = [(45, 29), (21, 8), (30, 25), (47, 7), (20, 41), (36, 44), (50, 36), (64, 46), (12, 31), (36, 19), (49, 30)]
 
 
 
 
 def main(rom, state, out):
+    NPCS.update(BR(x, y) for x, y in NPCS_BR)            # NPCs de Breezeport (alguns andam: o robo recalcula)
     os.makedirs(out, exist_ok=True)
     d = DS(rom); d.load(state); d.wait(30)
     log = []
@@ -35,7 +38,7 @@ def main(rom, state, out):
 
     def go(goal, tag, fight_ok=False):
         try:
-            return goto(d, rom, goal, CELLS, (DAWNMERE, ROUTE1, HARVESTVALE, 34, 35), out, tag, fight_ok=fight_ok,
+            return goto(d, rom, goal, CELLS, (DAWNMERE, ROUTE1, HARVESTVALE, 34, 35, 77), out, tag, fight_ok=fight_ok,
                         avoid=NPCS)[0]
         except KeyError:                                  # alvo inalcancavel de onde o robo esta: registra e segue
             print("sem caminho de", d.where(), "ate", goal)
@@ -150,14 +153,18 @@ def main(rom, state, out):
         go(R2(14, 37), "r2", fight_ok=True); ler("34_porta_trancada")
         nq = visao(R2(18, 35), "qin"); step("35_qin", f"batalhas: {nq}")
         go(R2(17, 41), "r2", fight_ok=True); ler("36_placa_sul_r2")
+        # Breezeport original (PalmBrisa): da Route 2 se desce a pe, sem guarita
         go(R2(19, 46), "r2", fight_ok=True)
-        d.press("DOWN", 16, 24); d.wait(250); step("37_guarita", "esperado a guarita do prototipo (ponte provisoria)")
-        for _ in range(24):
-            w = d.where()
-            if w and w[0] == BREEZEPORT:
-                break
-            d.press("LEFT", 16, 24); d.wait(60)
-        d.wait(200); step("38_breezeport")
+        for _ in range(4):
+            d.press("DOWN", 16, 24)
+        d.wait(80); step("37_breezeport_entrada", "esperado header 77 (T26)")
+        go(BR(22, 4), "br"); ler("38_placa_brisa")
+        go(BR(47, 29), "br"); d.press("UP", 16, 24); d.wait(40)
+        step("39_teatro_fechado"); advance(d, 12); d.wait(60)
+        step("40_depois_do_teatro", "esperado GBA (47,29): um passo para baixo")
+        go(BR(1, 33), "br"); d.press("LEFT", 16, 24); d.wait(40)
+        step("41_saida_oeste_fechada"); advance(d, 12); d.wait(60)
+        step("42_depois_da_saida_oeste", "esperado GBA (1,33): um passo para leste")
     for t, w, e in log:
         print(f"{t:20} {w}  {e}")
     r = {t: w for t, w, _ in log}
@@ -178,8 +185,9 @@ def main(rom, state, out):
                        "volta do ginasio": r["28_saida_do_ginasio"] == (HARVESTVALE, *HV(5, 22)),
                        "Route 2 a pe": r["29_route2_entrada"] and r["29_route2_entrada"][0] == 34,
                        "Liang": nl >= 1, "Mei Lan": nm2 >= 1, "Qin": nq >= 1,
-                       "guarita": r["37_guarita"] and r["37_guarita"][0] == 97,
-                       "Breezeport": r["38_breezeport"] and r["38_breezeport"][0] == BREEZEPORT})
+                       "Breezeport a pe": r["37_breezeport_entrada"] and r["37_breezeport_entrada"][0] == BREEZEPORT,
+                       "teatro fechado": r["40_depois_do_teatro"] == (BREEZEPORT, *BR(47, 29)),
+                       "saida oeste fechada": r["42_depois_da_saida_oeste"] == (BREEZEPORT, *BR(1, 33))})
     for k, v in checks.items():
         print(f"  {k:14} {'ok' if v else 'FALHOU'}")
     print("RESULTADO CP-DS-03B eventos de Dawnmere:", "ok" if all(checks.values()) else "FALHOU")

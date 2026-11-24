@@ -234,7 +234,7 @@
  When I get older, I’m going to be a\nGym Leader!\rI make my Pokémon battle with my\nfriends’ to make them tougher!
 --- a/data/text/custom/604.txt
 +++ b/data/text/custom/604.txt
-@@ -1,9 +1,20 @@
+@@ -1,9 +1,22 @@
 -...\rYou again?\rThere’s no need to be alert.\nI don’t bother with wimps like you.\rSpeaking of weaklings, the city’s\nGym Leader isn’t here, and\fis supposedly taking care of a\fsick Pokémon at the Lighthouse.\rHumph! Boo-hoo!\nJust let sick Pokémon go!\rA Pokémon that can’t battle\nis worthless!\rWhy don’t you go train at\nthe Lighthouse?\rWho knows? It may make you a bit\nof a better Trainer!\r
 -Dark roads are dangerous at night.\rBut, in the pitch-black night,\nthe sea is even more treacherous!\rWithout the beacon of the Lighthouse\nto guide her, no ship can sail.
 -That thing you have--\nit’s a Pokégear, right?\fWow, that’s cool.
@@ -264,6 +264,8 @@
 +The lamp is glowing.
 +All three lamps are glowing!\nThe Theater of Echoes is open!
 +Lighthouse Keeper’s House
++Route 2\nBreezeport City just ahead.
++The door is locked.
 \ No newline at end of file
 --- a/data/text/custom/606.txt
 +++ b/data/text/custom/606.txt

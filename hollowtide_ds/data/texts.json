@@ -283,7 +283,15 @@
   "19": {
    "gba": "Palm092_TextKeeperHouse"
   },
-  "_10_por_que": "decisão do diretor 24/11: sem a loja de departamentos (não existe no mapa); referência simples ao Poké Mart"
+  "_10_por_que": "decisão do diretor 24/11: sem a loja de departamentos (não existe no mapa); referência simples ao Poké Mart",
+  "20": {
+   "gba": "Palm080_TextRouteSouth",
+   "_por_que": "CP-DS-03B: a placa sul da Route 2 fica na linha de blocos de Breezeport (scr_seq_T26_002)"
+  },
+  "21": {
+   "gba": "Palm280_TextDoorLocked",
+   "_por_que": "CP-DS-03B: a porta trancada da Route 2 fica na linha de blocos de Breezeport (scr_seq_T26_003)"
+  }
  },
  "606": {
   "_": "Teatro, ginásio da Jay (interior do ginásio de Olivine; script em overlay/data/scr_seq/scr_seq_0913_T26GYM0101.s)",

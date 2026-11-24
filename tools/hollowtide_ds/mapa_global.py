@@ -13,6 +13,8 @@ Entrada no land.json: {"global": "lunia_cap1.txt", "matriz": 0, "celula": [21, 1
                        "modelos_area": {"lista": 0, "acrescentar": [314, 311], "remover": [21]}}
   (modelos_area: construcoes de outras areas acrescentadas a lista a/0/4/3 que a area dos headers usa; formato da lista:
    u16 quantidade + u16 modelos)
+  "doadores_por_header": {"77": [58, 59, ...]}: celulas cujo header e de outra area (Breezeport = Olivine, area 7) usam
+  doadores dessa area; "substituir": {"flower02": "flower01", "fence_b": null} para materiais que ela nao tem.
 """
 import json, os, struct, sys
 sys.path.insert(0, os.path.dirname(__file__))
@@ -34,8 +36,10 @@ def subgrid(g, bx, by):
                         if bx * 32 <= x < bx * 32 + 32 and by * 32 <= z < by * 32 + 32]}
 
 
-def gerar_blocos(path, base_block, blocos):
-    """{(bx, by): bytes do bloco} para todo o desenho."""
+def gerar_blocos(path, base_block, blocos, doadores_bloco=None, substituir=None, barreira=False):
+    """{(bx, by): bytes do bloco} para todo o desenho.
+    doadores_bloco: {(bx, by): [blocos doadores]} para blocos de outra area (os materiais ligam pelo nome as texturas
+    da area do header da celula); substituir: {material: outro} para o que a area nao tem (None = nao desenha)."""
     g = mg.load(path)
     mesh, H, ramps = mg.build_mesh(g)
     W, HH = g["tamanho"]
@@ -50,7 +54,8 @@ def gerar_blocos(path, base_block, blocos):
                 ext = lambda a: a - SEAM if a == 0 else (a + SEAM if a == 32 else a)    # blocos vizinhos (DeSmuME)
                 local = [(ext(x), y, ext(z), u, v) for x, y, z, u, v in local]
             parts.setdefault((bx, by), mg.Mesh()).quad(mat, local, n)
-    donors = [Land(blocos[d]).rest[:Land(blocos[d]).sizes[2]] for d in g["doadores"]]
+    donor_bytes = lambda ids: [Land(blocos[d]).rest[:Land(blocos[d]).sizes[2]] for d in ids]
+    donors = donor_bytes(g["doadores"])
     base = Land(blocos[base_block])
     # alturas no desenho inteiro (uma rampa pode terminar na divisa de bloco, com o vizinho no bloco seguinte);
     # cada bloco recebe o seu recorte e as rampas cortadas nas divisas, com a altura interpolada no corte
@@ -71,11 +76,30 @@ def gerar_blocos(path, base_block, blocos):
                 at = lambda zz: hn + (hs - hn) * (zz - z0) / (z1 - z0)
                 rs.append((x - bx * 32, c0 - by * 32, c1 - by * 32, at(c0), at(c1)))
             m = parts.get((bx, by), mg.Mesh())
-            layers = [(name, m.dl(name)) for name in mg.ORDER if name in m.quads]
+            dn = donors
+            sub_mats = {}
+            if doadores_bloco and (bx, by) in doadores_bloco:
+                dn = donor_bytes(doadores_bloco[(bx, by)])
+                sub_mats = substituir or {}
+            mm = mg.Mesh()
+            for name, quads in m.quads.items():           # materiais que a area da celula nao tem
+                to = sub_mats.get(name, name)
+                if to is None:
+                    continue
+                for verts, n in quads:
+                    mm.quad(to, verts, n)
+            layers = [(name, mm.dl(name)) for name in mg.ORDER if name in mm.quads]
             ld = Land(blocos[base_block])
-            model = compose(base.rest[:base.sizes[2]], donors, layers)
+            model = compose(base.rest[:base.sizes[2]], dn, layers)
             hb = mg.build_bdhc(sub, Hs, rs).pack()
             ld.perms = mg.perms(sub)
+            if barreira:                                 # borda externa do desenho: ninguem anda/surfa para fora
+                for t in range(32):
+                    for (x, z) in ((t, 0), (t, 31), (0, t), (31, t)):
+                        edge = (z == 0 and by == 0) or (z == 31 and by == nby - 1) or (x == 0 and bx == 0) or \
+                               (x == 31 and bx == nbx - 1)
+                        if edge:
+                            ld.perms[z * 32 + x] |= 0x8000
             ld.objs = [Land.obj(mdl, x, z, Hs[int(z)][int(x)] + dy) for mdl, x, z, dy in sub["objetos"]]
             ld.sizes[2], ld.sizes[3] = len(model), len(hb)
             ld.rest = model + hb
@@ -103,11 +127,16 @@ def owners(report_path, nbx, nby, headers, padrao):
 
 def apply_global(rom, narc, entry, base_dir):
     path = os.path.join(base_dir, entry["global"])
-    blocks, (nbx, nby) = gerar_blocos(path, entry.get("base", 0), [bytes(f) for f in narc.files])
-    hdr = owners(path + ".json", nbx, nby, entry["headers"], entry.get("padrao", 0))
+    g0 = mg.load(path)
+    nbx0, nby0 = g0["tamanho"][0] // 32, g0["tamanho"][1] // 32
+    hdr = owners(path + ".json", nbx0, nby0, entry["headers"], entry.get("padrao", 0))
     for k, h in entry.get("headers_celula", {}).items():  # celula (bx,by do desenho) com header escolhido a mao
         bx, by = map(int, k.split(","))
         hdr[(bx, by)] = h
+    por_header = {int(k): v for k, v in entry.get("doadores_por_header", {}).items()}   # blocos de outra area
+    doadores_bloco = {c: por_header[h] for c, h in hdr.items() if h in por_header}
+    blocks, (nbx, nby) = gerar_blocos(path, entry.get("base", 0), [bytes(f) for f in narc.files], doadores_bloco,
+                                      entry.get("substituir"), entry.get("barreira", False))
     import ndspy.narc
     mid = rom.filenames.idOf("a/0/4/1")
     mnarc = ndspy.narc.NARC(rom.files[mid])

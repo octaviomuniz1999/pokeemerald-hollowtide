@@ -68,6 +68,12 @@ MODELOS = {
     0x29: dict(nome="kn_h01 (casa de Kanto)", x0=-2.188, x1=2.5, z0=-1.625, porta=(0x18, 0.113, 0.763, 0.062), dtile=(-0.5, 1.0)),
     0x27: dict(nome="fs (Poke Mart)", x0=-2.125, x1=3.633, z0=-1.812, porta=(0x0F, -0.558, 0.757, 0.0), dtile=(-0.5, 1.0)),
     0x28: dict(nome="pc (Centro Pokemon)", x0=-2.625, x1=3.0, z0=-2.0, porta=(0x0F, 0.0, 1.608, 0.0), dtile=(0, 1.5)),
+    # area 7 (Olivine; lista de construcoes 6), para Breezeport
+    0x6D: dict(nome="as_h01 (casa de Olivine)", x0=-2.14, x1=2.56, z0=-1.91, porta=(0x72, 0.197, 0.464, -0.09), dtile=(-0.5, 0.875)),
+    0x66: dict(nome="tn_h01 (casa de Cianwood)", x0=-2.12, x1=2.5, z0=-1.62, porta=(0x67, 0.12, 0.719, 0.165), dtile=(-0.5, 1.0)),
+    0x69: dict(nome="tn_photo (estudio de Cianwood)", x0=-2.0, x1=3.0, z0=-1.62, porta=(0x74, 0.12, 0.719, 0.165), dtile=(-0.5, 1.0)),
+    0x6F: dict(nome="as_gym (ginasio de Olivine)", x0=-3.6, x1=3.76, z0=-2.5, porta=(0x10, 0.0, 1.312, 0.0), dtile=(0, 1.5)),
+    0x76: dict(nome="as_restaurant (restaurante de Olivine)", x0=-2.28, x1=2.52, z0=-2.03, porta=(0x78, 0.137, 0.316, 0.0), dtile=(-0.5, 1.0)),
     0xF5: dict(nome="ta_gym (ginasio de Celadon, tipo Planta como o do Nevard)", x0=-3.479, x1=3.865, z0=-2.587,
                porta=(0x10, 0.0, 1.405, 0.0), dtile=(0, 1.5)),
 }
@@ -95,6 +101,21 @@ CONSTRUCOES = {
     "Route2": [
         dict(rect=(13, 33, 16, 36), modelo=0x25, porta=(14, 36), warp=False, altura=1,
              nota="casa de porta trancada (Palm280_DoorLocked na porta)"),
+    ],
+    "Brisa": [
+        dict(rect=(13, 14, 16, 16), modelo=0x27, porta=(14, 16), warp=True, altura=1, nota="Poke Mart"),
+        dict(rect=(22, 14, 25, 16), modelo=0x28, porta=(23, 16), warp=True, altura=1, nota="Centro Pokemon"),
+        dict(rect=(3, 21, 6, 24), modelo=0x6D, porta=(4, 24), warp=True, altura=1, nota="casa (LILYCOVE_CITY_HOUSE1)"),
+        dict(rect=(14, 21, 17, 24), modelo=0x6D, porta=(15, 24), warp=True, altura=1, nota="casa (LILYCOVE_CITY_HOUSE2)"),
+        dict(rect=(3, 27, 6, 30), modelo=0x6D, porta=(4, 30), warp=True, altura=1, nota="casa (LILYCOVE_CITY_HOUSE3)"),
+        dict(rect=(14, 27, 17, 30), modelo=0x6D, porta=(15, 30), warp=False, altura=1, nota="casa (LILYCOVE_CITY_HOUSE4)"),
+        dict(rect=(63, 21, 66, 24), modelo=0x66, porta=(64, 24), warp=False, altura=1, nota="casa (DEWFORD_TOWN_HOUSE2)"),
+        dict(rect=(63, 27, 66, 30), modelo=0x66, porta=(64, 30), warp=False, altura=1, nota="casa do esquecedor de golpes"),
+        dict(rect=(44, 21, 50, 27), modelo=0x6F, porta=(47, 27), warp=True, altura=1,
+             nota="teatro (PALM_TEATRO): o predio grande da area 7 com a porta no centro, como no GBA"),
+        dict(rect=(52, 25, 57, 33), modelo=0x69, porta=(56, 33), warp=False, altura=1,
+             nota="loja de departamentos (decorativa: decisao do diretor 24/11, nao existe no jogo); nenhum modelo da area 7 tem o tamanho dela"),
+        dict(rect=(60, 39, 66, 43), modelo=0x76, porta=(63, 43), warp=False, altura=1, nota="casa de praia (sem warp no GBA)"),
     ],
     "Route1": [
         dict(rect=(4, 17, 10, 20), modelo=0x14, porta=(5, 20), warp=False, altura=1,
@@ -137,7 +158,8 @@ def construcoes(key, gx, gy, grid, alt):
 
 
 MAPS = {"Dawnmere": ("LittlerootTown", 0, 0), "Route1": ("Route101", 34, 17), "Harvestvale": ("OldaleTown", 35, 70),
-        "Route2": ("PalmRoute02", 35, 107)}        # ligacoes do GBA: Route 2 abaixo de Harvestvale (deslocamento 0)
+        "Route2": ("PalmRoute02", 35, 107),        # ligacoes do GBA: Route 2 abaixo de Harvestvale (deslocamento 0)
+        "Brisa": ("PalmBrisa", 35, 155)}           # e Breezeport abaixo da Route 2 (deslocamento 0)
 ESCADAS = {0x0AF}                           # escada do GBA: rampa no DS (entre os vizinhos norte e sul)
 # Deslocamento do desenho dentro da area de blocos. Cada celula de 32x32 tem UM header (zona de eventos, encontros,
 # musica): com (30, 21), quase toda celula fica com um mapa so: Dawnmere na coluna de blocos 1, a Route 1 nas colunas
@@ -206,7 +228,7 @@ def convert(name):
 
 
 def heights(w, h, elev):
-    H = [1 if e in (3, 1, 0) else 2 for e in elev]          # 4 e 5 (chao elevado) = altura 2
+    H = [{4: 2, 5: 2, 6: 3, 7: 3}.get(e, 1) for e in elev]  # 3 = chao (1); 4-5 = elevado (2); 6-7 = cume (3)
     for _ in range(2):                                   # tiles de elevacao 0 (bloqueados) herdam dos vizinhos
         for i, e in enumerate(elev):
             if e == 0:
@@ -219,7 +241,7 @@ def heights(w, h, elev):
 
 
 def build_global():
-    W, H = 128, 192
+    W, H = 160, 256
     grid = [["T"] * W for _ in range(H)]
     alt = [["1"] * W for _ in range(H)]
     owner = [[None] * W for _ in range(H)]
@@ -240,11 +262,26 @@ def build_global():
         objs, rel = construcoes(key, gx, gy, grid, alt)
         objetos += objs
         for b in j.get("bg_events", []):                 # placas do GBA: modelo de placa do HGSS (board_b) no tile
-            if b.get("type") == "sign":                  # as tres celulas sao da area 2 (board_b na lista 0)
+            if b.get("type") == "sign" and not re.search(r"Lamp|Keeper|DoorLocked", b.get("script", "")):
+                # placa de verdade (board_b, nas listas 0 e 6); lampioes e portas ficam sem modelo
                 objetos.append(f"30 {gx + b['x']} {gy + b['y']} 0")
         report[key] = {"gba": name, "origem": (gx, gy), "tam": (w, h), "desconhecidos": dict(unknown),
                        "warps": [(wv["x"] + gx, wv["y"] + gy, wv["dest_map"]) for wv in j.get("warp_events", [])],
                        "construcoes": rel}
+    # mar alem dos mapas: tile sem mapa ao lado (ou abaixo) de agua do GBA continua agua, para o mar nao acabar numa
+    # floresta (a borda externa do desenho recebe colisao no mapa_global, "barreira")
+    for key, (name, ox, oy) in MAPS.items():
+        gx, gy = ox + MARGIN[0], oy + MARGIN[1]
+        w, h = report[key]["tam"]
+        for y in range(gy, H):
+            for x in range(W):
+                if owner[y][x] is not None:
+                    continue
+                if not (y >= gy + h or (gy <= y < gy + h and (x < gx or x >= gx + w))):
+                    continue
+                sx, sy = min(max(x, gx), gx + w - 1), min(max(y, gy), gy + h - 1)
+                if owner[sy][sx] == key and grid[sy][sx] == "~" and (y >= gy + h or abs(x - sx) <= 32):
+                    grid[y][x], alt[y][x] = "~", alt[sy][sx]
     return grid, alt, owner, report, objetos
 
 

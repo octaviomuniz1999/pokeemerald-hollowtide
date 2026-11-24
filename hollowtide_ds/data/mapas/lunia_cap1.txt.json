@@ -208,5 +208,170 @@
     "nota": "casa de porta trancada (Palm280_DoorLocked na porta)"
    }
   ]
+ },
+ "Brisa": {
+  "gba": "PalmBrisa",
+  "origem": [
+   65,
+   176
+  ],
+  "tam": [
+   72,
+   60
+  ],
+  "desconhecidos": {},
+  "warps": [
+   [
+    112,
+    203,
+    "MAP_PALM_TEATRO"
+   ],
+   [
+    88,
+    192,
+    "MAP_DEWFORD_TOWN_POKEMON_CENTER_1F"
+   ],
+   [
+    79,
+    192,
+    "MAP_SLATEPORT_CITY_MART"
+   ],
+   [
+    121,
+    209,
+    "MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F"
+   ],
+   [
+    69,
+    200,
+    "MAP_LILYCOVE_CITY_HOUSE1"
+   ],
+   [
+    80,
+    200,
+    "MAP_LILYCOVE_CITY_HOUSE2"
+   ],
+   [
+    69,
+    206,
+    "MAP_LILYCOVE_CITY_HOUSE3"
+   ],
+   [
+    80,
+    206,
+    "MAP_LILYCOVE_CITY_HOUSE4"
+   ],
+   [
+    129,
+    200,
+    "MAP_DEWFORD_TOWN_HOUSE2"
+   ],
+   [
+    129,
+    206,
+    "MAP_LILYCOVE_CITY_MOVE_DELETERS_HOUSE"
+   ]
+  ],
+  "construcoes": [
+   {
+    "modelo": "fs (Poke Mart)",
+    "porta_ds": [
+     79,
+     192
+    ],
+    "warp": true,
+    "nota": "Poke Mart"
+   },
+   {
+    "modelo": "pc (Centro Pokemon)",
+    "porta_ds": [
+     88,
+     192
+    ],
+    "warp": true,
+    "nota": "Centro Pokemon"
+   },
+   {
+    "modelo": "as_h01 (casa de Olivine)",
+    "porta_ds": [
+     69,
+     200
+    ],
+    "warp": true,
+    "nota": "casa (LILYCOVE_CITY_HOUSE1)"
+   },
+   {
+    "modelo": "as_h01 (casa de Olivine)",
+    "porta_ds": [
+     80,
+     200
+    ],
+    "warp": true,
+    "nota": "casa (LILYCOVE_CITY_HOUSE2)"
+   },
+   {
+    "modelo": "as_h01 (casa de Olivine)",
+    "porta_ds": [
+     69,
+     206
+    ],
+    "warp": true,
+    "nota": "casa (LILYCOVE_CITY_HOUSE3)"
+   },
+   {
+    "modelo": "as_h01 (casa de Olivine)",
+    "porta_ds": [
+     80,
+     206
+    ],
+    "warp": false,
+    "nota": "casa (LILYCOVE_CITY_HOUSE4)"
+   },
+   {
+    "modelo": "tn_h01 (casa de Cianwood)",
+    "porta_ds": [
+     129,
+     200
+    ],
+    "warp": false,
+    "nota": "casa (DEWFORD_TOWN_HOUSE2)"
+   },
+   {
+    "modelo": "tn_h01 (casa de Cianwood)",
+    "porta_ds": [
+     129,
+     206
+    ],
+    "warp": false,
+    "nota": "casa do esquecedor de golpes"
+   },
+   {
+    "modelo": "as_gym (ginasio de Olivine)",
+    "porta_ds": [
+     112,
+     203
+    ],
+    "warp": true,
+    "nota": "teatro (PALM_TEATRO): o predio grande da area 7 com a porta no centro, como no GBA"
+   },
+   {
+    "modelo": "tn_photo (estudio de Cianwood)",
+    "porta_ds": [
+     121,
+     209
+    ],
+    "warp": false,
+    "nota": "loja de departamentos (decorativa: decisao do diretor 24/11, nao existe no jogo); nenhum modelo da area 7 tem o tamanho dela"
+   },
+   {
+    "modelo": "as_restaurant (restaurante de Olivine)",
+    "porta_ds": [
+     128,
+     219
+    ],
+    "warp": false,
+    "nota": "casa de praia (sem warp no GBA)"
+   }
+  ]
  }
 }
