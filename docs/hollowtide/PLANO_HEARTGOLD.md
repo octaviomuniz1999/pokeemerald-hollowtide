@@ -94,7 +94,7 @@ IMPLEMENTAR → INTEGRAR → COMPILAR → TESTAR → DOCUMENTAR; um checkpoint s
 | CP-DS-02 diálogos | **passou** — `docs/hollowtide/ds/CP-DS-02_DIALOGOS.md`: testes dirigidos no jogo com cada página de fala capturada (intro, Cap. 1, Cap. 2, livro, loja); 8 defeitos achados e corrigidos (intro do Prof. Oak, maiúsculas do GBA, Team Rocket, PKMN Trainer Jay…) |
 | CP-DS-02B salvamento | **passou** — `docs/hollowtide/ds/CP-DS-02B_SAVE.md`: salvar pelo menu, fechar o emulador, CONTINUE num processo novo volta ao ponto salvo |
 | CP-DS-03A pipeline de mapas | **passou** — `docs/hollowtide/ds/CP-DS-03A_PIPELINE_MAPAS.md`: NSBMD e BDHC próprios (ida e volta byte a byte nos 676 blocos), mapa de teste gerado (platô, penhasco, rampa, caminho, mato alto, árvores, placa) no lugar da metade sul da Route 39, testado no DeSmuME (altura 1,0 → 1,5 → 2,0, colisões, divisa nos dois sentidos) |
-| CP-DS-03B primeira localidade original | só depois do 03A. Route 3 e Ferralia não começam antes |
+| CP-DS-03B primeira localidade original | plano de setores de Dawnmere + Route 1 (norte → sul, 3 setores) em `docs/hollowtide/ds/CP-DS-03B_PLANO_SETORES.md`, com 3 decisões abertas para o diretor; Route 3 e Ferralia não começam antes |
 | Publicação | **push remoto suspenso** (diretor, 24/11): só commits locais |
 
 ## 1. O que o hg-engine resolve e o que não resolve
