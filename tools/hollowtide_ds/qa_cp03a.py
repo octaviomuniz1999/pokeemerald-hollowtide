@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """QA do CP-DS-03A: o bloco de terreno gerado (mapa_teste.py) no lugar da metade sul da Route 39 (mapa 43, celula
-(8,6): mundo x 256-287, z 192-223), a partir do estado salvo pelo qa_cap2.py na saida norte de Breezeport.
+(8,6): mundo x 256-287, z 192-223), a partir do estado salvo pelo qa_cap2.py na saida norte de Breezeport, ou do estado do quarto (ds_intro.py) usando o
+atalho de QA da build de prova (o PC do quarto leva ao corredor norte de Breezeport, logo abaixo da divisa).
 
-Passos (captura e mapa/posicao/altura em cada um; altura = LocalMapObject +0x68, conferida ao subir a rampa):
+Passos (captura e mapa/posicao/altura em cada um; altura = y da posicao 3D do objeto (+0x74), conferida ao subir a rampa):
 1. chega pela emenda sul (caminho, colunas 21-25);  2. caminho ao norte e a oeste ate o pe da rampa;
 3. sobe a rampa ate o plato (altura muda);  4. colisao: placa (construcao) e penhasco visto de cima;
 5. desce, colisao do penhasco visto de baixo e de uma arvore;  6. volta a Breezeport pela emenda e entra de novo.
@@ -24,8 +25,8 @@ def W(x, z):
 
 
 def height(d):
-    obj = d.u32(d.avatar + 0x30)
-    return d.emu.memory.signed.read_long(obj + 0x68) / 4096 / 16
+    obj = d.u32(d.avatar + 0x30)                        # posicao 3D do objeto (fx32 x, y, z em +0x70); y em tiles
+    return d.emu.memory.signed.read_long(obj + 0x74) / 4096 / 16
 
 
 def main(rom, state, out):
@@ -34,9 +35,23 @@ def main(rom, state, out):
     d = DS(rom); d.load(state); d.wait(30)
     def step(tag):
         w = d.where(); h = round(height(d), 2) if w else None
+        if os.environ.get("QA_DUMP_OBJ") and w:      # memoria do objeto do jogador (para achar o campo de altura)
+            obj = d.u32(d.avatar + 0x30)
+            open(f"{out}/{tag}.obj", "wb").write(bytes(d.emu.memory.unsigned[obj:obj + 0x140]))
         log.append((tag, w, h)); d.shot(f"{out}/{tag}.png")
         return w, h
-    d.press("UP", 16, 24); d.wait(60)
+    if d.where() and d.where()[0] == 64:                # estado do quarto (ds_intro): atalho de QA no PC (provas/cp03a)
+        d.press("UP", 16, 24); d.press("UP", 4, 20); d.press("A", 4, 30)
+        for _ in range(20):
+            d.wait(30)
+            if d.where() and d.where()[0] == BREEZEPORT:
+                break
+        d.wait(120); step("0_atalho_breezeport")
+    for _ in range(6):                                  # corredor norte de Breezeport -> divisa
+        if d.where() and d.where()[0] == TEST:
+            break
+        d.press("UP", 16, 24)
+    d.wait(60)
     ok["entrada"] = step("1_entrada")
     go = lambda goal, tag: goto(d, rom, W(*goal), CELLS, TEST, out, tag, fight_ok=True)
     go((23, 19), "c"); step("2a_caminho_norte")

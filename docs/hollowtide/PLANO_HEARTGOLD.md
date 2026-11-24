@@ -91,9 +91,9 @@ IMPLEMENTAR → INTEGRAR → COMPILAR → TESTAR → DOCUMENTAR; um checkpoint s
 |---|---|
 | CP-DS-00 auditoria e baseline | **feito** — `docs/hollowtide/ds/CP-DS-00_AUDITORIA.md` (tag local `cp-ds-00-recebido`): ambiente, pipeline, estado real dos mapas (caminho A = geometria do HGSS intacta até aqui) e divergências com a ordem |
 | CP-DS-01 prova real de integração de mapa | **passou** — `docs/hollowtide/ds/CP-DS-01_PROVA_MAPA.md`: placa nova em Dawnmere (modelo 3D + colisão + leitura), divisa nos dois sentidos, save/CONTINUE; patch `…-cp01.xdelta` |
-| CP-DS-02 diálogos | auditoria automática (`audit_dialogos.py`) e 1ª leva de correções feitas junto com o CP-DS-01; falta o teste dirigido dos eventos principais com capturas |
-| CP-DS-02B salvamento | SAVE/CONTINUE entre execuções independentes do emulador (sem savestate) |
-| CP-DS-03A pipeline de mapas | gerar e integrar terreno 3D próprio (modelo, alturas, colisão); mapa de teste validado no DeSmuME |
+| CP-DS-02 diálogos | **passou** — `docs/hollowtide/ds/CP-DS-02_DIALOGOS.md`: testes dirigidos no jogo com cada página de fala capturada (intro, Cap. 1, Cap. 2, livro, loja); 8 defeitos achados e corrigidos (intro do Prof. Oak, maiúsculas do GBA, Team Rocket, PKMN Trainer Jay…) |
+| CP-DS-02B salvamento | **passou** — `docs/hollowtide/ds/CP-DS-02B_SAVE.md`: salvar pelo menu, fechar o emulador, CONTINUE num processo novo volta ao ponto salvo |
+| CP-DS-03A pipeline de mapas | **passou** — `docs/hollowtide/ds/CP-DS-03A_PIPELINE_MAPAS.md`: NSBMD e BDHC próprios (ida e volta byte a byte nos 676 blocos), mapa de teste gerado (platô, penhasco, rampa, caminho, mato alto, árvores, placa) no lugar da metade sul da Route 39, testado no DeSmuME (altura 1,0 → 1,5 → 2,0, colisões, divisa nos dois sentidos) |
 | CP-DS-03B primeira localidade original | só depois do 03A. Route 3 e Ferralia não começam antes |
 | Publicação | **push remoto suspenso** (diretor, 24/11): só commits locais |
 

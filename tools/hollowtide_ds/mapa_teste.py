@@ -26,6 +26,14 @@ CLIFF_Z = 12.0                       # face do penhasco: plato (z < 12) / campin
 RAMP = (14, 17, 12, 15)              # x0, x1, z0, z1 (altura 2 em z0 -> 1 em z1)
 PATH_SEAM = (21, 26)                 # colunas abertas na emenda sul (iguais as de Breezeport)
 UP = (0 & 0x3FF) | (511 << 10) | (0 << 20)
+MAXQ = 4                             # lado maximo de um quad, em tiles
+
+
+def cuts(a, b):
+    out = [a]
+    while out[-1] + MAXQ < b:
+        out.append(out[-1] + MAXQ)
+    return out + [b]
 
 
 def nrm(x, y, z):
@@ -41,21 +49,40 @@ class Mesh:
         self.quads.setdefault(mat, []).append((verts, normal))
 
     def flat(self, mat, x0, z0, x1, z1, h, uv0=(0, 0), du=256, dv=256):
-        """Retangulo horizontal; UV linear (256 por tile, como os blocos do HGSS)."""
+        """Retangulo horizontal em pedacos de ate MAXQ x MAXQ tiles (o DS descarta poligonos muito grandes: os blocos
+        do HGSS nao passam de ~8 tiles por quad); UV linear (256 por tile, como os blocos do HGSS)."""
         u = lambda x: int(uv0[0] + du * (x - 16)); v = lambda z: int(uv0[1] + dv * (z - 16))
-        self.quad(mat, [(x0, h, z1, u(x0), v(z1)), (x1, h, z1, u(x1), v(z1)), (x1, h, z0, u(x1), v(z0)), (x0, h, z0, u(x0), v(z0))])
+        xs = cuts(x0, x1); zs = cuts(z0, z1)
+        for a, b in zip(xs, xs[1:]):
+            for c, d in zip(zs, zs[1:]):
+                self.quad(mat, [(a, h, d, u(a), v(d)), (b, h, d, u(b), v(d)), (b, h, c, u(b), v(c)), (a, h, c, u(a), v(c))])
 
     def dl(self, mat):
-        cmds = [(0x40, [1])]
-        for verts, n in self.quads.get(mat, []):
-            for i, (x, y, z, u, v) in enumerate(verts):
+        """Lista de desenho compacta, como a do conversor da Nintendo: normal so quando muda; vertice com 1 parametro
+        (VTX_XZ/XY/YZ) quando uma coordenada repete a do vertice anterior."""
+        if not self.quads.get(mat):
+            # forma sem uso: lista minima valida. Uma lista de tamanho 0 interrompe o desenho de todas as formas
+            # seguintes do bloco (visto no DeSmuME: so a 1a forma da ordem de render aparecia)
+            return encode_dl([(0x40, [1]), (0x41, [])])
+        cmds, last_n, prev = [(0x40, [1])], None, None
+        for verts, n in self.quads[mat]:
+            for x, y, z, u, v in verts:
                 cmds.append((0x22, [(u & 0xFFFF) | ((v & 0xFFFF) << 16)]))
-                if i == 0:
-                    cmds.append((0x21, [n]))
+                if n != last_n:
+                    cmds.append((0x21, [n])); last_n = n
                 X, Y, Z = int(round((x - 16) * T)), int(round(y * T)), int(round((z - 16) * T))
-                cmds.append((0x23, [(X & 0xFFFF) | ((Y & 0xFFFF) << 16), Z & 0xFFFF]))
+                p16 = lambda a, b: (a & 0xFFFF) | ((b & 0xFFFF) << 16)
+                if prev and prev[1] == Y:
+                    cmds.append((0x26, [p16(X, Z)]))
+                elif prev and prev[2] == Z:
+                    cmds.append((0x25, [p16(X, Y)]))
+                elif prev and prev[0] == X:
+                    cmds.append((0x27, [p16(Y, Z)]))
+                else:
+                    cmds.append((0x23, [p16(X, Y), Z & 0xFFFF]))
+                prev = (X, Y, Z)
         cmds.append((0x41, []))
-        return encode_dl(cmds) if self.quads.get(mat) else b""
+        return encode_dl(cmds)
 
 
 def height(x, z):
@@ -101,6 +128,8 @@ def build_mesh():
     m.flat("grass01", 0, CLIFF_Z, RAMP[0] - 1, 32, LOW)
     m.flat("grass01", RAMP[1] + 1, CLIFF_Z, 32, 32, LOW)
     m.flat("grass01", RAMP[0] - 1, RAMP[3], RAMP[1] + 1, 32, LOW)
+    m.flat("grass01", RAMP[0] - 1, CLIFF_Z, RAMP[0], RAMP[3], LOW)    # faixas ao lado da rampa (sem elas, buraco preto)
+    m.flat("grass01", RAMP[1], CLIFF_Z, RAMP[1] + 1, RAMP[3], LOW)
     # caminho de terra: emenda sul -> norte -> oeste -> pe da rampa; no plato, da rampa ate a placa
     m.flat("road01", PATH_SEAM[0], 18, PATH_SEAM[1], 32, LOW + 0.01)
     m.flat("road01", RAMP[0], 18, PATH_SEAM[0], 21, LOW + 0.01)
@@ -116,12 +145,13 @@ def build_mesh():
                       (x1, HIGH + 0.01, z0, u(x1), v(z0)), (x0, HIGH + 0.01, z0, u(x0), v(z0))], n)
     # face do penhasco (plato -> campina), inclinada para fora como as do HGSS; e os lados da rampa
     wn = nrm(0, 0.55, 0.83)
-    for a, b in ((4, x0), (x1, 28)):
+    for a, b in [(p, q) for a_, b_ in ((0, x0), (x1, 32)) for p, q in zip(cuts(a_, b_), cuts(a_, b_)[1:])]:   # toda a largura
         m.quad("wall01_g", [(a, LOW, CLIFF_Z + 0.67, 256 * a, 248), (b, LOW, CLIFF_Z + 0.67, 256 * b, 248),
                             (b, HIGH, CLIFF_Z, 256 * b, 8), (a, HIGH, CLIFF_Z, 256 * a, 8)], wn)
-    for xs, sx in ((x0, -1), (x1, 1)):                # paredes laterais da rampa (triangulo como quad degenerado)
-        m.quad("wall01_g", [(xs, LOW, z1, 256 * z1, 248), (xs, LOW, z0, 256 * z0, 248),
-                            (xs, HIGH, z0, 256 * z0, 8), (xs, HIGH, z0, 256 * z0, 8)], nrm(sx * 0.9, 0.43, 0))
+    for xs, sx in ((x0, -1), (x1, 1)):                # paredes laterais da rampa (triangulo como quad degenerado);
+        tri = [(xs, LOW, z1, 256 * z1, 248), (xs, LOW, z0, 256 * z0, 248),     # normal igual a da face do penhasco:
+               (xs, HIGH, z0, 256 * z0, 8), (xs, HIGH, z0, 256 * z0, 8)]       # virada de lado, a luz do campo a
+        m.quad("wall01_g", tri if sx > 0 else tri[::-1], wn)                    # deixava preta (visto no DeSmuME)
     # mato alto e flores
     for z in range(20, 26):
         m.flat("egrass", 6, z, 12, z + 1, LOW + 0.12, uv0=(-22528, 2048))
