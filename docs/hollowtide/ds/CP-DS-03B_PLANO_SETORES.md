@@ -251,7 +251,54 @@ Os mapas do caminho A (New Bark, Route 29, Cherrygrove) ficam nas células antig
   e o QA rodou numa ROM antiga. Os geradores de patch agora escrevem a marca `\ No newline at end of file`, e a
   sequência build → QA para no primeiro erro.
 
+### Route 2 original e nova posição na matriz (24/11, noite)
+
+**Um header por célula.** Cada célula de 32×32 tem um só header: zona de eventos, encontros e música. Com as divisas
+do GBA fora das divisas das células, as últimas 8 linhas da Route 1 caíam numa célula de Harvestvale, e por isso:
+- a placa sul da Route 1 não lia;
+- o mato alto daquele trecho ficava sem encontros.
+
+O QA conferia só a posição e não pegou; a falha foi achada ao planejar a Route 2.
+
+**Nova posição.** O desenho foi para o canto superior esquerdo da matriz 0, células (0,0)–(3,5), vazias no HGSS, onde
+cabe a cadeia vertical do GBA até Breezeport. Ele fica deslocado (30,21) para que quase toda célula tenha um mapa só:
+- Dawnmere na coluna de blocos 1;
+- a Route 1 nas colunas 2–3;
+- Harvestvale na linha 3;
+- a Route 2 nas linhas 4–5.
+
+Sobram as 5 primeiras linhas de Harvestvale (árvores e caminho) numa célula da Route 1. Por isso o fazendeiro e o
+gatilho da chegada descem 3 linhas, a única adaptação. A trava de Dawnmere volta ao tile exato do GBA (33, 21–22).
+`tools/hollowtide_ds/lunia_mundo.py` dá a origem de cada mapa do GBA, e os geradores e os QAs usam coordenadas do GBA
+por mapa.
+
+**Route 2** (`PalmRoute02`, 40×48), convertida abaixo de Harvestvale como no GBA:
+- **Mapa:**
+  - ressaltos de pulo para o sul (`v`, 0x803B, com uma beirada desenhada);
+  - o cercado elevado com a escada como rampa (alturas calculadas no desenho inteiro, porque a rampa termina na
+    divisa de bloco);
+  - a areia e a poça rasa como chão andável;
+  - a casa de porta trancada (`yo_h01`).
+- **Headers:** R30 nas linhas 0–31 do GBA e R31 nas 32–47 (`headers_celula` no `land.json`), as zonas que já eram a
+  Route 2 do protótipo.
+- **Eventos** (0706–0708):
+  - Liang, Mei Lan, Qin, Potion e as placas norte e sul nos tiles do GBA;
+  - a porta trancada, com a fala do GBA no banco da R31;
+  - a saída sul leva à guarita do protótipo, e dali a Breezeport. É a nova ponte provisória, até Breezeport ser
+    convertida;
+  - a ponte antiga (0705, saída sul de Harvestvale → Route 2 do protótipo) saiu: agora se desce de Harvestvale para
+    a Route 2 a pé.
+- **Texto:** a placa norte da Route 2 volta ao GBA ("North: Harvestvale").
+
+**QA** (`qa_cp03d.py --cap1`, build de conteúdo + `qa_forte`). Passou nas 21 checagens, do quarto até Breezeport:
+- a placa sul da Route 1 agora lê;
+- Route 2 a pé desde Harvestvale;
+- Liang, Mei Lan e Qin com a visão do GBA;
+- porta trancada, placas, guarita e Breezeport.
+- Capturas: `CP-DS-03B_route2.png`.
+
 Falta:
+- o item da Route 2 é Potion; no GBA é Super Potion (já estava no backlog);
 - modelos para o armazém, as barracas do mercado e o celeiro de Harvestvale (hoje são só colisão). As árvores soltas
   em volta deles saem cortadas;
 - a porta do laboratório (vão claro) e a do ginásio (branca): os modelos de porta de fora da área ficam sem textura,

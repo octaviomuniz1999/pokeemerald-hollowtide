@@ -2,8 +2,8 @@
  "Dawnmere": {
   "gba": "LittlerootTown",
   "origem": [
-   2,
-   2
+   30,
+   21
   ],
   "tam": [
    34,
@@ -12,18 +12,18 @@
   "desconhecidos": {},
   "warps": [
    [
-    22,
-    18,
+    50,
+    37,
     "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F"
    ],
    [
-    4,
-    11,
+    32,
+    30,
     "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F"
    ],
    [
-    16,
-    10,
+    44,
+    29,
     "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
    ]
   ],
@@ -31,8 +31,8 @@
    {
     "modelo": "mst_okl (laboratorio de Pallet)",
     "porta_ds": [
-     15,
-     10
+     43,
+     29
     ],
     "warp": true,
     "nota": "laboratorio do Prof. Alex: o unico laboratorio do HGSS que cabe na planta do GBA (colunas 10-16) tem a porta no centro, 1 tile a oeste do warp do GBA (14,8); a escada vai junto (14,9 -> 13,9)"
@@ -40,8 +40,8 @@
    {
     "modelo": "wk_hhouse (casa de New Bark)",
     "porta_ds": [
-     22,
-     18
+     50,
+     37
     ],
     "warp": true,
     "nota": "casa do warp MAYS_HOUSE"
@@ -49,8 +49,8 @@
    {
     "modelo": "wk_h01 (casa de New Bark)",
     "porta_ds": [
-     4,
-     11
+     32,
+     30
     ],
     "warp": true,
     "nota": "casa do warp BRENDANS_HOUSE"
@@ -58,8 +58,8 @@
    {
     "modelo": "yo_h01 (casa de Cherrygrove)",
     "porta_ds": [
-     10,
-     25
+     38,
+     44
     ],
     "warp": false,
     "nota": "casa sem porta no GBA"
@@ -67,8 +67,8 @@
    {
     "modelo": "yo_h02 (casa de Cherrygrove)",
     "porta_ds": [
-     22,
-     25
+     50,
+     44
     ],
     "warp": false,
     "nota": "casa sem porta no GBA"
@@ -78,8 +78,8 @@
  "Route1": {
   "gba": "Route101",
   "origem": [
-   36,
-   19
+   64,
+   38
   ],
   "tam": [
    40,
@@ -91,8 +91,8 @@
    {
     "modelo": "wk_hhouse (casa de New Bark)",
     "porta_ds": [
-     41,
-     39
+     69,
+     58
     ],
     "warp": false,
     "nota": "casa da horta (porta decorativa no GBA, sem warp); a casa de Pallet (mst_rdh), de telhado vermelho, ficou sem textura: a lista de construcoes da area so tem VRAM para mais dois modelos"
@@ -102,8 +102,8 @@
  "Harvestvale": {
   "gba": "OldaleTown",
   "origem": [
-   37,
-   72
+   65,
+   91
   ],
   "tam": [
    39,
@@ -112,28 +112,28 @@
   "desconhecidos": {},
   "warps": [
    [
-    54,
-    83,
+    82,
+    102,
     "MAP_OLDALE_TOWN_HOUSE1"
    ],
    [
-    42,
-    93,
+    70,
+    112,
     "MAP_RUSTBORO_CITY_GYM"
    ],
    [
-    49,
-    93,
+    77,
+    112,
     "MAP_OLDALE_TOWN_POKEMON_CENTER_1F"
    ],
    [
-    60,
-    103,
+    88,
+    122,
     "MAP_OLDALE_TOWN_MART"
    ],
    [
-    58,
-    90,
+    86,
+    109,
     "MAP_OLDALE_TOWN_HOUSE2"
    ]
   ],
@@ -141,8 +141,8 @@
    {
     "modelo": "ta_gym (ginasio de Celadon, tipo Planta como o do Nevard)",
     "porta_ds": [
-     42,
-     93
+     70,
+     112
     ],
     "warp": true,
     "nota": "ginasio do Nevard (warp do GBA)"
@@ -150,8 +150,8 @@
    {
     "modelo": "pc (Centro Pokemon)",
     "porta_ds": [
-     49,
-     93
+     77,
+     112
     ],
     "warp": true,
     "nota": "Centro Pokemon"
@@ -159,8 +159,8 @@
    {
     "modelo": "fs (Poke Mart)",
     "porta_ds": [
-     60,
-     103
+     88,
+     122
     ],
     "warp": true,
     "nota": "Poke Mart"
@@ -168,8 +168,8 @@
    {
     "modelo": "wk_hhouse (casa de New Bark)",
     "porta_ds": [
-     54,
-     83
+     82,
+     102
     ],
     "warp": true,
     "nota": "casa (OLDALE_TOWN_HOUSE1)"
@@ -177,11 +177,35 @@
    {
     "modelo": "kn_h01 (casa de Kanto)",
     "porta_ds": [
-     58,
-     90
+     86,
+     109
     ],
     "warp": true,
     "nota": "casa (OLDALE_TOWN_HOUSE2)"
+   }
+  ]
+ },
+ "Route2": {
+  "gba": "PalmRoute02",
+  "origem": [
+   65,
+   128
+  ],
+  "tam": [
+   40,
+   48
+  ],
+  "desconhecidos": {},
+  "warps": [],
+  "construcoes": [
+   {
+    "modelo": "yo_h01 (casa de Cherrygrove)",
+    "porta_ds": [
+     79,
+     164
+    ],
+    "warp": false,
+    "nota": "casa de porta trancada (Palm280_DoorLocked na porta)"
    }
   ]
  }

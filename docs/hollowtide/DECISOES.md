@@ -108,3 +108,13 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
   seguinte, saindo do sudeste de Harvestvale, como o diretor definiu).
 - Construções: o laboratório do Prof. Alex usa o modelo do laboratório de Pallet, com a porta 1 tile a oeste do GBA.
   É o único laboratório do HGSS que cabe na planta. O ginásio do Nevard usa o de Celadon (tipo Planta).
+
+## 24/11/2026 (noite) — CP-DS-03B: Route 2 original e nova posição do desenho
+
+- O desenho de Lunia foi para as células (0,0) em diante da matriz 0 (vazias no HGSS), deslocado (30,21). Cada
+  célula tem um header só, e esse deslocamento faz cada célula ter um mapa só. Corrige a placa sul e os encontros do
+  fim da Route 1, que estavam numa célula de Harvestvale.
+- Adaptação mínima: o fazendeiro e a chegada de Harvestvale descem 3 linhas, porque as 5 primeiras linhas de
+  Harvestvale ficam numa célula da Route 1.
+- Route 2 convertida do GBA, abaixo de Harvestvale, com ligação a pé. A ponte provisória passa para a saída sul da
+  Route 2 → guarita → Breezeport do protótipo.

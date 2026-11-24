@@ -200,18 +200,7 @@
  "375": {
   "_": "Route 2, trecho sul (Route 30; script em overlay/data/scr_seq/scr_seq_0227_R30.s)",
   "0": {
-   "gba": "Palm080_TextRouteNorth",
-   "replace": [
-    [
-     "North: Harvestvale",
-     "South: Harvestvale"
-    ],
-    [
-     "follow the trail\\nsouth toward the sea",
-     "follow the trail\\nnorth toward the sea"
-    ]
-   ],
-   "_por_que": "no DS a Route 2 sai de Harvestvale para o norte"
+   "gba": "Palm080_TextRouteNorth"
   },
   "1": {
    "gba": "Palm280_TextDoorLocked"
@@ -221,6 +210,10 @@
   "_": "Route 2, trecho norte (Route 31; script em overlay/data/scr_seq/scr_seq_0230_R31.s)",
   "0": {
    "gba": "Palm080_TextRouteSouth"
+  },
+  "1": {
+   "gba": "Palm280_TextDoorLocked",
+   "_por_que": "CP-DS-03B: a casa de porta trancada da Route 2 fica nas linhas de header R31 (scr_seq_R31_003)"
   }
  },
  "604": {

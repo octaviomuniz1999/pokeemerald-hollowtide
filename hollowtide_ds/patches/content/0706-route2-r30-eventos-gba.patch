@@ -1,0 +1,72 @@
+--- a/data/eventdata/zone_event/031_R30.json
++++ b/data/eventdata/zone_event/031_R30.json
+@@ -5,24 +5,8 @@
+     {
+       "script": "_EV_scr_seq_R30_005 + 1",
+       "type": 1,
+-      "x": 554,
+-      "z": 363,
+-      "y": 0,
+-      "player_facing_dir": 4
+-    },
+-    {
+-      "script": "_EV_scr_seq_R30_006 + 1",
+-      "type": 0,
+-      "x": 568,
+-      "z": 294,
+-      "y": 0,
+-      "player_facing_dir": 4
+-    },
+-    {
+-      "script": "_EV_scr_seq_R30_006 + 1",
+-      "type": 0,
+-      "x": 555,
+-      "z": 355,
++      "x": 81,
++      "z": 131,
+       "y": 0,
+       "player_facing_dir": 4
+     }
+@@ -41,25 +25,25 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 561,
+-      "z": 350,
++      "x": 91,
++      "z": 141,
+       "y": 0
+     },
+     {
+       "id": "obj_R30_gsgirl2",
+       "graphics_id": "SPRITE_GSGIRL2",
+-      "movement_type": 16,
++      "movement_type": 17,
+       "trainer_type": 1,
+       "hidden_flag": "FLAG_NOTHING",
+       "script": "489 - 1 + _std_npc_trainer",
+-      "initial_dir": 2,
++      "initial_dir": 3,
+       "param0": 3,
+       "param1": 0,
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 551,
+-      "z": 316,
++      "x": 81,
++      "z": 155,
+       "y": 0
+     },
+     {
+@@ -75,8 +59,8 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 564,
+-      "z": 369,
++      "x": 72,
++      "z": 154,
+       "y": 0
+     }
+   ],

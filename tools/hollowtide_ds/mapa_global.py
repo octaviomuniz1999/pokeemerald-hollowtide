@@ -52,12 +52,24 @@ def gerar_blocos(path, base_block, blocos):
             parts.setdefault((bx, by), mg.Mesh()).quad(mat, local, n)
     donors = [Land(blocos[d]).rest[:Land(blocos[d]).sizes[2]] for d in g["doadores"]]
     base = Land(blocos[base_block])
+    # alturas no desenho inteiro (uma rampa pode terminar na divisa de bloco, com o vizinho no bloco seguinte);
+    # cada bloco recebe o seu recorte e as rampas cortadas nas divisas, com a altura interpolada no corte
+    Hg, rg = H, ramps
     out = {}
     for by in range(nby):
         for bx in range(nbx):
             sub = subgrid(g, bx, by)
             mg.set_size(sub)
-            Hs, rs = mg.heights(sub)
+            Hs = [r[bx * 32:bx * 32 + 32] for r in Hg[by * 32:by * 32 + 32]]
+            rs = []
+            for x, z0, z1, hn, hs in rg:
+                if not bx * 32 <= x < bx * 32 + 32:
+                    continue
+                c0, c1 = max(z0, by * 32), min(z1, by * 32 + 32)
+                if c0 >= c1:
+                    continue
+                at = lambda zz: hn + (hs - hn) * (zz - z0) / (z1 - z0)
+                rs.append((x - bx * 32, c0 - by * 32, c1 - by * 32, at(c0), at(c1)))
             m = parts.get((bx, by), mg.Mesh())
             layers = [(name, m.dl(name)) for name in mg.ORDER if name in m.quads]
             ld = Land(blocos[base_block])
@@ -93,6 +105,9 @@ def apply_global(rom, narc, entry, base_dir):
     path = os.path.join(base_dir, entry["global"])
     blocks, (nbx, nby) = gerar_blocos(path, entry.get("base", 0), [bytes(f) for f in narc.files])
     hdr = owners(path + ".json", nbx, nby, entry["headers"], entry.get("padrao", 0))
+    for k, h in entry.get("headers_celula", {}).items():  # celula (bx,by do desenho) com header escolhido a mao
+        bx, by = map(int, k.split(","))
+        hdr[(bx, by)] = h
     import ndspy.narc
     mid = rom.filenames.idOf("a/0/4/1")
     mnarc = ndspy.narc.NARC(rom.files[mid])

@@ -37,6 +37,9 @@ GENERAL = {
     0x260: "#", 0x264: "#", 0x268: "#", 0x26C: "#",
     0x265: "=", 0x266: "=", 0x267: "=", 0x26D: "=", 0x26E: "=", 0x26F: "=",
 }
+GENERAL.update({0x1DC: "T", 0x1DD: "T",                            # metade de baixo das arvores grandes (Route 2)
+                0x070: "#", 0x072: "#", 0x074: "#", 0x078: "#", 0x079: "#", 0x07A: "#", 0x07C: "#",
+                0x087: "v", 0x089: "#", 0x091: "#", 0x0D5: "v", 0x0D6: "v"})       # muro do cercado e ressaltos
 GENERAL.update({0x1D4: "T", 0x1D5: "T", 0x1E4: "T", 0x1E5: "T", 0x1E6: "T", 0x1E7: "T",      # arvores grandes (Harvestvale)
                 0x10C: "=", 0x104: "=", 0x114: "=", 0x124: "="})   # terra arada da plantacao e areias
 PRIMARY_BUILDINGS = [range(0x028, 0x064), range(0x1AA, 0x1CE)]   # Mart/PC e ginasio do tileset General
@@ -82,6 +85,10 @@ CONSTRUCOES = {
         dict(rect=(15, 9, 20, 11), modelo=0x14, porta=(17, 11), warp=True, altura=1, nota="casa (OLDALE_TOWN_HOUSE1)"),
         dict(rect=(20, 15, 23, 18), modelo=0x29, porta=(21, 18), warp=True, altura=1, nota="casa (OLDALE_TOWN_HOUSE2)"),
     ],
+    "Route2": [
+        dict(rect=(13, 33, 16, 36), modelo=0x25, porta=(14, 36), warp=False, altura=1,
+             nota="casa de porta trancada (Palm280_DoorLocked na porta)"),
+    ],
     "Route1": [
         dict(rect=(4, 17, 10, 20), modelo=0x14, porta=(5, 20), warp=False, altura=1,
              nota="casa da horta (porta decorativa no GBA, sem warp); a casa de Pallet (mst_rdh), de telhado vermelho, "
@@ -122,8 +129,14 @@ def construcoes(key, gx, gy, grid, alt):
     return objs, rel
 
 
-MAPS = {"Dawnmere": ("LittlerootTown", 0, 0), "Route1": ("Route101", 34, 17), "Harvestvale": ("OldaleTown", 35, 70)}
-MARGIN = (2, 2)                             # deslocamento do desenho dentro da area de blocos
+MAPS = {"Dawnmere": ("LittlerootTown", 0, 0), "Route1": ("Route101", 34, 17), "Harvestvale": ("OldaleTown", 35, 70),
+        "Route2": ("PalmRoute02", 35, 107)}        # ligacoes do GBA: Route 2 abaixo de Harvestvale (deslocamento 0)
+ESCADAS = {0x0AF}                           # escada do GBA: rampa no DS (entre os vizinhos norte e sul)
+# Deslocamento do desenho dentro da area de blocos. Cada celula de 32x32 tem UM header (zona de eventos, encontros,
+# musica): com (30, 21), quase toda celula fica com um mapa so: Dawnmere na coluna de blocos 1, a Route 1 nas colunas
+# 2-3 (linhas 1-2), Harvestvale na linha 3, a Route 2 nas linhas 4-5. Sobram as 5 primeiras linhas de Harvestvale
+# (arvores e caminho) numa celula da Route 1: a chegada e o fazendeiro descem 3 linhas (eventos_gba.py).
+MARGIN = (30, 21)
 
 
 def behaviors(tileset_name):
@@ -153,6 +166,8 @@ def convert(name):
     mb = mb_values()
     prim, sec = behaviors(L["primary_tileset"]), behaviors(L["secondary_tileset"])
     tall = {mb[k] for k in mb if "TALL_GRASS" in k or "LONG_GRASS" in k}
+    jump_s = mb["MB_JUMP_SOUTH"]
+    shallow = {mb[k] for k in mb if k in ("MB_SHALLOW_WATER",)}
     water = {mb[k] for k in mb if any(t in k for t in ("POND_WATER", "DEEP_WATER", "OCEAN_WATER", "SEMI_DEEP", "INTERIOR_DEEP", "PUDDLE"))}
     tiles, elev, unknown = [], [], collections.Counter()
     for i, v in enumerate(vals):
@@ -160,6 +175,10 @@ def convert(name):
         b = prim[mt] if mt < 0x200 else sec[mt - 0x200]
         if b in tall:
             c = "e"
+        elif b == jump_s:
+            c = "v"                                      # ressalto: pulo para o sul
+        elif b in shallow:
+            c = "="                                      # poca rasa (andavel): chao de terra no DS
         elif b in water:
             c = "~"
         elif mt in GENERAL:
@@ -180,7 +199,7 @@ def convert(name):
 
 
 def heights(w, h, elev):
-    H = [1 if e in (3, 1, 0) else 2 for e in elev]
+    H = [1 if e in (3, 1, 0) else 2 for e in elev]          # 4 e 5 (chao elevado) = altura 2
     for _ in range(2):                                   # tiles de elevacao 0 (bloqueados) herdam dos vizinhos
         for i, e in enumerate(elev):
             if e == 0:
@@ -193,7 +212,7 @@ def heights(w, h, elev):
 
 
 def build_global():
-    W = H = 128
+    W, H = 128, 192
     grid = [["T"] * W for _ in range(H)]
     alt = [["1"] * W for _ in range(H)]
     owner = [[None] * W for _ in range(H)]
@@ -201,6 +220,10 @@ def build_global():
     for key, (name, ox, oy) in MAPS.items():
         j, w, h, tiles, elev, unknown = convert(name)
         hh = heights(w, h, elev)
+        _, _, _, _, vals = load_map(name)
+        for i, v in enumerate(vals):                     # escadas: rampa (so as que nao foram ajustadas a mao)
+            if v & 0x3FF in ESCADAS and key != "Dawnmere":
+                hh[i] = "r"
         gx, gy = ox + MARGIN[0], oy + MARGIN[1]
         for y in range(h):
             for x in range(w):
@@ -240,6 +263,6 @@ if __name__ == "__main__":
     for k, r in report.items():
         print(k, r["gba"], "origem", r["origem"], "tam", r["tam"], "metatiles sem tabela:", r["desconhecidos"])
     out = ["; desenho global de Dawnmere + Route 1 + Harvestvale, convertido do GBA por gba2grade.py (nao editar a mao)",
-           "[doadores]", "2 0 5 4", "[tamanho]", "128 128", "[tiles]"] + ["".join(r) for r in grid] + ["[alturas]"] + ["".join(r) for r in alt] + ["[objetos]"] + objetos
+           "[doadores]", "2 0 5 4", "[tamanho]", f"{len(grid[0])} {len(grid)}", "[tiles]"] + ["".join(r) for r in grid] + ["[alturas]"] + ["".join(r) for r in alt] + ["[objetos]"] + objetos
     open(sys.argv[1], "w").write("\n".join(out) + "\n")
     json.dump(report, open(sys.argv[1] + ".json", "w"), indent=1)

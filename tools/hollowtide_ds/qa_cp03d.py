@@ -13,17 +13,16 @@ from ds_driver import DS
 from qa_cap1 import walk, goto, face, advance, starter_screen, fight, route2, GYM_CELLS, GYM_NPCS, GYM_MATRIX, BREEZEPORT
 CAP1 = "--cap1" in sys.argv                              # build de conteudo: segue pelo Nevard, a ponte e a Route 2
 
-X0, Z0 = 672, 416
-CELLS = [(cx, cy) for cx in range(21, 25) for cy in range(13, 17)]
+from lunia_mundo import X0, Z0, CELLS, D, R1, HV, R2
 DAWNMERE, ROUTE1, LAB, HARVESTVALE, GYM = 60, 33, 61, 67, 395
-NPCS = {(697, 436), (685, 442), (697, 428),              # guia, vizinho, mirante (fora da colisao dos blocos)
-        (720, 441), (730, 460), (725, 474), (721, 459),  # andarilho, Kai, Min, Potion (Route 1)
-        (729, 460), (726, 474),                          # Kai e Min depois de virem ate o jogador
-        (720, 491), (716, 520)}                          # fazendeiro e recruta (Harvestvale)
+NPCS = {D(23, 18), D(11, 24), D(23, 10),              # guia, vizinho, mirante (fora da colisao dos blocos)
+        R1(12, 6), R1(22, 25), R1(17, 39), R1(13, 24),  # andarilho, Kai, Min, Potion (Route 1)
+        R1(21, 25), R1(18, 39),                          # Kai e Min depois de virem ate o jogador
+        HV(11, 6), HV(7, 32),                            # fazendeiro e recruta (Harvestvale)
+        R2(26, 13), R2(16, 27), R2(21, 35), R2(7, 26),   # Liang, Mei Lan, Qin, Super Potion (Route 2)
+        R2(24, 13), R2(18, 27), R2(19, 35)}              # Liang, Mei Lan e Qin depois de virem ate o jogador
 
 
-def g(x, z):
-    return (X0 + x, Z0 + z)
 
 
 def main(rom, state, out):
@@ -36,7 +35,8 @@ def main(rom, state, out):
 
     def go(goal, tag, fight_ok=False):
         try:
-            return goto(d, rom, goal, CELLS, (DAWNMERE, ROUTE1, HARVESTVALE), out, tag, fight_ok=fight_ok, avoid=NPCS)[0]
+            return goto(d, rom, goal, CELLS, (DAWNMERE, ROUTE1, HARVESTVALE, 34, 35), out, tag, fight_ok=fight_ok,
+                        avoid=NPCS)[0]
         except KeyError:                                  # alvo inalcancavel de onde o robo esta: registra e segue
             print("sem caminho de", d.where(), "ate", goal)
         return 0
@@ -47,14 +47,14 @@ def main(rom, state, out):
     walk(d, ["UP", "UP", "LEFT", "LEFT", "LEFT", "UP", "LEFT", "LEFT"]); d.wait(200)
     advance(d, 45); d.wait(60)
     walk(d, ["DOWN"] * 8, stop_map=DAWNMERE); d.wait(200); advance(d, 6)
-    step("1_porta_da_casa", "esperado (60, 676, 428): um passo abaixo da porta do GBA (2,9)")
-    go(g(13, 22), "c"); ler("2_placa_da_casa")
-    go(g(30, 23), "c"); d.press("RIGHT", 16, 24); d.wait(40)
+    step("1_porta_da_casa", "esperado desenho (4, 12): um passo abaixo da porta do GBA (2,9)")
+    go(D(11, 20), "c"); ler("2_placa_da_casa")
+    go(D(32, 21), "c"); d.press("RIGHT", 16, 24); d.wait(40)
     step("3_trava_leste")
     advance(d, 25); d.wait(90)
-    step("4_depois_da_trava", "esperado x 702 (um passo para oeste)")
-    go(g(17, 12), "c"); ler("5_placa_do_lab")
-    go(g(15, 12), "c")
+    step("4_depois_da_trava", "esperado GBA x 32 (um passo para oeste da saida 33)")
+    go(D(15, 10), "c"); ler("5_placa_do_lab")
+    go(D(13, 10), "c")
     walk(d, ["UP"] * 4, stop_map=LAB); d.wait(200)
     step("6_lab")
     walk(d, ["UP"] * 8 + ["RIGHT"] * 2 + ["UP"])
@@ -74,16 +74,16 @@ def main(rom, state, out):
         d.wait(30)
     advance(d, 70); step("7_inicial")
     walk(d, ["LEFT", "LEFT"] + ["DOWN"] * 9, stop_map=DAWNMERE); d.wait(200); advance(d, 4)
-    step("8_saida_do_lab", "esperado (60, 687, 427): abaixo da porta do laboratorio")
-    go(g(25, 21), "c"); ler("9_guia")
-    go(g(31, 23), "c")
+    step("8_saida_do_lab", "esperado desenho (15, 11): abaixo da porta do laboratorio")
+    go(D(23, 19), "c"); ler("9_guia")
+    go(D(32, 21), "c")
     for _ in range(5):
         d.press("RIGHT", 16, 24)
     d.wait(60); step("10_route1")
     # Route 1 (etapa 4): eventos nas posicoes do Route101 do GBA (origem (36,19) no desenho)
-    go(g(43, 41), "c"); ler("11_placa_norte")
-    go(g(47, 25), "c"); ler("12_andarilho", "RIGHT")
-    go(g(49, 44), "c"); ler("13_potion")
+    go(R1(7, 22), "c"); ler("11_placa_norte")
+    go(R1(11, 6), "c"); ler("12_andarilho", "RIGHT")
+    go(R1(13, 25), "c"); ler("13_potion")
     def visao(goal, tag):
         """Anda ate o tile na visao do treinador; a batalha comeca depois que o treinador vem ate o jogador."""
         n = go(goal, tag, fight_ok=True)
@@ -94,19 +94,19 @@ def main(rom, state, out):
                 break
             d.press("B", 4, 20)
         return n
-    nk = visao(g(56, 44), "kai"); d.wait(60); step("14_kai", f"batalhas: {nk}")
-    nm = visao(g(55, 58), "min"); d.wait(60); step("15_min", f"batalhas: {nm}")
-    go(g(42, 68), "c", fight_ok=True); ler("16_placa_sul")
+    nk = visao(R1(20, 25), "kai"); d.wait(60); step("14_kai", f"batalhas: {nk}")
+    nm = visao(R1(19, 39), "min"); d.wait(60); step("15_min", f"batalhas: {nm}")
+    go(R1(6, 49), "c", fight_ok=True); ler("16_placa_sul")
     # Harvestvale (etapa 5, so o mapa e as construcoes; os eventos ainda estao nas posicoes do prototipo)
     # Harvestvale (etapa 5): eventos nas posicoes do OldaleTown do GBA (origem (37,72) no desenho)
-    go(g(46, 73), "c", fight_ok=True); d.wait(60)
-    d.press("DOWN", 16, 24); d.wait(60)                 # linha 2 do GBA: o fazendeiro chama (Palm072_Arrival)
+    go(HV(9, 4), "c", fight_ok=True); d.wait(60)
+    d.press("DOWN", 16, 24); d.wait(60)                 # linha 5 (GBA 2, descida 3): o fazendeiro chama (Palm072_Arrival)
     step("17_harvestvale_chegada"); advance(d, 12); d.wait(40)
-    go(g(49, 84), "c"); ler("18_placa_boas_vindas")
-    go(g(42, 95), "c"); d.press("UP", 16, 24); d.wait(40)
+    go(HV(12, 12), "c"); ler("18_placa_boas_vindas")
+    go(HV(5, 23), "c"); d.press("UP", 16, 24); d.wait(40)
     step("19_ginasio_fechado"); advance(d, 12); d.wait(60)
-    step("20_depois_do_ginasio", "esperado (67, 714, 511): um passo para baixo")
-    go(g(44, 105), "c"); face(d, "UP"); d.press("A", 4, 60)
+    step("20_depois_do_ginasio", "esperado desenho (42, 95): um passo para baixo")
+    go(HV(7, 33), "c"); face(d, "UP"); d.press("A", 4, 60)
     nr = 0
     for _ in range(30):                                  # recruta: fala, batalha (treinador 483), volta ao campo
         d.wait(40)
@@ -115,11 +115,11 @@ def main(rom, state, out):
             break
         d.press("A", 4, 30)
     d.wait(60); step("21_recruta", f"batalhas: {nr}"); advance(d, 6)
-    go(g(63, 95), "c"); ler("22_valvula", "RIGHT"); advance(d, 10)
-    go(g(55, 106), "c"); d.press("DOWN", 16, 24); d.wait(40)
+    go(HV(26, 23), "c"); ler("22_valvula", "RIGHT"); advance(d, 10)
+    go(HV(18, 34), "c"); d.press("DOWN", 16, 24); d.wait(40)
     step("23_saida_sul_fechada"); advance(d, 12); d.wait(60)
-    step("24_depois_da_saida_sul", "esperado (67, 727, 522): um passo para cima")
-    go(g(42, 95), "c")
+    step("24_depois_da_saida_sul", "esperado desenho (55, 106): um passo para cima")
+    go(HV(5, 23), "c")
     walk(d, ["UP"] * 3, stop_map=GYM); d.wait(200)
     step("25_ginasio_aberto")
     if CAP1:                                              # build de conteudo (etapa 6): Nevard, ponte e Route 2
@@ -136,36 +136,49 @@ def main(rom, state, out):
         step("27_depois_do_nevard")
         goto(d, rom, (7, 46), GYM_CELLS, GYM, out, "gym", avoid=GYM_NPCS, matrix=GYM_MATRIX, max_steps=600)
         d.press("DOWN", 16, 24); d.wait(200)
-        step("28_saida_do_ginasio", "esperado (67, 714, 510): abaixo da porta do GBA")
-        go(g(55, 106), "c"); d.press("DOWN", 16, 24); d.wait(250)
-        step("29_ponte_route2", "esperado (34, 548, 382): comeco da Route 2 do prototipo")
-        d.press("DOWN", 16, 24); d.wait(250)
-        step("30_volta_harvestvale", "esperado (67, 727, 522): saida sul de Harvestvale")
-        d.press("DOWN", 16, 24); d.wait(250)
-        ok2 = {}
-        route2(d, rom, out, ok2)
-        step("31_breezeport", f"{ok2}")
+        step("28_saida_do_ginasio", "esperado desenho (42, 94): abaixo da porta do GBA")
+        # Route 2 original (PalmRoute02): Harvestvale -> Route 2 a pe, sem warp
+        go(HV(18, 34), "c")
+        for _ in range(3):
+            d.press("DOWN", 16, 24)
+        d.wait(80); step("29_route2_entrada", "esperado header 34 (R30) na Route 2 original")
+        go(R2(16, 4), "r2", fight_ok=True); ler("30_placa_norte_r2")
+        nl = visao(R2(23, 13), "liang"); step("31_liang", f"batalhas: {nl}")
+        go(R2(7, 27), "r2", fight_ok=True); ler("32_super_potion")
+        nm2 = visao(R2(19, 27), "meilan"); step("33_mei_lan", f"batalhas: {nm2}")
+        go(R2(14, 37), "r2", fight_ok=True); ler("34_porta_trancada")
+        nq = visao(R2(18, 35), "qin"); step("35_qin", f"batalhas: {nq}")
+        go(R2(17, 41), "r2", fight_ok=True); ler("36_placa_sul_r2")
+        go(R2(19, 46), "r2", fight_ok=True)
+        d.press("DOWN", 16, 24); d.wait(250); step("37_guarita", "esperado a guarita do prototipo (ponte provisoria)")
+        for _ in range(24):
+            w = d.where()
+            if w and w[0] == BREEZEPORT:
+                break
+            d.press("LEFT", 16, 24); d.wait(60)
+        d.wait(200); step("38_breezeport")
     for t, w, e in log:
         print(f"{t:20} {w}  {e}")
     r = {t: w for t, w, _ in log}
-    checks = {"porta da casa": r["1_porta_da_casa"] == (DAWNMERE, 676, 428),
-              "trava": r["4_depois_da_trava"] and r["4_depois_da_trava"][1] == 702,
+    checks = {"porta da casa": r["1_porta_da_casa"] == (DAWNMERE, *D(2, 10)),
+              "trava": r["4_depois_da_trava"] and r["4_depois_da_trava"][1] == D(32, 21)[0],
               "porta do lab": r["6_lab"] and r["6_lab"][0] == LAB,
-              "volta do lab": r["8_saida_do_lab"] == (DAWNMERE, 687, 427),
+              "volta do lab": r["8_saida_do_lab"] == (DAWNMERE, *D(13, 9)),
               "route 1": r["10_route1"] and r["10_route1"][0] == ROUTE1,
               "batalha Kai": nk >= 1, "batalha Min": nm >= 1,
-              "placa sul": r["16_placa_sul"] and r["16_placa_sul"][1:] == g(42, 68),
+              "placa sul": r["16_placa_sul"] and r["16_placa_sul"][1:] == R1(6, 49),
               "harvestvale": r["17_harvestvale_chegada"] and r["17_harvestvale_chegada"][0] == HARVESTVALE,
-              "ginasio fechado": r["20_depois_do_ginasio"] == (HARVESTVALE, 714, 511),
+              "ginasio fechado": r["20_depois_do_ginasio"] == (HARVESTVALE, *HV(5, 23)),
               "recruta": nr >= 1,
-              "saida sul fechada": r["24_depois_da_saida_sul"] == (HARVESTVALE, 727, 522),
+              "saida sul fechada": r["24_depois_da_saida_sul"] == (HARVESTVALE, *HV(18, 34)),
               "ginasio aberto": r["25_ginasio_aberto"] and r["25_ginasio_aberto"][0] == GYM}
     if CAP1:
         checks.update({"Nevard": r["27_depois_do_nevard"] and r["27_depois_do_nevard"][0] == GYM,
-                       "volta do ginasio": r["28_saida_do_ginasio"] == (HARVESTVALE, 714, 510),
-                       "ponte -> Route 2": r["29_ponte_route2"] == (34, 548, 382),
-                       "Route 2 -> Harvestvale": r["30_volta_harvestvale"] == (HARVESTVALE, 727, 522),
-                       "Breezeport": r["31_breezeport"] and r["31_breezeport"][0] == BREEZEPORT})
+                       "volta do ginasio": r["28_saida_do_ginasio"] == (HARVESTVALE, *HV(5, 22)),
+                       "Route 2 a pe": r["29_route2_entrada"] and r["29_route2_entrada"][0] == 34,
+                       "Liang": nl >= 1, "Mei Lan": nm2 >= 1, "Qin": nq >= 1,
+                       "guarita": r["37_guarita"] and r["37_guarita"][0] == 97,
+                       "Breezeport": r["38_breezeport"] and r["38_breezeport"][0] == BREEZEPORT})
     for k, v in checks.items():
         print(f"  {k:14} {'ok' if v else 'FALHOU'}")
     print("RESULTADO CP-DS-03B eventos de Dawnmere:", "ok" if all(checks.values()) else "FALHOU")

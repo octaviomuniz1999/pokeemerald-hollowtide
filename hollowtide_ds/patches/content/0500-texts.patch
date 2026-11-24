@@ -65,19 +65,21 @@
 @@ -1,5 +1,5 @@
 -Go, RATTATA!\rTackle!\r
 -What? This is a big battle!\fLeave me alone!\r
-+Route 2\nSouth: Harvestvale\fFor Breezeport, follow the trail\nnorth toward the sea.
++Route 2\nNorth: Harvestvale\fFor Breezeport, follow the trail\nsouth toward the sea.
 +The door is locked.
  A Pokémon can use its moves as long\nas the moves still have PP.\rWhen a move has no PP remaining, that\nPokémon cannot use that move.\rThen you should take your Pokémon to\nthe Pokémon Center.
  A Pokémon can use its moves as long\nas the moves still have PP.\rWhen a move has no PP remaining, that\nPokémon cannot use that move.\rThen you should take your Pokémon to\nthe Pokémon Center.
  I’m not a Trainer.\rBut if you look one in the eyes,\nprepare to battle.
 --- a/data/text/custom/378.txt
 +++ b/data/text/custom/378.txt
-@@ -1,4 +1,4 @@
+@@ -1,5 +1,5 @@
 -...Hnuurg ...Huh?\rI walked too far today looking\nfor Pokémon.\rMy feet hurt and I’m sleepy...\rIf I were a wild Pokémon, I’d be\neasy to catch...\r...Zzzz...
+-...Hnuurg! ...Huh?\rI feel like reading some words\non a piece of paper or something...\r...Zzz...\n...!!\r
 +Route 2\nBreezeport City just ahead.
- ...Hnuurg! ...Huh?\rI feel like reading some words\non a piece of paper or something...\r...Zzz...\n...!!\r
++The door is locked.
  Huh? What?\nWhat about that Pokémon?\fI don’t have any mail.\rZzz...
  This Mail isn’t for me.
+ Oh, hey! I got an email!\r...\nHuh?\fI don’t know this Pokémon.\fI’ll just let you take care of it.\r
 --- a/data/text/custom/492.txt
 +++ b/data/text/custom/492.txt
 @@ -1,7 +1,7 @@

@@ -9,6 +9,7 @@ Arquivo do setor (texto, revisavel no repositorio):
                 B  construcao (bloqueado; o modelo vem de [objetos])   D  porta (bloqueada com comportamento 0x69, como no HGSS)
                 ~  agua (lagoa)     T  arvore (floresta)    #  bloqueado (beira de penhasco, lados de rampa)
                 S  objeto (o tile fica bloqueado; o modelo vem de [objetos])
+                v  ressalto (pulo so para o sul, 0x803B; beirada baixa desenhada na borda sul)
   [alturas]   32 linhas de 32 caracteres: altura do chao em tiles (0-9); r = rampa (sobe para o vizinho mais alto
               no eixo norte-sul)
   [objetos]   linhas "modelo x z [dy]" (construcoes da lista da area; x e z em tiles, podem ter fracao; altura = a do
@@ -34,8 +35,8 @@ def set_size(g):
 UP = 511 << 10
 MAXQ = 4
 FLOOR = {".": "grass01", "=": "road01", "e": "grass01", "f": "grass01", "g": "grass01", "h": "grass01", "c": "grass01",
-         "T": "grass01", "#": "grass01", "S": "grass01", "~": None, "B": "grass01", "D": "road01"}
-PERM = {"T": 0x8000, "#": 0x8000, "S": 0x8000, "c": 0x8000, "B": 0x8000, "D": 0x8069, "e": 0x0002, "~": 0x0015}
+         "T": "grass01", "#": "grass01", "S": "grass01", "~": None, "B": "grass01", "D": "road01", "v": "grass01"}
+PERM = {"T": 0x8000, "#": 0x8000, "S": 0x8000, "c": 0x8000, "B": 0x8000, "D": 0x8069, "e": 0x0002, "~": 0x0015, "v": 0x803B}
 ORDER = ["grass01", "road01", "road01_r", "egrass", "wall01_g", "sea_un", "sea_on", "pond_line", "sea_line02", "flower01", "flower02", "flower03", "fence_b", "tree01_un", "tree01_re", "tree01"]
 
 
@@ -324,6 +325,14 @@ def build_mesh(g):
                     pts, uvs = pts[::-1], uvs[::-1]
                 m.quad("wall01_g", [(p[0], p[1], p[2], u, v) for p, (u, v) in zip(pts, uvs)], n)
     emit_banks()
+    # ressaltos (v: pulo so para o sul, comportamento 0x3B como nos de Johto): beirada baixa na borda sul do tile
+    for z in range(GH):
+        for x in range(GW):
+            if tiles[z][x] == "v":
+                h = H[z][x]
+                pts = [(x, h, z + 1), (x + 1, h, z + 1), (x + 1, h + 0.3, z + 0.55), (x, h + 0.3, z + 0.55)]
+                uvs = [(256 * (p[0] + p[2]), 248 if p[1] == h else 168) for p in pts]
+                m.quad("wall01_g", [(p[0], p[1], p[2], u, v) for p, (u, v) in zip(pts, uvs)], nrm(0, 0.55, 0.83))
     # lados das rampas (o desnivel entre a rampa e os vizinhos de fora)
     for x, z0, z1, hn, hs in ramps:
         for xs, nb in ((x, x - 1), (x + 1, x + 1)):

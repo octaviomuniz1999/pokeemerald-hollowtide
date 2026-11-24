@@ -3,14 +3,15 @@
   "global": "../../data/mapas/lunia_cap1.txt",
   "matriz": 0,
   "celula": [
-   21,
-   13
+   0,
+   0
   ],
   "base": 0,
   "headers": {
    "Dawnmere": 60,
    "Route1": 33,
-   "Harvestvale": 67
+   "Harvestvale": 67,
+   "Route2": 34
   },
   "padrao": 60,
   "modelos_area": {
@@ -25,6 +26,10 @@
     21
    ]
   },
-  "nota": "CP-DS-03B etapa 6: Dawnmere, Route 1 e Harvestvale convertidos dos mapas do GBA (gba2grade.py) nas celulas (21,13)-(24,16) da matriz 0; substituem o prototipo do caminho A (New Bark, Route 29, Cherrygrove), cujas celulas ficam sem eventos e inalcancaveis. A placa da Route 1 do CP-DS-01 (bloco 0) sai junto com o prototipo."
+  "nota": "CP-DS-03B: Dawnmere, Route 1, Harvestvale e Route 2 convertidos dos mapas do GBA (gba2grade.py), a partir da celula (0,0) da matriz 0 (canto superior esquerdo, vazio no HGSS). O desenho fica deslocado (30,21) para que cada celula tenha um mapa so (um header por celula). A Route 2 usa os headers R30 (linhas 0-31 do GBA) e R31 (linhas 32-47). Os mapas do caminho A ficam nas celulas antigas, sem eventos.",
+  "headers_celula": {
+   "2,5": 35,
+   "3,5": 35
+  }
  }
 ]
