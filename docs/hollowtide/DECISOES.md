@@ -131,5 +131,5 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
   ponte provisória nos dois sentidos, depois da Jay.
 - O teatro usa o modelo do ginásio de Olivine (a porta central coincide com a do GBA). A loja de departamentos fica
   decorativa, como o diretor decidiu.
-- Pendente para o diretor: o farol. O mapa do GBA de Breezeport não tem farol; o modelo do farol de Olivine existe na
-  área 7 e pode entrar onde o diretor indicar.
+- Farol: o diretor autorizou o farol de Olivine. Ele fica na ponta de areia abaixo do faroleiro e da casa dele
+  (GBA 61–68 × 48–54), decorativo.

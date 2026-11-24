@@ -59,7 +59,7 @@ SECONDARY_BUILDINGS = range(0x200, 0x400)   # nos secundarios destes mapas, meta
 # Modelos com textura propria (NARC a/0/4/0); caixa (x0, x1, z0) em tiles a partir do ponto do objeto; porta = modelo da
 # porta e deslocamento (dx, dz, dy) medidos nos mapas do HGSS; dtile = tile D (porta de verdade) a partir do objeto.
 MODELOS = {
-    0x13A: dict(nome="mst_okl (laboratorio de Pallet)", x0=-3.375, x1=3.875, z0=-2.125, porta=(0x137, 0.625, 1.219, 0.16), dtile=(0, 1.5)),
+    0x13A: dict(nome="mst_okl (laboratorio de Pallet)", x0=-3.375, x1=3.875, z0=-2.125, porta=(0x0F, 0.0, 1.219, 0.16), dtile=(0, 1.5)),
     0x139: dict(nome="mst_rdh (casa de Pallet)", x0=-2.875, x1=3.125, z0=-2.375, porta=(0x136, -0.375, 1.219, 0.16), dtile=(-1, 1.5)),
     0x14: dict(nome="wk_hhouse (casa de New Bark)", x0=-2.875, x1=3.125, z0=-2.375, porta=(0x18, -0.375, 1.089, 0.0), dtile=(-1, 1.5)),
     0x16: dict(nome="wk_h01 (casa de New Bark)", x0=-2.25, x1=2.5, z0=-1.625, porta=(0x19, 0.126, 0.739, 0.07), dtile=(-0.5, 0.875)),
@@ -73,9 +73,10 @@ MODELOS = {
     0x66: dict(nome="tn_h01 (casa de Cianwood)", x0=-2.12, x1=2.5, z0=-1.62, porta=(0x67, 0.12, 0.719, 0.165), dtile=(-0.5, 1.0)),
     0x69: dict(nome="tn_photo (estudio de Cianwood)", x0=-2.0, x1=3.0, z0=-1.62, porta=(0x74, 0.12, 0.719, 0.165), dtile=(-0.5, 1.0)),
     0x6F: dict(nome="as_gym (ginasio de Olivine)", x0=-3.6, x1=3.76, z0=-2.5, porta=(0x10, 0.0, 1.312, 0.0), dtile=(0, 1.5)),
+    0x6E: dict(nome="as_toudai (farol de Olivine)", x0=-3.53, x1=4.57, z0=-3.64, porta=None, dtile=(0, 0)),
     0x76: dict(nome="as_restaurant (restaurante de Olivine)", x0=-2.28, x1=2.52, z0=-2.03, porta=(0x78, 0.137, 0.316, 0.0), dtile=(-0.5, 1.0)),
     0xF5: dict(nome="ta_gym (ginasio de Celadon, tipo Planta como o do Nevard)", x0=-3.479, x1=3.865, z0=-2.587,
-               porta=(0x10, 0.0, 1.405, 0.0), dtile=(0, 1.5)),
+               porta=(0x0F, 0.0, 1.405, 0.0), dtile=(0, 1.5)),
 }
 # Por mapa: retangulo da construcao no GBA (x0, y0, x1, y1, inclusivo, coordenadas do mapa do GBA), modelo, tile da porta
 # no DS (= warp do GBA, salvo quando o modelo nao deixa) e se a porta e de verdade (warp) ou decorativa; "ajustes" sao
@@ -116,6 +117,9 @@ CONSTRUCOES = {
         dict(rect=(52, 25, 57, 33), modelo=0x69, porta=(56, 33), warp=False, altura=1,
              nota="loja de departamentos (decorativa: decisao do diretor 24/11, nao existe no jogo); nenhum modelo da area 7 tem o tamanho dela"),
         dict(rect=(60, 39, 66, 43), modelo=0x76, porta=(63, 43), warp=False, altura=1, nota="casa de praia (sem warp no GBA)"),
+        dict(rect=(61, 48, 68, 54), modelo=0x6E, pos=(64.5, 51.0), porta=None, warp=False, altura=1,
+             nota="farol (decisao do diretor 24/11: o farol de Olivine; o GBA nao tem farol): na ponta de areia abaixo do "
+                  "faroleiro (64,46) e da casa dele, decorativo, sem entrada"),
     ],
     "Route1": [
         dict(rect=(4, 17, 10, 20), modelo=0x14, porta=(5, 20), warp=False, altura=1,
@@ -126,7 +130,9 @@ CONSTRUCOES = {
 # lista de construcoes 0 (area 2: os headers de Dawnmere, Route 1 e Harvestvale), pelo land.json: entram o laboratorio
 # de Pallet, o ginasio de Celadon e as portas deles; sai o wk_labo de New Bark (sem uso com Dawnmere original). A VRAM
 # das texturas da lista tem limite: 53 248 bytes funcionaram, ~55 600 nao (o ultimo modelo ficou sem textura).
-MODELOS_NOVOS_NA_AREA = [0x13A, 0x137, 0xF5, 0x10]
+# As portas dos modelos de fora (0x137 de Pallet, 0x10 de ginasio) ficavam sem textura na area 2: os dois usam a
+# porta p_door (0x0F), nativa da area (a do Centro e do Mart), da mesma largura.
+MODELOS_NOVOS_NA_AREA = [0x13A, 0xF5]
 MODELOS_FORA_DA_AREA = [0x15]
 
 
@@ -135,25 +141,33 @@ def construcoes(key, gx, gy, grid, alt):
     objs, rel = [], []
     for c in CONSTRUCOES.get(key, []):
         M = MODELOS[c["modelo"]]
-        px, pz = c["porta"]
-        ox = px + 0.5 - M["dtile"][0]                    # ponto do objeto (coordenadas de borda de tile, mapa do GBA)
-        oz = pz + 0.5 - M["dtile"][1]
+        if c.get("pos"):                                 # ponto do objeto dado direto (construcao sem porta)
+            ox, oz = c["pos"]
+            px, pz = None, None
+        else:
+            px, pz = c["porta"]
+            ox = px + 0.5 - M["dtile"][0]                # ponto do objeto (coordenadas de borda de tile, mapa do GBA)
+            oz = pz + 0.5 - M["dtile"][1]
         x0, y0, x1, y1 = c["rect"]
         cells = {(x, y) for x in range(x0, x1 + 1) for y in range(y0, y1 + 1)}
-        cells |= {(x, y) for x in range(int(ox + M["x0"]) - 1, int(ox + M["x1"]) + 2)
-                  for y in range(int(oz + M["z0"]) - 1, pz + 1)
-                  if ox + M["x0"] + 0.25 <= x + 0.5 <= ox + M["x1"] - 0.25 and y + 0.5 >= oz + M["z0"] - 0.25}
+        if pz is not None:
+            cells |= {(x, y) for x in range(int(ox + M["x0"]) - 1, int(ox + M["x1"]) + 2)
+                      for y in range(int(oz + M["z0"]) - 1, pz + 1)
+                      if ox + M["x0"] + 0.25 <= x + 0.5 <= ox + M["x1"] - 0.25 and y + 0.5 >= oz + M["z0"] - 0.25}
         h = str(c["altura"])
         for x, y in cells:
             grid[gy + y][gx + x] = "B"; alt[gy + y][gx + x] = h
-        grid[gy + pz][gx + px] = "D" if c["warp"] else "B"
+        if pz is not None:
+            grid[gy + pz][gx + px] = "D" if c["warp"] else "B"
         for (x, y), ch, a in c.get("ajustes", []):
             grid[gy + y][gx + x] = ch; alt[gy + y][gx + x] = a
         X, Z = gx + ox - 0.5, gy + oz - 0.5             # [objetos] usa indice de tile (o Land.obj soma 0,5)
-        dm, ddx, ddz, ddy = M["porta"]
         objs.append(f"{c['modelo']} {X:g} {Z:g} 0")
-        objs.append(f"{dm} {X + ddx:g} {Z + ddz:g} {ddy:g}")
-        rel.append({"modelo": M["nome"], "porta_ds": (gx + px, gy + pz), "warp": c["warp"], "nota": c["nota"]})
+        if M["porta"]:
+            dm, ddx, ddz, ddy = M["porta"]
+            objs.append(f"{dm} {X + ddx:g} {Z + ddz:g} {ddy:g}")
+        rel.append({"modelo": M["nome"], "porta_ds": (gx + px, gy + pz) if pz is not None else None, "warp": c["warp"],
+                    "nota": c["nota"]})
     return objs, rel
 
 

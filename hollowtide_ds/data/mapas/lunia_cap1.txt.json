@@ -371,6 +371,12 @@
     ],
     "warp": false,
     "nota": "casa de praia (sem warp no GBA)"
+   },
+   {
+    "modelo": "as_toudai (farol de Olivine)",
+    "porta_ds": null,
+    "warp": false,
+    "nota": "farol (decisao do diretor 24/11: o farol de Olivine; o GBA nao tem farol): na ponta de areia abaixo do faroleiro (64,46) e da casa dele, decorativo, sem entrada"
    }
   ]
  }

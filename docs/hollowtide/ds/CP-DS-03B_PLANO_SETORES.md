@@ -374,4 +374,9 @@ Falta:
   `map_bindings.json`). No QA, um selvagem aparece no mato alto de Breezeport (23/23).
 - **Falta em Breezeport:**
   - modelo para os postes da avenida;
-  - o farol que o diretor pediu: o mapa do GBA não tem farol, e o modelo existe na área 7 (`as_toudai`).
+- **Farol** (decisão do diretor 24/11: o farol de Olivine). Entra na ponta de areia abaixo do faroleiro (GBA 64,46)
+  e da casa dele, em GBA 61–68 × 48–54. É decorativo e sem entrada, porque o GBA não tem interior de farol.
+  `qa_farol.py` parte do estado depois do Nevard e vai até a praia. Capturas: `CP-DS-03B_farol.png`.
+- **Portas:** a porta de Pallet (0x137) e a de ginásio (0x10) ficavam sem textura na área 2. O laboratório e o ginásio
+  de Harvestvale passam a usar a `p_door` (0x0F), nativa da área, e as duas aparecem. A lista de construções 0 fica
+  com 32 modelos.
