@@ -78,7 +78,6 @@ Melhorado (24/11):
 Ainda não está no padrão artístico pedido:
 
 - a casa da horta (só entra com interior funcional);
-- os cantos côncavos da lagoa (degraus do desenho) ainda mostram um pequeno corte. Os convexos já fecham: o perfil
-  da margem gira um quarto de volta em torno da quina.
+- (resolvido) cantos da lagoa: convexos e côncavos com o perfil da margem girado em volta da quina.
 
 Ao sul da célula de prova aparece o mar do bloco vazio; no definitivo ali fica o setor C.

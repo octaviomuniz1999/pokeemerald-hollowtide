@@ -79,5 +79,4 @@ Boas práticas, aprendidas no emulador:
 - teste: build de prova com `land.json`, atalho de QA no PC do quarto (`provas/cp03b/0911`) e um `qa_*.py` com as
   colisões esperadas.
 
-Limites conhecidos: os cantos côncavos da lagoa ainda mostram um pequeno corte; penhascos retos, sem as curvas do
-HGSS; não há casas (precisam de interior e warp).
+Limites conhecidos: penhascos retos, sem as curvas do HGSS; não há casas (precisam de interior e warp).

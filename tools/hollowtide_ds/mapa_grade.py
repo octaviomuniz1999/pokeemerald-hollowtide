@@ -234,6 +234,35 @@ def build_mesh(g):
                                 q = q[::-1]
                             m.quad(mat, q, nrm(tw[0] * 0.25, 0.85, tw[1] * 0.25))
 
+    # cantos concavos da lagoa = quina de terra entrando na agua (agua nos dois lados perpendiculares do tile de terra
+    # e na diagonal): o perfil gira pelo lado da agua em volta da quina, fechando o corte entre as faixas
+    for z in range(32):
+        for x in range(32):
+            if is_w(x, z):
+                continue
+            for sx, sz in ((1, -1), (1, 1), (-1, -1), (-1, 1)):
+                if not (is_w(x + sx, z) and is_w(x, z + sz) and is_w(x + sx, z + sz)):
+                    continue
+                px, pz = x + (1 if sx > 0 else 0), z + (1 if sz > 0 else 0)
+                h = H[z][x]
+                a0, a1 = math.atan2(0, sx), math.atan2(sz, 0)     # direcoes da agua
+                if abs(a1 - a0) > math.pi:
+                    a1 += 2 * math.pi if a1 < a0 else -2 * math.pi
+                steps = [a0 + (a1 - a0) * k / 3 for k in range(4)]
+                for prof, mat in ((POND_LINE, "pond_line"), (SEA_LINE, "sea_line02")):
+                    for (d0, y0, v0), (d1, y1, v1) in zip(prof, prof[1:]):
+                        for t0, t1 in zip(steps, steps[1:]):
+                            P = lambda t, d, y: (px - d * math.cos(t), y - 1 + h, pz - d * math.sin(t))
+                            A, B, C, D = P(t0, d0, y0), P(t1, d0, y0), P(t1, d1, y1), P(t0, d1, y1)
+                            uu0, uu1 = 256 * (t0 - a0) * 0.6, 256 * (t1 - a0) * 0.6
+                            q = [(*A, uu0, v0), (*B, uu1, v0), (*C, uu1, v1), (*D, uu0, v1)]
+                            u = [B[i] - A[i] for i in range(3)]; w = [D[i] - A[i] for i in range(3)]
+                            n = (u[1] * w[2] - u[2] * w[1], u[2] * w[0] - u[0] * w[2], u[0] * w[1] - u[1] * w[0])
+                            tw = (math.cos(t0) + math.cos(t1), math.sin(t0) + math.sin(t1))
+                            if n[0] * tw[0] + n[1] + n[2] * tw[1] < 0:
+                                q = q[::-1]
+                            m.quad(mat, q, nrm(tw[0] * 0.25, 0.85, tw[1] * 0.25))
+
     # faces de penhasco: toda aresta entre tiles nao-rampa com alturas diferentes
     def top(x, z):
         return H[z][x] - (0.5 if tiles[z][x] == "~" else 0)
