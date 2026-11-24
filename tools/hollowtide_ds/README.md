@@ -12,6 +12,10 @@
   e colisão/comportamento de tile; ida e volta byte a byte nos 676 blocos. O `build.sh` aplica o `land.json` de cada
   pasta de patches depois da matriz. Coordenadas: tile (tx, ty) do bloco ↔ objeto em x = tx−16+0,5, z = ty−16+0,5;
   mundo = célula da matriz × 32 + tile.
+- `nsbmd.py`, `bdhc.py`, `g3d_dict.py`: modelo 3D, alturas e dicionários G3D (ida e volta byte a byte nos 676
+  blocos); `nsbmd.compose` monta um modelo com materiais de vários blocos doadores da mesma área.
+- `mapa_grade.py`: **gerador de setor a partir de uma grade de texto** (ver abaixo); `land.json` com
+  `{"land": N, "grade": "arquivo.txt"}`.
 - `text_patch.py HG_ENGINE`: `hollowtide_ds/data/texts.json` → `0500-texts.patch`. **Rodar depois de editar o
   `texts.json`**: a build usa o patch, não o JSON.
 - `msg_dump.py HG_ENGINE ROM SAIDA [--check]`: textos (a/0/2/7) em `.txt` que voltam ao ROM byte a byte (829/829); o
@@ -37,3 +41,43 @@
 arquivos do cartucho); para testar uma edição, gere o estado base com `ds_intro.py` na ROM nova.
 
 Ambiente: `python3 -m venv dsqa && dsqa/bin/pip install py-desmume ndspy`. A ROM nunca entra no repositório.
+
+## Como desenhar um setor (mapa_grade.py)
+
+Um setor é um bloco de 32×32 tiles. O arquivo de texto tem quatro seções:
+
+```
+[doadores]      blocos do HGSS de onde vêm as texturas, todos da mesma área do mapa onde o setor vai ficar
+2 0 5 4         (área 2 = Dawnmere/Route 29: 0 New Bark, 2 e 5 Route 29/Cherrygrove, 4 Cherrygrove)
+[tiles]         32 linhas de 32 letras
+[alturas]       32 linhas de 32 caracteres: altura em tiles (0-9) ou r (rampa entre o vizinho norte e o sul)
+[objetos]       "modelo x z" (construções da lista da área; a casa só com interior funcional)
+```
+
+| Letra | Tile | Colisão |
+|---|---|---|
+| `.` | grama | livre |
+| `=` | caminho de terra (bordas e cantos do HGSS automáticos) | livre |
+| `e` | mato alto | encontros |
+| `f` `g` `h` | flores (três tipos) | livre |
+| `~` | água (margem e cantos automáticos) | água |
+| `T` | árvore: blocos 2×2 (pares viram um quad de 4 tiles) | bloqueado |
+| `c` | cerca (trechos horizontais e verticais) | bloqueado |
+| `#` | bloqueado invisível (beira de penhasco, lados de rampa) | bloqueado |
+| `S` | tile de objeto (o modelo vem de `[objetos]`) | bloqueado |
+
+O gerador cria sozinho:
+- faces de penhasco em todo desnível entre tiles que não são rampa;
+- as superfícies das rampas;
+- as alturas BDHC;
+- a colisão;
+- quads de no máximo 4×4 tiles (polígonos maiores somem no DS).
+
+Boas práticas, aprendidas no emulador:
+- caminhos em trechos retos com curvas em L, de 2 a 3 tiles de largura (degraus de 1 tile geram cantos demais);
+- as divisas têm de bater com o setor vizinho: mesmas colunas abertas e mesma altura nos dois lados;
+- teste: build de prova com `land.json`, atalho de QA no PC do quarto (`provas/cp03b/0911`) e um `qa_*.py` com as
+  colisões esperadas.
+
+Limites conhecidos: os cantos côncavos da lagoa ainda mostram um pequeno corte; penhascos retos, sem as curvas do
+HGSS; não há casas (precisam de interior e warp).
