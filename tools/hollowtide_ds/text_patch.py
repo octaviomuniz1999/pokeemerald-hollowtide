@@ -38,7 +38,8 @@ def main(hg):
                         txt = txt.replace(old, new)
                     msgs[int(i)] = txt
                 elif isinstance(t, dict):
-                    txt = gba_text.text_of(t["gba"])
+                    labs = t["gba"] if isinstance(t["gba"], list) else [t["gba"]]   # varios labels: juntados com \\f
+                    txt = "\\f".join(gba_text.text_of(l) for l in labs)
                     for old, new in t.get("replace", []):          # adaptacoes registradas (ex.: direcoes no mapa do DS)
                         if old not in txt:
                             raise ValueError(f"{arc}/{i}: trecho para trocar nao encontrado: {old!r}")
@@ -58,7 +59,13 @@ def main(hg):
             name = f"data/text/{int(arc[7:]):03d}.txt"
             orig = subprocess.run(["git", "-C", hg, "cat-file", "--filters", f"HEAD:{name}"], capture_output=True, check=True).stdout.decode("utf-8")
             new = orig
-            for old, rep in data[arc]["replace_all"]:
+            if "linhas" in data[arc]:                      # linhas inteiras por indice (0 = primeira)
+                ls = new.split("\n")
+                for k, v in data[arc]["linhas"].items():
+                    end = "\r" if ls[int(k)].endswith("\r") else ""
+                    ls[int(k)] = v + end
+                new = "\n".join(ls)
+            for old, rep in data[arc].get("replace_all", []):
                 if old not in new:
                     raise ValueError(f"{arc}: trecho nao encontrado: {old!r}")
                 new = new.replace(old, rep)

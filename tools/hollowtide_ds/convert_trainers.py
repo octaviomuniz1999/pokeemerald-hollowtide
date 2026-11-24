@@ -94,6 +94,8 @@ class Consts:
 
 
 PLAYER_TEXTS = []
+sys.path.insert(0, os.path.dirname(__file__))
+import gba_text as gba_text_mod
 
 
 def gba_text(maps_txt, label):
@@ -105,10 +107,41 @@ def gba_text(maps_txt, label):
     if "{PLAYER}" in s:                 # buffer 0 = nome do jogador (o script precisa de buffer_players_name 0)
         PLAYER_TEXTS.append(label)
         s = s.replace("{PLAYER}", "{STRVAR_1 3, 0, 0}")
-    if re.search(r"\{(?!STRVAR_1 3, 0, 0\})", s):
-        raise ValueError(f"codigo de texto do GBA sem equivalente ainda: {label}: {s}")
-    s = s.replace("\\n", "\\\\n").replace("\\l", "\\\\r").replace("\\p", "\\\\f").replace('"', '\\"')
-    return s
+    s = gba_text_mod.convert(s)        # mesma conversao dos outros textos: \\l \\p, caixa mista (NEVARD -> Nevard), ’
+    s = rewrap(s)
+    return s.replace("\\", "\\\\").replace('"', '\\"')   # escapes para string C
+
+
+FONT = None                            # (larguras, charmap) da fonte do DS, carregados em main()
+BOX_W = 215                            # maior linha do HGSS nas caixas de fala (audit_dialogos.py)
+
+
+def rewrap(s):
+    """Caixas (entre \\f) com alguma linha mais larga que a caixa do DS: refaz as quebras por largura, com o padrao do
+    DS (1a quebra \\n, as seguintes \\r = rolar). As outras caixas ficam como no GBA."""
+    if FONT is None:
+        return s
+    from audit_dialogos import width
+    w, cm = FONT
+    boxes = s.split("\\f")
+    for i, box in enumerate(boxes):
+        lines = re.split(r"\\[nr]", box)
+        if all(width(l, cm, w) <= BOX_W for l in lines):
+            continue
+        out, cur = [], ""
+        for word in " ".join(lines).split(" "):
+            cand = (cur + " " + word).strip()
+            if width(cand, cm, w) <= BOX_W:
+                cur = cand
+            else:
+                out.append(cur); cur = word
+        out.append(cur)
+        boxes[i] = out[0] + "".join(("\\n" if k == 1 else "\\r") + l for k, l in enumerate(out[1:], 1))
+        REWRAPPED.append(s[:40])
+    return "\\f".join(boxes)
+
+
+REWRAPPED = []
 
 
 def battle_texts(inv_tr, scripts):
@@ -225,6 +258,10 @@ def build_entry(C, idx, gba_slot, tr, texts):
 
 
 def main(hg):
+    global FONT
+    import ndspy.rom
+    from audit_dialogos import load_font, load_charmap
+    FONT = (load_font(ndspy.rom.NintendoDSRom.fromFile(os.path.join(hg, "rom.nds"))), load_charmap(hg))
     C = Consts(hg)
     inv = json.load(open(os.path.join(REPO, "docs/hollowtide/ds/lunia_inventory.json")))
     by_slot = {}

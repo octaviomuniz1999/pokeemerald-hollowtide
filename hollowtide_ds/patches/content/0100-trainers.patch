@@ -54,12 +54,12 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "Hey, are you good at Pokémon?\\rIf you’re really good, I want you to\\nteach me some things.\\r",
-+                .text = "These slopes are older than any map.\\nLet's see if your legs are as tough!\\r",
++                .text = "These slopes are older than any map.\\nLet’s see if your legs are as tough!\\r",
              },
              {
                  .type = TRMSG_LOSE,
 -                .text = "I see. So you can battle that way.\\n",
-+                .text = "Whew! I'm out of breath…\\n",
++                .text = "Whew! I’m out of breath…\\n",
              },
              {
                  .type = TRMSG_AFTER,
@@ -131,7 +131,7 @@
 -            {
 -                .type = TRMSG_PHONE_REMATCH_INTRO,
 -                .text = "Hey, you’re back!\\r",
-+                .text = "COMBEE build their hives near the\\nwaterfalls up the SERRA.\\n",
++                .text = "Combee build their hives near the\\nwaterfalls up the Serra.\\n",
              },
          },
      },
@@ -174,7 +174,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "Are you going to Lake of Rage, too?\\nLet’s play for a little while!\\r",
-+                .text = "One more symbol stands between you\\nand JADE. Do you remember it?\\r",
++                .text = "One more symbol stands between you\\nand Jade. Do you remember it?\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -188,7 +188,7 @@
 -            {
 -                .type = TRMSG_PHONE_REMATCH_INTRO,
 -                .text = "Hey, you’re here!\\nLet’s play!\\r",
-+                .text = "JADE and LAU are waiting.\\nGo on.\\n",
++                .text = "Jade and Lau are waiting.\\nGo on.\\n",
              },
          },
      },
@@ -239,12 +239,12 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "I can do so much with my Pokémon!\\nIt’s super fun!\\r",
-+                .text = "I'll show you the sublime techniques\\nI learned from our LEADER JUAN!\\r",
++                .text = "I’ll show you the sublime techniques\\nI learned from our Leader Juan!\\r",
              },
              {
                  .type = TRMSG_LOSE,
 -                .text = "Losing isn’t fun at all...\\n",
-+                .text = "Please forgive me, JUAN…\\n",
++                .text = "Please forgive me, Juan…\\n",
              },
              {
                  .type = TRMSG_AFTER,
@@ -296,7 +296,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "Do I know the password?\\rMaybe.\\rBut no weakling’s going to get it!\\r",
-+                .text = "Hear that hum? That's the sound\\nof your defeat!\\r",
++                .text = "Hear that hum? That’s the sound\\nof your defeat!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -357,17 +357,17 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "I’m gonna win for sure!\\r",
-+                .text = "I can battle with really rare POKéMON\\nif you'd like.\\r",
++                .text = "I can battle with really rare Pokémon\\nif you’d like.\\r",
              },
              {
                  .type = TRMSG_LOSE,
 -                .text = "Arrgh... That’s a shocking loss...\\n",
-+                .text = "Oh, there now! Did you have a good look\\nat my POKéMON?\\n",
++                .text = "Oh, there now! Did you have a good look\\nat my Pokémon?\\n",
              },
              {
                  .type = TRMSG_AFTER,
 -                .text = "It’s important to have conviction on\\nyour side.\\n",
-+                .text = "I came to this GYM because JUAN\\npraised me for my darling POKéMON.\\fOh, if only I'd met JUAN years ago\\nwhen I was younger…\\n",
++                .text = "I came to this Gym because Juan\\npraised me for my darling Pokémon.\\fOh, if only I’d met Juan years ago\\nwhen I was younger…\\n",
              },
          },
      },
@@ -428,17 +428,17 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "I’ll do anything to get my hands on\\nrare Pokémon!\\r",
-+                .text = "ABELF: Ah, the child from the news.\\nAnd the GYM LEADER, too.\\fI'm not building a power plant.\\nI'm creating the future of the economy.\\fNAMI: You're flooding the city!\\fABELF: Temporary sacrifices.\\nPermanent profit.\\fNAMI: Then we'll end that future of\\nyours right now. {STRVAR_1 3, 0, 0}, go!\\r",
++                .text = "Abelf: Ah, the child from the news.\\nAnd the Gym Leader, too.\\fI’m not building a power plant.\\nI’m creating the future of the economy.\\fNami: You’re flooding the city!\\fAbelf: Temporary sacrifices.\\nPermanent profit.\\fNami: Then we’ll end that future of\\nyours right now. {STRVAR_1 3, 0, 0}, go!\\r",
              },
              {
                  .type = TRMSG_LOSE,
 -                .text = "Oooh, your Pokémon are so appealing.\\n",
-+                .text = "ABELF: …So the future can lose.\\n",
++                .text = "Abelf: …So the future can lose.\\n",
              },
              {
                  .type = TRMSG_AFTER,
 -                .text = "If a Pokémon has different colors than\\nusual, it’s more valuable.\\rWhat? You mean that’s not true?\\n",
-+                .text = "ABELF: Take your victory. Shut it all\\ndown, if you like.\\fWe were never trying to rule the sea.\\nWe were looking for a source of power\\rthat vanished long ago.\\fThe machines only caught its echoes.\\nWhatever is out there, it isn't mine\\rto control anymore.\\n",
++                .text = "Abelf: Take your victory. Shut it all\\ndown, if you like.\\fWe were never trying to rule the sea.\\nWe were looking for a source of power\\rthat vanished long ago.\\fThe machines only caught its echoes.\\nWhatever is out there, it isn’t mine\\rto control anymore.\\n",
              },
          },
      },
@@ -495,7 +495,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "Wow. You have a lot of Badges.\\nNo wonder you’re so tough.\\rI wonder if Ecruteak Gym’s Morty is\\nstill in training?\\fHe really hammered me.\\n",
-+                .text = "TCHUM laughs at all his own jokes.\\nIt's kind of sweet, honestly.\\n",
++                .text = "Tchum laughs at all his own jokes.\\nIt’s kind of sweet, honestly.\\n",
              },
          },
      },
@@ -542,17 +542,17 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "You look strong.\\rGood Trainers seek tough opponents\\ninstinctively.\\r",
-+                .text = "From here you can see the whole lake,\\nand the clouds gathering up north.\\fShow me what you've learned so far.\\r",
++                .text = "From here you can see the whole lake,\\nand the clouds gathering up north.\\fShow me what you’ve learned so far.\\r",
              },
              {
                  .type = TRMSG_LOSE,
 -                .text = "Nope! This won’t do at all.\\n",
-+                .text = "You've walked a long road. It shows.\\n",
++                .text = "You’ve walked a long road. It shows.\\n",
              },
              {
                  .type = TRMSG_AFTER,
 -                .text = "We all get better by experiencing many\\nbattles. I battled a lot to become what\\fI am today--an elite.\\n",
-+                .text = "Those clouds over the summit haven't\\nmoved in weeks. Strange weather…\\n",
++                .text = "Those clouds over the summit haven’t\\nmoved in weeks. Strange weather…\\n",
              },
          },
      },
@@ -596,7 +596,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "I just got my Pokémon back from\\nDay Care. Let’s see how much stronger\\fit got!\\r",
-+                .text = "Shh! The BASCULIN gather right at\\nthe bend. You'll scare them off!\\r",
++                .text = "Shh! The Basculin gather right at\\nthe bend. You’ll scare them off!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -606,7 +606,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "My Pokémon knew moves I didn’t know it\\nhad. That confounded me to no end!\\n",
-+                .text = "When the dam held the water back, the\\nriver nearly forgot this bend.\\fNow it's full again, and so is my net.\\n",
++                .text = "When the dam held the water back, the\\nriver nearly forgot this bend.\\fNow it’s full again, and so is my net.\\n",
              },
          },
      },
@@ -650,7 +650,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "I’ve been overseas, so I know about all\\nsorts of Pokémon!\\r",
-+                .text = "I've been training next to the\\nrails since I was little!\\r",
++                .text = "I’ve been training next to the\\nrails since I was little!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -712,7 +712,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "Wow, look at all those Badges!\\nI’m impressed.\\rBut you’re not satisfied by just\\ncollecting them, right?\\r",
-+                .text = "When I'm with my POKéMON, the time\\nflies by before you can say, “Oops!”\\r",
++                .text = "When I’m with my Pokémon, the time\\nflies by before you can say, “Oops!”\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -773,7 +773,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "Don’t say a thing! Let me guess what\\nyou’re thinking. Mmmmmmm...\\rI got it! You’re on the Pokémon\\nLeague challenge!\\r",
-+                .text = "I collect rare POKéMON and rare\\nviews. This lookout has both!\\r",
++                .text = "I collect rare Pokémon and rare\\nviews. This lookout has both!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -783,7 +783,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "With your skills, you’ll do well at the\\nPokémon League. That’s what my\\fpremonition says.\\n",
-+                .text = "From here you can see both banks of\\nTRADEPOST. Pretty, isn't it?\\n",
++                .text = "From here you can see both banks of\\nTradepost. Pretty, isn’t it?\\n",
              },
          },
      },
@@ -846,7 +846,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "Just like in fishing, it’s all over in\\nPokémon if you give up.\\n",
-+                .text = "You couldn't lay a finger on JUAN,\\nI'm sure. Giggle…\\n",
++                .text = "You couldn’t lay a finger on Juan,\\nI’m sure. Giggle…\\n",
              },
          },
      },
@@ -886,7 +886,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "Tweet! Tweet!\\nTet-weet!\\r",
-+                .text = "The POKéMON GYM of the highest level\\nin the HOENN region…\\fThat's the SOOTOPOLIS GYM.\\r",
++                .text = "The Pokémon Gym of the highest level\\nin the Hoenn region…\\fThat’s the Sootopolis Gym.\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -900,7 +900,7 @@
 -            {
 -                .type = TRMSG_PHONE_REMATCH_INTRO,
 -                .text = "Tweet! I’ve been waiting for this!\\nTeweet!\\r",
-+                .text = "Rather than being satisfied by being\\nin a strong GYM, I imagine training in\\rother places will make you stronger.\\rBut above all, it looks more fun.\\n",
++                .text = "Rather than being satisfied by being\\nin a strong Gym, I imagine training in\\rother places will make you stronger.\\rBut above all, it looks more fun.\\n",
              },
          },
      },
@@ -969,7 +969,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "Karate King, the master of the Fighting\\nDojo, was just destroyed by Sabrina.\\n",
-+                .text = "FLABÉBÉ pick one flower and keep it\\nfor their whole lives. How sweet!\\n",
++                .text = "Flabébé pick one flower and keep it\\nfor their whole lives. How sweet!\\n",
              },
          },
      },
@@ -1024,7 +1024,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "The line won't reopen until someone\\nfixes the power down the coast.\\n",
++                .text = "The line won’t reopen until someone\\nfixes the power down the coast.\\n",
 +            },
 +        },
      },
@@ -1075,17 +1075,17 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "Jenn: You can’t beat Irene and go\\nunpunished!\\r",
-+                .text = "Hear that? The TYMPOLE are singing.\\nLet's make some noise too!\\r",
++                .text = "Hear that? The Tympole are singing.\\nLet’s make some noise too!\\r",
              },
              {
                  .type = TRMSG_LOSE,
 -                .text = "Jenn: So sorry, Irene! Sis!\\n",
-+                .text = "Okay, okay! I'll keep it down.\\n",
++                .text = "Okay, okay! I’ll keep it down.\\n",
              },
              {
                  .type = TRMSG_AFTER,
 -                .text = "Jenn: Don’t get cocky! My sister Kate\\nis tough!\\n",
-+                .text = "Some people say a frog POKéMON with\\nfoam around its neck hides in the\\rtall grass here. I've never seen it.\\n",
++                .text = "Some people say a frog Pokémon with\\nfoam around its neck hides in the\\rtall grass here. I’ve never seen it.\\n",
              },
          },
      },
@@ -1177,7 +1177,7 @@
 -                .type = TRMSG_LOSE,
 -                .text = "Why?!\\n...How could we lose?\\n",
 +                .type = TRMSG_AFTER,
-+                .text = "At night, CLEFAIRY gather inside\\nthis ring of stones to dance.\\fPeople say they come from the moon.\\n",
++                .text = "At night, Clefairy gather inside\\nthis ring of stones to dance.\\fPeople say they come from the moon.\\n",
              },
          },
      },
@@ -1221,7 +1221,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "I’m second.\\nNow, it’s serious!\\r",
-+                .text = "This route is called the PATH OF\\nMIRRORS. Can you guess why?\\r",
++                .text = "This route is called the Path of\\nMirrors. Can you guess why?\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -1276,7 +1276,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "Your Pokémon are remarkably\\nwell trained.\\n",
-+                .text = "The center beam opens the west room.\\nThat's where the last console is.\\n",
++                .text = "The center beam opens the west room.\\nThat’s where the last console is.\\n",
              },
          },
      },
@@ -1329,7 +1329,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "If you groom them, Pokémon get happy.\\n",
-+                .text = "PASSWAY VILLAGE is just ahead.\\nThe hot spring there is the best!\\n",
++                .text = "Passway Village is just ahead.\\nThe hot spring there is the best!\\n",
              },
          },
      },
@@ -1374,17 +1374,17 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "Ssh! My brain is picking up\\nradio signals!\\r",
-+                .text = "You came all the way here, but you won't\\nget to see JUAN.\\fNot if you lose to me, you won't!\\r",
++                .text = "You came all the way here, but you\\nwon’t get to see Juan.\\fNot if you lose to me, you won’t!\\r",
              },
              {
                  .type = TRMSG_LOSE,
 -                .text = "...I hear something!\\n",
-+                .text = "You're strong!\\nI was fooled by your cute looks!\\n",
++                .text = "You’re strong!\\nI was fooled by your cute looks!\\n",
              },
              {
                  .type = TRMSG_AFTER,
 -                .text = "It seems that Johto’s radio shows\\ntalk about Kanto when you are\\fin Kanto...\\n",
-+                .text = "You might be good enough to avoid\\nbeing wiped out in one hit by JUAN.\\n",
++                .text = "You might be good enough to avoid\\nbeing wiped out in one hit by Juan.\\n",
              },
          },
      },
@@ -1441,7 +1441,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "What do you think? My Pokémon are\\nbeautiful, yes?\\r",
-+                .text = "The sight of JUAN conducting\\na battle…\\fThe very beauty of it compelled me to\\nbecome a TRAINER.\\r",
++                .text = "The sight of Juan conducting\\na battle…\\fThe very beauty of it compelled me to\\nbecome a Trainer.\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -1451,7 +1451,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "I must take them to the Pokémon Salon\\nand get them fixed up nice!\\n",
-+                .text = "The grace you bring to battle is\\nfabulous.\\fOh… I'm so fortunate to have found\\nPOKéMON.\\n",
++                .text = "The grace you bring to battle is\\nfabulous.\\fOh… I’m so fortunate to have found\\nPokémon.\\n",
              },
          },
      },
@@ -1505,7 +1505,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "You’re traveling all alone?\\nIsn’t your mom worried?\\n",
-+                .text = "LARVITAR eats soil to grow. One day\\nit'll be a mountain!\\n",
++                .text = "Larvitar eats soil to grow. One day\\nit’ll be a mountain!\\n",
              },
          },
      },
@@ -1551,7 +1551,7 @@
 -                .type = TRMSG_DBL_INTRO_1,
 -                .text = "You think I’m a baby?\\nThat’s not fair!\\r",
 +                .type = TRMSG_INTRO,
-+                .text = "I've been copying your steps since\\nyou came in. Didn't you notice?\\r",
++                .text = "I’ve been copying your steps since\\nyou came in. Didn’t you notice?\\r",
              },
              {
 -                .type = TRMSG_DBL_LOSE_1,
@@ -1563,7 +1563,7 @@
 -                .type = TRMSG_DBL_AFTER_1,
 -                .text = "Baby is a rude name to call someone!",
 +                .type = TRMSG_AFTER,
-+                .text = "A fox with a white mane plays tricks\\non travelers here. One moment it's a\\rstone, the next it's gone.\\n",
++                .text = "A fox with a white mane plays tricks\\non travelers here. One moment it’s a\\rstone, the next it’s gone.\\n",
              },
 +        },
 +    },
@@ -1614,7 +1614,7 @@
 -                .type = TRMSG_DBL_1POKE_2,
 -                .text = "If you don’t bring more Pokémon, then\\nyou can’t play with everyone.\\n",
 +                .type = TRMSG_AFTER,
-+                .text = "From the plateau you can see the\\nsmoke over FERRALIA's factories.\\n",
++                .text = "From the plateau you can see the\\nsmoke over Ferralia’s factories.\\n",
              },
          },
      },
@@ -1670,11 +1670,11 @@
 +            },
 +            {
 +                .type = TRMSG_LOSE,
-+                .text = "You're faster than the current!\\n",
++                .text = "You’re faster than the current!\\n",
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "There's something out at sea, past the\\nharbor. A big metal thing. It hums.\\n",
++                .text = "There’s something out at sea, past the\\nharbor. A big metal thing. It hums.\\n",
 +            },
 +        },
      },
@@ -1724,12 +1724,12 @@
              {
                  .type = TRMSG_LOSE,
 -                .text = "Aaack!\\n",
-+                .text = "Fine… Just don't tell anyone.\\n",
++                .text = "Fine… Just don’t tell anyone.\\n",
              },
              {
                  .type = TRMSG_AFTER,
 -                .text = "We’re on a school trip to the ruins\\noutside Violet.\\n",
-+                .text = "At high tide the sea fills this\\ngrotto. RELICANTH come in from the\\rdeep. Old fish, older than the LEAGUE.\\n",
++                .text = "At high tide the sea fills this\\ngrotto. Relicanth come in from the\\rdeep. Old fish, older than the League.\\n",
              },
          },
      },
@@ -1861,7 +1861,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "There are some odd stone panels in the\\nRuins of Alph.\\r",
-+                .text = "I'm camping by the tracks to watch\\nthe trains. But none have come by!\\r",
++                .text = "I’m camping by the tracks to watch\\nthe trains. But none have come by!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -1871,7 +1871,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "I read that there are four of those\\nstone panels.\\n",
-+                .text = "The trains stopped running when the\\nnetwork in VOLTARA went down.\\n",
++                .text = "The trains stopped running when the\\nnetwork in Voltara went down.\\n",
              },
          },
      },
@@ -1914,7 +1914,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "Ahoy! The sea's been restless all week.\\nLet's see if you can keep your footing!\\r",
++                .text = "Ahoy! The sea’s been restless all week.\\nLet’s see if you can keep your footing!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -1923,7 +1923,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "The waves come in higher every day.\\nAnd there's no storm in sight.\\n",
++                .text = "The waves come in higher every day.\\nAnd there’s no storm in sight.\\n",
              },
          },
      },
@@ -1966,7 +1966,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "This old trail is steep, but it\\nkeeps legs and POKéMON strong!\\r",
++                .text = "This old trail is steep, but it\\nkeeps legs and Pokémon strong!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -2024,7 +2024,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "TCHUM's MAROWAK hits hard with its\\nbone. Don't underestimate it!\\n",
++                .text = "Tchum’s Marowak hits hard with its\\nbone. Don’t underestimate it!\\n",
              },
          },
      },
@@ -2084,7 +2084,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "These stones were set in a circle\\nlong ago. I'm here to find out why!\\r",
++                .text = "These stones were set in a circle\\nlong ago. I’m here to find out why!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -2136,7 +2136,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "The station staff ran off when the\\npower died. I'm still here, though!\\r",
++                .text = "The station staff ran off when the\\npower died. I’m still here, though!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -2145,7 +2145,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "Some guys in green uniforms keep\\ngoing in and out of VOLTARA.\\fFunny. Everyone else got stuck\\noutside because of the outage.\\n",
++                .text = "Some guys in green uniforms keep\\ngoing in and out of Voltara.\\fFunny. Everyone else got stuck\\noutside because of the outage.\\n",
              },
          },
      },
@@ -2199,7 +2199,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "I lost to the ELITE FOUR last year.\\nThis time I'm training on this road!\\r",
++                .text = "I lost to the Elite Four last year.\\nThis time I’m training on this road!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -2208,7 +2208,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "They say the first ELITE member\\nfreezes challengers solid. Stay warm!\\n",
++                .text = "They say the first Elite member\\nfreezes challengers solid. Stay warm!\\n",
              },
          },
      },
@@ -2268,7 +2268,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "HOC: Thanks for bringing the power\\nback, {STRVAR_1 3, 0, 0}. The whole city owes you.\\fBut in here, I'm the GYM LEADER.\\nAnd my circuit never breaks!\\r",
++                .text = "Hoc: Thanks for bringing the power\\nback, {STRVAR_1 3, 0, 0}. The whole city owes you.\\fBut in here, I’m the Gym Leader.\\nAnd my circuit never breaks!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -2277,7 +2277,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "HOC: The road south leads to the sea.\\nJAY says the tides are acting weird.\\fBe careful out there, {STRVAR_1 3, 0, 0}.\\n",
++                .text = "Hoc: The road south leads to the sea.\\nJay says the tides are acting weird.\\fBe careful out there, {STRVAR_1 3, 0, 0}.\\n",
              },
          },
      },
@@ -2317,7 +2317,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "I've been digging tunnels since I\\nwas a kid!\\r",
++                .text = "I’ve been digging tunnels since I\\nwas a kid!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -2376,16 +2376,16 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "Made it to the plateau? Then\\nyou're ready for a real battle!\\r",
++                .text = "Made it to the plateau? Then\\nyou’re ready for a real battle!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
 -                .text = "I couldn’t show off...\\n",
-+                .text = "Okay, you're the real deal.\\n",
++                .text = "Okay, you’re the real deal.\\n",
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "FERRALIA never sleeps. Trains run\\nday and night with heavy cargo.\\n",
++                .text = "Ferralia never sleeps. Trains run\\nday and night with heavy cargo.\\n",
              },
          },
      },
@@ -2511,7 +2511,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "Hey! This station is under TEAM PALM\\n“maintenance”! Beat it!\\r",
++                .text = "Hey! This station is under Team Palm\\n“maintenance”! Beat it!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -2565,7 +2565,7 @@
 -                .type = TRMSG_LOSE,
 -                .text = "Urf!\\nI lose!\\n",
 +                .type = TRMSG_INTRO,
-+                .text = "The amplifiers make the water dance!\\nYou're not touching them!\\r",
++                .text = "The amplifiers make the water dance!\\nYou’re not touching them!\\r",
              },
 -        },
 -    },
@@ -2658,7 +2658,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "Those POKéMON swam into our nets\\non their own! Finders keepers!\\r",
++                .text = "Those Pokémon swam into our nets\\non their own! Finders keepers!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -2716,7 +2716,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "A kid on our platform? Security!\\n…Oh, that's me. Fine!\\r",
++                .text = "A kid on our platform? Security!\\n…Oh, that’s me. Fine!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -2725,7 +2725,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "The turbines feed the whole complex.\\nThe boss says it's the future.\\n",
++                .text = "The turbines feed the whole complex.\\nThe boss says it’s the future.\\n",
              },
          },
      },
@@ -2768,7 +2768,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "Every wave out there pays our bills!\\nYou're not stopping the machines!\\r",
++                .text = "Every wave out there pays our bills!\\nYou’re not stopping the machines!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -2777,7 +2777,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "We mine PALM COIN with the power\\nfrom the sea. Isn't that genius?\\n",
++                .text = "We mine Palm Coin with the power\\nfrom the sea. Isn’t that genius?\\n",
              },
          },
      },
@@ -2820,12 +2820,12 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "ABELF is upstairs. Nobody bothers\\nABELF. Especially not you!\\r",
++                .text = "Abelf is upstairs. Nobody bothers\\nAbelf. Especially not you!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
 -                .text = "Whew! You’re hot stuff.\\n",
-+                .text = "…He's going to be so mad.\\n",
++                .text = "…He’s going to be so mad.\\n",
 +            },
 +            {
 +                .type = TRMSG_AFTER,
@@ -2879,7 +2879,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "Water belongs to whoever owns the\\npipes. And we'll own them all!\\r",
++                .text = "Water belongs to whoever owns the\\npipes. And we’ll own them all!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -2888,7 +2888,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "Mark my words: the tide is turning\\nTEAM PALM's way.\\n",
++                .text = "Mark my words: the tide is turning\\nTeam Palm’s way.\\n",
              },
          },
      },
@@ -2930,7 +2930,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "Hey! This cargo's been reassigned\\nto TEAM PALM. Beat it, kid!\\r",
++                .text = "Hey! This cargo’s been reassigned\\nto Team Palm. Beat it, kid!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -2998,7 +2998,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "VEGA is upstairs with the relays.\\nHe won't be as easy as me!\\n",
++                .text = "Vega is upstairs with the relays.\\nHe won’t be as easy as me!\\n",
              },
          },
      },
@@ -3041,7 +3041,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "These machines mine data and coins\\nall day. And you won't stop them!\\r",
++                .text = "These machines mine data and coins\\nall day. And you won’t stop them!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -3050,7 +3050,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "Fine. Go upstairs. VEGA will deal\\nwith you.\\n",
++                .text = "Fine. Go upstairs. Vega will deal\\nwith you.\\n",
              },
          },
      },
@@ -3098,7 +3098,7 @@
 +            {
                  .type = TRMSG_LOSE,
 -                .text = "Wahahah! I’m the big loser!\\n",
-+                .text = "Ugh, the admin's gonna yell at me.\\n",
++                .text = "Ugh, the admin’s gonna yell at me.\\n",
 +            },
 +            {
 +                .type = TRMSG_AFTER,
@@ -3152,7 +3152,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "One step closer to those valves and\\nyou'll regret it!\\r",
++                .text = "One step closer to those valves and\\nyou’ll regret it!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -3161,7 +3161,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "Admin LELA is at the plant. She'll\\nput you in your place!\\n",
++                .text = "Admin Lela is at the plant. She’ll\\nput you in your place!\\n",
              },
          },
      },
@@ -3218,7 +3218,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "I'm not scared of the big waves!\\nMy POKéMON float just fine!\\r",
++                .text = "I’m not scared of the big waves!\\nMy Pokémon float just fine!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -3227,7 +3227,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "Mom says we can't swim near TIDEMOUTH\\nanymore. The tide is too weird.\\n",
++                .text = "Mom says we can’t swim near Tidemouth\\nanymore. The tide is too weird.\\n",
              },
          },
      },
@@ -3293,7 +3293,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "There's a little beach on the inside\\nof the bend. Kids leave treasures\\rin the sand there.\\n",
++                .text = "There’s a little beach on the inside\\nof the bend. Kids leave treasures\\rin the sand there.\\n",
              },
          },
      },
@@ -3347,7 +3347,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "My POKéMON love the static in the\\nair here! Want a little zap?\\r",
++                .text = "My Pokémon love the static in the\\nair here! Want a little zap?\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -3356,7 +3356,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "HELIOPTILE soak up sunlight to make\\nelectricity. Isn't that clever?\\n",
++                .text = "Helioptile soak up sunlight to make\\nelectricity. Isn’t that clever?\\n",
              },
          },
      },
@@ -3412,16 +3412,16 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "Shh! The lake is so still today\\nyou can see the clouds in it.\\fLet's battle quietly, all right?\\r",
++                .text = "Shh! The lake is so still today\\nyou can see the clouds in it.\\fLet’s battle quietly, all right?\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
 -                .text = "Gah! Life is even tougher!\\n",
-+                .text = "My line's all tangled now…\\n",
++                .text = "My line’s all tangled now…\\n",
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "The water's higher than last week.\\nAnd it hasn't rained a single drop.\\n",
++                .text = "The water’s higher than last week.\\nAnd it hasn’t rained a single drop.\\n",
              },
          },
      },
@@ -3477,7 +3477,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "The dam held for a hundred years.\\nOur GYM will hold too!\\n",
++                .text = "The dam held for a hundred years.\\nOur Gym will hold too!\\n",
              },
          },
      },
@@ -3524,16 +3524,16 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "Only one pool left between you and\\nNAMI. And me!\\r",
++                .text = "Only one pool left between you and\\nNami. And me!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
 -                .text = "Pokémon aren’t tools of war.\\n",
-+                .text = "You're a natural swimmer!\\n",
++                .text = "You’re a natural swimmer!\\n",
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "Go on. NAMI is waiting on the stage.\\n",
++                .text = "Go on. Nami is waiting on the stage.\\n",
              },
          },
      },
@@ -3659,7 +3659,7 @@
 -                .moves = { MOVE_BUG_BITE, MOVE_POISON_STING, MOVE_STRING_SHOT, MOVE_NONE },
 -                .ballSeal = 0,
 +                .type = TRMSG_INTRO,
-+                .text = "The gates are heavy, but my\\nPOKéMON are heavier!\\r",
++                .text = "The gates are heavy, but my\\nPokémon are heavier!\\r",
              },
              {
 -                .ivs = 0,
@@ -3726,7 +3726,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "PILLARTON's dams are huge. You can\\nsee them from the hills up north.\\n",
++                .text = "Pillarton’s dams are huge. You can\\nsee them from the hills up north.\\n",
              },
          },
      },
@@ -3775,7 +3775,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "My amp runs on ELECTRIC POKéMON!\\nLet me play you a shocking solo!\\r",
++                .text = "My amp runs on Electric Pokémon!\\nLet me play you a shocking solo!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -3784,7 +3784,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "The power lines buzz louder near\\nVOLTARA. Like the whole city hums.\\n",
++                .text = "The power lines buzz louder near\\nVoltara. Like the whole city hums.\\n",
              },
          },
      },
@@ -3828,16 +3828,16 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "I work the fields with NEVARD!\\nLet's see your team!\\r",
++                .text = "I work the fields with Nevard!\\nLet’s see your team!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
 -                .text = "I see. So that’s how you battle.\\n",
-+                .text = "Guess I need to tend my POKéMON\\na little better…\\n",
++                .text = "Guess I need to tend my Pokémon\\na little better…\\n",
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "NEVARD knows every tree in this\\nvalley by name.\\n",
++                .text = "Nevard knows every tree in this\\nvalley by name.\\n",
              },
          },
      },
@@ -3893,12 +3893,12 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "Let me ask you.\\nDid you know?\\rAh, I should not be so coy.\\fIt was I who taught WALLACE everything\\nthere is to know about POKéMON.\\fOnce, I had given up my position as\\nthe GYM LEADER.\\fIn my place, I had entrusted WALLACE\\nwith the GYM.\\fHowever, a compelling reason arose for\\nme to make a comeback.\\fAh, but enough chatter.\\nLet us begin our match, shall we?\\fPlease, you shall bear witness to\\nour artistry.\\fA grand illusion of water sculpted\\nby POKéMON and myself!\\r",
++                .text = "Let me ask you.\\nDid you know?\\rAh, I should not be so coy.\\fIt was I who taught Wallace everything\\nthere is to know about Pokémon.\\fOnce, I had given up my position as\\nthe Gym Leader.\\fIn my place, I had entrusted Wallace\\nwith the Gym.\\fHowever, a compelling reason arose for\\nme to make a comeback.\\fAh, but enough chatter.\\nLet us begin our match, shall we?\\fPlease, you shall bear witness to\\nour artistry.\\fA grand illusion of water sculpted\\nby Pokémon and myself!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
 -                .text = "I see. So that’s how you battle.\\n",
-+                .text = "Ahahaha, excellent!\\nVery well, you are the winner.\\fFrom you, I sense the brilliant shine\\nof skill that will overcome all.\\fHowever, compared with me or even\\nWALLACE, you are lacking in elegance.\\fPerhaps I should make you a loan\\nof my outfit?\\f… … … … … …\\n… … … … … …\\fHahaha, I merely jest!\\fRather than my clothes, I shall reward\\nyou with this, the RAIN BADGE!\\n",
++                .text = "Ahahaha, excellent!\\nVery well, you are the winner.\\fFrom you, I sense the brilliant shine\\nof skill that will overcome all.\\fHowever, compared with me or even\\nWallace, you are lacking in elegance.\\fPerhaps I should make you a loan\\nof my outfit?\\f… … … … … …\\n… … … … … …\\fHahaha, I merely jest!\\fRather than my clothes, I shall reward\\nyou with this, the Rain Badge!\\n",
              },
          },
      },
@@ -4054,7 +4054,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "A radio signal that drives Pokémon\\nmad... My experiment is a complete\\fsuccess. My promotion is assured.\\fThis loss means absolutely nothing.\\n",
-+                .text = "VESSEL tunes his gates like a\\nguitar. Every switch is a chord.\\n",
++                .text = "Vessel tunes his gates like a\\nguitar. Every switch is a chord.\\n",
              },
          },
      },
@@ -4095,7 +4095,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "I don’t care that Pokémon are hurt by\\nour experiment.\\r",
-+                .text = "I train against the mountain wind!\\nYou'll make a fine sparring partner!\\r",
++                .text = "I train against the mountain wind!\\nYou’ll make a fine sparring partner!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -4164,7 +4164,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "This was once a ninja hideout.\\rThere are traps to confound intruders\\nlike you.\\r",
-+                .text = "The last trainer before the tunnel!\\nShow me you deserve the LEAGUE!\\r",
++                .text = "The last trainer before the tunnel!\\nShow me you deserve the League!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -4174,7 +4174,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "The PC on my desk is the switch\\nthat deactivates the PERSIAN\\falarm system.\\rDon’t you ever touch it, OK?\\n",
-+                .text = "DOGE is the CHAMPION. Nobody has\\nbeaten him since he won the title.\\n",
++                .text = "Doge is the Champion. Nobody has\\nbeaten him since he won the title.\\n",
              },
          },
      },
@@ -4235,7 +4235,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "Bwahahaha...\\rI can transmit as strong a signal as\\nI need from here.\\n",
-+                .text = "The sea's calm again. Soon the boats\\nwill sail out of TIDEMOUTH like before.\\n",
++                .text = "The sea’s calm again. Soon the boats\\nwill sail out of Tidemouth like before.\\n",
              },
          },
      },
@@ -4349,7 +4349,7 @@
 -                .species = SPECIES_DITTO,
 -                .ballSeal = 0,
 +                .type = TRMSG_INTRO,
-+                .text = "Shh! You'll scare the fish!\\n...Fine, a battle it is!\\r",
++                .text = "Shh! You’ll scare the fish!\\n...Fine, a battle it is!\\r",
 +            },
 +            {
 +                .type = TRMSG_LOSE,
@@ -4406,7 +4406,7 @@
 -                .species = SPECIES_MAGNEMITE,
 -                .ballSeal = 0,
 +                .type = TRMSG_INTRO,
-+                .text = "My guitar runs on pure voltage!\\nLet's rock this circuit!\\r",
++                .text = "My guitar runs on pure voltage!\\nLet’s rock this circuit!\\r",
 +            },
 +            {
 +                .type = TRMSG_LOSE,
@@ -4559,7 +4559,7 @@
 -            {
 -                .type = TRMSG_LAST_POKE_HALF,
 -                .text = "Wh... Wha... Why are you so strong?!\\n",
-+                .text = "VEGA: So you're the kid who keeps\\nswitching off our machines.\\fThese relays feed every sensor TEAM\\nPALM owns. You won't touch them.\\r",
++                .text = "Vega: So you’re the kid who keeps\\nswitching off our machines.\\fThese relays feed every sensor Team\\nPalm owns. You won’t touch them.\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -4569,7 +4569,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "What a waste...\\nnot to use your strength to do\\fbad things!\\rFeh... People like you will never in a\\nmillion years understand our brilliance!\\rIt’s too bad... I’ve really come to\\nrespect your strength.\\n",
-+                .text = "VEGA: You shut down the terminals,\\nbut you didn't turn off the source.\\fThe signal comes from a place nobody\\nshould be looking at.\\n",
++                .text = "Vega: You shut down the terminals,\\nbut you didn’t turn off the source.\\fThe signal comes from a place nobody\\nshould be looking at.\\n",
              },
          },
      },
@@ -4709,7 +4709,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "To get to Pryce, our Gym Leader,\\nyou need to think before you skate.\\r",
-+                .text = "The sea breeze is perfect today.\\nLet's battle before the tide turns!\\r",
++                .text = "The sea breeze is perfect today.\\nLet’s battle before the tide turns!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -4760,7 +4760,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "Check out my parallel turn!\\r",
-+                .text = "Pink, fluffy and fierce!\\nThat's my team!\\r",
++                .text = "Pink, fluffy and fierce!\\nThat’s my team!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -4770,7 +4770,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "I shouldn’t have been bragging about my\\nskiing...\\n",
-+                .text = "COTTONEE love the breeze from the\\nstone garden.\\n",
++                .text = "Cottonee love the breeze from the\\nstone garden.\\n",
              },
          },
      },
@@ -4875,7 +4875,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "This Gym has a slippery floor.\\nIt’s fun, isn’t it?\\rBut hey--we’re not playing games here!\\r",
-+                .text = "NAMI trains us every morning at\\nsunrise. We're tough!\\r",
++                .text = "Nami trains us every morning at\\nsunrise. We’re tough!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -4946,17 +4946,17 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "I know Pryce’s secret.\\r",
-+                .text = "JADE: You remembered the mirrors.\\nLAU knew you would.\\fLAU trusts you. So do I.\\nBut there's something we must\\runderstand before it's too late.\\fFirst, show me how clear your mind\\ncan be!\\r",
++                .text = "Jade: You remembered the mirrors.\\nLau knew you would.\\fLau trusts you. So do I.\\nBut there’s something we must\\runderstand before it’s too late.\\fFirst, show me how clear your mind\\ncan be!\\r",
              },
              {
                  .type = TRMSG_LOSE,
 -                .text = "OK. I’ll tell you Pryce’s secret.\\n",
-+                .text = "JADE: Your heart didn't waver once.\\fPlease, take the SERENITY BADGE.\\n",
++                .text = "Jade: Your heart didn’t waver once.\\fPlease, take the Serenity Badge.\\n",
              },
              {
                  .type = TRMSG_AFTER,
 -                .text = "The reason Pryce is strong...\\rIt’s because every day he sits on top\\nof very cold ice and trains his body\\fand spirit!\\n",
-+                .text = "JADE: That presence LAU senses...\\nit's sad, not angry.\\fWhoever it is, they are still trying\\nto protect something. Keep going.\\n",
++                .text = "Jade: That presence Lau senses...\\nit’s sad, not angry.\\fWhoever it is, they are still trying\\nto protect something. Keep going.\\n",
              },
          },
      },
@@ -5016,7 +5016,7 @@
 -                .type = TRMSG_LAST_POKE,
 -                .text = "We can’t have you getting in the way\\nbefore news of our resurgence\\freaches Giovanni!\\n",
 +                .type = TRMSG_INTRO,
-+                .text = "I train my POKéMON together with\\nJUAN.\\fDon't think I'm a pushover.\\r",
++                .text = "I train my Pokémon together with\\nJuan.\\fDon’t think I’m a pushover.\\r",
              },
              {
 -                .type = TRMSG_LAST_POKE_HALF,
@@ -5028,7 +5028,7 @@
 -                .type = TRMSG_LOSE,
 -                .text = "No!\\nForgive me, Giovanni!\\n",
 +                .type = TRMSG_AFTER,
-+                .text = "I think you have potential.\\nWhy don't you stay and train with us?\\n",
++                .text = "I think you have potential.\\nWhy don’t you stay and train with us?\\n",
              },
          },
      },
@@ -5073,12 +5073,12 @@
 -                .type = TRMSG_LAST_POKE_HALF,
 -                .text = "Are you serious? Did you come here\\nthinking you could mess with our plans?\\n",
 +                .type = TRMSG_INTRO,
-+                .text = "TEAM PALM manages the water now.\\fWant to irrigate without signing\\na contract? Get past me first!\\r",
++                .text = "Team Palm manages the water now.\\fWant to irrigate without signing\\na contract? Get past me first!\\r",
              },
              {
                  .type = TRMSG_LOSE,
 -                .text = "Grr...\\nFor a kid to be this good...\\fI didn’t see it coming.\\n",
-+                .text = "Fine, fine! Take the valve key.\\fThe valve's on the west bank of\\nthe canal, by the coffee fields.\\n",
++                .text = "Fine, fine! Take the valve key.\\fThe valve’s on the west bank of\\nthe canal, by the coffee fields.\\n",
              },
          },
      },
@@ -5130,7 +5130,7 @@
 -                .moves = { MOVE_TACKLE, MOVE_SELF_DESTRUCT, MOVE_SLUDGE, MOVE_SMOKESCREEN },
 -                .ballSeal = 0,
 +                .type = TRMSG_INTRO,
-+                .text = "JAY: Now that the lights are back,\\neven the shadows want to dance!\\fLet's give this crowd a show\\nthey'll remember!\\r",
++                .text = "Jay: Now that the lights are back,\\neven the shadows want to dance!\\fLet’s give this crowd a show\\nthey’ll remember!\\r",
              },
              {
 -                .ivs = 100,
@@ -5140,7 +5140,7 @@
 -                .moves = { MOVE_TACKLE, MOVE_EXPLOSION, MOVE_SLUDGE, MOVE_SMOKESCREEN },
 -                .ballSeal = 0,
 +                .type = TRMSG_LOSE,
-+                .text = "JAY: That deserved an encore!\\n",
++                .text = "Jay: That deserved an encore!\\n",
              },
 +        },
 +    },
@@ -5183,7 +5183,7 @@
 -                .type = TRMSG_LAST_POKE,
 -                .text = "What? Am I losing?\\n",
 +                .type = TRMSG_INTRO,
-+                .text = "First journey? Mine too!\\nLet's see what our POKéMON can do!\\r",
++                .text = "First journey? Mine too!\\nLet’s see what our Pokémon can do!\\r",
              },
              {
 -                .type = TRMSG_LAST_POKE_HALF,
@@ -5195,7 +5195,7 @@
 -                .type = TRMSG_LOSE,
 -                .text = "OK, OK. I’ll tell you where he is.\\n",
 +                .type = TRMSG_AFTER,
-+                .text = "Even small POKéMON can pull off\\nbig surprises!\\n",
++                .text = "Even small Pokémon can pull off\\nbig surprises!\\n",
              },
          },
      },
@@ -5248,7 +5248,7 @@
 -                .type = TRMSG_LAST_POKE_HALF,
 -                .text = "Wow, strong!\\n",
 +                .type = TRMSG_INTRO,
-+                .text = "LINH: Mic check! Let's test the\\nsound with a battle!\\r",
++                .text = "Linh: Mic check! Let’s test the\\nsound with a battle!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -5306,7 +5306,7 @@
 -                .moves = { MOVE_DISCHARGE, MOVE_MIRROR_SHOT, MOVE_THUNDER_WAVE, MOVE_MAGNET_BOMB },
 -                .ballSeal = 0,
 +                .type = TRMSG_INTRO,
-+                .text = "Nature's full of surprises.\\nHow about a battle?\\r",
++                .text = "Nature’s full of surprises.\\nHow about a battle?\\r",
              },
              {
 -                .ivs = 250,
@@ -5321,7 +5321,7 @@
              {
 -                .ivs = 250,
 +                .type = TRMSG_AFTER,
-+                .text = "Looks like you're ready for\\nHARVESTVALE!\\n",
++                .text = "Looks like you’re ready for\\nHarvestvale!\\n",
 +            },
 +        },
 +    },
@@ -5367,7 +5367,7 @@
 -                .type = TRMSG_LAST_POKE_HALF,
 -                .text = "Do you think you’ve won already?\\n",
 +                .type = TRMSG_INTRO,
-+                .text = "Smell that? Salt air!\\nLet's battle before the beach!\\r",
++                .text = "Smell that? Salt air!\\nLet’s battle before the beach!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -5429,7 +5429,7 @@
 -                .moves = { MOVE_DISCHARGE, MOVE_MIRROR_SHOT, MOVE_THUNDER_WAVE, MOVE_MAGNET_BOMB },
 -                .ballSeal = 0,
 +                .type = TRMSG_INTRO,
-+                .text = "My POKéMON love the sea breeze.\\nWant to see why?\\r",
++                .text = "My Pokémon love the sea breeze.\\nWant to see why?\\r",
              },
              {
 -                .ivs = 250,
@@ -5439,7 +5439,7 @@
 -                .moves = { MOVE_DARK_PULSE, MOVE_SLUDGE_BOMB, MOVE_SHADOW_BALL, MOVE_CONFUSE_RAY },
 -                .ballSeal = 0,
 +                .type = TRMSG_LOSE,
-+                .text = "Swept away like a wave...\\nYou're good!\\n",
++                .text = "Swept away like a wave...\\nYou’re good!\\n",
              },
 +        },
 +    },
@@ -5486,7 +5486,7 @@
 -                .type = TRMSG_LAST_POKE_HALF,
 -                .text = "Do you think you’ve won already?\\n",
 +                .type = TRMSG_INTRO,
-+                .text = "Every trainer heading to\\nBREEZEPORT has to get past me!\\r",
++                .text = "Every trainer heading to\\nBreezeport has to get past me!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -5495,7 +5495,7 @@
 -            {
 -                .type = TRMSG_WIN,
 -                .text = "...\\rWhew...\\nWith my partners,\\fI’m going to be the Champion!\\n",
-+                .text = "Okay, okay! BREEZEPORT is\\nall yours. Go on!\\n",
++                .text = "Okay, okay! Breezeport is\\nall yours. Go on!\\n",
              },
          },
      },
@@ -5539,7 +5539,7 @@
 -                .moves = { MOVE_TOXIC, MOVE_BITE, MOVE_CONFUSE_RAY, MOVE_AIR_CUTTER },
 -                .ballSeal = 0,
 +                .type = TRMSG_INTRO,
-+                .text = "YUMI: Meet my partner!\\nIsn't it a star?\\r",
++                .text = "Yumi: Meet my partner!\\nIsn’t it a star?\\r",
              },
              {
 -                .ivs = 250,
@@ -5622,7 +5622,7 @@
 -                .type = TRMSG_WIN,
 -                .text = "...\\rWhew...\\nWith my partners,\\fI’m going to be the Champion!\\n",
 +                .type = TRMSG_AFTER,
-+                .text = "HERDIER never forget a friend's\\nscent. Not even after many years.\\n",
++                .text = "Herdier never forget a friend’s\\nscent. Not even after many years.\\n",
              },
          },
      },
@@ -5684,7 +5684,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "Doesn’t everyone wish to be\\na ruler someday?\\n",
-+                .text = "Go on. HOC is waiting.\\n",
++                .text = "Go on. Hoc is waiting.\\n",
              },
          },
      },
@@ -5765,7 +5765,7 @@
 +        .text = {
 +            {
 +                .type = TRMSG_LOSE,
-+                .text = "Connection lost.\\n…That one's on me.\\n",
++                .text = "Connection lost.\\n…That one’s on me.\\n",
              },
          },
      },
@@ -5818,11 +5818,11 @@
              {
 -                .ivs = 10,
 +                .type = TRMSG_LOSE,
-+                .text = "I didn't foresee that.\\n",
++                .text = "I didn’t foresee that.\\n",
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "Remember the order. MOON first,\\nthen the rest!\\n",
++                .text = "Remember the order. Moon first,\\nthen the rest!\\n",
 +            },
 +        },
 +    },
@@ -5866,12 +5866,12 @@
              {
                  .type = TRMSG_LOSE,
 -                .text = "Ah! Well done!\\n",
-+                .text = "I'm the one out of breath...\\n",
++                .text = "I’m the one out of breath...\\n",
              },
              {
                  .type = TRMSG_AFTER,
 -                .text = "We use only Ghost-type Pokémon.\\rNo Normal-type attack can harm them!\\n",
-+                .text = "JADE, SERENIA's GYM LEADER, walks\\nhere with her ESPEON every dawn.\\n",
++                .text = "Jade, Serenia’s Gym Leader, walks\\nhere with her Espeon every dawn.\\n",
              },
          },
      },
@@ -5918,7 +5918,7 @@
 -                .type = TRMSG_LAST_POKE_HALF,
 -                .text = "...Humph!\\nYou’re doing OK for someone weak.\\n",
 +                .type = TRMSG_INTRO,
-+                .text = "NEVARD: Welcome to HARVESTVALE!\\fI look after the coffee, and the\\nPOKéMON who live on this land.\\fThanks for bringing the water\\nback. Now let's see if your team\\rcan bloom in battle, too!\\r",
++                .text = "Nevard: Welcome to Harvestvale!\\fI look after the coffee, and the\\nPokémon who live on this land.\\fThanks for bringing the water\\nback. Now let’s see if your team\\rcan bloom in battle, too!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -5927,7 +5927,7 @@
 -            {
 -                .type = TRMSG_WIN,
 -                .text = "...Humph!\\nThat was a waste of time.\\n",
-+                .text = "NEVARD: Ha! You won, fair and\\nsquare.\\fLike any good crop, a trainer\\nneeds time to grow.\\rLooks like you've had plenty.\\fTake the HARVEST BADGE!\\n",
++                .text = "Nevard: Ha! You won, fair and\\nsquare.\\fLike any good crop, a trainer\\nneeds time to grow.\\rLooks like you’ve had plenty.\\fTake the Harvest Badge!\\n",
              },
          },
      },
@@ -5969,18 +5969,18 @@
 -                .type = TRMSG_LAST_POKE_HALF,
 -                .text = "...Humph!\\nYou’re doing OK for someone weak.\\n",
 +                .type = TRMSG_INTRO,
-+                .text = "I patrol this road every day.\\nLet's see if you're up to the climb!\\r",
++                .text = "I patrol this road every day.\\nLet’s see if you’re up to the climb!\\r",
              },
              {
                  .type = TRMSG_LOSE,
 -                .text = "...Humph!\\nAre you happy you won?\\n",
-+                .text = "You've got a good pace. Keep it up.\\n",
++                .text = "You’ve got a good pace. Keep it up.\\n",
              },
              {
 -                .type = TRMSG_WIN,
 -                .text = "...Humph!\\nThat was a waste of time.\\n",
 +                .type = TRMSG_AFTER,
-+                .text = "The dog POKéMON here are loyal to\\nwhoever shares the road with them.\\n",
++                .text = "The dog Pokémon here are loyal to\\nwhoever shares the road with them.\\n",
              },
          },
      },
@@ -6015,7 +6015,7 @@
 -                .type = TRMSG_LAST_POKE_HALF,
 -                .text = "...Humph!\\nYou’re doing OK for someone weak.\\n",
 +                .type = TRMSG_INTRO,
-+                .text = "Steel and sound! That's the\\nFERRALIA GYM style!\\r",
++                .text = "Steel and sound! That’s the\\nFerralia Gym style!\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -6026,7 +6026,7 @@
 -                .type = TRMSG_WIN,
 -                .text = "...Humph!\\nThat was a waste of time.\\n",
 +                .type = TRMSG_AFTER,
-+                .text = "ARON never backs down. Neither\\ndoes VESSEL. Be ready.\\n",
++                .text = "Aron never backs down. Neither\\ndoes Vessel. Be ready.\\n",
              },
          },
      },
@@ -6089,7 +6089,7 @@
 -                .type = TRMSG_LOSE,
 -                .text = "I hate to admit it, but you win.\\n",
 +                .type = TRMSG_INTRO,
-+                .text = "You're confusing scarcity with\\nopportunity.\\fOur technology turns water into\\nenergy, energy into coins, and\\rcoins into prosperity!\\r",
++                .text = "You’re confusing scarcity with\\nopportunity.\\fOur technology turns water into\\nenergy, energy into coins, and\\rcoins into prosperity!\\r",
              },
              {
 -                .type = TRMSG_WIN,
@@ -6217,7 +6217,7 @@
              {
                  .type = TRMSG_INTRO,
 -                .text = "You! How dare you enter uninvited!\\r",
-+                .text = "The garden whispers about you...\\nLet's see if it's right.\\r",
++                .text = "The garden whispers about you...\\nLet’s see if it’s right.\\r",
              },
              {
                  .type = TRMSG_LOSE,
@@ -6227,7 +6227,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "The Shrine ahead is home to the Master\\nof our Dragon Tamer clan.\\rYou’re not allowed to just go in!\\n",
-+                .text = "People in SERENIA keep seeing old\\nthings in new places. Illusions...\\n",
++                .text = "People in Serenia keep seeing old\\nthings in new places. Illusions...\\n",
              },
          },
      },
@@ -6330,7 +6330,7 @@
              {
                  .type = TRMSG_AFTER,
 -                .text = "Soon I’m going to get permission from\\nour Master to use dragons.\\rWhen I do, I’m going to become an\\nadmirable Dragon Tamer and gain our\\fMaster’s approval.\\n",
-+                .text = "CYNTHIA: I saw a determination I\\ndidn't know how to recognize.\\fWhen I faced him, he asked his\\nPOKéMON to fall back for a moment.\\fMaybe there's still someone in\\nthere.\\n",
++                .text = "Cynthia: I saw a determination I\\ndidn’t know how to recognize.\\fWhen I faced him, he asked his\\nPokémon to fall back for a moment.\\fMaybe there’s still someone in\\nthere.\\n",
              },
          },
      },
@@ -6399,19 +6399,19 @@
 -                .type = TRMSG_DBL_LOSE_2,
 -                .text = "Meanie.\\n",
 +                .type = TRMSG_INTRO,
-+                .text = "I sensed you coming three bends\\nago. My POKéMON did too!\\r",
++                .text = "I sensed you coming three bends\\nago. My Pokémon did too!\\r",
              },
              {
 -                .type = TRMSG_DBL_AFTER_2,
 -                .text = "We’ll tell on you.\\rMaster will be angry with you.\\n",
 +                .type = TRMSG_LOSE,
-+                .text = "I didn't see that coming...\\n",
++                .text = "I didn’t see that coming...\\n",
              },
              {
 -                .type = TRMSG_DBL_1POKE_2,
 -                .text = "You don’t have enough Pokémon.\\nCome back when you have more.\\n",
 +                .type = TRMSG_AFTER,
-+                .text = "Lately the wind blows the wrong\\nway near SERENIA. Strange, no?\\n",
++                .text = "Lately the wind blows the wrong\\nway near Serenia. Strange, no?\\n",
              },
          },
      },
@@ -6486,7 +6486,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "NAMI: You did it, {STRVAR_1 3, 0, 0}! The tide\\nis back to normal, thanks to you.\\fI love traveling. Every port has its\\nown sea, its own rhythm.\\fBut a GYM LEADER has to stand firm,\\neven when the waves get wild.\\fRide the wave with me. Let's go!\\r",
++                .text = "Nami: You did it, {STRVAR_1 3, 0, 0}! The tide\\nis back to normal, thanks to you.\\fI love traveling. Every port has its\\nown sea, its own rhythm.\\fBut a Gym Leader has to stand firm,\\neven when the waves get wild.\\fRide the wave with me. Let’s go!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -6495,7 +6495,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "NAMI: That mountain on the monitor…\\nI can't stop thinking about it.\\fBut first, the LEAGUE! Show them what\\nTIDEMOUTH taught you!\\n",
++                .text = "Nami: That mountain on the monitor…\\nI can’t stop thinking about it.\\fBut first, the League! Show them what\\nTidemouth taught you!\\n",
              },
          },
      },
@@ -6547,7 +6547,7 @@
 -                .moves = { MOVE_SOLAR_BEAM, MOVE_SLEEP_POWDER, MOVE_ACID, MOVE_MOONLIGHT },
 -                .ballSeal = 0,
 +                .type = TRMSG_INTRO,
-+                .text = "A graceful glide across the ice while\\ncrossing no lines…\\fA TRAINER putting on that performance\\nwould be elegantly beautiful!\\r",
++                .text = "A graceful glide across the ice while\\ncrossing no lines…\\fA Trainer putting on that performance\\nwould be elegantly beautiful!\\r",
 +            },
 +            {
 +                .type = TRMSG_LOSE,
@@ -6555,7 +6555,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "This is really obvious, but how strong\\nyou are as a TRAINER has nothing to do\\rwith how young or old you are.\\n",
++                .text = "This is really obvious, but how strong\\nyou are as a Trainer has nothing to do\\rwith how young or old you are.\\n",
              },
          },
      },
@@ -6617,7 +6617,7 @@
 -                .type = TRMSG_LOSE,
 -                .text = "Huh?\\nI thought my prediction was correct...\\n",
 +                .type = TRMSG_AFTER,
-+                .text = "NEVARD's way stronger than me!\\n",
++                .text = "Nevard’s way stronger than me!\\n",
              },
          },
      },
@@ -6682,7 +6682,7 @@
 -                .moves = { MOVE_TAIL_WHIP, MOVE_SLAM, MOVE_AMNESIA, MOVE_EARTHQUAKE },
 -                .ballSeal = 0,
 +                .type = TRMSG_INTRO,
-+                .text = "Every trainer on this road has eight\\nbadges. Let's see what yours are worth!\\r",
++                .text = "Every trainer on this road has eight\\nbadges. Let’s see what yours are\\rworth!\\r",
 +            },
 +            {
 +                .type = TRMSG_LOSE,
@@ -6690,7 +6690,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "The tunnel through the mountain leads\\nto the LEAGUE island. Good luck.\\n",
++                .text = "The tunnel through the mountain leads\\nto the League island. Good luck.\\n",
              },
          },
      },
@@ -6745,7 +6745,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "TEAM PALM wants us to pay for every\\nroad in PALM COIN. Can you believe it?\\n",
++                .text = "Team Palm wants us to pay for every\\nroad in Palm Coin. Can you believe it?\\n",
              },
          },
      },
@@ -6786,7 +6786,7 @@
 -                .moves = { MOVE_ZAP_CANNON, MOVE_THUNDER_WAVE, MOVE_LOCK_ON, MOVE_SWIFT },
 -                .ballSeal = 0,
 +                .type = TRMSG_INTRO,
-+                .text = "MAWILE looks cute, but those jaws\\nare made of steel!\\r",
++                .text = "Mawile looks cute, but those jaws\\nare made of steel!\\r",
 +            },
 +            {
 +                .type = TRMSG_LOSE,
@@ -6794,7 +6794,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "VESSEL's MAWILE loves to lower\\nyour guard with fake tears.\\n",
++                .text = "Vessel’s Mawile loves to lower\\nyour guard with fake tears.\\n",
              },
          },
      },
@@ -6882,7 +6882,7 @@
              {
                  .type = TRMSG_LOSE,
 -                .text = "Urf!\\nI lose!\\n",
-+                .text = "…That's it.\\fNo tricks, no luck.\\nYou earned it, {STRVAR_1 3, 0, 0}.\\n",
++                .text = "…That’s it.\\fNo tricks, no luck.\\nYou earned it, {STRVAR_1 3, 0, 0}.\\n",
              },
          },
      },
@@ -6924,7 +6924,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "The river's lower than I've ever\\nseen it. The fish are restless!\\r",
++                .text = "The river’s lower than I’ve ever\\nseen it. The fish are restless!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -6952,7 +6952,7 @@
 -                .moves = { MOVE_HYPER_BEAM, MOVE_QUICK_ATTACK, MOVE_HYPER_FANG, MOVE_PURSUIT },
 -                .ballSeal = 0,
 +                .type = TRMSG_AFTER,
-+                .text = "Someone upstream is holding back\\nthe water. It isn't the rain.\\n",
++                .text = "Someone upstream is holding back\\nthe water. It isn’t the rain.\\n",
              },
          },
      },
@@ -7020,12 +7020,12 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "So you found the cargo they stole\\nfrom my yard. I owe you one.\\fBut a debt doesn't buy a BADGE.\\nSteel is honest: it bends only\\funder real pressure.\\nI'm VESSEL, LEADER of FERRALIA GYM.\\fLet's hear how your team rings!\\r",
++                .text = "So you found the cargo they stole\\nfrom my yard. I owe you one.\\fBut a debt doesn’t buy a Badge.\\nSteel is honest: it bends only\\funder real pressure.\\nI’m Vessel, Leader of Ferralia Gym.\\fLet’s hear how your team rings!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
 -                .text = "Awwwww...\\n",
-+                .text = "Ha! That rang true from start\\nto finish.\\fYou've earned this BADGE!\\n",
++                .text = "Ha! That rang true from start\\nto finish.\\fYou’ve earned this Badge!\\n",
              },
          },
      },
@@ -7071,7 +7071,7 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "This island used to be a sandbar.\\nNow it's my training ground!\\r",
++                .text = "This island used to be a sandbar.\\nNow it’s my training ground!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
@@ -7080,7 +7080,7 @@
 +            },
 +            {
 +                .type = TRMSG_AFTER,
-+                .text = "GROUND-types love the dry riverbed\\non the east bank.\\n",
++                .text = "Ground-types love the dry riverbed\\non the east bank.\\n",
              },
          },
      },
@@ -7151,12 +7151,12 @@
          .text = {
              {
 +                .type = TRMSG_INTRO,
-+                .text = "So the hero of the dam made it\\nthrough my floodgates!\\fIt's time for some TERapy.\\fPromise me one thing: whatever\\nhappens, don't lose your footing!\\f...Okay, that one was awful.\\nI know. Let's battle!\\r",
++                .text = "So the hero of the dam made it\\nthrough my floodgates!\\fIt’s time for some TeRapy.\\fPromise me one thing: whatever\\nhappens, don’t lose your footing!\\f...Okay, that one was awful.\\nI know. Let’s battle!\\r",
 +            },
 +            {
                  .type = TRMSG_LOSE,
 -                .text = "Tch! I tried to rush things...\\n",
-+                .text = "You kept your feet on the ground\\nthe whole time. Impressive!\\fTake the PILLAR BADGE!\\n",
++                .text = "You kept your feet on the ground\\nthe whole time. Impressive!\\fTake the Pillar Badge!\\n",
              },
          },
      },

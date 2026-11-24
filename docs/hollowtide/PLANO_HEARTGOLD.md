@@ -6,6 +6,7 @@ Versão de referência do GBA: **23ap** (506/506 testes). O GBA fica congelado c
 ## 0. Decisões do diretor (23/11/2026)
 
 - Mapas: **caminho A** — Lunia montada com a geometria 3D que o HeartGold já tem, eventos e textos por script.
+  **Revisto em 24/11:** o caminho A é só protótipo; os mapas definitivos são originais (`DECISOES.md`, Versão DS).
 - Arte (modelos, sprites originais, Town Map): **depois do fim da produção**; até lá, placeholders oficiais.
 - GBA: **congelado** na 23ap; não se mexe nele por enquanto.
 
@@ -91,7 +92,10 @@ IMPLEMENTAR → INTEGRAR → COMPILAR → TESTAR → DOCUMENTAR; um checkpoint s
 | CP-DS-00 auditoria e baseline | **feito** — `docs/hollowtide/ds/CP-DS-00_AUDITORIA.md` (tag local `cp-ds-00-recebido`): ambiente, pipeline, estado real dos mapas (caminho A = geometria do HGSS intacta até aqui) e divergências com a ordem |
 | CP-DS-01 prova real de integração de mapa | **passou** — `docs/hollowtide/ds/CP-DS-01_PROVA_MAPA.md`: placa nova em Dawnmere (modelo 3D + colisão + leitura), divisa nos dois sentidos, save/CONTINUE; patch `…-cp01.xdelta` |
 | CP-DS-02 diálogos | auditoria automática (`audit_dialogos.py`) e 1ª leva de correções feitas junto com o CP-DS-01; falta o teste dirigido dos eventos principais com capturas |
-| CP-DS-03 em diante | depois do CP-DS-02; o bloqueio técnico é gerar terreno 3D novo (`CP-DS-00_AUDITORIA.md` §5) |
+| CP-DS-02B salvamento | SAVE/CONTINUE entre execuções independentes do emulador (sem savestate) |
+| CP-DS-03A pipeline de mapas | gerar e integrar terreno 3D próprio (modelo, alturas, colisão); mapa de teste validado no DeSmuME |
+| CP-DS-03B primeira localidade original | só depois do 03A. Route 3 e Ferralia não começam antes |
+| Publicação | **push remoto suspenso** (diretor, 24/11): só commits locais |
 
 ## 1. O que o hg-engine resolve e o que não resolve
 

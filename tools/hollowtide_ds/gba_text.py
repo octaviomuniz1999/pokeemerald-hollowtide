@@ -12,7 +12,7 @@ import glob, os, re, sys
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 CASE = [
     ("POKéMON", "Pokémon"), ("POKéDEX", "Pokédex"), ("POKé BALLS", "Poké Balls"), ("POKé BALL", "Poké Ball"),
-    ("PROF. ALEX", "Prof. Alex"), ("MOM", "Mom"), ("ATLAS", "Atlas"), ("DAWNMERE", "Dawnmere"),
+    ("PROF. ALEX", "Prof. Alex"), ("ALEX", "Alex"), ("PROFESSOR", "Professor"), ("MOM", "Mom"), ("ATLAS", "Atlas"), ("DAWNMERE", "Dawnmere"),
     ("HARVESTVALE", "Harvestvale"), ("NEVARD", "Nevard"), ("ROUTE", "Route"), ("GYM", "Gym"), ("LAB", "Lab"),
     ("BAG", "Bag"), ("B BUTTON", "B Button"), ("TEAM PALM", "Team Palm"),
     # cabecalhos de placa, todos em maiusculas no GBA
@@ -23,13 +23,16 @@ CASE = [
     ("WATER KIOSK", "Water Kiosk"), ("DRYING YARD", "Drying Yard"), ("IRRIGATION SCHEDULE", "Irrigation Schedule"),
     ("WATER UNDER CONTRACT", "Water Under Contract"), ("THE NEIGHBORS", "The Neighbors"), ("HOUSE", "House"),
 ]
+KEEP_CAPS = {"TM", "HM", "HP", "PP", "OK", "KO", "LEFT", "RIGHT", "HAHAHA", "I"}   # siglas e enfase (refletores da Jay)
+SMALL = {"OF", "THE", "AND"}
 _cache = None
 
 
 def _all_scripts():
     global _cache
     if _cache is None:
-        files = glob.glob(os.path.join(REPO, "data/maps/*/scripts.inc")) + glob.glob(os.path.join(REPO, "data/scripts/*.inc"))
+        files = (glob.glob(os.path.join(REPO, "data/maps/*/scripts.inc")) + glob.glob(os.path.join(REPO, "data/scripts/*.inc"))
+                 + glob.glob(os.path.join(REPO, "data/text/*.inc")))
         _cache = "\n".join(open(f, encoding="utf-8").read() for f in files)
     return _cache
 
@@ -44,7 +47,7 @@ def raw(label):
 def convert(s):
     s = s.rstrip("$")
     s = s.replace("\\l", "\\r").replace("\\p", "\\f")
-    s = s.replace("{PLAYER}", "{STRVAR_1 3, 0, 0}")
+    s = s.replace("{PLAYER}", "{STRVAR_1 3, 0, 0}").replace("{KUN}", "")   # {KUN} e vazio no ingles
     s = s.replace("'", "’")                       # o charmap do DS so tem o apostrofo tipografico
     for k, v in (("LEFT", "←"), ("UP", "↑"), ("DOWN", "↓"), ("RIGHT", "→")):   # setas: 011B-011E no charmap do DS
         s = s.replace("{%s_ARROW}" % k, v)
@@ -53,6 +56,18 @@ def convert(s):
         s = s.replace(k, v)
     for a, b in CASE:
         s = re.sub(r"(?<![A-Za-z])%s(?![A-Za-z])" % re.escape(a), b, s)
+    # o resto do que o GBA escreve em maiusculas sao nomes (pessoas, lugares, especies, titulos): caixa mista no DS,
+    # menos siglas e enfase de quebra-cabeca; os codigos {...} ficam intactos
+    codes = re.findall(r"\{[^}]*\}", s)
+    s = re.sub(r"\{[^}]*\}", "\x04", s)
+    def word(m):
+        w = m.group(0)
+        if w in KEEP_CAPS:
+            return w
+        return w.lower() if w in SMALL and m.start() > 0 else w[0] + w[1:].lower()
+    s = re.sub(r"(?<![A-Za-zé])[A-ZÉ][A-ZÉ]+(?![a-zé])", word, s)
+    for c in codes:
+        s = s.replace("\x04", c, 1)
     for k, v in esc.items():
         s = s.replace(v, k)
     s = re.sub(r"(?<=[a-z])’S\b", "’s", s)             # "Prof. Alex’S" -> "Prof. Alex’s"

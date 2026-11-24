@@ -71,6 +71,25 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
 ## Versão DS (HeartGold + hg-engine)
 
 - 24/11 (diretor): a Jay entrega o **TM65 Shadow Claw** no lugar do TM Hex do GBA (o hg-engine não tem TM de Hex).
+- 24/11 (diretor, resposta à auditoria CP-DS-00/01): **mapas originais são obrigatórios**. O caminho A (mapas de
+  Johto intactos com eventos de Lunia) vale só como protótipo funcional; a versão final tem geografia, rotas e
+  ambientes próprios de Lunia, coerentes com o Town Map (recursos, objetos, tilesets e técnicas de HGSS podem ser
+  reutilizados; mapas inteiros de Johto como localidades definitivas, não).
+  - Route 1: três setores, direção **norte → sul**.
+  - Route 2: sai do **sudeste de Harvestvale**, perto do ginásio; campo → vegetação costeira → praia → Breezeport,
+    por conexões exteriores naturais (sem guarita/porta).
+  - Breezeport: **6 setores em 3 × 2**, com praia, orla, farol, **montanha (obrigatória)**, residências, comércio,
+    Centro, Mart, ginásio da Jay.
+  - Route 3: sai pelo **oeste/noroeste** de Breezeport; praia → costa → encosta → serra → planalto → Ferralia. A saída
+    norte de Olivine não é definitiva; pendente até haver o mapa.
+  - Ferralia: metrópole (São Paulo; referências Goldenrod, Saffron, Castelia), sem áreas vazias.
+  - Textos: livro do laboratório = "A field guide to Pokémon habitats and care. Professor Alex has marked several
+    pages for new Trainers."; sem loja de departamentos: "You can stock up on supplies at the Poké Mart."
+  - SAVE/CONTINUE só vale validado com o emulador encerrado e reaberto (sem savestate).
+  - Antes de construir Lunia: prova de terreno 3D próprio (caminho, vegetação, desnível real, objeto, colisão,
+    alturas, conexão, entrada e retorno) validada no DeSmuME.
+  - **Push remoto suspenso** até o diretor pedir a publicação; commits locais e ramos isolados; nada de force push.
+  - Ordem: CP-DS-02 → CP-DS-02B (save) → CP-DS-03A (pipeline de mapas) → CP-DS-03B (primeira localidade original).
 
 ## Entrega
 

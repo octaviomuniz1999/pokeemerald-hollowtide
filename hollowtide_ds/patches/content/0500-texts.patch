@@ -17,6 +17,37 @@
 +{COLOR 2}MUDKIP{COLOR 0}, the Water-type Pokémon, is\nin this Poké Ball!
  Once you’ve decided, touch a Poké Ball!
  Touch the Poké Ball button to select.\nTouch elsewhere to change your selection.
+--- a/data/text/custom/219.txt
++++ b/data/text/custom/219.txt
+@@ -4,7 +4,7 @@
+ ...\n...\rHmm. Looks like the sun is descending\nin the sky...\r...So this would be what is called\n“twilight,” wouldn’t it?\r
+ ...\n...\rHmm... Interesting...\n...\rHuh? Oh! Excuse me, sorry!\nI was just reading this book here.\r
+ ...\n...\rYaaaaaaawn...\n...\rHuh? A guest?\nAt this hour?\r
+-Sorry to keep you waiting!\rWelcome to the world of Pokémon!\rMy name is Professor Oak.\rBut everyone calls me the\nPokémon Professor.\rBefore we go any further, I’d like to\ntell you a few things you should\fknow about this world!\r
++Hi! Sorry to keep you waiting!\fWelcome to the world of Pokémon!\fMy name is Alex.\fBut everyone calls me the Pokémon\nProfessor.\r
+ I will first tell you important\nthings about this game.\n\nPlease touch any topic you’d like\nto know more about on the\nlower screen.
+                                   
+ I’ll explain this game’s controls.\n\nYou can control this game by\ntouching the lower screen, also\ncalled the Touch Screen.\n\nPlease touch the panel in the\nbottom right of the Touch Screen.
+@@ -33,15 +33,15 @@
+ However, your adventure is not\nsolely about becoming powerful.
+ On your travels, we hope that\nyou will meet countless people\nand, through them, achieve\npersonal growth.\n\nThis is the most important\nobjective of this adventure.
+ This world is widely inhabited by\ncreatures known as Pokémon.\r
+-We humans live alongside Pokémon\nas friends.\rAt times we play together, and at\nother times we work together.\rSome people use their Pokémon to\nbattle and develop closer bonds\fwith them.\r
+-Now, why don’t you tell me a little bit\nabout yourself?\r
++We humans live alongside Pokémon,\nat times as friendly playmates, and\rat times as cooperative workmates.\fAnd sometimes, we band together\nand battle others like us.\fBut despite our closeness, we don’t\nknow everything about Pokémon.\fIn fact, there are many, many\nsecrets surrounding Pokémon.\fTo unravel Pokémon mysteries,\nI’ve been undertaking research.\rThat’s what I do.\r
++And you are?\r
+ Are you a boy?\nOr are you a girl?\fWon’t you please tell me? {YESNO 0}
+ So, you’re a boy then? {YESNO 0}
+ So, you’re a girl then? {YESNO 0}
+-Please tell me your name.
++All right.\nWhat’s your name?
+ Your name is {STRVAR_1 3, 0, 0}? {YESNO 0}
+ Your name is {STRVAR_1 3, 0, 0}? {YESNO 0}
+-{STRVAR_1 3, 0, 0}!\nAre you ready?\rYour very own tale of grand adventure\nis about to unfold.\rFun experiences, difficult experiences,\nthere’s so much waiting for you!\rDreams! Adventure!\nLet’s go to the world of Pokémon!\rI’ll see you later!\r
++Ah, okay!\fYou’re {STRVAR_1 3, 0, 0}, from right here\nin Dawnmere.\rI should have known!\fAll right, are you ready?\fYour very own adventure is about\nto unfold.\fTake courage, and leap into the\nworld of Pokémon where dreams,\radventure, and friendships await!\fWell, I’ll be expecting you later.\nCome see me in my Pokémon Lab.\r
+ CONTROL INFO
+ ADVENTURE INFO
+ NO INFO NEEDED
 --- a/data/text/custom/373.txt
 +++ b/data/text/custom/373.txt
 @@ -1,6 +1,6 @@
@@ -103,6 +134,15 @@
  Professor Elm: If a wild Pokémon\nappears, let your Pokémon battle it!
  Professor Elm: Where are you going?\nThe Poké Balls are in that device.\r
  {STRVAR_1 3, 0, 0} received {STRVAR_1 0, 1, 0}\nfrom Professor Elm!
+@@ -94,7 +94,7 @@
+ {STRVAR_1 3, 0, 0} opened a book.\rTravel Tip 1: Touch the A Button\nicon on the Touch Screen.\rYou can check things, talk to people,\nand so on.
+ {STRVAR_1 3, 0, 0} opened a book.\rTravel Tip 2: The Trainer Card is the\nidentification card for you as a Trainer\fto travel with your Pokémon.\rRecord your adventure with SAVE!
+ {STRVAR_1 3, 0, 0} opened a book.\rTravel Tip 3: Items in your Bag are\nsorted by their categories.
+-{STRVAR_1 3, 0, 0} opened a book.\rTravel Tip 4: The Pokégear is a\nuseful tool.\rYou can make a phone call,\nlisten to the radio, check the map,\fand so on.
++{STRVAR_1 3, 0, 0} opened a book.\rA field guide to Pokémon habitats\nand care.\rProfessor Alex has marked several\npages for new Trainers.
+ You found a memo...\nIf a Pokémon is trying to evolve,\fyou can stop it.\rPress the B Button during evolution.
+ Professor Elm: Hi, {STRVAR_1 3, 0, 0}!\nHow are you?\rI’m sure you can be the next\nChampion having taken care of\fthat Egg!
+ Professor Elm: Hi, {STRVAR_1 3, 0, 0}!\nHow are you?\rI’m sure you can be the next\nChampion having taken care of\fthat Egg!
 --- a/data/text/custom/545.txt
 +++ b/data/text/custom/545.txt
 @@ -1,7 +1,7 @@
@@ -212,7 +252,7 @@
 +Have you seen Jay perform?\fHer ghosts dance with the stage\nlights. It gives me chills!
 +See that rock out in the bay?\nThe lighthouse stood there.\fLast winter’s storm took it.\nStorms used to be gentler...\fUntil we rebuild, that lamp on\nthe point guides the boats home.
 +My husband works at the pump\nstation by the harbor.\fHe says Team Palm bought half the\npumps on this coast. Strange, no?
-+The DEPARTMENT STORE by the beach\nsells everything. Even Poké Balls!
++You can stock up on supplies\nat the Poké Mart.
 +Every summer the Theater of Echoes\nhosts the festival.\fIt’s the heart of this city.\nTonight, it beats again.
 +Breezeport City\nWhere the sea breeze never sleeps.\fWest: Route 2
 +Theater of Echoes\fClosed until the festival lamps\nare lit. Ask the artist out front.
@@ -244,14 +284,14 @@
 +Jay: Now that the lights are back,\neven the shadows want to dance!\fLet’s give this crowd a show\nthey’ll remember!
 +Jay: The Echo Badge is yours.\fThe west beach trail is open.\nRoute 3 leads up to Ferralia.
 +Jay: Head out along the west\nbeach. Mind the cliffs up the coast!
-+LINH: Mic check! Let’s test the\nsound with a battle!
-+YUMI: Meet my partner!\nIsn’t it a star?
++Linh: Mic check! Let’s test the\nsound with a battle!
++Yumi: Meet my partner!\nIsn’t it a star?
 +The LEFT spotlight flickers on!\nNext: the RIGHT spotlight.
 +The RIGHT spotlight flickers on!\nNow the LEFT one again.
 +The lights went out...\fLight them in order: LEFT, then\nRIGHT, then LEFT again.
 +The stage is lit!\nJay is ready for you.
 +A note is taped to the panel:\n“LEFT, RIGHT, LEFT.”
-+SPOTLIGHTS\nLeft, right, left.
++Spotlights\nLeft, right, left.
 +Que ritmo!
 +Fim da apresentacao!
  Jasmine: I like Eggs, too, but\nI’d like a Pokémon, {STRVAR_1 3, 0, 0}.\fOne that might have a little training...
@@ -276,3 +316,63 @@
  Mom: Oh, good! You and your\nPokémon are looking great.\rOh yes, {STRVAR_1 3, 0, 0}, your Pokémon\nwill faint if it runs out of HP.\rIf your Pokémon loses its HP, come\nhome before it faints.\rIt will be healed to full health by\ntaking a rest.\rWell, honey, make me proud!\nTake care!
  First, let’s restore your Pokémon\nto full health.
  Your Pokémon have been healed\nto perfect health.
+--- a/data/text/730.txt
++++ b/data/text/730.txt
+@@ -53,14 +53,14 @@
+ Guitarist
+ Ace Trainer
+ Ace Trainer
+-Team Rocket
++Team Palm
+ Skier
+ Roughneck
+ Clown
+ Worker
+ School Kid
+ School Kid
+-Team Rocket
++Team Palm
+ Burglar
+ Firebreather
+ Biker
+@@ -131,8 +131,8 @@
+ ₧₦ Trainer
+ ₧₦ Trainer
+ ₧₦ Trainer
+-₧₦ Trainer
+-₧₦ Trainer
++Leader
++Leader
+ ₧₦ Trainer
+ ₧₦ Trainer
+ ₧₦ Trainer
+--- a/data/text/731.txt
++++ b/data/text/731.txt
+@@ -53,14 +53,14 @@
+ a Guitarist
+ an Ace Trainer
+ an Ace Trainer
+-a Team Rocket
++a Team Palm
+ a Skier
+ a Roughneck
+ a Clown
+ a Worker
+ a School Kid
+ a School Kid
+-a Team Rocket
++a Team Palm
+ a Burglar
+ a Firebreather
+ a Biker
+@@ -131,8 +131,8 @@
+ a ₧₦ Trainer
+ a ₧₦ Trainer
+ a ₧₦ Trainer
+-a ₧₦ Trainer
+-a ₧₦ Trainer
++a Leader
++a Leader
+ a ₧₦ Trainer
+ a ₧₦ Trainer
+ a ₧₦ Trainer

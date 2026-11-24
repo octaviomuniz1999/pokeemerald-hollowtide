@@ -22,8 +22,8 @@ def name_screen(d):
             and im.getpixel((20, 300))[:3] == (240, 128, 112))
 
 
-def main(rom, out):
-    d = DS(rom)
+def new_game(d):
+    """Do console ligado ate o jogador aparecer no quarto (jogo novo). Devolve (mapa, x, y) ou None."""
     d.wait(60 * 20)
     for i in range(400):
         if i % 3:
@@ -50,7 +50,12 @@ def main(rom, out):
         if not menu_seen and i % 10 == 9:
             d.touch(200, 70, 6, 40)            # YES da pergunta, se ela voltar
     d.press("B", 4, 30)
-    w = d.where()
+    return d.where()
+
+
+def main(rom, out):
+    d = DS(rom)
+    w = new_game(d)
     if not w:
         d.shot(out + ".falhou.png")
         raise SystemExit("nao chegou ao campo (tela em %s.falhou.png)" % out)

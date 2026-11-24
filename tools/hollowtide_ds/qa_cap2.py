@@ -78,6 +78,7 @@ def main(rom, state, out):
             d.press("UP", 16, 24)
         d.wait(200)
         ok["route3"] = d.where(); d.shot(f"{out}/12_route3.png")
+        d.save(f"{out}/route3.dst")                       # ponto de partida do qa_cp03a.py (bloco de teste)
     for k, v in ok.items():
         print(f"{k:14} {v}")
     good = ok.get("teatro_fechado", (0,))[0] == BREEZEPORT and ok.get("teatro", (0,))[0] == TEATRO and ok.get("route3", (0,))[0] == ROUTE3

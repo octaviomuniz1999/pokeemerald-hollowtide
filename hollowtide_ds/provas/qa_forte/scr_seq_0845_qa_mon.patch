@@ -1,10 +1,14 @@
 --- a/data/scr_seq/scr_seq_0845_T20R0201.s
 +++ b/data/scr_seq/scr_seq_0845_T20R0201.s
-@@ -58,6 +58,7 @@
+@@ -58,6 +58,11 @@
  	setvar VAR_SPECIAL_x8004, ITEM_ATLAS_MEDALLION
  	setvar VAR_SPECIAL_x8005, 1
  	callstd std_give_item_verbose
 +	give_mon SPECIES_TYRANITAR, 50, 0, 0, 0, VAR_SPECIAL_RESULT
++	set_mon_move 0, 0, MOVE_CRUNCH
++	set_mon_move 0, 1, MOVE_STONE_EDGE
++	set_mon_move 0, 2, MOVE_DARK_PULSE
++	set_mon_move 0, 3, MOVE_ROCK_SLIDE
  	npc_msg 1
  	wait_button
  	closemsg
