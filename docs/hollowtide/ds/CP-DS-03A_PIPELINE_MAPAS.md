@@ -46,6 +46,11 @@ Formatos lidos e escritos, com **ida e volta byte a byte em todos os 676 blocos 
 - `nsbmd.py` ganhou `read_materials`/`build_materials` e `model_parts`/`build_model`: o modelo inteiro (comandos de
   render, materiais com os dicionários de texturas e paletas, formas e listas de desenho) é remontado a partir das
   partes, com número livre de materiais e formas. Conferido: **os 676 modelos remontados byte a byte**.
+- `nsbmd.compose`: monta um modelo com materiais de **vários blocos doadores** da mesma área (dados do material,
+  ligação de textura e paleta, flag da forma; prefere o doador que desenha o material). No DeSmuME (24/11), o mapa
+  de teste ganhou uma lagoa com a água do bloco 59 (sea_un/sea_on) junto com os materiais do bloco 57. A água
+  aparece animada, com margem, e a colisão de água (0x15) bloqueia o jogador; o QA do mapa de teste continua
+  passando inteiro.
 
 Limites atuais (o que o CP-DS-03B ainda precisa):
 - Penhascos retos, sem as curvas e bordas arredondadas do HGSS.

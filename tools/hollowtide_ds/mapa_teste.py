@@ -17,7 +17,7 @@ Uso como modulo: gerar(bloco_original) -> bloco novo (land_data.py chama pelo ca
 import math, struct, sys, os
 sys.path.insert(0, os.path.dirname(__file__))
 from land_data import Land
-from nsbmd import Model, decode_dl, encode_dl
+from nsbmd import Model, decode_dl, encode_dl, compose
 import bdhc
 
 T = 1024
@@ -102,6 +102,8 @@ def layout():
                 g[z][x] = "#"                          # floresta (borda)
             if z >= 28 and not (PATH_SEAM[0] <= x < PATH_SEAM[1]):
                 g[z][x] = "#"                          # floresta sul, menos o caminho
+            if POND[0] <= x < POND[2] and POND[1] <= z < POND[3]:
+                g[z][x] = "~"                          # agua (lagoa)
             if z == 12 and not (RAMP[0] <= x < RAMP[1]) and 4 <= x < 28:
                 g[z][x] = "#"                          # penhasco
             if z in (12, 13, 14) and x in (RAMP[0] - 1, RAMP[1]):
@@ -118,6 +120,8 @@ def layout():
 
 
 TREES = [(8, 15), (24, 16), (6, 6), (24, 6), (10, 26)]   # arvores soltas (2x2, canto noroeste)
+POND = (19, 22, 25, 26)                                 # lagoa (x0, z0, x1, z1): agua do bloco 59, colisao de agua
+DONORS = [57, 59]                                       # blocos doadores dos materiais (area 7)
 SIGN = (19, 8)                                          # placa no plato
 
 
@@ -126,13 +130,25 @@ def build_mesh():
     # chao: plato e campina (inteiros, as arvores e o penhasco ficam por cima)
     m.flat("grass01", 0, 0, 32, CLIFF_Z, HIGH)
     m.flat("grass01", 0, CLIFF_Z, RAMP[0] - 1, 32, LOW)
-    m.flat("grass01", RAMP[1] + 1, CLIFF_Z, 32, 32, LOW)
+    px0, pz0, px1, pz1 = POND
+    m.flat("grass01", RAMP[1] + 1, CLIFF_Z, 32, pz0, LOW)
+    m.flat("grass01", RAMP[1] + 1, pz1, 32, 32, LOW)
+    m.flat("grass01", RAMP[1] + 1, pz0, px0, pz1, LOW)
+    m.flat("grass01", px1, pz0, 32, pz1, LOW)
+    # lagoa: agua em duas camadas como no HGSS (sea_un 0,44 e sea_on 0,5) e margem baixa (0,5 -> 1,0)
+    m.flat("sea_un", px0, pz0, px1, pz1, 0.44)
+    m.flat("sea_on", px0, pz0, px1, pz1, 0.5)
+    bn = nrm(0, 0.55, 0.83)
+    for (ax, az, bx, bz) in ((px0, pz0, px1, pz0), (px1, pz1, px0, pz1), (px0, pz1, px0, pz0), (px1, pz0, px1, pz1)):
+        m.quad("wall01_g", [(ax, 0.5, az, 256 * (ax + az), 248), (bx, 0.5, bz, 256 * (bx + bz), 248),
+                            (bx, LOW, bz, 256 * (bx + bz), 8), (ax, LOW, az, 256 * (ax + az), 8)], bn)
     m.flat("grass01", RAMP[0] - 1, RAMP[3], RAMP[1] + 1, 32, LOW)
     m.flat("grass01", RAMP[0] - 1, CLIFF_Z, RAMP[0], RAMP[3], LOW)    # faixas ao lado da rampa (sem elas, buraco preto)
     m.flat("grass01", RAMP[1], CLIFF_Z, RAMP[1] + 1, RAMP[3], LOW)
     # caminho de terra: emenda sul -> norte -> oeste -> pe da rampa; no plato, da rampa ate a placa
-    m.flat("road01", PATH_SEAM[0], 18, PATH_SEAM[1], 32, LOW + 0.01)
-    m.flat("road01", RAMP[0], 18, PATH_SEAM[0], 21, LOW + 0.01)
+    m.flat("road01", PATH_SEAM[0], 26, PATH_SEAM[1], 32, LOW + 0.01)
+    m.flat("road01", PATH_SEAM[1] - 1, 18, PATH_SEAM[1] + 2, 26, LOW + 0.01)   # desvia da lagoa pelo leste
+    m.flat("road01", RAMP[0], 18, PATH_SEAM[1] + 2, 21, LOW + 0.01)
     m.flat("road01", RAMP[0], RAMP[3], RAMP[1], 18, LOW + 0.01)
     m.flat("road01", RAMP[0], 7, RAMP[1], CLIFF_Z, HIGH + 0.01)
     m.flat("road01", RAMP[1], 7, SIGN[0], 10, HIGH + 0.01)
@@ -189,23 +205,21 @@ def build_bdhc():
     ])
 
 
-def gerar(block):
+def gerar(block, blocos=None):
+    """Bloco novo. blocos: todos os blocos da ROM (para os materiais dos doadores; sem eles, so o proprio bloco)."""
     ld = Land(block)
-    mdl = Model(ld.rest[:ld.sizes[2]])
     mesh = build_mesh()
-    sm = mdl.shape_material()
-    used = set(mesh.quads)
-    missing = used - set(sm.values())
-    assert not missing, f"materiais que o bloco doador nao tem: {missing}"
-    dls = [mesh.dl(sm[i]) for i in range(len(mdl.dls))]
-    nv = sum(4 * len(q) for q in mesh.quads.values()); nq = sum(len(q) for q in mesh.quads.values())
-    model = mdl.pack(dls, counts=(nv, nq, 0, nq))
+    donors = [Land(blocos[d]).rest[:Land(blocos[d]).sizes[2]] for d in DONORS] if blocos else [ld.rest[:ld.sizes[2]]]
+    order = ["grass01", "road01", "egrass", "wall01_g", "sea_un", "sea_on", "flower01", "tree01_un", "tree01_re", "tree01"]
+    layers = [(name, mesh.dl(name)) for name in order if name in mesh.quads]
+    assert set(mesh.quads) <= set(order), set(mesh.quads) - set(order)
+    model = compose(ld.rest[:ld.sizes[2]], donors, layers)
     heights = build_bdhc().pack()
     g = layout()
     perms = []
     for z in range(32):
         for x in range(32):
-            perms.append({"#": 0x8000, "e": 0x0002, ".": 0x0000}[g[z][x]])
+            perms.append({"#": 0x8000, "e": 0x0002, ".": 0x0000, "~": 0x0015}[g[z][x]])
     ld.perms = perms
     ld.objs = [Land.obj(34, SIGN[0], SIGN[1], HIGH)]
     ld.sizes[2], ld.sizes[3] = len(model), len(heights)

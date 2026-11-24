@@ -271,3 +271,41 @@ def build_model(p, counts=None):
     struct.pack_into("<I", out, p["mdl0"] + 4, len(out) - p["mdl0"])
     struct.pack_into("<I", out, 8, len(out))
     return bytes(out)
+
+
+def compose(base, donors, layers):
+    """Modelo novo com materiais de varios blocos doadores da mesma area.
+    base: bytes do modelo que da cabecalho, info e no; donors: lista de bytes de modelos (procurados em ordem);
+    layers: [(nome_do_material, lista_de_desenho)] na ordem de desenho. Cada material leva os dados, a ligacao de
+    textura e paleta e o flag da forma do doador onde foi achado."""
+    p = model_parts(base)
+    dparts = [model_parts(d) for d in donors]
+    mats, texmap, palmap, shapes = [], {}, {}, []
+    for k, (name, dl) in enumerate(layers):
+        # prefere o doador que DESENHA o material (alguns blocos listam materiais da area sem usa-los)
+        found = None
+        for dp in dparts:
+            names = [n for n, _ in dp["materials"][0]]
+            if name in names:
+                i = names.index(name)
+                drawn = any(m_ == i for m_, _ in dp["sbc"][1])
+                if drawn or found is None:
+                    found = (dp, names, i, drawn)
+                if drawn:
+                    break
+        if found is None:
+            raise KeyError(f"material {name} em nenhum doador")
+        dp, names, i, drawn = found
+        mats.append((name, dp["materials"][0][i][1]))
+        for src, dst in ((dp["materials"][1], texmap), (dp["materials"][2], palmap)):
+            for tn, idx, flag in src:
+                if i in idx:
+                    dst.setdefault(tn, ([], flag))[0].append(k)
+        flag = dp["shapes"][next(s for m_, s in dp["sbc"][1] if m_ == i)][1] if drawn else 5   # 5 = normal + textura
+        shapes.append((f"polygon{k}", flag, dl))
+    p["materials"] = (mats, [(n, v[0], v[1]) for n, v in texmap.items()], [(n, v[0], v[1]) for n, v in palmap.items()])
+    p["mat_orders"] = (None, None, None)
+    p["shapes"] = shapes
+    p["shape_order"] = None
+    p["sbc"] = (SBC_PRE, [(k, k) for k in range(len(layers))], SBC_SUF)
+    return build_model(p)

@@ -67,7 +67,7 @@ def apply(rom_path, json_paths):
             if "gerador" in e:                         # bloco inteiro gerado (modelo, alturas, colisao): ver mapa_teste.py
                 import importlib
                 gen = importlib.import_module(e["gerador"])
-                narc.files[e["land"]] = gen.gerar(bytes(narc.files[e["land"]]))
+                narc.files[e["land"]] = gen.gerar(bytes(narc.files[e["land"]]), [bytes(f) for f in narc.files])
                 count += 1
                 continue
             ld = Land(narc.files[e["land"]])

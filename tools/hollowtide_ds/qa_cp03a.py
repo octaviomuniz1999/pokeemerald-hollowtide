@@ -5,7 +5,7 @@ atalho de QA da build de prova (o PC do quarto leva ao corredor norte de Breezep
 
 Passos (captura e mapa/posicao/altura em cada um; altura = y da posicao 3D do objeto (+0x74), conferida ao subir a rampa):
 1. chega pela emenda sul (caminho, colunas 21-25);  2. caminho ao norte e a oeste ate o pe da rampa;
-3. sobe a rampa ate o plato (altura muda);  4. colisao: placa (construcao) e penhasco visto de cima;
+3. sobe a rampa ate o plato (altura muda);  4. colisao: placa (construcao), agua da lagoa (materiais de outro bloco doador) e penhasco visto de cima;
 5. desce, colisao do penhasco visto de baixo e de uma arvore;  6. volta a Breezeport pela emenda e entra de novo.
 Uso: qa_cp03a.py ROM ESTADO_ROUTE3 PASTA
 """
@@ -63,6 +63,11 @@ def main(rom, state, out):
     for _ in range(3):
         d.press("RIGHT", 16, 24)
     ok["placa"] = step("4a_contra_a_placa")
+    go((15, 10), "c"); go((15, 16), "c"); go((22, 21), "c")
+    for _ in range(3):
+        d.press("DOWN", 16, 24)
+    ok["lagoa"] = step("4c_contra_a_lagoa")
+    go((15, 16), "c"); go((15, 10), "c")
     go((10, 11), "c")
     for _ in range(3):
         d.press("DOWN", 16, 24)
@@ -88,7 +93,7 @@ def main(rom, state, out):
     good = (g("entrada") and g("entrada")[0] == TEST and ok["pe_rampa"][1] == 1.0 and ok["plato"][1] == 2.0
             and g("placa")[1:] == W(18, 8) and g("penhasco_de_cima")[1:] == W(10, 11)
             and g("penhasco_de_baixo")[1:] == W(10, 13) and g("arvore")[1:] == W(4, 13)
-            and g("voltou_breezeport")[0] == BREEZEPORT and g("entrou_de_novo")[0] == TEST)
+            and g("lagoa")[1:] == W(22, 21) and g("voltou_breezeport")[0] == BREEZEPORT and g("entrou_de_novo")[0] == TEST)
     print("RESULTADO CP-DS-03A:", "ok" if good else "FALHOU")
 
 
