@@ -456,6 +456,15 @@
      }
    ],
    "object_events": [
+@@ -25,7 +41,7 @@
+       "graphics_id": "SPRITE_GSLEADER6",
+       "movement_type": 15,
+       "trainer_type": 0,
+-      "hidden_flag": "FLAG_HIDE_JASMINE_IN_GYM",
++      "hidden_flag": "FLAG_NOTHING",
+       "script": "_EV_scr_seq_T26GYM0101_000 + 1",
+       "initial_dir": 1,
+       "param0": 0,
 @@ -39,53 +55,36 @@
      },
      {
