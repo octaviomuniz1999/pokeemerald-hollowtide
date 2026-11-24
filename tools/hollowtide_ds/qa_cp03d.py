@@ -137,6 +137,7 @@ def main(rom, state, out):
         goto(d, rom, (7, 46), GYM_CELLS, GYM, out, "gym", avoid=GYM_NPCS, matrix=GYM_MATRIX, max_steps=600)
         d.press("DOWN", 16, 24); d.wait(200)
         step("28_saida_do_ginasio", "esperado desenho (42, 94): abaixo da porta do GBA")
+        d.wait(30); d.save(f"{out}/depois_do_nevard.dst")      # ponto de partida para testar so a Route 2
         # Route 2 original (PalmRoute02): Harvestvale -> Route 2 a pe, sem warp
         go(HV(18, 34), "c")
         for _ in range(3):

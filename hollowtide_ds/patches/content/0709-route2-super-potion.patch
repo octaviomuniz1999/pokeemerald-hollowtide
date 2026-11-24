@@ -1,0 +1,11 @@
+--- a/data/scr_seq/scr_seq_0141.s
++++ b/data/scr_seq/scr_seq_0141.s
+@@ -296,7 +296,7 @@
+ 
+ 	.byte 0x02, 0x00
+ scr_seq_0141_002:
+-	setvar VAR_SPECIAL_x8008, 17
++	setvar VAR_SPECIAL_x8008, 26   // Hollowtide: Super Potion da Route 2 (GBA Palm080, PalmRoute02 7,26); era Potion (17)
+ 	setvar VAR_SPECIAL_x8009, 1
+ 	goto scr_seq_0141_255
+ 
