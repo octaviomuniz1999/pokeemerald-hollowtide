@@ -40,6 +40,10 @@ Formatos lidos e escritos, com **ida e volta byte a byte em todos os 676 blocos 
 - Integração: `land.json` com `{"land": N, "gerador": "modulo"}`. O `build.sh` grava o bloco na ROM pronta e cada
   build regenera tudo. Nada da Nintendo vai para o git: o bloco é gerado na hora a partir da ROM do diretor.
 
+- `g3d_dict.py` (24/11, para o CP-DS-03B): dicionários de nomes G3D (árvore PATRICIA). Reproduz byte a byte os 3380
+  dicionários dos 676 modelos. É a base para montar modelos com materiais de mais de um bloco doador (um setor de
+  Lunia precisa de lagoa, mato alto, cerca e flores, que não estão todos num mesmo bloco do HGSS).
+
 Limites atuais (o que o CP-DS-03B ainda precisa):
 - Penhascos retos, sem as curvas e bordas arredondadas do HGSS.
 - Árvores em fileiras de quads inclinados, como no HGSS, mas sem as variações de borda.
