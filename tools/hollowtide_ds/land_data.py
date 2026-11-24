@@ -17,7 +17,8 @@ pronta pelo build.sh, como a matriz:
     "colisao": [{"tiles": [[20, 14]], "bloqueado": true}]}]         (liga/desliga o bit 0x8000; "comportamento": N opcional)
   ou {"land": 57, "gerador": "mapa_teste"}: o modulo (tools/hollowtide_ds/) gera o bloco inteiro — modelo 3D, alturas e
   colisao — a partir do bloco original (de onde so aproveita os materiais);
-  ou {"land": 57, "grade": "arquivo.txt"}: setor desenhado em grade de texto (mapa_grade.py; caminho relativo ao land.json).
+  ou {"land": 57, "grade": "arquivo.txt"}: setor desenhado em grade de texto (mapa_grade.py; caminho relativo ao land.json);
+  ou {"global": "arquivo.txt", "matriz": 0, "celula": [x, y], "headers": {...}}: desenho de varios blocos (mapa_global.py).
 Uso: land_data.py ROM.nds land.json [land.json ...]   (grava na propria ROM)
      land_data.py ROM.nds --show LAND                 (objetos e colisao de um bloco)
 """
@@ -65,6 +66,10 @@ def apply(rom_path, json_paths):
     count = 0
     for jp in json_paths:
         for e in json.load(open(jp)):
+            if "global" in e:                          # desenho de varios blocos: blocos novos + matriz (mapa_global.py)
+                import os, mapa_global
+                count += mapa_global.apply_global(rom, narc, e, os.path.dirname(os.path.abspath(jp)))
+                continue
             if "grade" in e:                           # setor desenhado em grade de texto (mapa_grade.py)
                 import os, mapa_grade
                 path = os.path.join(os.path.dirname(os.path.abspath(jp)), e["grade"])

@@ -113,3 +113,26 @@ troca.
 4. Route 1;
 5. Harvestvale;
 6. troca do protótipo pela versão original na build de conteúdo, com QA completo do Cap. 1.
+
+### Andamento (24/11, à tarde)
+
+Etapa 1 feita e testada no DeSmuME (`provas/cp03c`, `qa_cp03c.py`):
+- `gba2grade.py` converte Littleroot → Dawnmere e Route101 → Route 1, com a tabela de metatiles e esta regra de
+  fidelidade: sem colisão no GBA, o tile é andável no DS.
+- `mapa_global.py` gera a malha do desenho inteiro, reparte por bloco e acrescenta 16 blocos novos (676–691) nas
+  células (21,13)–(24,16) da matriz 0. Cada célula recebe o header do mapa que ocupa a maior parte dela
+  (Dawnmere 60, Route 1 33, Harvestvale 67).
+- Orçamento de vértices: faixas de margem e de borda de caminho juntadas em trechos de até 4 tiles, perfis
+  reduzidos e cantos em 1 segmento. O bloco mais pesado tem ~2,3 mil vértices, como os do HGSS.
+- No jogo, com o atalho de QA do PC, a Dawnmere convertida aparece com ruas, cercas, canteiros, o pátio elevado do
+  laboratório e o lago. A saída leste (x 707) leva à Route 1 (header 33), e a Route 1 aparece com florestas,
+  caminhos floridos, lago, canal e ponte. A ponte é atravessável; por enquanto é uma faixa de terra, sem modelo de
+  ponte.
+- A fresta preta nas divisas de bloco foi fechada nas divisas verticais: o chão avança 1/16 de tile.
+
+Falta:
+- casas e laboratório (modelos com a porta no warp do GBA);
+- uma linha escura que sobra numa divisa horizontal;
+- eventos nas posições do GBA;
+- Harvestvale (metatiles do tileset Slateport ainda sem tabela);
+- troca do protótipo.

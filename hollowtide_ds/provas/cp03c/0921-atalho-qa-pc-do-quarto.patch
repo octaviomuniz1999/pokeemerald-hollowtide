@@ -1,0 +1,14 @@
+--- a/data/scr_seq/scr_seq_0846_T20R0202.s
++++ b/data/scr_seq/scr_seq_0846_T20R0202.s
+@@ -34,6 +34,11 @@
+ scr_seq_T20R0202_000:
+ 	scrcmd_609
+ 	lockall
++	warp MAP_T20, 0, 692, 437, DIR_SOUTH   // prova CP-DS-03B: atalho de QA para a Dawnmere convertida do GBA
++	releaseall
++	end
++
++_HT_PcOriginal:
+ 	play_se SEQ_SE_DP_PC_ON
+ 	buffer_players_name 0
+ 	npc_msg 0

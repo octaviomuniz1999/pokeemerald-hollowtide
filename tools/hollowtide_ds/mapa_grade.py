@@ -6,6 +6,7 @@ Arquivo do setor (texto, revisavel no repositorio):
   [tiles]     32 linhas de 32 letras:
                 .  grama            =  caminho de terra     e  mato alto (encontros)    f g h  flores (3 tipos)
                 c  cerca (bloqueada; trechos horizontais e verticais como os de New Bark)
+                B  construcao (bloqueado; o modelo vem de [objetos])   D  porta (bloqueada com comportamento 0x69, como no HGSS)
                 ~  agua (lagoa)     T  arvore (floresta)    #  bloqueado (beira de penhasco, lados de rampa)
                 S  objeto (o tile fica bloqueado; o modelo vem de [objetos])
   [alturas]   32 linhas de 32 caracteres: altura do chao em tiles (0-9); r = rampa (sobe para o vizinho mais alto
@@ -23,11 +24,17 @@ from nsbmd import encode_dl, compose
 import bdhc
 
 T = 1024
+GW = GH = 32                           # tamanho da grade carregada (um bloco = 32x32; desenho global = varios blocos)
+
+
+def set_size(g):
+    global GW, GH
+    GH, GW = len(g["tiles"]), len(g["tiles"][0])
 UP = 511 << 10
 MAXQ = 4
 FLOOR = {".": "grass01", "=": "road01", "e": "grass01", "f": "grass01", "g": "grass01", "h": "grass01", "c": "grass01",
-         "T": "grass01", "#": "grass01", "S": "grass01", "~": None}
-PERM = {"T": 0x8000, "#": 0x8000, "S": 0x8000, "c": 0x8000, "e": 0x0002, "~": 0x0015}
+         "T": "grass01", "#": "grass01", "S": "grass01", "~": None, "B": "grass01", "D": "road01"}
+PERM = {"T": 0x8000, "#": 0x8000, "S": 0x8000, "c": 0x8000, "B": 0x8000, "D": 0x8069, "e": 0x0002, "~": 0x0015}
 ORDER = ["grass01", "road01", "road01_r", "egrass", "wall01_g", "sea_un", "sea_on", "pond_line", "sea_line02", "flower01", "flower02", "flower03", "fence_b", "tree01_un", "tree01_re", "tree01"]
 
 
@@ -43,48 +50,53 @@ def nrm(x, y, z):
 
 
 # margem de lagoa copiada de New Bark (bloco 0): perfis (d = distancia da borda, + para a terra; y com chao 1,0; v)
-POND_LINE = [(-0.29, 0.52, 250), (-0.16, 0.61, 194), (-0.11, 0.96, 89), (0.02, 1.11, 53), (0.22, 1.13, 5)]
-SEA_LINE = [(-0.55, 0.40, 1024), (-0.22, 0.61, 761), (-0.16, 0.91, 640)]
+# (perfis reduzidos aos pontos que dao a forma: 3 na margem, 2 na espuma; com os 5+3 pontos de New Bark, um canal
+#  longo passava de 4 mil vertices num bloco, contra 1,2-2,3 mil nos blocos do HGSS)
+POND_LINE = [(-0.29, 0.52, 250), (-0.11, 0.96, 89), (0.22, 1.13, 5)]
+SEA_LINE = [(-0.55, 0.40, 1024), (-0.16, 0.91, 640)]
 
 
 def load(path):
-    sec, out = None, {"doadores": [], "tiles": [], "alturas": [], "objetos": []}
+    sec, out = None, {"doadores": [], "tiles": [], "alturas": [], "objetos": [], "tamanho": (32, 32)}
     for line in open(path, encoding="utf-8"):
         line = line.rstrip("\n")
         if line.startswith("[") and line.endswith("]"):
             sec = line[1:-1]; continue
         if not line.strip() or line.lstrip().startswith(";"):
             continue
+        if sec == "tamanho":
+            out["tamanho"] = tuple(int(v) for v in line.split()); continue
         if sec == "doadores":
             out["doadores"] += [int(v) for v in line.split()]
         elif sec in ("tiles", "alturas"):
-            assert len(line) == 32, f"{sec}: linha com {len(line)} colunas: {line!r}"
+            assert len(line) == out["tamanho"][0], f"{sec}: linha com {len(line)} colunas: {line!r}"
             out[sec].append(line)
         elif sec == "objetos":
             mdl, x, z = line.split()
             out["objetos"].append((int(mdl), int(x), int(z)))
-    assert len(out["tiles"]) == 32 and len(out["alturas"]) == 32, "a grade tem de ter 32 linhas"
+    assert len(out["tiles"]) == out["tamanho"][1] and len(out["alturas"]) == out["tamanho"][1], "numero de linhas da grade"
+    set_size(out)
     return out
 
 
 def heights(g):
     """Altura no centro de cada tile; rampas interpoladas entre os vizinhos norte e sul fora da rampa."""
-    H = [[None] * 32 for _ in range(32)]
-    for z in range(32):
-        for x in range(32):
+    H = [[None] * GW for _ in range(GH)]
+    for z in range(GH):
+        for x in range(GW):
             c = g["alturas"][z][x]
             if c != "r":
                 H[z][x] = float(c)
     ramps = []
-    for x in range(32):
+    for x in range(GW):
         z = 0
-        while z < 32:
+        while z < GH:
             if g["alturas"][z][x] == "r":
                 z0 = z
-                while z < 32 and g["alturas"][z][x] == "r":
+                while z < GH and g["alturas"][z][x] == "r":
                     z += 1
                 hn = H[z0 - 1][x] if z0 > 0 else None
-                hs = H[z][x] if z < 32 else None
+                hs = H[z][x] if z < GH else None
                 for k in range(z0, z):
                     t = (k - z0 + 0.5) / (z - z0)
                     H[k][x] = hn + (hs - hn) * t
@@ -97,15 +109,15 @@ def heights(g):
 def rects(cells):
     """Agrupa um conjunto de tiles (x, z) em retangulos de ate MAXQ x MAXQ (guloso, linha a linha)."""
     left, out = set(cells), []
-    for z in range(32):
-        for x in range(32):
+    for z in range(GH):
+        for x in range(GW):
             if (x, z) not in left:
                 continue
             w = 1
-            while w < MAXQ and (x + w, z) in left:
+            while w < MAXQ and (x + w, z) in left and (x + w) % 32:
                 w += 1
             h = 1
-            while h < MAXQ and all((x + i, z + h) in left for i in range(w)):
+            while h < MAXQ and all((x + i, z + h) in left for i in range(w)) and (z + h) % 32:
                 h += 1
             for i in range(w):
                 for j in range(h):
@@ -156,8 +168,8 @@ def build_mesh(g):
     m = Mesh()
     # chao plano: por (material, altura), sem rampas
     groups = {}
-    for z in range(32):
-        for x in range(32):
+    for z in range(GH):
+        for x in range(GW):
             if (x, z) in ramp_cells:
                 continue
             c = tiles[z][x]
@@ -168,7 +180,7 @@ def build_mesh(g):
         for r in rects(cells):
             m.flat(mat, r, h + (0.01 if mat == "road01" else 0))
     # agua: duas camadas meio tile abaixo do chao, como no HGSS
-    water = {(x, z) for z in range(32) for x in range(32) if tiles[z][x] == "~"}
+    water = {(x, z) for z in range(GH) for x in range(GW) if tiles[z][x] == "~"}
     for hz in sorted({H[z][x] for x, z in water}):
         cells = {(x, z) for x, z in water if H[z][x] == hz}
         for r in rects(cells):
@@ -180,33 +192,45 @@ def build_mesh(g):
         m.quad("road01", [(x, hs + 0.01, z1, 256 * (x - 16), 256 * (z1 - 16)), (x + 1, hs + 0.01, z1, 256 * (x - 15), 256 * (z1 - 16)),
                           (x + 1, hn + 0.01, z0, 256 * (x - 15), 256 * (z0 - 16)), (x, hn + 0.01, z0, 256 * (x - 16), 256 * (z0 - 16))], n)
     # margem: faixas pond_line e sea_line02 ao longo da aresta agua/terra, com a face virada para a agua e para cima
+    bank_edges = []
+
     def bank(x, z, dx, dz, water_first, h):
-        if dz:                                       # aresta horizontal em z+1, de x a x+1
-            c, a0, a1 = z + 1, x, x + 1
-            land = 1 if water_first else -1          # sentido +z aponta para a terra?
-            pt = lambda t, d, y: (t, y, c + land * d)
-        else:                                        # aresta vertical em x+1, de z a z+1
-            c, a0, a1 = x + 1, z, z + 1
-            land = 1 if water_first else -1
-            pt = lambda t, d, y: (c + land * d, y, t)
-        toward_water = (0, 0, -land) if dz else (-land, 0, 0)
-        for prof, mat in ((POND_LINE, "pond_line"), (SEA_LINE, "sea_line02")):
-            for (d0, y0, v0), (d1, y1, v1) in zip(prof, prof[1:]):
-                A, B = pt(a0, d0, y0 - 1 + h), pt(a1, d0, y0 - 1 + h)
-                C, D = pt(a1, d1, y1 - 1 + h), pt(a0, d1, y1 - 1 + h)
-                q = [(*A, 256 * a0, v0), (*B, 256 * a1, v0), (*C, 256 * a1, v1), (*D, 256 * a0, v1)]
-                u = [B[i] - A[i] for i in range(3)]; w = [D[i] - A[i] for i in range(3)]
-                n = (u[1] * w[2] - u[2] * w[1], u[2] * w[0] - u[0] * w[2], u[0] * w[1] - u[1] * w[0])
-                if n[0] * toward_water[0] + n[1] + n[2] * toward_water[2] < 0:
-                    q = q[::-1]
-                m.quad(mat, q, nrm(toward_water[0] * 0.5, 0.85, toward_water[2] * 0.5))
+        """Guarda a aresta agua/terra; as arestas retas seguidas viram uma faixa so (ate MAXQ tiles, sem cruzar divisa
+        de bloco) em emit_banks()."""
+        if dz:
+            bank_edges.append(("h", z + 1, x, 1 if water_first else -1, h))
+        else:
+            bank_edges.append(("v", x + 1, z, 1 if water_first else -1, h))
+
+    def emit_banks():
+        runs = []
+        for e in sorted(bank_edges):
+            o, c, a, land, h = e
+            if runs and runs[-1][:2] == (o, c) and runs[-1][3] == land and runs[-1][4] == h and runs[-1][2][1] == a \
+                    and runs[-1][2][1] - runs[-1][2][0] < MAXQ and a % 32:
+                runs[-1][2][1] = a + 1
+            else:
+                runs.append([o, c, [a, a + 1], land, h])
+        for o, c, (a0, a1), land, h in runs:
+            pt = (lambda t, d, y: (t, y, c + land * d)) if o == "h" else (lambda t, d, y: (c + land * d, y, t))
+            toward_water = (0, 0, -land) if o == "h" else (-land, 0, 0)
+            for prof, mat in ((POND_LINE, "pond_line"), (SEA_LINE, "sea_line02")):
+                for (d0, y0, v0), (d1, y1, v1) in zip(prof, prof[1:]):
+                    A, B = pt(a0, d0, y0 - 1 + h), pt(a1, d0, y0 - 1 + h)
+                    C, D = pt(a1, d1, y1 - 1 + h), pt(a0, d1, y1 - 1 + h)
+                    q = [(*A, 256 * a0, v0), (*B, 256 * a1, v0), (*C, 256 * a1, v1), (*D, 256 * a0, v1)]
+                    u = [B[i] - A[i] for i in range(3)]; w = [D[i] - A[i] for i in range(3)]
+                    n = (u[1] * w[2] - u[2] * w[1], u[2] * w[0] - u[0] * w[2], u[0] * w[1] - u[1] * w[0])
+                    if n[0] * toward_water[0] + n[1] + n[2] * toward_water[2] < 0:
+                        q = q[::-1]
+                    m.quad(mat, q, nrm(toward_water[0] * 0.5, 0.85, toward_water[2] * 0.5))
 
     # cantos convexos da agua (terra nos dois lados perpendiculares): o mesmo perfil girado um quarto de volta em torno
     # da quina, em 3 segmentos, fechando o corte entre as duas faixas retas
     def is_w(xx, zz):
-        return 0 <= xx < 32 and 0 <= zz < 32 and tiles[zz][xx] == "~"
-    for z in range(32):
-        for x in range(32):
+        return 0 <= xx < GW and 0 <= zz < GH and tiles[zz][xx] == "~"
+    for z in range(GH):
+        for x in range(GW):
             if not is_w(x, z):
                 continue
             for sx, sz in ((1, -1), (1, 1), (-1, -1), (-1, 1)):
@@ -218,7 +242,7 @@ def build_mesh(g):
                 a1 = math.atan2(0, sx)                   # direcao da terra no lado de x
                 if abs(a1 - a0) > math.pi:
                     a1 += 2 * math.pi if a1 < a0 else -2 * math.pi
-                steps = [a0 + (a1 - a0) * k / 3 for k in range(4)]
+                steps = [a0, a1]                     # canto em 1 segmento (chanfro): orcamento de vertices
                 for prof, mat in ((POND_LINE, "pond_line"), (SEA_LINE, "sea_line02")):
                     for (d0, y0, v0), (d1, y1, v1) in zip(prof, prof[1:]):
                         for t0, t1 in zip(steps, steps[1:]):
@@ -236,8 +260,8 @@ def build_mesh(g):
 
     # cantos concavos da lagoa = quina de terra entrando na agua (agua nos dois lados perpendiculares do tile de terra
     # e na diagonal): o perfil gira pelo lado da agua em volta da quina, fechando o corte entre as faixas
-    for z in range(32):
-        for x in range(32):
+    for z in range(GH):
+        for x in range(GW):
             if is_w(x, z):
                 continue
             for sx, sz in ((1, -1), (1, 1), (-1, -1), (-1, 1)):
@@ -248,7 +272,7 @@ def build_mesh(g):
                 a0, a1 = math.atan2(0, sx), math.atan2(sz, 0)     # direcoes da agua
                 if abs(a1 - a0) > math.pi:
                     a1 += 2 * math.pi if a1 < a0 else -2 * math.pi
-                steps = [a0 + (a1 - a0) * k / 3 for k in range(4)]
+                steps = [a0, a1]                     # canto em 1 segmento (chanfro): orcamento de vertices
                 for prof, mat in ((POND_LINE, "pond_line"), (SEA_LINE, "sea_line02")):
                     for (d0, y0, v0), (d1, y1, v1) in zip(prof, prof[1:]):
                         for t0, t1 in zip(steps, steps[1:]):
@@ -266,11 +290,11 @@ def build_mesh(g):
     # faces de penhasco: toda aresta entre tiles nao-rampa com alturas diferentes
     def top(x, z):
         return H[z][x] - (0.5 if tiles[z][x] == "~" else 0)
-    for z in range(32):
-        for x in range(32):
+    for z in range(GH):
+        for x in range(GW):
             for dx, dz in ((1, 0), (0, 1)):
                 x2, z2 = x + dx, z + dz
-                if x2 > 31 or z2 > 31 or (x, z) in ramp_cells or (x2, z2) in ramp_cells:
+                if x2 > GW - 1 or z2 > GH - 1 or (x, z) in ramp_cells or (x2, z2) in ramp_cells:
                     continue
                 a, b = top(x, z), top(x2, z2)
                 if a == b:
@@ -298,10 +322,11 @@ def build_mesh(g):
                 if dz and a < b:
                     pts, uvs = pts[::-1], uvs[::-1]
                 m.quad("wall01_g", [(p[0], p[1], p[2], u, v) for p, (u, v) in zip(pts, uvs)], n)
+    emit_banks()
     # lados das rampas (o desnivel entre a rampa e os vizinhos de fora)
     for x, z0, z1, hn, hs in ramps:
         for xs, nb in ((x, x - 1), (x + 1, x + 1)):
-            if 0 <= nb < 32 and (nb, z0) not in ramp_cells:
+            if 0 <= nb < GW and (nb, z0) not in ramp_cells:
                 base = H[z0][nb] if tiles[z0][nb] != "~" else H[z0][nb] - 0.5
                 lowest, highest = min(hn, hs), max(hn, hs)
                 if base < highest:
@@ -311,13 +336,14 @@ def build_mesh(g):
                     m.quad("wall01_g", tri if xs == x + 1 else tri[::-1], nrm(0, 0.55, 0.83))
     # bordas do caminho como no HGSS (road01_r): faixa de 1 tile no lado da grama, u 250 junto ao caminho -> 6 na grama,
     # v ao longo da borda; canto externo (caminho so na diagonal) com a outra metade da textura (u, v 259..505)
-    road = {(x, z) for z in range(32) for x in range(32) if tiles[z][x] == "=" and (x, z) not in ramp_cells}
+    road = {(x, z) for z in range(GH) for x in range(GW) if tiles[z][x] == "=" and (x, z) not in ramp_cells}
+    road_strips = []
     soft = {".", "f", "#", "S"}
     def ccw(q):                                  # mesmo sentido dos quads do HGSS (area com sinal negativa em x-z)
         a = sum(q[i][0] * q[(i + 1) % 4][2] - q[(i + 1) % 4][0] * q[i][2] for i in range(4))
         return q if a < 0 else q[::-1]
-    for z in range(32):
-        for x in range(32):
+    for z in range(GH):
+        for x in range(GW):
             if (x, z) in road or tiles[z][x] not in soft or (x, z) in ramp_cells:
                 continue
             h = H[z][x] + 0.008
@@ -332,14 +358,11 @@ def build_mesh(g):
                 if dz:                               # caminho ao norte/sul: borda horizontal
                     zi, zo = (z, z + 1) if dz < 0 else (z + 1, z)
                     sv = 256 if dz < 0 else -256
-                    q = [(x + 1, h, zo, 6, sv * (x + 1)), (x + 1, h, zi, 250, sv * (x + 1)),
-                         (x, h, zi, 250, sv * x), (x, h, zo, 6, sv * x)]
+                    road_strips.append(("h", zi, zo, x, sv, h)); continue
                 else:                                # caminho a oeste/leste: borda vertical
                     xi, xo = (x, x + 1) if dx < 0 else (x + 1, x)
                     sv = 256 if dx > 0 else -256
-                    q = [(xo, h, z + 1, 6, sv * (z + 1)), (xi, h, z + 1, 250, sv * (z + 1)),
-                         (xi, h, z, 250, sv * z), (xo, h, z, 6, sv * z)]
-                m.quad("road01_r", ccw(q))
+                    road_strips.append(("v", xi, xo, z, sv, h)); continue
             if orth:
                 continue
             for sx, sz in ((1, -1), (1, 1), (-1, -1), (-1, 1)):
@@ -349,16 +372,30 @@ def build_mesh(g):
                     q = [(nx, h, nz, 259, 259), (fx, h, nz, 259, 508), (fx, h, fz, 505, 508), (nx, h, fz, 505, 259)]
                     m.quad("road01_r", ccw(q))
                     break
+    # faixas retas seguidas da borda do caminho viram uma so (ate MAXQ tiles, sem cruzar divisa de bloco)
+    runs = []
+    for o, inner, outer, a, sv, h in sorted(road_strips):
+        if runs and runs[-1][:3] == [o, inner, outer] and runs[-1][4:] == [sv, h] and runs[-1][3][1] == a \
+                and runs[-1][3][1] - runs[-1][3][0] < MAXQ and a % 32:
+            runs[-1][3][1] = a + 1
+        else:
+            runs.append([o, inner, outer, [a, a + 1], sv, h])
+    for o, inner, outer, (a0, a1), sv, h in runs:
+        if o == "h":
+            q = [(a1, h, outer, 6, sv * a1), (a1, h, inner, 250, sv * a1), (a0, h, inner, 250, sv * a0), (a0, h, outer, 6, sv * a0)]
+        else:
+            q = [(outer, h, a1, 6, sv * a1), (inner, h, a1, 250, sv * a1), (inner, h, a0, 250, sv * a0), (outer, h, a0, 6, sv * a0)]
+        m.quad("road01_r", ccw(q))
     # mato alto e flores por cima da grama
     # cercas como as de New Bark (fence_b): trecho horizontal = quad inclinado na linha (y +0,02 -> +0,73, recua 0,71),
     # u 128 + 256 por tile; trecho vertical = faixa plana de 0,5 a +0,38, ligando as linhas, u 256 por tile, v 448 -> 320
-    fence = {(x, z) for z in range(32) for x in range(32) if tiles[z][x] == "c"}
-    for z in range(32):
+    fence = {(x, z) for z in range(GH) for x in range(GW) if tiles[z][x] == "c"}
+    for z in range(GH):
         x = 0
-        while x < 32:
+        while x < GW:
             if (x, z) in fence and ((x + 1, z) in fence or (x - 1, z) not in fence and (x, z - 1) not in fence and (x, z + 1) not in fence):
                 x0 = x
-                while x < 32 and (x, z) in fence:
+                while x < GW and (x, z) in fence:
                     x += 1
                 if x - x0 >= 2 or not any((x0, z + d) in fence for d in (-1, 1)):
                     h = H[z][x0]
@@ -366,12 +403,12 @@ def build_mesh(g):
                                        (x, h + 0.73, z + 0.02, 128 + 256 * (x - x0), 0), (x0, h + 0.73, z + 0.02, 128, 0)])
             else:
                 x += 1
-    for x in range(32):
+    for x in range(GW):
         z = 0
-        while z < 32:
+        while z < GH:
             if (x, z) in fence and (x, z + 1) in fence:
                 z0 = z
-                while z < 32 and (x, z) in fence:
+                while z < GH and (x, z) in fence:
                     z += 1
                 h = H[z0][x]
                 q = [(x, h + 0.38, z - 1 + 0.38, 256 * (z - 1 - z0), 448), (x + 0.5, h + 0.38, z - 1 + 0.38, 256 * (z - 1 - z0), 320),
@@ -381,7 +418,7 @@ def build_mesh(g):
                 z += 1
     for c, mat, dy, uv0 in (("e", "egrass", 0.12, (-22528, 2048)), ("f", "flower01", 0.06, (-23296, -768)),
                             ("g", "flower02", 0.06, (-23296, -768)), ("h", "flower03", 0.06, (-23296, -768))):
-        cells = {(x, z) for z in range(32) for x in range(32) if tiles[z][x] == c}
+        cells = {(x, z) for z in range(GH) for x in range(GW) if tiles[z][x] == c}
         for hz in sorted({H[z][x] for x, z in cells}):
             for r in rects({(x, z) for x, z in cells if H[z][x] == hz}):
                 m.flat(mat, r, hz + dy, uv0)
@@ -389,10 +426,10 @@ def build_mesh(g):
     # linha); cada arvore e um quad inclinado como os do HGSS (3,08 tiles de altura, recua 2,54). Pares lado a lado
     # na mesma linha viram um quad de 4 tiles (textura de duas arvores, tree01); uma arvore so, tree01_re (u 0-512).
     # (metade da textura tree01 mostra meia arvore: a textura e espelhada; visto no DeSmuME.)
-    trees = {(x, z) for z in range(32) for x in range(32) if tiles[z][x] == "T"}
+    trees = {(x, z) for z in range(GH) for x in range(GW) if tiles[z][x] == "T"}
     done, blocks = set(), []
-    for z in range(32):
-        for x in range(32):
+    for z in range(GH):
+        for x in range(GW):
             if (x, z) in trees and (x, z) not in done:
                 w = 2 if (x + 1, z) in trees and (x + 1, z) not in done else 1
                 h = 2 if all((x + i, z + 1) in trees and (x + i, z + 1) not in done for i in range(w)) else 1
@@ -412,7 +449,7 @@ def build_mesh(g):
                 w, i = 4, i + 2
             else:
                 i += 1
-            hz = H[min(z + h - 1, 31)][x0]
+            hz = H[min(z + h - 1, GH - 1)][x0]
             zb = z + h
             # arvore isolada = o meio da textura tree01 (u 384-896), como na Route 29 (bloco 2); par = textura inteira
             mat, u0, u1 = {4: ("tree01", 0, 1024), 2: ("tree01", 384, 896), 1: ("tree01_re", 384, 640)}[w]
@@ -425,14 +462,14 @@ def build_bdhc(g, H, ramps):
     ramp_cells = {(x, z) for x, z0, z1, _, _ in ramps for z in range(z0, z1)}
     plates = []
     groups = {}
-    for z in range(32):
-        for x in range(32):
+    for z in range(GH):
+        for x in range(GW):
             if (x, z) not in ramp_cells:
                 groups.setdefault(H[z][x], set()).add((x, z))
     for h, cells in sorted(groups.items()):
         left = set(cells)
-        for z in range(32):
-            for x in range(32):
+        for z in range(GH):
+            for x in range(GW):
                 if (x, z) not in left:
                     continue
                 w = 1
@@ -462,7 +499,7 @@ def build_bdhc(g, H, ramps):
 
 
 def perms(g):
-    return [PERM.get(g["tiles"][z][x], 0) for z in range(32) for x in range(32)]
+    return [PERM.get(g["tiles"][z][x], 0) for z in range(GH) for x in range(GW)]
 
 
 def gerar(block, blocos, arquivo):
@@ -482,5 +519,5 @@ def gerar(block, blocos, arquivo):
 
 if __name__ == "__main__":
     g = load(sys.argv[1])
-    for z in range(32):
+    for z in range(GH):
         print("".join({0x8000: "#", 0x0002: "e", 0x0015: "~", 0: "."}[v] for v in perms(g)[z * 32:z * 32 + 32]))

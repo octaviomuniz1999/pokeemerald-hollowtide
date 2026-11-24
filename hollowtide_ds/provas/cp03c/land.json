@@ -1,0 +1,3 @@
+[{"global": "../../data/mapas/lunia_cap1.txt", "matriz": 0, "celula": [21, 13], "base": 0,
+  "headers": {"Dawnmere": 60, "Route1": 33, "Harvestvale": 67}, "padrao": 60,
+  "nota": "CP-DS-03B: Dawnmere, Route 1 e Harvestvale convertidos do GBA, nas celulas (21,13)-(23,16) da matriz 0 (so na build de prova por enquanto)"}]

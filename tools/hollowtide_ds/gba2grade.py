@@ -26,7 +26,7 @@ GENERAL = {
     0x1DE: "T", 0x1DF: "T", 0x23B: "T",
     0x1CE: ".", 0x1CF: ".", 0x1D0: ".", 0x1D1: ".", 0x1D2: ".", 0x1D8: ".", 0x1D9: ".", 0x1DA: ".", 0x1E0: ".",
     0x1E1: ".", 0x1E2: ".", 0x103: ".", 0x105: ".", 0x10B: ".", 0x10D: ".", 0x113: ".", 0x115: ".",
-    0x056: "c", 0x055: "#", 0x057: "#", 0x05D: "#", 0x05E: "#", 0x05F: "#", 0x065: "#", 0x067: "#",
+    0x056: "c", 0x055: "#", 0x057: "#", 0x05D: "#", 0x05E: "=", 0x05F: "#", 0x065: "#", 0x067: "#",   # 05E = tabuado da ponte
     0x068: "#", 0x06A: "#", 0x070: "#", 0x072: "#", 0x078: "#", 0x079: "#", 0x07A: "#",
     0x0AF: "=",
     0x100: "=", 0x102: "=", 0x109: "=", 0x10A: "=", 0x110: "=", 0x112: "=",
@@ -91,6 +91,8 @@ def convert(name):
         else:
             c = "#" if col else "."
             unknown[mt] += 1
+        if c in "#c" and not col:
+            c = "="                                      # fidelidade: sem colisao no GBA, o tile e andavel no DS
         tiles.append(c); elev.append(el)
     return j, w, h, tiles, elev, unknown
 
