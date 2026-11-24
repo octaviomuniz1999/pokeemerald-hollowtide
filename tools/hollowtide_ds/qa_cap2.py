@@ -72,7 +72,9 @@ def main(rom, state, out):
         ok["saiu_teatro"] = d.where()
         # 4. saida norte
         bz(d, rom, out, (279, 235), "bz")
-        for _ in range(6):
+        for _ in range(16):                                # o corredor ainda e Olivine ate y=224
+            if d.where() and d.where()[0] == ROUTE3:
+                break
             d.press("UP", 16, 24)
         d.wait(200)
         ok["route3"] = d.where(); d.shot(f"{out}/12_route3.png")
