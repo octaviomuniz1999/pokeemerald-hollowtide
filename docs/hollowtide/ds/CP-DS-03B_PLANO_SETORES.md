@@ -324,5 +324,15 @@ Falta:
     porta trancada (2 scripts e 2 falas novas no banco de Breezeport).
   - A Route 2 não tem mato alto nessas linhas.
   - Sem guarita: da Route 2 se desce a pé para Breezeport, como no GBA e como o diretor pediu.
+- **Área 7.** As células de Breezeport ficam com o header de Olivine (T26), que é da área 7: outro conjunto de texturas
+  de terreno e outra lista de construções, com os modelos de Olivine, inclusive o farol. Os blocos de Breezeport têm
+  de ser compostos com doadores da área 7:
+  - Olivine (blocos 58–61) tem `grass01`, `road01`, árvores, `wall01_g`, `cliff01`, mar, `pond_line`/`sea_line02`,
+    `beach01`, `fence_a` e `sea_rock`;
+  - faltam `road01_r`, `egrass`, flores e `fence_b`. Procurar na Route 39 (área 7) ou trocar a letra pelo material
+    disponível;
+  - o gerador precisa de doadores por mapa (`doadores_por_mapa` no `land.json`).
+- **Tabela de metatiles.** Os metatiles de 0x200 em diante são do tileset secundário. As entradas desse trecho valem
+  só para os tilesets em que foram conferidas (EverGrande e Petalburg). Breezeport (Lilycove) está toda na tabela.
 - **Pendente:** a Route 3 sai pela borda oeste de Breezeport (GBA: `Palm090_ToRoute03`, linhas 48–59, deslocamento
   −20). Não começar.

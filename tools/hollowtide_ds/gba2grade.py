@@ -40,12 +40,19 @@ GENERAL = {
 GENERAL.update({0x1DC: "T", 0x1DD: "T",                            # metade de baixo das arvores grandes (Route 2)
                 0x070: "#", 0x072: "#", 0x074: "#", 0x078: "#", 0x079: "#", 0x07A: "#", 0x07C: "#",
                 0x087: "v", 0x089: "#", 0x091: "#", 0x0D5: "v", 0x0D6: "v"})       # muro do cercado e ressaltos
+GENERAL.update({0x071: "#", 0x073: "#", 0x075: "#", 0x07B: "#", 0x0E2: "#",          # montanha e pedra (Breezeport)
+                0x175: "#", 0x176: "#", 0x17A: "#", 0x17B: "#", 0x17C: "#", 0x17D: "#", 0x17E: "#",
+                0x182: "#", 0x184: "#", 0x194: "#",                        # rochas na agua
+                0x1D3: "T", 0x1DB: "T"})                                   # arbustos
 GENERAL.update({0x1D4: "T", 0x1D5: "T", 0x1E4: "T", 0x1E5: "T", 0x1E6: "T", 0x1E7: "T",      # arvores grandes (Harvestvale)
                 0x10C: "=", 0x104: "=", 0x114: "=", 0x124: "="})   # terra arada da plantacao e areias
 PRIMARY_BUILDINGS = [range(0x028, 0x064), range(0x1AA, 0x1CE)]   # Mart/PC e ginasio do tileset General
 for i in range(0x008, 0x023):
     if i not in (0x00D, 0x00E, 0x00F, 0x016, 0x017, 0x01B, 0x01D, 0x01E, 0x01F):
         GENERAL.setdefault(i, "B")          # casa de telhado vermelho do tileset General
+# Metatiles a partir de 0x200 sao do tileset SECUNDARIO, que muda de mapa para mapa: as entradas >= 0x200 da tabela
+# acima foram conferidas nos tilesets da Route 1 (EverGrande) e de Dawnmere (Petalburg) e so valem para eles.
+SECONDARY_TABLE_TILESETS = {"gTileset_EverGrande", "gTileset_Petalburg"}
 SECONDARY_BUILDINGS = range(0x200, 0x400)   # nos secundarios destes mapas, metatiles bloqueados = construcoes
 
 # --- construcoes: modelo do HGSS sobre a planta do GBA -----------------------------------------------------------------
@@ -181,7 +188,7 @@ def convert(name):
             c = "="                                      # poca rasa (andavel): chao de terra no DS
         elif b in water:
             c = "~"
-        elif mt in GENERAL:
+        elif mt in GENERAL and (mt < 0x200 or L["secondary_tileset"] in SECONDARY_TABLE_TILESETS):
             c = GENERAL[mt]
         elif any(mt in r for r in PRIMARY_BUILDINGS):
             c = "B" if col else "="                      # parede/telhado de construcao; calcada na frente
