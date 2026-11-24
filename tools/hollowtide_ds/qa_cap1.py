@@ -212,6 +212,8 @@ def route2(d, rom, out, ok):
     if d.where() and d.where()[0] == GATE:                 # na saida (1,7): um toque so e espera a transicao
         d.press("LEFT", 16, 24); d.wait(300)
     ok["breezeport"] = d.where(); d.shot(f"{out}/18_breezeport.png")
+    if ok["breezeport"] and ok["breezeport"][0] == BREEZEPORT:
+        d.wait(60); d.save(f"{out}/breezeport.dst")           # ponto de partida do qa_cap2.py
 
 
 def cross_route1(d, rom, out, n0):
