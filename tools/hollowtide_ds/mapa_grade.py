@@ -4,7 +4,8 @@
 Arquivo do setor (texto, revisavel no repositorio):
   [doadores]  numeros dos blocos de onde vem os materiais (mesma area), ex.: 57 59
   [tiles]     32 linhas de 32 letras:
-                .  grama            =  caminho de terra     e  mato alto (encontros)    f  flores
+                .  grama            =  caminho de terra     e  mato alto (encontros)    f g h  flores (3 tipos)
+                c  cerca (bloqueada; trechos horizontais e verticais como os de New Bark)
                 ~  agua (lagoa)     T  arvore (floresta)    #  bloqueado (beira de penhasco, lados de rampa)
                 S  objeto (o tile fica bloqueado; o modelo vem de [objetos])
   [alturas]   32 linhas de 32 caracteres: altura do chao em tiles (0-9); r = rampa (sobe para o vizinho mais alto
@@ -24,9 +25,16 @@ import bdhc
 T = 1024
 UP = 511 << 10
 MAXQ = 4
-FLOOR = {".": "grass01", "=": "road01", "e": "grass01", "f": "grass01", "T": "grass01", "#": "grass01", "S": "grass01", "~": None}
-PERM = {"T": 0x8000, "#": 0x8000, "S": 0x8000, "e": 0x0002, "~": 0x0015}
-ORDER = ["grass01", "road01", "road01_r", "egrass", "wall01_g", "sea_un", "sea_on", "pond_line", "sea_line02", "flower01", "tree01_un", "tree01_re", "tree01"]
+FLOOR = {".": "grass01", "=": "road01", "e": "grass01", "f": "grass01", "g": "grass01", "h": "grass01", "c": "grass01",
+         "T": "grass01", "#": "grass01", "S": "grass01", "~": None}
+PERM = {"T": 0x8000, "#": 0x8000, "S": 0x8000, "c": 0x8000, "e": 0x0002, "~": 0x0015}
+ORDER = ["grass01", "road01", "road01_r", "egrass", "wall01_g", "sea_un", "sea_on", "pond_line", "sea_line02", "flower01", "flower02", "flower03", "fence_b", "tree01_un", "tree01_re", "tree01"]
+
+
+def ccw(q):
+    """Mesmo sentido dos quads do HGSS (area com sinal negativa no plano x-z)."""
+    a = sum(q[i][0] * q[(i + 1) % 4][2] - q[(i + 1) % 4][0] * q[i][2] for i in range(4))
+    return q if a < 0 else q[::-1]
 
 
 def nrm(x, y, z):
@@ -276,7 +284,37 @@ def build_mesh(g):
                     m.quad("road01_r", ccw(q))
                     break
     # mato alto e flores por cima da grama
-    for c, mat, dy, uv0 in (("e", "egrass", 0.12, (-22528, 2048)), ("f", "flower01", 0.06, (-22528, 1024))):
+    # cercas como as de New Bark (fence_b): trecho horizontal = quad inclinado na linha (y +0,02 -> +0,73, recua 0,71),
+    # u 128 + 256 por tile; trecho vertical = faixa plana de 0,5 a +0,38, ligando as linhas, u 256 por tile, v 448 -> 320
+    fence = {(x, z) for z in range(32) for x in range(32) if tiles[z][x] == "c"}
+    for z in range(32):
+        x = 0
+        while x < 32:
+            if (x, z) in fence and ((x + 1, z) in fence or (x - 1, z) not in fence and (x, z - 1) not in fence and (x, z + 1) not in fence):
+                x0 = x
+                while x < 32 and (x, z) in fence:
+                    x += 1
+                if x - x0 >= 2 or not any((x0, z + d) in fence for d in (-1, 1)):
+                    h = H[z][x0]
+                    m.quad("fence_b", [(x0, h + 0.02, z + 0.73, 128, 256), (x, h + 0.02, z + 0.73, 128 + 256 * (x - x0), 256),
+                                       (x, h + 0.73, z + 0.02, 128 + 256 * (x - x0), 0), (x0, h + 0.73, z + 0.02, 128, 0)])
+            else:
+                x += 1
+    for x in range(32):
+        z = 0
+        while z < 32:
+            if (x, z) in fence and (x, z + 1) in fence:
+                z0 = z
+                while z < 32 and (x, z) in fence:
+                    z += 1
+                h = H[z0][x]
+                q = [(x, h + 0.38, z - 1 + 0.38, 256 * (z - 1 - z0), 448), (x + 0.5, h + 0.38, z - 1 + 0.38, 256 * (z - 1 - z0), 320),
+                     (x + 0.5, h + 0.38, z0 + 0.38, 0, 320), (x, h + 0.38, z0 + 0.38, 0, 448)]
+                m.quad("fence_b", ccw(q))
+            else:
+                z += 1
+    for c, mat, dy, uv0 in (("e", "egrass", 0.12, (-22528, 2048)), ("f", "flower01", 0.06, (-23296, -768)),
+                            ("g", "flower02", 0.06, (-23296, -768)), ("h", "flower03", 0.06, (-23296, -768))):
         cells = {(x, z) for z in range(32) for x in range(32) if tiles[z][x] == c}
         for hz in sorted({H[z][x] for x, z in cells}):
             for r in rects({(x, z) for x, z in cells if H[z][x] == hz}):

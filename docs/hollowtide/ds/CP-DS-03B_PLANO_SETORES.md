@@ -70,9 +70,12 @@ Melhorado (24/11):
 - caminho redesenhado em trechos retos com curvas em L, de 3 tiles de largura. O desenho anterior, em degraus de
   1 tile, gerava dezenas de cantos sobrepostos.
 
+- cercas como as de New Bark (`fence_b`: trecho horizontal inclinado, trecho vertical em faixa) e uma horta cercada
+  com três tipos de flor (`flower01-03`, alinhamento de UV corrigido como o do HGSS).
+
 Ainda não está no padrão artístico pedido:
 
-- não há casa com cerca e horta (faltam cercas no gerador; a casa só entra com interior funcional);
+- a casa da horta (só entra com interior funcional);
 - os cantos da margem da lagoa ainda são em degrau, e há pequenos cortes onde duas faixas se encontram.
 
 Ao sul da célula de prova aparece o mar do bloco vazio; no definitivo ali fica o setor C.
