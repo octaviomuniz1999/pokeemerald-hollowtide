@@ -1,13 +1,15 @@
-# Prova CP-DS-03B — Dawnmere e Route 1 convertidas do GBA (build de prova)
+# Prova CP-DS-03B — atalho de QA para a Dawnmere original
+
+Desde a etapa 6 do CP-DS-03B, Dawnmere, a Route 1 e Harvestvale convertidos do GBA estão na pasta de conteúdo:
+- `patches/content/land.json`: o desenho global;
+- `0700`–`0704`: os eventos nas posições do GBA (`tools/hollowtide_ds/eventos_gba.py`);
+- `0705`: a ponte provisória para a Route 2 do protótipo (`tools/hollowtide_ds/ponte_route2.py`).
+
+Esta pasta guarda só o atalho de QA:
 
 `bash tools/hollowtide_ds/build.sh ROM HG_ENGINE hollowtide_ds/patches/content hollowtide_ds/provas/cp03c`
 
-- `land.json`: desenho global `data/mapas/lunia_cap1.txt` (gerado por `gba2grade.py`) em 16 blocos novos nas células
-  (21,13)–(24,16) da matriz 0. Também acrescenta o laboratório de Pallet e a porta dele à lista de construções 0.
-- `0921`: atalho de QA. O PC do quarto leva a um caminho de Dawnmere, em (688,436).
-- `0922`/`0923` (gerados por `tools/hollowtide_ds/eventos_gba.py`): os eventos de Dawnmere vão para as posições do
-  GBA (warps, placas, NPCs, trava da saída), e a trava volta a ser a leste.
-  - Para regenerar, rode o gerador sobre um hg-engine montado sem estes dois patches (`patch -R` antes).
-- QA:
-  - `qa_cp03c.py` anda de Dawnmere até a Route 1 pelo atalho;
-  - `qa_cp03d.py` testa os eventos pelo fluxo do jogo, do quarto até a Route 1 com o inicial.
+- `0921`: o PC do quarto leva a um caminho de Dawnmere (688,436). É o que `qa_cp03c.py` usa.
+
+Para o Cap. 1 inteiro, pelo fluxo do jogo, use a build de conteúdo com `provas/qa_forte` (o Tyranitar de QA) e
+`qa_cp03d.py ROM ESTADO PASTA --cap1`.

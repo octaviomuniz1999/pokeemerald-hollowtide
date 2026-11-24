@@ -18,14 +18,7 @@
    "gba": "Palm040_TextMedallion2"
   },
   "2": {
-   "gba": "Palm040_TextMomIntro",
-   "replace": [
-    [
-     "to the north",
-     "to the west"
-    ]
-   ],
-   "_por_que": "CP-DS-02: direção do GBA não bate com o mapa do DS (caminho A: geometria do HGSS) — da casa, o laboratório fica a oeste"
+   "gba": "Palm040_TextMomIntro"
   },
   "3": {
    "gba": "Palm040_TextMomHeal"
@@ -52,14 +45,7 @@
    "gba": "Palm040_TextReceivedPokedex"
   },
   "3": {
-   "gba": "Palm040_TextMission",
-   "replace": [
-    [
-     "Follow Route 1 east,\\nthen head south across the river.",
-     "Follow Route 1 to the west."
-    ]
-   ],
-   "_por_que": "no DS a Route 1 vai para oeste e chega a Harvestvale sem atravessar rio (caminho A)"
+   "gba": "Palm040_TextMission"
   },
   "4": {
    "gba": "Palm040_TextAide"
@@ -70,14 +56,7 @@
  "542": {
   "_": "Dawnmere Village (exterior de New Bark; script em overlay/data/scr_seq/scr_seq_0842_T20.s)",
   "0": {
-   "gba": "Palm040_TextGuide",
-   "replace": [
-    [
-     "east edge",
-     "west edge"
-    ]
-   ],
-   "_por_que": "CP-DS-02: direção do GBA não bate com o mapa do DS (caminho A: geometria do HGSS) — a Route 1 sai pelo oeste de Dawnmere"
+   "gba": "Palm040_TextGuide"
   },
   "1": {
    "gba": "Palm040_TextNeighbor"
@@ -95,24 +74,10 @@
    "gba": "Palm040_TextNeighborSign"
   },
   "6": {
-   "gba": "Palm040_TextTownSign",
-   "replace": [
-    [
-     "East exit",
-     "West exit"
-    ]
-   ],
-   "_por_que": "no DS a Route 1 (Route 29) fica a oeste de Dawnmere (caminho A: geometria do HGSS)"
+   "gba": "Palm040_TextTownSign"
   },
   "7": {
-   "gba": "Palm040_TextNeedStarter",
-   "replace": [
-    [
-     "to the north",
-     "to the east"
-    ]
-   ],
-   "_por_que": "CP-DS-02: direção do GBA não bate com o mapa do DS (caminho A: geometria do HGSS) — da saída oeste, o laboratório fica a leste"
+   "gba": "Palm040_TextNeedStarter"
   },
   "8": {
    "gba": "Route101_Text_RouteSign",
@@ -122,40 +87,19 @@
      "← Harvestvale"
     ]
    ],
-   "_por_que": "placa nova da prova de mapa CP-DS-01 na saída oeste de Dawnmere: no DS a Route 1 (Route 29) e Harvestvale ficam a oeste"
+   "_por_que": "placa nova da prova de mapa CP-DS-01 na saída oeste de Dawnmere: no DS a Route 1 (Route 29) e Harvestvale ficam a oeste — sem uso desde a etapa 6 do CP-DS-03B (a placa saiu com o protótipo)"
   }
  },
  "373": {
   "_": "Route 1 (Route 29 do HGSS; script em overlay/data/scr_seq/scr_seq_0225_R29.s)",
   "0": {
-   "gba": "Palm050_TextWalker",
-   "replace": [
-    [
-     "Follow the trail and cross the\\nbridge to reach Harvestvale.",
-     "Follow the trail west to\\nreach Harvestvale."
-    ]
-   ],
-   "_por_que": "a Route 29 não tem ponte; Harvestvale fica a oeste (caminho A)"
+   "gba": "Palm050_TextWalker"
   },
   "1": {
-   "gba": "Palm050_TextSouthSign",
-   "replace": [
-    [
-     "South: Harvestvale",
-     "West: Harvestvale"
-    ]
-   ],
-   "_por_que": "placa da ponta oeste; Harvestvale fica a oeste no DS"
+   "gba": "Palm050_TextSouthSign"
   },
   "2": {
-   "gba": "Palm050_TextNorthSign",
-   "replace": [
-    [
-     "West: Dawnmere",
-     "East: Dawnmere"
-    ]
-   ],
-   "_por_que": "placa da ponta leste; Dawnmere fica a leste no DS"
+   "gba": "Palm050_TextNorthSign"
   }
  },
  "engine:040": {
@@ -188,34 +132,13 @@
    "gba": "Palm072_TextArrival"
   },
   "7": {
-   "gba": "Palm060_TextWelcome",
-   "replace": [
-    [
-     "North: Route 1",
-     "East: Route 1"
-    ]
-   ],
-   "_por_que": "no DS a Route 1 chega pelo leste de Harvestvale"
+   "gba": "Palm060_TextWelcome"
   },
   "8": {
-   "gba": "Palm060_TextClosedRoad",
-   "replace": [
-    [
-     "The road south is closed",
-     "The road north is closed"
-    ]
-   ],
-   "_por_que": "no DS a saída para a Route 2 fica ao norte"
+   "gba": "Palm060_TextClosedRoad"
   },
   "9": {
-   "gba": "Palm060_TextClosedRoad",
-   "replace": [
-    [
-     "The road south is closed",
-     "The road north is closed"
-    ]
-   ],
-   "_por_que": "no DS a saída para a Route 2 fica ao norte"
+   "gba": "Palm060_TextClosedRoad"
   },
   "10": {
    "gba": "Palm071_TextGymLocked"

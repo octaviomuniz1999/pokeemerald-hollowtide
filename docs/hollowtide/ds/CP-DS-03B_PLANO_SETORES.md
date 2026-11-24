@@ -220,6 +220,37 @@ Eventos de Harvestvale (24/11, noite), nos patches 0925/0926 gerados por `evento
 
 Capturas: `CP-DS-03B_eventos_harvestvale.png`.
 
+### Etapa 6 (24/11, noite): troca do protótipo na build de conteúdo
+
+Dawnmere, a Route 1 e Harvestvale originais estão agora na **build de conteúdo**:
+- `patches/content/land.json`: o desenho global e a lista de construções;
+- `0700`–`0704`: os eventos nas posições do GBA;
+- `0705`: a ponte provisória.
+
+Os mapas do caminho A (New Bark, Route 29, Cherrygrove) ficam nas células antigas, sem eventos e inalcançáveis.
+
+- **Textos:** as 11 falas e placas que tinham direções adaptadas ao protótipo voltam ao texto do GBA (`texts.json`,
+  sem `replace`): mãe, missão, guia, placa da vila, trava, andarilho, placas norte e sul da Route 1, boas-vindas e
+  estrada fechada de Harvestvale. As adaptações da Route 2 e de Breezeport ficam, porque esses mapas continuam no
+  protótipo.
+- **Ponte provisória** (`ponte_route2.py`, 0705). A Route 2 original ainda não existe:
+  - depois do Nevard, a saída sul de Harvestvale (GBA) leva ao começo da Route 2 do protótipo (548,382);
+  - descendo a Route 2, a última linha antes das células antigas leva de volta à saída sul de Harvestvale.
+  - Sai quando a Route 2 for convertida.
+- **QA** (`qa_cp03d.py --cap1`, build de conteúdo + `provas/qa_forte`, ROM recém-construída). Passou nas 18 checagens,
+  do quarto até Breezeport:
+  - porta da casa, placas, trava;
+  - laboratório e inicial;
+  - Route 1 (Kai, Min, placas);
+  - Harvestvale (chegada, ginásio fechado, recruta, válvula, saída sul fechada, ginásio aberto);
+  - Nevard e a volta pela porta do GBA;
+  - a ponte nos dois sentidos;
+  - a Route 2 do protótipo até Breezeport (5 batalhas).
+  - Capturas: `CP-DS-03B_etapa6_cap1.png`.
+- **Falha registrada:** na primeira tentativa, a build falhou num trecho do 0705 (arquivo sem quebra de linha no fim)
+  e o QA rodou numa ROM antiga. Os geradores de patch agora escrevem a marca `\ No newline at end of file`, e a
+  sequência build → QA para no primeiro erro.
+
 Falta:
 - modelos para o armazém, as barracas do mercado e o celeiro de Harvestvale (hoje são só colisão). As árvores soltas
   em volta deles saem cortadas;

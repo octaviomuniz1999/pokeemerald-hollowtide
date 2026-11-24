@@ -98,3 +98,13 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
 
 - Patch `.xdelta` sobre Pokémon Emerald (U), SHA-1 `f3ae088181bf583e55daf962a92bb46f4f1d07b7`, com conferência de hash; código-fonte, build e instruções. Sem ROM comercial.
 - Ambiente de teste do usuário: **mGBA no Windows** — verificar saves e integridade do patch.
+
+## 24/11/2026 (noite) — CP-DS-03B etapa 6: mapas originais na build de conteúdo
+
+- Dawnmere, Route 1 e Harvestvale convertidos do GBA substituem o protótipo do caminho A na build de conteúdo.
+- As adaptações de direção feitas para o protótipo nesses três mapas voltam ao texto do GBA.
+- Ponte provisória (decisão minha, para o jogo seguir jogável): a saída sul de Harvestvale (GBA) leva à Route 2 do
+  protótipo, e descendo a Route 2 volta-se a Harvestvale. Sai quando a Route 2 for convertida (Route 2 = etapa
+  seguinte, saindo do sudeste de Harvestvale, como o diretor definiu).
+- Construções: o laboratório do Prof. Alex usa o modelo do laboratório de Pallet, com a porta 1 tile a oeste do GBA.
+  É o único laboratório do HGSS que cabe na planta. O ginásio do Nevard usa o de Celadon (tipo Planta).

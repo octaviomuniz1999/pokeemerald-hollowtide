@@ -1,27 +1,30 @@
 [
  {
-  "land": 0,
-  "nota": "Dawnmere (New Bark, MAP_T20): placa da Route 1 na saida oeste (CP-DS-01, prova de edicao de mapa)",
-  "objetos": [
-   {
-    "modelo": 30,
-    "tile": [
-     5,
-     12
-    ],
-    "y": 1
-   }
+  "global": "../../data/mapas/lunia_cap1.txt",
+  "matriz": 0,
+  "celula": [
+   21,
+   13
   ],
-  "colisao": [
-   {
-    "tiles": [
-     [
-      5,
-      12
-     ]
-    ],
-    "bloqueado": true
-   }
-  ]
+  "base": 0,
+  "headers": {
+   "Dawnmere": 60,
+   "Route1": 33,
+   "Harvestvale": 67
+  },
+  "padrao": 60,
+  "modelos_area": {
+   "lista": 0,
+   "acrescentar": [
+    314,
+    311,
+    245,
+    16
+   ],
+   "remover": [
+    21
+   ]
+  },
+  "nota": "CP-DS-03B etapa 6: Dawnmere, Route 1 e Harvestvale convertidos dos mapas do GBA (gba2grade.py) nas celulas (21,13)-(24,16) da matriz 0; substituem o prototipo do caminho A (New Bark, Route 29, Cherrygrove), cujas celulas ficam sem eventos e inalcancaveis. A placa da Route 1 do CP-DS-01 (bloco 0) sai junto com o prototipo."
  }
 ]

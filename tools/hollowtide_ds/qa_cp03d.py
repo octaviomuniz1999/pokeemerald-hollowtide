@@ -4,13 +4,14 @@ quarto -> mae -> porta da casa do jogador (GBA 2,9) -> placa da casa -> saida le
 oeste) -> placa do laboratorio -> porta do laboratorio -> Prof. Alex e o inicial -> volta pela porta -> guia ->
 saida leste com Pokemon -> Route 1 (header 33): placa norte, andarilho, Potion, Kai e Min (visao do GBA), placa sul.
 Capturas em cada passo (as batalhas tambem, em kai_batalha_N / min_batalha_N).
-Uso: qa_cp03d.py ROM ESTADO_QUARTO PASTA   (ESTADO_QUARTO de ds_intro.py na mesma ROM; build com provas/cp03c e
+Uso: qa_cp03d.py ROM ESTADO_QUARTO PASTA [--cap1]   (ESTADO_QUARTO de ds_intro.py na mesma ROM; build com provas/cp03c e
      provas/qa_forte, que da um Tyranitar junto com o Medalhao: o inicial de nivel 5 perde para o Kai com o robo)
 """
 import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from ds_driver import DS
-from qa_cap1 import walk, goto, face, advance, starter_screen, fight
+from qa_cap1 import walk, goto, face, advance, starter_screen, fight, route2, GYM_CELLS, GYM_NPCS, GYM_MATRIX, BREEZEPORT
+CAP1 = "--cap1" in sys.argv                              # build de conteudo: segue pelo Nevard, a ponte e a Route 2
 
 X0, Z0 = 672, 416
 CELLS = [(cx, cy) for cx in range(21, 25) for cy in range(13, 17)]
@@ -121,6 +122,29 @@ def main(rom, state, out):
     go(g(42, 95), "c")
     walk(d, ["UP"] * 3, stop_map=GYM); d.wait(200)
     step("25_ginasio_aberto")
+    if CAP1:                                              # build de conteudo (etapa 6): Nevard, ponte e Route 2
+        b, _ = goto(d, rom, (7, 4), GYM_CELLS, GYM, out, "gym", avoid=GYM_NPCS, matrix=GYM_MATRIX, max_steps=600)
+        face(d, "UP"); d.press("A", 4, 60)
+        for _ in range(12):
+            d.press("A", 4, 45)
+            if not d.top_is_field():
+                break
+        d.wait(200); step("26_nevard", f"batalhas no caminho: {b}")
+        if not d.top_is_field():
+            fight(d, 40)
+        advance(d, 36)
+        step("27_depois_do_nevard")
+        goto(d, rom, (7, 46), GYM_CELLS, GYM, out, "gym", avoid=GYM_NPCS, matrix=GYM_MATRIX, max_steps=600)
+        d.press("DOWN", 16, 24); d.wait(200)
+        step("28_saida_do_ginasio", "esperado (67, 714, 510): abaixo da porta do GBA")
+        go(g(55, 106), "c"); d.press("DOWN", 16, 24); d.wait(250)
+        step("29_ponte_route2", "esperado (34, 548, 382): comeco da Route 2 do prototipo")
+        d.press("DOWN", 16, 24); d.wait(250)
+        step("30_volta_harvestvale", "esperado (67, 727, 522): saida sul de Harvestvale")
+        d.press("DOWN", 16, 24); d.wait(250)
+        ok2 = {}
+        route2(d, rom, out, ok2)
+        step("31_breezeport", f"{ok2}")
     for t, w, e in log:
         print(f"{t:20} {w}  {e}")
     r = {t: w for t, w, _ in log}
@@ -136,10 +160,16 @@ def main(rom, state, out):
               "recruta": nr >= 1,
               "saida sul fechada": r["24_depois_da_saida_sul"] == (HARVESTVALE, 727, 522),
               "ginasio aberto": r["25_ginasio_aberto"] and r["25_ginasio_aberto"][0] == GYM}
+    if CAP1:
+        checks.update({"Nevard": r["27_depois_do_nevard"] and r["27_depois_do_nevard"][0] == GYM,
+                       "volta do ginasio": r["28_saida_do_ginasio"] == (HARVESTVALE, 714, 510),
+                       "ponte -> Route 2": r["29_ponte_route2"] == (34, 548, 382),
+                       "Route 2 -> Harvestvale": r["30_volta_harvestvale"] == (HARVESTVALE, 727, 522),
+                       "Breezeport": r["31_breezeport"] and r["31_breezeport"][0] == BREEZEPORT})
     for k, v in checks.items():
         print(f"  {k:14} {'ok' if v else 'FALHOU'}")
     print("RESULTADO CP-DS-03B eventos de Dawnmere:", "ok" if all(checks.values()) else "FALHOU")
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:4])
+    main(*[a for a in sys.argv[1:] if a != "--cap1"][:3])

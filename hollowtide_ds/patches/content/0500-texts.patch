@@ -54,9 +54,9 @@
 -Lyra: {STRVAR_1 3, 0, 0}!\nYou can catch wild Pokémon\fwith Poké Balls.\rFollow me!\r
 -Ethan: {STRVAR_1 3, 0, 0}!\nYou can catch wild Pokémon\fwith Poké Balls.\rFollow me!\r
 -...Just like that!\r...\nHuh? Was I too fast?\rI’ll try again. Come this way!\r
-+Pokémon live in the tall grass.\fFollow the trail west to\nreach Harvestvale.
-+Route 1\nWest: Harvestvale
-+Route 1\nEast: Dawnmere
++Pokémon live in the tall grass.\fFollow the trail and cross the\nbridge to reach Harvestvale.
++Route 1\nSouth: Harvestvale
++Route 1\nWest: Dawnmere
  See? Just like that!\rIt’s better to lower your\ntarget’s HP more than I did,\for make it sleep or something.\rYou can try all kinds of things\nto see what works.\rI’ll give you these. Good luck!\r
  See? Just like that!\rIt’s better to lower your\ntarget’s HP more than I did,\for make it sleep or something.\rYou can try all kinds of things\nto see what works.\rI’ll give you these. Good luck!\r
                        
@@ -106,14 +106,14 @@
 -Hi, {STRVAR_1 3, 0, 0}!\nLeaving again?\rYou should tell your mom if you\nare leaving.
 -Hi, {STRVAR_1 3, 0, 0}!\nLeaving again?\rYou should tell your mom if you\nare leaving.
 -Call your mom on your Pokégear to\nlet her know how you’re doing.
-+The lab is up the hill.\nRoute 1 starts at the west edge.
++The lab is up the hill.\nRoute 1 starts at the east edge.
 +My grandkids went on journeys,\ntoo. They always wrote home.\fWell… almost always.
 +Far away, a peak disappears into\nthe clouds.\fFrom up here, Dawnmere looks\nso small.
 +Prof. Alex’s Lab\nPokémon and Water Ecology
 +{STRVAR_1 3, 0, 0}’s House
 +The Neighbors’ House
-+Dawnmere Village\nWest exit: Route 1\fWhere mornings begin in mist.
-+It’s not safe to cross the tall\ngrass without a Pokémon.\fProf. Alex’s lab is up the hill\nto the east.
++Dawnmere Village\nEast exit: Route 1\fWhere mornings begin in mist.
++It’s not safe to cross the tall\ngrass without a Pokémon.\fProf. Alex’s lab is up the hill\nto the north.
 +Route 1\n← Harvestvale
  I like your Bag!
  Wait a sec!\r
@@ -129,7 +129,7 @@
 +Prof. Alex: {STRVAR_1 3, 0, 0}! Good, you came.\fI study how water and weather\nshape the lives of Pokémon.\fThe rivers around here have been\nacting strange lately.\fI could use someone out there\nwho keeps their eyes open.\fThese three were raised here at\nthe lab. Go on, pick a partner.
 +Prof. Alex: A fine choice.\nYou two already look like a team.\fTake this as well. It’s a Pokédex.\nIt records every Pokémon you meet.
 +{STRVAR_1 3, 0, 0} received the Pokédex!
-+Prof. Alex: Follow Route 1 to the west.\fYou’ll reach Harvestvale.\nNevard runs the Gym there.\fThe farmers say their canals\nhave been running low.\fIf you hear anything, let me know,\nall right?\fOh, and hold the B Button to run.\nTake care out there!
++Prof. Alex: Follow Route 1 east,\nthen head south across the river.\fYou’ll reach Harvestvale.\nNevard runs the Gym there.\fThe farmers say their canals\nhave been running low.\fIf you hear anything, let me know,\nall right?\fOh, and hold the B Button to run.\nTake care out there!
 +Check your Bag for Poké Balls.\fWeaken a wild Pokémon first,\nthen throw one to catch it!
  Professor Elm: If a wild Pokémon\nappears, let your Pokémon battle it!
  Professor Elm: Where are you going?\nThe Poké Balls are in that device.\r
@@ -152,7 +152,7 @@
 -Here you can save a record of\nyour progress...\r
 +Mom: {STRVAR_1 3, 0, 0}, wait a second!\fBefore you go, I want you to\nhave this.
 +It’s been in our family for a\nlong, long time.\fThe dog on it is called Atlas.\nYour grandma used to say he\rwalked beside anyone who needed\rcompany on the road.\fI don’t know if that’s true…\nbut I like the idea that you\rwon’t be walking alone.\fNow go on! Prof. Alex is waiting.
-+Mom: Morning, sleepyhead!\nProf. Alex stopped by earlier.\fHe’s waiting for you at the lab,\nup on the hill to the west.
++Mom: Morning, sleepyhead!\nProf. Alex stopped by earlier.\fHe’s waiting for you at the lab,\nup on the hill to the north.
 +Mom: Sit down for a minute.\nYou both look worn out.\f…There. All better!\nCome home whenever you need.
  These are also rather helpful...\r
  Just try touching the buttons, and\nyou’ll know what to do in no time.\r
@@ -209,9 +209,9 @@
 +Use the key on the valve.\fIt’s on the west bank of the\ncanal, near the coffee fields.
 +The bosses won’t like this…\nTeam Palm always collects.
 +Villager: Hey, you! A trainer?\fTeam Palm shut off the canal\nvalve. The Gym’s gone dry, too.\fTheir recruit has the key.\nHe’s at the blue kiosk to the\rsouthwest.
-+Harvestvale\nEast: Route 1\fFields of coffee and quiet canals.
-+Route 2\fThe road north is closed while\nthe fields are being repaired.\fNevard will reopen it.
-+Route 2\fThe road north is closed while\nthe fields are being repaired.\fNevard will reopen it.
++Harvestvale\nNorth: Route 1\fFields of coffee and quiet canals.
++Route 2\fThe road south is closed while\nthe fields are being repaired.\fNevard will reopen it.
++Route 2\fThe road south is closed while\nthe fields are being repaired.\fNevard will reopen it.
 +Harvestvale Pokémon Gym\fClosed until water returns to the\nfields. - Nevard
 +Harvestvale Pokémon Gym\nLeader: Nevard\fThe farmer who never stops\ngrowing.
 +Team Palm Water Kiosk\nIrrigation contracts signed here.

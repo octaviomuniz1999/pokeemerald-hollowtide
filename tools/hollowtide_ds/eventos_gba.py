@@ -7,13 +7,13 @@ textos; so mudam de lugar, para os tiles do mapa do GBA no desenho global (gba2g
   (Dawnmere/LittlerootTown (2, 2); Route 1/Route101 (36, 19)).
 Os NPCs ficam parados olhando para o lado do GBA (tipos de movimento do HGSS: 14 cima, 15 baixo, 16 esquerda,
 17 direita, conferidos nos eventos originais).
-Gera os patches da build de prova, sobre o estado da pasta de conteudo ja aplicado no hg-engine pelo build.sh (sem
+Gera os patches da pasta de conteudo (07xx), sobre o estado da pasta de conteudo ja aplicado no hg-engine pelo build.sh (sem
 estes patches: reverta-os com patch -R antes de regenerar):
-  0922-dawnmere-eventos-gba.patch   (zone_event/057_T20.json)
-  0923-dawnmere-trava-leste.patch   (scr_seq_0842_T20.s: a saida volta a ser a leste; o passo de volta e para oeste)
-  0924-route1-eventos-gba.patch     (zone_event/030_R29.json)
-  0925-harvestvale-eventos-gba.patch (zone_event/064_T21.json)
-  0926-harvestvale-saida-sul.patch  (scr_seq_0850_T21.s: a saida para a Route 2 e a do sul, como no GBA)
+  0700-dawnmere-eventos-gba.patch   (zone_event/057_T20.json)
+  0701-dawnmere-trava-leste.patch   (scr_seq_0842_T20.s: a saida volta a ser a leste; o passo de volta e para oeste)
+  0702-route1-eventos-gba.patch     (zone_event/030_R29.json)
+  0703-harvestvale-eventos-gba.patch (zone_event/064_T21.json)
+  0704-harvestvale-saida-sul.patch  (scr_seq_0850_T21.s: a saida para a Route 2 e a do sul, como no GBA)
 Uso: eventos_gba.py HG_ENGINE PASTA_SAIDA
 """
 import difflib, json, os, sys
@@ -32,7 +32,7 @@ ZONAS = {
                 "_EV_scr_seq_T20_007 + 1": (11, 19),                 # Palm040_HomeSign
                 "_EV_scr_seq_T20_016 + 1": (18, 16),                 # Palm040_NeighborSign
                 "_EV_scr_seq_T20_014 + 1": (17, 19)},                # Palm040_TownSign
-        # placa da Route 1 do CP-DS-01 (script 19): sai; no GBA a Route 1 tem as placas norte e sul (0924)
+        # placa da Route 1 do CP-DS-01 (script 19): sai; no GBA a Route 1 tem as placas norte e sul (0702)
         tirar_placas={"19"},
         # warps por destino; o GBA tem 3 portas. Os dois warps do HGSS sem par ficam nas portas decorativas (tiles
         # bloqueados, inalcancaveis), para os interiores continuarem com a volta valida.
@@ -103,8 +103,12 @@ def mover(j, z):
     return j
 
 
-def diff(path_rel, old, new):
-    return "".join(difflib.unified_diff(old.splitlines(True), new.splitlines(True), "a/" + path_rel, "b/" + path_rel))
+def diff(rel, old, new):
+    """Diff unificado aplicavel pelo patch(1), com a marca de arquivo sem quebra de linha no fim."""
+    out = []
+    for line in difflib.unified_diff(old.splitlines(True), new.splitlines(True), "a/" + rel, "b/" + rel):
+        out.append(line if line.endswith("\n") else line + "\n\\ No newline at end of file\n")
+    return "".join(out)
 
 
 def zona(hg, out, nome, arquivo):
@@ -115,9 +119,9 @@ def zona(hg, out, nome, arquivo):
 
 
 def main(hg, out):
-    zona(hg, out, "057_T20", "0922-dawnmere-eventos-gba.patch")
-    zona(hg, out, "030_R29", "0924-route1-eventos-gba.patch")
-    zona(hg, out, "064_T21", "0925-harvestvale-eventos-gba.patch")
+    zona(hg, out, "057_T20", "0700-dawnmere-eventos-gba.patch")
+    zona(hg, out, "030_R29", "0702-route1-eventos-gba.patch")
+    zona(hg, out, "064_T21", "0703-harvestvale-eventos-gba.patch")
     rel = "data/scr_seq/scr_seq_0850_T21.s"
     old = open(os.path.join(hg, rel)).read()
     new = old.replace("// chegada pelo leste (Route 1)", "// chegada pelo norte (Route 1), como no GBA (Palm072_Arrival)")
@@ -127,7 +131,7 @@ def main(hg, out):
     new = new[:a] + new[a:b].replace("_HT_StepDown", "_HT_StepUp") + new[b:]
     new = new.rstrip("\n") + "\n_HT_StepUp:\n\tstep MOVEMENT_STEP_UP, 1\n\tstep_end\n\t.balign 4\n"
     assert new.count("_HT_StepUp") == 2
-    open(os.path.join(out, "0926-harvestvale-saida-sul.patch"), "w").write(diff(rel, old, new))
+    open(os.path.join(out, "0704-harvestvale-saida-sul.patch"), "w").write(diff(rel, old, new))
     rel = "data/scr_seq/scr_seq_0842_T20.s"
     old = open(os.path.join(hg, rel)).read()
     new = old.replace("// saida oeste (Route 1): sem Pokemon, volta um passo (GBA Palm040_ExitEast)",
@@ -135,7 +139,7 @@ def main(hg, out):
     a = new.rindex("_HT_StepBack:")
     new = new[:a] + new[a:].replace("step MOVEMENT_STEP_RIGHT, 1", "step MOVEMENT_STEP_LEFT, 1", 1)
     assert new != old
-    open(os.path.join(out, "0923-dawnmere-trava-leste.patch"), "w").write(diff(rel, old, new))
+    open(os.path.join(out, "0701-dawnmere-trava-leste.patch"), "w").write(diff(rel, old, new))
     print("patches de eventos gerados em", out)
 
 
