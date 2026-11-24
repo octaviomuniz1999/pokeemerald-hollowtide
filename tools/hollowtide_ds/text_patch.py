@@ -35,8 +35,10 @@ def main(hg):
                         if old not in txt:
                             raise ValueError(f"{arc}/{i}: trecho para trocar nao encontrado: {old!r}")
                         txt = txt.replace(old, new)
+                    msgs += [""] * (int(i) + 1 - len(msgs))     # mensagens novas alem do fim do arquivo
                     msgs[int(i)] = txt
                 else:
+                    msgs += [""] * (int(i) + 1 - len(msgs))
                     msgs[int(i)] = t
             a, b = os.path.join(tmp, "a"), os.path.join(tmp, "b")
             open(a, "w", encoding="utf-8", newline="").write(orig)

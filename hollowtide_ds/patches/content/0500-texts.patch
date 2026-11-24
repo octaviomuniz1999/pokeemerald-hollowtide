@@ -173,6 +173,73 @@
 -You’re trying to see how good you\nare as a Pokémon Trainer?\rYou better visit the Pokémon Gyms\nall over Johto and collect Badges.
 +You’re trying to see how good you\nare as a Pokémon Trainer?\rYou better visit the Pokémon Gyms\nall over Lunia and collect Badges.
  When I get older, I’m going to be a\nGym Leader!\rI make my Pokémon battle with my\nfriends’ to make them tougher!
+--- a/data/text/custom/604.txt
++++ b/data/text/custom/604.txt
+@@ -1,9 +1,20 @@
+-...\rYou again?\rThere’s no need to be alert.\nI don’t bother with wimps like you.\rSpeaking of weaklings, the city’s\nGym Leader isn’t here, and\fis supposedly taking care of a\fsick Pokémon at the Lighthouse.\rHumph! Boo-hoo!\nJust let sick Pokémon go!\rA Pokémon that can’t battle\nis worthless!\rWhy don’t you go train at\nthe Lighthouse?\rWho knows? It may make you a bit\nof a better Trainer!\r
+-Dark roads are dangerous at night.\rBut, in the pitch-black night,\nthe sea is even more treacherous!\rWithout the beacon of the Lighthouse\nto guide her, no ship can sail.
+-That thing you have--\nit’s a Pokégear, right?\fWow, that’s cool.
+-Wow, you have a Pokémon!\nThat is just so awesome.
+-You, young Trainer!\nThe sea is sweet!\rSing with me!\fThe sea is blue!\nThe sea is salty!
+-Olivine City\nThe Port with Sea Breezes
+-Olivine Port\nFast-Ship Pier
+-Olivine City Pokémon Gym\nLeader: Jasmine\fThe Steel-Clad Defense Girl
+-Olivine’s Lighthouse\rIt is also known as\nthe Glitter Lighthouse.
++I perform at the Theater of Echoes.\fTonight is the festival, but three\nstreet lamps went dark!\fOne by the west houses, one in\nthe plaza, one on the boardwalk.\fCould you switch them back on?\nThe show can’t start in the dark.
++The stage has its lights back!\nJay is waiting at the Theater.
++Welcome to Breezeport!\fFollow the avenue down and you’ll\nsmell the sea before you see it.
++At night the festival lamps make\nthe whole plaza sparkle!
++From up here the whole bay is\nyours: the beach, the lagoon...\fOn clear days you can see a peak\nfar to the north, lost in clouds.\fPeople say nobody climbs it\nanymore. I wonder why...
++The water’s warmer this year.\fAnd the tide comes in so fast now.\nIt never used to.
++The fish bite less since those\nnew pipes went in up the coast.\fTeam Palm says it’s progress.\nMy nets say otherwise.
++Have you seen Jay perform?\fHer ghosts dance with the stage\nlights. It gives me chills!
++See that rock out in the bay?\nThe lighthouse stood there.\fLast winter’s storm took it.\nStorms used to be gentler...\fUntil we rebuild, that lamp on\nthe point guides the boats home.
++My husband works at the pump\nstation by the harbor.\fHe says Team Palm bought half the\npumps on this coast. Strange, no?
++The DEPARTMENT STORE by the beach\nsells everything. Even Poké Balls!
++Every summer the Theater of Echoes\nhosts the festival.\fIt’s the heart of this city.\nTonight, it beats again.
++Breezeport City\nWhere the sea breeze never sleeps.\fWest: Route 2
++Theater of Echoes\fClosed until the festival lamps\nare lit. Ask the artist out front.
++Team Palm\nClean energy for a better coast!\fSomeone has scribbled underneath:\n“Better for whom?”
++West Beach Trail - Route 3\fThe trail is closed during the\nfestival. Ask Gym Leader Jay.
++West Beach Trail - Route 3\nUp the coast to Ferralia City.
++The lamp is glowing.
++All three lamps are glowing!\nThe Theater of Echoes is open!
++Lighthouse Keeper’s House
+\ No newline at end of file
+--- a/data/text/custom/606.txt
++++ b/data/text/custom/606.txt
+@@ -1,17 +1,17 @@
+-Jasmine: Thank you for your help\nat the Lighthouse...\rBut this is different. Please allow me to\nintroduce myself.\rI am Jasmine, a Gym Leader.\nI use the...clang!\fSteel type!\r...Do you know about the Steel type?\rThey are very hard, cold, sharp,\nand really strong!\fUm... I’m not lying.\r
+-Jasmine: ...You are a better Trainer\nthan me, in both skill and kindness.\rIn accordance with League rules,\nI confer upon you this Badge.\r
+-{STRVAR_1 3, 0, 0} received\nthe Mineral Badge from Jasmine!
+-Jasmine: With that Badge,\nall Pokémon, including traded\fPokémon up to Lv. 70, will obey\fyou without question.\fUm... Please take this, too...\r
+-                           
+-Jasmine: It is called Iron Tail...\rYour Pokémon will hit the target\nwith its hard tail, occasionally\flowering the target’s Defense...
+-Jasmine: Um...\rI don’t know how to say this, but\ngood luck...
+-Jasmine: Long time, no see.\rUm... I’m fine, thank you.\rI don’t know how to say this,\nbut...nothing...
+-Jasmine: Um... Er...\rWill you trade your Pokémon\nfor mine? {YESNO 0}
+-Jasmine: Really? Thank you very much!\rI’ll be happy with any Pokémon!\r
+-Jasmine: Oh, uh-huh, I see.\nThat’s disappointing, but I understand.
+-Jasmine: Thank you so much.\nI’ll take good care of it.
+-Jasmine: Don’t you sometimes feel like\nscrubbing Steel-type Pokémon?\fDon’t you?
+-Will you trade {STRVAR_1 1, 1, 0}? {YESNO 0}
++Jay: My stage is still dark!\fLight the spotlights on the panels\nbelow: LEFT, then RIGHT, then LEFT.
++Jay: Now that the lights are back,\neven the shadows want to dance!\fLet’s give this crowd a show\nthey’ll remember!
++Jay: The Echo Badge is yours.\fThe west beach trail is open.\nRoute 3 leads up to Ferralia.
++Jay: Head out along the west\nbeach. Mind the cliffs up the coast!
++LINH: Mic check! Let’s test the\nsound with a battle!
++YUMI: Meet my partner!\nIsn’t it a star?
++The LEFT spotlight flickers on!\nNext: the RIGHT spotlight.
++The RIGHT spotlight flickers on!\nNow the LEFT one again.
++The lights went out...\fLight them in order: LEFT, then\nRIGHT, then LEFT again.
++The stage is lit!\nJay is ready for you.
++A note is taped to the panel:\n“LEFT, RIGHT, LEFT.”
++SPOTLIGHTS\nLeft, right, left.
++Que ritmo!
++Fim da apresentacao!
+ Jasmine: I like Eggs, too, but\nI’d like a Pokémon, {STRVAR_1 3, 0, 0}.\fOne that might have a little training...
+ Jasmine: I’d appreciate it so much...\nExcept that I cannot accept such\fa precious Pokémon.
+ Jasmine, the Gym Leader?\nShe’s at the Lighthouse.\rShe’s been tending to a sick Pokémon.\rA strong Trainer is compassionate\nat the same time...
 --- a/data/text/040.txt
 +++ b/data/text/040.txt
 @@ -40,7 +40,7 @@

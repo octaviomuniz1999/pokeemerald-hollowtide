@@ -70,14 +70,3 @@
 +  "coord_events": []
  }
 \ No newline at end of file
---- a/data/eventdata/zone_event/074_T26.json
-+++ b/data/eventdata/zone_event/074_T26.json
-@@ -245,7 +245,7 @@
-     {
-       "x": 265,
-       "z": 257,
--      "dest_header_id": "MAP_T26R0701",
-+      "dest_header_id": "MAP_R31R0101",
-       "dest_warp_id": 0,
-       "y": 0
-     },

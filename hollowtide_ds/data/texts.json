@@ -257,5 +257,120 @@
   "0": {
    "gba": "Palm080_TextRouteSouth"
   }
+ },
+ "604": {
+  "_": "Breezeport City (Olivine do HGSS; script em overlay/data/scr_seq/scr_seq_0911_T26.s)",
+  "0": {
+   "gba": "Palm080_TextBrisaHost"
+  },
+  "1": {
+   "gba": "Palm090_TextArtistDone"
+  },
+  "2": {
+   "gba": "Palm093_Greeter_Text"
+  },
+  "3": {
+   "gba": "Palm093_PlazaGirl_Text"
+  },
+  "4": {
+   "gba": "Palm093_LookoutHiker_Text"
+  },
+  "5": {
+   "gba": "Palm093_BeachWoman_Text"
+  },
+  "6": {
+   "gba": "Palm093_Fisherman_Text"
+  },
+  "7": {
+   "gba": "Palm093_JayFan_Text"
+  },
+  "8": {
+   "gba": "Palm093_KeeperOldMan_Text"
+  },
+  "9": {
+   "gba": "Palm093_PumpWife_Text"
+  },
+  "10": {
+   "gba": "Palm093_StoreKid_Text"
+  },
+  "11": {
+   "gba": "Palm093_FestivalBeauty_Text"
+  },
+  "12": {
+   "gba": "Palm080_TextBrisaSign",
+   "replace": [
+    [
+     "North: Route 2",
+     "West: Route 2"
+    ]
+   ],
+   "_por_que": "no DS a passagem da Route 2 fica no oeste de Breezeport"
+  },
+  "13": {
+   "gba": "Palm090_TextLocked"
+  },
+  "14": {
+   "gba": "Palm090_TextPoster"
+  },
+  "15": {
+   "gba": "Palm090_TextEast"
+  },
+  "16": {
+   "gba": "Palm091_TextEastOpen"
+  },
+  "17": {
+   "gba": "Palm090_TextLamp"
+  },
+  "18": {
+   "gba": "Palm090_TextAllLit"
+  },
+  "19": {
+   "gba": "Palm092_TextKeeperHouse"
+  }
+ },
+ "606": {
+  "_": "Teatro, ginásio da Jay (interior do ginásio de Olivine; script em overlay/data/scr_seq/scr_seq_0913_T26GYM0101.s)",
+  "0": {
+   "gba": "Palm090_TextBlocked"
+  },
+  "1": {
+   "gba": "Palm090_TextJayIntro"
+  },
+  "2": {
+   "gba": "Palm090_TextBadge"
+  },
+  "3": {
+   "gba": "Palm090_TextJayAfter"
+  },
+  "4": {
+   "gba": "Palm090_TextLinh"
+  },
+  "5": {
+   "gba": "Palm090_TextYumi"
+  },
+  "6": {
+   "gba": "Palm090_TextStageLamp"
+  },
+  "7": {
+   "gba": "Palm090_TextStageLampTwo"
+  },
+  "8": {
+   "gba": "Palm090_TextReset"
+  },
+  "9": {
+   "gba": "Palm090_TextPuzzleDone"
+  },
+  "10": {
+   "gba": "Palm090_TextCenterPanel"
+  },
+  "11": {
+   "gba": "Palm090_TextHint"
+  },
+  "12": {
+   "gba": "Palm090_TextLinhLoss"
+  },
+  "13": {
+   "gba": "Palm090_TextYumiLoss"
+  }
  }
 }
