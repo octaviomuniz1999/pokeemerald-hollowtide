@@ -2,7 +2,7 @@
 """QA do Cap. 2 no DS: Breezeport (Olivine) e o Teatro da Jay, a partir do estado salvo pelo qa_cap1.py na chegada.
 
 1. Teatro fechado antes do festival (porta do ginasio de Olivine, 269,238);
-2. a artista (270,240) comeca o festival; os 3 lampioes: casas do oeste (266,250), praca (277,262), cais (279,272);
+2. a artista (270,240) comeca o festival; os 3 lampioes: casas do oeste (266,250), praca (277,262), beira do cais (276,271);
 3. Teatro aberto; refletores ESQUERDA (4,20), DIREITA (8,20), ESQUERDA; Jay (6,5) -> Echo Badge;
 4. saida norte (Route 3 = Route 39) liberada.
 Uso: qa_cap2.py ROM ESTADO_BREEZEPORT PASTA   (ROM do build com provas/qa_forte, a mesma do estado)
@@ -46,7 +46,7 @@ def main(rom, state, out):
     bz(d, rom, out, (270, 241), "bz"); use(d, "UP", out, "2_artista", 14)
     bz(d, rom, out, (267, 250), "bz"); use(d, "LEFT", out, "3_lampiao1")
     bz(d, rom, out, (278, 262), "bz"); use(d, "LEFT", out, "4_lampiao2")
-    bz(d, rom, out, (279, 271), "bz"); use(d, "DOWN", out, "5_lampiao3", 12)
+    bz(d, rom, out, (277, 271), "bz"); use(d, "LEFT", out, "5_lampiao3", 12)
     # 3. Teatro
     bz(d, rom, out, (269, 239), "bz"); d.press("UP", 16, 24); d.wait(200)
     ok["teatro"] = d.where(); d.shot(f"{out}/6_teatro.png")
