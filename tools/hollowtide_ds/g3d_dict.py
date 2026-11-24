@@ -54,10 +54,11 @@ def insertion_order(names):
     return sorted(range(len(names)), key=lambda i: int.from_bytes(names[i], "little"), reverse=True)
 
 
-def build(names, data, unit):
-    """Dicionario completo. names: str (ate 16), data: lista de bytes de tamanho unit."""
+def build(names, data, unit, order=None):
+    """Dicionario completo. names: str (ate 16), data: lista de bytes de tamanho unit; order: ordem de insercao
+    (a do arquivo original, para conferir byte a byte; None = padrao)."""
     raw = [n.encode("ascii").ljust(16, b"\0") for n in names]
-    nodes = tree(raw)
+    nodes = tree(raw, order)
     n = len(names)
     tree_b = b"".join(struct.pack("<4B", *nd) for nd in nodes)
     ofs_entry = 8 + len(tree_b)
@@ -75,3 +76,9 @@ def read(b, base=0):
     data = [bytes(b[e + 4 + unit * i:e + 4 + unit * (i + 1)]) for i in range(n)]
     names = [bytes(b[e + ofs_names + 16 * i:e + ofs_names + 16 * (i + 1)]).rstrip(b"\0").decode("ascii") for i in range(n)]
     return names, data, unit
+
+
+def read_order(b, base=0):
+    """Ordem de insercao gravada num dicionario (a entrada de cada no, na ordem dos nos)."""
+    n = b[base + 1]
+    return [b[base + 8 + 4 * k + 3] for k in range(1, n + 1)]

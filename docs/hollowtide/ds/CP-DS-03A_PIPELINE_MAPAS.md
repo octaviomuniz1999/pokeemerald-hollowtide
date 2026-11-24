@@ -43,6 +43,9 @@ Formatos lidos e escritos, com **ida e volta byte a byte em todos os 676 blocos 
 - `g3d_dict.py` (24/11, para o CP-DS-03B): dicionários de nomes G3D (árvore PATRICIA). Reproduz byte a byte os 3380
   dicionários dos 676 modelos. É a base para montar modelos com materiais de mais de um bloco doador (um setor de
   Lunia precisa de lagoa, mato alto, cerca e flores, que não estão todos num mesmo bloco do HGSS).
+- `nsbmd.py` ganhou `read_materials`/`build_materials` e `model_parts`/`build_model`: o modelo inteiro (comandos de
+  render, materiais com os dicionários de texturas e paletas, formas e listas de desenho) é remontado a partir das
+  partes, com número livre de materiais e formas. Conferido: **os 676 modelos remontados byte a byte**.
 
 Limites atuais (o que o CP-DS-03B ainda precisa):
 - Penhascos retos, sem as curvas e bordas arredondadas do HGSS.

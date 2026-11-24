@@ -154,3 +154,120 @@ class Model:
         struct.pack_into("<I", out, self.mdl0 + 4, len(out) - self.mdl0)   # tamanho do bloco MDL0
         struct.pack_into("<I", out, 8, len(out))                            # tamanho do arquivo
         return bytes(out)
+
+
+# --- secao de materiais (para juntar materiais de varios blocos doadores da mesma area) -------------------------------
+def read_materials(b, mb):
+    """Bloco de materiais em b[mb:]: (materiais [(nome, dados)], texturas [(nome, [indices], flag)], paletas idem).
+    Layout conferido nos 676 modelos: u16 ofs_tex, u16 ofs_pal, dicionario de materiais (u32 ofs dos dados),
+    dicionario de texturas e de paletas (u16 ofs da lista, u8 quantidade, u8 flag), listas de indices (u8),
+    alinhamento a 4, dados dos materiais (tamanho no 2o u16 de cada um)."""
+    import g3d_dict as g
+    ot, op = struct.unpack_from("<HH", b, mb)
+    mnames, mdata, _ = g.read(b, mb + 4)
+    mats = []
+    for n, d in zip(mnames, mdata):
+        o = mb + struct.unpack_from("<I", d)[0]
+        size = struct.unpack_from("<H", b, o + 2)[0]
+        mats.append((n, bytes(b[o:o + size])))
+    def binds(base):
+        names, data, _ = g.read(b, mb + base)
+        out = []
+        for n, d in zip(names, data):
+            ofs, cnt, flag = struct.unpack_from("<HBB", d)
+            out.append((n, list(b[mb + ofs:mb + ofs + cnt]), flag))
+        return out
+    return mats, binds(ot), binds(op)
+
+
+def material_orders(b, mb):
+    """Ordens de insercao dos 3 dicionarios do bloco de materiais (para remontar byte a byte)."""
+    import g3d_dict as g
+    ot, op = struct.unpack_from("<HH", b, mb)
+    return g.read_order(b, mb + 4), g.read_order(b, mb + ot), g.read_order(b, mb + op)
+
+
+def build_materials(mats, tex, pal, orders=(None, None, None)):
+    """Bloco de materiais (inverso de read_materials). orders: ordens de insercao dos dicionarios (None = padrao)."""
+    import g3d_dict as g
+    md_size = len(g.build([n for n, _ in mats], [b"\0" * 4] * len(mats), 4))
+    td_size = len(g.build([n for n, _, _ in tex], [b"\0" * 4] * len(tex), 4))
+    pd_size = len(g.build([n for n, _, _ in pal], [b"\0" * 4] * len(pal), 4))
+    ot = 4 + md_size
+    op = ot + td_size
+    lists_at = op + pd_size
+    lists, tdata, pdata = b"", [], []
+    for group, out in ((tex, tdata), (pal, pdata)):
+        for n, idx, flag in group:
+            out.append(struct.pack("<HBB", lists_at + len(lists), len(idx), flag))
+            lists += bytes(idx)
+    mat_at = lists_at + len(lists)
+    pad = (-mat_at) % 4
+    mat_at += pad
+    mdata, pos = [], mat_at
+    for n, d in mats:
+        mdata.append(struct.pack("<I", pos)); pos += len(d)
+    return (struct.pack("<HH", ot, op) + g.build([n for n, _ in mats], mdata, 4, orders[0])
+            + g.build([n for n, _, _ in tex], tdata, 4, orders[1]) + g.build([n for n, _, _ in pal], pdata, 4, orders[2])
+            + lists + b"\0" * pad + b"".join(d for _, d in mats))
+
+
+SBC_PRE = bytes.fromhex("26000000000200010b")       # NODEDESC 0, NODE 0 visivel, POSSCALE  (669 dos 676 modelos)
+SBC_SUF = bytes.fromhex("2b0100")                   # POSSCALE inverso, RET
+
+
+def model_parts(md):
+    """Partes de um modelo de mapa: dict com cabecalho/info/nos (opacos), comandos de render (prefixo, pares,
+    sufixo), materiais, formas [(nome, flag, lista de desenho)] e as ordens de insercao dos dicionarios."""
+    import g3d_dict as g
+    m = Model(md)
+    sbc = bytes(md[m.m + m.ofs_sbc:m.m + m.ofs_mat])
+    k = sbc.find(b"\x04")
+    i = k
+    while i + 3 < len(sbc) and sbc[i] == 4 and sbc[i + 2] == 5:
+        i += 4
+    draws = [(sbc[j + 1], sbc[j + 3]) for j in range(k, i, 4)]
+    mb = m.m + m.ofs_mat
+    sb = m.m + m.ofs_shp
+    names, data, _ = g.read(md, sb)
+    shapes = []
+    for n, d, dl in zip(names, data, m.dls):
+        h = sb + struct.unpack_from("<I", d)[0]
+        shapes.append((n, struct.unpack_from("<I", md, h + 4)[0], dl))
+    return {"head": bytes(md[:m.m]), "info": bytes(md[m.m + 20:m.m + m.ofs_sbc]), "sbc": (sbc[:k], draws, sbc[i:]),
+            "materials": read_materials(md, mb), "mat_orders": material_orders(md, mb), "shapes": shapes,
+            "shape_order": g.read_order(md, sb), "mdl0": m.mdl0, "m": m.m}
+
+
+def build_model(p, counts=None):
+    """Modelo a partir das partes (inverso de model_parts); numero de materiais/formas livre."""
+    import g3d_dict as g
+    pre, draws, suf = p["sbc"]
+    sbc = pre + b"".join(bytes([4, a, 5, b]) for a, b in draws) + suf
+    sbc += b"\0" * ((-(20 + len(p["info"]) + len(sbc))) % 4)
+    mats, tex, pal = p["materials"]
+    matb = build_materials(mats, tex, pal, p.get("mat_orders", (None, None, None)))
+    shapes = p["shapes"]
+    dsize = len(g.build([n for n, _, _ in shapes], [b"\0" * 4] * len(shapes), 4))
+    hdr_at = dsize
+    dl_at = hdr_at + 16 * len(shapes)
+    sdata, hdrs, pos = [], b"", dl_at
+    for k, (n, flag, dl) in enumerate(shapes):
+        h = hdr_at + 16 * k
+        sdata.append(struct.pack("<I", h))
+        hdrs += struct.pack("<HHIII", 0, 16, flag, pos - h, len(dl))
+        pos += len(dl)
+    shpb = g.build([n for n, _, _ in shapes], sdata, 4, p.get("shape_order")) + hdrs + b"".join(dl for _, _, dl in shapes)
+    info = bytearray(p["info"])
+    info[4], info[5] = len(mats), len(shapes)
+    if counts:
+        struct.pack_into("<4H", info, 16, *counts)
+    ofs_sbc = 20 + len(info)
+    ofs_mat = ofs_sbc + len(sbc)
+    ofs_shp = ofs_mat + len(matb)
+    size = ofs_shp + len(shpb)
+    model = struct.pack("<5I", size, ofs_sbc, ofs_mat, ofs_shp, size) + bytes(info) + sbc + matb + shpb
+    out = bytearray(p["head"] + model)
+    struct.pack_into("<I", out, p["mdl0"] + 4, len(out) - p["mdl0"])
+    struct.pack_into("<I", out, 8, len(out))
+    return bytes(out)
