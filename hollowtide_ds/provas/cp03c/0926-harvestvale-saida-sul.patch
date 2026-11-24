@@ -1,0 +1,36 @@
+--- a/data/scr_seq/scr_seq_0850_T21.s
++++ b/data/scr_seq/scr_seq_0850_T21.s
+@@ -66,7 +66,7 @@
+ 	releaseall
+ 	end
+ 
+-// chegada pelo leste (Route 1)
++// chegada pelo norte (Route 1), como no GBA (Palm072_Arrival)
+ scr_seq_T21_001:
+ 	lockall
+ 	setvar VAR_SCENE_CHERRYGROVE_CITY_OW, 1
+@@ -81,14 +81,14 @@
+ 	releaseall
+ 	end
+ 
+-// saida norte (Route 2): fechada ate vencer o Nevard
++// saida sul (Route 2), como no GBA (Palm080_LeaveColheita): fechada ate vencer o Nevard; volta um passo para cima
+ scr_seq_T21_002:
+ 	lockall
+ 	goto_if_set FLAG_HT_DEFEATED_NEVARD, _HT_ExitOk
+ 	npc_msg 8
+ 	wait_button
+ 	closemsg
+-	apply_movement obj_player, _HT_StepDown
++	apply_movement obj_player, _HT_StepUp
+ 	wait_movement
+ 	releaseall
+ 	end
+@@ -269,3 +269,7 @@
+ 	step MOVEMENT_STEP_DOWN, 1
+ 	step_end
+ 	.balign 4
++_HT_StepUp:
++	step MOVEMENT_STEP_UP, 1
++	step_end
++	.balign 4

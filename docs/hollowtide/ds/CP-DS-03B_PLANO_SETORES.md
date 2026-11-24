@@ -198,9 +198,29 @@ Route 1 e Harvestvale (etapas 4 e 5, 24/11), na build de prova (`provas/cp03c`).
   - entrada em Harvestvale (header 67) e as ruas entre casas, ginásio, Centro e Mart.
 - Capturas: `CP-DS-03B_eventos_dawnmere.png`, `CP-DS-03B_route1_harvestvale.png`.
 
+Eventos de Harvestvale (24/11, noite), nos patches 0925/0926 gerados por `eventos_gba.py`. Vão para os tiles do
+`OldaleTown` do GBA:
+- o fazendeiro, parado olhando para a esquerda, e o recruta do quiosque;
+- as 8 placas;
+- a válvula, que no GBA é a placa da água (`Palm062_WaterSign`, 27,23);
+- os 5 warps: ginásio, Centro, Mart, `HOUSE1` e `HOUSE2`;
+- a chegada (linha 2, colunas 8–11);
+- a trava do ginásio, no tile abaixo da porta;
+- a saída para a Route 2, que volta a ser **ao sul** como no GBA (`Palm080_LeaveColheita`, 17–19, 35). O passo de
+  volta dela agora é para cima.
+
+`qa_cp03d.py` testou a história de Harvestvale pelo fluxo do jogo. Passou, junto com o resto (13 checagens):
+- o fazendeiro chama na chegada;
+- placa de boas-vindas;
+- ginásio fechado (fala e um passo para baixo);
+- batalha com o recruta;
+- válvula ("A turned the valve!");
+- saída sul fechada antes do Nevard (um passo para cima);
+- ginásio aberto depois da água (interior do Nevard).
+
+Capturas: `CP-DS-03B_eventos_harvestvale.png`.
+
 Falta:
-- eventos de Harvestvale nas posições do GBA. As cenas da Cherrygrove e a trava da comporta do 0640 têm de ser
-  revistas;
 - modelos para o armazém, as barracas do mercado e o celeiro de Harvestvale (hoje são só colisão). As árvores soltas
   em volta deles saem cortadas;
 - a porta do laboratório (vão claro) e a do ginásio (branca): os modelos de porta de fora da área ficam sem textura,

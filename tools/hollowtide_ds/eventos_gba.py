@@ -12,6 +12,8 @@ estes patches: reverta-os com patch -R antes de regenerar):
   0922-dawnmere-eventos-gba.patch   (zone_event/057_T20.json)
   0923-dawnmere-trava-leste.patch   (scr_seq_0842_T20.s: a saida volta a ser a leste; o passo de volta e para oeste)
   0924-route1-eventos-gba.patch     (zone_event/030_R29.json)
+  0925-harvestvale-eventos-gba.patch (zone_event/064_T21.json)
+  0926-harvestvale-saida-sul.patch  (scr_seq_0850_T21.s: a saida para a Route 2 e a do sul, como no GBA)
 Uso: eventos_gba.py HG_ENGINE PASTA_SAIDA
 """
 import difflib, json, os, sys
@@ -52,6 +54,28 @@ ZONAS = {
                 "_EV_scr_seq_R29_004 + 1": (6, 48)},                 # Palm050_SouthSign
         tirar_placas=set(), warps={}, coord={},
     ),
+    "064_T21": dict(
+        origem=(37, 72),
+        objetos={"_EV_scr_seq_T21_000 + 1": ((11, 3), "esquerda"),   # fazendeiro (Palm060_Farmer / Palm071)
+                 "_EV_scr_seq_T21_004 + 1": ((7, 32), "baixo")},     # recruta da Team Palm no quiosque (Palm060_Kiosk)
+        placas={"_EV_scr_seq_T21_006 + 1": (12, 11),                 # Palm060_Welcome
+                "_EV_scr_seq_T21_005 + 1": (7, 22),                  # Palm060_GymSign
+                "_EV_scr_seq_T21_007 + 1": (20, 35),                 # Palm060_ClosedRoad
+                "_EV_scr_seq_T21_008 + 1": (10, 32),                 # Palm060_KioskSign
+                "_EV_scr_seq_T21_009 + 1": (27, 23),                 # valvula = Palm062_WaterSign
+                "12": (26, 19),                                      # Palm062_CoffeeSign
+                "13": (16, 34),                                      # Palm064_DryingYard
+                "14": (24, 18)},                                     # Palm064_WaterBoard
+        tirar_placas=set(),
+        warps={"MAP_T21PC0101": (12, 21),     # Centro Pokemon
+               "MAP_T21FS0101": (23, 31),     # Poke Mart
+               "MAP_T21R0301": (17, 11),      # OLDALE_TOWN_HOUSE1
+               "MAP_T07GYM0101": (5, 21),     # ginasio do Nevard
+               "MAP_T21R0501": (21, 18)},     # OLDALE_TOWN_HOUSE2
+        coord={"_EV_scr_seq_T21_001 + 1": ("gba", 8, 2, 4, 1),       # chegada pelo norte (Palm072_Arrival)
+               "_EV_scr_seq_T21_002 + 1": ("gba", 17, 35, 3, 1),     # saida sul para a Route 2 (Palm080_LeaveColheita)
+               "_EV_scr_seq_T21_003 + 1": ("gba", 5, 22, 1, 1)},     # porta do ginasio fechada: o tile abaixo da porta
+    ),
 }
 
 
@@ -73,8 +97,9 @@ def mover(j, z):
         wp["x"], wp["z"] = w(*z["warps"][wp["dest_header_id"]])
     for c in j["coord_events"]:
         if c["script"] in z["coord"]:
-            _, gx, gz, wd, ln = z["coord"][c["script"]]
-            c["x"], c["z"], c["width"], c["length"] = X0 + gx, Z0 + gz, wd, ln
+            ref, cx, cz, wd, ln = z["coord"][c["script"]]
+            c["x"], c["z"] = (X0 + cx, Z0 + cz) if ref == "global" else w(cx, cz)
+            c["width"], c["length"] = wd, ln
     return j
 
 
@@ -92,6 +117,17 @@ def zona(hg, out, nome, arquivo):
 def main(hg, out):
     zona(hg, out, "057_T20", "0922-dawnmere-eventos-gba.patch")
     zona(hg, out, "030_R29", "0924-route1-eventos-gba.patch")
+    zona(hg, out, "064_T21", "0925-harvestvale-eventos-gba.patch")
+    rel = "data/scr_seq/scr_seq_0850_T21.s"
+    old = open(os.path.join(hg, rel)).read()
+    new = old.replace("// chegada pelo leste (Route 1)", "// chegada pelo norte (Route 1), como no GBA (Palm072_Arrival)")
+    new = new.replace("// saida norte (Route 2): fechada ate vencer o Nevard",
+                      "// saida sul (Route 2), como no GBA (Palm080_LeaveColheita): fechada ate vencer o Nevard; volta um passo para cima")
+    a = new.index("scr_seq_T21_002:"); b = new.index("_HT_ExitOk:", a)
+    new = new[:a] + new[a:b].replace("_HT_StepDown", "_HT_StepUp") + new[b:]
+    new = new.rstrip("\n") + "\n_HT_StepUp:\n\tstep MOVEMENT_STEP_UP, 1\n\tstep_end\n\t.balign 4\n"
+    assert new.count("_HT_StepUp") == 2
+    open(os.path.join(out, "0926-harvestvale-saida-sul.patch"), "w").write(diff(rel, old, new))
     rel = "data/scr_seq/scr_seq_0842_T20.s"
     old = open(os.path.join(hg, rel)).read()
     new = old.replace("// saida oeste (Route 1): sem Pokemon, volta um passo (GBA Palm040_ExitEast)",

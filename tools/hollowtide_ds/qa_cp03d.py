@@ -14,10 +14,11 @@ from qa_cap1 import walk, goto, face, advance, starter_screen, fight
 
 X0, Z0 = 672, 416
 CELLS = [(cx, cy) for cx in range(21, 25) for cy in range(13, 17)]
-DAWNMERE, ROUTE1, LAB, HARVESTVALE = 60, 33, 61, 67
+DAWNMERE, ROUTE1, LAB, HARVESTVALE, GYM = 60, 33, 61, 67, 395
 NPCS = {(697, 436), (685, 442), (697, 428),              # guia, vizinho, mirante (fora da colisao dos blocos)
         (720, 441), (730, 460), (725, 474), (721, 459),  # andarilho, Kai, Min, Potion (Route 1)
-        (729, 460), (726, 474)}                          # Kai e Min depois de virem ate o jogador
+        (729, 460), (726, 474),                          # Kai e Min depois de virem ate o jogador
+        (720, 491), (716, 520)}                          # fazendeiro e recruta (Harvestvale)
 
 
 def g(x, z):
@@ -96,10 +97,30 @@ def main(rom, state, out):
     nm = visao(g(55, 58), "min"); d.wait(60); step("15_min", f"batalhas: {nm}")
     go(g(42, 68), "c", fight_ok=True); ler("16_placa_sul")
     # Harvestvale (etapa 5, so o mapa e as construcoes; os eventos ainda estao nas posicoes do prototipo)
-    go(g(46, 75), "c", fight_ok=True); d.wait(60); step("17_harvestvale_entrada")
-    go(g(50, 86), "c"); step("18_harvestvale_casa")
-    go(g(45, 95), "c"); step("19_harvestvale_ginasio_pc")
-    go(g(58, 105), "c"); step("20_harvestvale_mart")
+    # Harvestvale (etapa 5): eventos nas posicoes do OldaleTown do GBA (origem (37,72) no desenho)
+    go(g(46, 73), "c", fight_ok=True); d.wait(60)
+    d.press("DOWN", 16, 24); d.wait(60)                 # linha 2 do GBA: o fazendeiro chama (Palm072_Arrival)
+    step("17_harvestvale_chegada"); advance(d, 12); d.wait(40)
+    go(g(49, 84), "c"); ler("18_placa_boas_vindas")
+    go(g(42, 95), "c"); d.press("UP", 16, 24); d.wait(40)
+    step("19_ginasio_fechado"); advance(d, 12); d.wait(60)
+    step("20_depois_do_ginasio", "esperado (67, 714, 511): um passo para baixo")
+    go(g(44, 105), "c"); face(d, "UP"); d.press("A", 4, 60)
+    nr = 0
+    for _ in range(30):                                  # recruta: fala, batalha (treinador 483), volta ao campo
+        d.wait(40)
+        if not d.top_is_field():
+            d.shot(f"{out}/recruta_batalha.png"); fight(d); advance(d, 12); nr += 1
+            break
+        d.press("A", 4, 30)
+    d.wait(60); step("21_recruta", f"batalhas: {nr}"); advance(d, 6)
+    go(g(63, 95), "c"); ler("22_valvula", "RIGHT"); advance(d, 10)
+    go(g(55, 106), "c"); d.press("DOWN", 16, 24); d.wait(40)
+    step("23_saida_sul_fechada"); advance(d, 12); d.wait(60)
+    step("24_depois_da_saida_sul", "esperado (67, 727, 522): um passo para cima")
+    go(g(42, 95), "c")
+    walk(d, ["UP"] * 3, stop_map=GYM); d.wait(200)
+    step("25_ginasio_aberto")
     for t, w, e in log:
         print(f"{t:20} {w}  {e}")
     r = {t: w for t, w, _ in log}
@@ -110,7 +131,11 @@ def main(rom, state, out):
               "route 1": r["10_route1"] and r["10_route1"][0] == ROUTE1,
               "batalha Kai": nk >= 1, "batalha Min": nm >= 1,
               "placa sul": r["16_placa_sul"] and r["16_placa_sul"][1:] == g(42, 68),
-              "harvestvale": r["17_harvestvale_entrada"] and r["17_harvestvale_entrada"][0] == HARVESTVALE}
+              "harvestvale": r["17_harvestvale_chegada"] and r["17_harvestvale_chegada"][0] == HARVESTVALE,
+              "ginasio fechado": r["20_depois_do_ginasio"] == (HARVESTVALE, 714, 511),
+              "recruta": nr >= 1,
+              "saida sul fechada": r["24_depois_da_saida_sul"] == (HARVESTVALE, 727, 522),
+              "ginasio aberto": r["25_ginasio_aberto"] and r["25_ginasio_aberto"][0] == GYM}
     for k, v in checks.items():
         print(f"  {k:14} {'ok' if v else 'FALHOU'}")
     print("RESULTADO CP-DS-03B eventos de Dawnmere:", "ok" if all(checks.values()) else "FALHOU")
