@@ -75,7 +75,9 @@ Layout no repositório: `hollowtide_ds/` (patches de conteúdo + ajustes do hg-e
 | QA | `qa_cap1.py` vai do quarto a Harvestvale e testa os eventos de lá; `provas/qa_forte` dá um Lucario Lv50 só no build de QA (o robô luta mal; a curva do jogo não muda) |
 | **Cap. 1 no DS** | **jogável do começo ao Nevard** e conferido de ponta a ponta (`qa_cap1.py`): quarto → mãe e medalhão → Dawnmere → laboratório e inicial → Route 1 (Kai, Min) → Harvestvale (chegada, recruta, válvula, ginásio) → Nevard → saída norte para a Route 2. É a fatia vertical da Fase 2 |
 | Interiores e fronteiras do Cap. 1 | interiores de Dawnmere e Harvestvale conferidos: textos genéricos do HGSS ficam (o GBA também usava os do Emerald), com Johto → Lunia onde aparece; a casa dos vizinhos (era da Lyra) e a outra casa de Dawnmere ficam sem NPCs (sem texto do cânone para elas; `0625-dawnmere-houses.patch`); a guarita da Route 1 para a Route 46 do HGSS fechada (`0631-route1-gate.patch`) |
-| Próximo | comportas do ginásio do Nevard, árvore de Oran; a Route 2 (Route 30 → Breezeport) |
+| Route 2 | Route 30 + Route 31 (`0660`/`0670` + overlays + textos 375/378): Liang, Mei Lan e Qin com visão (posições calculadas sobre o caminho mais curto); placas do GBA com direções adaptadas; porta trancada nas casas (Mr. Pokémon fora); Dark Cave fora; encontros da Route 2 nas duas tabelas. No emulador: os três treinadores veem o jogador e lutam; chega à guarita. **Pendente:** Super Potion do GBA (hoje o Potion do HGSS) |
+| Passagem para Breezeport | guarita da Route 31 → Olivine (casa T26R0701 vira a passagem de volta), `0680` — exceção à regra 1 registrada em `FASE2_MAPAS.md`. Corrigido: a guarita tinha o gatilho da cena da Lyra; sem a Lyra o jogo travava |
+| Próximo | Breezeport (Olivine: NPCs e placas do GBA, Teatro = ginásio da Jay no interior do ginásio do Morty, farol, Centro/Mart); comportas do ginásio do Nevard; árvore de Oran |
 
 ## 1. O que o hg-engine resolve e o que não resolve
 
