@@ -1,0 +1,21 @@
+--- a/data/eventdata/zone_event/028_R27.json
++++ b/data/eventdata/zone_event/028_R27.json
+@@ -238,16 +238,5 @@
+       "y": 0
+     }
+   ],
+-  "coord_events": [
+-    {
+-      "script": "_EV_scr_seq_R27_001 + 1",
+-      "x": 734,
+-      "z": 402,
+-      "width": 1,
+-      "length": 3,
+-      "y": 0,
+-      "value": 0,
+-      "var": "VAR_UNK_408A"
+-    }
+-  ]
++  "coord_events": []
+ }
+\ No newline at end of file

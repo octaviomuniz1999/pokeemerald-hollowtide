@@ -52,3 +52,22 @@ conferidos nas divisas (as colunas abertas e a altura têm de ser iguais nos doi
 2. **Dawnmere entra junto?** Proponho começar pela Route 1 N (setor de grama, sem água) para estabilizar o gerador
    v2. Depois vêm a Route 1 C (água e ponte), a S e Dawnmere.
 3. **Saída de Dawnmere:** volta a ser leste, como no GBA, com as placas e falas do GBA sem adaptação.
+
+## 5. Rascunho do setor N (24/11) — funciona no jogo; qualidade visual ainda básica
+
+`hollowtide_ds/provas/cp03b/rota1_n.txt` (grade) → `mapa_grade.py` → bloco 11, na célula (22,12): vizinha leste de
+Dawnmere, da Route 27, livre no protótipo. Só na build de prova, sem mexer na matriz definitiva. Materiais da área 2,
+de 4 blocos doadores (New Bark e Route 29/Cherrygrove). No DeSmuME (`qa_cp03b.py`) passaram:
+- entrada pelo oeste (712, 390);
+- caminho sinuoso até o fim da área de prova (721, 414);
+- colisão contra a lagoa (721, 391), contra uma árvore (712, 408) e contra o fim do caminho.
+
+Capturas: `CP-DS-03B_rota1n.png`, entregue ao diretor.
+
+Ainda não está no padrão artístico pedido:
+- o caminho tem bordas em degrau (faltam as peças de borda do HGSS, `road01_r`/`road01_sub`);
+- a margem da lagoa é reta (faltam `pond_edge`/`pond_line`);
+- as árvores soltas saem estreitas (falta o carimbo de árvore isolada do HGSS);
+- não há casa com cerca e horta (faltam cercas no gerador; a casa só entra com interior funcional).
+
+Ao sul da célula de prova aparece o mar do bloco vazio; no definitivo ali fica o setor C.
