@@ -118,3 +118,8 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
   Harvestvale ficam numa célula da Route 1.
 - Route 2 convertida do GBA, abaixo de Harvestvale, com ligação a pé. A ponte provisória passa para a saída sul da
   Route 2 → guarita → Breezeport do protótipo.
+
+## 24/11/2026 (noite) — publicação
+
+- O diretor autorizou voltar a publicar ("volta com os pushes quando julgar necessário, e vai seguindo"). Publico as
+  entregas validadas no branch claude/new-session-tnwrgl, sem force push e sem ROM ou save.

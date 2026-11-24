@@ -306,3 +306,23 @@ Falta:
 - placa e falas com direções adaptadas ao protótipo ("East: Dawnmere"…): voltam ao texto do GBA na troca;
 - Harvestvale (metatiles do tileset Slateport ainda sem tabela);
 - troca do protótipo.
+
+### Plano de Breezeport (estudado em 24/11, noite; próxima frente)
+
+- **A matriz não cresce.** `MAP_MATRIX_MAX_SIZE` do HeartGold é 799 células, exatamente as 47×17 da matriz 0
+  (pokeheartgold, `include/map_matrix.h`). A área vazia do canto superior esquerdo tem 7 linhas de células.
+- **Avaliação dos deslocamentos.** Testei todos os deslocamentos verticais que fariam a cadeia inteira (Dawnmere →
+  Breezeport, 214 linhas) caber nas linhas 0–6. Todos deixam de 7 a 15 eventos e de 60 a 230 tiles de mato alto
+  numa célula de outro mapa. Fica a posição atual (30,21), sem conflito até a Route 2.
+- **Onde Breezeport entra.** Abaixo da Route 2, nas linhas de blocos 5–7 e colunas 2–4.
+  - As células (2..4, 7) hoje são só mar de preenchimento do HGSS (bloco 208, header 0), ao lado de uma área de Johto
+    na linha 8. Elas são substituídas.
+  - A última linha do desenho fica com colisão, para ninguém surfar até os mapas do HGSS.
+- **Linha de blocos 5, dividida.** A Route 2 (GBA 32–47) e Breezeport (GBA 0–15) dividem essa linha; as células
+  ficam com o header de Breezeport.
+  - Os 3 eventos da Route 2 ali passam para a zona de Breezeport: Qin (script padrão de treinador), a placa sul e a
+    porta trancada (2 scripts e 2 falas novas no banco de Breezeport).
+  - A Route 2 não tem mato alto nessas linhas.
+  - Sem guarita: da Route 2 se desce a pé para Breezeport, como no GBA e como o diretor pediu.
+- **Pendente:** a Route 3 sai pela borda oeste de Breezeport (GBA: `Palm090_ToRoute03`, linhas 48–59, deslocamento
+  −20). Não começar.
