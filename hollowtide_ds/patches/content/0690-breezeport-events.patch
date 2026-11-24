@@ -352,11 +352,11 @@
        "x": 273,
        "z": 247,
        "dest_header_id": "MAP_T26R0601",
-@@ -252,7 +303,7 @@
+@@ -245,7 +296,7 @@
      {
-       "x": 287,
-       "z": 241,
--      "dest_header_id": "MAP_T26R0301",
+       "x": 265,
+       "z": 257,
+-      "dest_header_id": "MAP_T26R0701",
 +      "dest_header_id": "MAP_R31R0101",
        "dest_warp_id": 0,
        "y": 0
