@@ -201,6 +201,39 @@ def build_mesh(g):
                     q = q[::-1]
                 m.quad(mat, q, nrm(toward_water[0] * 0.5, 0.85, toward_water[2] * 0.5))
 
+    # cantos convexos da agua (terra nos dois lados perpendiculares): o mesmo perfil girado um quarto de volta em torno
+    # da quina, em 3 segmentos, fechando o corte entre as duas faixas retas
+    def is_w(xx, zz):
+        return 0 <= xx < 32 and 0 <= zz < 32 and tiles[zz][xx] == "~"
+    for z in range(32):
+        for x in range(32):
+            if not is_w(x, z):
+                continue
+            for sx, sz in ((1, -1), (1, 1), (-1, -1), (-1, 1)):
+                if is_w(x + sx, z) or is_w(x, z + sz):
+                    continue                             # nao e canto convexo
+                cx, cz = x + (1 if sx > 0 else 0), z + (1 if sz > 0 else 0)
+                h = H[z][x]
+                a0 = math.atan2(sz, 0)                   # direcao da terra no lado de z
+                a1 = math.atan2(0, sx)                   # direcao da terra no lado de x
+                if abs(a1 - a0) > math.pi:
+                    a1 += 2 * math.pi if a1 < a0 else -2 * math.pi
+                steps = [a0 + (a1 - a0) * k / 3 for k in range(4)]
+                for prof, mat in ((POND_LINE, "pond_line"), (SEA_LINE, "sea_line02")):
+                    for (d0, y0, v0), (d1, y1, v1) in zip(prof, prof[1:]):
+                        for t0, t1 in zip(steps, steps[1:]):
+                            P = lambda t, d, y: (cx + d * math.cos(t), y - 1 + h, cz + d * math.sin(t))
+                            A, B, C, D = P(t0, d0, y0), P(t1, d0, y0), P(t1, d1, y1), P(t0, d1, y1)
+                            uu0, uu1 = 256 * (t0 - a0) * 0.6, 256 * (t1 - a0) * 0.6
+                            q = [(*A, uu0, v0), (*B, uu1, v0), (*C, uu1, v1), (*D, uu0, v1)]
+                            u = [B[i] - A[i] for i in range(3)]; w = [D[i] - A[i] for i in range(3)]
+                            n = (u[1] * w[2] - u[2] * w[1], u[2] * w[0] - u[0] * w[2], u[0] * w[1] - u[1] * w[0])
+                            # a face visivel aponta para a agua (para dentro da quina) e para cima
+                            tw = (-(math.cos(t0) + math.cos(t1)), -(math.sin(t0) + math.sin(t1)))
+                            if n[0] * tw[0] + n[1] + n[2] * tw[1] < 0:
+                                q = q[::-1]
+                            m.quad(mat, q, nrm(tw[0] * 0.25, 0.85, tw[1] * 0.25))
+
     # faces de penhasco: toda aresta entre tiles nao-rampa com alturas diferentes
     def top(x, z):
         return H[z][x] - (0.5 if tiles[z][x] == "~" else 0)
@@ -265,14 +298,18 @@ def build_mesh(g):
                 if not same(x + dx, z + dz):
                     continue
                 orth = True
+                # sentido do v como na Route 29: caminho ao norte +x, ao sul -x, a leste +z, a oeste -z (giro de 180 graus,
+                # nao espelho: espelhado, a textura da borda fazia riscos em diagonal no DeSmuME)
                 if dz:                               # caminho ao norte/sul: borda horizontal
                     zi, zo = (z, z + 1) if dz < 0 else (z + 1, z)
-                    q = [(x + 1, h, zo, 6, 256 * (x + 1)), (x + 1, h, zi, 250, 256 * (x + 1)),
-                         (x, h, zi, 250, 256 * x), (x, h, zo, 6, 256 * x)]
+                    sv = 256 if dz < 0 else -256
+                    q = [(x + 1, h, zo, 6, sv * (x + 1)), (x + 1, h, zi, 250, sv * (x + 1)),
+                         (x, h, zi, 250, sv * x), (x, h, zo, 6, sv * x)]
                 else:                                # caminho a oeste/leste: borda vertical
                     xi, xo = (x, x + 1) if dx < 0 else (x + 1, x)
-                    q = [(xo, h, z + 1, 6, 256 * (z + 1)), (xi, h, z + 1, 250, 256 * (z + 1)),
-                         (xi, h, z, 250, 256 * z), (xo, h, z, 6, 256 * z)]
+                    sv = 256 if dx > 0 else -256
+                    q = [(xo, h, z + 1, 6, sv * (z + 1)), (xi, h, z + 1, 250, sv * (z + 1)),
+                         (xi, h, z, 250, sv * z), (xo, h, z, 6, sv * z)]
                 m.quad("road01_r", ccw(q))
             if orth:
                 continue

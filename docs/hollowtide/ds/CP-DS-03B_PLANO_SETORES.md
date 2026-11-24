@@ -68,7 +68,9 @@ Melhorado (24/11):
 - bordas do caminho com as peças do HGSS (`road01_r`): faixa de 1 tile do lado da grama (u 250 → 6) e cantos externos
   com a outra metade da textura, como na Route 29;
 - caminho redesenhado em trechos retos com curvas em L, de 3 tiles de largura. O desenho anterior, em degraus de
-  1 tile, gerava dezenas de cantos sobrepostos.
+  1 tile, gerava dezenas de cantos sobrepostos;
+- sentido do v das bordas como na Route 29: caminho ao norte +x, ao sul −x, a leste +z, a oeste −z. Espelhada, a
+  textura fazia riscos em diagonal.
 
 - cercas como as de New Bark (`fence_b`: trecho horizontal inclinado, trecho vertical em faixa) e uma horta cercada
   com três tipos de flor (`flower01-03`, alinhamento de UV corrigido como o do HGSS).
@@ -76,6 +78,7 @@ Melhorado (24/11):
 Ainda não está no padrão artístico pedido:
 
 - a casa da horta (só entra com interior funcional);
-- os cantos da margem da lagoa ainda são em degrau, e há pequenos cortes onde duas faixas se encontram.
+- os cantos côncavos da lagoa (degraus do desenho) ainda mostram um pequeno corte. Os convexos já fecham: o perfil
+  da margem gira um quarto de volta em torno da quina.
 
 Ao sul da célula de prova aparece o mar do bloco vazio; no definitivo ali fica o setor C.
