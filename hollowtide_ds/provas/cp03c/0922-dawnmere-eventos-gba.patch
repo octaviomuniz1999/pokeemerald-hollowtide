@@ -1,0 +1,143 @@
+--- a/data/eventdata/zone_event/057_T20.json
++++ b/data/eventdata/zone_event/057_T20.json
+@@ -5,40 +5,32 @@
+     {
+       "script": "_EV_scr_seq_T20_013 + 1",
+       "type": 1,
+-      "x": 682,
+-      "z": 393,
++      "x": 689,
++      "z": 427,
+       "y": 0,
+       "player_facing_dir": 4
+     },
+     {
+       "script": "_EV_scr_seq_T20_007 + 1",
+       "type": 1,
+-      "x": 693,
+-      "z": 396,
++      "x": 685,
++      "z": 437,
+       "y": 0,
+       "player_facing_dir": 4
+     },
+     {
+       "script": "_EV_scr_seq_T20_014 + 1",
+       "type": 1,
+-      "x": 685,
+-      "z": 400,
++      "x": 691,
++      "z": 437,
+       "y": 0,
+       "player_facing_dir": 4
+     },
+     {
+       "script": "_EV_scr_seq_T20_016 + 1",
+       "type": 1,
+-      "x": 688,
+-      "z": 407,
+-      "y": 0,
+-      "player_facing_dir": 4
+-    },
+-    {
+-      "script": "19",
+-      "type": 1,
+-      "x": 677,
+-      "z": 396,
++      "x": 692,
++      "z": 434,
+       "y": 0,
+       "player_facing_dir": 4
+     }
+@@ -57,8 +49,8 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 683,
+-      "z": 399,
++      "x": 685,
++      "z": 442,
+       "y": 0
+     },
+     {
+@@ -74,8 +66,8 @@
+       "param2": 0,
+       "movement_range_x": 1,
+       "movement_range_z": 1,
+-      "x": 685,
+-      "z": 408,
++      "x": 697,
++      "z": 436,
+       "y": 0
+     },
+     {
+@@ -91,43 +83,43 @@
+       "param2": 0,
+       "movement_range_x": 0,
+       "movement_range_z": 0,
+-      "x": 695,
+-      "z": 403,
++      "x": 697,
++      "z": 428,
+       "y": 0
+     }
+   ],
+   "warp_events": [
+     {
+-      "x": 684,
+-      "z": 393,
++      "x": 687,
++      "z": 426,
+       "dest_header_id": "MAP_T20R0101",
+       "dest_warp_id": 0,
+       "y": 0
+     },
+     {
+-      "x": 695,
+-      "z": 396,
++      "x": 676,
++      "z": 427,
+       "dest_header_id": "MAP_T20R0201",
+       "dest_warp_id": 0,
+       "y": 0
+     },
+     {
+-      "x": 679,
+-      "z": 405,
++      "x": 694,
++      "z": 434,
+       "dest_header_id": "MAP_T20R0301",
+       "dest_warp_id": 0,
+       "y": 0
+     },
+     {
+-      "x": 690,
+-      "z": 407,
++      "x": 682,
++      "z": 441,
+       "dest_header_id": "MAP_T20R0401",
+       "dest_warp_id": 0,
+       "y": 0
+     },
+     {
+-      "x": 688,
+-      "z": 392,
++      "x": 694,
++      "z": 441,
+       "dest_header_id": "MAP_T20R0102",
+       "dest_warp_id": 0,
+       "y": 0
+@@ -136,10 +128,10 @@
+   "coord_events": [
+     {
+       "script": "_EV_scr_seq_T20_002 + 1",
+-      "x": 676,
+-      "z": 396,
++      "x": 703,
++      "z": 418,
+       "width": 1,
+-      "length": 7,
++      "length": 28,
+       "y": 0,
+       "value": 0,
+       "var": "VAR_SCENE_NEW_BARK_WEST_EXIT"

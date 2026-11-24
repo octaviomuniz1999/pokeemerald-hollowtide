@@ -188,6 +188,9 @@ def build_global():
                 owner[gy + y][gx + x] = key
         objs, rel = construcoes(key, gx, gy, grid, alt)
         objetos += objs
+        for b in j.get("bg_events", []):                 # placas do GBA: modelo de placa do HGSS (board_b) no tile
+            if b.get("type") == "sign" and key in CONSTRUCOES:   # Harvestvale: so na etapa 5 (area ainda sem conferir)
+                objetos.append(f"30 {gx + b['x']} {gy + b['y']} 0")
         report[key] = {"gba": name, "origem": (gx, gy), "tam": (w, h), "desconhecidos": dict(unknown),
                        "warps": [(wv["x"] + gx, wv["y"] + gy, wv["dest_map"]) for wv in j.get("warp_events", [])],
                        "construcoes": rel}

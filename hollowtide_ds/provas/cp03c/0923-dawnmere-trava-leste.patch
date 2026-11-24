@@ -1,0 +1,19 @@
+--- a/data/scr_seq/scr_seq_0842_T20.s
++++ b/data/scr_seq/scr_seq_0842_T20.s
+@@ -133,7 +133,7 @@
+ 	releaseall
+ 	end
+ 
+-// saida oeste (Route 1): sem Pokemon, volta um passo (GBA Palm040_ExitEast)
++// saida leste (Route 1), como no GBA: sem Pokemon, volta um passo para oeste (Palm040_ExitEast)
+ scr_seq_T20_002:
+ 	lockall
+ 	goto_if_set FLAG_GOT_STARTER, _HT_ExitOk
+@@ -172,6 +172,6 @@
+ 
+ 	.balign 4
+ _HT_StepBack:
+-	step MOVEMENT_STEP_RIGHT, 1
++	step MOVEMENT_STEP_LEFT, 1
+ 	step_end
+ 	.balign 4

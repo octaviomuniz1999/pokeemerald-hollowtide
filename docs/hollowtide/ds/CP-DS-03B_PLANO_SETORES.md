@@ -147,8 +147,38 @@ Construções (24/11, fim da tarde), testadas no DeSmuME (`qa_cp03c.py`, mesmas 
 - A linha escura na divisa horizontal era a altitude da matriz. As células da linha 13 tinham altitude 1–2, restos
   da Route 29, e as de baixo tinham 0. O desenho global agora zera a altitude das células que ocupa.
 
+Eventos de Dawnmere (etapa 3, 24/11), na build de prova (`provas/cp03c`, patches 0922/0923 gerados por
+`eventos_gba.py`). Os eventos já portados no CP-DS-01/02 continuam com os mesmos scripts e textos; só mudam para os
+tiles do `LittlerootTown` do GBA:
+- warps: a casa do jogador (T20R0201) vai para a porta de BRENDANS_HOUSE (2,9), onde o jogo novo do GBA começa. O
+  laboratório (T20R0101) vai para a porta do modelo (13,8), e a casa vizinha (T20R0301) para a de MAYS_HOUSE (20,16).
+  Os dois warps do HGSS sem par no GBA ficam nas portas decorativas, que são bloqueadas;
+- as 4 placas nos tiles do GBA, com o modelo de placa do HGSS (`board_b`). A placa do mirante (`Palm064_RiverLookout`)
+  tem só o modelo: o texto dela ainda não foi portado;
+- guia, vizinho e mirante nos tiles do GBA;
+- trava da saída a leste, numa coluna inteira (x 31, a última da célula de Dawnmere). O passo de volta agora é para
+  oeste;
+- a placa da Route 1 (script 19, do CP-DS-01) sai de Dawnmere, porque no GBA ela não fica lá. Volta na etapa 4.
+
+`qa_cp03d.py` testa tudo pelo fluxo do jogo, sem atalho. Passou:
+- sair da casa pela porta do GBA (676,428);
+- ler a placa da casa ("A's House");
+- a trava sem Pokémon (fala do GBA e um passo para oeste, 702);
+- ler a placa do laboratório;
+- entrar no laboratório pela porta nova e receber o inicial do Prof. Alex;
+- sair dele em (687,427);
+- passar pela saída leste até a Route 1 (header 33), com o inicial seguindo.
+
+Capturas: `CP-DS-03B_eventos_dawnmere.png`.
+
+Notas:
+- As colunas 32–35 de Dawnmere caem na célula de header da Route 1: o nome do lugar muda 4 tiles antes da divisa do
+  GBA.
+- O guia anda (tipo de movimento do HGSS), e o GBA o deixa parado olhando para baixo. Acertar na troca.
+- As falas com direções adaptadas ao protótipo ("to the west"…) voltam ao texto do GBA na troca (etapa 6).
+
 Falta:
-- a porta do laboratório aparece como um vão claro (conferir o modelo da porta de Pallet);
-- eventos nas posições do GBA (warps das portas, NPCs, placas, caixas de correio);
+- a porta do laboratório aparece como um vão claro (o modelo da porta de Pallet não aparece, nem carregado antes do
+  laboratório na lista; pode ser porta de vidro, conferir);
 - Harvestvale (metatiles do tileset Slateport ainda sem tabela);
 - troca do protótipo.
