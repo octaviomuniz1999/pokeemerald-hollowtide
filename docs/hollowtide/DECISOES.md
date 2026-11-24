@@ -68,6 +68,10 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
   à do Emerald). As músicas vieram depois, em MIDI enviado pelo diretor: tema de pré-batalha (só no diálogo antes da luta)
   e tema de batalha próprios.
 
+## Versão DS (HeartGold + hg-engine)
+
+- 24/11 (diretor): a Jay entrega o **TM65 Shadow Claw** no lugar do TM Hex do GBA (o hg-engine não tem TM de Hex).
+
 ## Entrega
 
 - Patch `.xdelta` sobre Pokémon Emerald (U), SHA-1 `f3ae088181bf583e55daf962a92bb46f4f1d07b7`, com conferência de hash; código-fonte, build e instruções. Sem ROM comercial.

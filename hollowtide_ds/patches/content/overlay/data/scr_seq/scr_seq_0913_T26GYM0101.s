@@ -26,8 +26,8 @@
 // text archive to grab from: 606.txt
 // Hollowtide: Teatro (ginasio da Jay) em Breezeport, no interior do ginasio de Olivine (placeholder). GBA
 // PalmTeatro: refletores ESQUERDA, DIREITA, ESQUERDA (VAR_TEMP_x4000, zera ao sair, como VAR_TEMP_8 no GBA), Linh e
-// Yumi lutam ao conversar, Jay so luta com o palco aceso. Echo Badge (2a insignia). TM Hex do GBA: pendente
-// (o hg-engine nao tem TM de Hex).
+// Yumi lutam ao conversar, Jay so luta com o palco aceso. Echo Badge (2a insignia) e TM65 Shadow Claw (no GBA era
+// TM Hex; o hg-engine nao tem TM de Hex — troca decidida pelo diretor em 24/11/2026).
 
 .data
 
@@ -68,6 +68,10 @@ scr_seq_T26GYM0101_000:
 	npc_msg 2
 	wait_fanfare
 	wait_button
+	closemsg
+	setvar VAR_SPECIAL_x8004, ITEM_TM065
+	setvar VAR_SPECIAL_x8005, 1
+	callstd std_obtain_item_verbose
 	closemsg
 	releaseall
 	end
