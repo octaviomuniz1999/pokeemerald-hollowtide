@@ -10,8 +10,8 @@ Para cada tile do map.bin do GBA:
     (fica com a altura dos vizinhos).
 Os mapas sao postos num desenho GLOBAL nas posicoes que fazem as ligacoes do GBA virarem divisas naturais
 (CP-DS-03B_PLANO_SETORES.md par. 6) e o desenho e salvo no formato do mapa_grade.py (secao [tamanho] W H).
-Construcoes: componentes de tiles B com um warp do GBA na borda de baixo recebem o modelo da area com a porta no
-tile do warp (PORTAS); o tile do warp vira D (porta: bloqueado com comportamento 0x69, como no HGSS).
+Construcoes (CONSTRUCOES): cada planta do GBA recebe um modelo do HGSS com a porta no tile do warp (ou o mais perto que
+o modelo deixa); o tile da porta vira D (bloqueado com comportamento 0x69, como no HGSS).
 Uso: gba2grade.py SAIDA.txt   |   gba2grade.py --folha MAPA PNG
 """
 import collections, json, os, re, struct, sys
@@ -41,6 +41,67 @@ for i in range(0x008, 0x023):
     if i not in (0x00D, 0x00E, 0x00F, 0x016, 0x01B, 0x01D, 0x01E, 0x01F):
         GENERAL.setdefault(i, "B")          # casa de telhado vermelho do tileset General
 SECONDARY_BUILDINGS = range(0x200, 0x300)   # nos secundarios destes mapas, metatiles bloqueados = construcoes
+
+# --- construcoes: modelo do HGSS sobre a planta do GBA -----------------------------------------------------------------
+# Modelos com textura propria (NARC a/0/4/0); caixa (x0, x1, z0) em tiles a partir do ponto do objeto; porta = modelo da
+# porta e deslocamento (dx, dz, dy) medidos nos mapas do HGSS; dtile = tile D (porta de verdade) a partir do objeto.
+MODELOS = {
+    0x13A: dict(nome="mst_okl (laboratorio de Pallet)", x0=-3.375, x1=3.875, z0=-2.125, porta=(0x137, 0.625, 1.219, 0.16), dtile=(0, 1.5)),
+    0x139: dict(nome="mst_rdh (casa de Pallet)", x0=-2.875, x1=3.125, z0=-2.375, porta=(0x136, -0.375, 1.219, 0.16), dtile=(-1, 1.5)),
+    0x14: dict(nome="wk_hhouse (casa de New Bark)", x0=-2.875, x1=3.125, z0=-2.375, porta=(0x18, -0.375, 1.089, 0.0), dtile=(-1, 1.5)),
+    0x16: dict(nome="wk_h01 (casa de New Bark)", x0=-2.25, x1=2.5, z0=-1.625, porta=(0x19, 0.126, 0.739, 0.07), dtile=(-0.5, 0.875)),
+    0x25: dict(nome="yo_h01 (casa de Cherrygrove)", x0=-2.188, x1=2.5, z0=-1.625, porta=(0x32, 0.125, 0.731, 0.04), dtile=(-0.5, 1.0)),
+    0x26: dict(nome="yo_h02 (casa de Cherrygrove)", x0=-2.188, x1=2.5, z0=-1.625, porta=(0x32, 0.12, 0.719, 0.04), dtile=(-0.5, 1.0)),
+}
+# Por mapa: retangulo da construcao no GBA (x0, y0, x1, y1, inclusivo, coordenadas do mapa do GBA), modelo, tile da porta
+# no DS (= warp do GBA, salvo quando o modelo nao deixa) e se a porta e de verdade (warp) ou decorativa; "ajustes" sao
+# tiles trocados para acompanhar a porta (letra, altura). A colisao e a uniao da planta do GBA com a do modelo.
+CONSTRUCOES = {
+    "Dawnmere": [
+        dict(rect=(10, 4, 16, 8), modelo=0x13A, porta=(13, 8), warp=True, altura=2,
+             nota="laboratorio do Prof. Alex: o unico laboratorio do HGSS que cabe na planta do GBA (colunas 10-16) tem a "
+                  "porta no centro, 1 tile a oeste do warp do GBA (14,8); a escada vai junto (14,9 -> 13,9)",
+             ajustes=[((13, 9), "=", "r"), ((14, 9), "=", "2"), ((15, 9), "S", "2")]),
+        dict(rect=(19, 12, 23, 16), modelo=0x14, porta=(20, 16), warp=True, altura=1, nota="casa do warp MAYS_HOUSE"),
+        dict(rect=(1, 7, 4, 9), modelo=0x16, porta=(2, 9), warp=True, altura=1, nota="casa do warp BRENDANS_HOUSE"),
+        dict(rect=(6, 19, 10, 23), modelo=0x25, porta=(8, 23), warp=False, altura=1, nota="casa sem porta no GBA"),
+        dict(rect=(18, 19, 22, 23), modelo=0x26, porta=(20, 23), warp=False, altura=1, nota="casa sem porta no GBA"),
+    ],
+    "Route1": [
+        dict(rect=(4, 17, 10, 20), modelo=0x14, porta=(5, 20), warp=False, altura=1,
+             nota="casa da horta (porta decorativa no GBA, sem warp); a casa de Pallet (mst_rdh), de telhado vermelho, "
+                  "ficou sem textura: a lista de construcoes da area so tem VRAM para mais dois modelos"),
+    ],
+}
+MODELOS_NOVOS_NA_AREA = [0x13A, 0x137]   # entram na lista de construcoes 0 (area 2) pelo land.json
+
+
+def construcoes(key, gx, gy, grid, alt):
+    """Carimba as construcoes do mapa no desenho global; devolve as linhas de [objetos] e o relatorio."""
+    objs, rel = [], []
+    for c in CONSTRUCOES.get(key, []):
+        M = MODELOS[c["modelo"]]
+        px, pz = c["porta"]
+        ox = px + 0.5 - M["dtile"][0]                    # ponto do objeto (coordenadas de borda de tile, mapa do GBA)
+        oz = pz + 0.5 - M["dtile"][1]
+        x0, y0, x1, y1 = c["rect"]
+        cells = {(x, y) for x in range(x0, x1 + 1) for y in range(y0, y1 + 1)}
+        cells |= {(x, y) for x in range(int(ox + M["x0"]) - 1, int(ox + M["x1"]) + 2)
+                  for y in range(int(oz + M["z0"]) - 1, pz + 1)
+                  if ox + M["x0"] + 0.25 <= x + 0.5 <= ox + M["x1"] - 0.25 and y + 0.5 >= oz + M["z0"] - 0.25}
+        h = str(c["altura"])
+        for x, y in cells:
+            grid[gy + y][gx + x] = "B"; alt[gy + y][gx + x] = h
+        grid[gy + pz][gx + px] = "D" if c["warp"] else "B"
+        for (x, y), ch, a in c.get("ajustes", []):
+            grid[gy + y][gx + x] = ch; alt[gy + y][gx + x] = a
+        X, Z = gx + ox - 0.5, gy + oz - 0.5             # [objetos] usa indice de tile (o Land.obj soma 0,5)
+        dm, ddx, ddz, ddy = M["porta"]
+        objs.append(f"{c['modelo']} {X:g} {Z:g} 0")
+        objs.append(f"{dm} {X + ddx:g} {Z + ddz:g} {ddy:g}")
+        rel.append({"modelo": M["nome"], "porta_ds": (gx + px, gy + pz), "warp": c["warp"], "nota": c["nota"]})
+    return objs, rel
+
 
 MAPS = {"Dawnmere": ("LittlerootTown", 0, 0), "Route1": ("Route101", 34, 17), "Harvestvale": ("OldaleTown", 35, 70)}
 MARGIN = (2, 2)                             # deslocamento do desenho dentro da area de blocos
@@ -115,7 +176,7 @@ def build_global():
     grid = [["T"] * W for _ in range(H)]
     alt = [["1"] * W for _ in range(H)]
     owner = [[None] * W for _ in range(H)]
-    report = {}
+    report, objetos = {}, []
     for key, (name, ox, oy) in MAPS.items():
         j, w, h, tiles, elev, unknown = convert(name)
         hh = heights(w, h, elev)
@@ -125,9 +186,12 @@ def build_global():
                 grid[gy + y][gx + x] = tiles[y * w + x]
                 alt[gy + y][gx + x] = str(hh[y * w + x])
                 owner[gy + y][gx + x] = key
+        objs, rel = construcoes(key, gx, gy, grid, alt)
+        objetos += objs
         report[key] = {"gba": name, "origem": (gx, gy), "tam": (w, h), "desconhecidos": dict(unknown),
-                       "warps": [(wv["x"] + gx, wv["y"] + gy, wv["dest_map"]) for wv in j.get("warp_events", [])]}
-    return grid, alt, owner, report
+                       "warps": [(wv["x"] + gx, wv["y"] + gy, wv["dest_map"]) for wv in j.get("warp_events", [])],
+                       "construcoes": rel}
+    return grid, alt, owner, report, objetos
 
 
 def folha(name, out):
@@ -148,10 +212,10 @@ def folha(name, out):
 if __name__ == "__main__":
     if sys.argv[1] == "--folha":
         folha(sys.argv[2], sys.argv[3]); sys.exit()
-    grid, alt, owner, report = build_global()
+    grid, alt, owner, report, objetos = build_global()
     for k, r in report.items():
         print(k, r["gba"], "origem", r["origem"], "tam", r["tam"], "metatiles sem tabela:", r["desconhecidos"])
     out = ["; desenho global de Dawnmere + Route 1 + Harvestvale, convertido do GBA por gba2grade.py (nao editar a mao)",
-           "[doadores]", "2 0 5 4", "[tamanho]", "128 128", "[tiles]"] + ["".join(r) for r in grid] + ["[alturas]"] + ["".join(r) for r in alt]
+           "[doadores]", "2 0 5 4", "[tamanho]", "128 128", "[tiles]"] + ["".join(r) for r in grid] + ["[alturas]"] + ["".join(r) for r in alt] + ["[objetos]"] + objetos
     open(sys.argv[1], "w").write("\n".join(out) + "\n")
     json.dump(report, open(sys.argv[1] + ".json", "w"), indent=1)

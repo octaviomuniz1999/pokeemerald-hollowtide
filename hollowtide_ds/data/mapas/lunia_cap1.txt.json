@@ -26,6 +26,53 @@
     10,
     "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
    ]
+  ],
+  "construcoes": [
+   {
+    "modelo": "mst_okl (laboratorio de Pallet)",
+    "porta_ds": [
+     15,
+     10
+    ],
+    "warp": true,
+    "nota": "laboratorio do Prof. Alex: o unico laboratorio do HGSS que cabe na planta do GBA (colunas 10-16) tem a porta no centro, 1 tile a oeste do warp do GBA (14,8); a escada vai junto (14,9 -> 13,9)"
+   },
+   {
+    "modelo": "wk_hhouse (casa de New Bark)",
+    "porta_ds": [
+     22,
+     18
+    ],
+    "warp": true,
+    "nota": "casa do warp MAYS_HOUSE"
+   },
+   {
+    "modelo": "wk_h01 (casa de New Bark)",
+    "porta_ds": [
+     4,
+     11
+    ],
+    "warp": true,
+    "nota": "casa do warp BRENDANS_HOUSE"
+   },
+   {
+    "modelo": "yo_h01 (casa de Cherrygrove)",
+    "porta_ds": [
+     10,
+     25
+    ],
+    "warp": false,
+    "nota": "casa sem porta no GBA"
+   },
+   {
+    "modelo": "yo_h02 (casa de Cherrygrove)",
+    "porta_ds": [
+     22,
+     25
+    ],
+    "warp": false,
+    "nota": "casa sem porta no GBA"
+   }
   ]
  },
  "Route1": {
@@ -39,7 +86,18 @@
    53
   ],
   "desconhecidos": {},
-  "warps": []
+  "warps": [],
+  "construcoes": [
+   {
+    "modelo": "wk_hhouse (casa de New Bark)",
+    "porta_ds": [
+     41,
+     39
+    ],
+    "warp": false,
+    "nota": "casa da horta (porta decorativa no GBA, sem warp); a casa de Pallet (mst_rdh), de telhado vermelho, ficou sem textura: a lista de construcoes da area so tem VRAM para mais dois modelos"
+   }
+  ]
  },
  "Harvestvale": {
   "gba": "OldaleTown",
@@ -163,6 +221,7 @@
     90,
     "MAP_OLDALE_TOWN_HOUSE2"
    ]
-  ]
+  ],
+  "construcoes": []
  }
 }

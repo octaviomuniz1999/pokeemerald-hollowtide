@@ -9,7 +9,10 @@ de 32x32 e monta tudo na matriz do mundo.
 - Os blocos sao ACRESCENTADOS ao NARC a/0/6/5 (os 676 originais ficam intactos) e as celulas da matriz recebem o
   bloco novo e o header do mapa que ocupa a maior parte de cada bloco (retangulos do relatorio do gba2grade.py).
 Entrada no land.json: {"global": "lunia_cap1.txt", "matriz": 0, "celula": [21, 13], "base": 0,
-                       "headers": {"Dawnmere": 60, "Route1": 33, "Harvestvale": 67}, "padrao": 60}
+                       "headers": {"Dawnmere": 60, "Route1": 33, "Harvestvale": 67}, "padrao": 60,
+                       "modelos_area": {"lista": 0, "acrescentar": [314, 311]}}
+  (modelos_area: construcoes de outras areas acrescentadas a lista a/0/4/3 que a area dos headers usa; formato da lista:
+   u16 quantidade + u16 modelos)
 """
 import json, os, struct, sys
 sys.path.insert(0, os.path.dirname(__file__))
@@ -27,7 +30,7 @@ def subgrid(g, bx, by):
     return {"tiles": [r[bx * 32:bx * 32 + 32] for r in g["tiles"][by * 32:by * 32 + 32]],
             "alturas": [r[bx * 32:bx * 32 + 32] for r in g["alturas"][by * 32:by * 32 + 32]],
             "doadores": g["doadores"], "tamanho": (32, 32),
-            "objetos": [(m, x - bx * 32, z - by * 32) for m, x, z in g["objetos"]
+            "objetos": [(m, x - bx * 32, z - by * 32, dy) for m, x, z, dy in g["objetos"]
                         if bx * 32 <= x < bx * 32 + 32 and by * 32 <= z < by * 32 + 32]}
 
 
@@ -61,7 +64,7 @@ def gerar_blocos(path, base_block, blocos):
             model = compose(base.rest[:base.sizes[2]], donors, layers)
             hb = mg.build_bdhc(sub, Hs, rs).pack()
             ld.perms = mg.perms(sub)
-            ld.objs = [Land.obj(mdl, x, z, Hs[z][x]) for mdl, x, z in sub["objetos"]]
+            ld.objs = [Land.obj(mdl, x, z, Hs[int(z)][int(x)] + dy) for mdl, x, z, dy in sub["objetos"]]
             ld.sizes[2], ld.sizes[3] = len(model), len(hb)
             ld.rest = model + hb
             out[(bx, by)] = ld.pack()
@@ -100,8 +103,20 @@ def apply_global(rom, narc, entry, base_dir):
         for bx in range(nbx):
             ids[(bx, by)] = len(narc.files)
             narc.files.append(blocks[(bx, by)])
-            mt.set(cx0 + bx, cy0 + by, land=ids[(bx, by)], header=hdr[(bx, by)])
+            mt.set(cx0 + bx, cy0 + by, land=ids[(bx, by)], header=hdr[(bx, by)],
+                   altura=0 if mt.alts is not None else None)    # altitude da celula: o desenho ja traz as alturas;
+                                                                 # um resto da celula antiga vira degrau na divisa
     mnarc.files[entry["matriz"]] = mt.pack()
+    if "modelos_area" in entry:                          # modelos de construcao de outras areas: entram na lista da area
+        lst, novos = entry["modelos_area"]["lista"], entry["modelos_area"]["acrescentar"]
+        aid = rom.filenames.idOf("a/0/4/3")
+        anarc = ndspy.narc.NARC(rom.files[aid])
+        f = anarc.files[lst]
+        cur = list(struct.unpack_from("<%dH" % (len(f) // 2), f))
+        ids_m = cur[1:1 + cur[0]] + [m for m in novos if m not in cur[1:1 + cur[0]]]
+        anarc.files[lst] = struct.pack("<%dH" % (len(ids_m) + 1), len(ids_m), *ids_m)
+        rom.files[aid] = anarc.save()
+        print(f"lista de construcoes {lst}: {cur[0]} -> {len(ids_m)} modelos")
     rom.files[mid] = mnarc.save()
     print(f"desenho global {entry['global']}: {nbx}x{nby} blocos novos ({min(ids.values())}-{max(ids.values())}) "
           f"nas celulas ({cx0},{cy0})-({cx0 + nbx - 1},{cy0 + nby - 1}); headers {sorted(set(hdr.values()))}")

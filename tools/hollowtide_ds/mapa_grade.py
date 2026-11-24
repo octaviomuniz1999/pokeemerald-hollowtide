@@ -11,7 +11,8 @@ Arquivo do setor (texto, revisavel no repositorio):
                 S  objeto (o tile fica bloqueado; o modelo vem de [objetos])
   [alturas]   32 linhas de 32 caracteres: altura do chao em tiles (0-9); r = rampa (sobe para o vizinho mais alto
               no eixo norte-sul)
-  [objetos]   linhas "modelo x z" (construcoes da lista da area; altura = a do tile)
+  [objetos]   linhas "modelo x z [dy]" (construcoes da lista da area; x e z em tiles, podem ter fracao; altura = a do
+              tile + dy)
 Do desenho saem: chao por material (retangulos de ate 4x4 tiles), faces de penhasco em todo desnivel entre tiles
 que nao sao rampa, margem da agua, rampas inclinadas, fileiras de arvores (como as do HGSS), alturas BDHC (placas
 planas e rampas) e colisao (bloqueado, mato alto 0x02, agua 0x15, livre).
@@ -72,8 +73,8 @@ def load(path):
             assert len(line) == out["tamanho"][0], f"{sec}: linha com {len(line)} colunas: {line!r}"
             out[sec].append(line)
         elif sec == "objetos":
-            mdl, x, z = line.split()
-            out["objetos"].append((int(mdl), int(x), int(z)))
+            f = line.split()                             # modelo x z [dy]: x, z em tiles (podem ter fracao)
+            out["objetos"].append((int(f[0]), float(f[1]), float(f[2]), float(f[3]) if len(f) > 3 else 0.0))
     assert len(out["tiles"]) == out["tamanho"][1] and len(out["alturas"]) == out["tamanho"][1], "numero de linhas da grade"
     set_size(out)
     return out
@@ -511,7 +512,7 @@ def gerar(block, blocos, arquivo):
     model = compose(ld.rest[:ld.sizes[2]], donors, [(n, mesh.dl(n)) for n in ORDER if n in mesh.quads])
     heights_b = build_bdhc(g, H, ramps).pack()
     ld.perms = perms(g)
-    ld.objs = [Land.obj(mdl, x, z, H[z][x]) for mdl, x, z in g["objetos"]]
+    ld.objs = [Land.obj(mdl, x, z, H[int(z)][int(x)] + dy) for mdl, x, z, dy in g["objetos"]]
     ld.sizes[2], ld.sizes[3] = len(model), len(heights_b)
     ld.rest = model + heights_b
     return ld.pack()

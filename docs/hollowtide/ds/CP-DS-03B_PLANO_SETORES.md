@@ -130,9 +130,25 @@ Etapa 1 feita e testada no DeSmuME (`provas/cp03c`, `qa_cp03c.py`):
   ponte.
 - A fresta preta nas divisas de bloco foi fechada nas divisas verticais: o chão avança 1/16 de tile.
 
+Construções (24/11, fim da tarde), testadas no DeSmuME (`qa_cp03c.py`, mesmas 8 paradas, todas ok):
+- `gba2grade.py` (tabela `CONSTRUCOES`) põe um modelo do HGSS sobre cada planta do GBA, com a porta no tile do
+  warp. A colisão é a união da planta do GBA com a do modelo. O tile da porta vira D (0x69).
+- Casa do warp MAYS_HOUSE → `wk_hhouse`. Fica com a porta em (20,16), como no GBA.
+- Casa do warp BRENDANS_HOUSE → `wk_h01`. Porta em (2,9), como no GBA.
+- As duas casas sem porta do GBA → `yo_h01` e `yo_h02`, com a porta decorativa e bloqueada.
+- Laboratório do Prof. Alex → `mst_okl` (o laboratório de Pallet).
+  - O `wk_labo` de New Bark tem a porta 2 tiles a oeste do centro e não cabe na planta.
+  - O `mst_okl` cabe exatamente nas colunas 10–16 do GBA. Como a porta dele é central, ela fica 1 tile a oeste do warp
+    do GBA (14,8 → 13,8), e a escada do pátio vai junto (14,9 → 13,9, agora uma rampa).
+  - O modelo e a porta (0x13A, 0x137) entram na lista de construções 0 (a/0/4/3), que é a lista da área 2.
+- Casa da horta da Route 1 → `wk_hhouse`, com a porta decorativa no tile do GBA.
+  - A casa de Pallet (telhado vermelho, mais parecida) ficou sem textura no jogo: a lista de construções só tem VRAM
+    para mais dois modelos.
+- A linha escura na divisa horizontal era a altitude da matriz. As células da linha 13 tinham altitude 1–2, restos
+  da Route 29, e as de baixo tinham 0. O desenho global agora zera a altitude das células que ocupa.
+
 Falta:
-- casas e laboratório (modelos com a porta no warp do GBA);
-- uma linha escura que sobra numa divisa horizontal;
-- eventos nas posições do GBA;
+- a porta do laboratório aparece como um vão claro (conferir o modelo da porta de Pallet);
+- eventos nas posições do GBA (warps das portas, NPCs, placas, caixas de correio);
 - Harvestvale (metatiles do tileset Slateport ainda sem tabela);
 - troca do protótipo.

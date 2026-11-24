@@ -51,7 +51,7 @@ Um setor é um bloco de 32×32 tiles. O arquivo de texto tem quatro seções:
 2 0 5 4         (área 2 = Dawnmere/Route 29: 0 New Bark, 2 e 5 Route 29/Cherrygrove, 4 Cherrygrove)
 [tiles]         32 linhas de 32 letras
 [alturas]       32 linhas de 32 caracteres: altura em tiles (0-9) ou r (rampa entre o vizinho norte e o sul)
-[objetos]       "modelo x z" (construções da lista da área; a casa só com interior funcional)
+[objetos] (linhas "modelo x z [dy]", x/z em tiles com fracao)       "modelo x z" (construções da lista da área; a casa só com interior funcional)
 ```
 
 | Letra | Tile | Colisão |
