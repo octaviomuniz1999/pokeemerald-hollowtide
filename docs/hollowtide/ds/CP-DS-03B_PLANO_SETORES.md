@@ -423,6 +423,9 @@ Breezeport), ou ter os NPCs do HGSS tirados.
 - NPCs de mecânica do HGSS sem lugar no Cap. 1 escondidos com `hidden_flag FLAG_GOT_TRAINER_CARD` (o cartão vem no
   início do jogo, então ficam sempre escondidos): a moça da Ball Capsule (Centro de Breezeport) e a menina dos Seals
   (casa de Breezeport). A auditoria não lê `hidden_flag`, por isso ainda lista as falas deles.
+- Segunda passada (25/11): os interiores de Harvestvale recebem as falas dos de Oldale, que o GBA liga às mesmas
+  portas (Centro 552/0-3, Mart 551/0-2, casas 553/1 e 555/0-1). Os atendentes do Union Room e do Colosseum ficam
+  (funcionais). Auditoria: 36 falas originais alcançáveis (eram 50).
 - O resto das falas originais alcançáveis é neutro (TV, pia, geladeira, livros do laboratório, PC, Union Room) ou
   funcional (o pescador da Old Rod em T26R0601) e fica.
 

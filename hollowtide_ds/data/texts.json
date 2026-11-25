@@ -195,7 +195,11 @@
  },
  "553": {
   "_": "casa de Harvestvale (Cherrygrove R0301): texto genérico do HGSS com o nome da região trocado",
-  "0": "You’re trying to see how good you\\nare as a Pokémon Trainer?\\rYou better visit the Pokémon Gyms\\nall over Lunia and collect Badges."
+  "0": "You’re trying to see how good you\\nare as a Pokémon Trainer?\\rYou better visit the Pokémon Gyms\\nall over Lunia and collect Badges.",
+  "1": {
+   "gba": "OldaleTown_House1_Text_LeftPokemonGoesOutFirst",
+   "_por_que": "interiores (25/11): fala do HGSS de Cherrygrove troca pela do interior que o GBA liga a esta porta (OLDALE_TOWN_HOUSE1)"
+  }
  },
  "549": {
   "_": "quarto da casa dos vizinhos (T20R0402): o Wii, com o nome da região trocado",
@@ -448,6 +452,51 @@
   "1": {
    "gba": "LilycoveCity_House2_Text_SleepIsEssential",
    "_por_que": "diretor 25/11 (coesão dos interiores): a fala do HGSS ('o papai sempre me assusta') respondia à fala do pai sobre as ilhas de Cianwood, que não existe em Lunia; troca pela da casa que o GBA liga a esta porta (Lilycove House 2)"
+  }
+ },
+ "552": {
+  "_": "Centro Pokemon de Harvestvale (T21PC0101)",
+  "0": {
+   "gba": "OldaleTown_PokemonCenter_1F_Text_PokemonCentersAreGreat",
+   "_por_que": "interiores (25/11): fala do HGSS de Cherrygrove troca pela do interior que o GBA liga a esta porta (Oldale, Centro Pokemon)"
+  },
+  "1": {
+   "gba": "OldaleTown_PokemonCenter_1F_Text_TrainersCanUsePC",
+   "_por_que": "interiores (25/11): fala do HGSS de Cherrygrove troca pela do interior que o GBA liga a esta porta (Oldale, Centro Pokemon)"
+  },
+  "2": {
+   "gba": "OldaleTown_PokemonCenter_1F_Text_WirelessClubNotAvailable",
+   "_por_que": "interiores (25/11): fala do HGSS de Cherrygrove troca pela do interior que o GBA liga a esta porta (Oldale, Centro Pokemon)"
+  },
+  "3": {
+   "gba": "OldaleTown_PokemonCenter_1F_Text_TradedInWirelessClub",
+   "_por_que": "interiores (25/11): fala do HGSS de Cherrygrove troca pela do interior que o GBA liga a esta porta (Oldale, Centro Pokemon)"
+  }
+ },
+ "551": {
+  "_": "Poke Mart de Harvestvale (T21FS0101)",
+  "0": {
+   "gba": "OldaleTown_Mart_Text_PokeBallsAreSoldOut",
+   "_por_que": "interiores (25/11): fala do HGSS de Cherrygrove troca pela do interior que o GBA liga a esta porta (Oldale, Poke Mart)"
+  },
+  "1": {
+   "gba": "OldaleTown_Mart_Text_ImGoingToBuyPokeBalls",
+   "_por_que": "interiores (25/11): fala do HGSS de Cherrygrove troca pela do interior que o GBA liga a esta porta (Oldale, Poke Mart)"
+  },
+  "2": {
+   "gba": "OldaleTown_Mart_Text_RestoreHPWithPotion",
+   "_por_que": "interiores (25/11): fala do HGSS de Cherrygrove troca pela do interior que o GBA liga a esta porta (Oldale, Poke Mart)"
+  }
+ },
+ "555": {
+  "_": "casa de Harvestvale (T21R0501)",
+  "0": {
+   "gba": "OldaleTown_House2_Text_PokemonLevelUp",
+   "_por_que": "interiores (25/11): fala do HGSS de Cherrygrove troca pela do interior que o GBA liga a esta porta (OLDALE_TOWN_HOUSE2)"
+  },
+  "1": {
+   "gba": "OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon",
+   "_por_que": "interiores (25/11): fala do HGSS de Cherrygrove troca pela do interior que o GBA liga a esta porta (OLDALE_TOWN_HOUSE2)"
   }
  }
 }
