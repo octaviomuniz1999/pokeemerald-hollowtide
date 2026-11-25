@@ -152,3 +152,12 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
 - Os NPCs do HGSS que não existem em Lunia ficam escondidos (`hidden_flag FLAG_GOT_TRAINER_CARD`), em vez de apagados:
   os ids dos objetos e dos scripts continuam válidos.
 - Depois da Jay, a saída oeste de Breezeport leva à Route 3 a pé; a ponte provisória para a Route 39 saiu.
+
+## 25/11/2026 — Ferralia original e desenho deslocado
+- O desenho global andou uma célula para leste (+32 em x): Ferralia, acima da Route 3, passava da borda. Deslocar uma
+  célula inteira preserva a partição de células e headers de todos os mapas já prontos.
+- Ferralia usa o header de Goldenrod (a metrópole do HGSS): os modelos nativos da área cabem na cidade (estação do
+  Magnet Train, ginásio, Centro, loja, prédios, fonte, postes) sem mexer no teto de texturas.
+- Ferralia fica no nível do platô da Route 3, como diz a placa do GBA.
+- O evento do pátio de cargas (que destrava o ginásio) e o ginásio ficam para a etapa seguinte; até lá a porta do
+  ginásio fica trancada, para não abrir um ginásio com o interior de Goldenrod.

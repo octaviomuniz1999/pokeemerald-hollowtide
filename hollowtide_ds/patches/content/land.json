@@ -13,7 +13,8 @@
    "Harvestvale": 67,
    "Route2": 34,
    "Brisa": 77,
-   "Route3": 43
+   "Route3": 43,
+   "Ferralia": 76
   },
   "padrao": 60,
   "modelos_area": [
@@ -24,7 +25,9 @@
      45,
      113,
      115,
-     248
+     248,
+     79,
+     87
     ],
     "remover": [
      21,
@@ -42,7 +45,7 @@
      53,
      150
     ],
-    "_por_que": "lista 0 (area 2): saem os modelos que so os mapas antigos do prototipo usavam (New Bark, Cherrygrove, Routes 29-31, hoje inalcancaveis); ficam os de Lunia e os das Routes 26/27. As texturas sao do conjunto a/0/7/0 da lista, que tem teto de memoria: o espaco liberado recebe as texturas dos modelos de fora (nsbtx.py). O poste de Olivine (as_light, 0xF8) tambem: o lampiao da Route 2 fica numa celula de Breezeport mas e visto das celulas da Route 2 (check_construcoes.py)"
+    "_por_que": "lista 0 (area 2): saem os modelos que so os mapas antigos do prototipo usavam (New Bark, Cherrygrove, Routes 29-31, hoje inalcancaveis); ficam os de Lunia e os das Routes 26/27. As texturas sao do conjunto a/0/7/0 da lista, que tem teto de memoria: o espaco liberado recebe as texturas dos modelos de fora (nsbtx.py). O poste de Olivine (as_light, 0xF8) tambem: o lampiao da Route 2 fica numa celula de Breezeport mas e visto das celulas da Route 2 (check_construcoes.py). Ferralia (25/11): o cassino (ko_game) e a casa do avaliador (ko_seimei) da borda leste de Ferralia aparecem das celulas da Route 1, de Harvestvale e da Route 2 (check_construcoes.py)"
    },
    {
     "lista": 6,
@@ -52,12 +55,20 @@
      248
     ],
     "_por_que": "auditoria de acabamento 25/11: a casa de porta trancada da Route 2 (0x25) e a porta dela (0x32) ficam num bloco com o header de Breezeport (lista 6, area de Olivine); sem os modelos na lista 6 a casa sumia quando o jogador chegava perto (check_construcoes.py); o poste de Olivine (as_light, 0xF8) entra nos lampioes de Breezeport, que eram tiles bloqueados sem modelo"
+   },
+   {
+    "lista": 4,
+    "acrescentar": [
+     45,
+     115
+    ],
+    "_por_que": "Ferralia (25/11): o ginasio (hw_gym) e a barraca (as_bench) da borda oeste de Harvestvale ficam a uns 7 tiles da borda leste de Ferralia e aparecem na tela de quem esta la (lista 4 = Goldenrod); check_construcoes.py"
    }
   ],
   "nota": "CP-DS-03B: Dawnmere, Route 1, Harvestvale e Route 2 convertidos dos mapas do GBA (gba2grade.py), a partir da celula (0,0) da matriz 0 (canto superior esquerdo, vazio no HGSS). O desenho fica deslocado (30,21) para que cada celula tenha um mapa so (um header por celula). A Route 2 usa o header R30; o fim dela (linhas 32-47 do GBA) divide a linha de blocos 5 com Breezeport e fica com o header de Breezeport (T26, area 7: doadores de material de Olivine e da Route 39). A borda externa do desenho tem colisao. Os mapas do caminho A ficam nas celulas antigas, sem eventos.",
   "headers_celula": {
-   "2,5": 77,
-   "3,5": 77
+   "3,5": 77,
+   "4,5": 77
   },
   "doadores_por_header": {
    "77": [
@@ -79,6 +90,14 @@
     55,
     56,
     57
+   ],
+   "76": [
+    42,
+    38,
+    39,
+    43,
+    40,
+    41
    ]
   },
   "substituir": {
@@ -87,6 +106,15 @@
    "fence_b": null
   },
   "barreira": true,
-  "_route3_por_que": "25/11: Route 3 original (PalmRoute03) a oeste de Breezeport, header da Route 39 (a Route 3 do prototipo, area de Olivine: lista 6 e doadores de Breezeport); as celulas (0,7) e (1,7), que o mar levava para o header de Breezeport, agora sao da Route 3"
+  "_route3_por_que": "25/11: Route 3 original (PalmRoute03) a oeste de Breezeport, header da Route 39 (a Route 3 do prototipo, area de Olivine: lista 6 e doadores de Breezeport); as celulas (0,7) e (1,7), que o mar levava para o header de Breezeport, agora sao da Route 3",
+  "substituir_por_header": {
+   "76": {
+    "road01": "ko_land_a",
+    "road01_r": "ko_land_r1",
+    "egrass": "grass01_a",
+    "fence_b": "ko_fence_a"
+   }
+  },
+  "_ferralia_por_que": "25/11: Ferralia (PalmFerralia) acima da Route 3, header de Goldenrod (T25, area 5: lista de construcoes 4 e texturas 5), doadores dos blocos de Goldenrod (38-43); calcada, borda, mato e cerca do gerador viram os materiais de Goldenrod (ko_land_a, ko_land_r1, grass01_a, ko_fence_a)"
  }
 ]

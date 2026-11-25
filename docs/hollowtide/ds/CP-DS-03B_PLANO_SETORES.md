@@ -520,3 +520,54 @@ global a oeste de Breezeport, como na ligação do GBA (`left`, deslocamento −
 **Validação:** varredura visual (50 capturas); `check_construcoes` ok (agora pela distância da câmera, não só pela
 célula vizinha); colisão da Route 3 igual à do GBA tile a tile, e nenhum tile fora dela mudou; `qa_route3.py` 7/7
 (escadas, batalha com o Tomás, 3 placas, Great Ball, praia até Breezeport).
+
+## Ferralia original, etapas 1 e 2 (25/11)
+
+**Desenho global uma célula para leste.** Ferralia fica acima da Route 3 (ligação `up` do GBA, deslocamento −16) e
+passava da borda oeste do desenho. `MARGIN` foi de (30,21) para (62,21): +32, uma célula inteira, para que a
+partição das células entre os mapas não mudasse. O desenho agora tem 6x8 células (192x256).
+- Tudo que usa `lunia_mundo`/`ORIGENS` acompanha: eventos, robôs de QA, atalho do PC.
+- O que tinha coordenada fixa foi ajustado: `headers_celula` e o atalho `0921` (48,20).
+- A regressão do Cap. 1 passou com o desenho deslocado (24/24).
+
+**Mapa** (GBA `PalmFerralia`, 72x64, tileset Rustboro): desenho (25,92)–(96,155), células (0..2, 2..4).
+- **Altura:** no nível do platô da Route 3 (`ALTURA_BASE` +3; no nível 1 a divisa virava um degrau de 3 tiles).
+- **Cerca e lampiões:** a cerca de ferro e os trilhos do pátio do GBA viram cerca, e não mais paredes invisíveis
+  (`SECUNDARIOS`). Os 19 lampiões ganham o poste de Goldenrod (`ko_light`).
+- **Header e materiais:** o de Goldenrod (T25, área 5, lista de construções 4, doadores 38–43). Calçada, borda,
+  mato e cerca do gerador viram os materiais de Goldenrod (`substituir_por_header`; `mapa_global` passou a aceitar
+  troca por header).
+- **25 construções** com modelos nativos de Goldenrod. A caixa foi medida nos vértices e a porta nos warps do
+  Goldenrod do HGSS:
+  - estação (`ko_station`, porta dupla) e ginásio (`ko_gym`);
+  - Centro e Mart;
+  - prédios grandes: loja de departamentos, cassino e a casa do avaliador de nomes;
+  - casas (`ko_h01`), floricultura e bicicletaria;
+  - prédios altos sem porta (`ko_h03x`) e a fonte da praça (`ko_funsui`).
+- **Portas e interiores:** as portas do GBA levam aos interiores de Goldenrod no mesmo papel:
+  - Centro → Centro;
+  - Mart → loja de departamentos;
+  - estação → estação do Magnet Train;
+  - casas e prédios → casas de Goldenrod.
+  As 11 portas trancadas do GBA têm a placa "a porta está trancada".
+
+**Eventos** (`0717`–`0718`):
+- **NPCs:** os 8 NPCs simples do GBA (recepcionista, operário do pátio, fã do ginásio, garoto da fonte, passageiro,
+  moradora, guarda da sede, senhora do parque) nos scripts de Goldenrod, com as falas do GBA (banco 581) e sprites
+  equivalentes. Os outros NPCs de Goldenrod (invasão Rocket) ficam escondidos.
+- **Placas:** as placas da cidade, do ginásio, da sede, do pátio e da Route 4. A placa do platô da Route 3 cai numa
+  célula de Ferralia e foi para a zona dela.
+- **Portão leste:** gatilho sempre armado, porque a Route 4 ainda não existe.
+- **Nome do lugar:** "Ferralia City".
+
+**Pendente** (próxima etapa):
+- o evento do pátio de cargas (o dono do pátio e os dois recrutas), que destrava o ginásio;
+- o ginásio por dentro (até lá a porta fica trancada);
+- os interiores com NPCs do GBA.
+
+**Validação:**
+- Varredura visual de Ferralia (48 capturas).
+- `check_construcoes` ok. Os modelos vistos de outra área entraram nas listas dela: hw_gym e as_bench na lista 4;
+  ko_game e ko_seimei na lista 0.
+- `qa_ferralia.py` 9/9: portas do Centro, Mart, estação e casa; ginásio trancado; placa; recepcionista; portão
+  leste; descida para a Route 3.

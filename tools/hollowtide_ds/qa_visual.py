@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from ds_driver import DS
 import lunia_mundo as L
 
-TAM = {"Dawnmere": (34, 29), "Route1": (40, 53), "Harvestvale": (39, 37), "Route2": (40, 48), "Brisa": (72, 60), "Route3": (56, 80)}
+TAM = {"Dawnmere": (34, 29), "Route1": (40, 53), "Harvestvale": (39, 37), "Route2": (40, 48), "Brisa": (72, 60), "Route3": (56, 80), "Ferralia": (72, 64)}
 PADRAO = struct.pack("<5H", 176, 60, 0, 1111, 2222)   # warp MAP_T20, 0, 1111, 2222 (provas/visual)
 
 

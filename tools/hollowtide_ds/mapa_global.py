@@ -15,7 +15,8 @@ Entrada no land.json: {"global": "lunia_cap1.txt", "matriz": 0, "celula": [21, 1
    u16 quantidade + u16 modelos. Pode ser uma lista de entradas, uma por lista de construcoes: um modelo tem de estar
    na lista de toda celula de onde e visto, senao some da tela; check_construcoes.py confere)
   "doadores_por_header": {"77": [58, 59, ...]}: celulas cujo header e de outra area (Breezeport = Olivine, area 7) usam
-  doadores dessa area; "substituir": {"flower02": "flower01", "fence_b": null} para materiais que ela nao tem.
+  doadores dessa area; "substituir": {"flower02": "flower01", "fence_b": null} para materiais que ela nao tem;
+  "substituir_por_header": {"76": {...}} quando cada area precisa da sua troca (Ferralia = Goldenrod).
 """
 import json, os, struct, sys
 sys.path.insert(0, os.path.dirname(__file__))
@@ -81,7 +82,8 @@ def gerar_blocos(path, base_block, blocos, doadores_bloco=None, substituir=None,
             sub_mats = {}
             if doadores_bloco and (bx, by) in doadores_bloco:
                 dn = donor_bytes(doadores_bloco[(bx, by)])
-                sub_mats = substituir or {}
+                sub_mats = (substituir.get((bx, by), {}) if isinstance(substituir, dict) and
+                            all(isinstance(k, tuple) for k in substituir) else (substituir or {}))
             mm = mg.Mesh()
             for name, quads in m.quads.items():           # materiais que a area da celula nao tem
                 to = sub_mats.get(name, name)
@@ -89,7 +91,12 @@ def gerar_blocos(path, base_block, blocos, doadores_bloco=None, substituir=None,
                     continue
                 for verts, n in quads:
                     mm.quad(to, verts, n)
-            layers = [(name, mm.dl(name)) for name in mg.ORDER if name in mm.quads]
+            ordem = []                                   # na ordem do ORDER, ja com os nomes trocados
+            for name in mg.ORDER:
+                to = sub_mats.get(name, name)
+                if to and to in mm.quads and to not in ordem:
+                    ordem.append(to)
+            layers = [(name, mm.dl(name)) for name in ordem]
             ld = Land(blocos[base_block])
             model = compose(base.rest[:base.sizes[2]], dn, layers)
             hb = mg.build_bdhc(sub, Hs, rs).pack()
@@ -136,8 +143,11 @@ def apply_global(rom, narc, entry, base_dir):
         hdr[(bx, by)] = h
     por_header = {int(k): v for k, v in entry.get("doadores_por_header", {}).items()}   # blocos de outra area
     doadores_bloco = {c: por_header[h] for c, h in hdr.items() if h in por_header}
+    # materiais trocados por celula: "substituir_por_header" ({"76": {...}}) ou o "substituir" geral
+    sub_h = {int(k): v for k, v in entry.get("substituir_por_header", {}).items()}
+    subs = {c: sub_h.get(h, entry.get("substituir") or {}) for c, h in hdr.items() if h in por_header}
     blocks, (nbx, nby) = gerar_blocos(path, entry.get("base", 0), [bytes(f) for f in narc.files], doadores_bloco,
-                                      entry.get("substituir"), entry.get("barreira", False))
+                                      subs, entry.get("barreira", False))
     import ndspy.narc
     mid = rom.filenames.idOf("a/0/4/1")
     mnarc = ndspy.narc.NARC(rom.files[mid])

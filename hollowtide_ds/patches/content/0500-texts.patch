@@ -279,6 +279,44 @@
 -I heard that each Pokémon has its own\nnature, and it has something to do with\fPokémon stats!\n
 +When Pokémon battle, they eventually\nlevel up and become stronger.
 +If the Pokémon with you become\nstronger, you’ll be able to go\rfarther away from here.
+--- a/data/text/custom/581.txt
++++ b/data/text/custom/581.txt
+@@ -1,19 +1,19 @@
+-They built the new Radio Tower to\nreplace the old, creaky one.
+-Have you visited the Pokéathlon Dome?\nIt is a huge sports facility where\fPokémon compete with each other.\rIt was quite a sight!
+-I know there’s a new Bike Shop,\nbut I can’t find it anywhere.
+-The fact that you have a Bike...\nmeans you got it from a Bike Shop,\fright?\rAll right!\nI can say that there is a Bike Shop\fsomewhere in this city!
+-Is that man in black dressed up\nlike a Team Rocket member?\fHow silly!
+-Was that man in black really part\nof Team Rocket?\fI can’t believe it!
+-The Radio Tower in Goldenrod City is\na landmark.\rThey’re running a promotional campaign\nright now.\rThey’ll modify your Pokégear so it can\nalso serve as a radio.
+-The Radio Tower in Goldenrod City is\na landmark.\rThey’re running a promotional campaign\nright now.\rThey’ll modify your Pokégear so it can\nalso serve as a radio.\rOh, your Pokégear works as a radio!
+-E-he-he-he...\nI got in trouble for playing in the\fbasement of the department store.
+-The man at that tent rates your\nPokémon names.\rHe can even rename your Pokémon.
+-I think I’ll give my Pokémon cool\nnicknames as a reward if they do\fwell in the Pokéathlon.
+-Whew! This is one big town.\nI don’t know where anything is.
+-I know that you can find the\nPokéathlon Dome when you take\fRoute 35 north and go past the\fleft gate...\rBut I seem to get lost every time\nI come to this town...
+-So this is the Radio Tower...\r
+-What do you want, you pest?\nScram!\r
+-What are you doing?\nGet to your position right away!\r
++Welcome to Ferralia! Steel, trains\nand a million hurried footsteps.\rStay on the sidewalks. Nobody here\nstops walking, not even for you!
++Before the whistle, you can hear\nthe rails sing.\rLately Team Palm only unloads its\ncargo after dark. Funny, huh?
++The Gym is locked today. Vessel went\nto the rail yard at dawn.\rSomething about a shipment that\nnever arrived...
++My dad says the fountain water\ncomes all the way from the coast.\rIs that why it tastes salty?
++Late again! The east line was\nclosed for “inspection” all week.
++I moved here from Harvestvale.\nThe city is loud, but the jobs\rare here. I miss the coffee\nfields, though.
++Ferralia Rail & Steel headquarters.\nStaff only, I’m afraid.
++This park is the city’s lung.\nI walk here every morning.\rThe grass is full of Pokémon that\nmoved in from the Serra.
++Ferralia City\nThe heart of steel and rail.
++Ferralia City Pokémon Gym\nLeader: Vessel\r“The steel that sings!”
++Ferralia Rail & Steel\nHeadquarters
++Ferralia Cargo Yard\nAuthorized personnel only.
++East Line - Route 4\nClosed for cargo inspection.
++The door is locked.
++East Line - Route 4\rThe road is closed for a cargo\ninspection. Talk to the Gym Leader.
++Route 3 - Plateau\nNorth: Ferralia City
+ Pokémon? They’re nothing more than\ntools for making money!
+ We are on guard here.\nDon’t you worry!
+ Take over the Radio Tower...\rWhat? It’s none of your business!
 --- a/data/text/custom/604.txt
 +++ b/data/text/custom/604.txt
 @@ -1,9 +1,22 @@

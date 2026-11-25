@@ -17,7 +17,7 @@ from land_data import Land
 import lunia_mundo as L
 
 # header -> lista de construcoes da area (tabela de headers do ARM9: byte 1 = area; a/0/4/2: area -> lista)
-LISTA_DO_HEADER = {60: 0, 33: 0, 67: 0, 34: 0, 35: 0, 77: 6, 43: 6}
+LISTA_DO_HEADER = {60: 0, 33: 0, 67: 0, 34: 0, 35: 0, 77: 6, 43: 6, 76: 4}
 
 
 def main(rom_path):

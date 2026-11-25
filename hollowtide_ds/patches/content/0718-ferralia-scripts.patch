@@ -1,0 +1,308 @@
+--- a/data/scr_seq/scr_seq_0885_T25.s
++++ b/data/scr_seq/scr_seq_0885_T25.s
+@@ -104,19 +104,8 @@
+ _011A:
+ 	end
+ 
+-scr_seq_T25_000:
+-	play_se SEQ_SE_DP_SELECT
+-	lockall
+-	faceplayer
+-	compare VAR_UNK_40DA, 1
+-	goto_if_ne _013E
+-	compare VAR_UNK_40DB, 0
+-	goto_if_eq _0149
+-_013E:
+-	npc_msg 9
+-	wait_button
+-	closemsg
+-	releaseall
++scr_seq_T25_000:   // Ferralia: Palm101_Greeter
++	simple_npc_msg 0
+ 	end
+ 
+ _0149:
+@@ -126,14 +115,9 @@
+ 	releaseall
+ 	end
+ 
+-scr_seq_T25_001:
+-	play_se SEQ_SE_DP_SELECT
+-	lockall
+-	faceplayer
+-	compare VAR_SCENE_ROCKET_TAKEOVER, 2
+-	goto_if_ge _0172
+-	npc_msg 4
+-	goto _0175
++scr_seq_T25_001:   // Ferralia: Palm101_YardWorker
++	simple_npc_msg 1
++	end
+ 
+ _0172:
+ 	npc_msg 5
+@@ -143,15 +127,8 @@
+ 	releaseall
+ 	end
+ 
+-scr_seq_T25_002:
+-	play_se SEQ_SE_DP_SELECT
+-	lockall
+-	faceplayer
+-	goto_if_set FLAG_GOT_RADIO_CARD, _019B
+-	npc_msg 6
+-	wait_button
+-	closemsg
+-	releaseall
++scr_seq_T25_002:   // Ferralia: Palm101_GymFan
++	simple_npc_msg 2
+ 	end
+ 
+ _019B:
+@@ -161,21 +138,12 @@
+ 	releaseall
+ 	end
+ 
+-scr_seq_T25_003:
+-	simple_npc_msg 8
+-	end
+-
+-scr_seq_T25_004:
+-	play_se SEQ_SE_DP_SELECT
+-	lockall
+-	faceplayer
+-	player_on_bike_check VAR_SPECIAL_RESULT
+-	compare VAR_SPECIAL_RESULT, 1
+-	goto_if_eq _01DD
+-	npc_msg 2
+-	wait_button
+-	closemsg
+-	releaseall
++scr_seq_T25_003:   // Ferralia: Palm101_FountainKid
++	simple_npc_msg 3
++	end
++
++scr_seq_T25_004:   // Ferralia: Palm101_Commuter
++	simple_npc_msg 4
+ 	end
+ 
+ _01DD:
+@@ -185,19 +153,8 @@
+ 	releaseall
+ 	end
+ 
+-scr_seq_T25_005:
+-	play_se SEQ_SE_DP_SELECT
+-	lockall
+-	faceplayer
+-	compare VAR_UNK_40DA, 1
+-	goto_if_ne _020A
+-	compare VAR_UNK_40DB, 0
+-	goto_if_eq _0215
+-_020A:
+-	npc_msg 0
+-	wait_button
+-	closemsg
+-	releaseall
++scr_seq_T25_005:   // Ferralia: Palm101_Resident
++	simple_npc_msg 5
+ 	end
+ 
+ _0215:
+@@ -207,19 +164,8 @@
+ 	releaseall
+ 	end
+ 
+-scr_seq_T25_006:
+-	play_se SEQ_SE_DP_SELECT
+-	lockall
+-	faceplayer
+-	compare VAR_UNK_40DA, 1
+-	goto_if_ne _0242
+-	compare VAR_UNK_40DB, 0
+-	goto_if_eq _024D
+-_0242:
+-	npc_msg 11
+-	wait_button
+-	closemsg
+-	releaseall
++scr_seq_T25_006:   // Ferralia: Palm101_HQGuard
++	simple_npc_msg 6
+ 	end
+ 
+ _024D:
+@@ -229,17 +175,9 @@
+ 	releaseall
+ 	end
+ 
+-scr_seq_T25_007:
+-	play_se SEQ_SE_DP_SELECT
+-	lockall
+-	npc_msg 13
+-	closemsg
+-	get_player_facing VAR_SPECIAL_RESULT
+-	compare VAR_SPECIAL_RESULT, 0
+-	goto_if_ne _0284
+-	apply_movement obj_T25_rocketm, _02F8
+-	wait_movement
+-	goto _02B8
++scr_seq_T25_007:   // Ferralia: Palm101_ParkLady
++	simple_npc_msg 7
++	end
+ 
+ _0284:
+ 	compare VAR_SPECIAL_RESULT, 2
+@@ -441,16 +379,15 @@
+ 	releaseall
+ 	end
+ 
+-scr_seq_T25_017:
+-	scrcmd_609
+-	lockall
+-	apply_movement obj_T25_rocketm_9, _06E4
++scr_seq_T25_017:   // Ferralia: portao leste (Palm103_EastGate); a Route 4 ainda nao existe
++	lockall
++	npc_msg 14
++	wait_button
++	closemsg
++	apply_movement obj_player, _HT_StepLeft
+ 	wait_movement
+-	get_player_coords VAR_TEMP_x4000, VAR_TEMP_x4001
+-	compare VAR_TEMP_x4000, 354
+-	goto_if_ne _04B9
+-	apply_movement obj_T25_rocketm_9, _06EC
+-	goto _05A6
++	releaseall
++	end
+ 
+ _04B9:
+ 	compare VAR_TEMP_x4000, 355
+@@ -716,60 +653,67 @@
+ 	step 14, 4
+ 	step 32, 1
+ 	step_end
+-scr_seq_T25_019:
+-	scrcmd_055 2, 0
+-	scrcmd_057 3
+-	scrcmd_058
+-	trainer_tips 36, VAR_SPECIAL_RESULT
+-	callstd std_signpost
+-	end
+-
+-scr_seq_T25_020:
+-	scrcmd_055 2, 0
+-	scrcmd_057 3
+-	scrcmd_058
+-	trainer_tips 37, VAR_SPECIAL_RESULT
+-	callstd std_signpost
+-	end
+-
+-scr_seq_T25_021:
+-	scrcmd_055 2, 0
+-	scrcmd_057 3
+-	scrcmd_058
+-	trainer_tips 38, VAR_SPECIAL_RESULT
+-	callstd std_signpost
+-	end
+-
+-scr_seq_T25_022:
+-	direction_signpost 39, 0, 16, VAR_SPECIAL_RESULT
+-	scrcmd_057 3
+-	scrcmd_058
+-	scrcmd_060 VAR_SPECIAL_RESULT
+-	callstd std_signpost
+-	end
+-
+-scr_seq_T25_023:
+-	scrcmd_055 2, 0
+-	scrcmd_057 3
+-	scrcmd_058
+-	trainer_tips 40, VAR_SPECIAL_RESULT
+-	callstd std_signpost
+-	end
+-
+-scr_seq_T25_024:
+-	scrcmd_055 2, 0
+-	scrcmd_057 3
+-	scrcmd_058
+-	trainer_tips 41, VAR_SPECIAL_RESULT
+-	callstd std_signpost
+-	end
+-
+-scr_seq_T25_025:
+-	scrcmd_055 2, 0
+-	scrcmd_057 3
+-	scrcmd_058
+-	trainer_tips 42, VAR_SPECIAL_RESULT
+-	callstd std_signpost
++scr_seq_T25_019:   // Ferralia: Palm101_CitySign
++	play_se SEQ_SE_DP_SELECT
++	lockall
++	npc_msg 8
++	wait_button
++	closemsg
++	releaseall
++	end
++
++scr_seq_T25_020:   // Ferralia: Palm101_GymSign
++	play_se SEQ_SE_DP_SELECT
++	lockall
++	npc_msg 9
++	wait_button
++	closemsg
++	releaseall
++	end
++
++scr_seq_T25_021:   // Ferralia: Palm101_HQSign
++	play_se SEQ_SE_DP_SELECT
++	lockall
++	npc_msg 10
++	wait_button
++	closemsg
++	releaseall
++	end
++
++scr_seq_T25_022:   // Ferralia: Palm101_YardSign
++	play_se SEQ_SE_DP_SELECT
++	lockall
++	npc_msg 11
++	wait_button
++	closemsg
++	releaseall
++	end
++
++scr_seq_T25_023:   // Ferralia: Palm101_Route4Sign
++	play_se SEQ_SE_DP_SELECT
++	lockall
++	npc_msg 12
++	wait_button
++	closemsg
++	releaseall
++	end
++
++scr_seq_T25_024:   // Ferralia: porta trancada (Palm280_DoorLocked)
++	play_se SEQ_SE_DP_SELECT
++	lockall
++	npc_msg 13
++	wait_button
++	closemsg
++	releaseall
++	end
++
++scr_seq_T25_025:   // Ferralia: placa do plato da Route 3
++	play_se SEQ_SE_DP_SELECT
++	lockall
++	npc_msg 15
++	wait_button
++	closemsg
++	releaseall
+ 	end
+ 
+ scr_seq_T25_026:
+@@ -804,3 +748,7 @@
+ 	callstd std_signpost
+ 	end
+ 	.balign 4
++_HT_StepLeft:
++	step MOVEMENT_STEP_LEFT, 1
++	step_end
++	.balign 4

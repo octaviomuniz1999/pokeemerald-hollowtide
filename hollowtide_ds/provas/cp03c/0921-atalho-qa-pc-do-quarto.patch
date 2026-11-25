@@ -4,7 +4,7 @@
  scr_seq_T20R0202_000:
  	scrcmd_609
  	lockall
-+	warp MAP_T20, 0, 16, 20, DIR_SOUTH   // prova CP-DS-03B: atalho de QA para a Dawnmere convertida do GBA
++	warp MAP_T20, 0, 48, 20, DIR_SOUTH   // prova CP-DS-03B: atalho de QA para a Dawnmere convertida do GBA
 +	releaseall
 +	end
 +

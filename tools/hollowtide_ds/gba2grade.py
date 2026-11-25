@@ -80,6 +80,20 @@ MODELOS = {
     0x73: dict(nome="as_bench (banco com toldo do cais de Olivine)", x0=-2.0, x1=2.5, z0=-1.28, porta=None, dtile=(0, 0)),
     0x2D: dict(nome="hw_gym (ginasio de Azalea, de madeira)", x0=-3.6, x1=3.76, z0=-2.5,
                porta=(0x0F, 0.0, 1.312, 0.0), dtile=(0, 1.5)),
+    # area 5 (Goldenrod; lista de construcoes 4), para Ferralia: caixa medida nos vertices do modelo; porta e tile do warp
+    # medidos no Goldenrod do HGSS (objetos dos blocos 38-43 x warps da zona 073_T25)
+    0x4C: dict(nome="ko_depart (loja de departamentos de Goldenrod)", x0=-2.6, x1=3.16, z0=-2.35,
+               porta=(0x0F, 0.0, 2.0, 0.0), dtile=(0, 2.0)),
+    0x4B: dict(nome="ko_cycle (bicicletaria)", x0=-2.38, x1=2.86, z0=-1.0, porta=(0x0F, 0.0, 1.349, 0.102), dtile=(0, 1.5)),
+    0x4D: dict(nome="ko_flower (floricultura)", x0=-2.0, x1=2.5, z0=-1.78, porta=(0x0F, -0.503, 0.578, 0.032), dtile=(-0.5, 1.0)),
+    0x4E: dict(nome="ko_funsui (fonte)", x0=-1.67, x1=1.67, z0=-1.67, porta=None, dtile=(0, 0)),
+    0x4F: dict(nome="ko_game (cassino)", x0=-3.36, x1=3.81, z0=-2.0, porta=(0x0F, 0.0, 1.418, 0.095), dtile=(0, 1.5)),
+    0x50: dict(nome="ko_gym (ginasio de Goldenrod)", x0=-3.6, x1=3.76, z0=-2.5, porta=(0x10, 0.0, 1.312, 0.0), dtile=(0, 1.5)),
+    0x51: dict(nome="ko_h01 (casa de Goldenrod)", x0=-1.67, x1=2.08, z0=-1.35, porta=(0x5E, 0.176, 0.624, 0.0), dtile=(-0.5, 1.0)),
+    0x57: dict(nome="ko_seimei (casa do avaliador de nomes)", x0=-2.33, x1=2.7, z0=-1.99, porta=None, dtile=(0, 1.0)),
+    0x58: dict(nome="ko_station (estacao do Magnet Train)", x0=-3.67, x1=5.5, z0=-2.35,
+               porta=(0x0F, -1.005, 2.313, 0.122), dtile=(-1.0, 2.69)),
+    0x65: dict(nome="ko_h03x (predio de Goldenrod, sem entrada)", x0=-2.43, x1=2.89, z0=-1.94, porta=None, dtile=(0, 0)),
 }
 # Por mapa: retangulo da construcao no GBA (x0, y0, x1, y1, inclusivo, coordenadas do mapa do GBA), modelo, tile da porta
 # no DS (= warp do GBA, salvo quando o modelo nao deixa) e se a porta e de verdade (warp) ou decorativa; "ajustes" sao
@@ -130,6 +144,36 @@ CONSTRUCOES = {
         dict(rect=(61, 48, 68, 54), modelo=0x6E, pos=(64.5, 51.0), porta=None, warp=False, altura=1,
              nota="farol (decisao do diretor 24/11: o farol de Olivine; o GBA nao tem farol): na ponta de areia abaixo do "
                   "faroleiro (64,46) e da casa dele, decorativo, sem entrada"),
+    ],
+    # Ferralia (PalmFerralia), header de Goldenrod (T25, area 5): os modelos nativos da area; o warp do GBA vai para o
+    # interior de Goldenrod que faz o mesmo papel (eventos_gba.py)
+    "Ferralia": [
+        dict(rect=(24, 4, 33, 12), modelo=0x58, porta=(28, 12), warp=True, altura=1, nota="estacao (PALM_STATION_FERRALIA)",
+             ajustes=[((29, 12), "D", "1")]),
+        dict(rect=(60, 4, 68, 8), modelo=0x4F, porta=(64, 8), warp=False, altura=1, nota="predio de porta trancada"),
+        dict(rect=(3, 5, 9, 12), modelo=0x4C, porta=(5, 12), warp=True, altura=1, nota="predio alto (RUSTBORO_CITY_FLAT2_1F)"),
+        dict(rect=(10, 8, 14, 11), modelo=0x51, porta=(12, 11), warp=True, altura=1, nota="casa (RUSTBORO_CITY_HOUSE1)"),
+        dict(rect=(53, 5, 56, 11), modelo=0x65, pos=(55.0, 8.5), porta=None, warp=False, altura=1, nota="predio alto sem porta"),
+        dict(rect=(18, 7, 22, 10), modelo=0x4D, porta=(20, 10), warp=False, altura=1, nota="casa de porta trancada"),
+        dict(rect=(35, 8, 39, 11), modelo=0x51, porta=(37, 11), warp=True, altura=1, nota="casa (RUSTBORO_CITY_HOUSE2)"),
+        dict(rect=(46, 8, 51, 12), modelo=0x50, porta=(49, 12), warp=True, altura=1, nota="ginasio (MAUVILLE_CITY_GYM)"),
+        dict(rect=(43, 21, 49, 25), modelo=0x57, porta=(46, 25), warp=False, altura=1, nota="predio de porta trancada"),
+        dict(rect=(19, 22, 22, 24), modelo=0x28, porta=(20, 24), warp=True, altura=1, nota="Centro Pokemon"),
+        dict(rect=(35, 22, 38, 24), modelo=0x27, porta=(36, 24), warp=True, altura=1, nota="Poke Mart"),
+        dict(rect=(51, 22, 56, 25), modelo=0x4B, porta=(53, 25), warp=False, altura=1, nota="predio de porta trancada"),
+        dict(rect=(4, 23, 12, 27), modelo=0x4F, porta=(8, 27), warp=True, altura=1, nota="predio (RUSTBORO_CITY_FLAT1_1F)"),
+        dict(rect=(27, 28, 29, 30), modelo=0x4E, pos=(28.5, 29.5), porta=None, warp=False, altura=1, nota="fonte da praca"),
+        dict(rect=(43, 31, 46, 37), modelo=0x65, pos=(45.0, 34.5), porta=None, warp=False, altura=1, nota="predio alto sem porta"),
+        dict(rect=(48, 31, 51, 37), modelo=0x65, pos=(50.0, 34.5), porta=None, warp=False, altura=1, nota="predio alto sem porta"),
+        dict(rect=(53, 31, 56, 37), modelo=0x65, pos=(55.0, 34.5), porta=None, warp=False, altura=1, nota="predio alto sem porta"),
+        dict(rect=(4, 33, 8, 36), modelo=0x51, porta=(6, 36), warp=False, altura=1, nota="casa de porta trancada"),
+        dict(rect=(10, 33, 14, 36), modelo=0x51, porta=(12, 36), warp=False, altura=1, nota="casa de porta trancada"),
+        dict(rect=(19, 43, 25, 47), modelo=0x4B, porta=(22, 47), warp=False, altura=1, nota="predio de porta trancada"),
+        dict(rect=(4, 44, 9, 47), modelo=0x4D, porta=(6, 47), warp=False, altura=1, nota="casa de porta trancada"),
+        dict(rect=(30, 44, 34, 47), modelo=0x51, porta=(32, 47), warp=False, altura=1, nota="casa de porta trancada"),
+        dict(rect=(46, 44, 50, 47), modelo=0x51, porta=(48, 47), warp=True, altura=1, nota="casa (RUSTBORO_CITY_HOUSE3)"),
+        dict(rect=(52, 44, 56, 47), modelo=0x4D, porta=(54, 47), warp=False, altura=1, nota="casa de porta trancada"),
+        dict(rect=(61, 44, 66, 47), modelo=0x57, porta=(63, 47), warp=False, altura=1, nota="predio de porta trancada"),
     ],
     "Route3": [
         dict(rect=(18, 58, 21, 61), modelo=0x6D, porta=(19, 61), warp=False, altura=1,
@@ -205,17 +249,25 @@ def construcoes(key, gx, gy, grid, alt):
 MAPS = {"Dawnmere": ("LittlerootTown", 0, 0), "Route1": ("Route101", 34, 17), "Harvestvale": ("OldaleTown", 35, 70),
         "Route2": ("PalmRoute02", 35, 107),        # ligacoes do GBA: Route 2 abaixo de Harvestvale (deslocamento 0)
         "Brisa": ("PalmBrisa", 35, 155),           # e Breezeport abaixo da Route 2 (deslocamento 0)
-        "Route3": ("PalmRoute03", -21, 135)}       # Route 3 a oeste de Breezeport (ligacao "left", deslocamento -20)
+        "Route3": ("PalmRoute03", -21, 135),       # Route 3 a oeste de Breezeport (ligacao "left", deslocamento -20)
+        "Ferralia": ("PalmFerralia", -37, 71)}     # Ferralia acima da Route 3 (ligacao "up", deslocamento -16)
 # Bases de lampiao do GBA (auditoria de 25/11): viravam tile bloqueado sem modelo (um quadrado de grama no meio da
 # calcada e uma parede invisivel). Recebem o poste de Olivine (as_light, 0xF8, acrescentado a lista 6 no land.json).
-LAMPIOES = {"gTileset_Lilycove": {0x361, 0x364}}         # 0x362 e topo de lampiao (andavel)
-MODELO_LAMPIAO = 0xF8
+LAMPIOES = {"gTileset_Lilycove": {0x361, 0x364},          # 0x362 e topo de lampiao (andavel)
+            "gTileset_Rustboro": {0x21A}}                  # Ferralia: base do poste (o topo 0x212 e andavel)
+# Metatiles de tileset secundario com letra propria (a tabela GENERAL acima so vale para EverGrande/Petalburg):
+# a cerca de ferro e os trilhos de madeira de Ferralia viravam construcao ('B', parede invisivel sem modelo)
+SECUNDARIOS = {"gTileset_Rustboro": {0x2A7: "c", 0x2BE: "c", 0x319: "c", 0x352: "c", 0x35E: "c", 0x35F: "c"}}
+MODELO_LAMPIAO = {"gTileset_Lilycove": 0xF8,                  # as_light, o poste de Olivine
+                  "gTileset_Rustboro": 0x5F}                  # ko_light, o poste de Goldenrod (Ferralia)
 ESCADAS = {0x0AF}                           # escada do GBA: rampa no DS (entre os vizinhos norte e sul)
 # Deslocamento do desenho dentro da area de blocos. Cada celula de 32x32 tem UM header (zona de eventos, encontros,
 # musica): com (30, 21), quase toda celula fica com um mapa so: Dawnmere na coluna de blocos 1, a Route 1 nas colunas
 # 2-3 (linhas 1-2), Harvestvale na linha 3, a Route 2 nas linhas 4-5. Sobram as 5 primeiras linhas de Harvestvale
 # (arvores e caminho) numa celula da Route 1: a chegada e o fazendeiro descem 3 linhas (eventos_gba.py).
-MARGIN = (30, 21)
+# 25/11: +32 em x (uma celula inteira, a particao das celulas entre os mapas nao muda): Ferralia fica a oeste da
+# Route 3 (ligacao "up" com deslocamento -16) e passava da borda esquerda do desenho.
+MARGIN = (62, 21)
 
 
 def behaviors(tileset_name):
@@ -260,6 +312,8 @@ def convert(name):
             c = "="                                      # poca rasa (andavel): chao de terra no DS
         elif b in water:
             c = "~"
+        elif mt in SECUNDARIOS.get(L["secondary_tileset"], {}) and col:
+            c = SECUNDARIOS[L["secondary_tileset"]][mt]
         elif mt in GENERAL and (mt < 0x200 or L["secondary_tileset"] in SECONDARY_TABLE_TILESETS):
             c = GENERAL[mt]
         elif any(mt in r for r in PRIMARY_BUILDINGS):
@@ -409,6 +463,10 @@ def terracos(tiles, hh, w, h):
 
 
 TERRACOS = {"Route3"}
+# Altura somada ao mapa inteiro, para casar com o vizinho na divisa: Ferralia fica no plato da Route 3 (a placa do GBA:
+# "up the SERRA trail to the plateau and FERRALIA"), no nivel 4 do alto da Route 3; no nivel 1 a divisa virava um degrau
+# de 3 tiles que o jogador nao descia (teste dirigido de 25/11)
+ALTURA_BASE = {"Ferralia": 3}
 
 
 def heights(w, h, elev, tiles=None):
@@ -500,7 +558,7 @@ def rochas_soltas(tiles, hh, w, h):
 
 
 def build_global():
-    W, H = 160, 256
+    W, H = 192, 256                                   # 6x8 celulas (Ferralia na coluna 0)
     grid = [["T"] * W for _ in range(H)]
     alt = [["1"] * W for _ in range(H)]
     owner = [[None] * W for _ in range(H)]
@@ -516,6 +574,8 @@ def build_global():
         if key in TERRACOS:
             terracos(tiles, hh, w, h)
         rochas_soltas(tiles, hh, w, h)
+        if ALTURA_BASE.get(key):
+            hh[:] = [v if v == "r" else int(v) + ALTURA_BASE[key] for v in hh]
         for i, v in enumerate(vals):
             # passagem de elevacao 0 andavel entre alturas diferentes (norte x sul): rampa. Era a entrada da lagoa
             # cercada de Dawnmere, que virava um degrau sem subida depois que o patamar ficou inteiro (25/11)
@@ -532,10 +592,11 @@ def build_global():
                 owner[gy + y][gx + x] = key
         objs, rel = construcoes(key, gx, gy, grid, alt)
         objetos += objs
-        lamps = LAMPIOES.get(load_map(name)[1]["secondary_tileset"], ())
+        sec = load_map(name)[1]["secondary_tileset"]
+        lamps = LAMPIOES.get(sec, ())
         for i, v in enumerate(vals):
             if v & 0x3FF in lamps:
-                objetos.append(f"{MODELO_LAMPIAO} {gx + i % w} {gy + i // w} 0")
+                objetos.append(f"{MODELO_LAMPIAO[sec]} {gx + i % w} {gy + i // w} 0")
         for b in j.get("bg_events", []):                 # placas do GBA: modelo de placa do HGSS (board_b) no tile
             if b.get("type") == "sign" and not re.search(r"Lamp|Keeper|DoorLocked", b.get("script", "")):
                 # placa de verdade (board_b, nas listas 0 e 6); lampioes e portas ficam sem modelo

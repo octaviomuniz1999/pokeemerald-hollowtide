@@ -20,6 +20,8 @@ estes patches: reverta-os com patch -R antes de regenerar):
   0714-route3-eventos-gba.patch     (zone_event/040_R39.json: Route 3 original, header da Route 39)
   0715-route3-placas.patch          (scr_seq_0249_R39.s: as 3 placas da Route 3)
   0716-route3-itens.patch           (scr_seq_0141.s: Big Pearl, Great Ball e Revive)
+  0717-ferralia-eventos-gba.patch   (zone_event/073_T25.json: Ferralia original, header de Goldenrod)
+  0718-ferralia-scripts.patch       (scr_seq_0885_T25.s: NPCs, placas e portao leste com as falas do GBA)
 Uso: eventos_gba.py HG_ENGINE PASTA_SAIDA
 """
 import difflib, json, os, sys
@@ -164,6 +166,47 @@ ZONAS = {
                    {"de": "039_R38", "script": "std_itemball_r38_max_potion", "mapa": "Route3", "gba": (18, 29)},   # Great Ball
                    {"de": "039_R38", "script": "std_itemball_r38_lax_incense", "mapa": "Route3", "gba": (8, 9)}],   # Revive
     ),
+    # Ferralia (PalmFerralia), header de Goldenrod (T25). Os NPCs e placas de Goldenrod ganham scripts simples com as
+    # falas do GBA (0718); os da invasao da Equipe Rocket que sobram ficam escondidos. O evento do patio de cargas
+    # (dono do patio e os dois recrutas, que destrava o ginasio) e o interior do ginasio ficam para a proxima etapa:
+    # ate la a porta do ginasio fica trancada.
+    "073_T25": dict(
+        origem=ORIGENS["Ferralia"],
+        objetos={"_EV_scr_seq_T25_000 + 1": ((41, 47), "baixo", {"graphics_id": "SPRITE_MAN1", "hidden_flag": "FLAG_NOTHING"}),
+                 "_EV_scr_seq_T25_001 + 1": ((62, 35), "cima", {"graphics_id": "SPRITE_WORKMAN", "hidden_flag": "FLAG_NOTHING"}),
+                 "_EV_scr_seq_T25_002 + 1": ((50, 15), "baixo", {"graphics_id": "SPRITE_GENTLEMAN", "hidden_flag": "FLAG_NOTHING"}),
+                 "_EV_scr_seq_T25_003 + 1": ((28, 36), "baixo", {"graphics_id": "SPRITE_BOY1", "hidden_flag": "FLAG_NOTHING"}),
+                 "_EV_scr_seq_T25_004 + 1": ((45, 39), "baixo", {"graphics_id": "SPRITE_MAN2", "hidden_flag": "FLAG_NOTHING"}),
+                 "_EV_scr_seq_T25_005 + 1": ((12, 20), "baixo", {"graphics_id": "SPRITE_WOMAN2", "hidden_flag": "FLAG_NOTHING"}),
+                 "_EV_scr_seq_T25_006 + 1": ((29, 15), "baixo", {"graphics_id": "SPRITE_ASSISTANTM", "hidden_flag": "FLAG_NOTHING"}),
+                 "_EV_scr_seq_T25_007 + 1": ((31, 56), "baixo", {"graphics_id": "SPRITE_OLDWOMAN1", "hidden_flag": "FLAG_NOTHING"})},
+        esconder={"_EV_scr_seq_T25_008 + 1", "_EV_scr_seq_T25_009 + 1", "_EV_scr_seq_T25_010 + 1", "_EV_scr_seq_T25_011 + 1",
+                  "_EV_scr_seq_T25_012 + 1", "_EV_scr_seq_T25_013 + 1", "_EV_scr_seq_T25_014 + 1", "_EV_scr_seq_T25_015 + 1",
+                  "_EV_scr_seq_T25_016 + 1", "_EV_scr_seq_T25_030 + 1", "_EV_scr_seq_T25_031 + 1", "_EV_scr_seq_T25_032 + 1", 0},
+        placas={"_EV_scr_seq_T25_019 + 1": (39, 47),                 # Palm101_CitySign
+                "_EV_scr_seq_T25_020 + 1": (45, 11),                 # Palm101_GymSign
+                "_EV_scr_seq_T25_021 + 1": (27, 14),                 # Palm101_HQSign
+                "_EV_scr_seq_T25_022 + 1": (57, 27),                 # Palm101_YardSign
+                "_EV_scr_seq_T25_023 + 1": (69, 39),                 # Palm101_Route4Sign
+                "_EV_scr_seq_T25_024 + 1": (64, 8),                  # Palm280_DoorLocked (mais 11 portas em novos_bg)
+                "_EV_scr_seq_T25_025 + 1": (44, 67)},                # placa do plato da Route 3 (GBA 28,3 da Route 3):
+                                                                      # o tile cai numa celula de Ferralia
+        tirar_placas={"_EV_scr_seq_T25_026 + 1", "_EV_scr_seq_T25_027 + 1", "_EV_scr_seq_T25_028 + 1",
+                      "_EV_scr_seq_T25_029 + 1", "std_hiddenitem_r34_t25_super_potion"},
+        novos_bg=[{"script": "_EV_scr_seq_T25_024 + 1", "type": 1, "gba": p, "player_facing_dir": 4}
+                  for p in ((20, 10), (46, 25), (53, 25), (6, 36), (12, 36), (6, 47), (22, 47), (32, 47), (54, 47), (63, 47),
+                            (49, 12))],                       # (49,12): o ginasio, trancado ate o evento do patio
+        # portas do GBA -> interiores de Goldenrod no mesmo papel; os warps de Goldenrod sem par vao para o telhado da
+        # estacao (tiles bloqueados)
+        warps={"MAP_T25R0501": (28, 12), "MAP_T25PC0101": (20, 24), "MAP_T25R1001": (36, 24),
+               "MAP_T25R0301": (12, 11), "MAP_T25R0401": (37, 11), "MAP_T25R0801": (48, 47),
+               "MAP_T25R0901": (5, 12), "MAP_T25R0201": (8, 27),
+               "MAP_T25GYM0101": (25, 5), "MAP_R35R0101": (26, 5), "MAP_T25R0601": (31, 5), "MAP_T25SP0101": (32, 5),
+               "MAP_D23R0101": (25, 6), "MAP_D37R0101": (26, 6), "MAP_T25R1201": (31, 6)},
+        # portao leste (Palm103_EastGate): a Route 4 nao existe. O gatilho de Goldenrod so disparava durante a invasao
+        # Rocket (variavel e valor do HGSS): com a variavel temporaria em 0 ele dispara sempre
+        coord={"_EV_scr_seq_T25_017 + 1": ("gba", 70, 40, 1, 2, {"var": "VAR_TEMP_x4002", "value": 0})},
+    ),
 }
 
 
@@ -216,9 +259,11 @@ def mover(j, z):
                                                  "length": c["length"], "y": 0, "value": c["value"], "var": c["var"]})
     for c in j.get("coord_events", []):
         if c["script"] in z["coord"]:
-            ref, cx, cz, wd, ln = z["coord"][c["script"]]
+            ref, cx, cz, wd, ln = z["coord"][c["script"]][:5]
             c["x"], c["z"] = (X0 + cx, Z0 + cz) if ref == "global" else w(cx, cz)
             c["width"], c["length"] = wd, ln
+            for k, v in (z["coord"][c["script"]][5] if len(z["coord"][c["script"]]) > 5 else {}).items():
+                c[k] = v                                 # variavel/valor que armam o gatilho
     return j
 
 
@@ -295,6 +340,33 @@ def main(hg, out):
         assert a in new, scr
         new = new.replace(a, f"scr_seq_0141_{scr}:\n\tsetvar VAR_SPECIAL_x8008, {item}   // Hollowtide: {nota}\n")
     open(os.path.join(out, "0716-route3-itens.patch"), "w").write(diff(rel, old, new))
+    # Ferralia: os eventos de Goldenrod nas posicoes do GBA e scripts simples com as falas do GBA (banco 581)
+    zona(hg, out, "073_T25", "0717-ferralia-eventos-gba.patch")
+    rel = "data/scr_seq/scr_seq_0885_T25.s"
+    old = open(os.path.join(hg, rel)).read()
+    new = old
+    npc = lambda n, k, nota: (f"scr_seq_T25_{n}:   // Ferralia: {nota}\n\tsimple_npc_msg {k}\n\tend\n")
+    placa = lambda n, k, nota: (f"scr_seq_T25_{n}:   // Ferralia: {nota}\n\tplay_se SEQ_SE_DP_SELECT\n\tlockall\n"
+                                f"\tnpc_msg {k}\n\twait_button\n\tclosemsg\n\treleaseall\n\tend\n")
+    trocas = [("000", npc, 0, "Palm101_Greeter"), ("001", npc, 1, "Palm101_YardWorker"), ("002", npc, 2, "Palm101_GymFan"),
+              ("003", npc, 3, "Palm101_FountainKid"), ("004", npc, 4, "Palm101_Commuter"), ("005", npc, 5, "Palm101_Resident"),
+              ("006", npc, 6, "Palm101_HQGuard"), ("007", npc, 7, "Palm101_ParkLady"),
+              ("019", placa, 8, "Palm101_CitySign"), ("020", placa, 9, "Palm101_GymSign"), ("021", placa, 10, "Palm101_HQSign"),
+              ("022", placa, 11, "Palm101_YardSign"), ("023", placa, 12, "Palm101_Route4Sign"),
+              ("024", placa, 13, "porta trancada (Palm280_DoorLocked)"), ("025", placa, 15, "placa do plato da Route 3")]
+    for n, f, k, nota in trocas:
+        a = new.index(f"scr_seq_T25_{n}:\n")
+        b = new.index("\n\n", a) + 1                      # o script vai ate a primeira linha em branco
+        corpo = new[a:b]
+        assert "\tend\n" in corpo or "goto" in corpo or "simple_npc_msg" in corpo, n
+        new = new[:a] + f(n, k, nota) + new[b:]
+    # portao leste (Palm103_EastGate): a Route 4 ainda nao existe; fala do GBA e um passo para oeste
+    a = new.index("scr_seq_T25_017:\n"); b = new.index("\n\n", a) + 1
+    new = new[:a] + ("scr_seq_T25_017:   // Ferralia: portao leste (Palm103_EastGate); a Route 4 ainda nao existe\n"
+                     "\tlockall\n\tnpc_msg 14\n\twait_button\n\tclosemsg\n\tapply_movement obj_player, _HT_StepLeft\n"
+                     "\twait_movement\n\treleaseall\n\tend\n") + new[b:]
+    new = new.rstrip("\n") + "\n_HT_StepLeft:\n\tstep MOVEMENT_STEP_LEFT, 1\n\tstep_end\n\t.balign 4\n"
+    open(os.path.join(out, "0718-ferralia-scripts.patch"), "w").write(diff(rel, old, new))
     rel = "data/scr_seq/scr_seq_0850_T21.s"
     old = open(os.path.join(hg, rel)).read()
     new = old.replace("// chegada pelo leste (Route 1)", "// chegada pelo norte (Route 1), como no GBA (Palm072_Arrival)")

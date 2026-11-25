@@ -2,7 +2,7 @@
  "Dawnmere": {
   "gba": "LittlerootTown",
   "origem": [
-   30,
+   62,
    21
   ],
   "tam": [
@@ -12,17 +12,17 @@
   "desconhecidos": {},
   "warps": [
    [
-    50,
+    82,
     37,
     "MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F"
    ],
    [
-    32,
+    64,
     30,
     "MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F"
    ],
    [
-    44,
+    76,
     29,
     "MAP_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB"
    ]
@@ -31,7 +31,7 @@
    {
     "modelo": "mst_okl (laboratorio de Pallet)",
     "porta_ds": [
-     43,
+     75,
      29
     ],
     "warp": true,
@@ -40,7 +40,7 @@
    {
     "modelo": "wk_hhouse (casa de New Bark)",
     "porta_ds": [
-     50,
+     82,
      37
     ],
     "warp": true,
@@ -49,7 +49,7 @@
    {
     "modelo": "wk_h01 (casa de New Bark)",
     "porta_ds": [
-     32,
+     64,
      30
     ],
     "warp": true,
@@ -58,7 +58,7 @@
    {
     "modelo": "yo_h01 (casa de Cherrygrove)",
     "porta_ds": [
-     38,
+     70,
      44
     ],
     "warp": false,
@@ -67,7 +67,7 @@
    {
     "modelo": "yo_h02 (casa de Cherrygrove)",
     "porta_ds": [
-     50,
+     82,
      44
     ],
     "warp": false,
@@ -78,7 +78,7 @@
  "Route1": {
   "gba": "Route101",
   "origem": [
-   64,
+   96,
    38
   ],
   "tam": [
@@ -91,7 +91,7 @@
    {
     "modelo": "wk_hhouse (casa de New Bark)",
     "porta_ds": [
-     69,
+     101,
      58
     ],
     "warp": false,
@@ -102,7 +102,7 @@
  "Harvestvale": {
   "gba": "OldaleTown",
   "origem": [
-   65,
+   97,
    91
   ],
   "tam": [
@@ -112,27 +112,27 @@
   "desconhecidos": {},
   "warps": [
    [
-    82,
+    114,
     102,
     "MAP_OLDALE_TOWN_HOUSE1"
    ],
    [
-    70,
+    102,
     112,
     "MAP_RUSTBORO_CITY_GYM"
    ],
    [
-    77,
+    109,
     112,
     "MAP_OLDALE_TOWN_POKEMON_CENTER_1F"
    ],
    [
-    88,
+    120,
     122,
     "MAP_OLDALE_TOWN_MART"
    ],
    [
-    86,
+    118,
     109,
     "MAP_OLDALE_TOWN_HOUSE2"
    ]
@@ -141,7 +141,7 @@
    {
     "modelo": "hw_gym (ginasio de Azalea, de madeira)",
     "porta_ds": [
-     70,
+     102,
      112
     ],
     "warp": true,
@@ -150,7 +150,7 @@
    {
     "modelo": "pc (Centro Pokemon)",
     "porta_ds": [
-     77,
+     109,
      112
     ],
     "warp": true,
@@ -159,7 +159,7 @@
    {
     "modelo": "fs (Poke Mart)",
     "porta_ds": [
-     88,
+     120,
      122
     ],
     "warp": true,
@@ -168,7 +168,7 @@
    {
     "modelo": "wk_hhouse (casa de New Bark)",
     "porta_ds": [
-     82,
+     114,
      102
     ],
     "warp": true,
@@ -177,7 +177,7 @@
    {
     "modelo": "kn_h01 (casa de Kanto)",
     "porta_ds": [
-     86,
+     118,
      109
     ],
     "warp": true,
@@ -212,7 +212,7 @@
  "Route2": {
   "gba": "PalmRoute02",
   "origem": [
-   65,
+   97,
    128
   ],
   "tam": [
@@ -225,7 +225,7 @@
    {
     "modelo": "yo_h01 (casa de Cherrygrove)",
     "porta_ds": [
-     79,
+     111,
      164
     ],
     "warp": false,
@@ -236,7 +236,7 @@
  "Brisa": {
   "gba": "PalmBrisa",
   "origem": [
-   65,
+   97,
    176
   ],
   "tam": [
@@ -246,52 +246,52 @@
   "desconhecidos": {},
   "warps": [
    [
-    112,
+    144,
     203,
     "MAP_PALM_TEATRO"
    ],
    [
-    88,
+    120,
     192,
     "MAP_DEWFORD_TOWN_POKEMON_CENTER_1F"
    ],
    [
-    79,
+    111,
     192,
     "MAP_SLATEPORT_CITY_MART"
    ],
    [
-    121,
+    153,
     209,
     "MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F"
    ],
    [
-    69,
+    101,
     200,
     "MAP_LILYCOVE_CITY_HOUSE1"
    ],
    [
-    80,
+    112,
     200,
     "MAP_LILYCOVE_CITY_HOUSE2"
    ],
    [
-    69,
+    101,
     206,
     "MAP_LILYCOVE_CITY_HOUSE3"
    ],
    [
-    80,
+    112,
     206,
     "MAP_LILYCOVE_CITY_HOUSE4"
    ],
    [
-    129,
+    161,
     200,
     "MAP_DEWFORD_TOWN_HOUSE2"
    ],
    [
-    129,
+    161,
     206,
     "MAP_LILYCOVE_CITY_MOVE_DELETERS_HOUSE"
    ]
@@ -300,7 +300,7 @@
    {
     "modelo": "fs (Poke Mart)",
     "porta_ds": [
-     79,
+     111,
      192
     ],
     "warp": true,
@@ -309,7 +309,7 @@
    {
     "modelo": "pc (Centro Pokemon)",
     "porta_ds": [
-     88,
+     120,
      192
     ],
     "warp": true,
@@ -318,7 +318,7 @@
    {
     "modelo": "as_h01 (casa de Olivine)",
     "porta_ds": [
-     69,
+     101,
      200
     ],
     "warp": true,
@@ -327,7 +327,7 @@
    {
     "modelo": "as_h01 (casa de Olivine)",
     "porta_ds": [
-     80,
+     112,
      200
     ],
     "warp": true,
@@ -336,7 +336,7 @@
    {
     "modelo": "as_h01 (casa de Olivine)",
     "porta_ds": [
-     69,
+     101,
      206
     ],
     "warp": true,
@@ -345,7 +345,7 @@
    {
     "modelo": "as_h01 (casa de Olivine)",
     "porta_ds": [
-     80,
+     112,
      206
     ],
     "warp": false,
@@ -354,7 +354,7 @@
    {
     "modelo": "tn_h01 (casa de Cianwood)",
     "porta_ds": [
-     129,
+     161,
      200
     ],
     "warp": false,
@@ -363,7 +363,7 @@
    {
     "modelo": "tn_h01 (casa de Cianwood)",
     "porta_ds": [
-     129,
+     161,
      206
     ],
     "warp": false,
@@ -372,7 +372,7 @@
    {
     "modelo": "as_gym (ginasio de Olivine)",
     "porta_ds": [
-     112,
+     144,
      203
     ],
     "warp": true,
@@ -381,7 +381,7 @@
    {
     "modelo": "tn_photo (estudio de Cianwood)",
     "porta_ds": [
-     121,
+     153,
      209
     ],
     "warp": false,
@@ -390,7 +390,7 @@
    {
     "modelo": "as_restaurant (restaurante de Olivine)",
     "porta_ds": [
-     128,
+     160,
      219
     ],
     "warp": false,
@@ -407,7 +407,7 @@
  "Route3": {
   "gba": "PalmRoute03",
   "origem": [
-   9,
+   41,
    156
   ],
   "tam": [
@@ -420,11 +420,287 @@
    {
     "modelo": "as_h01 (casa de Olivine)",
     "porta_ds": [
-     28,
+     60,
      217
     ],
     "warp": false,
     "nota": "casa da praia de porta trancada (Palm280_DoorLocked na porta), a mesma casa azul de Breezeport"
+   }
+  ]
+ },
+ "Ferralia": {
+  "gba": "PalmFerralia",
+  "origem": [
+   25,
+   92
+  ],
+  "tam": [
+   72,
+   64
+  ],
+  "desconhecidos": {},
+  "warps": [
+   [
+    45,
+    116,
+    "MAP_RUSTBORO_CITY_POKEMON_CENTER_1F"
+   ],
+   [
+    61,
+    116,
+    "MAP_RUSTBORO_CITY_MART"
+   ],
+   [
+    37,
+    103,
+    "MAP_RUSTBORO_CITY_HOUSE1"
+   ],
+   [
+    62,
+    103,
+    "MAP_RUSTBORO_CITY_HOUSE2"
+   ],
+   [
+    73,
+    139,
+    "MAP_RUSTBORO_CITY_HOUSE3"
+   ],
+   [
+    30,
+    104,
+    "MAP_RUSTBORO_CITY_FLAT2_1F"
+   ],
+   [
+    33,
+    119,
+    "MAP_RUSTBORO_CITY_FLAT1_1F"
+   ],
+   [
+    74,
+    104,
+    "MAP_MAUVILLE_CITY_GYM"
+   ],
+   [
+    53,
+    104,
+    "MAP_PALM_STATION_FERRALIA"
+   ],
+   [
+    54,
+    104,
+    "MAP_PALM_STATION_FERRALIA"
+   ]
+  ],
+  "construcoes": [
+   {
+    "modelo": "ko_station (estacao do Magnet Train)",
+    "porta_ds": [
+     53,
+     104
+    ],
+    "warp": true,
+    "nota": "estacao (PALM_STATION_FERRALIA)"
+   },
+   {
+    "modelo": "ko_game (cassino)",
+    "porta_ds": [
+     89,
+     100
+    ],
+    "warp": false,
+    "nota": "predio de porta trancada"
+   },
+   {
+    "modelo": "ko_depart (loja de departamentos de Goldenrod)",
+    "porta_ds": [
+     30,
+     104
+    ],
+    "warp": true,
+    "nota": "predio alto (RUSTBORO_CITY_FLAT2_1F)"
+   },
+   {
+    "modelo": "ko_h01 (casa de Goldenrod)",
+    "porta_ds": [
+     37,
+     103
+    ],
+    "warp": true,
+    "nota": "casa (RUSTBORO_CITY_HOUSE1)"
+   },
+   {
+    "modelo": "ko_h03x (predio de Goldenrod, sem entrada)",
+    "porta_ds": null,
+    "warp": false,
+    "nota": "predio alto sem porta"
+   },
+   {
+    "modelo": "ko_flower (floricultura)",
+    "porta_ds": [
+     45,
+     102
+    ],
+    "warp": false,
+    "nota": "casa de porta trancada"
+   },
+   {
+    "modelo": "ko_h01 (casa de Goldenrod)",
+    "porta_ds": [
+     62,
+     103
+    ],
+    "warp": true,
+    "nota": "casa (RUSTBORO_CITY_HOUSE2)"
+   },
+   {
+    "modelo": "ko_gym (ginasio de Goldenrod)",
+    "porta_ds": [
+     74,
+     104
+    ],
+    "warp": true,
+    "nota": "ginasio (MAUVILLE_CITY_GYM)"
+   },
+   {
+    "modelo": "ko_seimei (casa do avaliador de nomes)",
+    "porta_ds": [
+     71,
+     117
+    ],
+    "warp": false,
+    "nota": "predio de porta trancada"
+   },
+   {
+    "modelo": "pc (Centro Pokemon)",
+    "porta_ds": [
+     45,
+     116
+    ],
+    "warp": true,
+    "nota": "Centro Pokemon"
+   },
+   {
+    "modelo": "fs (Poke Mart)",
+    "porta_ds": [
+     61,
+     116
+    ],
+    "warp": true,
+    "nota": "Poke Mart"
+   },
+   {
+    "modelo": "ko_cycle (bicicletaria)",
+    "porta_ds": [
+     78,
+     117
+    ],
+    "warp": false,
+    "nota": "predio de porta trancada"
+   },
+   {
+    "modelo": "ko_game (cassino)",
+    "porta_ds": [
+     33,
+     119
+    ],
+    "warp": true,
+    "nota": "predio (RUSTBORO_CITY_FLAT1_1F)"
+   },
+   {
+    "modelo": "ko_funsui (fonte)",
+    "porta_ds": null,
+    "warp": false,
+    "nota": "fonte da praca"
+   },
+   {
+    "modelo": "ko_h03x (predio de Goldenrod, sem entrada)",
+    "porta_ds": null,
+    "warp": false,
+    "nota": "predio alto sem porta"
+   },
+   {
+    "modelo": "ko_h03x (predio de Goldenrod, sem entrada)",
+    "porta_ds": null,
+    "warp": false,
+    "nota": "predio alto sem porta"
+   },
+   {
+    "modelo": "ko_h03x (predio de Goldenrod, sem entrada)",
+    "porta_ds": null,
+    "warp": false,
+    "nota": "predio alto sem porta"
+   },
+   {
+    "modelo": "ko_h01 (casa de Goldenrod)",
+    "porta_ds": [
+     31,
+     128
+    ],
+    "warp": false,
+    "nota": "casa de porta trancada"
+   },
+   {
+    "modelo": "ko_h01 (casa de Goldenrod)",
+    "porta_ds": [
+     37,
+     128
+    ],
+    "warp": false,
+    "nota": "casa de porta trancada"
+   },
+   {
+    "modelo": "ko_cycle (bicicletaria)",
+    "porta_ds": [
+     47,
+     139
+    ],
+    "warp": false,
+    "nota": "predio de porta trancada"
+   },
+   {
+    "modelo": "ko_flower (floricultura)",
+    "porta_ds": [
+     31,
+     139
+    ],
+    "warp": false,
+    "nota": "casa de porta trancada"
+   },
+   {
+    "modelo": "ko_h01 (casa de Goldenrod)",
+    "porta_ds": [
+     57,
+     139
+    ],
+    "warp": false,
+    "nota": "casa de porta trancada"
+   },
+   {
+    "modelo": "ko_h01 (casa de Goldenrod)",
+    "porta_ds": [
+     73,
+     139
+    ],
+    "warp": true,
+    "nota": "casa (RUSTBORO_CITY_HOUSE3)"
+   },
+   {
+    "modelo": "ko_flower (floricultura)",
+    "porta_ds": [
+     79,
+     139
+    ],
+    "warp": false,
+    "nota": "casa de porta trancada"
+   },
+   {
+    "modelo": "ko_seimei (casa do avaliador de nomes)",
+    "porta_ds": [
+     88,
+     139
+    ],
+    "warp": false,
+    "nota": "predio de porta trancada"
    }
   ]
  }

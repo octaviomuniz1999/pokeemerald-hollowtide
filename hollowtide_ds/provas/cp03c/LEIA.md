@@ -9,7 +9,7 @@ Esta pasta guarda só o atalho de QA:
 
 `bash tools/hollowtide_ds/build.sh ROM HG_ENGINE hollowtide_ds/patches/content hollowtide_ds/provas/cp03c`
 
-- `0921`: o PC do quarto leva a um caminho de Dawnmere (desenho 16,20; células a partir de (0,0)). É o que `qa_cp03c.py` usa.
+- `0921`: o PC do quarto leva a um caminho de Dawnmere (desenho 48,20; células a partir de (0,0); o desenho andou uma célula para leste em 25/11). É o que `qa_cp03c.py` usa.
 
 Para o Cap. 1 inteiro, pelo fluxo do jogo, use a build de conteúdo com `provas/qa_forte` (o Tyranitar de QA) e
 `qa_cp03d.py ROM ESTADO PASTA --cap1`.

@@ -517,5 +517,72 @@
    "gba": "Palm100_TextSignPlateau",
    "_por_que": "Route 3 original (25/11): placa da Route 39 vira a placa do GBA na mesma posicao da PalmRoute03 (scr_seq_R39_003; a mensagem 0 era a do fazendeiro dos Miltanks, que fica escondido)"
   }
+ },
+ "581": {
+  "_": "Ferralia (header de Goldenrod, scripts 885)",
+  "0": {
+   "gba": "Palm101_Greeter_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "1": {
+   "gba": "Palm101_YardWorker_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "2": {
+   "gba": "Palm101_GymFan_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "3": {
+   "gba": "Palm101_FountainKid_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "4": {
+   "gba": "Palm101_Commuter_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "5": {
+   "gba": "Palm101_Resident_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "6": {
+   "gba": "Palm101_HQGuard_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "7": {
+   "gba": "Palm101_ParkLady_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "8": {
+   "gba": "Palm101_CitySign_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "9": {
+   "gba": "Palm101_GymSign_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "10": {
+   "gba": "Palm101_HQSign_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "11": {
+   "gba": "Palm101_YardSign_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "12": {
+   "gba": "Palm101_Route4Sign_Text",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "13": {
+   "gba": "Palm280_TextDoorLocked",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "14": {
+   "gba": "Palm103_TextEastGate",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "15": {
+   "gba": "Palm100_TextSignPlateau",
+   "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  }
  }
 }
