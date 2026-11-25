@@ -31,6 +31,10 @@
     ]
    ],
    "_por_que": "CP-DS-02: fala genérica do HGSS mantida no interior placeholder; só o nome de lugar de Johto/Kanto sai (Cinnabar é de Kanto)"
+  },
+  "33": {
+   "gba": "Palm040_TextMomIntro",
+   "_por_que": "diretor 25/11 (coesão dos interiores): fala do HGSS que não existe em Lunia troca pela fala da mãe no GBA (a do HGSS falava do Prof. Elm)"
   }
  },
  "543": {
@@ -423,6 +427,27 @@
   "linhas": {
    "133": "a Leader",
    "134": "a Leader"
+  }
+ },
+ "607": {
+  "_": "Centro Pokémon de Breezeport (T26PC0101)",
+  "1": {
+   "gba": "DewfordTown_PokemonCenter_1F_Text_FaintedMonCanUseHM",
+   "_por_que": "diretor 25/11 (coesão dos interiores): fala do HGSS que não existe em Lunia troca pela do Centro de Dewford, o interior do Centro de Breezeport no GBA (a do HGSS falava do Amphy do farol de Olivine)"
+  }
+ },
+ "605": {
+  "_": "Poké Mart de Breezeport (T26FS0101)",
+  "1": {
+   "gba": "SlateportCity_Mart_Text_GreatBallIsBetter",
+   "_por_que": "diretor 25/11 (coesão dos interiores): fala do HGSS que não existe em Lunia troca pela do Mart de Slateport, o interior do Mart de Breezeport no GBA (a do HGSS falava do Butterfree do namorado de outro país)"
+  }
+ },
+ "609": {
+  "_": "casa de Breezeport (T26R0501)",
+  "1": {
+   "gba": "LilycoveCity_House2_Text_SleepIsEssential",
+   "_por_que": "diretor 25/11 (coesão dos interiores): a fala do HGSS ('o papai sempre me assusta') respondia à fala do pai sobre as ilhas de Cianwood, que não existe em Lunia; troca pela da casa que o GBA liga a esta porta (Lilycove House 2)"
   }
  }
 }

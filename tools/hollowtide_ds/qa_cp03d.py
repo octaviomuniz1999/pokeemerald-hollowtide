@@ -175,6 +175,8 @@ def main(rom, state, out):
                 fight(d); advance(d, 10)
                 break
         step("44_depois_do_selvagem", f"selvagem: {sel}")
+        go(BR(23, 17), "br")                              # Centro de Breezeport: a moca da Ball Capsule saiu (25/11)
+        walk(d, ["UP"] * 2); d.wait(200); step("45_centro_breezeport")
     for t, w, e in log:
         print(f"{t:20} {w}  {e}")
     r = {t: w for t, w, _ in log}
@@ -198,7 +200,8 @@ def main(rom, state, out):
                        "Breezeport a pe": r["37_breezeport_entrada"] and r["37_breezeport_entrada"][0] == BREEZEPORT,
                        "teatro fechado": r["40_depois_do_teatro"] == (BREEZEPORT, *BR(47, 29)),
                        "saida oeste fechada": r["42_depois_da_saida_oeste"] == (BREEZEPORT, *BR(1, 33)),
-                       "selvagem em Breezeport": "selvagem: 1" in dict((t, e) for t, _, e in log)["44_depois_do_selvagem"]})
+                       "selvagem em Breezeport": "selvagem: 1" in dict((t, e) for t, _, e in log)["44_depois_do_selvagem"],
+                       "Centro de Breezeport": r["45_centro_breezeport"] and r["45_centro_breezeport"][0] == 226})
     for k, v in checks.items():
         print(f"  {k:14} {'ok' if v else 'FALHOU'}")
     print("RESULTADO CP-DS-03B eventos de Dawnmere:", "ok" if all(checks.values()) else "FALHOU")

@@ -412,3 +412,16 @@ Falta:
 interiores de Lunia: Prof. Elm, Communication Center, Ball Capsules, Seals, o pescador de Olivine. Os interiores
 precisam receber os NPCs e as falas dos interiores do GBA (casas de Littleroot e Oldale, Centro e Mart, casas de
 Breezeport), ou ter os NPCs do HGSS tirados.
+
+**Interiores, primeira passada (25/11, `0713` + `texts.json`).** Gerador: `tools/hollowtide_ds/interiores.py`.
+- Falas que contradiziam Lunia trocadas pela do interior que o GBA liga à mesma porta:
+  - mãe do jogador (545/33): falava do Prof. Elm → `Palm040_TextMomIntro`;
+  - Centro de Breezeport (607/1): o farol de Olivine e o Amphy → `DewfordTown_PokemonCenter_1F_Text_FaintedMonCanUseHM`;
+  - Mart de Breezeport (605/1): o Butterfree do namorado → `SlateportCity_Mart_Text_GreatBallIsBetter`;
+  - casa de Breezeport (609/1): "o papai me assusta", resposta a uma fala de Cianwood que não existe aqui →
+    `LilycoveCity_House2_Text_SleepIsEssential`.
+- NPCs de mecânica do HGSS sem lugar no Cap. 1 escondidos com `hidden_flag FLAG_GOT_TRAINER_CARD` (o cartão vem no
+  início do jogo, então ficam sempre escondidos): a moça da Ball Capsule (Centro de Breezeport) e a menina dos Seals
+  (casa de Breezeport). A auditoria não lê `hidden_flag`, por isso ainda lista as falas deles.
+- O resto das falas originais alcançáveis é neutro (TV, pia, geladeira, livros do laboratório, PC, Union Room) ou
+  funcional (o pescador da Old Rod em T26R0601) e fica.
