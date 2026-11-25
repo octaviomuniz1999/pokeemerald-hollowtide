@@ -21,7 +21,7 @@ NPCS = {D(23, 18), D(11, 24), D(23, 10),              # guia, vizinho, mirante (
         R1(21, 25), R1(18, 39),                          # Kai e Min depois de virem ate o jogador
         HV(11, 6), HV(7, 32),                            # fazendeiro e recruta (Harvestvale)
         R2(26, 13), R2(16, 27), R2(21, 35), R2(7, 26),   # Liang, Mei Lan, Qin, Super Potion (Route 2)
-        R2(24, 13), R2(18, 27), R2(19, 35)}              # Liang, Mei Lan e Qin depois de virem ate o jogador
+        R2(24, 13), R2(18, 27), R2(19, 35), R1(37, 46)}              # Liang, Mei Lan e Qin depois de virem ate o jogador
 NPCS_BR = [(45, 29), (21, 8), (30, 25), (47, 7), (20, 41), (36, 44), (50, 36), (64, 46), (12, 31), (36, 19), (49, 30)]
 
 
@@ -99,6 +99,7 @@ def main(rom, state, out):
         return n
     nk = visao(R1(20, 25), "kai"); d.wait(60); step("14_kai", f"batalhas: {nk}")
     nm = visao(R1(19, 39), "min"); d.wait(60); step("15_min", f"batalhas: {nm}")
+    go(R1(36, 46), "c", fight_ok=True); ler("15b_apricorn", "RIGHT"); advance(d, 6)   # arvore do GBA (37,46): Apricorn
     go(R1(6, 49), "c", fight_ok=True); ler("16_placa_sul")
     # Harvestvale (etapa 5, so o mapa e as construcoes; os eventos ainda estao nas posicoes do prototipo)
     # Harvestvale (etapa 5): eventos nas posicoes do OldaleTown do GBA (origem (37,72) no desenho)

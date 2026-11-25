@@ -365,27 +365,17 @@
   "_": "introdução (discurso do professor; tela de abertura do HGSS)",
   "6": {
    "gba": "gText_Birch_Welcome",
-   "replace": [
-    [
-     "Professor.\\f",
-     "Professor.\\r"
-    ]
-   ],
-   "_por_que": "CP-DS-02: a intro do HGSS era o discurso do Prof. Oak; vira o do Prof. Alex do GBA (gText_Birch_*). Fim da mensagem em \\r (o DS espera o botão antes da cena seguinte); sprite continua o placeholder oficial"
+   "_por_que": "CP-DS-02: a intro do HGSS era o discurso do Prof. Oak; vira o do Prof. Alex do GBA (gText_Birch_*). Fim da mensagem em \\r (página nova no DS; o \\p do GBA já vira \\r); sprite continua o placeholder oficial"
   },
   "35": {
    "gba": "gText_Birch_MainSpeech",
    "replace": [
     [
-     "This world is widely inhabited by\\ncreatures known as Pokémon.\\f",
+     "This world is widely inhabited by\\ncreatures known as Pokémon.\\r",
      ""
-    ],
-    [
-     "That’s what I do.\\f",
-     "That’s what I do.\\r"
     ]
    ],
-   "_por_que": "CP-DS-02: a intro do HGSS era o discurso do Prof. Oak; vira o do Prof. Alex do GBA (gText_Birch_*). Fim da mensagem em \\r (o DS espera o botão antes da cena seguinte); sprite continua o placeholder oficial (o 1º parágrafo do GBA já é a mensagem 34, igual nos dois)"
+   "_por_que": "CP-DS-02: a intro do HGSS era o discurso do Prof. Oak; vira o do Prof. Alex do GBA (gText_Birch_*). Fim da mensagem em \\r (página nova no DS; o \\p do GBA já vira \\r); sprite continua o placeholder oficial (o 1º parágrafo do GBA já é a mensagem 34, igual nos dois)"
   },
   "36": {
    "gba": "gText_Birch_AndYouAre",
@@ -395,7 +385,7 @@
      "And you are?\\r"
     ]
    ],
-   "_por_que": "CP-DS-02: a intro do HGSS era o discurso do Prof. Oak; vira o do Prof. Alex do GBA (gText_Birch_*). Fim da mensagem em \\r (o DS espera o botão antes da cena seguinte); sprite continua o placeholder oficial"
+   "_por_que": "CP-DS-02: a intro do HGSS era o discurso do Prof. Oak; vira o do Prof. Alex do GBA (gText_Birch_*). Fim da mensagem em \\r (página nova no DS; o \\p do GBA já vira \\r); sprite continua o placeholder oficial"
   },
   "40": {
    "gba": "gText_Birch_WhatsYourName",
@@ -406,13 +396,7 @@
     "gText_Birch_YourePlayer",
     "gText_Birch_AreYouReady"
    ],
-   "replace": [
-    [
-     "Come see me in my Pokémon Lab.\\f",
-     "Come see me in my Pokémon Lab.\\r"
-    ]
-   ],
-   "_por_que": "CP-DS-02: a intro do HGSS era o discurso do Prof. Oak; vira o do Prof. Alex do GBA (gText_Birch_*). Fim da mensagem em \\r (o DS espera o botão antes da cena seguinte); sprite continua o placeholder oficial"
+   "_por_que": "CP-DS-02: a intro do HGSS era o discurso do Prof. Oak; vira o do Prof. Alex do GBA (gText_Birch_*). Fim da mensagem em \\r (página nova no DS; o \\p do GBA já vira \\r); sprite continua o placeholder oficial"
   }
  },
  "engine:730": {

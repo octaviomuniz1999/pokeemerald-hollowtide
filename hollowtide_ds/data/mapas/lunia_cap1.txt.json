@@ -139,13 +139,13 @@
   ],
   "construcoes": [
    {
-    "modelo": "ta_gym (ginasio de Celadon, tipo Planta como o do Nevard)",
+    "modelo": "hw_gym (ginasio de Azalea, de madeira)",
     "porta_ds": [
      70,
      112
     ],
     "warp": true,
-    "nota": "ginasio do Nevard (warp do GBA)"
+    "nota": "ginasio do Nevard (warp do GBA): o de Azalea; o de Celadon (Kanto) ficava sem textura na area 2"
    },
    {
     "modelo": "pc (Centro Pokemon)",
@@ -182,6 +182,30 @@
     ],
     "warp": true,
     "nota": "casa (OLDALE_TOWN_HOUSE2)"
+   },
+   {
+    "modelo": "as_bench (banco com toldo do cais de Olivine)",
+    "porta_ds": null,
+    "warp": false,
+    "nota": "barraca do mercado"
+   },
+   {
+    "modelo": "as_bench (banco com toldo do cais de Olivine)",
+    "porta_ds": null,
+    "warp": false,
+    "nota": "barraca do mercado"
+   },
+   {
+    "modelo": "r39_naya (galpao da fazenda da Route 39)",
+    "porta_ds": null,
+    "warp": false,
+    "nota": "armazem"
+   },
+   {
+    "modelo": "r39_naya (galpao da fazenda da Route 39)",
+    "porta_ds": null,
+    "warp": false,
+    "nota": "celeiro"
    }
   ]
  },

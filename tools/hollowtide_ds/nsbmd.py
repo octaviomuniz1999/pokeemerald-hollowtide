@@ -273,6 +273,12 @@ def build_model(p, counts=None):
     return bytes(out)
 
 
+# Os blocos do HGSS comecam sempre com estes 8 materiais de agua, nesta ordem: as animacoes de textura da area (agua
+# que ondula, margens) atuam nos materiais pela POSICAO. Um modelo novo tem de manter os 8 nas mesmas posicoes, senao
+# a animacao cai em grama, caminho e arvores (diretor, 25/11: "texturas em movimento onde nao deveriam").
+RESERVADOS = ["pond_on", "swave_p", "pond_edge", "sea_line02", "sea_un", "sea_on", "river", "river_r"]
+
+
 def compose(base, donors, layers):
     """Modelo novo com materiais de varios blocos doadores da mesma area.
     base: bytes do modelo que da cabecalho, info e no; donors: lista de bytes de modelos (procurados em ordem);
@@ -280,8 +286,12 @@ def compose(base, donors, layers):
     textura e paleta e o flag da forma do doador onde foi achado."""
     p = model_parts(base)
     dparts = [model_parts(d) for d in donors]
-    mats, texmap, palmap, shapes = [], {}, {}, []
-    for k, (name, dl) in enumerate(layers):
+    mats, texmap, palmap, shapes, draws = [], {}, {}, [], []
+    names_in = [n for n, _ in layers]
+    # primeiro os 8 reservados (desenhados ou nao), depois os outros materiais da camada, na ordem dada
+    order = RESERVADOS + [n for n in names_in if n not in RESERVADOS]
+    flags = {}
+    for k, name in enumerate(order):
         # prefere o doador que DESENHA o material (alguns blocos listam materiais da area sem usa-los)
         found = None
         for dp in dparts:
@@ -301,11 +311,14 @@ def compose(base, donors, layers):
             for tn, idx, flag in src:
                 if i in idx:
                     dst.setdefault(tn, ([], flag))[0].append(k)
-        flag = dp["shapes"][next(s for m_, s in dp["sbc"][1] if m_ == i)][1] if drawn else 5   # 5 = normal + textura
-        shapes.append((f"polygon{k}", flag, dl))
+        flags[name] = (k, dp["shapes"][next(s for m_, s in dp["sbc"][1] if m_ == i)][1] if drawn else 5)  # 5 = normal + textura
+    for name, dl in layers:                              # desenho na ordem das camadas (como antes); so os indices mudam
+        k, flag = flags[name]
+        draws.append((k, len(shapes)))
+        shapes.append((f"polygon{len(shapes)}", flag, dl))
     p["materials"] = (mats, [(n, v[0], v[1]) for n, v in texmap.items()], [(n, v[0], v[1]) for n, v in palmap.items()])
     p["mat_orders"] = (None, None, None)
     p["shapes"] = shapes
     p["shape_order"] = None
-    p["sbc"] = (SBC_PRE, [(k, k) for k in range(len(layers))], SBC_SUF)
+    p["sbc"] = (SBC_PRE, draws, SBC_SUF)
     return build_model(p)

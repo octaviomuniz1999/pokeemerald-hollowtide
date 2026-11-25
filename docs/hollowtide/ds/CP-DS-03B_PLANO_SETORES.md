@@ -380,3 +380,35 @@ Falta:
 - **Portas:** a porta de Pallet (0x137) e a de ginásio (0x10) ficavam sem textura na área 2. O laboratório e o ginásio
   de Harvestvale passam a usar a `p_door` (0x0F), nativa da área, e as duas aparecem. A lista de construções 0 fica
   com 32 modelos.
+
+### Observações do diretor (25/11) e correções
+
+1. **Textos sem coesão ou em branco.** A conversão trocava os códigos do DS. No HGSS, `\r` limpa a caixa e começa
+   página nova, e `\f` rola uma linha; o padrão das falas originais é `linha1\nlinha2\r...`. O `\l` do GBA (rolar)
+   virava página nova, deixando caixas com uma linha só, e o `\p` (página nova) virava rolagem, emendando parágrafos.
+   - Agora `\l` → `\f` e `\p` → `\r`.
+   - Cada fala do GBA é repaginada pela largura real da fonte (`gba_text.paginar`): páginas de 2 linhas inteiras,
+     com as linhas equilibradas para nenhuma página ficar com uma palavra só. Parágrafo de até 2 linhas que já cabe
+     (placas) fica igual.
+   - O mesmo vale para as falas de treinador.
+2. **Texturas em movimento.** Os blocos do HGSS começam sempre com os mesmos 8 materiais de água, e as animações da
+   área atuam pela posição do material. Nos blocos gerados, essas posições ficavam com grama, caminho e árvores.
+   `nsbmd.compose` agora reserva as 8 posições para a água, e o resto parou de ondular: 0 pixels mudam entre dois
+   quadros (eram 2.559). A água continua ondulando.
+3. **Árvore de frutas da Route 1** → árvore de Apricorn (número 5, livre) no tile da Oran do GBA (37,46).
+4. **Lago do fim da Route 1** → campo: a água que encostava em terra vira flor, o miolo vira mato alto, e a trilha da
+   saída fica entre flores (`REDESENHO` em `gba2grade.py`).
+5. **Barracas invisíveis.** Barracas, armazém e celeiro de Harvestvale ganharam modelos (`as_bench` e `r39_naya`).
+6. **Ginásio branco.** As construções usam o conjunto de texturas da lista da área (`a/0/7/0`, um NSBTX por lista),
+   procurado pelo nome, e não as texturas embutidas no modelo. Por isso os modelos de fora saíam brancos, e o
+   laboratório de Pallet só com as janelas de nome igual ao de Johto. `nsbtx.py` lê e remonta os 100 conjuntos
+   byte a byte.
+   - O gerador junta ao conjunto da área as texturas dos modelos de fora.
+   - Saem da lista 0 os 14 modelos que só os mapas antigos do protótipo usavam. Isso libera 16 KB: somar tudo sem
+     tirar nada estourou o teto do conjunto, e a ROM travou.
+   - O ginásio do Nevard é o de Azalea (`hw_gym`). O laboratório agora aparece inteiro.
+
+**Próxima tarefa: interiores.** A auditoria (`audit_dialogos.py`) acha 50 falas originais do HGSS alcançáveis nos
+interiores de Lunia: Prof. Elm, Communication Center, Ball Capsules, Seals, o pescador de Olivine. Os interiores
+precisam receber os NPCs e as falas dos interiores do GBA (casas de Littleroot e Oldale, Centro e Mart, casas de
+Breezeport), ou ter os NPCs do HGSS tirados.

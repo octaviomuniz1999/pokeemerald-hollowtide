@@ -108,7 +108,7 @@ def gba_text(maps_txt, label):
         PLAYER_TEXTS.append(label)
         s = s.replace("{PLAYER}", "{STRVAR_1 3, 0, 0}")
     s = gba_text_mod.convert(s)        # mesma conversao dos outros textos: \\l \\p, caixa mista (NEVARD -> Nevard), ’
-    s = rewrap(s)
+    s = gba_text_mod.paginar(s)
     return s.replace("\\", "\\\\").replace('"', '\\"')   # escapes para string C
 
 
@@ -262,6 +262,7 @@ def main(hg):
     import ndspy.rom
     from audit_dialogos import load_font, load_charmap
     FONT = (load_font(ndspy.rom.NintendoDSRom.fromFile(os.path.join(hg, "rom.nds"))), load_charmap(hg))
+    gba_text_mod.set_font(hg)
     C = Consts(hg)
     inv = json.load(open(os.path.join(REPO, "docs/hollowtide/ds/lunia_inventory.json")))
     by_slot = {}

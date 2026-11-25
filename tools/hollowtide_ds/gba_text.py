@@ -46,7 +46,9 @@ def raw(label):
 
 def convert(s):
     s = s.rstrip("$")
-    s = s.replace("\\l", "\\r").replace("\\p", "\\f")
+    # no DS (HGSS), \\r limpa a caixa e comeca pagina nova e \\f rola uma linha (o padrao das falas originais:
+    # linha1\\nlinha2\\r...). O GBA usa \\p para pagina nova e \\l para rolar.
+    s = s.replace("\\l", "\\f").replace("\\p", "\\r")
     s = s.replace("{PLAYER}", "{STRVAR_1 3, 0, 0}").replace("{KUN}", "")   # {KUN} e vazio no ingles
     s = s.replace("'", "’")                       # o charmap do DS so tem o apostrofo tipografico
     for k, v in (("LEFT", "←"), ("UP", "↑"), ("DOWN", "↓"), ("RIGHT", "→")):   # setas: 011B-011E no charmap do DS
@@ -78,6 +80,57 @@ def convert(s):
 
 def text_of(label):
     return convert(raw(label))
+
+
+# --- paginacao para a caixa do DS -----------------------------------------------------------------------------------
+# O GBA quebra com \n (linha 2), \l (rola uma linha) e \p (pagina nova). Convertido para o \r do DS, o \l deixava
+# linhas soltas, uma por vez, e caixas que pareciam vazias (diretor, 25/11: "textos bugados... sem coesao"). Agora cada
+# pagina tem duas linhas inteiras (\n entre elas, \f entre paginas); os paragrafos do GBA (\p) comecam pagina nova.
+# Paragrafo de ate 2 linhas que ja cabem (placas, falas curtas) fica com as quebras do GBA.
+BOX_W = 215                            # maior linha do HGSS nas caixas de fala (audit_dialogos.py)
+FONT = None                            # (larguras, charmap) da fonte do DS: set_font(hg)
+
+
+def set_font(hg):
+    global FONT
+    import ndspy.rom
+    from audit_dialogos import load_font, load_charmap
+    FONT = (load_font(ndspy.rom.NintendoDSRom.fromFile(os.path.join(hg, "rom.nds"))), load_charmap(hg))
+
+
+def paginar(s):
+    if FONT is None:
+        raise RuntimeError("paginar() sem fonte: chame set_font(hg)")
+    from audit_dialogos import width
+    w, cm = FONT
+    pages = []
+    for par in s.split("\\r"):
+        lines = [l for l in re.split(r"\\[nf]", par)]
+        if len(lines) <= 2 and all(width(l, cm, w) <= BOX_W for l in lines):
+            if par.strip():
+                pages.append("\\n".join(lines))
+            continue
+        words = " ".join(lines).split()
+
+        def wrap(limit):
+            out, cur = [], ""
+            for word in words:
+                cand = (cur + " " + word).strip()
+                if not cur or width(cand, cm, w) <= limit:
+                    cur = cand
+                else:
+                    out.append(cur); cur = word
+            return out + ([cur] if cur else [])
+        out = wrap(BOX_W)
+        # equilibra: o mesmo numero de linhas, com largura parecida (sem uma palavra sozinha na ultima linha)
+        total = width(" ".join(words), cm, w)
+        for limit in range(int(total / len(out)) + 8, BOX_W, 6):
+            cand = wrap(limit)
+            if len(cand) <= len(out):
+                out = cand
+                break
+        pages += ["\\n".join(out[k:k + 2]) for k in range(0, len(out), 2)]
+    return "\\r".join(pages)
 
 
 if __name__ == "__main__":

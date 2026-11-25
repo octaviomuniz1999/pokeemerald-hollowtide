@@ -75,8 +75,10 @@ MODELOS = {
     0x6F: dict(nome="as_gym (ginasio de Olivine)", x0=-3.6, x1=3.76, z0=-2.5, porta=(0x10, 0.0, 1.312, 0.0), dtile=(0, 1.5)),
     0x6E: dict(nome="as_toudai (farol de Olivine)", x0=-3.53, x1=4.57, z0=-3.64, porta=None, dtile=(0, 0)),
     0x76: dict(nome="as_restaurant (restaurante de Olivine)", x0=-2.28, x1=2.52, z0=-2.03, porta=(0x78, 0.137, 0.316, 0.0), dtile=(-0.5, 1.0)),
-    0xF5: dict(nome="ta_gym (ginasio de Celadon, tipo Planta como o do Nevard)", x0=-3.479, x1=3.865, z0=-2.587,
-               porta=(0x0F, 0.0, 1.405, 0.0), dtile=(0, 1.5)),
+    0x71: dict(nome="r39_naya (galpao da fazenda da Route 39)", x0=-1.83, x1=2.27, z0=-1.57, porta=None, dtile=(0, 0)),
+    0x73: dict(nome="as_bench (banco com toldo do cais de Olivine)", x0=-2.0, x1=2.5, z0=-1.28, porta=None, dtile=(0, 0)),
+    0x2D: dict(nome="hw_gym (ginasio de Azalea, de madeira)", x0=-3.6, x1=3.76, z0=-2.5,
+               porta=(0x0F, 0.0, 1.312, 0.0), dtile=(0, 1.5)),
 }
 # Por mapa: retangulo da construcao no GBA (x0, y0, x1, y1, inclusivo, coordenadas do mapa do GBA), modelo, tile da porta
 # no DS (= warp do GBA, salvo quando o modelo nao deixa) e se a porta e de verdade (warp) ou decorativa; "ajustes" sao
@@ -93,11 +95,18 @@ CONSTRUCOES = {
         dict(rect=(18, 19, 22, 23), modelo=0x26, porta=(20, 23), warp=False, altura=1, nota="casa sem porta no GBA"),
     ],
     "Harvestvale": [
-        dict(rect=(2, 17, 7, 21), modelo=0xF5, porta=(5, 21), warp=True, altura=1, nota="ginasio do Nevard (warp do GBA)"),
+        dict(rect=(2, 17, 7, 21), modelo=0x2D, porta=(5, 21), warp=True, altura=1,
+             nota="ginasio do Nevard (warp do GBA): o de Azalea; o de Celadon (Kanto) ficava sem textura na area 2"),
         dict(rect=(11, 18, 14, 21), modelo=0x28, porta=(12, 21), warp=True, altura=1, nota="Centro Pokemon"),
         dict(rect=(22, 29, 25, 31), modelo=0x27, porta=(23, 31), warp=True, altura=1, nota="Poke Mart"),
         dict(rect=(15, 9, 20, 11), modelo=0x14, porta=(17, 11), warp=True, altura=1, nota="casa (OLDALE_TOWN_HOUSE1)"),
         dict(rect=(20, 15, 23, 18), modelo=0x29, porta=(21, 18), warp=True, altura=1, nota="casa (OLDALE_TOWN_HOUSE2)"),
+        # diretor, 25/11: "bancadas invisiveis a sudoeste da cidade": as barracas, o armazem e o celeiro do GBA tinham
+        # so colisao; recebem modelos da area 7 que cabem na lista 0 (VRAM pequena)
+        dict(rect=(3, 29, 4, 31), modelo=0x73, pos=(4.5, 30.6), porta=None, warp=False, altura=1, nota="barraca do mercado"),
+        dict(rect=(7, 29, 8, 31), modelo=0x73, pos=(8.5, 30.6), porta=None, warp=False, altura=1, nota="barraca do mercado"),
+        dict(rect=(12, 29, 14, 32), modelo=0x71, pos=(13.7, 31.0), porta=None, warp=False, altura=1, nota="armazem"),
+        dict(rect=(30, 6, 32, 7), modelo=0x71, pos=(31.3, 7.8), porta=None, warp=False, altura=1, nota="celeiro"),
     ],
     "Route2": [
         dict(rect=(13, 33, 16, 36), modelo=0x25, porta=(14, 36), warp=False, altura=1,
@@ -132,7 +141,24 @@ CONSTRUCOES = {
 # das texturas da lista tem limite: 53 248 bytes funcionaram, ~55 600 nao (o ultimo modelo ficou sem textura).
 # As portas dos modelos de fora (0x137 de Pallet, 0x10 de ginasio) ficavam sem textura na area 2: os dois usam a
 # porta p_door (0x0F), nativa da area (a do Centro e do Mart), da mesma largura.
-MODELOS_NOVOS_NA_AREA = [0x13A, 0xF5]
+MODELOS_NOVOS_NA_AREA = [0x13A, 0x2D, 0x71, 0x73]
+
+# Redesenhos pedidos pelo diretor sobre a conversao fiel (retangulo no mapa do GBA, regra)
+REDESENHO = {
+    # 25/11: "Remocao desse lago no final da rota 1... substituir por outro layout, com flores, matinhos": a lagoa do
+    # sudoeste e os canais da saida sul viram campo; a agua que encosta em terra vira flor, o miolo vira mato alto
+    "Route1": [((0, 38, 23, 52), "lago_para_campo")],
+}
+
+
+def redesenhar(key, tiles, w, h):
+    for (x0, y0, x1, y1), regra in REDESENHO.get(key, []):
+        if regra == "lago_para_campo":
+            agua = {(x, y) for y in range(y0, y1 + 1) for x in range(x0, x1 + 1) if tiles[y * w + x] == "~"}
+            for x, y in agua:
+                borda = any((x + dx, y + dy) not in agua for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))
+                            if 0 <= x + dx < w and 0 <= y + dy < h)
+                tiles[y * w + x] = "f" if borda else "e"
 MODELOS_FORA_DA_AREA = [0x15]
 
 
@@ -262,6 +288,7 @@ def build_global():
     report, objetos = {}, []
     for key, (name, ox, oy) in MAPS.items():
         j, w, h, tiles, elev, unknown = convert(name)
+        redesenhar(key, tiles, w, h)
         hh = heights(w, h, elev)
         _, _, _, _, vals = load_map(name)
         for i, v in enumerate(vals):                     # escadas: rampa (so as que nao foram ajustadas a mao)

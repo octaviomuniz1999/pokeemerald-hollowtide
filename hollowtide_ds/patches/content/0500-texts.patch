@@ -24,7 +24,7 @@
  ...\n...\rHmm... Interesting...\n...\rHuh? Oh! Excuse me, sorry!\nI was just reading this book here.\r
  ...\n...\rYaaaaaaawn...\n...\rHuh? A guest?\nAt this hour?\r
 -Sorry to keep you waiting!\rWelcome to the world of Pokémon!\rMy name is Professor Oak.\rBut everyone calls me the\nPokémon Professor.\rBefore we go any further, I’d like to\ntell you a few things you should\fknow about this world!\r
-+Hi! Sorry to keep you waiting!\fWelcome to the world of Pokémon!\fMy name is Alex.\fBut everyone calls me the Pokémon\nProfessor.\r
++Hi! Sorry to keep you waiting!\rWelcome to the world of Pokémon!\rMy name is Alex.\rBut everyone calls me the Pokémon\nProfessor.\r
  I will first tell you important\nthings about this game.\n\nPlease touch any topic you’d like\nto know more about on the\nlower screen.
                                    
  I’ll explain this game’s controls.\n\nYou can control this game by\ntouching the lower screen, also\ncalled the Touch Screen.\n\nPlease touch the panel in the\nbottom right of the Touch Screen.
@@ -34,7 +34,7 @@
  This world is widely inhabited by\ncreatures known as Pokémon.\r
 -We humans live alongside Pokémon\nas friends.\rAt times we play together, and at\nother times we work together.\rSome people use their Pokémon to\nbattle and develop closer bonds\fwith them.\r
 -Now, why don’t you tell me a little bit\nabout yourself?\r
-+We humans live alongside Pokémon,\nat times as friendly playmates, and\rat times as cooperative workmates.\fAnd sometimes, we band together\nand battle others like us.\fBut despite our closeness, we don’t\nknow everything about Pokémon.\fIn fact, there are many, many\nsecrets surrounding Pokémon.\fTo unravel Pokémon mysteries,\nI’ve been undertaking research.\rThat’s what I do.\r
++We humans live alongside Pokémon,\nat times as friendly playmates, and\fat times as cooperative workmates.\rAnd sometimes, we band together\nand battle others like us.\rBut despite our closeness, we don’t\nknow everything about Pokémon.\rIn fact, there are many, many\nsecrets surrounding Pokémon.\rTo unravel Pokémon mysteries,\nI’ve been undertaking research.\fThat’s what I do.\r
 +And you are?\r
  Are you a boy?\nOr are you a girl?\fWon’t you please tell me? {YESNO 0}
  So, you’re a boy then? {YESNO 0}
@@ -44,7 +44,7 @@
  Your name is {STRVAR_1 3, 0, 0}? {YESNO 0}
  Your name is {STRVAR_1 3, 0, 0}? {YESNO 0}
 -{STRVAR_1 3, 0, 0}!\nAre you ready?\rYour very own tale of grand adventure\nis about to unfold.\rFun experiences, difficult experiences,\nthere’s so much waiting for you!\rDreams! Adventure!\nLet’s go to the world of Pokémon!\rI’ll see you later!\r
-+Ah, okay!\fYou’re {STRVAR_1 3, 0, 0}, from right here\nin Dawnmere.\rI should have known!\fAll right, are you ready?\fYour very own adventure is about\nto unfold.\fTake courage, and leap into the\nworld of Pokémon where dreams,\radventure, and friendships await!\fWell, I’ll be expecting you later.\nCome see me in my Pokémon Lab.\r
++Ah, okay!\rYou’re {STRVAR_1 3, 0, 0}, from right here\nin Dawnmere.\fI should have known!\rAll right, are you ready?\rYour very own adventure is about\nto unfold.\rTake courage, and leap into the\nworld of Pokémon where dreams,\fadventure, and friendships await!\rWell, I’ll be expecting you later.\nCome see me in my Pokémon Lab.\r
  CONTROL INFO
  ADVENTURE INFO
  NO INFO NEEDED
@@ -54,7 +54,7 @@
 -Lyra: {STRVAR_1 3, 0, 0}!\nYou can catch wild Pokémon\fwith Poké Balls.\rFollow me!\r
 -Ethan: {STRVAR_1 3, 0, 0}!\nYou can catch wild Pokémon\fwith Poké Balls.\rFollow me!\r
 -...Just like that!\r...\nHuh? Was I too fast?\rI’ll try again. Come this way!\r
-+Pokémon live in the tall grass.\fFollow the trail and cross the\nbridge to reach Harvestvale.
++Pokémon live in the tall grass.\rFollow the trail and cross the\nbridge to reach Harvestvale.
 +Route 1\nSouth: Harvestvale
 +Route 1\nWest: Dawnmere
  See? Just like that!\rIt’s better to lower your\ntarget’s HP more than I did,\for make it sleep or something.\rYou can try all kinds of things\nto see what works.\rI’ll give you these. Good luck!\r
@@ -65,7 +65,7 @@
 @@ -1,5 +1,5 @@
 -Go, RATTATA!\rTackle!\r
 -What? This is a big battle!\fLeave me alone!\r
-+Route 2\nNorth: Harvestvale\fFor Breezeport, follow the trail\nsouth toward the sea.
++Route 2\nNorth: Harvestvale\rFor Breezeport, follow the trail\nsouth toward the sea.
 +The door is locked.
  A Pokémon can use its moves as long\nas the moves still have PP.\rWhen a move has no PP remaining, that\nPokémon cannot use that move.\rThen you should take your Pokémon to\nthe Pokémon Center.
  A Pokémon can use its moves as long\nas the moves still have PP.\rWhen a move has no PP remaining, that\nPokémon cannot use that move.\rThen you should take your Pokémon to\nthe Pokémon Center.
@@ -84,7 +84,7 @@
 +++ b/data/text/custom/492.txt
 @@ -1,7 +1,7 @@
 -Erika: Hello...\nLovely weather, isn’t it?\rIt’s so pleasant...\nI’m afraid I might doze off...\rMy name is Erika.\nI am the Leader of Celadon Gym.\r...Oh? You are from Johto, you say?\fHow nice...\rOh. I’m sorry, I didn’t realize that\nyou wished to challenge me.\rI know.\rI have been training myself on\nnot only flower arrangement\fbut also Pokémon battle.\rI shall not lose.\r
-+Nevard: Welcome to Harvestvale!\fI look after the coffee, and the\nPokémon who live on this land.\fThanks for bringing the water\nback. Now let’s see if your team\rcan bloom in battle, too!
++Nevard: Welcome to Harvestvale!\rI look after the coffee, and the\nPokémon who live on this land.\rThanks for bringing the water\nback. Now let’s see if your\rteam can bloom in battle, too!
  Erika: Oh!\nI concede defeat...\rYou are remarkably strong...\nI shall give you the Rainbow Badge...\r
 -{STRVAR_1 3, 0, 0} received\nthe Rainbow Badge.
 -Erika: That was a delightful match.\nI felt inspired.\rPlease, I wish you to have this TM19\nas a special token.\rIt is Giga Drain.\nIt is a wonderful move that drains\fhalf the damage it inflicts to heal\fyour Pokémon.\rIt is indeed a horrifying move.\r
@@ -92,9 +92,9 @@
 -Celadon City Pokémon Gym
 -Celadon City Pokémon Gym\rGym Leader: Erika\nCertified Trainer!\f{STRVAR_1 3, 0, 0}
 +{STRVAR_1 3, 0, 0} received the Harvest\nBadge from Nevard!
-+Nevard: Your first Badge. Hold on\nto that feeling.\fAnd take this, too!
-+Nevard: That TM teaches Bullet\nSeed.\fIt fires a burst of seeds, two to\nfive times in a row!
-+Nevard: The fields change every\nseason, and so will you.\fKeep looking after your Pokémon.\nThey’ll look after you.
++Nevard: Your first Badge. Hold on\nto that feeling.\rAnd take this, too!
++Nevard: That TM teaches Bullet\nSeed.\rIt fires a burst of seeds, two to\nfive times in a row!
++Nevard: The fields change every\nseason, and so will you.\rKeep looking after your Pokémon.\nThey’ll look after you.
 +Harvestvale Pokémon Gym\nLeader: Nevard
 --- a/data/text/custom/542.txt
 +++ b/data/text/custom/542.txt
@@ -109,13 +109,13 @@
 -Hi, {STRVAR_1 3, 0, 0}!\nLeaving again?\rYou should tell your mom if you\nare leaving.
 -Call your mom on your Pokégear to\nlet her know how you’re doing.
 +The lab is up the hill.\nRoute 1 starts at the east edge.
-+My grandkids went on journeys,\ntoo. They always wrote home.\fWell… almost always.
-+Far away, a peak disappears into\nthe clouds.\fFrom up here, Dawnmere looks\nso small.
++My grandkids went on journeys,\ntoo. They always wrote home.\rWell… almost always.
++Far away, a peak disappears into\nthe clouds.\rFrom up here, Dawnmere looks\nso small.
 +Prof. Alex’s Lab\nPokémon and Water Ecology
 +{STRVAR_1 3, 0, 0}’s House
 +The Neighbors’ House
-+Dawnmere Village\nEast exit: Route 1\fWhere mornings begin in mist.
-+It’s not safe to cross the tall\ngrass without a Pokémon.\fProf. Alex’s lab is up the hill\nto the north.
++Dawnmere Village\nEast exit: Route 1\rWhere mornings begin in mist.
++It’s not safe to cross the tall\ngrass without a Pokémon.\rProf. Alex’s lab is up the hill\nto the north.
 +Route 1\n← Harvestvale
  I like your Bag!
  Wait a sec!\r
@@ -128,11 +128,11 @@
 -Professor Elm: Oh, hey! I got an email!\r
 -Professor Elm: ...\nHm... Uh-huh... OK...\r
 -Professor Elm: Hey, listen.\nI have this acquaintance that people\fcall Mr. Pokémon.\rHe keeps finding weird things and\nraving about his discoveries.\rAnyway, I just got an email from him\nsaying that this time it’s real.\rIt’s probably another Pokémon Egg,\nbut we’re still so busy with our\fPokémon research...\rWait!\nI know!\rYou can go in our place, right?\nCan we count on you?\rYou can choose one of the Pokémon\nover there.\r
-+Prof. Alex: {STRVAR_1 3, 0, 0}! Good, you came.\fI study how water and weather\nshape the lives of Pokémon.\fThe rivers around here have been\nacting strange lately.\fI could use someone out there\nwho keeps their eyes open.\fThese three were raised here at\nthe lab. Go on, pick a partner.
-+Prof. Alex: A fine choice.\nYou two already look like a team.\fTake this as well. It’s a Pokédex.\nIt records every Pokémon you meet.
++Prof. Alex: {STRVAR_1 3, 0, 0}! Good, you came.\rI study how water and weather\nshape the lives of Pokémon.\rThe rivers around here have been\nacting strange lately.\rI could use someone out there\nwho keeps their eyes open.\rThese three were raised here at\nthe lab. Go on, pick a partner.
++Prof. Alex: A fine choice.\nYou two already look like a team.\rTake this as well. It’s a Pokédex.\nIt records every Pokémon you meet.
 +{STRVAR_1 3, 0, 0} received the Pokédex!
-+Prof. Alex: Follow Route 1 east,\nthen head south across the river.\fYou’ll reach Harvestvale.\nNevard runs the Gym there.\fThe farmers say their canals\nhave been running low.\fIf you hear anything, let me know,\nall right?\fOh, and hold the B Button to run.\nTake care out there!
-+Check your Bag for Poké Balls.\fWeaken a wild Pokémon first,\nthen throw one to catch it!
++Prof. Alex: Follow Route 1 east,\nthen head south across the river.\rYou’ll reach Harvestvale.\nNevard runs the Gym there.\rThe farmers say their canals\nhave been running low.\rIf you hear anything, let me know,\nall right?\rOh, and hold the B Button to run.\nTake care out there!
++Check your Bag for Poké Balls.\rWeaken a wild Pokémon first,\nthen throw one to catch it!
  Professor Elm: If a wild Pokémon\nappears, let your Pokémon battle it!
  Professor Elm: Where are you going?\nThe Poké Balls are in that device.\r
  {STRVAR_1 3, 0, 0} received {STRVAR_1 0, 1, 0}\nfrom Professor Elm!
@@ -152,10 +152,10 @@
 -Hi, {STRVAR_1 3, 0, 0}!\nYou’re finally awake.\fYour friend Ethan was just here.\rHe was playing hide-and-seek with\nhis MARILL.\rOh, I almost forgot! Our acquaintance,\nProfessor Elm, was looking for you.\rHe said he had a favor to ask of you.\rYou know where the lab is, right?\nIt’s right next door to us.\rBy the way, do you have everything\nyou need to go out?\fHere, use this Bag to carry things...\r
 -This is your Trainer Card...\r
 -Here you can save a record of\nyour progress...\r
-+Mom: {STRVAR_1 3, 0, 0}, wait a second!\fBefore you go, I want you to\nhave this.
-+It’s been in our family for a\nlong, long time.\fThe dog on it is called Atlas.\nYour grandma used to say he\rwalked beside anyone who needed\rcompany on the road.\fI don’t know if that’s true…\nbut I like the idea that you\rwon’t be walking alone.\fNow go on! Prof. Alex is waiting.
-+Mom: Morning, sleepyhead!\nProf. Alex stopped by earlier.\fHe’s waiting for you at the lab,\nup on the hill to the north.
-+Mom: Sit down for a minute.\nYou both look worn out.\f…There. All better!\nCome home whenever you need.
++Mom: {STRVAR_1 3, 0, 0}, wait a second!\rBefore you go, I want you to\nhave this.
++It’s been in our family for a\nlong, long time.\rThe dog on it is called Atlas. Your\ngrandma used to say he walked beside\ranyone who needed company on the road.\rI don’t know if that’s true…\nbut I like the idea that you\rwon’t be walking alone.\rNow go on! Prof. Alex is waiting.
++Mom: Morning, sleepyhead!\nProf. Alex stopped by earlier.\rHe’s waiting for you at the lab,\nup on the hill to the north.
++Mom: Sit down for a minute.\nYou both look worn out.\r…There. All better!\nCome home whenever you need.
  These are also rather helpful...\r
  Just try touching the buttons, and\nyou’ll know what to do in no time.\r
  Professor Elm has been waiting for\nyou, dear. Please, go and help him.
@@ -189,9 +189,9 @@
 -You’re a rookie Trainer, aren’t you?\nI can tell!\rThat’s OK! Everyone is a rookie\nat some point!\rIf you’d like, I can teach you a\nfew things.\fOK, then! Follow me!\r
 -Ohh... I’m sorry.\nI forgot that you weren’t wearing the\fRunning Shoes!\rI’ll try to go as slow as possible, so\ntry keeping up!\r
 -This is a Pokémon Center. They heal\nyour Pokémon in no time at all.\rYou’ll be relying on them a lot, so\nyou better learn about them.\r
-+Team Palm shut the canal valve.\fThey want us to pay for water\nthat’s always belonged to all\rof us.\fTheir recruit hangs around the\nkiosk down south.
-+The water’s back in the fields!\fNevard’s waiting for you at\nthe Gym. Thank you. Really.
-+Team Palm manages the water now.\fWant to irrigate without signing\na contract? Get past me first!
++Team Palm shut the canal valve.\rThey want us to pay for water\nthat’s always belonged to all of us.\rTheir recruit hangs around the\nkiosk down south.
++The water’s back in the fields!\rNevard’s waiting for you at\nthe Gym. Thank you. Really.
++Team Palm manages the water now.\rWant to irrigate without signing\na contract? Get past me first!
  This is a Pokémon Mart.\nThey sell Poké Balls for catching wild\fPokémon and other useful items.\r
 -Route 30 is out this way.\rTrainers will be battling their\nPokémon there.\rIf you go a little farther,\nyou’ll see Mr. Pokémon’s House.\r
 -This is the sea, as you can see.\rSome Pokémon are found only in water.\r
@@ -208,21 +208,21 @@
 -Did you talk to the old man by the\nPokémon Center?\rHe’ll put a Map of Johto on your\nPokégear.
 -When you’re with Pokémon,\ngoing anywhere is fun.
 -Mr. Pokémon’s house is still farther\nup ahead.\rYou could use the Running Shoes if\nyou had a pair.\rBut beware of wild Pokémon and\nTrainers!\rWhen you run, the noise will\nattract them.
-+Use the key on the valve.\fIt’s on the west bank of the\ncanal, near the coffee fields.
++Use the key on the valve.\rIt’s on the west bank of the\ncanal, near the coffee fields.
 +The bosses won’t like this…\nTeam Palm always collects.
-+Villager: Hey, you! A trainer?\fTeam Palm shut off the canal\nvalve. The Gym’s gone dry, too.\fTheir recruit has the key.\nHe’s at the blue kiosk to the\rsouthwest.
-+Harvestvale\nNorth: Route 1\fFields of coffee and quiet canals.
-+Route 2\fThe road south is closed while\nthe fields are being repaired.\fNevard will reopen it.
-+Route 2\fThe road south is closed while\nthe fields are being repaired.\fNevard will reopen it.
-+Harvestvale Pokémon Gym\fClosed until water returns to the\nfields. - Nevard
-+Harvestvale Pokémon Gym\nLeader: Nevard\fThe farmer who never stops\ngrowing.
++Villager: Hey, you! A trainer?\rTeam Palm shut off the canal\nvalve. The Gym’s gone dry, too.\rTheir recruit has the key. He’s at\nthe blue kiosk to the southwest.
++Harvestvale\nNorth: Route 1\rFields of coffee and quiet canals.
++Route 2\rThe road south is closed while\nthe fields are being repaired.\rNevard will reopen it.
++Route 2\rThe road south is closed while\nthe fields are being repaired.\rNevard will reopen it.
++Harvestvale Pokémon Gym\rClosed until water returns to the\nfields. - Nevard
++Harvestvale Pokémon Gym\nLeader: Nevard\rThe farmer who never stops\ngrowing.
 +Team Palm Water Kiosk\nIrrigation contracts signed here.
-+The valve is locked tight.\fThe recruit at the blue kiosk\nhas the key.
-+{STRVAR_1 3, 0, 0} turned the valve!\fWater rushes back into the\ncanals. The Gym is open again!
++The valve is locked tight.\rThe recruit at the blue kiosk\nhas the key.
++{STRVAR_1 3, 0, 0} turned the valve!\rWater rushes back into the\ncanals. The Gym is open again!
 +Water flows toward the fields.
 +Harvestvale Coffee Fields\nWatered by the village canal.
-+Drying Yard\nCoffee beans dry here in the sun.\fWhen the rain comes, everyone\nruns to roll up the mats!
-+Irrigation Schedule\nEach field gets its turn.\fA Team Palm flyer covers half of\nit: Water Under Contract.
++Drying Yard\nCoffee beans dry here in the sun.\rWhen the rain comes, everyone\nruns to roll up the mats!
++Irrigation Schedule\nEach field gets its turn.\rA Team Palm flyer covers half of\nit: Water Under Contract.
  I battled the Trainers on the road.\nMy Pokémon lost.\rThey’re a mess! I must take them to\na Pokémon Center.
  A Pokémon I caught had an item.\nI think it’s Mystic Water.\rI don’t need it, so do you want it?\r
  Back to fishing for me, then.
@@ -244,22 +244,22 @@
 -Olivine Port\nFast-Ship Pier
 -Olivine City Pokémon Gym\nLeader: Jasmine\fThe Steel-Clad Defense Girl
 -Olivine’s Lighthouse\rIt is also known as\nthe Glitter Lighthouse.
-+I perform at the Theater of Echoes.\fTonight is the festival, but three\nstreet lamps went dark!\fOne by the west houses, one in\nthe plaza, one on the boardwalk.\fCould you switch them back on?\nThe show can’t start in the dark.
++I perform at the Theater of Echoes.\rTonight is the festival, but three\nstreet lamps went dark!\rOne by the west houses, one in\nthe plaza, one on the boardwalk.\rCould you switch them back on?\nThe show can’t start in the dark.
 +The stage has its lights back!\nJay is waiting at the Theater.
-+Welcome to Breezeport!\fFollow the avenue down and you’ll\nsmell the sea before you see it.
++Welcome to Breezeport!\rFollow the avenue down and you’ll\nsmell the sea before you see it.
 +At night the festival lamps make\nthe whole plaza sparkle!
-+From up here the whole bay is\nyours: the beach, the lagoon...\fOn clear days you can see a peak\nfar to the north, lost in clouds.\fPeople say nobody climbs it\nanymore. I wonder why...
-+The water’s warmer this year.\fAnd the tide comes in so fast now.\nIt never used to.
-+The fish bite less since those\nnew pipes went in up the coast.\fTeam Palm says it’s progress.\nMy nets say otherwise.
-+Have you seen Jay perform?\fHer ghosts dance with the stage\nlights. It gives me chills!
-+See that rock out in the bay?\nThe lighthouse stood there.\fLast winter’s storm took it.\nStorms used to be gentler...\fUntil we rebuild, that lamp on\nthe point guides the boats home.
-+My husband works at the pump\nstation by the harbor.\fHe says Team Palm bought half the\npumps on this coast. Strange, no?
++From up here the whole bay is\nyours: the beach, the lagoon...\rOn clear days you can see a peak\nfar to the north, lost in clouds.\rPeople say nobody climbs it\nanymore. I wonder why...
++The water’s warmer this year.\rAnd the tide comes in so fast now.\nIt never used to.
++The fish bite less since those\nnew pipes went in up the coast.\rTeam Palm says it’s progress.\nMy nets say otherwise.
++Have you seen Jay perform?\rHer ghosts dance with the stage\nlights. It gives me chills!
++See that rock out in the bay?\nThe lighthouse stood there.\rLast winter’s storm took it.\nStorms used to be gentler...\rUntil we rebuild, that lamp on\nthe point guides the boats home.
++My husband works at the pump\nstation by the harbor.\rHe says Team Palm bought half the\npumps on this coast. Strange, no?
 +You can stock up on supplies\nat the Poké Mart.
-+Every summer the Theater of Echoes\nhosts the festival.\fIt’s the heart of this city.\nTonight, it beats again.
-+Breezeport City\nWhere the sea breeze never sleeps.\fWest: Route 2
-+Theater of Echoes\fClosed until the festival lamps\nare lit. Ask the artist out front.
-+Team Palm\nClean energy for a better coast!\fSomeone has scribbled underneath:\n“Better for whom?”
-+West Beach Trail - Route 3\fThe trail is closed during the\nfestival. Ask Gym Leader Jay.
++Every summer the Theater of Echoes\nhosts the festival.\rIt’s the heart of this city.\nTonight, it beats again.
++Breezeport City\nWhere the sea breeze never sleeps.\rWest: Route 2
++Theater of Echoes\rClosed until the festival lamps\nare lit. Ask the artist out front.
++Team Palm\nClean energy for a better coast!\rSomeone has scribbled underneath:\n“Better for whom?”
++West Beach Trail - Route 3\rThe trail is closed during the\nfestival. Ask Gym Leader Jay.
 +West Beach Trail - Route 3\nUp the coast to Ferralia City.
 +The lamp is glowing.
 +All three lamps are glowing!\nThe Theater of Echoes is open!
@@ -284,15 +284,15 @@
 -Jasmine: Thank you so much.\nI’ll take good care of it.
 -Jasmine: Don’t you sometimes feel like\nscrubbing Steel-type Pokémon?\fDon’t you?
 -Will you trade {STRVAR_1 1, 1, 0}? {YESNO 0}
-+Jay: My stage is still dark!\fLight the spotlights on the panels\nbelow: LEFT, then RIGHT, then LEFT.
-+Jay: Now that the lights are back,\neven the shadows want to dance!\fLet’s give this crowd a show\nthey’ll remember!
-+Jay: The Echo Badge is yours.\fThe west beach trail is open.\nRoute 3 leads up to Ferralia.
++Jay: My stage is still dark!\rLight the spotlights on the panels\nbelow: LEFT, then RIGHT, then LEFT.
++Jay: Now that the lights are back,\neven the shadows want to dance!\rLet’s give this crowd a show\nthey’ll remember!
++Jay: The Echo Badge is yours.\rThe west beach trail is open.\nRoute 3 leads up to Ferralia.
 +Jay: Head out along the west\nbeach. Mind the cliffs up the coast!
 +Linh: Mic check! Let’s test the\nsound with a battle!
 +Yumi: Meet my partner!\nIsn’t it a star?
 +The LEFT spotlight flickers on!\nNext: the RIGHT spotlight.
 +The RIGHT spotlight flickers on!\nNow the LEFT one again.
-+The lights went out...\fLight them in order: LEFT, then\nRIGHT, then LEFT again.
++The lights went out...\rLight them in order: LEFT, then\nRIGHT, then LEFT again.
 +The stage is lit!\nJay is ready for you.
 +A note is taped to the panel:\n“LEFT, RIGHT, LEFT.”
 +Spotlights\nLeft, right, left.

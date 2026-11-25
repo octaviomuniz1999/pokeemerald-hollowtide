@@ -162,6 +162,17 @@ def apply_global(rom, narc, entry, base_dir):
         anarc.files[lst] = struct.pack("<%dH" % (len(ids_m) + 1), len(ids_m), *ids_m)
         rom.files[aid] = anarc.save()
         print(f"lista de construcoes {lst}: {cur[0]} -> {len(ids_m)} modelos")
+        # as construcoes usam o conjunto de texturas da LISTA (a/0/7/0), procurado pelo nome: as texturas dos modelos
+        # de fora entram nesse conjunto (nsbtx.py)
+        import nsbtx
+        tid = rom.filenames.idOf("a/0/7/0")
+        tnarc = ndspy.narc.NARC(rom.files[tid])
+        bmid = rom.filenames.idOf("a/0/4/0")
+        bm = ndspy.narc.NARC(rom.files[bmid])
+        tnarc.files[lst], novos = nsbtx.merge(bytes(tnarc.files[lst]), [bytes(bm.files[m]) for m in novos],
+                                              [bytes(bm.files[m]) for m in ids_m])
+        rom.files[tid] = tnarc.save()
+        print(f"conjunto de texturas {lst}: +{len(novos)} texturas/paletas dos modelos de fora")
     rom.files[mid] = mnarc.save()
     print(f"desenho global {entry['global']}: {nbx}x{nby} blocos novos ({min(ids.values())}-{max(ids.values())}) "
           f"nas celulas ({cx0},{cy0})-({cx0 + nbx - 1},{cy0 + nby - 1}); headers {sorted(set(hdr.values()))}")

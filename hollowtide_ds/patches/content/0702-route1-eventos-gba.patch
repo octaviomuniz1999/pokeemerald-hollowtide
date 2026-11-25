@@ -76,7 +76,7 @@
        "y": 0
      },
      {
-@@ -84,8 +84,8 @@
+@@ -84,8 +84,25 @@
        "param2": 0,
        "movement_range_x": 0,
        "movement_range_z": 0,
@@ -84,6 +84,23 @@
 -      "z": 386,
 +      "x": 77,
 +      "z": 62,
++      "y": 0
++    },
++    {
++      "id": 4,
++      "graphics_id": "SPRITE_BONGURI",
++      "movement_type": 0,
++      "trainer_type": 0,
++      "hidden_flag": "FLAG_NOTHING",
++      "script": "std_apricorn_tree",
++      "initial_dir": 0,
++      "param0": 5,
++      "param1": 0,
++      "param2": 0,
++      "movement_range_x": 0,
++      "movement_range_z": 0,
++      "x": 101,
++      "z": 84,
        "y": 0
      }
    ],

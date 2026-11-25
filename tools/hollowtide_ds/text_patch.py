@@ -19,6 +19,7 @@ PATCH = os.path.join(REPO, "hollowtide_ds/patches/content/0500-texts.patch")
 
 def main(hg):
     data = json.load(open(SRC, encoding="utf-8"))
+    gba_text.set_font(hg)
     out = ""
     with tempfile.TemporaryDirectory() as tmp:
         subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "msg_dump.py"), hg, os.path.join(hg, "rom.nds"), tmp],
@@ -38,12 +39,14 @@ def main(hg):
                         txt = txt.replace(old, new)
                     msgs[int(i)] = txt
                 elif isinstance(t, dict):
-                    labs = t["gba"] if isinstance(t["gba"], list) else [t["gba"]]   # varios labels: juntados com \\f
-                    txt = "\\f".join(gba_text.text_of(l) for l in labs)
+                    labs = t["gba"] if isinstance(t["gba"], list) else [t["gba"]]   # varios labels: pagina nova (\\r)
+                    txt = "\\r".join(gba_text.text_of(l) for l in labs)
                     for old, new in t.get("replace", []):          # adaptacoes registradas (ex.: direcoes no mapa do DS)
                         if old not in txt:
                             raise ValueError(f"{arc}/{i}: trecho para trocar nao encontrado: {old!r}")
                         txt = txt.replace(old, new)
+                    if arc != "219":                               # paginas de 2 linhas inteiras (gba_text.paginar);
+                        txt = gba_text.paginar(txt)                # a intro do Prof. Alex (219) tem estrutura propria
                     msgs += [""] * (int(i) + 1 - len(msgs))     # mensagens novas alem do fim do arquivo
                     msgs[int(i)] = txt
                 else:

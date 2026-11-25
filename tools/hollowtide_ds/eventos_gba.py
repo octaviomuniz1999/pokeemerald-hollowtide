@@ -59,6 +59,11 @@ ZONAS = {
         placas={"_EV_scr_seq_R29_005 + 1": (7, 21),                  # Palm050_NorthSign
                 "_EV_scr_seq_R29_004 + 1": (6, 48)},                 # Palm050_SouthSign
         tirar_placas=set(), warps={}, coord={},
+        # arvore de frutas do GBA (Oran, 37,46): o HGSS nao tem arvore de frutas no campo; vira arvore de Apricorn
+        # (diretor, 25/11). Numero 5: livre (era de uma das arvores das Routes 29-31, que o conteudo tirou)
+        novos_obj=[{"de": "040_R39", "script": "std_apricorn_tree", "mapa": "Route1", "gba": (37, 46),
+                    "campos": {"param0": 5}}],
+        
     ),
     "064_T21": dict(
         origem=ORIGENS["Harvestvale"],
@@ -158,8 +163,11 @@ def mover(j, z):
         n = dict(next(e for e in src["object_events"] if e["script"] == o["script"]))
         n["id"] = len(j["object_events"])               # id numerico (um nome obj_* precisaria de simbolo no hg-engine)
         n["x"], n["z"] = gba(o["mapa"], *o["gba"])
-        n["movement_type"], n["initial_dir"] = OLHA[o["lado"]]
-        n["movement_range_x"] = n["movement_range_z"] = 0
+        if o.get("lado"):
+            n["movement_type"], n["initial_dir"] = OLHA[o["lado"]]
+            n["movement_range_x"] = n["movement_range_z"] = 0
+        for k, v in o.get("campos", {}).items():
+            n[k] = v
         j["object_events"].append(n)
     for b in z.get("novos_bg", []):
         x, zz = gba(b["mapa"], *b["gba"]) if "mapa" in b else w(*b["gba"])
