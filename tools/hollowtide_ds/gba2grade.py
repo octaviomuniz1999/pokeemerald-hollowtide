@@ -46,6 +46,7 @@ GENERAL.update({0x071: "#", 0x073: "#", 0x075: "#", 0x07B: "#", 0x0E2: "#",     
                 0x1D3: "T", 0x1DB: "T"})                                   # arbustos
 GENERAL.update({0x1D4: "T", 0x1D5: "T", 0x1E4: "T", 0x1E5: "T", 0x1E6: "T", 0x1E7: "T",      # arvores grandes (Harvestvale)
                 0x10C: "=", 0x104: "=", 0x114: "=", 0x124: "="})   # terra arada da plantacao e areias
+GENERAL.update({0x0C6: "T", 0x0C7: "T"})                            # moita escura da borda oeste (Route 3)
 PRIMARY_BUILDINGS = [range(0x028, 0x064), range(0x1AA, 0x1CE)]   # Mart/PC e ginasio do tileset General
 for i in range(0x008, 0x023):
     if i not in (0x00D, 0x00E, 0x00F, 0x016, 0x017, 0x01B, 0x01D, 0x01E, 0x01F):
@@ -130,6 +131,10 @@ CONSTRUCOES = {
              nota="farol (decisao do diretor 24/11: o farol de Olivine; o GBA nao tem farol): na ponta de areia abaixo do "
                   "faroleiro (64,46) e da casa dele, decorativo, sem entrada"),
     ],
+    "Route3": [
+        dict(rect=(18, 58, 21, 61), modelo=0x6D, porta=(19, 61), warp=False, altura=1,
+             nota="casa da praia de porta trancada (Palm280_DoorLocked na porta), a mesma casa azul de Breezeport"),
+    ],
     "Route1": [
         dict(rect=(4, 17, 10, 20), modelo=0x14, porta=(5, 20), warp=False, altura=1,
              nota="casa da horta (porta decorativa no GBA, sem warp); a casa de Pallet (mst_rdh), de telhado vermelho, "
@@ -199,7 +204,8 @@ def construcoes(key, gx, gy, grid, alt):
 
 MAPS = {"Dawnmere": ("LittlerootTown", 0, 0), "Route1": ("Route101", 34, 17), "Harvestvale": ("OldaleTown", 35, 70),
         "Route2": ("PalmRoute02", 35, 107),        # ligacoes do GBA: Route 2 abaixo de Harvestvale (deslocamento 0)
-        "Brisa": ("PalmBrisa", 35, 155)}           # e Breezeport abaixo da Route 2 (deslocamento 0)
+        "Brisa": ("PalmBrisa", 35, 155),           # e Breezeport abaixo da Route 2 (deslocamento 0)
+        "Route3": ("PalmRoute03", -21, 135)}       # Route 3 a oeste de Breezeport (ligacao "left", deslocamento -20)
 # Bases de lampiao do GBA (auditoria de 25/11): viravam tile bloqueado sem modelo (um quadrado de grama no meio da
 # calcada e uma parede invisivel). Recebem o poste de Olivine (as_light, 0xF8, acrescentado a lista 6 no land.json).
 LAMPIOES = {"gTileset_Lilycove": {0x361, 0x364}}         # 0x362 e topo de lampiao (andavel)
@@ -273,6 +279,138 @@ def convert(name):
     return j, w, h, tiles, elev, unknown
 
 
+def rocha_no_alto(tiles, H, w, h):
+    """Rocha do penhasco ('#'): no GBA a faixa de pedra e a face e a beirada do patamar; no DS ela fica na altura do
+    lado de CIMA (o mais alto dos vizinhos que nao sao rocha, a 1 tile; depois a 2), e a face do penhasco sai na borda
+    de fora da faixa, continua. Antes cada tile de pedra herdava a altura da maioria dos vizinhos e as faces saiam em
+    pedacos soltos (montanha de Breezeport, cercado da Route 2; auditoria de 25/11)."""
+    rock = [t == "#" for t in tiles]
+    novo = list(H)
+    for i in range(w * h):
+        if not rock[i]:
+            continue
+        x, y = i % w, i // w
+        for r in (1, 2):
+            nb = [H[(y + dy) * w + x + dx] for dx in range(-r, r + 1) for dy in range(-r, r + 1)
+                  if 0 <= x + dx < w and 0 <= y + dy < h and not rock[(y + dy) * w + x + dx] and H[(y + dy) * w + x + dx] != "r"]
+            if nb:
+                novo[i] = max(int(v) for v in nb)
+                break
+    return novo
+
+
+def terracos(tiles, hh, w, h):
+    """Patamares de mapas que o GBA desenha planos (mesma elevacao dos dois lados), com paredoes de pedra e escadas so
+    no desenho (Route 3): cada escada sobe um nivel para o norte. Grupos ligados de tiles andaveis (sem pedra, arvore,
+    agua e escada) viram patamares; o grupo ao sul de uma escada fica um nivel abaixo do grupo ao norte; o grupo que
+    toca a borda sul (praia) e o nivel 1. Arvores pegam o nivel do patamar mais perto; a pedra vai para o lado de cima.
+    Sem isso os paredoes saiam como faixas de grama bloqueada, sem face de penhasco."""
+    import collections
+    livre = lambda i: tiles[i] not in "#T~RBSD" and hh[i] != "r"
+    comp = [-1] * (w * h)
+    n = 0
+    for i in range(w * h):
+        if comp[i] >= 0 or not livre(i):
+            continue
+        fila = [i]; comp[i] = n
+        while fila:
+            k = fila.pop(); x, y = k % w, k // w
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                if 0 <= x + dx < w and 0 <= y + dy < h:
+                    j = (y + dy) * w + x + dx
+                    if comp[j] < 0 and livre(j):
+                        comp[j] = n; fila.append(j)
+        n += 1
+    sobe = collections.defaultdict(set)                  # grupo ao sul -> grupos ao norte (por escada)
+    for x in range(w):
+        y = 0
+        while y < h:
+            if hh[y * w + x] == "r":
+                y0 = y
+                while y < h and hh[y * w + x] == "r":
+                    y += 1
+                if y0 > 0 and y < h and comp[(y0 - 1) * w + x] >= 0 and comp[y * w + x] >= 0:
+                    sobe[comp[y * w + x]].add(comp[(y0 - 1) * w + x])
+            else:
+                y += 1
+    base = next((comp[i] for i in range(w * h - 1, -1, -1) if comp[i] >= 0 and tiles[i] != "~"), None)
+    nivel = {base: 1} if base is not None else {}
+    fila = collections.deque([base] if base is not None else [])
+    while fila:
+        c = fila.popleft()
+        for d in sobe[c]:
+            if d not in nivel:
+                nivel[d] = nivel[c] + 1; fila.append(d)
+    for c in range(n):                                   # escada vista do outro lado: desce
+        for d in sobe[c]:
+            if d in nivel and c not in nivel:
+                nivel[c] = nivel[d] - 1
+    # bolsoes sem escada (separados do patamar por arvores): o nivel do patamar alcancado mais perto, andando por
+    # arvores e grama, sem atravessar pedra
+    dist = {}
+    fila = collections.deque()
+    for i in range(w * h):
+        if comp[i] in nivel:
+            dist[i] = nivel[comp[i]]; fila.append(i)
+    while fila:
+        k = fila.popleft(); x, y = k % w, k // w
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            if 0 <= x + dx < w and 0 <= y + dy < h:
+                j = (y + dy) * w + x + dx
+                if j not in dist and tiles[j] not in "#~" and hh[j] != "r":
+                    dist[j] = dist[k]; fila.append(j)
+                    if comp[j] >= 0 and comp[j] not in nivel:
+                        nivel[comp[j]] = dist[k]
+    H = [hh[i] if hh[i] == "r" else (nivel.get(comp[i], 1) if comp[i] >= 0 else None) for i in range(w * h)]
+    for y in range(h):                                   # os patamares correm de leste a oeste: arvore pega o nivel do
+        fontes = [x for x in range(w) if comp[y * w + x] >= 0]   # tile andavel mais perto NA MESMA LINHA
+        if not fontes:
+            continue
+        for x in range(w):
+            i = y * w + x
+            if H[i] is None and tiles[i] != "#":
+                H[i] = H[y * w + min(fontes, key=lambda f: abs(f - x))]
+    fila = collections.deque(i for i in range(w * h) if H[i] is not None and H[i] != "r")
+    while fila:                                          # arvores, agua e construcoes: o nivel mais perto
+        k = fila.popleft(); x, y = k % w, k // w
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            if 0 <= x + dx < w and 0 <= y + dy < h:
+                j = (y + dy) * w + x + dx
+                if H[j] is None and tiles[j] != "#":
+                    H[j] = H[k]; fila.append(j)
+    H = [1 if v is None else v for v in H]               # pedra: provisorio, a regra da rocha decide
+    for _ in range(3):                                   # grupo de arvores afundado entre tiles mais altos sobe (poco)
+        visto = set()
+        for i in range(w * h):
+            if tiles[i] != "T" or H[i] == "r" or i in visto:
+                continue
+            grupo, pilha, borda = [], [i], []
+            visto.add(i)
+            while pilha:
+                k = pilha.pop(); grupo.append(k); x, y = k % w, k // w
+                for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    if not (0 <= x + dx < w and 0 <= y + dy < h):
+                        continue
+                    j = (y + dy) * w + x + dx
+                    if tiles[j] == "#" or H[j] == "r":
+                        continue
+                    if tiles[j] == "T" and H[j] == H[i]:
+                        if j not in visto:
+                            visto.add(j); pilha.append(j)
+                    else:
+                        borda.append(H[j])
+            if borda and min(borda) > H[i]:
+                for k in grupo:
+                    H[k] = min(borda)
+    H = rocha_no_alto(tiles, H, w, h)
+    for i in range(w * h):
+        if hh[i] != "r":
+            hh[i] = H[i]
+
+
+TERRACOS = {"Route3"}
+
+
 def heights(w, h, elev, tiles=None):
     H = [{4: 2, 5: 2, 6: 3, 7: 3}.get(e, 1) for e in elev]  # 3 = chao (1); 4-5 = elevado (2); 6-7 = cume (3)
     for _ in range(2):                                   # tiles de elevacao 0 (bloqueados) herdam dos vizinhos
@@ -318,23 +456,7 @@ def heights(w, h, elev, tiles=None):
                     mudou = True
             if not mudou:
                 break
-        # rocha do penhasco ('#'): no GBA a faixa de pedra e a face e a beirada do patamar; no DS ela fica na altura
-        # do lado de CIMA (o mais alto dos vizinhos que nao sao rocha, a 1 tile; depois a 2), e a face do penhasco sai
-        # na borda de fora da faixa, contínua. Antes cada tile de pedra herdava a altura da maioria dos vizinhos e as
-        # faces saiam em pedacos soltos (montanha de Breezeport, cercado da Route 2).
-        rock = [t == "#" for t in tiles]
-        novo = list(H)
-        for i in range(w * h):
-            if not rock[i]:
-                continue
-            x, y = i % w, i // w
-            for r in (1, 2):
-                nb = [H[(y + dy) * w + x + dx] for dx in range(-r, r + 1) for dy in range(-r, r + 1)
-                      if 0 <= x + dx < w and 0 <= y + dy < h and not rock[(y + dy) * w + x + dx]]
-                if nb:
-                    novo[i] = max(nb)
-                    break
-        H = novo
+        H = rocha_no_alto(tiles, H, w, h)
         # arvores logo ao norte de um patamar mais alto (atras dele, para a camera) sobem para a altura do patamar,
         # ate 3 tiles para o norte: embaixo, a beirada do patamar cortava o pe das arvores numa linha reta (anel da
         # montanha de Breezeport; auditoria de 25/11)
@@ -391,6 +513,8 @@ def build_global():
         for i, v in enumerate(vals):                     # escadas: rampa (so as que nao foram ajustadas a mao)
             if v & 0x3FF in ESCADAS and key != "Dawnmere":
                 hh[i] = "r"
+        if key in TERRACOS:
+            terracos(tiles, hh, w, h)
         rochas_soltas(tiles, hh, w, h)
         for i, v in enumerate(vals):
             # passagem de elevacao 0 andavel entre alturas diferentes (norte x sul): rampa. Era a entrada da lagoa

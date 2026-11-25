@@ -1,0 +1,25 @@
+--- a/data/scr_seq/scr_seq_0141.s
++++ b/data/scr_seq/scr_seq_0141.s
+@@ -776,19 +776,19 @@
+ 
+ 	.byte 0x02, 0x00
+ scr_seq_0141_082:
+-	setvar VAR_SPECIAL_x8008, 24
++	setvar VAR_SPECIAL_x8008, 3   // Hollowtide: Great Ball (PalmRoute03 18,29); era Max Potion da Route 38
+ 	setvar VAR_SPECIAL_x8009, 1
+ 	goto scr_seq_0141_255
+ 
+ 	.byte 0x02, 0x00
+ scr_seq_0141_083:
+-	setvar VAR_SPECIAL_x8008, 255
++	setvar VAR_SPECIAL_x8008, 28   // Hollowtide: Revive (PalmRoute03 8,9); era Lax Incense da Route 38
+ 	setvar VAR_SPECIAL_x8009, 1
+ 	goto scr_seq_0141_255
+ 
+ 	.byte 0x02, 0x00
+ scr_seq_0141_084:
+-	setvar VAR_SPECIAL_x8008, 387
++	setvar VAR_SPECIAL_x8008, 89   // Hollowtide: Big Pearl (PalmRoute03 3,74); era TM60
+ 	setvar VAR_SPECIAL_x8009, 1
+ 	goto scr_seq_0141_255
+ 

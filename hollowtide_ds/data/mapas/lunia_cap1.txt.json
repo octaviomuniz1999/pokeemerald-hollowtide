@@ -403,5 +403,29 @@
     "nota": "farol (decisao do diretor 24/11: o farol de Olivine; o GBA nao tem farol): na ponta de areia abaixo do faroleiro (64,46) e da casa dele, decorativo, sem entrada"
    }
   ]
+ },
+ "Route3": {
+  "gba": "PalmRoute03",
+  "origem": [
+   9,
+   156
+  ],
+  "tam": [
+   56,
+   80
+  ],
+  "desconhecidos": {},
+  "warps": [],
+  "construcoes": [
+   {
+    "modelo": "as_h01 (casa de Olivine)",
+    "porta_ds": [
+     28,
+     217
+    ],
+    "warp": false,
+    "nota": "casa da praia de porta trancada (Palm280_DoorLocked na porta), a mesma casa azul de Breezeport"
+   }
+  ]
  }
 }

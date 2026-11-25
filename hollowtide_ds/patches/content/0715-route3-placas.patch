@@ -1,0 +1,57 @@
+--- a/data/scr_seq/scr_seq_0249_R39.s
++++ b/data/scr_seq/scr_seq_0249_R39.s
+@@ -390,27 +390,30 @@
+ 	releaseall
+ 	end
+ 
+-scr_seq_R39_003:
+-	direction_signpost 0, 1, 21, VAR_SPECIAL_RESULT
+-	scrcmd_057 3
+-	scrcmd_058
+-	scrcmd_060 VAR_SPECIAL_RESULT
+-	callstd std_signpost
+-	end
+-
+-scr_seq_R39_004:
+-	scrcmd_055 2, 0
+-	scrcmd_057 3
+-	scrcmd_058
+-	trainer_tips 1, VAR_SPECIAL_RESULT
+-	callstd std_signpost
+-	end
+-
+-scr_seq_R39_005:
+-	scrcmd_055 3, 0
+-	scrcmd_057 3
+-	scrcmd_058
+-	trainer_tips 2, VAR_SPECIAL_RESULT
+-	callstd std_signpost
+-	end
+-	.balign 4
++scr_seq_R39_003:   // Route 3: Palm100_SignPlateau
++	play_se SEQ_SE_DP_SELECT
++	lockall
++	npc_msg 0
++	wait_button
++	closemsg
++	releaseall
++	end
++
++scr_seq_R39_004:   // Route 3: Palm100_SignBeach
++	play_se SEQ_SE_DP_SELECT
++	lockall
++	npc_msg 1
++	wait_button
++	closemsg
++	releaseall
++	end
++
++scr_seq_R39_005:   // Route 3: porta trancada da casa da praia (Palm280_DoorLocked)
++	play_se SEQ_SE_DP_SELECT
++	lockall
++	npc_msg 2
++	wait_button
++	closemsg
++	releaseall
++	end
++	.balign 4

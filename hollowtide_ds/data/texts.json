@@ -502,5 +502,20 @@
    "gba": "OldaleTown_House2_Text_YoullGoFurtherWithStrongPokemon",
    "_por_que": "interiores (25/11): fala do HGSS de Cherrygrove troca pela do interior que o GBA liga a esta porta (OLDALE_TOWN_HOUSE2)"
   }
+ },
+ "396": {
+  "_": "Route 3 (header da Route 39, scripts 249)",
+  "1": {
+   "gba": "Palm100_TextSignBeach",
+   "_por_que": "Route 3 original (25/11): placa da Route 39 vira a placa do GBA na mesma posicao da PalmRoute03 (scr_seq_R39_004)"
+  },
+  "2": {
+   "gba": "Palm280_TextDoorLocked",
+   "_por_que": "porta trancada da casa da praia da Route 3 (bg Palm280_DoorLocked do GBA em 19,61; scr_seq_R39_005)"
+  },
+  "0": {
+   "gba": "Palm100_TextSignPlateau",
+   "_por_que": "Route 3 original (25/11): placa da Route 39 vira a placa do GBA na mesma posicao da PalmRoute03 (scr_seq_R39_003; a mensagem 0 era a do fazendeiro dos Miltanks, que fica escondido)"
+  }
  }
 }

@@ -1,9 +1,10 @@
 --- a/data/scr_seq/scr_seq_0846_T20R0202.s
 +++ b/data/scr_seq/scr_seq_0846_T20R0202.s
-@@ -34,6 +34,12 @@
+@@ -34,6 +34,13 @@
  scr_seq_T20R0202_000:
  	scrcmd_609
  	lockall
++	give_mon SPECIES_TYRANITAR, 60, 0, 0, 0, VAR_SPECIAL_RESULT   // um Pokemon para as batalhas do teste dirigido
 +	wait 20, VAR_SPECIAL_x800A   // varredura visual: o robo troca o destino do warp na RAM durante a espera
 +	warp MAP_T20, 0, 1111, 2222, DIR_SOUTH
 +	releaseall

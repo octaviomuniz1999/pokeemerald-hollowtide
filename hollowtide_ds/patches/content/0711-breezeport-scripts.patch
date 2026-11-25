@@ -1,6 +1,6 @@
 --- a/data/scr_seq/scr_seq_0911_T26.s
 +++ b/data/scr_seq/scr_seq_0911_T26.s
-@@ -313,26 +313,46 @@
+@@ -313,26 +313,44 @@
  	releaseall
  	end
  
@@ -19,9 +19,8 @@
  	end
  
  _HT_NorthOpen:
- 	setvar VAR_UNK_4078, 2
-+	// ponte provisoria: a Route 3 original ainda nao existe; vai para a do prototipo (Route 39)
-+	warp MAP_R39, 0, 279, 222, DIR_NORTH
+-	setvar VAR_UNK_4078, 2
++	setvar VAR_UNK_4078, 2   // a Route 3 fica a oeste, a pe
 +	releaseall
 +	end
 +
@@ -51,7 +50,7 @@
  scr_seq_T26_012:
  	end
  
-@@ -341,3 +361,7 @@
+@@ -341,3 +359,7 @@
  	step MOVEMENT_STEP_DOWN, 1
  	step_end
  	.balign 4

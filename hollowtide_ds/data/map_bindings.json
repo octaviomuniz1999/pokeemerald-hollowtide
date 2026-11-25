@@ -19,5 +19,10 @@
   "hgss_map": "MAP_T26",
   "encdata": "ENCDATA_T26_OLIVINE_CITY",
   "lunia": "Breezeport City"
+ },
+ "MAP_PALM_ROUTE03": {
+  "hgss_map": "MAP_R39",
+  "encdata": "ENCDATA_R39_ROUTE_39",
+  "lunia": "Route 3"
  }
 }

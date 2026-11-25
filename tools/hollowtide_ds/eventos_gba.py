@@ -16,8 +16,10 @@ estes patches: reverta-os com patch -R antes de regenerar):
   0704-harvestvale-saida-sul.patch  (scr_seq_0850_T21.s: a saida para a Route 2 e a do sul, como no GBA)
   0706-route2-r30-eventos-gba.patch (zone_event/031_R30.json: Route 2, linhas 0-31 do GBA)
   0710-breezeport-eventos-gba.patch (zone_event/074_T26.json: Breezeport, mais o fim da Route 2 na linha dividida)
-  0711-breezeport-scripts.patch     (scr_seq_0911_T26.s: placa e porta da Route 2, saida oeste e ponte para a Route 39)
-  0712-route39-volta-breezeport.patch (Route 39: descendo, volta a borda oeste de Breezeport)
+  0711-breezeport-scripts.patch     (scr_seq_0911_T26.s: placa e porta da Route 2, saida oeste para a Route 3, a pe)
+  0714-route3-eventos-gba.patch     (zone_event/040_R39.json: Route 3 original, header da Route 39)
+  0715-route3-placas.patch          (scr_seq_0249_R39.s: as 3 placas da Route 3)
+  0716-route3-itens.patch           (scr_seq_0141.s: Big Pearl, Great Ball e Revive)
 Uso: eventos_gba.py HG_ENGINE PASTA_SAIDA
 """
 import difflib, json, os, sys
@@ -133,6 +135,35 @@ ZONAS = {
         novos_obj=[{"de": "032_R31", "script": "490 - 1 + _std_npc_trainer", "mapa": "Route2", "gba": (21, 35),
                     "lado": "esquerda"}],   # Qin
     ),
+    # Route 3 (PalmRoute03), header da Route 39 (a Route 3 do prototipo, area de Olivine). Os eventos do HGSS que nao
+    # existem em Lunia (Miltanks, fazendeiro, Cameron, Jasmine, a arvore de Apricorn) ficam escondidos; os 4
+    # treinadores da Route 39 viram 4 dos 5 da Route 3 (ids ja convertidos no 0100) e o 5o e um objeto novo
+    "040_R39": dict(
+        origem=ORIGENS["Route3"],
+        objetos={"TRAINER_SAILOR_EUGENE - 1 + _std_npc_trainer": ((36, 62), "esquerda", {     # Rui (Palm100_RouteRUI)
+                     "script": "472 - 1 + _std_npc_trainer", "graphics_id": "SPRITE_FISHING_2", "param0": 4}),
+                 "TRAINER_POKEFAN_M_DEREK - 1 + _std_npc_trainer": ((43, 44), "esquerda", {  # Tomas
+                     "script": "401 - 1 + _std_npc_trainer", "graphics_id": "SPRITE_GSBOY3", "param0": 3}),
+                 "TRAINER_POKEFAN_RUTH - 1 + _std_npc_trainer": ((12, 26), "direita", {      # Bento
+                     "script": "432 - 1 + _std_npc_trainer", "graphics_id": "SPRITE_MOUNT_2", "param0": 3}),
+                 "TRAINER_PSYCHIC_M_NELSON - 1 + _std_npc_trainer": ((33, 30), "esquerda", { # Iara
+                     "script": "426 - 1 + _std_npc_trainer", "graphics_id": "SPRITE_PICNICGIRL_2", "param0": 2}),
+                 "std_itemball_r39_tm60": ((3, 74), None)},          # Big Pearl (0716: o script de item troca o TM60)
+        esconder={"_EV_scr_seq_R39_000 + 1", 0, "std_apricorn_tree", "_EV_scr_seq_R39_006 + 1", "_EV_scr_seq_R39_007 + 1"},
+        placas={"_EV_scr_seq_R39_003 + 1": (28, 3),                  # Palm100_SignPlateau (0715)
+                "_EV_scr_seq_R39_004 + 1": (42, 54),                 # Palm100_SignBeach
+                "_EV_scr_seq_R39_005 + 1": (19, 61)},                # porta trancada da casa da praia (Palm280_DoorLocked)
+        tirar_placas={"std_hiddenitem_r39_nugget", "std_hiddenitem_r39_pp_up", "std_hiddenitem_r39_x_attack",
+                      "std_hiddenitem_r39_t26_full_heal"},            # itens escondidos do HGSS: o GBA nao tem
+        # os warps da fazenda (casa e celeiro da Route 39) ficam no telhado da casa da praia (tiles bloqueados)
+        warps={"MAP_R39R0101": (19, 58), "MAP_R39R0201": (20, 58)},
+        coord={}, tirar_coord={"_EV_scr_seq_R39_002 + 1"},
+        novos_obj=[{"de": "040_R39", "script": "TRAINER_SAILOR_EUGENE - 1 + _std_npc_trainer", "mapa": "Route3",
+                    "gba": (30, 8), "lado": "baixo",                  # Davi (Palm100_RouteDAVI)
+                    "campos": {"script": "439 - 1 + _std_npc_trainer", "graphics_id": "SPRITE_CAMPBOY_2", "param0": 2}},
+                   {"de": "039_R38", "script": "std_itemball_r38_max_potion", "mapa": "Route3", "gba": (18, 29)},   # Great Ball
+                   {"de": "039_R38", "script": "std_itemball_r38_lax_incense", "mapa": "Route3", "gba": (8, 9)}],   # Revive
+    ),
 }
 
 
@@ -141,11 +172,17 @@ def mover(j, z):
     w = lambda x, y: (X0 + ox + x, Z0 + oy + y)
     for o in j["object_events"]:
         if o["script"] in z["objetos"]:
-            (x, y), lado = z["objetos"][o["script"]]
+            val = z["objetos"][o["script"]]
+            (x, y), lado = val[0], val[1]
             o["x"], o["z"] = w(x, y)
             if lado:
                 o["movement_type"], o["initial_dir"] = OLHA[lado]
                 o["movement_range_x"] = o["movement_range_z"] = 0
+            for k, v in (val[2] if len(val) > 2 else {}).items():   # troca de treinador/sprite (Route 3)
+                o[k] = v
+        elif o["script"] in z.get("esconder", ()):
+            o["hidden_flag"] = "FLAG_GOT_TRAINER_CARD"   # ligada no comeco do jogo: o NPC do HGSS nunca aparece
+    j["coord_events"] = [c for c in j.get("coord_events", []) if c["script"] not in z.get("tirar_coord", ())]
     j["bg_events"] = [b for b in j["bg_events"] if b["script"] not in z["tirar_placas"]]
     usados = {}
     for b in j["bg_events"]:
@@ -225,36 +262,39 @@ def main(hg, out):
                       "// saida para a Route 3: a borda oeste, como no GBA (Palm090_ToRoute03); fechada ate vencer a Jay")
     a = new.index("scr_seq_T26_023:"); b = new.index("_HT_NorthOpen:", a)
     new = new[:a] + new[a:b].replace("_HT_StepDown", "_HT_StepRight") + new[b:]
-    r39 = gba("Brisa", 1, 33)
+    # depois da Jay, a trava so libera a passagem (a variavel muda e o gatilho nao dispara mais): a Route 3 original
+    # esta no desenho, a oeste, e se chega a pe (ate 25/11 havia aqui uma ponte provisoria para a Route 39)
     new = new.replace("_HT_NorthOpen:\n\tsetvar VAR_UNK_4078, 2\n\treleaseall\n\tend\n",
-                      "_HT_NorthOpen:\n\tsetvar VAR_UNK_4078, 2\n"
-                      "\t// ponte provisoria: a Route 3 original ainda nao existe; vai para a do prototipo (Route 39)\n"
-                      "\twarp MAP_R39, 0, 279, 222, DIR_NORTH\n\treleaseall\n\tend\n")
+                      "_HT_NorthOpen:\n\tsetvar VAR_UNK_4078, 2   // a Route 3 fica a oeste, a pe\n\treleaseall\n\tend\n")
     new = new.rstrip("\n") + "\n_HT_StepRight:\n\tstep MOVEMENT_STEP_RIGHT, 1\n\tstep_end\n\t.balign 4\n"
-    assert new.count("_HT_StepRight") == 2 and "warp MAP_R39" in new
+    assert new.count("_HT_StepRight") == 2 and "a Route 3 fica a oeste" in new
     open(os.path.join(out, "0711-breezeport-scripts.patch"), "w").write(diff(rel, old, new))
-    # Route 39: descendo para Olivine (celulas antigas, sem eventos), volta a borda oeste de Breezeport
-    parts = []
+    # Route 3: eventos nas posicoes do GBA (zona da Route 39)
+    zona(hg, out, "040_R39", "0714-route3-eventos-gba.patch")
+    # placas da Route 3: as da Route 39 eram placa de direcao e dicas de treinador; viram placas simples com as falas
+    # do GBA (texts.json, banco 396)
     rel = "data/scr_seq/scr_seq_0249_R39.s"
     old = open(os.path.join(hg, rel)).read()
-    new = old.replace("scrdef scr_seq_R39_007\nscrdef_end", "scrdef scr_seq_R39_007\nscrdef scr_seq_R39_008\nscrdef_end")
-    new = new.rstrip("\n") + ("\n\n// Hollowtide: ponte provisoria, a Route 39 (Route 3 do prototipo) volta para a borda oeste de\n"
-                               f"// Breezeport nos mapas originais\nscr_seq_R39_008:\n\tlockall\n\twarp MAP_T26, 0, {r39[0]}, {r39[1]}, DIR_EAST\n"
-                               "\treleaseall\n\tend\n")
+    new = old
+    for scr, msg, nota in (("003", 0, "Palm100_SignPlateau"), ("004", 1, "Palm100_SignBeach"),
+                           ("005", 2, "porta trancada da casa da praia (Palm280_DoorLocked)")):
+        a = new.index(f"scr_seq_R39_{scr}:\n"); b = new.index("\tend\n", a) + len("\tend\n")
+        new = new[:a] + (f"scr_seq_R39_{scr}:   // Route 3: {nota}\n\tplay_se SEQ_SE_DP_SELECT\n\tlockall\n"
+                         f"\tnpc_msg {msg}\n\twait_button\n\tclosemsg\n\treleaseall\n\tend\n") + new[b:]
     assert new != old
-    parts.append(diff(rel, old, new))
-    rel = "data/scr_seq/include/event_R39.inc"
+    open(os.path.join(out, "0715-route3-placas.patch"), "w").write(diff(rel, old, new))
+    # itens da Route 3 (GBA): Big Pearl, Great Ball e Revive, nos scripts de item da Route 39 (TM60) e da Route 38
+    # (fora de Lunia)
+    rel = "data/scr_seq/scr_seq_0141.s"
     old = open(os.path.join(hg, rel)).read()
-    new = old.replace(".equ _EV_scr_seq_R39_007, 7\n", ".equ _EV_scr_seq_R39_007, 7\n.equ _EV_scr_seq_R39_008, 8\n")
-    assert new != old
-    parts.append(diff(rel, old, new))
-    rel = "data/eventdata/zone_event/040_R39.json"
-    old = open(os.path.join(hg, rel)).read()
-    jj = json.loads(old)
-    jj.setdefault("coord_events", []).append({"script": "_EV_scr_seq_R39_008 + 1", "x": 277, "z": 223, "width": 5,
-                                              "length": 1, "y": 0, "value": 0, "var": "VAR_TEMP_x4001"})
-    parts.append(diff(rel, old, json.dumps(jj, indent=2, ensure_ascii=False) + ("\n" if old.endswith("\n") else "")))
-    open(os.path.join(out, "0712-route39-volta-breezeport.patch"), "w").write("".join(parts))
+    new = old
+    for scr, era, item, nota in (("084", 387, 89, "Big Pearl (PalmRoute03 3,74); era TM60"),
+                                 ("082", 24, 3, "Great Ball (PalmRoute03 18,29); era Max Potion da Route 38"),
+                                 ("083", 255, 28, "Revive (PalmRoute03 8,9); era Lax Incense da Route 38")):
+        a = f"scr_seq_0141_{scr}:\n\tsetvar VAR_SPECIAL_x8008, {era}\n"
+        assert a in new, scr
+        new = new.replace(a, f"scr_seq_0141_{scr}:\n\tsetvar VAR_SPECIAL_x8008, {item}   // Hollowtide: {nota}\n")
+    open(os.path.join(out, "0716-route3-itens.patch"), "w").write(diff(rel, old, new))
     rel = "data/scr_seq/scr_seq_0850_T21.s"
     old = open(os.path.join(hg, rel)).read()
     new = old.replace("// chegada pelo leste (Route 1)", "// chegada pelo norte (Route 1), como no GBA (Palm072_Arrival)")

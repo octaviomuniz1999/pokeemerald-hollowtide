@@ -143,3 +143,12 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
   modelo visível.
 - A colisão não muda numa rodada de acabamento sem estar listada: `check_colisao.py --antes` compara as builds.
 - Um modelo de construção tem de estar na lista de toda célula de onde é visto (`check_construcoes.py`).
+
+## 25/11/2026 — Route 3 original
+- O diretor mandou seguir (o laboratório fica de lado): a Route 3 do GBA entra no desenho, a oeste de Breezeport, no
+  header da Route 39 (a Route 3 do protótipo). Ferralia ainda não.
+- Mapas que o GBA desenha planos, com paredões e escadas só no desenho, ganham patamares no DS: cada escada sobe um
+  nível (`TERRACOS` em `gba2grade.py`).
+- Os NPCs do HGSS que não existem em Lunia ficam escondidos (`hidden_flag FLAG_GOT_TRAINER_CARD`), em vez de apagados:
+  os ids dos objetos e dos scripts continuam válidos.
+- Depois da Jay, a saída oeste de Breezeport leva à Route 3 a pé; a ponte provisória para a Route 39 saiu.

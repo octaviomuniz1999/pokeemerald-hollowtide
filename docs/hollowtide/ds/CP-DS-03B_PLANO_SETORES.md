@@ -489,3 +489,34 @@ mapa inteiro.
 
 **Pendente, sem a captura marcada do diretor:** o "equipamento do laboratório". O interior do laboratório é o do Elm
 do HGSS, sem alteração; as capturas (`--interior 61 ...`) não mostram nada quebrado. Falta saber qual peça é.
+
+## Route 3 original (25/11)
+
+Ordem do diretor: deixar o laboratório de lado e seguir. A Route 3 (GBA `PalmRoute03`, 56x80) entra no desenho
+global a oeste de Breezeport, como na ligação do GBA (`left`, deslocamento −20): desenho (9,156)–(64,235), células
+(0,4)–(1,7). A saída norte (Ferralia) ainda termina na floresta; Ferralia não começou.
+
+- **Header:** o da Route 39 (43), a Route 3 do protótipo, área de Olivine: lista de construções 6 e doadores de
+  Breezeport. As células (0,7) e (1,7), que o mar levava ao header de Breezeport, agora são da Route 3.
+- **Relevo:** no GBA a Route 3 é plana em elevação; os paredões de pedra e as escadas são só desenho. `terracos()`
+  monta os patamares:
+  - cada escada sobe um nível para o norte; a praia é o nível 1 e o alto, o 4;
+  - os bolsões sem escada pegam o patamar alcançado mais perto, por árvores e grama, sem atravessar pedra;
+  - as árvores pegam o patamar da mesma linha;
+  - a pedra fica no lado de cima, como na montanha de Breezeport.
+- **Construções:** a casa azul da praia (porta trancada, `Palm280_DoorLocked`), as pedras soltas como rocha e o
+  lampião com o poste de Olivine.
+- **Eventos** (`0714`–`0716`, gerados por `eventos_gba.py`):
+  - os 4 treinadores da Route 39 viram Rui, Tomás, Bento e Iara (ids do `0100`, sprites de pescador, caçador de
+    insetos, montanhista e piquenique), e o Davi (campista) entra como objeto novo;
+  - itens do GBA: Big Pearl, Great Ball e Revive, nos scripts de item da Route 39 (TM60) e da Route 38;
+  - as 3 placas (praia, platô, porta) com as falas do GBA (banco 396);
+  - os NPCs do HGSS (Miltanks, fazendeiro, Cameron, Jasmine, árvore de Apricorn) ficam escondidos, e os itens
+    escondidos do HGSS saem;
+  - encontros: os da Route 3 do GBA na tabela da Route 39 (`map_bindings.json`); nome do lugar: "Route 3".
+- **Ligação com Breezeport:** a trava da borda oeste continua até vencer a Jay; depois ela só libera a passagem, a
+  pé. A ponte provisória para a Route 39 antiga (`0712`) saiu.
+
+**Validação:** varredura visual (50 capturas); `check_construcoes` ok (agora pela distância da câmera, não só pela
+célula vizinha); colisão da Route 3 igual à do GBA tile a tile, e nenhum tile fora dela mudou; `qa_route3.py` 7/7
+(escadas, batalha com o Tomás, 3 placas, Great Ball, praia até Breezeport).

@@ -80,6 +80,18 @@
  Huh? What?\nWhat about that Pokémon?\fI don’t have any mail.\rZzz...
  This Mail isn’t for me.
  Oh, hey! I got an email!\r...\nHuh?\fI don’t know this Pokémon.\fI’ll just let you take care of it.\r
+--- a/data/text/custom/396.txt
++++ b/data/text/custom/396.txt
+@@ -1,6 +1,6 @@
+-Rt. 39\nSouth to Olivine City
+-Moomoo Farm\nEnjoy Our Fresh and Tasty Milk
+-Trainer Tips\rUse Headbutt on trees to shake\nPokémon out.\rDifferent kinds of Pokémon drop out\nof trees.\rUse Headbutt on any tree you see!
++Route 3 - Plateau\nNorth: Ferralia City
++Route 3\nEast: Breezeport City\rNorth: up the Serra trail to\nthe plateau and Ferralia City.
++The door is locked.
+ MILTANK: Mooo!
+ Baoba: ...Ohh!\nWhat you are holding is...\fwhat they call...a Pokédex!\fHaven’t seen one of those in ages.\rMy name is Baoba!\rI used to run a Safari Zone in\nFuchsia City, but it was becoming\fout of date with new entertainment\foptions coming out.\rI decided to go overseas to learn\nthe newest technology and open a\fstate-of-the-art Safari Zone\fin Cianwood.\rIt may be more than a coincidence\nthat we are chatting.\rWhy don’t we register each other’s\nnumbers in the Pokégear?\rI can give you a call once the Safari\nZone is open before I call anyone else!\r
+ Do you want to register? {YESNO 0}
 --- a/data/text/custom/492.txt
 +++ b/data/text/custom/492.txt
 @@ -1,7 +1,7 @@
