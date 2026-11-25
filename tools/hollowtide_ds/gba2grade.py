@@ -200,6 +200,10 @@ def construcoes(key, gx, gy, grid, alt):
 MAPS = {"Dawnmere": ("LittlerootTown", 0, 0), "Route1": ("Route101", 34, 17), "Harvestvale": ("OldaleTown", 35, 70),
         "Route2": ("PalmRoute02", 35, 107),        # ligacoes do GBA: Route 2 abaixo de Harvestvale (deslocamento 0)
         "Brisa": ("PalmBrisa", 35, 155)}           # e Breezeport abaixo da Route 2 (deslocamento 0)
+# Bases de lampiao do GBA (auditoria de 25/11): viravam tile bloqueado sem modelo (um quadrado de grama no meio da
+# calcada e uma parede invisivel). Recebem o poste de Olivine (as_light, 0xF8, acrescentado a lista 6 no land.json).
+LAMPIOES = {"gTileset_Lilycove": {0x361, 0x364}}         # 0x362 e topo de lampiao (andavel)
+MODELO_LAMPIAO = 0xF8
 ESCADAS = {0x0AF}                           # escada do GBA: rampa no DS (entre os vizinhos norte e sul)
 # Deslocamento do desenho dentro da area de blocos. Cada celula de 32x32 tem UM header (zona de eventos, encontros,
 # musica): com (30, 21), quase toda celula fica com um mapa so: Dawnmere na coluna de blocos 1, a Route 1 nas colunas
@@ -261,13 +265,15 @@ def convert(name):
         else:
             c = "#" if col else "."
             unknown[mt] += 1
-        if c in "#c" and not col:
+        if mt in LAMPIOES.get(L["secondary_tileset"], ()):
+            c = "S"                                      # base do lampiao: modelo as_light (build_global)
+        elif c in "#c" and not col:
             c = "="                                      # fidelidade: sem colisao no GBA, o tile e andavel no DS
         tiles.append(c); elev.append(el)
     return j, w, h, tiles, elev, unknown
 
 
-def heights(w, h, elev):
+def heights(w, h, elev, tiles=None):
     H = [{4: 2, 5: 2, 6: 3, 7: 3}.get(e, 1) for e in elev]  # 3 = chao (1); 4-5 = elevado (2); 6-7 = cume (3)
     for _ in range(2):                                   # tiles de elevacao 0 (bloqueados) herdam dos vizinhos
         for i, e in enumerate(elev):
@@ -277,7 +283,98 @@ def heights(w, h, elev):
                       if 0 <= x + dx < w and 0 <= y + dy < h and elev[(y + dy) * w + x + dx] != 0]
                 if nb:
                     H[i] = max(set(nb), key=nb.count)
+    if tiles:
+        # "poco": grupo de tiles de grama/flor/arvore/mato numa altura so, cercado (fora rocha, cerca e construcao)
+        # so por tiles mais altos, sobe para a menor altura em volta. Os elevados do GBA tem arvores e flores com
+        # elevacao 3 no meio do patamar 4 (lagoa cercada de Dawnmere): no DS saia uma face de penhasco solta em volta
+        # de cada arvore (auditoria de 25/11)
+        soft = set(".fghTe")
+        borda = set("#cSBD")
+        for _ in range(4):
+            vistos, mudou = set(), False
+            for i in range(w * h):
+                if i in vistos or tiles[i] not in soft:
+                    continue
+                comp, pilha, alto, fora = [], [i], [], False
+                vistos.add(i)
+                while pilha:
+                    k = pilha.pop(); comp.append(k)
+                    x, y = k % w, k // w
+                    for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                        xx, yy = x + dx, y + dy
+                        if not (0 <= xx < w and 0 <= yy < h):
+                            fora = True; continue
+                        j = yy * w + xx
+                        if tiles[j] in borda:
+                            continue
+                        if tiles[j] in soft and H[j] == H[i]:
+                            if j not in vistos:
+                                vistos.add(j); pilha.append(j)
+                        else:
+                            alto.append(H[j])
+                if not fora and alto and min(alto) > H[i] and len(comp) <= 12:
+                    for k in comp:
+                        H[k] = min(alto)
+                    mudou = True
+            if not mudou:
+                break
+        # rocha do penhasco ('#'): no GBA a faixa de pedra e a face e a beirada do patamar; no DS ela fica na altura
+        # do lado de CIMA (o mais alto dos vizinhos que nao sao rocha, a 1 tile; depois a 2), e a face do penhasco sai
+        # na borda de fora da faixa, contínua. Antes cada tile de pedra herdava a altura da maioria dos vizinhos e as
+        # faces saiam em pedacos soltos (montanha de Breezeport, cercado da Route 2).
+        rock = [t == "#" for t in tiles]
+        novo = list(H)
+        for i in range(w * h):
+            if not rock[i]:
+                continue
+            x, y = i % w, i // w
+            for r in (1, 2):
+                nb = [H[(y + dy) * w + x + dx] for dx in range(-r, r + 1) for dy in range(-r, r + 1)
+                      if 0 <= x + dx < w and 0 <= y + dy < h and not rock[(y + dy) * w + x + dx]]
+                if nb:
+                    novo[i] = max(nb)
+                    break
+        H = novo
+        # arvores logo ao norte de um patamar mais alto (atras dele, para a camera) sobem para a altura do patamar,
+        # ate 3 tiles para o norte: embaixo, a beirada do patamar cortava o pe das arvores numa linha reta (anel da
+        # montanha de Breezeport; auditoria de 25/11)
+        for i in range(w * h):
+            x, y = i % w, i // w
+            if tiles[i] == "T" and y + 1 < h and tiles[i + w] != "T" and H[i + w] > H[i] and tiles[i + w] != "~":
+                for k in range(3):
+                    j = i - k * w
+                    if j < 0 or tiles[j] != "T" or H[j] >= H[i + w]:
+                        break
+                    H[j] = H[i + w]
     return H
+
+
+def rochas_soltas(tiles, hh, w, h):
+    """Pedra solta do GBA (rocha bloqueada no meio da areia ou do mar, ate 12 tiles): vira 'R', um bloco de rocha 1
+    tile acima do chao em volta. Como '#', ela tinha chao de grama e saia como ilhas de grama no mar e quadrados
+    verdes na praia de Breezeport (auditoria de 25/11)."""
+    vistos = set()
+    for i in range(w * h):
+        if tiles[i] != "#" or i in vistos:
+            continue
+        comp, pilha, viz = [], [i], []
+        vistos.add(i)
+        while pilha:
+            k = pilha.pop(); comp.append(k)
+            x, y = k % w, k // w
+            for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                if not (0 <= x + dx < w and 0 <= y + dy < h):
+                    continue
+                j = (y + dy) * w + x + dx
+                if tiles[j] == "#":
+                    if j not in vistos:
+                        vistos.add(j); pilha.append(j)
+                else:
+                    viz.append(j)
+        if len(comp) <= 12 and viz and all(tiles[j] in "~=" for j in viz):
+            base = max(int(hh[j]) for j in viz if hh[j] != "r")
+            for k in comp:
+                tiles[k], hh[k] = "R", base + 1
 
 
 def build_global():
@@ -289,11 +386,20 @@ def build_global():
     for key, (name, ox, oy) in MAPS.items():
         j, w, h, tiles, elev, unknown = convert(name)
         redesenhar(key, tiles, w, h)
-        hh = heights(w, h, elev)
+        hh = heights(w, h, elev, tiles)
         _, _, _, _, vals = load_map(name)
         for i, v in enumerate(vals):                     # escadas: rampa (so as que nao foram ajustadas a mao)
             if v & 0x3FF in ESCADAS and key != "Dawnmere":
                 hh[i] = "r"
+        rochas_soltas(tiles, hh, w, h)
+        for i, v in enumerate(vals):
+            # passagem de elevacao 0 andavel entre alturas diferentes (norte x sul): rampa. Era a entrada da lagoa
+            # cercada de Dawnmere, que virava um degrau sem subida depois que o patamar ficou inteiro (25/11)
+            x, y = i % w, i // w
+            if v >> 12 == 0 and not (v >> 10) & 3 and tiles[i] in "=." and 0 < y < h - 1 and hh[i] != "r":
+                n_, s_ = hh[i - w], hh[i + w]
+                if "r" not in (n_, s_) and n_ != s_:
+                    hh[i] = "r"
         gx, gy = ox + MARGIN[0], oy + MARGIN[1]
         for y in range(h):
             for x in range(w):
@@ -302,6 +408,10 @@ def build_global():
                 owner[gy + y][gx + x] = key
         objs, rel = construcoes(key, gx, gy, grid, alt)
         objetos += objs
+        lamps = LAMPIOES.get(load_map(name)[1]["secondary_tileset"], ())
+        for i, v in enumerate(vals):
+            if v & 0x3FF in lamps:
+                objetos.append(f"{MODELO_LAMPIAO} {gx + i % w} {gy + i // w} 0")
         for b in j.get("bg_events", []):                 # placas do GBA: modelo de placa do HGSS (board_b) no tile
             if b.get("type") == "sign" and not re.search(r"Lamp|Keeper|DoorLocked", b.get("script", "")):
                 # placa de verdade (board_b, nas listas 0 e 6); lampioes e portas ficam sem modelo
@@ -309,6 +419,21 @@ def build_global():
         report[key] = {"gba": name, "origem": (gx, gy), "tam": (w, h), "desconhecidos": dict(unknown),
                        "warps": [(wv["x"] + gx, wv["y"] + gy, wv["dest_map"]) for wv in j.get("warp_events", [])],
                        "construcoes": rel}
+    # divisa entre mapas: tile de grama na primeira ou ultima coluna/linha de um mapa, entre caminho dos dois lados
+    # (atravessando a divisa), vira caminho. No GBA a Route 101 comeca com uma coluna de grama e o caminho de
+    # Dawnmere parava nela: no DS ficava um corte de grama no meio da saida leste (auditoria de 25/11).
+    for key, r in report.items():
+        gx, gy = r["origem"]; w, h = r["tam"]
+        bordas = [(gx, y) for y in range(gy, gy + h)] + [(gx + w - 1, y) for y in range(gy, gy + h)] + \
+                 [(x, gy) for x in range(gx, gx + w)] + [(x, gy + h - 1) for x in range(gx, gx + w)]
+        for x, y in bordas:
+            if grid[y][x] != ".":
+                continue
+            for dx, dy in ((1, 0), (0, 1)):
+                a_, b_ = (x - dx, y - dy), (x + dx, y + dy)
+                if all(0 <= p[0] < W and 0 <= p[1] < H for p in (a_, b_)) and grid[a_[1]][a_[0]] == "=" and \
+                        grid[b_[1]][b_[0]] == "=" and owner[a_[1]][a_[0]] != owner[b_[1]][b_[0]]:
+                    grid[y][x] = "="
     # mar alem dos mapas: tile sem mapa ao lado (ou abaixo) de agua do GBA continua agua, para o mar nao acabar numa
     # floresta (a borda externa do desenho recebe colisao no mapa_global, "barreira")
     for key, (name, ox, oy) in MAPS.items():

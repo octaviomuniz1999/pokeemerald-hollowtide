@@ -425,3 +425,64 @@ Breezeport), ou ter os NPCs do HGSS tirados.
   (casa de Breezeport). A auditoria não lê `hidden_flag`, por isso ainda lista as falas deles.
 - O resto das falas originais alcançáveis é neutro (TV, pia, geladeira, livros do laboratório, PC, Union Room) ou
   funcional (o pescador da Old Rod em T26R0601) e fica.
+
+## Auditoria corretiva de acabamento (25/11)
+
+Ordem do diretor: corrigir paths, sobreposições, relevo, bordas, entorno das construções e colisão, com varredura do
+mapa inteiro e não só dos pontos marcados. Escopo: os mapas do DS do Cap. 1 (Dawnmere, Route 1, Harvestvale,
+Route 2, Breezeport). O GBA continua congelado em 23ap; toda correção é no conversor e no gerador, então vale para o
+mapa inteiro.
+
+**Ferramentas novas**
+- `qa_visual.py` + `provas/visual` (só QA): o PC do quarto espera 20 quadros e faz um warp. O robô troca o destino na
+  RAM e visita qualquer ponto do mundo com o mapa carregado de verdade. Varre cada mapa em grade de 12x8 tiles (114
+  capturas), com o relógio fixado em 13h (`faketime`), e monta folhas de contato. `--interior MAPA X Z` fotografa um
+  interior.
+- `check_construcoes.py`: todo modelo de um bloco tem de estar na lista de construções da célula dele e das células
+  vizinhas pisáveis. Senão o HGSS não o carrega e ele some.
+- `check_colisao.py ROM --antes ROM`: lista cada tile cuja colisão mudou entre duas builds.
+- `qa_acabamento.py`: teste dirigido nas áreas corrigidas (8 casos).
+- `comparativo.py`: capturas ANTES/DEPOIS (`docs/hollowtide/ds/capturas/acabamento_2026-11-25/`).
+
+**Tipos de erro e correção (todas as ocorrências)**
+1. Árvores cortadas e em fatias (todos os mapas). Medido na Route 29: `tree01` é UMA árvore inteira num quad de 4
+   tiles (u 0-1024), e `tree01_re` é a fileira que repete uma árvore a cada 2 tiles. O gerador usava meia textura na
+   árvore sozinha e a fatia do meio nas sobras de 1 tile. Agora: árvore 2x2 sozinha = árvore inteira; 2x2 lado a
+   lado = fileira `tree01_re` (até 4 por quad); sobras de 1 tile (arbustos e cercas vivas do GBA) = arbusto em meia
+   escala, que não cobre mais os telhados (torre de Harvestvale).
+2. Cantos de caminho (todos). Grama com caminho em dois lados vizinhos recebia as duas faixas de borda inteiras, uma
+   por cima da outra: quadrado escuro no canto. Agora cada faixa é cortada em meia-esquadria na diagonal. Grama entre
+   dois caminhos opostos leva meia faixa de cada lado. A borda passa também por baixo de flores, mato, árvores,
+   cercas e ressaltos, onde antes o caminho acabava num corte reto.
+3. Frestas de pixel (pontinhos e linhas pretas entre tiles, todos). Juntas em T entre quads do chão de tamanhos
+   diferentes. Um forro de grama 0,03 tile abaixo do chão, em retângulos de até 8x8, cobre a fresta.
+4. Falha do caminho na divisa entre mapas. A Route 101 do GBA começa com uma coluna de grama, e a saída leste de
+   Dawnmere parava nela. Tile de grama na borda de um mapa, com caminho dos dois lados de mapas diferentes, vira
+   caminho.
+5. Lampiões invisíveis (Breezeport e Route 2, 18). A base do lampião do GBA (0x361/0x364 do tileset Lilycove) era
+   tile bloqueado sem modelo: um quadrado de grama na calçada e uma parede invisível. Agora recebe o poste de Olivine
+   (`as_light`, 0xF8), acrescentado às listas 0 e 6.
+6. Casa da Route 2 sumia. O bloco dela fica numa célula com o header de Breezeport (lista 6), sem o modelo 0x25 e a
+   porta 0x32. `land.json` aceita `modelos_area` por lista; as listas 0 e 6 recebem o que é visto delas.
+7. Penhascos em pedaços (montanha de Breezeport, cercado da Route 2, lagoa de Dawnmere).
+   - A faixa de rocha (`#`) fica na altura do lado de cima, e a face sai na borda de fora, contínua.
+   - "Poço": um grupo de grama/árvore cercado só de tiles mais altos sobe para o nível em volta.
+   - Passagem de elevação 0 do GBA entre alturas diferentes vira rampa (entrada da lagoa de Dawnmere).
+   - Árvores logo atrás de um patamar sobem para o nível dele, até 3 tiles; antes a beirada cortava o pé delas.
+   - As faces leste/oeste avançam 0,5 tile para o lado baixo: verticais, a câmera as via de quina, como uma linha
+     escura solta.
+8. Grama sob construções e objetos na areia (casas da praia, lampiões). Cada grupo de tiles bloqueados pega o chão da
+   maioria dos vizinhos andáveis.
+9. Pedras soltas da praia e do mar (21 tiles) viravam ilhas de grama. Agora são blocos de rocha `R`, 1 tile acima do
+   chão.
+
+**Validação**
+- Varredura completa depois das correções: 114 capturas, revistas.
+- `check_construcoes`: ok.
+- `check_colisao --antes`: 0 tiles com colisão mudada. Nenhum bloqueio novo e nenhuma passagem nova; lampiões e
+  pedras já bloqueavam, agora se veem.
+- `qa_acabamento`: 8/8.
+- Cap. 1 inteiro (`qa_cp03d --cap1`) e SAVE/CONTINUE (`qa_save`).
+
+**Pendente, sem a captura marcada do diretor:** o "equipamento do laboratório". O interior do laboratório é o do Elm
+do HGSS, sem alteração; as capturas (`--interior 61 ...`) não mostram nada quebrado. Falta saber qual peça é.

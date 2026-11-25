@@ -133,3 +133,13 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
   decorativa, como o diretor decidiu.
 - Farol: o diretor autorizou o farol de Olivine. Ele fica na ponta de areia abaixo do faroleiro e da casa dele
   (GBA 61–68 × 48–54), decorativo.
+
+## 25/11/2026 — auditoria corretiva de acabamento dos mapas do DS
+- Correções de acabamento entram no conversor e no gerador (`gba2grade.py`, `mapa_grade.py`, `mapa_global.py`),
+  nunca à mão num mapa: assim cada tipo de erro sai do mapa inteiro. O GBA segue congelado em 23ap.
+- Árvores no padrão da Route 29: `tree01` (árvore inteira, 4 tiles) e `tree01_re` (fileira). Os arbustos de 1 tile
+  do GBA viram árvores em meia escala.
+- Lampiões do GBA → poste de Olivine (`as_light`). Pedras soltas → bloco de rocha. Nenhum tile bloqueado fica sem
+  modelo visível.
+- A colisão não muda numa rodada de acabamento sem estar listada: `check_colisao.py --antes` compara as builds.
+- Um modelo de construção tem de estar na lista de toda célula de onde é visto (`check_construcoes.py`).

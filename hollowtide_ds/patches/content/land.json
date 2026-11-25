@@ -15,32 +15,44 @@
    "Brisa": 77
   },
   "padrao": 60,
-  "modelos_area": {
-   "lista": 0,
-   "acrescentar": [
-    314,
-    45,
-    113,
-    115
-   ],
-   "remover": [
-    21,
-    23,
-    26,
-    27,
-    28,
-    29,
-    33,
-    34,
-    35,
-    36,
-    51,
-    52,
-    53,
-    150
-   ],
-   "_por_que": "lista 0 (area 2): saem os modelos que so os mapas antigos do prototipo usavam (New Bark, Cherrygrove, Routes 29-31, hoje inalcancaveis); ficam os de Lunia e os das Routes 26/27. As texturas sao do conjunto a/0/7/0 da lista, que tem teto de memoria: o espaco liberado recebe as texturas dos modelos de fora (nsbtx.py)"
-  },
+  "modelos_area": [
+   {
+    "lista": 0,
+    "acrescentar": [
+     314,
+     45,
+     113,
+     115,
+     248
+    ],
+    "remover": [
+     21,
+     23,
+     26,
+     27,
+     28,
+     29,
+     33,
+     34,
+     35,
+     36,
+     51,
+     52,
+     53,
+     150
+    ],
+    "_por_que": "lista 0 (area 2): saem os modelos que so os mapas antigos do prototipo usavam (New Bark, Cherrygrove, Routes 29-31, hoje inalcancaveis); ficam os de Lunia e os das Routes 26/27. As texturas sao do conjunto a/0/7/0 da lista, que tem teto de memoria: o espaco liberado recebe as texturas dos modelos de fora (nsbtx.py). O poste de Olivine (as_light, 0xF8) tambem: o lampiao da Route 2 fica numa celula de Breezeport mas e visto das celulas da Route 2 (check_construcoes.py)"
+   },
+   {
+    "lista": 6,
+    "acrescentar": [
+     37,
+     50,
+     248
+    ],
+    "_por_que": "auditoria de acabamento 25/11: a casa de porta trancada da Route 2 (0x25) e a porta dela (0x32) ficam num bloco com o header de Breezeport (lista 6, area de Olivine); sem os modelos na lista 6 a casa sumia quando o jogador chegava perto (check_construcoes.py); o poste de Olivine (as_light, 0xF8) entra nos lampioes de Breezeport, que eram tiles bloqueados sem modelo"
+   }
+  ],
   "nota": "CP-DS-03B: Dawnmere, Route 1, Harvestvale e Route 2 convertidos dos mapas do GBA (gba2grade.py), a partir da celula (0,0) da matriz 0 (canto superior esquerdo, vazio no HGSS). O desenho fica deslocado (30,21) para que cada celula tenha um mapa so (um header por celula). A Route 2 usa o header R30; o fim dela (linhas 32-47 do GBA) divide a linha de blocos 5 com Breezeport e fica com o header de Breezeport (T26, area 7: doadores de material de Olivine e da Route 39). A borda externa do desenho tem colisao. Os mapas do caminho A ficam nas celulas antigas, sem eventos.",
   "headers_celula": {
    "2,5": 77,

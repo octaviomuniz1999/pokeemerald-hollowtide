@@ -12,7 +12,8 @@ Entrada no land.json: {"global": "lunia_cap1.txt", "matriz": 0, "celula": [21, 1
                        "headers": {"Dawnmere": 60, "Route1": 33, "Harvestvale": 67}, "padrao": 60,
                        "modelos_area": {"lista": 0, "acrescentar": [314, 311], "remover": [21]}}
   (modelos_area: construcoes de outras areas acrescentadas a lista a/0/4/3 que a area dos headers usa; formato da lista:
-   u16 quantidade + u16 modelos)
+   u16 quantidade + u16 modelos. Pode ser uma lista de entradas, uma por lista de construcoes: um modelo tem de estar
+   na lista de toda celula de onde e visto, senao some da tela; check_construcoes.py confere)
   "doadores_por_header": {"77": [58, 59, ...]}: celulas cujo header e de outra area (Breezeport = Olivine, area 7) usam
   doadores dessa area; "substituir": {"flower02": "flower01", "fence_b": null} para materiais que ela nao tem.
 """
@@ -152,27 +153,29 @@ def apply_global(rom, narc, entry, base_dir):
                                                                  # um resto da celula antiga vira degrau na divisa
     mnarc.files[entry["matriz"]] = mt.pack()
     if "modelos_area" in entry:                          # modelos de construcao de outras areas: entram na lista da area
-        lst, novos = entry["modelos_area"]["lista"], entry["modelos_area"]["acrescentar"]
-        fora = set(entry["modelos_area"].get("remover", []))
-        aid = rom.filenames.idOf("a/0/4/3")
-        anarc = ndspy.narc.NARC(rom.files[aid])
-        f = anarc.files[lst]
-        cur = list(struct.unpack_from("<%dH" % (len(f) // 2), f))
-        ids_m = [m for m in cur[1:1 + cur[0]] if m not in fora] + [m for m in novos if m not in cur[1:1 + cur[0]]]
-        anarc.files[lst] = struct.pack("<%dH" % (len(ids_m) + 1), len(ids_m), *ids_m)
-        rom.files[aid] = anarc.save()
-        print(f"lista de construcoes {lst}: {cur[0]} -> {len(ids_m)} modelos")
-        # as construcoes usam o conjunto de texturas da LISTA (a/0/7/0), procurado pelo nome: as texturas dos modelos
-        # de fora entram nesse conjunto (nsbtx.py)
-        import nsbtx
-        tid = rom.filenames.idOf("a/0/7/0")
-        tnarc = ndspy.narc.NARC(rom.files[tid])
-        bmid = rom.filenames.idOf("a/0/4/0")
-        bm = ndspy.narc.NARC(rom.files[bmid])
-        tnarc.files[lst], novos = nsbtx.merge(bytes(tnarc.files[lst]), [bytes(bm.files[m]) for m in novos],
-                                              [bytes(bm.files[m]) for m in ids_m])
-        rom.files[tid] = tnarc.save()
-        print(f"conjunto de texturas {lst}: +{len(novos)} texturas/paletas dos modelos de fora")
+        ma = entry["modelos_area"]
+        for item in (ma if isinstance(ma, list) else [ma]):   # uma entrada por lista de construcoes
+            lst, novos = item["lista"], item["acrescentar"]
+            fora = set(item.get("remover", []))
+            aid = rom.filenames.idOf("a/0/4/3")
+            anarc = ndspy.narc.NARC(rom.files[aid])
+            f = anarc.files[lst]
+            cur = list(struct.unpack_from("<%dH" % (len(f) // 2), f))
+            ids_m = [m for m in cur[1:1 + cur[0]] if m not in fora] + [m for m in novos if m not in cur[1:1 + cur[0]]]
+            anarc.files[lst] = struct.pack("<%dH" % (len(ids_m) + 1), len(ids_m), *ids_m)
+            rom.files[aid] = anarc.save()
+            print(f"lista de construcoes {lst}: {cur[0]} -> {len(ids_m)} modelos")
+            # as construcoes usam o conjunto de texturas da LISTA (a/0/7/0), procurado pelo nome: as texturas dos
+            # modelos de fora entram nesse conjunto (nsbtx.py)
+            import nsbtx
+            tid = rom.filenames.idOf("a/0/7/0")
+            tnarc = ndspy.narc.NARC(rom.files[tid])
+            bmid = rom.filenames.idOf("a/0/4/0")
+            bm = ndspy.narc.NARC(rom.files[bmid])
+            tnarc.files[lst], tn = nsbtx.merge(bytes(tnarc.files[lst]), [bytes(bm.files[m]) for m in novos],
+                                               [bytes(bm.files[m]) for m in ids_m])
+            rom.files[tid] = tnarc.save()
+            print(f"conjunto de texturas {lst}: +{len(tn)} texturas/paletas dos modelos de fora")
     rom.files[mid] = mnarc.save()
     print(f"desenho global {entry['global']}: {nbx}x{nby} blocos novos ({min(ids.values())}-{max(ids.values())}) "
           f"nas celulas ({cx0},{cy0})-({cx0 + nbx - 1},{cy0 + nby - 1}); headers {sorted(set(hdr.values()))}")

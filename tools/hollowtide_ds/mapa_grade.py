@@ -10,6 +10,7 @@ Arquivo do setor (texto, revisavel no repositorio):
                 ~  agua (lagoa)     T  arvore (floresta)    #  bloqueado (beira de penhasco, lados de rampa)
                 S  objeto (o tile fica bloqueado; o modelo vem de [objetos])
                 v  ressalto (pulo so para o sul, 0x803B; beirada baixa desenhada na borda sul)
+                R  rocha solta (pedra na areia ou no mar; bloqueada, topo e faces de rocha, 1 tile acima do chao)
   [alturas]   32 linhas de 32 caracteres: altura do chao em tiles (0-9); r = rampa (sobe para o vizinho mais alto
               no eixo norte-sul)
   [objetos]   linhas "modelo x z [dy]" (construcoes da lista da area; x e z em tiles, podem ter fracao; altura = a do
@@ -34,9 +35,9 @@ def set_size(g):
     GH, GW = len(g["tiles"]), len(g["tiles"][0])
 UP = 511 << 10
 MAXQ = 4
-FLOOR = {".": "grass01", "=": "road01", "e": "grass01", "f": "grass01", "g": "grass01", "h": "grass01", "c": "grass01",
+FLOOR = {"R": "wall01_g", ".": "grass01", "=": "road01", "e": "grass01", "f": "grass01", "g": "grass01", "h": "grass01", "c": "grass01",
          "T": "grass01", "#": "grass01", "S": "grass01", "~": None, "B": "grass01", "D": "road01", "v": "grass01"}
-PERM = {"T": 0x8000, "#": 0x8000, "S": 0x8000, "c": 0x8000, "B": 0x8000, "D": 0x8069, "e": 0x0002, "~": 0x0015, "v": 0x803B}
+PERM = {"R": 0x8000, "T": 0x8000, "#": 0x8000, "S": 0x8000, "c": 0x8000, "B": 0x8000, "D": 0x8069, "e": 0x0002, "~": 0x0015, "v": 0x803B}
 ORDER = ["grass01", "road01", "road01_r", "egrass", "wall01_g", "sea_un", "sea_on", "pond_line", "sea_line02", "flower01", "flower02", "flower03", "fence_b", "tree01_un", "tree01_re", "tree01"]
 
 
@@ -108,8 +109,9 @@ def heights(g):
     return H, ramps
 
 
-def rects(cells):
+def rects(cells, maxq=None):
     """Agrupa um conjunto de tiles (x, z) em retangulos de ate MAXQ x MAXQ (guloso, linha a linha)."""
+    MAXQ = maxq or globals()["MAXQ"]
     left, out = set(cells), []
     for z in range(GH):
         for x in range(GW):
@@ -170,17 +172,55 @@ def build_mesh(g):
     m = Mesh()
     # chao plano: por (material, altura), sem rampas
     groups = {}
+
+    # Chao dos bloqueados (construcao, porta, objeto, rocha do penhasco): cada grupo ligado deles pega o chao da
+    # maioria dos vizinhos andaveis em volta do grupo. Na areia ou na calcada, a parte da planta do GBA que o modelo
+    # nao cobre aparecia como um quadrado de grama (construcoes da praia, lampioes; auditoria de 25/11).
+    piso_bloq = {}
+    for z0 in range(GH):
+        for x0 in range(GW):
+            if tiles[z0][x0] not in "BSD#" or (x0, z0) in piso_bloq:
+                continue
+            comp, pilha, viz = [], [(x0, z0)], []
+            piso_bloq[(x0, z0)] = None
+            while pilha:
+                x, z = pilha.pop(); comp.append((x, z))
+                for dx, dz in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    xx, zz = x + dx, z + dz
+                    if not (0 <= xx < GW and 0 <= zz < GH):
+                        continue
+                    c2 = tiles[zz][xx]
+                    if c2 in "BSD#":
+                        if (xx, zz) not in piso_bloq:
+                            piso_bloq[(xx, zz)] = None; pilha.append((xx, zz))
+                    elif c2 not in "T~R":
+                        viz.append(c2)
+            mat = "road01" if viz and sum(v == "=" for v in viz) * 2 > len(viz) else None
+            for k in comp:
+                piso_bloq[k] = mat
+
+    def piso(x, z):
+        return piso_bloq.get((x, z)) or FLOOR[tiles[z][x]]
     for z in range(GH):
         for x in range(GW):
             if (x, z) in ramp_cells:
                 continue
             c = tiles[z][x]
-            mat = FLOOR[c]
+            mat = piso(x, z)
             if mat:
                 groups.setdefault((mat, H[z][x]), set()).add((x, z))
     for (mat, h), cells in sorted(groups.items()):
         for r in rects(cells):
             m.flat(mat, r, h + (0.01 if mat == "road01" else 0))
+    # forro de grama 0,03 tile abaixo do chao, em retangulos grandes: onde dois quads do chao se encontram com
+    # vertices em posicoes diferentes (junta em T), o DS deixa escapar pixels do fundo preto; com o forro, o que
+    # aparece na fresta e grama (os "pontinhos/linhas pretas" entre tiles da auditoria de 25/11)
+    under = {}
+    for (mat, h), cells in groups.items():
+        under.setdefault(h, set()).update(cells)
+    for h, cells in sorted(under.items()):
+        for r in rects(cells, 8):
+            m.flat("grass01", r, h - 0.03)
     # agua: duas camadas meio tile abaixo do chao, como no HGSS
     water = {(x, z) for z in range(GH) for x in range(GW) if tiles[z][x] == "~"}
     for hz in sorted({H[z][x] for x, z in water}):
@@ -315,8 +355,12 @@ def build_mesh(g):
                     n = nrm(0, 0.55, 0.83 if a > b else -0.83)
                 else:                                    # aresta vertical em x = x2
                     ex = x2
-                    out = 0.0
-                    pts = [(ex, lo, z + 1), (ex, lo, z), (ex, hi, z), (ex, hi, z + 1)]
+                    # a face lateral avanca 0,5 tile para o lado baixo: vertical, a camera de cima a via de quina, como
+                    # uma linha escura solta (auditoria de 25/11); inclinada, aparece como uma faixa estreita de rocha
+                    out = 0.5 if a > b else -0.5
+                    if tiles[z][x] == "~" or tiles[z][x2] == "~":
+                        out = 0
+                    pts = [(ex + out, lo, z + 1), (ex + out, lo, z), (ex, hi, z), (ex, hi, z + 1)]
                     n = nrm(0.83 if a > b else -0.83, 0.55, 0)
                     if a < b:
                         pts = pts[::-1]
@@ -346,34 +390,71 @@ def build_mesh(g):
                     m.quad("wall01_g", tri if xs == x + 1 else tri[::-1], nrm(0, 0.55, 0.83))
     # bordas do caminho como no HGSS (road01_r): faixa de 1 tile no lado da grama, u 250 junto ao caminho -> 6 na grama,
     # v ao longo da borda; canto externo (caminho so na diagonal) com a outra metade da textura (u, v 259..505)
-    road = {(x, z) for z in range(GH) for x in range(GW) if tiles[z][x] == "=" and (x, z) not in ramp_cells}
+    road = {(x, z) for z in range(GH) for x in range(GW) if (tiles[z][x] == "=" or tiles[z][x] in "BSD#" and
+            piso(x, z) == "road01") and (x, z) not in ramp_cells}
     road_strips = []
-    soft = {".", "f", "#", "S"}
+    # tiles de grama que recebem a borda: grama, flores, mato alto, arvore, cerca, ressalto, bloqueado (a borda fica
+    # por baixo das flores, do mato e das arvores; sem ela o caminho terminava num corte reto junto a esses tiles)
+    soft = {".", "f", "g", "h", "e", "T", "c", "v", "#", "S"}
     def ccw(q):                                  # mesmo sentido dos quads do HGSS (area com sinal negativa em x-z)
         a = sum(q[i][0] * q[(i + 1) % 4][2] - q[(i + 1) % 4][0] * q[i][2] for i in range(4))
         return q if a < 0 else q[::-1]
+
+    def clip(poly, f):
+        """Sutherland-Hodgman: parte do poligono convexo (pontos (a, d)) onde f(p) >= 0."""
+        out = []
+        for i, P in enumerate(poly):
+            Q = poly[(i + 1) % len(poly)]
+            fp, fq = f(P), f(Q)
+            if fp >= 0:
+                out.append(P)
+            if (fp >= 0) != (fq >= 0):
+                t = fp / (fp - fq)
+                out.append((P[0] + (Q[0] - P[0]) * t, P[1] + (Q[1] - P[1]) * t))
+        return out
+    # direcao do caminho -> (ponto de mundo a partir de (a ao longo da borda, d para dentro da grama), sinal do v,
+    # coordenada de mundo que vai no v); mesmos sentidos de v das faixas retas abaixo (como na Route 29)
+    SIDES = {(0, -1): (lambda x, z, a, d: (x + a, z + d), 256, "x"), (0, 1): (lambda x, z, a, d: (x + a, z + 1 - d), -256, "x"),
+             (-1, 0): (lambda x, z, a, d: (x + d, z + a), -256, "z"), (1, 0): (lambda x, z, a, d: (x + 1 - d, z + a), 256, "z")}
+    # vizinhos ao longo da borda: para (0,-1) [caminho ao norte], a = 0 e o lado oeste e a = 1 o leste
+    ALONG = {(0, -1): ((-1, 0), (1, 0)), (0, 1): ((-1, 0), (1, 0)), (-1, 0): ((0, -1), (0, 1)), (1, 0): ((0, -1), (0, 1))}
     for z in range(GH):
         for x in range(GW):
             if (x, z) in road or tiles[z][x] not in soft or (x, z) in ramp_cells:
                 continue
             h = H[z][x] + 0.008
             same = lambda xx, zz: (xx, zz) in road and H[zz][xx] == H[z][x]
-            orth = False
-            for dx, dz in ((0, -1), (0, 1), (-1, 0), (1, 0)):
-                if not same(x + dx, z + dz):
-                    continue
-                orth = True
-                # sentido do v como na Route 29: caminho ao norte +x, ao sul -x, a leste +z, a oeste -z (giro de 180 graus,
-                # nao espelho: espelhado, a textura da borda fazia riscos em diagonal no DeSmuME)
-                if dz:                               # caminho ao norte/sul: borda horizontal
+            dirs = [d for d in ((0, -1), (0, 1), (-1, 0), (1, 0)) if same(x + d[0], z + d[1])]
+            if len(dirs) == 1:                           # borda reta: faixa de 1 tile (juntada com as vizinhas abaixo)
+                dx, dz = dirs[0]
+                if dz:
                     zi, zo = (z, z + 1) if dz < 0 else (z + 1, z)
-                    sv = 256 if dz < 0 else -256
-                    road_strips.append(("h", zi, zo, x, sv, h)); continue
-                else:                                # caminho a oeste/leste: borda vertical
+                    road_strips.append(("h", zi, zo, x, 256 if dz < 0 else -256, h))
+                else:
                     xi, xo = (x, x + 1) if dx < 0 else (x + 1, x)
-                    sv = 256 if dx > 0 else -256
-                    road_strips.append(("v", xi, xo, z, sv, h)); continue
-            if orth:
+                    road_strips.append(("v", xi, xo, z, 256 if dx > 0 else -256, h))
+                continue
+            if dirs:
+                # canto concavo (caminho em dois lados vizinhos) e grama entre dois caminhos: cada borda vira um
+                # poligono cortado em meia-esquadria na diagonal (cantos) ou na metade do tile (lados opostos); antes
+                # as duas faixas inteiras se sobrepunham e o canto ficava com um quadrado escuro
+                for d in dirs:
+                    f, sv, axis = SIDES[d]
+                    depth = 0.5 if (-d[0], -d[1]) in dirs else 1.0
+                    poly = [(0, 0), (1, 0), (1, depth), (0, depth)]
+                    lo, hi = ALONG[d]
+                    if lo in dirs:
+                        poly = clip(poly, lambda p: p[0] - p[1])
+                    if hi in dirs:
+                        poly = clip(poly, lambda p: (1 - p[0]) - p[1])
+                    if len(poly) < 3:
+                        continue
+                    pts = []
+                    for aa, dd in poly:
+                        wx, wz = f(x, z, aa, dd)
+                        pts.append((wx, h, wz, 250 - 244 * dd, sv * (wx if axis == "x" else wz)))
+                    for k in range(1, len(pts) - 1):     # leque de triangulos (quad com o ultimo vertice repetido)
+                        m.quad("road01_r", ccw([pts[0], pts[k], pts[k + 1], pts[k + 1]]))
                 continue
             for sx, sz in ((1, -1), (1, 1), (-1, -1), (-1, 1)):
                 if same(x + sx, z + sz):
@@ -433,9 +514,12 @@ def build_mesh(g):
             for r in rects({(x, z) for x, z in cells if H[z][x] == hz}):
                 m.flat(mat, r, hz + dy, uv0)
     # arvores: os tiles T sao cobertos por arvores de 2x2 a partir do canto noroeste de cada uma (varredura linha a
-    # linha); cada arvore e um quad inclinado como os do HGSS (3,08 tiles de altura, recua 2,54). Pares lado a lado
-    # na mesma linha viram um quad de 4 tiles (textura de duas arvores, tree01); uma arvore so, tree01_re (u 0-512).
-    # (metade da textura tree01 mostra meia arvore: a textura e espelhada; visto no DeSmuME.)
+    # linha); cada arvore e um quad inclinado como os do HGSS (3,08 tiles de altura, recua 2,54). Geometria e UV
+    # medidas na Route 29 (bloco 2, auditoria de 25/11):
+    #  - tree01 (textura tree01gs, 64x64, UMA arvore inteira): quad de 4 tiles de largura centrado na arvore, u 0-1024;
+    #  - tree01_re (textura que repete, uma arvore a cada 2 tiles): fileira de arvores lado a lado, u 512 por arvore.
+    # (Antes: par = tree01 inteiro em 4 tiles, arvore so = u 384-896 em 2 tiles, que mostrava meia arvore cortada, e
+    #  coluna de 1 tile = fatia do meio da textura: as arvores "cortadas" e as fatias verticais da auditoria.)
     trees = {(x, z) for z in range(GH) for x in range(GW) if tiles[z][x] == "T"}
     done, blocks = set(), []
     for z in range(GH):
@@ -448,23 +532,38 @@ def build_mesh(g):
                         done.add((x + i, z + j))
                 blocks.append((x, z, w, h))
     rows = {}
+
+    def tree_quad(mat, xa, xb, ua, ub, z, h, x_alt, k=1.0):
+        hz = H[min(z + h - 1, GH - 1)][min(max(int(x_alt), 0), GW - 1)]
+        zb = z + h
+        m.quad(mat, [(xa, hz, zb + 0.62 * k, ua, 1024), (xb, hz, zb + 0.62 * k, ub, 1024),
+                     (xb, hz + 3.08 * k, zb - 1.92 * k, ub, 0), (xa, hz + 3.08 * k, zb - 1.92 * k, ua, 0)], 0x18b51800)
     for x, z, w, h in blocks:
-        rows.setdefault((z, h), []).append((x, w))
+        if w == 2 and h == 2:
+            rows.setdefault((z, h), []).append((x, w))
+        else:
+            # sobra de 1 tile de largura ou de altura: no GBA sao os arbustos de 1 tile (cercas vivas em volta das
+            # casas, beiras de floresta impares). Arbusto = a arvore inteira em meia escala, um por tile; em tamanho
+            # cheio, a arvore de 4 tiles cobria o telhado das construcoes vizinhas
+            for i in range(w):
+                for j in range(h):
+                    tree_quad("tree01", x + i - 0.5, x + i + 1.5, 0, 1024, z + j, 1, x + i, 0.5)
     for (z, h), items in rows.items():
         items.sort()
         i = 0
         while i < len(items):
             x0, w = items[i]
-            if w == 2 and i + 1 < len(items) and items[i + 1] == (x0 + 2, 2):
-                w, i = 4, i + 2
-            else:
-                i += 1
-            hz = H[min(z + h - 1, GH - 1)][x0]
-            zb = z + h
-            # arvore isolada = o meio da textura tree01 (u 384-896), como na Route 29 (bloco 2); par = textura inteira
-            mat, u0, u1 = {4: ("tree01", 0, 1024), 2: ("tree01", 384, 896), 1: ("tree01_re", 384, 640)}[w]
-            m.quad(mat, [(x0, hz, zb + 0.62, u0, 1024), (x0 + w, hz, zb + 0.62, u1, 1024),
-                         (x0 + w, hz + 3.08, zb - 1.92, u1, 0), (x0, hz + 3.08, zb - 1.92, u0, 0)], 0x18b51800)
+            if w == 2:                                   # fileira de arvores 2x2 encostadas: uma faixa tree01_re
+                k = i
+                while k + 1 < len(items) and items[k + 1] == (items[k][0] + 2, 2) and (k + 1 - i) < 4:   # ate 4 arvores por quad, como na Route 29
+                    k += 1
+                n = k - i + 1
+                if n >= 2:
+                    tree_quad("tree01_re", x0, x0 + 2 * n, 0, 512 * n, z, h, x0)
+                    i = k + 1
+                    continue
+            tree_quad("tree01", x0 - 1, x0 + 3, 0, 1024, z, h, x0)     # arvore 2x2 sozinha: a arvore inteira
+            i += 1
     return m, H, ramps
 
 
