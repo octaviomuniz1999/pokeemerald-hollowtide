@@ -583,6 +583,66 @@
   "15": {
    "gba": "Palm100_TextSignPlateau",
    "_por_que": "Ferralia original (25/11): fala do GBA no script de Goldenrod reaproveitado (0718)"
+  },
+  "16": {
+   "gba": "Palm102_TextVesselAsk",
+   "_por_que": "Ferralia (25/11): patio de cargas e ginasio do GBA"
+  },
+  "17": {
+   "gba": "Palm102_TextVesselThanks",
+   "_por_que": "Ferralia (25/11): patio de cargas e ginasio do GBA"
+  },
+  "18": {
+   "gba": "Palm101_GymFanOpen_Text",
+   "_por_que": "Ferralia (25/11): patio de cargas e ginasio do GBA"
+  },
+  "19": {
+   "gba": "Palm101_GymFan_Text",
+   "_por_que": "Ferralia (25/11): patio de cargas e ginasio do GBA: a porta do ginasio, fechada ate o patio (no GBA era um metatile de porta fechada, sem fala; aqui a fala do fa explica)"
+  }
+ },
+ "582": {
+  "_": "ginasio de Ferralia (interior do ginasio de Goldenrod, scripts 886)",
+  "1": {
+   "gba": "MauvilleCity_Gym_Text_WattsonIntro",
+   "_por_que": "Ferralia (25/11): patio de cargas e ginasio do GBA"
+  },
+  "2": {
+   "gba": [
+    "MauvilleCity_Gym_Text_ReceivedDynamoBadge",
+    "MauvilleCity_Gym_Text_ExplainDynamoBadgeTakeThis"
+   ],
+   "_por_que": "Ferralia (25/11): patio de cargas e ginasio do GBA"
+  },
+  "3": {
+   "gba": "MauvilleCity_Gym_Text_ExplainShockWave",
+   "_por_que": "Ferralia (25/11): patio de cargas e ginasio do GBA (o texto do GBA ja fala da Flash Cannon)"
+  },
+  "4": {
+   "gba": "MauvilleCity_Gym_Text_WattsonPostBattle",
+   "_por_que": "Ferralia (25/11): patio de cargas e ginasio do GBA"
+  },
+  "5": {
+   "gba": "MauvilleCity_Gym_Text_GymGuideAdvice",
+   "_por_que": "Ferralia (25/11): patio de cargas e ginasio do GBA. Sem a frase das chaves e portoes: o quebra-cabeca do GBA nao foi portado para o ginasio de Goldenrod",
+   "replace": [
+    [
+     "He wired the whole Gym with\\nswitches that move the steel gates.\\fListen for the hum!\\r",
+     ""
+    ]
+   ]
+  },
+  "6": {
+   "gba": "MauvilleCity_Gym_Text_GymGuidePostVictory",
+   "_por_que": "Ferralia (25/11): patio de cargas e ginasio do GBA"
+  },
+  "7": {
+   "gba": "MauvilleCity_Gym_Text_GymStatue",
+   "_por_que": "Ferralia (25/11): patio de cargas e ginasio do GBA"
+  },
+  "8": {
+   "gba": "MauvilleCity_Gym_Text_GymStatueCertified",
+   "_por_que": "Ferralia (25/11): patio de cargas e ginasio do GBA"
   }
  }
 }

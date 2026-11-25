@@ -161,3 +161,6 @@ GBA e DS compartilham cânone, personagens, narrativa e progressão; diferenças
 - Ferralia fica no nível do platô da Route 3, como diz a placa do GBA.
 - O evento do pátio de cargas (que destrava o ginásio) e o ginásio ficam para a etapa seguinte; até lá a porta do
   ginásio fica trancada, para não abrir um ginásio com o interior de Goldenrod.
+- Ginásio de Ferralia no interior de Goldenrod, com o conteúdo do GBA (Vessel, treinadores, insígnia, TM91). O
+  quebra-cabeça de portões elétricos do GBA e o 5º treinador ficam de fora por falta de lugar no mapa de Goldenrod.
+  A frase do guia sobre o quebra-cabeça saiu do texto.

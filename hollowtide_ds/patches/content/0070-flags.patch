@@ -1,6 +1,6 @@
 --- /dev/null
 +++ b/data/scr_seq/include/hollowtide_flags.inc
-@@ -0,0 +1,11 @@
+@@ -0,0 +1,13 @@
 +// gerado por tools/hollowtide_ds/flags.py — flags de Lunia em flags de eventos de Kanto que saem do jogo
 +
 +.equ FLAG_HT_IRRIGATION_RESTORED, 233  // FLAG_GOT_TM37_FROM_ROUTE_27_WOMAN (scr_seq_0222_R27R0101.s)
@@ -12,3 +12,5 @@
 +.equ FLAG_HT_BREEZEPORT_LAMP3, 301  // FLAG_GOT_TM84_FROM_JANINE (scr_seq_0809_T08GYM0101.s)
 +.equ FLAG_HT_BREEZEPORT_LIGHTS, 302  // FLAG_GOT_TM85_FROM_VIRIDIAN_CITY_MAN (scr_seq_0741_T02.s)
 +.equ FLAG_HT_DEFEATED_JAY, 303  // FLAG_GOT_TM29_FROM_MR_PSYCHIC (scr_seq_0833_T11R0501.s)
++.equ FLAG_HT_FERRALIA_CARGO_DONE, 304  // FLAG_GOT_UPGRADE_FROM_SAFFRON_CITY_GUARD (scr_seq_0837_T11R0701.s)
++.equ FLAG_HT_DEFEATED_VESSEL, 305  // FLAG_GOT_CLEANSE_TAG_FROM_ROUTE_5_GRANDMA (scr_seq_0183_R05R0401.s)

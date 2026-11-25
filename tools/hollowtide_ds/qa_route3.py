@@ -16,11 +16,18 @@ import lunia_mundo as L
 def batalha(d, limite=600):
     """Treinador que viu o jogador: a fala de desafio, a batalha e a fala depois. Aperta A enquanto houver caixa de texto
     ou tela de batalha. Devolve True se houve batalha (tela de baixo fora do campo)."""
-    houve = False
+    houve, calmo = False, 0
     for _ in range(limite):
         campo = d.top_is_field()
         if campo and not d.box_visible():
-            break
+            # entre o fim da fala e o comeco da batalha ha quadros sem caixa e com o campo na tela: so termina depois de
+            # uns 90 quadros seguidos de campo calmo
+            calmo += 1
+            if calmo >= 6:
+                break
+            d.wait(15)
+            continue
+        calmo = 0
         houve |= not campo
         d.press("A", 4, 20)
     d.wait(120)                                          # volta da batalha: o fade engole a proxima tecla
@@ -69,7 +76,12 @@ def main(rom, estado, pasta):
         if ler:
             advance(d, 8); d.wait(30)
         w = d.where()
-        if fim:
+        if fim and nome == "escada_praia_para_o_meio":
+            # a batalha engole um numero variavel de teclas (o fade da volta): basta ter passado do topo da escada (y 43)
+            # na mesma coluna
+            fx, fz = L.gba(*fim)
+            ok = w is not None and w[1] == fx and w[2] <= fz
+        elif fim:
             ok = w is not None and (w[1], w[2]) == L.gba(*fim)
         else:                                            # praia -> Breezeport: chegou ao header de Breezeport (77)
             ok = w is not None and w[0] == 77

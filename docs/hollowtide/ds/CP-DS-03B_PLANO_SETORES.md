@@ -560,10 +560,25 @@ partição das células entre os mapas não mudasse. O desenho agora tem 6x8 cé
 - **Portão leste:** gatilho sempre armado, porque a Route 4 ainda não existe.
 - **Nome do lugar:** "Ferralia City".
 
-**Pendente** (próxima etapa):
-- o evento do pátio de cargas (o dono do pátio e os dois recrutas), que destrava o ginásio;
-- o ginásio por dentro (até lá a porta fica trancada);
-- os interiores com NPCs do GBA.
+**Etapa 3 (25/11): pátio de cargas e ginásio**
+- **Pátio de cargas** (`0718`): Vessel (o líder, no pátio) e os dois recrutas da Team Palm nas posições do GBA, nos
+  objetos escondidos de Goldenrod.
+  - Os recrutas lutam pela visão (treinadores 448 e 447 do `0100`).
+  - Sem vencer os dois, Vessel pede ajuda. Depois ele agradece, liga `FLAG_HT_FERRALIA_CARGO_DONE` e os três somem.
+  - O fã do ginásio muda de fala.
+- **Porta do ginásio:** é um warp de verdade. O gatilho no tile da frente fala e devolve o jogador até o pátio; no GBA
+  era um metatile de porta fechada.
+- **Ginásio** (`0719` e overlay `scr_seq_0886_T25GYM0101.s`), no interior do ginásio de Goldenrod:
+  - Vessel (513) dá a 3ª insígnia (Resonance Badge, no lugar da Plain Badge) e a TM91 Flash Cannon, como no GBA;
+  - Kirk, Shawn, Ben e Vivian lutam pela visão; o guia e as estátuas têm as falas do GBA.
+- **Adaptações** (registradas): o quebra-cabeça de chaves e portões elétricos do GBA não foi portado, e a frase do guia
+  sobre ele saiu. O 5º treinador (Angelo) ficou de fora, porque o ginásio de Goldenrod não tem um tile livre que não
+  feche o caminho. O interior continua com o visual de Goldenrod.
+- **Teste:** `qa_ferralia_ginasio.py` 8/8, numa sessão só: porta fechada, Vessel pede ajuda, os dois recrutas, Vessel
+  agradece, a porta abre e o jogador entra; dentro, o guia fala e Vessel luta.
+
+**Pendente:** os interiores de Ferralia com os NPCs do GBA; a Route 4 (a leste de Ferralia no GBA, onde no desenho já
+estão Harvestvale e a Route 2: precisa de outro lugar).
 
 **Validação:**
 - Varredura visual de Ferralia (48 capturas).

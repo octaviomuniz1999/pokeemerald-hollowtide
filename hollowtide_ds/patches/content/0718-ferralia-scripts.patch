@@ -1,6 +1,14 @@
 --- a/data/scr_seq/scr_seq_0885_T25.s
 +++ b/data/scr_seq/scr_seq_0885_T25.s
-@@ -104,19 +104,8 @@
+@@ -20,6 +20,7 @@
+ #include "constants/species.h"
+ 
+ .include "data/scr_seq/include/event_T25.inc"
++.include "data/scr_seq/include/hollowtide_flags.inc"
+ 
+ 
+ // text archive to grab from: 581.txt
+@@ -104,19 +105,8 @@
  _011A:
  	end
  
@@ -22,7 +30,7 @@
  	end
  
  _0149:
-@@ -126,14 +115,9 @@
+@@ -126,14 +116,9 @@
  	releaseall
  	end
  
@@ -40,25 +48,29 @@
  
  _0172:
  	npc_msg 5
-@@ -143,15 +127,8 @@
+@@ -143,12 +128,18 @@
  	releaseall
  	end
  
 -scr_seq_T25_002:
--	play_se SEQ_SE_DP_SELECT
--	lockall
--	faceplayer
++scr_seq_T25_002:   // Ferralia: fa do ginasio (Palm101_GymFan)
+ 	play_se SEQ_SE_DP_SELECT
+ 	lockall
+ 	faceplayer
 -	goto_if_set FLAG_GOT_RADIO_CARD, _019B
 -	npc_msg 6
--	wait_button
--	closemsg
--	releaseall
-+scr_seq_T25_002:   // Ferralia: Palm101_GymFan
-+	simple_npc_msg 2
- 	end
- 
- _019B:
-@@ -161,21 +138,12 @@
++	goto_if_set FLAG_HT_FERRALIA_CARGO_DONE, _HT_GymFanOpen
++	npc_msg 2
++	wait_button
++	closemsg
++	releaseall
++	end
++_HT_GymFanOpen:
++	npc_msg 18
+ 	wait_button
+ 	closemsg
+ 	releaseall
+@@ -161,21 +152,12 @@
  	releaseall
  	end
  
@@ -86,7 +98,7 @@
  	end
  
  _01DD:
-@@ -185,19 +153,8 @@
+@@ -185,19 +167,8 @@
  	releaseall
  	end
  
@@ -108,7 +120,7 @@
  	end
  
  _0215:
-@@ -207,19 +164,8 @@
+@@ -207,19 +178,8 @@
  	releaseall
  	end
  
@@ -130,7 +142,7 @@
  	end
  
  _024D:
-@@ -229,17 +175,9 @@
+@@ -229,17 +189,9 @@
  	releaseall
  	end
  
@@ -151,7 +163,42 @@
  
  _0284:
  	compare VAR_SPECIAL_RESULT, 2
-@@ -441,16 +379,15 @@
+@@ -292,14 +244,30 @@
+ 
+ 	step 35, 1
+ 	step_end
+-scr_seq_T25_008:
++scr_seq_T25_008:   // Ferralia: Vessel no patio de cargas (Palm102_VesselYard)
+ 	play_se SEQ_SE_DP_SELECT
+ 	lockall
+ 	faceplayer
+-	compare VAR_SCENE_ROCKET_TAKEOVER, 3
+-	goto_if_ne _032E
++	goto_if_defeated 448, _HT_VesselG2
++	goto _HT_VesselAsk
++_HT_VesselG2:
++	goto_if_defeated 447, _HT_VesselThanks
++_HT_VesselAsk:
++	npc_msg 16
++	wait_button
++	closemsg
++	releaseall
++	end
++_HT_VesselThanks:
+ 	npc_msg 17
+-	goto _0331
++	wait_button
++	closemsg
++	setflag FLAG_HT_FERRALIA_CARGO_DONE
++	hide_person obj_T25_rocketm_6
++	hide_person obj_T25_rocketm_11
++	hide_person obj_T25_rocketm_8
++	releaseall
++	end
+ 
+ _032E:
+ 	npc_msg 16
+@@ -441,16 +409,15 @@
  	releaseall
  	end
  
@@ -176,7 +223,7 @@
  
  _04B9:
  	compare VAR_TEMP_x4000, 355
-@@ -716,60 +653,67 @@
+@@ -716,68 +683,79 @@
  	step 14, 4
  	step 32, 1
  	step_end
@@ -233,6 +280,14 @@
 -	scrcmd_057 3
 -	scrcmd_058
 -	trainer_tips 42, VAR_SPECIAL_RESULT
+-	callstd std_signpost
+-	end
+-
+-scr_seq_T25_026:
+-	scrcmd_055 3, 0
+-	scrcmd_057 3
+-	scrcmd_058
+-	trainer_tips 43, VAR_SPECIAL_RESULT
 -	callstd std_signpost
 +scr_seq_T25_019:   // Ferralia: Palm101_CitySign
 +	play_se SEQ_SE_DP_SELECT
@@ -295,14 +350,30 @@
 +	wait_button
 +	closemsg
 +	releaseall
++	end
++
++scr_seq_T25_026:   // Ferralia: porta do ginasio, fechada ate o patio de cargas
++	goto_if_set FLAG_HT_FERRALIA_CARGO_DONE, _HT_GymOpen
++	lockall
++	npc_msg 19
++	wait_button
++	closemsg
++	apply_movement obj_player, _HT_StepDown
++	wait_movement
++	releaseall
++_HT_GymOpen:
  	end
  
- scr_seq_T25_026:
-@@ -804,3 +748,7 @@
+ scr_seq_T25_027:
+@@ -804,3 +782,11 @@
  	callstd std_signpost
  	end
  	.balign 4
 +_HT_StepLeft:
 +	step MOVEMENT_STEP_LEFT, 1
++	step_end
++	.balign 4
++_HT_StepDown:
++	step MOVEMENT_STEP_DOWN, 1
 +	step_end
 +	.balign 4

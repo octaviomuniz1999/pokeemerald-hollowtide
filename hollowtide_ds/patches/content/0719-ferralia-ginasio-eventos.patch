@@ -1,0 +1,93 @@
+--- a/data/eventdata/zone_event/133_T25GYM0101.json
++++ b/data/eventdata/zone_event/133_T25GYM0101.json
+@@ -22,10 +22,10 @@
+   "object_events": [
+     {
+       "id": "obj_T25GYM0101_gsleader3",
+-      "graphics_id": "SPRITE_GSLEADER3",
++      "graphics_id": "SPRITE_BIGMAN",
+       "movement_type": 15,
+       "trainer_type": 0,
+-      "hidden_flag": "FLAG_UNK_2EC",
++      "hidden_flag": "FLAG_NOTHING",
+       "script": "_EV_scr_seq_T25GYM0101_000 + 1",
+       "initial_dir": 1,
+       "param0": 0,
+@@ -39,13 +39,13 @@
+     },
+     {
+       "id": "obj_T25GYM0101_gsgirl1",
+-      "graphics_id": "SPRITE_GSGIRL1",
++      "graphics_id": "SPRITE_MAN3",
+       "movement_type": 16,
+       "trainer_type": 1,
+       "hidden_flag": "FLAG_NOTHING",
+-      "script": "TRAINER_LASS_CATHY - 1 + _std_npc_trainer",
++      "script": "467 - 1 + _std_npc_trainer",
+       "initial_dir": 2,
+-      "param0": 4,
++      "param0": 2,
+       "param1": 0,
+       "param2": 0,
+       "movement_range_x": 0,
+@@ -56,11 +56,11 @@
+     },
+     {
+       "id": "obj_T25GYM0101_gsgirl1_2",
+-      "graphics_id": "SPRITE_GSGIRL1",
++      "graphics_id": "SPRITE_MAN3",
+       "movement_type": 17,
+       "trainer_type": 1,
+       "hidden_flag": "FLAG_NOTHING",
+-      "script": "TRAINER_LASS_CARRIE - 1 + _std_npc_trainer",
++      "script": "499 - 1 + _std_npc_trainer",
+       "initial_dir": 3,
+       "param0": 1,
+       "param1": 0,
+@@ -73,11 +73,11 @@
+     },
+     {
+       "id": "obj_T25GYM0101_gswoman2",
+-      "graphics_id": "SPRITE_GSWOMAN2",
++      "graphics_id": "SPRITE_GSBOY1",
+       "movement_type": 17,
+       "trainer_type": 1,
+       "hidden_flag": "FLAG_NOTHING",
+-      "script": "TRAINER_BEAUTY_VICTORIA - 1 + _std_npc_trainer",
++      "script": "410 - 1 + _std_npc_trainer",
+       "initial_dir": 3,
+       "param0": 2,
+       "param1": 0,
+@@ -90,11 +90,11 @@
+     },
+     {
+       "id": "obj_T25GYM0101_gswoman2_2",
+-      "graphics_id": "SPRITE_GSWOMAN2",
++      "graphics_id": "SPRITE_GIRL3",
+       "movement_type": 16,
+       "trainer_type": 1,
+       "hidden_flag": "FLAG_NOTHING",
+-      "script": "TRAINER_BEAUTY_SAMANTHA - 1 + _std_npc_trainer",
++      "script": "510 - 1 + _std_npc_trainer",
+       "initial_dir": 2,
+       "param0": 2,
+       "param1": 0,
+@@ -132,16 +132,5 @@
+       "y": 0
+     }
+   ],
+-  "coord_events": [
+-    {
+-      "script": "_EV_scr_seq_T25GYM0101_001 + 1",
+-      "x": 13,
+-      "z": 11,
+-      "width": 1,
+-      "length": 1,
+-      "y": 0,
+-      "value": 1,
+-      "var": "VAR_UNK_410A"
+-    }
+-  ]
++  "coord_events": []
+ }
+\ No newline at end of file

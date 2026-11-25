@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Teste dirigido de Ferralia (25/11), na ROM de conteudo + provas/visual (warp pelo PC do quarto).
 
-Casos: portas de verdade (Centro, Mart, estacao, casa) levam a um interior; a porta do ginasio esta trancada (fala);
+Casos: portas de verdade (Centro, Mart, estacao, casa) levam a um interior; a porta do ginasio fica fechada antes do
+patio de cargas (gatilho na frente dela: fala e volta um passo);
 placa da cidade e o recepcionista falam; o portao leste devolve o jogador (a Route 4 nao existe); a saida sul leva a
 Route 3 a pe.
 Uso: qa_ferralia.py ROM ESTADO_DO_QUARTO PASTA
@@ -19,7 +20,7 @@ CASOS = [
     ("porta_do_mart", (36, 25), ["UP"] * 3, "interior", None),
     ("porta_da_estacao", (28, 13), ["UP"] * 3, "interior", None),
     ("porta_da_casa", (12, 12), ["UP"] * 3, "interior", None),
-    ("ginasio_trancado", (49, 13), ["UP"] * 2, "fica", "UP"),
+    ("ginasio_trancado", (49, 15), ["UP"] * 3, "fica", None),   # o gatilho de 49,13 so dispara ao pisar nele
     ("placa_da_cidade", (39, 48), [], "fica", "UP"),
     ("recepcionista", (41, 48), [], "fica", "UP"),
     ("portao_leste", (67, 40), ["RIGHT"] * 4, "leste_fechado", None),

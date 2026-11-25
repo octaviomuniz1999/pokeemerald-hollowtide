@@ -21,7 +21,8 @@ estes patches: reverta-os com patch -R antes de regenerar):
   0715-route3-placas.patch          (scr_seq_0249_R39.s: as 3 placas da Route 3)
   0716-route3-itens.patch           (scr_seq_0141.s: Big Pearl, Great Ball e Revive)
   0717-ferralia-eventos-gba.patch   (zone_event/073_T25.json: Ferralia original, header de Goldenrod)
-  0718-ferralia-scripts.patch       (scr_seq_0885_T25.s: NPCs, placas e portao leste com as falas do GBA)
+  0718-ferralia-scripts.patch       (scr_seq_0885_T25.s: NPCs, placas, patio de cargas, porta do ginasio e portao leste)
+  0719-ferralia-ginasio-eventos.patch (zone_event/133_T25GYM0101.json: Vessel e os treinadores do ginasio)
 Uso: eventos_gba.py HG_ENGINE PASTA_SAIDA
 """
 import difflib, json, os, sys
@@ -29,6 +30,8 @@ import difflib, json, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from lunia_mundo import X0, Z0, ORIGENS, gba   # canto do desenho na matriz 0 e de cada mapa do GBA no desenho
 HG = None
+_FLAGS = json.load(open(os.path.join(os.path.dirname(__file__), "..", "..", "hollowtide_ds/data/flags.json")))
+CARGO = _FLAGS["FLAG_HT_FERRALIA_CARGO_DONE"]           # flag do HGSS por tras da do Hollowtide (para o JSON de zona)
 OLHA = {"cima": (14, 0), "baixo": (15, 1), "esquerda": (16, 2), "direita": (17, 3)}
 
 ZONAS = {
@@ -179,8 +182,15 @@ ZONAS = {
                  "_EV_scr_seq_T25_004 + 1": ((45, 39), "baixo", {"graphics_id": "SPRITE_MAN2", "hidden_flag": "FLAG_NOTHING"}),
                  "_EV_scr_seq_T25_005 + 1": ((12, 20), "baixo", {"graphics_id": "SPRITE_WOMAN2", "hidden_flag": "FLAG_NOTHING"}),
                  "_EV_scr_seq_T25_006 + 1": ((29, 15), "baixo", {"graphics_id": "SPRITE_ASSISTANTM", "hidden_flag": "FLAG_NOTHING"}),
-                 "_EV_scr_seq_T25_007 + 1": ((31, 56), "baixo", {"graphics_id": "SPRITE_OLDWOMAN1", "hidden_flag": "FLAG_NOTHING"})},
-        esconder={"_EV_scr_seq_T25_008 + 1", "_EV_scr_seq_T25_009 + 1", "_EV_scr_seq_T25_010 + 1", "_EV_scr_seq_T25_011 + 1",
+                 "_EV_scr_seq_T25_007 + 1": ((31, 56), "baixo", {"graphics_id": "SPRITE_OLDWOMAN1", "hidden_flag": "FLAG_NOTHING"}),
+                 # patio de cargas: Vessel e os dois recrutas da Team Palm; somem com FLAG_HT_FERRALIA_CARGO_DONE (a flag
+                 # do HGSS por tras dela: o JSON de zona nao inclui hollowtide_flags.inc)
+                 "_EV_scr_seq_T25_008 + 1": ((63, 29), "esquerda", {"graphics_id": "SPRITE_BIGMAN", "hidden_flag": CARGO}),
+                 "_EV_scr_seq_T25_009 + 1": ((67, 28), "esquerda", {"script": "448 - 1 + _std_npc_trainer", "trainer_type": 1,
+                                                                   "param0": 2, "hidden_flag": CARGO}),
+                 "_EV_scr_seq_T25_010 + 1": ((66, 35), "cima", {"script": "447 - 1 + _std_npc_trainer", "trainer_type": 1,
+                                                               "param0": 2, "hidden_flag": CARGO})},
+        esconder={"_EV_scr_seq_T25_011 + 1",
                   "_EV_scr_seq_T25_012 + 1", "_EV_scr_seq_T25_013 + 1", "_EV_scr_seq_T25_014 + 1", "_EV_scr_seq_T25_015 + 1",
                   "_EV_scr_seq_T25_016 + 1", "_EV_scr_seq_T25_030 + 1", "_EV_scr_seq_T25_031 + 1", "_EV_scr_seq_T25_032 + 1", 0},
         placas={"_EV_scr_seq_T25_019 + 1": (39, 47),                 # Palm101_CitySign
@@ -194,18 +204,37 @@ ZONAS = {
         tirar_placas={"_EV_scr_seq_T25_026 + 1", "_EV_scr_seq_T25_027 + 1", "_EV_scr_seq_T25_028 + 1",
                       "_EV_scr_seq_T25_029 + 1", "std_hiddenitem_r34_t25_super_potion"},
         novos_bg=[{"script": "_EV_scr_seq_T25_024 + 1", "type": 1, "gba": p, "player_facing_dir": 4}
-                  for p in ((20, 10), (46, 25), (53, 25), (6, 36), (12, 36), (6, 47), (22, 47), (32, 47), (54, 47), (63, 47),
-                            (49, 12))],                       # (49,12): o ginasio, trancado ate o evento do patio
+                  for p in ((20, 10), (46, 25), (53, 25), (6, 36), (12, 36), (6, 47), (22, 47), (32, 47), (54, 47), (63, 47))],
+        # o ginasio abre depois do patio de cargas: gatilho no tile da frente da porta (script 026, sem placa agora)
+        novos_coord=[{"script": "_EV_scr_seq_T25_026 + 1", "gba": (49, 13), "width": 1, "length": 1, "value": 0,
+                      "var": "VAR_TEMP_x4003"}],
         # portas do GBA -> interiores de Goldenrod no mesmo papel; os warps de Goldenrod sem par vao para o telhado da
         # estacao (tiles bloqueados)
         warps={"MAP_T25R0501": (28, 12), "MAP_T25PC0101": (20, 24), "MAP_T25R1001": (36, 24),
                "MAP_T25R0301": (12, 11), "MAP_T25R0401": (37, 11), "MAP_T25R0801": (48, 47),
                "MAP_T25R0901": (5, 12), "MAP_T25R0201": (8, 27),
-               "MAP_T25GYM0101": (25, 5), "MAP_R35R0101": (26, 5), "MAP_T25R0601": (31, 5), "MAP_T25SP0101": (32, 5),
+               "MAP_T25GYM0101": (49, 12), "MAP_R35R0101": (26, 5), "MAP_T25R0601": (31, 5), "MAP_T25SP0101": (32, 5),
                "MAP_D23R0101": (25, 6), "MAP_D37R0101": (26, 6), "MAP_T25R1201": (31, 6)},
         # portao leste (Palm103_EastGate): a Route 4 nao existe. O gatilho de Goldenrod so disparava durante a invasao
         # Rocket (variavel e valor do HGSS): com a variavel temporaria em 0 ele dispara sempre
         coord={"_EV_scr_seq_T25_017 + 1": ("gba", 70, 40, 1, 2, {"var": "VAR_TEMP_x4002", "value": 0})},
+    ),
+    # Ginasio de Ferralia (GBA MauvilleCity_Gym do Hollowtide: Vessel e treinadores) no interior do ginasio de Goldenrod;
+    # posicoes do HGSS (origem 0,0: interior). Os 4 treinadores de Goldenrod viram Kirk, Shawn, Ben e Vivian; o 5o do
+    # GBA (Angelo) fica de fora: o ginasio de Goldenrod nao tem um tile livre que nao feche o caminho. O quebra-cabeca de
+    # chaves e portoes do GBA tambem fica de fora (scripts no overlay: scr_seq_0886_T25GYM0101.s)
+    "133_T25GYM0101": dict(
+        origem=(0, 0),
+        objetos={"_EV_scr_seq_T25GYM0101_000 + 1": ((13, 4), None, {"graphics_id": "SPRITE_BIGMAN", "hidden_flag": "FLAG_NOTHING"}),
+                 "TRAINER_LASS_CATHY - 1 + _std_npc_trainer": ((14, 15), None, {"script": "467 - 1 + _std_npc_trainer",
+                                                                               "graphics_id": "SPRITE_MAN3", "param0": 2}),
+                 "TRAINER_LASS_CARRIE - 1 + _std_npc_trainer": ((9, 18), None, {"script": "499 - 1 + _std_npc_trainer",
+                                                                               "graphics_id": "SPRITE_MAN3", "param0": 1}),
+                 "TRAINER_BEAUTY_VICTORIA - 1 + _std_npc_trainer": ((6, 11), None, {"script": "410 - 1 + _std_npc_trainer",
+                                                                                   "graphics_id": "SPRITE_GSBOY1", "param0": 2}),
+                 "TRAINER_BEAUTY_SAMANTHA - 1 + _std_npc_trainer": ((24, 18), None, {"script": "510 - 1 + _std_npc_trainer",
+                                                                                    "graphics_id": "SPRITE_GIRL3", "param0": 2})},
+        placas={}, tirar_placas=set(), warps={}, coord={}, tirar_coord={"_EV_scr_seq_T25GYM0101_001 + 1"},
     ),
 }
 
@@ -348,7 +377,7 @@ def main(hg, out):
     npc = lambda n, k, nota: (f"scr_seq_T25_{n}:   // Ferralia: {nota}\n\tsimple_npc_msg {k}\n\tend\n")
     placa = lambda n, k, nota: (f"scr_seq_T25_{n}:   // Ferralia: {nota}\n\tplay_se SEQ_SE_DP_SELECT\n\tlockall\n"
                                 f"\tnpc_msg {k}\n\twait_button\n\tclosemsg\n\treleaseall\n\tend\n")
-    trocas = [("000", npc, 0, "Palm101_Greeter"), ("001", npc, 1, "Palm101_YardWorker"), ("002", npc, 2, "Palm101_GymFan"),
+    trocas = [("000", npc, 0, "Palm101_Greeter"), ("001", npc, 1, "Palm101_YardWorker"),
               ("003", npc, 3, "Palm101_FountainKid"), ("004", npc, 4, "Palm101_Commuter"), ("005", npc, 5, "Palm101_Resident"),
               ("006", npc, 6, "Palm101_HQGuard"), ("007", npc, 7, "Palm101_ParkLady"),
               ("019", placa, 8, "Palm101_CitySign"), ("020", placa, 9, "Palm101_GymSign"), ("021", placa, 10, "Palm101_HQSign"),
@@ -360,13 +389,41 @@ def main(hg, out):
         corpo = new[a:b]
         assert "\tend\n" in corpo or "goto" in corpo or "simple_npc_msg" in corpo, n
         new = new[:a] + f(n, k, nota) + new[b:]
+    corpos = {
+        # Vessel no patio (Palm102_VesselYard): sem vencer os dois recrutas, pede ajuda; depois agradece, os tres somem
+        # e o ginasio abre (FLAG_HT_FERRALIA_CARGO_DONE)
+        "008": ("scr_seq_T25_008:   // Ferralia: Vessel no patio de cargas (Palm102_VesselYard)\n\tplay_se SEQ_SE_DP_SELECT\n"
+                "\tlockall\n\tfaceplayer\n\tgoto_if_defeated 448, _HT_VesselG2\n\tgoto _HT_VesselAsk\n_HT_VesselG2:\n"
+                "\tgoto_if_defeated 447, _HT_VesselThanks\n_HT_VesselAsk:\n\tnpc_msg 16\n\twait_button\n\tclosemsg\n"
+                "\treleaseall\n\tend\n_HT_VesselThanks:\n\tnpc_msg 17\n\twait_button\n\tclosemsg\n"
+                "\tsetflag FLAG_HT_FERRALIA_CARGO_DONE\n\thide_person obj_T25_rocketm_6\n\thide_person obj_T25_rocketm_11\n"
+                "\thide_person obj_T25_rocketm_8\n\treleaseall\n\tend\n"),
+        # fa do ginasio (Palm101_GymFan): a fala muda depois do patio
+        "002": ("scr_seq_T25_002:   // Ferralia: fa do ginasio (Palm101_GymFan)\n\tplay_se SEQ_SE_DP_SELECT\n\tlockall\n"
+                "\tfaceplayer\n\tgoto_if_set FLAG_HT_FERRALIA_CARGO_DONE, _HT_GymFanOpen\n\tnpc_msg 2\n\twait_button\n"
+                "\tclosemsg\n\treleaseall\n\tend\n_HT_GymFanOpen:\n\tnpc_msg 18\n\twait_button\n\tclosemsg\n"
+                "\treleaseall\n\tend\n"),
+        # porta do ginasio: fechada (fala e um passo para baixo) ate o patio de cargas
+        "026": ("scr_seq_T25_026:   // Ferralia: porta do ginasio, fechada ate o patio de cargas\n"
+                "\tgoto_if_set FLAG_HT_FERRALIA_CARGO_DONE, _HT_GymOpen\n\tlockall\n\tnpc_msg 19\n\twait_button\n"
+                "\tclosemsg\n\tapply_movement obj_player, _HT_StepDown\n\twait_movement\n\treleaseall\n_HT_GymOpen:\n"
+                "\tend\n"),
+    }
+    for n, corpo in corpos.items():
+        a = new.index(f"scr_seq_T25_{n}:\n"); b = new.index("\n\n", a) + 1
+        new = new[:a] + corpo + new[b:]
+    if "hollowtide_flags.inc" not in new:
+        a = new.index('.include "data/scr_seq/include/event_T25.inc"\n') + len('.include "data/scr_seq/include/event_T25.inc"\n')
+        new = new[:a] + '.include "data/scr_seq/include/hollowtide_flags.inc"\n' + new[a:]
     # portao leste (Palm103_EastGate): a Route 4 ainda nao existe; fala do GBA e um passo para oeste
     a = new.index("scr_seq_T25_017:\n"); b = new.index("\n\n", a) + 1
     new = new[:a] + ("scr_seq_T25_017:   // Ferralia: portao leste (Palm103_EastGate); a Route 4 ainda nao existe\n"
                      "\tlockall\n\tnpc_msg 14\n\twait_button\n\tclosemsg\n\tapply_movement obj_player, _HT_StepLeft\n"
                      "\twait_movement\n\treleaseall\n\tend\n") + new[b:]
-    new = new.rstrip("\n") + "\n_HT_StepLeft:\n\tstep MOVEMENT_STEP_LEFT, 1\n\tstep_end\n\t.balign 4\n"
+    new = new.rstrip("\n") + ("\n_HT_StepLeft:\n\tstep MOVEMENT_STEP_LEFT, 1\n\tstep_end\n\t.balign 4\n"
+                               "_HT_StepDown:\n\tstep MOVEMENT_STEP_DOWN, 1\n\tstep_end\n\t.balign 4\n")
     open(os.path.join(out, "0718-ferralia-scripts.patch"), "w").write(diff(rel, old, new))
+    zona(hg, out, "133_T25GYM0101", "0719-ferralia-ginasio-eventos.patch")
     rel = "data/scr_seq/scr_seq_0850_T21.s"
     old = open(os.path.join(hg, rel)).read()
     new = old.replace("// chegada pelo leste (Route 1)", "// chegada pelo norte (Route 1), como no GBA (Palm072_Arrival)")

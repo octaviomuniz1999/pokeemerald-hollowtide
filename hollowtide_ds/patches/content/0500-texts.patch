@@ -281,7 +281,7 @@
 +If the Pokémon with you become\nstronger, you’ll be able to go\rfarther away from here.
 --- a/data/text/custom/581.txt
 +++ b/data/text/custom/581.txt
-@@ -1,19 +1,19 @@
+@@ -1,23 +1,23 @@
 -They built the new Radio Tower to\nreplace the old, creaky one.
 -Have you visited the Pokéathlon Dome?\nIt is a huge sports facility where\fPokémon compete with each other.\rIt was quite a sight!
 -I know there’s a new Bike Shop,\nbut I can’t find it anywhere.
@@ -298,6 +298,10 @@
 -So this is the Radio Tower...\r
 -What do you want, you pest?\nScram!\r
 -What are you doing?\nGet to your position right away!\r
+-Pokémon? They’re nothing more than\ntools for making money!
+-We are on guard here.\nDon’t you worry!
+-Take over the Radio Tower...\rWhat? It’s none of your business!
+-You look awfully young...\nAre you new?
 +Welcome to Ferralia! Steel, trains\nand a million hurried footsteps.\rStay on the sidewalks. Nobody here\nstops walking, not even for you!
 +Before the whistle, you can hear\nthe rails sing.\rLately Team Palm only unloads its\ncargo after dark. Funny, huh?
 +The Gym is locked today. Vessel went\nto the rail yard at dawn.\rSomething about a shipment that\nnever arrived...
@@ -314,9 +318,36 @@
 +The door is locked.
 +East Line - Route 4\rThe road is closed for a cargo\ninspection. Talk to the Gym Leader.
 +Route 3 - Plateau\nNorth: Ferralia City
- Pokémon? They’re nothing more than\ntools for making money!
- We are on guard here.\nDon’t you worry!
- Take over the Radio Tower...\rWhat? It’s none of your business!
++You there! I’m Vessel, this city’s\nGym Leader.\rA whole shipment of steel pipe\nvanished from my yard last night.\rThose Team Palm goons are loading\nit onto their own cars right now!\rI can’t leave the gates. Can you\nstop them for me?
++You did it! The pipes are safe.\rThey were going to lay them along\nthe coast to pump the springs dry\rand sell the water back to us...\rThat’s Team Palm for you.\nThank you, really.\rCome to the Gym. I’ll give you the\ntoughest battle this city has!
++Vessel is back! Word is a young\ntrainer helped him at the yard.\rWas that you? Go get that Badge!
++The Gym is locked today. Vessel went\nto the rail yard at dawn.\rSomething about a shipment that\nnever arrived...
+ Hey, brat! You don’t belong here!\fGet lost!
+ Hey, hey!\nI’ve got this covered!\rWhy don’t you go to the Radio Tower?
+ Friendship with Pokémon?\rThat makes me laugh!
+--- a/data/text/custom/582.txt
++++ b/data/text/custom/582.txt
+@@ -1,12 +1,12 @@
+ Whitney: Hi! I’m Whitney!\r...You!\nI saw you at the Radio Tower just now.\rEveryone was into Pokémon, so I got\ninto it, too!\rPokémon are super cute!\rYou want to battle?\fI’m warning you--I’m good!\r
+-Whitney: Sob...\r...Waaaaaaah!\nYou’re mean!\rYou shouldn’t be so serious!\nYou...you child, you!
+-Whitney: Waaaaah!\rWaaaaah!\r...Snivel, hic.\n...You meanie!
+-Whitney: Sniff...\rWhat? What do you want? A Badge?\rOh, right. I forgot.\nHere’s the Plain Badge.\r
+-{STRVAR_1 3, 0, 0} received\nthe Plain Badge from Whitney.
+-Whitney: The Plain Badge lets your\nPokémon use Strength outside\fof battle.\rOh, you can have this, too!\r
+-                           
+-Whitney: It’s Attract!\nIt makes full use of a Pokémon’s charm.\rIsn’t it just perfect for a cutie\nlike me?\fThat’s right!\rI heard that this thing called the\nPokéathlon Dome is now open right next\fto the National Park.\rYou should go try it, since you’re\nso good at battling with your Pokémon!
+-Whitney: Ah, that was a good cry!\rCome for a visit again! Bye-bye!
++So you found the cargo they stole\nfrom my yard. I owe you one.\rBut a debt doesn’t buy a Badge.\nSteel is honest: it bends only\runder real pressure.\nI’m Vessel, Leader of Ferralia Gym.\rLet’s hear how your team rings!
++{STRVAR_1 3, 0, 0} received the Resonance\nBadge from Vessel.\rThe Resonance Badge proves you\ncan hear what steel is saying.\rWear it with pride, and keep your\nears open on the road ahead.
++That TM is Flash Cannon, a beam\nof pure steel light.\rIt may lower the target’s Sp. Def.\nMake it sing!
++The rails carry more than cargo.\nThey carry the city’s heartbeat.\rTeam Palm wants to bend them to\nits will. Don’t let them.
++Hey, how’s it going, future\nChampion {STRVAR_1 3, 0, 0}?\rVessel, the Leader of Ferralia\nGym, uses Steel-type Pokémon.\rSteel shrugs off a lot of\nattacks, but Fire and Fighting\rmoves melt right through it!\rGo for it!
++Whoa! You made Vessel’s steel\nsing a whole new song!
++Ferralia City Pokémon Gym
++Ferralia City Pokémon Gym\rVessel’s Certified Trainers:\n{STRVAR_1 3, 0, 0}
+ Oh, no. You made Whitney cry.\rIt’s OK. She’ll stop soon.\nShe always cries when she loses.\r
+ Yo! Champ in the making!\rThis Gym is home to Normal-type\nPokémon Trainers.\rI recommend you use Fighting-type\nPokémon.
+ You won? Great! I was busy admiring\nthe powerful Trainers here.
 --- a/data/text/custom/604.txt
 +++ b/data/text/custom/604.txt
 @@ -1,9 +1,22 @@
