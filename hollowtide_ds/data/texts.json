@@ -35,6 +35,10 @@
   "33": {
    "gba": "Palm040_TextMomIntro",
    "_por_que": "diretor 25/11 (coesão dos interiores): fala do HGSS que não existe em Lunia troca pela fala da mãe no GBA (a do HGSS falava do Prof. Elm)"
+  },
+  "35": {
+   "gba": "PlayersHouse_1F_Text_TheresAMovieOnTV",
+   "_por_que": "interiores (25/11): a TV da casa do jogador passa o filme da TV da casa do GBA (Littleroot), no lugar do filme do HGSS"
   }
  },
  "543": {

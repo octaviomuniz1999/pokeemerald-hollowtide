@@ -23,7 +23,7 @@ CASE = [
     ("WATER KIOSK", "Water Kiosk"), ("DRYING YARD", "Drying Yard"), ("IRRIGATION SCHEDULE", "Irrigation Schedule"),
     ("WATER UNDER CONTRACT", "Water Under Contract"), ("THE NEIGHBORS", "The Neighbors"), ("HOUSE", "House"),
 ]
-KEEP_CAPS = {"TM", "HM", "HP", "PP", "OK", "KO", "LEFT", "RIGHT", "HAHAHA", "I"}   # siglas e enfase (refletores da Jay)
+KEEP_CAPS = {"TM", "HM", "HP", "PP", "OK", "KO", "TV", "PC", "LEFT", "RIGHT", "HAHAHA", "I"}   # siglas e enfase (refletores da Jay)
 SMALL = {"OF", "THE", "AND"}
 _cache = None
 
